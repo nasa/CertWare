@@ -228,13 +228,6 @@ public class InformationElementBasePropertiesEditionComponent extends SinglePart
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.InformationElement.Properties.id || key == ArgumentationViewsRepository.InformationElement.Properties.description || key == ArgumentationViewsRepository.InformationElement.Properties.content || key == ArgumentationViewsRepository.InformationElement.Properties.evidence || key == ArgumentationViewsRepository.InformationElement.Properties.url || key == ArgumentationViewsRepository.InformationElement.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

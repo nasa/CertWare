@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.ExtendedEvidenceAttribute;
 
+import net.certware.sacm.SACM.Evidence.components.ExtendedEvidenceAttributeBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ExtendedEvidenceAttributeNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ExtendedEvidenceAttributePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ExtendedEvidenceAttributePropertiesEditionProvider extends Properti
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) && (ExtendedEvidenceAttributePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) && (ExtendedEvidenceAttributeBasePropertiesEditionComponent.BASE_PART.equals(part) || ExtendedEvidenceAttributeNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ExtendedEvidenceAttributePropertiesEditionProvider extends Properti
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) && (refinement == ExtendedEvidenceAttributePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) && (refinement == ExtendedEvidenceAttributeBasePropertiesEditionComponent.class || refinement == ExtendedEvidenceAttributeNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ExtendedEvidenceAttributePropertiesEditionProvider extends Properti
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) && ((ExtendedEvidenceAttributePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ExtendedEvidenceAttributePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) && ((ExtendedEvidenceAttributeBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ExtendedEvidenceAttributeBasePropertiesEditionComponent.class) || (ExtendedEvidenceAttributeNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ExtendedEvidenceAttributeNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ExtendedEvidenceAttributePropertiesEditionProvider extends Properti
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) {
-			if (ExtendedEvidenceAttributePropertiesEditionComponent.BASE_PART.equals(part))
-				return new ExtendedEvidenceAttributePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedEvidenceAttributeBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ExtendedEvidenceAttributeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedEvidenceAttributeNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ExtendedEvidenceAttributeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ExtendedEvidenceAttributePropertiesEditionProvider extends Properti
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ExtendedEvidenceAttribute) {
-			if (ExtendedEvidenceAttributePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ExtendedEvidenceAttributePropertiesEditionComponent.class)
-				return new ExtendedEvidenceAttributePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedEvidenceAttributeBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ExtendedEvidenceAttributeBasePropertiesEditionComponent.class)
+				return new ExtendedEvidenceAttributeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedEvidenceAttributeNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ExtendedEvidenceAttributeNotesPropertiesEditionComponent.class)
+				return new ExtendedEvidenceAttributeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

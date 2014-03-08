@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.MeansThat;
 
+import net.certware.sacm.SACM.Evidence.components.MeansThatBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.MeansThatNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.MeansThatPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class MeansThatPropertiesEditionProvider extends PropertiesEditingProvide
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof MeansThat) && (MeansThatPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof MeansThat) && (MeansThatBasePropertiesEditionComponent.BASE_PART.equals(part) || MeansThatNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class MeansThatPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof MeansThat) && (refinement == MeansThatPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof MeansThat) && (refinement == MeansThatBasePropertiesEditionComponent.class || refinement == MeansThatNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class MeansThatPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof MeansThat) && ((MeansThatPropertiesEditionComponent.BASE_PART.equals(part) && refinement == MeansThatPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof MeansThat) && ((MeansThatBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == MeansThatBasePropertiesEditionComponent.class) || (MeansThatNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == MeansThatNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class MeansThatPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof MeansThat) {
-			if (MeansThatPropertiesEditionComponent.BASE_PART.equals(part))
-				return new MeansThatPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MeansThatBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new MeansThatBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MeansThatNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new MeansThatNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class MeansThatPropertiesEditionProvider extends PropertiesEditingProvide
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof MeansThat) {
-			if (MeansThatPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == MeansThatPropertiesEditionComponent.class)
-				return new MeansThatPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MeansThatBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == MeansThatBasePropertiesEditionComponent.class)
+				return new MeansThatBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MeansThatNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == MeansThatNotesPropertiesEditionComponent.class)
+				return new MeansThatNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

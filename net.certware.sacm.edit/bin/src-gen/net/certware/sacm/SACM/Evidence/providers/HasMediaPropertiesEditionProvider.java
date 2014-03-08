@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.HasMedia;
 
+import net.certware.sacm.SACM.Evidence.components.HasMediaBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.HasMediaNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.HasMediaPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class HasMediaPropertiesEditionProvider extends PropertiesEditingProvider
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof HasMedia) && (HasMediaPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof HasMedia) && (HasMediaBasePropertiesEditionComponent.BASE_PART.equals(part) || HasMediaNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class HasMediaPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasMedia) && (refinement == HasMediaPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof HasMedia) && (refinement == HasMediaBasePropertiesEditionComponent.class || refinement == HasMediaNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class HasMediaPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasMedia) && ((HasMediaPropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasMediaPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof HasMedia) && ((HasMediaBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasMediaBasePropertiesEditionComponent.class) || (HasMediaNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == HasMediaNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class HasMediaPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof HasMedia) {
-			if (HasMediaPropertiesEditionComponent.BASE_PART.equals(part))
-				return new HasMediaPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasMediaBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new HasMediaBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasMediaNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new HasMediaNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class HasMediaPropertiesEditionProvider extends PropertiesEditingProvider
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof HasMedia) {
-			if (HasMediaPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == HasMediaPropertiesEditionComponent.class)
-				return new HasMediaPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasMediaBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == HasMediaBasePropertiesEditionComponent.class)
+				return new HasMediaBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasMediaNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == HasMediaNotesPropertiesEditionComponent.class)
+				return new HasMediaNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

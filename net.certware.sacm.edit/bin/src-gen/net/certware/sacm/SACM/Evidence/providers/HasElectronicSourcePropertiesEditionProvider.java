@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.HasElectronicSource;
 
+import net.certware.sacm.SACM.Evidence.components.HasElectronicSourceBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.HasElectronicSourceNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.HasElectronicSourcePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class HasElectronicSourcePropertiesEditionProvider extends PropertiesEdit
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof HasElectronicSource) && (HasElectronicSourcePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof HasElectronicSource) && (HasElectronicSourceBasePropertiesEditionComponent.BASE_PART.equals(part) || HasElectronicSourceNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class HasElectronicSourcePropertiesEditionProvider extends PropertiesEdit
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasElectronicSource) && (refinement == HasElectronicSourcePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof HasElectronicSource) && (refinement == HasElectronicSourceBasePropertiesEditionComponent.class || refinement == HasElectronicSourceNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class HasElectronicSourcePropertiesEditionProvider extends PropertiesEdit
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasElectronicSource) && ((HasElectronicSourcePropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasElectronicSourcePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof HasElectronicSource) && ((HasElectronicSourceBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasElectronicSourceBasePropertiesEditionComponent.class) || (HasElectronicSourceNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == HasElectronicSourceNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class HasElectronicSourcePropertiesEditionProvider extends PropertiesEdit
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof HasElectronicSource) {
-			if (HasElectronicSourcePropertiesEditionComponent.BASE_PART.equals(part))
-				return new HasElectronicSourcePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasElectronicSourceBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new HasElectronicSourceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasElectronicSourceNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new HasElectronicSourceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class HasElectronicSourcePropertiesEditionProvider extends PropertiesEdit
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof HasElectronicSource) {
-			if (HasElectronicSourcePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == HasElectronicSourcePropertiesEditionComponent.class)
-				return new HasElectronicSourcePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasElectronicSourceBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == HasElectronicSourceBasePropertiesEditionComponent.class)
+				return new HasElectronicSourceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasElectronicSourceNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == HasElectronicSourceNotesPropertiesEditionComponent.class)
+				return new HasElectronicSourceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

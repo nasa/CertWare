@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsTransferredTo;
 
+import net.certware.sacm.SACM.Evidence.components.IsTransferredToBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsTransferredToNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsTransferredToPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsTransferredToPropertiesEditionProvider extends PropertiesEditingP
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsTransferredTo) && (IsTransferredToPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsTransferredTo) && (IsTransferredToBasePropertiesEditionComponent.BASE_PART.equals(part) || IsTransferredToNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsTransferredToPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsTransferredTo) && (refinement == IsTransferredToPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsTransferredTo) && (refinement == IsTransferredToBasePropertiesEditionComponent.class || refinement == IsTransferredToNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsTransferredToPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsTransferredTo) && ((IsTransferredToPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsTransferredToPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsTransferredTo) && ((IsTransferredToBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsTransferredToBasePropertiesEditionComponent.class) || (IsTransferredToNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsTransferredToNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsTransferredToPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsTransferredTo) {
-			if (IsTransferredToPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsTransferredToPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsTransferredToBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsTransferredToBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsTransferredToNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsTransferredToNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsTransferredToPropertiesEditionProvider extends PropertiesEditingP
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsTransferredTo) {
-			if (IsTransferredToPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsTransferredToPropertiesEditionComponent.class)
-				return new IsTransferredToPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsTransferredToBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsTransferredToBasePropertiesEditionComponent.class)
+				return new IsTransferredToBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsTransferredToNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsTransferredToNotesPropertiesEditionComponent.class)
+				return new IsTransferredToNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

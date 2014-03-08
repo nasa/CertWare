@@ -4,18 +4,12 @@ package net.certware.sacm.SACM.Argumentation.parts.forms;
 // Start of user code for imports
 import net.certware.sacm.SACM.Argumentation.parts.ArgumentationViewsRepository;
 import net.certware.sacm.SACM.Argumentation.parts.ClaimPropertiesEditionPart;
-import net.certware.sacm.SACM.Argumentation.parts.NotesPropertiesEditionPart;
 import net.certware.sacm.SACM.Argumentation.providers.ArgumentationMessages;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-import org.eclipse.emf.eef.runtime.impl.services.PropertiesEditionPartProviderService;
 import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
@@ -23,8 +17,6 @@ import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
-import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
-import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
@@ -57,7 +49,7 @@ public class ClaimPropertiesEditionPartForm extends SectionPropertiesEditingPart
 	protected Text content;
 	protected Button assumed;
 	protected Button toBeSupported;
-	protected int invalid = -1;
+
 
 
 	/**

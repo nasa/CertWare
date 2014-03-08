@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Significance;
 
+import net.certware.sacm.SACM.Evidence.components.SignificanceBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.SignificanceNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.SignificancePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class SignificancePropertiesEditionProvider extends PropertiesEditingProv
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Significance) && (SignificancePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Significance) && (SignificanceBasePropertiesEditionComponent.BASE_PART.equals(part) || SignificanceNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class SignificancePropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Significance) && (refinement == SignificancePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Significance) && (refinement == SignificanceBasePropertiesEditionComponent.class || refinement == SignificanceNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class SignificancePropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Significance) && ((SignificancePropertiesEditionComponent.BASE_PART.equals(part) && refinement == SignificancePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Significance) && ((SignificanceBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == SignificanceBasePropertiesEditionComponent.class) || (SignificanceNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == SignificanceNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class SignificancePropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Significance) {
-			if (SignificancePropertiesEditionComponent.BASE_PART.equals(part))
-				return new SignificancePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (SignificanceBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new SignificanceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (SignificanceNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new SignificanceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class SignificancePropertiesEditionProvider extends PropertiesEditingProv
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Significance) {
-			if (SignificancePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == SignificancePropertiesEditionComponent.class)
-				return new SignificancePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (SignificanceBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == SignificanceBasePropertiesEditionComponent.class)
+				return new SignificanceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (SignificanceNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == SignificanceNotesPropertiesEditionComponent.class)
+				return new SignificanceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

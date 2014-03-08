@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsGeneratedAt;
 
+import net.certware.sacm.SACM.Evidence.components.IsGeneratedAtBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsGeneratedAtNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsGeneratedAtPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsGeneratedAtPropertiesEditionProvider extends PropertiesEditingPro
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsGeneratedAt) && (IsGeneratedAtPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsGeneratedAt) && (IsGeneratedAtBasePropertiesEditionComponent.BASE_PART.equals(part) || IsGeneratedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsGeneratedAtPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsGeneratedAt) && (refinement == IsGeneratedAtPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsGeneratedAt) && (refinement == IsGeneratedAtBasePropertiesEditionComponent.class || refinement == IsGeneratedAtNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsGeneratedAtPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsGeneratedAt) && ((IsGeneratedAtPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsGeneratedAtPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsGeneratedAt) && ((IsGeneratedAtBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsGeneratedAtBasePropertiesEditionComponent.class) || (IsGeneratedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsGeneratedAtNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsGeneratedAtPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsGeneratedAt) {
-			if (IsGeneratedAtPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsGeneratedAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsGeneratedAtBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsGeneratedAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsGeneratedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsGeneratedAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsGeneratedAtPropertiesEditionProvider extends PropertiesEditingPro
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsGeneratedAt) {
-			if (IsGeneratedAtPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsGeneratedAtPropertiesEditionComponent.class)
-				return new IsGeneratedAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsGeneratedAtBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsGeneratedAtBasePropertiesEditionComponent.class)
+				return new IsGeneratedAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsGeneratedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsGeneratedAtNotesPropertiesEditionComponent.class)
+				return new IsGeneratedAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

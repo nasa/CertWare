@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.HasRoleIn;
 
+import net.certware.sacm.SACM.Evidence.components.HasRoleInBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.HasRoleInNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.HasRoleInPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class HasRoleInPropertiesEditionProvider extends PropertiesEditingProvide
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof HasRoleIn) && (HasRoleInPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof HasRoleIn) && (HasRoleInBasePropertiesEditionComponent.BASE_PART.equals(part) || HasRoleInNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class HasRoleInPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasRoleIn) && (refinement == HasRoleInPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof HasRoleIn) && (refinement == HasRoleInBasePropertiesEditionComponent.class || refinement == HasRoleInNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class HasRoleInPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasRoleIn) && ((HasRoleInPropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasRoleInPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof HasRoleIn) && ((HasRoleInBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasRoleInBasePropertiesEditionComponent.class) || (HasRoleInNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == HasRoleInNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class HasRoleInPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof HasRoleIn) {
-			if (HasRoleInPropertiesEditionComponent.BASE_PART.equals(part))
-				return new HasRoleInPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasRoleInBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new HasRoleInBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasRoleInNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new HasRoleInNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class HasRoleInPropertiesEditionProvider extends PropertiesEditingProvide
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof HasRoleIn) {
-			if (HasRoleInPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == HasRoleInPropertiesEditionComponent.class)
-				return new HasRoleInPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasRoleInBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == HasRoleInBasePropertiesEditionComponent.class)
+				return new HasRoleInBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasRoleInNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == HasRoleInNotesPropertiesEditionComponent.class)
+				return new HasRoleInNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

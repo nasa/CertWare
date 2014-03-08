@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidenceGroup;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.EvidenceGroupBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.EvidenceGroupNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.EvidenceGroupPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class EvidenceGroupPropertiesEditionProvider extends PropertiesEditingPro
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof EvidenceGroup) && (EvidenceGroupPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof EvidenceGroup) && (EvidenceGroupBasePropertiesEditionComponent.BASE_PART.equals(part) || EvidenceGroupNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class EvidenceGroupPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof EvidenceGroup) && (refinement == EvidenceGroupPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof EvidenceGroup) && (refinement == EvidenceGroupBasePropertiesEditionComponent.class || refinement == EvidenceGroupNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class EvidenceGroupPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof EvidenceGroup) && ((EvidenceGroupPropertiesEditionComponent.BASE_PART.equals(part) && refinement == EvidenceGroupPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof EvidenceGroup) && ((EvidenceGroupBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == EvidenceGroupBasePropertiesEditionComponent.class) || (EvidenceGroupNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == EvidenceGroupNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class EvidenceGroupPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof EvidenceGroup) {
-			if (EvidenceGroupPropertiesEditionComponent.BASE_PART.equals(part))
-				return new EvidenceGroupPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EvidenceGroupBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new EvidenceGroupBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EvidenceGroupNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new EvidenceGroupNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class EvidenceGroupPropertiesEditionProvider extends PropertiesEditingPro
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof EvidenceGroup) {
-			if (EvidenceGroupPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == EvidenceGroupPropertiesEditionComponent.class)
-				return new EvidenceGroupPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EvidenceGroupBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == EvidenceGroupBasePropertiesEditionComponent.class)
+				return new EvidenceGroupBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EvidenceGroupNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == EvidenceGroupNotesPropertiesEditionComponent.class)
+				return new EvidenceGroupNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

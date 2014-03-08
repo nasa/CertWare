@@ -6,7 +6,9 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsExpressedInLanguage;
 
-import net.certware.sacm.SACM.Evidence.components.IsExpressedInLanguagePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsExpressedInLanguageBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsExpressedInLanguageNotesPropertiesEditionComponent;
+
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -59,7 +61,7 @@ public class IsExpressedInLanguagePropertiesEditionProvider extends PropertiesEd
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && (IsExpressedInLanguagePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && (IsExpressedInLanguageBasePropertiesEditionComponent.BASE_PART.equals(part) || IsExpressedInLanguageNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsExpressedInLanguagePropertiesEditionProvider extends PropertiesEd
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && (refinement == IsExpressedInLanguagePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && (refinement == IsExpressedInLanguageBasePropertiesEditionComponent.class || refinement == IsExpressedInLanguageNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,19 +81,7 @@ public class IsExpressedInLanguagePropertiesEditionProvider extends PropertiesEd
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && ((IsExpressedInLanguagePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsExpressedInLanguagePropertiesEditionComponent.class));
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider#getPropertiesEditingComponent(org.eclipse.emf.eef.runtime.context.PropertiesEditingContext, java.lang.String)
-	 * 
-	 */
-	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode) {
-		if (editingContext.getEObject() instanceof IsExpressedInLanguage) {
-			return new IsExpressedInLanguagePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
-		}
-		return super.getPropertiesEditingComponent(editingContext, mode);
+		return (editingContext.getEObject() instanceof IsExpressedInLanguage) && ((IsExpressedInLanguageBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsExpressedInLanguageBasePropertiesEditionComponent.class) || (IsExpressedInLanguageNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsExpressedInLanguageNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +91,10 @@ public class IsExpressedInLanguagePropertiesEditionProvider extends PropertiesEd
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsExpressedInLanguage) {
-			if (IsExpressedInLanguagePropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsExpressedInLanguagePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsExpressedInLanguageBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsExpressedInLanguageBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsExpressedInLanguageNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsExpressedInLanguageNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +106,12 @@ public class IsExpressedInLanguagePropertiesEditionProvider extends PropertiesEd
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsExpressedInLanguage) {
-			if (IsExpressedInLanguagePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsExpressedInLanguagePropertiesEditionComponent.class)
-				return new IsExpressedInLanguagePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsExpressedInLanguageBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsExpressedInLanguageBasePropertiesEditionComponent.class)
+				return new IsExpressedInLanguageBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsExpressedInLanguageNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsExpressedInLanguageNotesPropertiesEditionComponent.class)
+				return new IsExpressedInLanguageNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

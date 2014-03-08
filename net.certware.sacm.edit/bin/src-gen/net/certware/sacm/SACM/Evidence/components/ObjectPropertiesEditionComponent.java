@@ -3,61 +3,43 @@ package net.certware.sacm.SACM.Evidence.components;
 
 // Start of user code for imports
 import net.certware.sacm.SACM.Annotation;
-
+import net.certware.sacm.SACM.SACMPackage;
+import net.certware.sacm.SACM.TaggedValue;
 import net.certware.sacm.SACM.Evidence.CustodyProperty;
 import net.certware.sacm.SACM.Evidence.EvidenceEvent;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Provenance;
 import net.certware.sacm.SACM.Evidence.TimingProperty;
-
 import net.certware.sacm.SACM.Evidence.parts.EvidenceViewsRepository;
+import net.certware.sacm.SACM.Evidence.parts.NotesPropertiesEditionPart;
 import net.certware.sacm.SACM.Evidence.parts.ObjectPropertiesEditionPart;
 
-import net.certware.sacm.SACM.SACMPackage;
-import net.certware.sacm.SACM.TaggedValue;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
-
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
-
+import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
-
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
-
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.impl.utils.EEFConverterUtil;
-
 import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
-
 import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
-
 import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.ButtonsModeEnum;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.eobjflatcombo.EObjectFlatComboSettings;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
-
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 
@@ -71,7 +53,35 @@ import org.eclipse.jface.viewers.ViewerFilter;
 public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditingComponent {
 
 	
-	public static String BASE_PART = "Base"; //$NON-NLS-1$
+	/**
+   * The Base part
+   * 
+   */
+  private ObjectPropertiesEditionPart basePart;
+
+
+  /**
+   * The ObjectBasePropertiesEditionComponent sub component
+   * 
+   */
+  protected ObjectBasePropertiesEditionComponent objectBasePropertiesEditionComponent;
+
+
+  /**
+   * The Notes part
+   * 
+   */
+  private NotesPropertiesEditionPart notesPart;
+
+
+  /**
+   * The ObjectNotesPropertiesEditionComponent sub component
+   * 
+   */
+  protected ObjectNotesPropertiesEditionComponent objectNotesPropertiesEditionComponent;
+
+
+  public static String BASE_PART = "Base"; //$NON-NLS-1$
 
 	
 	/**
@@ -122,6 +132,64 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 	}
 
 	/**
+   * {@inheritDoc}
+   * 
+   * @see org.eclipse.emf.eef.runtime.impl.components.ComposedPropertiesEditionComponent#
+   *      getPropertiesEditionPart(int, java.lang.String)
+   * 
+   */
+  public IPropertiesEditionPart getPropertiesEditionPart(int kind, String key) {
+    if (ObjectBasePropertiesEditionComponent.BASE_PART.equals(key)) {
+      basePart = (ObjectPropertiesEditionPart)objectBasePropertiesEditionComponent.getPropertiesEditionPart(kind, key);
+      return (IPropertiesEditionPart)basePart;
+    }
+    if (ObjectNotesPropertiesEditionComponent.NOTES_PART.equals(key)) {
+      notesPart = (NotesPropertiesEditionPart)objectNotesPropertiesEditionComponent.getPropertiesEditionPart(kind, key);
+      return (IPropertiesEditionPart)notesPart;
+    }
+    return super.getPropertiesEditionPart(kind, key);
+  }
+
+  /**
+   * {@inheritDoc}
+   * 
+   * @see org.eclipse.emf.eef.runtime.impl.components.ComposedPropertiesEditionComponent#
+   *      setPropertiesEditionPart(java.lang.Object, int,
+   *      org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart)
+   * 
+   */
+  public void setPropertiesEditionPart(java.lang.Object key, int kind, IPropertiesEditionPart propertiesEditionPart) {
+    if (EvidenceViewsRepository.Object.class == key) {
+      super.setPropertiesEditionPart(key, kind, propertiesEditionPart);
+      basePart = (ObjectPropertiesEditionPart)propertiesEditionPart;
+    }
+    if (EvidenceViewsRepository.Notes.class == key) {
+      super.setPropertiesEditionPart(key, kind, propertiesEditionPart);
+      notesPart = (NotesPropertiesEditionPart)propertiesEditionPart;
+    }
+  }
+
+  /**
+   * {@inheritDoc}
+   * 
+   * @see org.eclipse.emf.eef.runtime.impl.components.ComposedPropertiesEditionComponent#
+   *      initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject,
+   *      org.eclipse.emf.ecore.resource.ResourceSet)
+   * 
+   */
+/*  
+  public void initPart(java.lang.Object key, int kind, EObject element, ResourceSet allResource) {
+    if (key == EvidenceViewsRepository.Object.class) {
+      super.initPart(key, kind, element, allResource);
+    }
+    if (key == EvidenceViewsRepository.Notes.class) {
+      super.initPart(key, kind, element, allResource);
+    }
+  }
+  TODO unknown effectiveness of fix
+*/
+
+  /**
 	 * {@inheritDoc}
 	 * 
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
@@ -134,7 +202,7 @@ public class ObjectPropertiesEditionComponent extends SinglePartPropertiesEditin
 			editingPart.setContext(elt, allResource);
 			
 			// TODO generated fails: final Object object = (Object)elt;
-			EObject object = elt;
+			net.certware.sacm.SACM.Evidence.Object object = (net.certware.sacm.SACM.Evidence.Object) elt;
 					
 			final ObjectPropertiesEditionPart basePart = (ObjectPropertiesEditionPart)editingPart;
 			// init values

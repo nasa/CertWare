@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.Completeness;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.CompletenessBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.CompletenessNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.CompletenessPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class CompletenessPropertiesEditionProvider extends PropertiesEditingProv
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Completeness) && (CompletenessPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Completeness) && (CompletenessBasePropertiesEditionComponent.BASE_PART.equals(part) || CompletenessNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class CompletenessPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Completeness) && (refinement == CompletenessPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Completeness) && (refinement == CompletenessBasePropertiesEditionComponent.class || refinement == CompletenessNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class CompletenessPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Completeness) && ((CompletenessPropertiesEditionComponent.BASE_PART.equals(part) && refinement == CompletenessPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Completeness) && ((CompletenessBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == CompletenessBasePropertiesEditionComponent.class) || (CompletenessNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == CompletenessNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class CompletenessPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Completeness) {
-			if (CompletenessPropertiesEditionComponent.BASE_PART.equals(part))
-				return new CompletenessPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CompletenessBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new CompletenessBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CompletenessNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new CompletenessNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class CompletenessPropertiesEditionProvider extends PropertiesEditingProv
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Completeness) {
-			if (CompletenessPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == CompletenessPropertiesEditionComponent.class)
-				return new CompletenessPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CompletenessBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == CompletenessBasePropertiesEditionComponent.class)
+				return new CompletenessBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CompletenessNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == CompletenessNotesPropertiesEditionComponent.class)
+				return new CompletenessNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

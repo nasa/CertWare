@@ -52,6 +52,7 @@ import net.certware.sacm.SACM.Evidence.parts.forms.IsTransferredToPropertiesEdit
 import net.certware.sacm.SACM.Evidence.parts.forms.MeansThatPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Evidence.parts.forms.MethodPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Evidence.parts.forms.NegatesPropertiesEditionPartForm;
+import net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Evidence.parts.forms.ObjectPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Evidence.parts.forms.ObjectifiedAssertionPropertiesEditionPartForm;
 import net.certware.sacm.SACM.Evidence.parts.forms.OrganizationPropertiesEditionPartForm;
@@ -131,6 +132,7 @@ import net.certware.sacm.SACM.Evidence.parts.impl.IsTransferredToPropertiesEditi
 import net.certware.sacm.SACM.Evidence.parts.impl.MeansThatPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Evidence.parts.impl.MethodPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Evidence.parts.impl.NegatesPropertiesEditionPartImpl;
+import net.certware.sacm.SACM.Evidence.parts.impl.NotesPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Evidence.parts.impl.ObjectPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Evidence.parts.impl.ObjectifiedAssertionPropertiesEditionPartImpl;
 import net.certware.sacm.SACM.Evidence.parts.impl.OrganizationPropertiesEditionPartImpl;
@@ -655,6 +657,12 @@ public class EvidencePropertiesEditionPartProvider implements IPropertiesEdition
 				return new ExtendedProjectPropertyPropertiesEditionPartImpl(component);
 			if (kind == EvidenceViewsRepository.FORM_KIND)
 				return new ExtendedProjectPropertyPropertiesEditionPartForm(component);
+		}
+		if (key == EvidenceViewsRepository.Notes.class) {
+			if (kind == EvidenceViewsRepository.SWT_KIND)
+				return new NotesPropertiesEditionPartImpl(component);
+			if (kind == EvidenceViewsRepository.FORM_KIND)
+				return new NotesPropertiesEditionPartForm(component);
 		}
 		return null;
 	}

@@ -240,13 +240,6 @@ public class AssertedCounterEvidenceBasePropertiesEditionComponent extends Singl
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.AssertedCounterEvidence.Properties.id || key == ArgumentationViewsRepository.AssertedCounterEvidence.Properties.description || key == ArgumentationViewsRepository.AssertedCounterEvidence.Properties.content || key == ArgumentationViewsRepository.AssertedCounterEvidence.Properties.source || key == ArgumentationViewsRepository.AssertedCounterEvidence.Properties.target || key == ArgumentationViewsRepository.AssertedCounterEvidence.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

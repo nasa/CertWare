@@ -56,6 +56,13 @@
                category="default">
          </propertyTab>
 
+         <propertyTab
+               id="Notes"
+               label="Notes"
+               category="extended"
+               afterTab="Base">
+         </propertyTab>
+
       </propertyTabs>
    </extension>
    <extension
@@ -69,10 +76,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ConsistencyPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Consistency"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.CompletenessPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.CompletenessPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Completeness"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.CompletenessPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Completeness"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.DocumentPropertiesEditionPartForm"
@@ -81,10 +100,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.DocumentPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Document"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ConfidencePropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ConfidencePropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Confidence"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ConfidencePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Confidence"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ApprovedByPropertiesEditionPartForm"
@@ -93,10 +124,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ApprovedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ApprovedBy"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.CreatedByPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.CreatedByPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.CreatedBy"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.CreatedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.CreatedBy"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ToolPropertiesEditionPartForm"
@@ -105,10 +148,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ToolPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Tool"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.MethodPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.MethodPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Method"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.MethodPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Method"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsBasedOnPropertiesEditionPartForm"
@@ -117,10 +172,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsBasedOnPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsBasedOn"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsAPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.IsAPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.IsA"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsAPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsA"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsCharacterizedByPropertiesEditionPartForm"
@@ -129,10 +196,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsCharacterizedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsCharacterizedBy"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.PersonPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.PersonPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Person"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.PersonPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Person"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.OrganizationPropertiesEditionPartForm"
@@ -141,10 +220,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.OrganizationPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Organization"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.EvidenceContainerPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.EvidenceContainerPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.EvidenceContainer"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.EvidenceContainerPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.EvidenceContainer"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.EndTimePropertiesEditionPartForm"
@@ -153,10 +244,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.EndTimePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.EndTime"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.AssertionPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.AssertionPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Assertion"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.AssertionPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Assertion"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ObjectPropertiesEditionPartForm"
@@ -165,10 +268,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ObjectPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Object"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.CompositeObjectPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.CompositeObjectPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.CompositeObject"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.CompositeObjectPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.CompositeObject"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.RoleBindingPropertiesEditionPartForm"
@@ -177,10 +292,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.RoleBindingPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.RoleBinding"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.StartTimePropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.StartTimePropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.StartTime"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.StartTimePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.StartTime"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.RelevancePropertiesEditionPartForm"
@@ -189,10 +316,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.RelevancePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Relevance"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.SignificancePropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.SignificancePropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Significance"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.SignificancePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Significance"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.AccuracyPropertiesEditionPartForm"
@@ -201,10 +340,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.AccuracyPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Accuracy"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.HasRoleInPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.HasRoleInPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.HasRoleIn"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.HasRoleInPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.HasRoleIn"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsScopedByPropertiesEditionPartForm"
@@ -213,10 +364,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsScopedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsScopedBy"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.AtTimePropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.AtTimePropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.AtTime"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.AtTimePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.AtTime"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.OriginalityPropertiesEditionPartForm"
@@ -225,10 +388,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.OriginalityPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Originality"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ReportingPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ReportingPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Reporting"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ReportingPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Reporting"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ReliabilityPropertiesEditionPartForm"
@@ -237,10 +412,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ReliabilityPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Reliability"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.SupportsPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.SupportsPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Supports"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.SupportsPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Supports"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsGeneratedAtPropertiesEditionPartForm"
@@ -249,10 +436,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsGeneratedAtPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsGeneratedAt"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.SupportPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.SupportPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Support"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.SupportPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Support"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ConflictsPropertiesEditionPartForm"
@@ -261,10 +460,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ConflictsPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Conflicts"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.RefutesPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.RefutesPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Refutes"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.RefutesPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Refutes"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.NegatesPropertiesEditionPartForm"
@@ -273,10 +484,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.NegatesPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Negates"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.UnknownObjectPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.UnknownObjectPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.UnknownObject"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.UnknownObjectPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.UnknownObject"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ResolvesPropertiesEditionPartForm"
@@ -285,10 +508,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ResolvesPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Resolves"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.EvidenceRequestPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.EvidenceRequestPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.EvidenceRequest"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.EvidenceRequestPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.EvidenceRequest"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ProjectObjectivePropertiesEditionPartForm"
@@ -297,10 +532,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ProjectObjectivePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ProjectObjective"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ActivityPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ActivityPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Activity"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ActivityPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Activity"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.DependsOnPropertiesEditionPartForm"
@@ -309,10 +556,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.DependsOnPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.DependsOn"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.SatisfiesPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.SatisfiesPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Satisfies"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.SatisfiesPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Satisfies"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ReferencedClaimPropertiesEditionPartForm"
@@ -321,10 +580,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ReferencedClaimPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ReferencedClaim"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.WeakensPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.WeakensPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Weakens"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.WeakensPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Weakens"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.AmplifiesPropertiesEditionPartForm"
@@ -333,10 +604,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.AmplifiesPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Amplifies"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ChallengesPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ChallengesPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Challenges"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ChallengesPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Challenges"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.StrengthPropertiesEditionPartForm"
@@ -345,10 +628,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.StrengthPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Strength"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsAcquiredAtPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.IsAcquiredAtPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.IsAcquiredAt"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsAcquiredAtPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsAcquiredAt"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsTransferredToPropertiesEditionPartForm"
@@ -357,10 +652,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsTransferredToPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsTransferredTo"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.OwnedByPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.OwnedByPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.OwnedBy"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.OwnedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.OwnedBy"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsPartOfPropertiesEditionPartForm"
@@ -369,10 +676,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsPartOfPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsPartOf"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsRevokedAtPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.IsRevokedAtPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.IsRevokedAt"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsRevokedAtPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsRevokedAt"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ProvidesContextPropertiesEditionPartForm"
@@ -381,10 +700,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ProvidesContextPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ProvidesContext"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.MeansThatPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.MeansThatPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.MeansThat"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.MeansThatPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.MeansThat"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.CareOfPropertiesEditionPartForm"
@@ -393,10 +724,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.CareOfPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.CareOf"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.AtLocationPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.AtLocationPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.AtLocation"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.AtLocationPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.AtLocation"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsCreatedAtPropertiesEditionPartForm"
@@ -405,10 +748,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsCreatedAtPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsCreatedAt"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.RequiresContainerPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.RequiresContainerPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.RequiresContainer"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.RequiresContainerPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.RequiresContainer"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ServicePropertiesEditionPartForm"
@@ -417,10 +772,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ServicePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Service"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.HasElectronicSourcePropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.HasElectronicSourcePropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.HasElectronicSource"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.HasElectronicSourcePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.HasElectronicSource"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsExpressedInLanguagePropertiesEditionPartForm"
@@ -429,10 +796,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsExpressedInLanguagePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsExpressedInLanguage"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.UsingProcessPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.UsingProcessPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.UsingProcess"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.UsingProcessPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.UsingProcess"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.HasSecurityClassificationPropertiesEditionPartForm"
@@ -441,10 +820,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.HasSecurityClassificationPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.HasSecurityClassification"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsReleaseableToPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.IsReleaseableToPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.IsReleaseableTo"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsReleaseableToPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsReleaseableTo"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.EvidenceGroupPropertiesEditionPartForm"
@@ -453,10 +844,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.EvidenceGroupPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.EvidenceGroup"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.HasVersionPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.HasVersionPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.HasVersion"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.HasVersionPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.HasVersion"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.HasMediaPropertiesEditionPartForm"
@@ -465,10 +868,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.HasMediaPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.HasMedia"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ExhibitPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ExhibitPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.Exhibit"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ExhibitPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Exhibit"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ExtendedEvidenceAttributePropertiesEditionPartForm"
@@ -477,10 +892,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ExtendedEvidenceAttributePropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ExtendedEvidenceAttribute"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ExtendedDocumentPropertyPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ExtendedDocumentPropertyPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.ExtendedDocumentProperty"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ExtendedDocumentPropertyPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ExtendedDocumentProperty"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.RecordPropertiesEditionPartForm"
@@ -489,10 +916,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.RecordPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.Record"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ObjectifiedAssertionPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ObjectifiedAssertionPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.ObjectifiedAssertion"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ObjectifiedAssertionPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ObjectifiedAssertion"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.IsModifiedByPropertiesEditionPartForm"
@@ -501,10 +940,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.IsModifiedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.IsModifiedBy"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.PerformedByPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.PerformedByPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.PerformedBy"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.PerformedByPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.PerformedBy"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ContainerConsistencyPropertiesEditionPartForm"
@@ -513,10 +964,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ContainerConsistencyPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ContainerConsistency"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ContainerCompletenessPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ContainerCompletenessPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.ContainerCompleteness"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ContainerCompletenessPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ContainerCompleteness"
+               tab="Notes">
          </propertySection>
          <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.CompliesToPropertiesEditionPartForm"
@@ -525,10 +988,22 @@
                tab="Base">
          </propertySection>
          <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.CompliesToPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.CompliesTo"
+               tab="Notes">
+         </propertySection>
+         <propertySection
                class="net.certware.sacm.SACM.Evidence.parts.forms.ExtendedProjectPropertyPropertiesEditionPartForm"
                filter="net.certware.sacm.SACM.Evidence.providers.ExtendedProjectPropertyPropertiesEditionProvider$EditionFilter"
                id="net.certware.sacm.SACM.Evidence.section.ExtendedProjectProperty"
                tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.sacm.SACM.Evidence.parts.forms.NotesPropertiesEditionPartForm"
+               filter="net.certware.sacm.SACM.Evidence.providers.ExtendedProjectPropertyPropertiesEditionProvider$EditionFilter"
+               id="net.certware.sacm.SACM.Evidence.section.ExtendedProjectProperty"
+               tab="Notes">
          </propertySection>
       </propertySections>
    </extension>

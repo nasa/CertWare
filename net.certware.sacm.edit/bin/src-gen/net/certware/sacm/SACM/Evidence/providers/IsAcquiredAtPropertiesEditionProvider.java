@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsAcquiredAt;
 
+import net.certware.sacm.SACM.Evidence.components.IsAcquiredAtBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsAcquiredAtNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsAcquiredAtPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsAcquiredAtPropertiesEditionProvider extends PropertiesEditingProv
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsAcquiredAt) && (IsAcquiredAtPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsAcquiredAt) && (IsAcquiredAtBasePropertiesEditionComponent.BASE_PART.equals(part) || IsAcquiredAtNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsAcquiredAtPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsAcquiredAt) && (refinement == IsAcquiredAtPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsAcquiredAt) && (refinement == IsAcquiredAtBasePropertiesEditionComponent.class || refinement == IsAcquiredAtNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsAcquiredAtPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsAcquiredAt) && ((IsAcquiredAtPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsAcquiredAtPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsAcquiredAt) && ((IsAcquiredAtBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsAcquiredAtBasePropertiesEditionComponent.class) || (IsAcquiredAtNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsAcquiredAtNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsAcquiredAtPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsAcquiredAt) {
-			if (IsAcquiredAtPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsAcquiredAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsAcquiredAtBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsAcquiredAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsAcquiredAtNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsAcquiredAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsAcquiredAtPropertiesEditionProvider extends PropertiesEditingProv
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsAcquiredAt) {
-			if (IsAcquiredAtPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsAcquiredAtPropertiesEditionComponent.class)
-				return new IsAcquiredAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsAcquiredAtBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsAcquiredAtBasePropertiesEditionComponent.class)
+				return new IsAcquiredAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsAcquiredAtNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsAcquiredAtNotesPropertiesEditionComponent.class)
+				return new IsAcquiredAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

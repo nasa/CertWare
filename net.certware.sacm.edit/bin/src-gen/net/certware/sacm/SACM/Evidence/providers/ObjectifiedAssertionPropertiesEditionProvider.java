@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.ObjectifiedAssertion;
 
+import net.certware.sacm.SACM.Evidence.components.ObjectifiedAssertionBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ObjectifiedAssertionNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ObjectifiedAssertionPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ObjectifiedAssertionPropertiesEditionProvider extends PropertiesEdi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof ObjectifiedAssertion) && (ObjectifiedAssertionPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof ObjectifiedAssertion) && (ObjectifiedAssertionBasePropertiesEditionComponent.BASE_PART.equals(part) || ObjectifiedAssertionNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ObjectifiedAssertionPropertiesEditionProvider extends PropertiesEdi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ObjectifiedAssertion) && (refinement == ObjectifiedAssertionPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof ObjectifiedAssertion) && (refinement == ObjectifiedAssertionBasePropertiesEditionComponent.class || refinement == ObjectifiedAssertionNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ObjectifiedAssertionPropertiesEditionProvider extends PropertiesEdi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ObjectifiedAssertion) && ((ObjectifiedAssertionPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ObjectifiedAssertionPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof ObjectifiedAssertion) && ((ObjectifiedAssertionBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ObjectifiedAssertionBasePropertiesEditionComponent.class) || (ObjectifiedAssertionNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ObjectifiedAssertionNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ObjectifiedAssertionPropertiesEditionProvider extends PropertiesEdi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ObjectifiedAssertion) {
-			if (ObjectifiedAssertionPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ObjectifiedAssertionPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ObjectifiedAssertionBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ObjectifiedAssertionBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ObjectifiedAssertionNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ObjectifiedAssertionNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ObjectifiedAssertionPropertiesEditionProvider extends PropertiesEdi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ObjectifiedAssertion) {
-			if (ObjectifiedAssertionPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ObjectifiedAssertionPropertiesEditionComponent.class)
-				return new ObjectifiedAssertionPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ObjectifiedAssertionBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ObjectifiedAssertionBasePropertiesEditionComponent.class)
+				return new ObjectifiedAssertionBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ObjectifiedAssertionNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ObjectifiedAssertionNotesPropertiesEditionComponent.class)
+				return new ObjectifiedAssertionNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

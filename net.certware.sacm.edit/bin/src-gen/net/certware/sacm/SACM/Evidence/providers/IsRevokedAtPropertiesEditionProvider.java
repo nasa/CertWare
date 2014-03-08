@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsRevokedAt;
 
+import net.certware.sacm.SACM.Evidence.components.IsRevokedAtBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsRevokedAtNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsRevokedAtPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsRevokedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsRevokedAt) && (IsRevokedAtPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsRevokedAt) && (IsRevokedAtBasePropertiesEditionComponent.BASE_PART.equals(part) || IsRevokedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsRevokedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsRevokedAt) && (refinement == IsRevokedAtPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsRevokedAt) && (refinement == IsRevokedAtBasePropertiesEditionComponent.class || refinement == IsRevokedAtNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsRevokedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsRevokedAt) && ((IsRevokedAtPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsRevokedAtPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsRevokedAt) && ((IsRevokedAtBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsRevokedAtBasePropertiesEditionComponent.class) || (IsRevokedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsRevokedAtNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsRevokedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsRevokedAt) {
-			if (IsRevokedAtPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsRevokedAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsRevokedAtBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsRevokedAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsRevokedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsRevokedAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsRevokedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsRevokedAt) {
-			if (IsRevokedAtPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsRevokedAtPropertiesEditionComponent.class)
-				return new IsRevokedAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsRevokedAtBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsRevokedAtBasePropertiesEditionComponent.class)
+				return new IsRevokedAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsRevokedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsRevokedAtNotesPropertiesEditionComponent.class)
+				return new IsRevokedAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

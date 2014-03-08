@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsScopedBy;
 
+import net.certware.sacm.SACM.Evidence.components.IsScopedByBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsScopedByNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsScopedByPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsScopedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsScopedBy) && (IsScopedByPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsScopedBy) && (IsScopedByBasePropertiesEditionComponent.BASE_PART.equals(part) || IsScopedByNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsScopedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsScopedBy) && (refinement == IsScopedByPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsScopedBy) && (refinement == IsScopedByBasePropertiesEditionComponent.class || refinement == IsScopedByNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsScopedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsScopedBy) && ((IsScopedByPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsScopedByPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsScopedBy) && ((IsScopedByBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsScopedByBasePropertiesEditionComponent.class) || (IsScopedByNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsScopedByNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsScopedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsScopedBy) {
-			if (IsScopedByPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsScopedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsScopedByBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsScopedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsScopedByNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsScopedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsScopedByPropertiesEditionProvider extends PropertiesEditingProvid
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsScopedBy) {
-			if (IsScopedByPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsScopedByPropertiesEditionComponent.class)
-				return new IsScopedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsScopedByBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsScopedByBasePropertiesEditionComponent.class)
+				return new IsScopedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsScopedByNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsScopedByNotesPropertiesEditionComponent.class)
+				return new IsScopedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

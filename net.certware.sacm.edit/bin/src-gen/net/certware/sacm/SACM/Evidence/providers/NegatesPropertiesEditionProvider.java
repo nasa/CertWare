@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Negates;
 
+import net.certware.sacm.SACM.Evidence.components.NegatesBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.NegatesNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.NegatesPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class NegatesPropertiesEditionProvider extends PropertiesEditingProviderI
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Negates) && (NegatesPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Negates) && (NegatesBasePropertiesEditionComponent.BASE_PART.equals(part) || NegatesNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class NegatesPropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Negates) && (refinement == NegatesPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Negates) && (refinement == NegatesBasePropertiesEditionComponent.class || refinement == NegatesNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class NegatesPropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Negates) && ((NegatesPropertiesEditionComponent.BASE_PART.equals(part) && refinement == NegatesPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Negates) && ((NegatesBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == NegatesBasePropertiesEditionComponent.class) || (NegatesNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == NegatesNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class NegatesPropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Negates) {
-			if (NegatesPropertiesEditionComponent.BASE_PART.equals(part))
-				return new NegatesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (NegatesBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new NegatesBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (NegatesNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new NegatesNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class NegatesPropertiesEditionProvider extends PropertiesEditingProviderI
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Negates) {
-			if (NegatesPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == NegatesPropertiesEditionComponent.class)
-				return new NegatesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (NegatesBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == NegatesBasePropertiesEditionComponent.class)
+				return new NegatesBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (NegatesNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == NegatesNotesPropertiesEditionComponent.class)
+				return new NegatesNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

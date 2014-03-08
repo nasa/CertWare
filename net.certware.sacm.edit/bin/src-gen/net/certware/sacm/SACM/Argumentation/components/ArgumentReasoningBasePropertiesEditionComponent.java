@@ -274,13 +274,6 @@ public class ArgumentReasoningBasePropertiesEditionComponent extends SinglePartP
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.ArgumentReasoning.Properties.id || key == ArgumentationViewsRepository.ArgumentReasoning.Properties.description || key == ArgumentationViewsRepository.ArgumentReasoning.Properties.content || key == ArgumentationViewsRepository.ArgumentReasoning.Properties.structure || key == ArgumentationViewsRepository.ArgumentReasoning.Properties.describedInference || key == ArgumentationViewsRepository.ArgumentReasoning.Properties.describedChallenge || key == ArgumentationViewsRepository.ArgumentReasoning.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

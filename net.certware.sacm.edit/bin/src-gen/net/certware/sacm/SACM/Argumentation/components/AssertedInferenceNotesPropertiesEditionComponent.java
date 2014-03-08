@@ -2,6 +2,9 @@
 package net.certware.sacm.SACM.Argumentation.components;
 
 // Start of user code for imports
+import net.certware.sacm.SACM.Annotation;
+import net.certware.sacm.SACM.SACMPackage;
+import net.certware.sacm.SACM.TaggedValue;
 import net.certware.sacm.SACM.Argumentation.AssertedInference;
 import net.certware.sacm.SACM.Argumentation.parts.ArgumentationViewsRepository;
 import net.certware.sacm.SACM.Argumentation.parts.NotesPropertiesEditionPart;
@@ -17,7 +20,16 @@ import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilt
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
+import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.impl.components.SinglePartPropertiesEditingComponent;
+import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.policies.PropertiesEditingPolicy;
+import org.eclipse.emf.eef.runtime.policies.impl.CreateEditingPolicy;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
+import org.eclipse.jface.viewers.Viewer;
+import org.eclipse.jface.viewers.ViewerFilter;
 
 
 // End of user code
@@ -31,6 +43,16 @@ public class AssertedInferenceNotesPropertiesEditionComponent extends SinglePart
 	
 	public static String NOTES_PART = "Notes"; //$NON-NLS-1$
 
+	
+	/**
+	 * Settings for taggedValue ReferencesTable
+	 */
+	protected ReferencesTableSettings taggedValueSettings;
+	
+	/**
+	 * Settings for annotation ReferencesTable
+	 */
+	protected ReferencesTableSettings annotationSettings;
 	
 	
 	/**
@@ -59,7 +81,45 @@ public class AssertedInferenceNotesPropertiesEditionComponent extends SinglePart
 			final AssertedInference assertedInference = (AssertedInference)elt;
 			final NotesPropertiesEditionPart notesPart = (NotesPropertiesEditionPart)editingPart;
 			// init values
+			if (isAccessible(ArgumentationViewsRepository.Notes.Properties.taggedValue)) {
+				taggedValueSettings = new ReferencesTableSettings(assertedInference, SACMPackage.eINSTANCE.getModelElement_TaggedValue());
+				notesPart.initTaggedValue(taggedValueSettings);
+			}
+			if (isAccessible(ArgumentationViewsRepository.Notes.Properties.annotation)) {
+				annotationSettings = new ReferencesTableSettings(assertedInference, SACMPackage.eINSTANCE.getModelElement_Annotation());
+				notesPart.initAnnotation(annotationSettings);
+			}
 			// init filters
+			if (isAccessible(ArgumentationViewsRepository.Notes.Properties.taggedValue)) {
+				notesPart.addFilterToTaggedValue(new ViewerFilter() {
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
+					}
+			
+				});
+				// Start of user code for additional businessfilters for taggedValue
+				// End of user code
+			}
+			if (isAccessible(ArgumentationViewsRepository.Notes.Properties.annotation)) {
+				notesPart.addFilterToAnnotation(new ViewerFilter() {
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof String && element.equals("")) || (element instanceof Annotation); //$NON-NLS-1$ 
+					}
+			
+				});
+				// Start of user code for additional businessfilters for annotation
+				// End of user code
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -70,11 +130,19 @@ public class AssertedInferenceNotesPropertiesEditionComponent extends SinglePart
 
 
 
+
+
 	/**
 	 * {@inheritDoc}
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#associatedFeature(java.lang.Object)
 	 */
 	public EStructuralFeature associatedFeature(Object editorKey) {
+		if (editorKey == ArgumentationViewsRepository.Notes.Properties.taggedValue) {
+			return SACMPackage.eINSTANCE.getModelElement_TaggedValue();
+		}
+		if (editorKey == ArgumentationViewsRepository.Notes.Properties.annotation) {
+			return SACMPackage.eINSTANCE.getModelElement_Annotation();
+		}
 		return super.associatedFeature(editorKey);
 	}
 
@@ -85,6 +153,56 @@ public class AssertedInferenceNotesPropertiesEditionComponent extends SinglePart
 	 */
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		AssertedInference assertedInference = (AssertedInference)semanticObject;
+		if (ArgumentationViewsRepository.Notes.Properties.taggedValue == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, taggedValueSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				taggedValueSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				taggedValueSettings.move(event.getNewIndex(), (TaggedValue) event.getNewValue());
+			}
+		}
+		if (ArgumentationViewsRepository.Notes.Properties.annotation == event.getAffectedEditor()) {
+			if (event.getKind() == PropertiesEditionEvent.ADD) {
+				EReferencePropertiesEditionContext context = new EReferencePropertiesEditionContext(editingContext, this, annotationSettings, editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt(semanticObject, PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy policy = provider.getPolicy(context);
+					if (policy instanceof CreateEditingPolicy) {
+						policy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.EDIT) {
+				EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(editingContext, this, (EObject) event.getNewValue(), editingContext.getAdapterFactory());
+				PropertiesEditingProvider provider = (PropertiesEditingProvider)editingContext.getAdapterFactory().adapt((EObject) event.getNewValue(), PropertiesEditingProvider.class);
+				if (provider != null) {
+					PropertiesEditingPolicy editionPolicy = provider.getPolicy(context);
+					if (editionPolicy != null) {
+						editionPolicy.execute();
+					}
+				}
+			} else if (event.getKind() == PropertiesEditionEvent.REMOVE) {
+				annotationSettings.removeFromReference((EObject) event.getNewValue());
+			} else if (event.getKind() == PropertiesEditionEvent.MOVE) {
+				annotationSettings.move(event.getNewIndex(), (Annotation) event.getNewValue());
+			}
+		}
 	}
 
 	/**
@@ -95,6 +213,10 @@ public class AssertedInferenceNotesPropertiesEditionComponent extends SinglePart
 		super.updatePart(msg);
 		if (editingPart.isVisible()) {
 			NotesPropertiesEditionPart notesPart = (NotesPropertiesEditionPart)editingPart;
+			if (SACMPackage.eINSTANCE.getModelElement_TaggedValue().equals(msg.getFeature()) && isAccessible(ArgumentationViewsRepository.Notes.Properties.taggedValue))
+				notesPart.updateTaggedValue();
+			if (SACMPackage.eINSTANCE.getModelElement_Annotation().equals(msg.getFeature()) && isAccessible(ArgumentationViewsRepository.Notes.Properties.annotation))
+				notesPart.updateAnnotation();
 			
 		}
 	}
@@ -107,17 +229,11 @@ public class AssertedInferenceNotesPropertiesEditionComponent extends SinglePart
 	@Override
 	protected NotificationFilter[] getNotificationFilters() {
 		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
-		);
+			SACMPackage.eINSTANCE.getModelElement_TaggedValue(),
+			SACMPackage.eINSTANCE.getModelElement_Annotation()		);
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return true;
-	}
 
 	/**
 	 * {@inheritDoc}

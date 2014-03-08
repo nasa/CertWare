@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsCreatedAt;
 
+import net.certware.sacm.SACM.Evidence.components.IsCreatedAtBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsCreatedAtNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsCreatedAtPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsCreatedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsCreatedAt) && (IsCreatedAtPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsCreatedAt) && (IsCreatedAtBasePropertiesEditionComponent.BASE_PART.equals(part) || IsCreatedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsCreatedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsCreatedAt) && (refinement == IsCreatedAtPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsCreatedAt) && (refinement == IsCreatedAtBasePropertiesEditionComponent.class || refinement == IsCreatedAtNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsCreatedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsCreatedAt) && ((IsCreatedAtPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsCreatedAtPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsCreatedAt) && ((IsCreatedAtBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsCreatedAtBasePropertiesEditionComponent.class) || (IsCreatedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsCreatedAtNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsCreatedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsCreatedAt) {
-			if (IsCreatedAtPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsCreatedAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCreatedAtBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsCreatedAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCreatedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsCreatedAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsCreatedAtPropertiesEditionProvider extends PropertiesEditingProvi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsCreatedAt) {
-			if (IsCreatedAtPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsCreatedAtPropertiesEditionComponent.class)
-				return new IsCreatedAtPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCreatedAtBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsCreatedAtBasePropertiesEditionComponent.class)
+				return new IsCreatedAtBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCreatedAtNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsCreatedAtNotesPropertiesEditionComponent.class)
+				return new IsCreatedAtNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

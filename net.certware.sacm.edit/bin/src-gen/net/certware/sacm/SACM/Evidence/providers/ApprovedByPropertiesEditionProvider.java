@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.ApprovedBy;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.ApprovedByBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ApprovedByNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ApprovedByPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ApprovedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof ApprovedBy) && (ApprovedByPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof ApprovedBy) && (ApprovedByBasePropertiesEditionComponent.BASE_PART.equals(part) || ApprovedByNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ApprovedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ApprovedBy) && (refinement == ApprovedByPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof ApprovedBy) && (refinement == ApprovedByBasePropertiesEditionComponent.class || refinement == ApprovedByNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ApprovedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ApprovedBy) && ((ApprovedByPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ApprovedByPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof ApprovedBy) && ((ApprovedByBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ApprovedByBasePropertiesEditionComponent.class) || (ApprovedByNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ApprovedByNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ApprovedByPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ApprovedBy) {
-			if (ApprovedByPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ApprovedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ApprovedByBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ApprovedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ApprovedByNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ApprovedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ApprovedByPropertiesEditionProvider extends PropertiesEditingProvid
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ApprovedBy) {
-			if (ApprovedByPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ApprovedByPropertiesEditionComponent.class)
-				return new ApprovedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ApprovedByBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ApprovedByBasePropertiesEditionComponent.class)
+				return new ApprovedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ApprovedByNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ApprovedByNotesPropertiesEditionComponent.class)
+				return new ApprovedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

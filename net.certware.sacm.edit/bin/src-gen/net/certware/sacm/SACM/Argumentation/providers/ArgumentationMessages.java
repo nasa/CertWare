@@ -113,12 +113,6 @@ public class ArgumentationMessages extends NLS {
 
 
 	
-	public static String ArgumentationPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ArgumentationPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String ArgumentationPropertiesEditionPart_IdLabel;
 
 	
@@ -132,12 +126,6 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String ArgumentationPropertiesEditionPart_ArgumentElementLabel;
-
-	
-	public static String CitationElementPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String CitationElementPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String CitationElementPropertiesEditionPart_IdLabel;
@@ -155,12 +143,6 @@ public class ArgumentationMessages extends NLS {
 	public static String CitationElementPropertiesEditionPart_ArgumentationReferenceLabel;
 
 	
-	public static String InformationElementPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String InformationElementPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String InformationElementPropertiesEditionPart_IdLabel;
 
 	
@@ -174,12 +156,6 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String InformationElementPropertiesEditionPart_UrlLabel;
-
-	
-	public static String ArgumentReasoningPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String ArgumentReasoningPropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String ArgumentReasoningPropertiesEditionPart_IdLabel;
@@ -215,12 +191,6 @@ public class ArgumentationMessages extends NLS {
 	public static String ClaimPropertiesEditionPart_ToBeSupportedLabel;
 
 	
-	public static String AssertedInferencePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssertedInferencePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String AssertedInferencePropertiesEditionPart_IdLabel;
 
 	
@@ -234,12 +204,6 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String AssertedInferencePropertiesEditionPart_TargetLabel;
-
-	
-	public static String AssertedEvidencePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssertedEvidencePropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String AssertedEvidencePropertiesEditionPart_IdLabel;
@@ -257,12 +221,6 @@ public class ArgumentationMessages extends NLS {
 	public static String AssertedEvidencePropertiesEditionPart_TargetLabel;
 
 	
-	public static String AssertedContextPropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssertedContextPropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String AssertedContextPropertiesEditionPart_IdLabel;
 
 	
@@ -278,12 +236,6 @@ public class ArgumentationMessages extends NLS {
 	public static String AssertedContextPropertiesEditionPart_TargetLabel;
 
 	
-	public static String AssertedChallengePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssertedChallengePropertiesEditionPart_AnnotationLabel;
-
-	
 	public static String AssertedChallengePropertiesEditionPart_IdLabel;
 
 	
@@ -297,12 +249,6 @@ public class ArgumentationMessages extends NLS {
 
 	
 	public static String AssertedChallengePropertiesEditionPart_TargetLabel;
-
-	
-	public static String AssertedCounterEvidencePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssertedCounterEvidencePropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String AssertedCounterEvidencePropertiesEditionPart_IdLabel;

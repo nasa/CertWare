@@ -45,7 +45,7 @@ public class ClaimPropertiesEditionPartImpl extends CompositePropertiesEditionPa
 	protected Text content;
 	protected Button assumed;
 	protected Button toBeSupported;
-	protected int invalid = -1;
+
 
 
 	/**

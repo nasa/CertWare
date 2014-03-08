@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Resolves;
 
+import net.certware.sacm.SACM.Evidence.components.ResolvesBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ResolvesNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ResolvesPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ResolvesPropertiesEditionProvider extends PropertiesEditingProvider
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Resolves) && (ResolvesPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Resolves) && (ResolvesBasePropertiesEditionComponent.BASE_PART.equals(part) || ResolvesNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ResolvesPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Resolves) && (refinement == ResolvesPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Resolves) && (refinement == ResolvesBasePropertiesEditionComponent.class || refinement == ResolvesNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ResolvesPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Resolves) && ((ResolvesPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ResolvesPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Resolves) && ((ResolvesBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ResolvesBasePropertiesEditionComponent.class) || (ResolvesNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ResolvesNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ResolvesPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Resolves) {
-			if (ResolvesPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ResolvesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ResolvesBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ResolvesBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ResolvesNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ResolvesNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ResolvesPropertiesEditionProvider extends PropertiesEditingProvider
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Resolves) {
-			if (ResolvesPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ResolvesPropertiesEditionComponent.class)
-				return new ResolvesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ResolvesBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ResolvesBasePropertiesEditionComponent.class)
+				return new ResolvesBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ResolvesNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ResolvesNotesPropertiesEditionComponent.class)
+				return new ResolvesNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.AtTime;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.AtTimeBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.AtTimeNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.AtTimePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class AtTimePropertiesEditionProvider extends PropertiesEditingProviderIm
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof AtTime) && (AtTimePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof AtTime) && (AtTimeBasePropertiesEditionComponent.BASE_PART.equals(part) || AtTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class AtTimePropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AtTime) && (refinement == AtTimePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof AtTime) && (refinement == AtTimeBasePropertiesEditionComponent.class || refinement == AtTimeNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class AtTimePropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AtTime) && ((AtTimePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AtTimePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof AtTime) && ((AtTimeBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AtTimeBasePropertiesEditionComponent.class) || (AtTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == AtTimeNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class AtTimePropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof AtTime) {
-			if (AtTimePropertiesEditionComponent.BASE_PART.equals(part))
-				return new AtTimePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtTimeBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new AtTimeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new AtTimeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class AtTimePropertiesEditionProvider extends PropertiesEditingProviderIm
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof AtTime) {
-			if (AtTimePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == AtTimePropertiesEditionComponent.class)
-				return new AtTimePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtTimeBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == AtTimeBasePropertiesEditionComponent.class)
+				return new AtTimeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == AtTimeNotesPropertiesEditionComponent.class)
+				return new AtTimeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

@@ -240,13 +240,6 @@ public class AssertedChallengeBasePropertiesEditionComponent extends SinglePartP
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.AssertedChallenge.Properties.id || key == ArgumentationViewsRepository.AssertedChallenge.Properties.description || key == ArgumentationViewsRepository.AssertedChallenge.Properties.content || key == ArgumentationViewsRepository.AssertedChallenge.Properties.source || key == ArgumentationViewsRepository.AssertedChallenge.Properties.target || key == ArgumentationViewsRepository.AssertedChallenge.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

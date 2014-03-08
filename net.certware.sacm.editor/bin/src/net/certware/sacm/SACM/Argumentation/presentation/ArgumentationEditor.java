@@ -1385,6 +1385,7 @@ public class ArgumentationEditor
 		
 		TabbedPropertySheetPage propertySheetPage = new TabbedPropertySheetPage(ArgumentationEditor.this);
 		propertySheetPages.add(propertySheetPage);
+
 		return propertySheetPage;
 	}
 

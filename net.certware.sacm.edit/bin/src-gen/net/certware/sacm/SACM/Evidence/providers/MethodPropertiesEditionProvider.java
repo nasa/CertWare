@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Method;
 
+import net.certware.sacm.SACM.Evidence.components.MethodBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.MethodNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.MethodPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class MethodPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Method) && (MethodPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Method) && (MethodBasePropertiesEditionComponent.BASE_PART.equals(part) || MethodNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class MethodPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Method) && (refinement == MethodPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Method) && (refinement == MethodBasePropertiesEditionComponent.class || refinement == MethodNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class MethodPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Method) && ((MethodPropertiesEditionComponent.BASE_PART.equals(part) && refinement == MethodPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Method) && ((MethodBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == MethodBasePropertiesEditionComponent.class) || (MethodNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == MethodNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class MethodPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Method) {
-			if (MethodPropertiesEditionComponent.BASE_PART.equals(part))
-				return new MethodPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MethodBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new MethodBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MethodNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new MethodNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class MethodPropertiesEditionProvider extends PropertiesEditingProviderIm
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Method) {
-			if (MethodPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == MethodPropertiesEditionComponent.class)
-				return new MethodPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MethodBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == MethodBasePropertiesEditionComponent.class)
+				return new MethodBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (MethodNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == MethodNotesPropertiesEditionComponent.class)
+				return new MethodNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

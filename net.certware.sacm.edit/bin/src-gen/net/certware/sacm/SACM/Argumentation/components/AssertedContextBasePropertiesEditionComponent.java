@@ -240,13 +240,6 @@ public class AssertedContextBasePropertiesEditionComponent extends SinglePartPro
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.AssertedContext.Properties.id || key == ArgumentationViewsRepository.AssertedContext.Properties.description || key == ArgumentationViewsRepository.AssertedContext.Properties.content || key == ArgumentationViewsRepository.AssertedContext.Properties.source || key == ArgumentationViewsRepository.AssertedContext.Properties.target || key == ArgumentationViewsRepository.AssertedContext.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

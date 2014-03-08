@@ -54,6 +54,7 @@ public class ClaimBasePropertiesEditionComponent extends SinglePartPropertiesEdi
 	 * 
 	 * @see org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent#initPart(java.lang.Object, int, org.eclipse.emf.ecore.EObject, 
 	 *      org.eclipse.emf.ecore.resource.ResourceSet)
+	 * 
 	 */
 	public void initPart(Object key, int kind, EObject elt, ResourceSet allResource) {
 		setInitializing(true);
@@ -83,7 +84,6 @@ public class ClaimBasePropertiesEditionComponent extends SinglePartPropertiesEdi
 			
 			
 			// init values for referenced views
-			// basePart.getNotesReferencedView().setContext(elt, allResource);
 			
 			// init filters for referenced views
 			

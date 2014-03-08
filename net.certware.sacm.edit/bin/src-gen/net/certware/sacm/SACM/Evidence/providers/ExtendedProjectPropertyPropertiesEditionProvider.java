@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.ExtendedProjectProperty;
 
+import net.certware.sacm.SACM.Evidence.components.ExtendedProjectPropertyBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ExtendedProjectPropertyNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ExtendedProjectPropertyPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ExtendedProjectPropertyPropertiesEditionProvider extends Properties
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof ExtendedProjectProperty) && (ExtendedProjectPropertyPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof ExtendedProjectProperty) && (ExtendedProjectPropertyBasePropertiesEditionComponent.BASE_PART.equals(part) || ExtendedProjectPropertyNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ExtendedProjectPropertyPropertiesEditionProvider extends Properties
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ExtendedProjectProperty) && (refinement == ExtendedProjectPropertyPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof ExtendedProjectProperty) && (refinement == ExtendedProjectPropertyBasePropertiesEditionComponent.class || refinement == ExtendedProjectPropertyNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ExtendedProjectPropertyPropertiesEditionProvider extends Properties
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ExtendedProjectProperty) && ((ExtendedProjectPropertyPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ExtendedProjectPropertyPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof ExtendedProjectProperty) && ((ExtendedProjectPropertyBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ExtendedProjectPropertyBasePropertiesEditionComponent.class) || (ExtendedProjectPropertyNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ExtendedProjectPropertyNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ExtendedProjectPropertyPropertiesEditionProvider extends Properties
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ExtendedProjectProperty) {
-			if (ExtendedProjectPropertyPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ExtendedProjectPropertyPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedProjectPropertyBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ExtendedProjectPropertyBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedProjectPropertyNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ExtendedProjectPropertyNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ExtendedProjectPropertyPropertiesEditionProvider extends Properties
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ExtendedProjectProperty) {
-			if (ExtendedProjectPropertyPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ExtendedProjectPropertyPropertiesEditionComponent.class)
-				return new ExtendedProjectPropertyPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedProjectPropertyBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ExtendedProjectPropertyBasePropertiesEditionComponent.class)
+				return new ExtendedProjectPropertyBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ExtendedProjectPropertyNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ExtendedProjectPropertyNotesPropertiesEditionComponent.class)
+				return new ExtendedProjectPropertyNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

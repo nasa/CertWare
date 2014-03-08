@@ -241,13 +241,6 @@ public class CitationElementBasePropertiesEditionComponent extends SinglePartPro
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.CitationElement.Properties.id || key == ArgumentationViewsRepository.CitationElement.Properties.description || key == ArgumentationViewsRepository.CitationElement.Properties.content || key == ArgumentationViewsRepository.CitationElement.Properties.argumentElementReference || key == ArgumentationViewsRepository.CitationElement.Properties.argumentationReference || key == ArgumentationViewsRepository.CitationElement.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

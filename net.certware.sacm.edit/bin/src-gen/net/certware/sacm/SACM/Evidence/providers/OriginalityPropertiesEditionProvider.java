@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Originality;
 
+import net.certware.sacm.SACM.Evidence.components.OriginalityBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.OriginalityNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.OriginalityPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class OriginalityPropertiesEditionProvider extends PropertiesEditingProvi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Originality) && (OriginalityPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Originality) && (OriginalityBasePropertiesEditionComponent.BASE_PART.equals(part) || OriginalityNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class OriginalityPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Originality) && (refinement == OriginalityPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Originality) && (refinement == OriginalityBasePropertiesEditionComponent.class || refinement == OriginalityNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class OriginalityPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Originality) && ((OriginalityPropertiesEditionComponent.BASE_PART.equals(part) && refinement == OriginalityPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Originality) && ((OriginalityBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == OriginalityBasePropertiesEditionComponent.class) || (OriginalityNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == OriginalityNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class OriginalityPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Originality) {
-			if (OriginalityPropertiesEditionComponent.BASE_PART.equals(part))
-				return new OriginalityPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OriginalityBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new OriginalityBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OriginalityNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new OriginalityNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class OriginalityPropertiesEditionProvider extends PropertiesEditingProvi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Originality) {
-			if (OriginalityPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == OriginalityPropertiesEditionComponent.class)
-				return new OriginalityPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OriginalityBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == OriginalityBasePropertiesEditionComponent.class)
+				return new OriginalityBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OriginalityNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == OriginalityNotesPropertiesEditionComponent.class)
+				return new OriginalityNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsReleaseableTo;
 
+import net.certware.sacm.SACM.Evidence.components.IsReleaseableToBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsReleaseableToNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsReleaseableToPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsReleaseableToPropertiesEditionProvider extends PropertiesEditingP
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsReleaseableTo) && (IsReleaseableToPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsReleaseableTo) && (IsReleaseableToBasePropertiesEditionComponent.BASE_PART.equals(part) || IsReleaseableToNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsReleaseableToPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsReleaseableTo) && (refinement == IsReleaseableToPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsReleaseableTo) && (refinement == IsReleaseableToBasePropertiesEditionComponent.class || refinement == IsReleaseableToNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsReleaseableToPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsReleaseableTo) && ((IsReleaseableToPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsReleaseableToPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsReleaseableTo) && ((IsReleaseableToBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsReleaseableToBasePropertiesEditionComponent.class) || (IsReleaseableToNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsReleaseableToNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsReleaseableToPropertiesEditionProvider extends PropertiesEditingP
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsReleaseableTo) {
-			if (IsReleaseableToPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsReleaseableToPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsReleaseableToBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsReleaseableToBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsReleaseableToNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsReleaseableToNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsReleaseableToPropertiesEditionProvider extends PropertiesEditingP
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsReleaseableTo) {
-			if (IsReleaseableToPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsReleaseableToPropertiesEditionComponent.class)
-				return new IsReleaseableToPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsReleaseableToBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsReleaseableToBasePropertiesEditionComponent.class)
+				return new IsReleaseableToBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsReleaseableToNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsReleaseableToNotesPropertiesEditionComponent.class)
+				return new IsReleaseableToNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

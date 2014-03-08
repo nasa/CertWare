@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.Accuracy;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.AccuracyBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.AccuracyNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.AccuracyPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class AccuracyPropertiesEditionProvider extends PropertiesEditingProvider
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Accuracy) && (AccuracyPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Accuracy) && (AccuracyBasePropertiesEditionComponent.BASE_PART.equals(part) || AccuracyNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class AccuracyPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Accuracy) && (refinement == AccuracyPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Accuracy) && (refinement == AccuracyBasePropertiesEditionComponent.class || refinement == AccuracyNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class AccuracyPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Accuracy) && ((AccuracyPropertiesEditionComponent.BASE_PART.equals(part) && refinement == AccuracyPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Accuracy) && ((AccuracyBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AccuracyBasePropertiesEditionComponent.class) || (AccuracyNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == AccuracyNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class AccuracyPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Accuracy) {
-			if (AccuracyPropertiesEditionComponent.BASE_PART.equals(part))
-				return new AccuracyPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AccuracyBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new AccuracyBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AccuracyNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new AccuracyNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class AccuracyPropertiesEditionProvider extends PropertiesEditingProvider
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Accuracy) {
-			if (AccuracyPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == AccuracyPropertiesEditionComponent.class)
-				return new AccuracyPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AccuracyBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == AccuracyBasePropertiesEditionComponent.class)
+				return new AccuracyBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AccuracyNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == AccuracyNotesPropertiesEditionComponent.class)
+				return new AccuracyNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

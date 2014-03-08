@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.RoleBinding;
 
+import net.certware.sacm.SACM.Evidence.components.RoleBindingBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.RoleBindingNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.RoleBindingPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class RoleBindingPropertiesEditionProvider extends PropertiesEditingProvi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof RoleBinding) && (RoleBindingPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof RoleBinding) && (RoleBindingBasePropertiesEditionComponent.BASE_PART.equals(part) || RoleBindingNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class RoleBindingPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof RoleBinding) && (refinement == RoleBindingPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof RoleBinding) && (refinement == RoleBindingBasePropertiesEditionComponent.class || refinement == RoleBindingNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class RoleBindingPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof RoleBinding) && ((RoleBindingPropertiesEditionComponent.BASE_PART.equals(part) && refinement == RoleBindingPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof RoleBinding) && ((RoleBindingBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == RoleBindingBasePropertiesEditionComponent.class) || (RoleBindingNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == RoleBindingNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class RoleBindingPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof RoleBinding) {
-			if (RoleBindingPropertiesEditionComponent.BASE_PART.equals(part))
-				return new RoleBindingPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RoleBindingBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new RoleBindingBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RoleBindingNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new RoleBindingNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class RoleBindingPropertiesEditionProvider extends PropertiesEditingProvi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof RoleBinding) {
-			if (RoleBindingPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == RoleBindingPropertiesEditionComponent.class)
-				return new RoleBindingPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RoleBindingBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == RoleBindingBasePropertiesEditionComponent.class)
+				return new RoleBindingBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RoleBindingNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == RoleBindingNotesPropertiesEditionComponent.class)
+				return new RoleBindingNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

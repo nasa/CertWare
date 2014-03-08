@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.CareOf;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.CareOfBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.CareOfNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.CareOfPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class CareOfPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof CareOf) && (CareOfPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof CareOf) && (CareOfBasePropertiesEditionComponent.BASE_PART.equals(part) || CareOfNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class CareOfPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof CareOf) && (refinement == CareOfPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof CareOf) && (refinement == CareOfBasePropertiesEditionComponent.class || refinement == CareOfNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class CareOfPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof CareOf) && ((CareOfPropertiesEditionComponent.BASE_PART.equals(part) && refinement == CareOfPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof CareOf) && ((CareOfBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == CareOfBasePropertiesEditionComponent.class) || (CareOfNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == CareOfNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class CareOfPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof CareOf) {
-			if (CareOfPropertiesEditionComponent.BASE_PART.equals(part))
-				return new CareOfPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CareOfBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new CareOfBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CareOfNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new CareOfNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class CareOfPropertiesEditionProvider extends PropertiesEditingProviderIm
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof CareOf) {
-			if (CareOfPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == CareOfPropertiesEditionComponent.class)
-				return new CareOfPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CareOfBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == CareOfBasePropertiesEditionComponent.class)
+				return new CareOfBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (CareOfNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == CareOfNotesPropertiesEditionComponent.class)
+				return new CareOfNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

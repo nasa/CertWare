@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Record;
 
+import net.certware.sacm.SACM.Evidence.components.RecordBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.RecordNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.RecordPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class RecordPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Record) && (RecordPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Record) && (RecordBasePropertiesEditionComponent.BASE_PART.equals(part) || RecordNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class RecordPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Record) && (refinement == RecordPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Record) && (refinement == RecordBasePropertiesEditionComponent.class || refinement == RecordNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class RecordPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Record) && ((RecordPropertiesEditionComponent.BASE_PART.equals(part) && refinement == RecordPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Record) && ((RecordBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == RecordBasePropertiesEditionComponent.class) || (RecordNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == RecordNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class RecordPropertiesEditionProvider extends PropertiesEditingProviderIm
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Record) {
-			if (RecordPropertiesEditionComponent.BASE_PART.equals(part))
-				return new RecordPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RecordBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new RecordBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RecordNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new RecordNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class RecordPropertiesEditionProvider extends PropertiesEditingProviderIm
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Record) {
-			if (RecordPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == RecordPropertiesEditionComponent.class)
-				return new RecordPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RecordBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == RecordBasePropertiesEditionComponent.class)
+				return new RecordBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RecordNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == RecordNotesPropertiesEditionComponent.class)
+				return new RecordNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

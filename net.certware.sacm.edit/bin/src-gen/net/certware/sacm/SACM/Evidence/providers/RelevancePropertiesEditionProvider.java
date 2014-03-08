@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Relevance;
 
+import net.certware.sacm.SACM.Evidence.components.RelevanceBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.RelevanceNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.RelevancePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class RelevancePropertiesEditionProvider extends PropertiesEditingProvide
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Relevance) && (RelevancePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Relevance) && (RelevanceBasePropertiesEditionComponent.BASE_PART.equals(part) || RelevanceNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class RelevancePropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Relevance) && (refinement == RelevancePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Relevance) && (refinement == RelevanceBasePropertiesEditionComponent.class || refinement == RelevanceNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class RelevancePropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Relevance) && ((RelevancePropertiesEditionComponent.BASE_PART.equals(part) && refinement == RelevancePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Relevance) && ((RelevanceBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == RelevanceBasePropertiesEditionComponent.class) || (RelevanceNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == RelevanceNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class RelevancePropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Relevance) {
-			if (RelevancePropertiesEditionComponent.BASE_PART.equals(part))
-				return new RelevancePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RelevanceBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new RelevanceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RelevanceNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new RelevanceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class RelevancePropertiesEditionProvider extends PropertiesEditingProvide
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Relevance) {
-			if (RelevancePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == RelevancePropertiesEditionComponent.class)
-				return new RelevancePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RelevanceBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == RelevanceBasePropertiesEditionComponent.class)
+				return new RelevanceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (RelevanceNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == RelevanceNotesPropertiesEditionComponent.class)
+				return new RelevanceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

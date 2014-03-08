@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsBasedOn;
 
+import net.certware.sacm.SACM.Evidence.components.IsBasedOnBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsBasedOnNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsBasedOnPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsBasedOnPropertiesEditionProvider extends PropertiesEditingProvide
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsBasedOn) && (IsBasedOnPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsBasedOn) && (IsBasedOnBasePropertiesEditionComponent.BASE_PART.equals(part) || IsBasedOnNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsBasedOnPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsBasedOn) && (refinement == IsBasedOnPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsBasedOn) && (refinement == IsBasedOnBasePropertiesEditionComponent.class || refinement == IsBasedOnNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsBasedOnPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsBasedOn) && ((IsBasedOnPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsBasedOnPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsBasedOn) && ((IsBasedOnBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsBasedOnBasePropertiesEditionComponent.class) || (IsBasedOnNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsBasedOnNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsBasedOnPropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsBasedOn) {
-			if (IsBasedOnPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsBasedOnPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsBasedOnBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsBasedOnBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsBasedOnNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsBasedOnNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsBasedOnPropertiesEditionProvider extends PropertiesEditingProvide
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsBasedOn) {
-			if (IsBasedOnPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsBasedOnPropertiesEditionComponent.class)
-				return new IsBasedOnPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsBasedOnBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsBasedOnBasePropertiesEditionComponent.class)
+				return new IsBasedOnBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsBasedOnNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsBasedOnNotesPropertiesEditionComponent.class)
+				return new IsBasedOnNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.ContainerConsistency;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.ContainerConsistencyBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ContainerConsistencyNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ContainerConsistencyPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ContainerConsistencyPropertiesEditionProvider extends PropertiesEdi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof ContainerConsistency) && (ContainerConsistencyPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof ContainerConsistency) && (ContainerConsistencyBasePropertiesEditionComponent.BASE_PART.equals(part) || ContainerConsistencyNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ContainerConsistencyPropertiesEditionProvider extends PropertiesEdi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ContainerConsistency) && (refinement == ContainerConsistencyPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof ContainerConsistency) && (refinement == ContainerConsistencyBasePropertiesEditionComponent.class || refinement == ContainerConsistencyNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ContainerConsistencyPropertiesEditionProvider extends PropertiesEdi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof ContainerConsistency) && ((ContainerConsistencyPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ContainerConsistencyPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof ContainerConsistency) && ((ContainerConsistencyBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ContainerConsistencyBasePropertiesEditionComponent.class) || (ContainerConsistencyNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ContainerConsistencyNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ContainerConsistencyPropertiesEditionProvider extends PropertiesEdi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof ContainerConsistency) {
-			if (ContainerConsistencyPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ContainerConsistencyPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ContainerConsistencyBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ContainerConsistencyBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ContainerConsistencyNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ContainerConsistencyNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ContainerConsistencyPropertiesEditionProvider extends PropertiesEdi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof ContainerConsistency) {
-			if (ContainerConsistencyPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ContainerConsistencyPropertiesEditionComponent.class)
-				return new ContainerConsistencyPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ContainerConsistencyBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ContainerConsistencyBasePropertiesEditionComponent.class)
+				return new ContainerConsistencyBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ContainerConsistencyNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ContainerConsistencyNotesPropertiesEditionComponent.class)
+				return new ContainerConsistencyNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

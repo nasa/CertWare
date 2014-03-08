@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Strength;
 
+import net.certware.sacm.SACM.Evidence.components.StrengthBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.StrengthNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.StrengthPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class StrengthPropertiesEditionProvider extends PropertiesEditingProvider
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Strength) && (StrengthPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Strength) && (StrengthBasePropertiesEditionComponent.BASE_PART.equals(part) || StrengthNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class StrengthPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Strength) && (refinement == StrengthPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Strength) && (refinement == StrengthBasePropertiesEditionComponent.class || refinement == StrengthNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class StrengthPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Strength) && ((StrengthPropertiesEditionComponent.BASE_PART.equals(part) && refinement == StrengthPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Strength) && ((StrengthBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == StrengthBasePropertiesEditionComponent.class) || (StrengthNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == StrengthNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class StrengthPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Strength) {
-			if (StrengthPropertiesEditionComponent.BASE_PART.equals(part))
-				return new StrengthPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StrengthBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new StrengthBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StrengthNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new StrengthNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class StrengthPropertiesEditionProvider extends PropertiesEditingProvider
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Strength) {
-			if (StrengthPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == StrengthPropertiesEditionComponent.class)
-				return new StrengthPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StrengthBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == StrengthBasePropertiesEditionComponent.class)
+				return new StrengthBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StrengthNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == StrengthNotesPropertiesEditionComponent.class)
+				return new StrengthNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

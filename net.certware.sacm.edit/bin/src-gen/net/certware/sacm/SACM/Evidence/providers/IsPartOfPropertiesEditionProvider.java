@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsPartOf;
 
+import net.certware.sacm.SACM.Evidence.components.IsPartOfBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsPartOfNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsPartOfPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsPartOfPropertiesEditionProvider extends PropertiesEditingProvider
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsPartOf) && (IsPartOfPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsPartOf) && (IsPartOfBasePropertiesEditionComponent.BASE_PART.equals(part) || IsPartOfNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsPartOfPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsPartOf) && (refinement == IsPartOfPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsPartOf) && (refinement == IsPartOfBasePropertiesEditionComponent.class || refinement == IsPartOfNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsPartOfPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsPartOf) && ((IsPartOfPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsPartOfPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsPartOf) && ((IsPartOfBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsPartOfBasePropertiesEditionComponent.class) || (IsPartOfNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsPartOfNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsPartOfPropertiesEditionProvider extends PropertiesEditingProvider
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsPartOf) {
-			if (IsPartOfPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsPartOfPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsPartOfBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsPartOfBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsPartOfNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsPartOfNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsPartOfPropertiesEditionProvider extends PropertiesEditingProvider
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsPartOf) {
-			if (IsPartOfPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsPartOfPropertiesEditionComponent.class)
-				return new IsPartOfPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsPartOfBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsPartOfBasePropertiesEditionComponent.class)
+				return new IsPartOfBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsPartOfNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsPartOfNotesPropertiesEditionComponent.class)
+				return new IsPartOfNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

@@ -35,12 +35,6 @@ public class SACMViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "SACM::AssuranceCase::properties::taggedValue";
-			
-			
-			public static String annotation = "SACM::AssuranceCase::properties::annotation";
-			
-			
 			public static String id = "SACM::AssuranceCase::properties::id";
 			
 			
@@ -87,6 +81,24 @@ public class SACMViewsRepository {
 			
 			
 			public static String value = "SACM::TaggedValue::properties::value";
+			
+	
+		}
+	
+	}
+
+	/**
+	 * Notes view descriptor
+	 * 
+	 */
+	public static class Notes {
+		public static class Properties {
+	
+			
+			public static String taggedValue = "SACM::Notes::properties::taggedValue";
+			
+			
+			public static String annotation = "SACM::Notes::properties::annotation";
 			
 	
 		}

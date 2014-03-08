@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.AtLocation;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.AtLocationBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.AtLocationNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.AtLocationPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class AtLocationPropertiesEditionProvider extends PropertiesEditingProvid
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof AtLocation) && (AtLocationPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof AtLocation) && (AtLocationBasePropertiesEditionComponent.BASE_PART.equals(part) || AtLocationNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class AtLocationPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AtLocation) && (refinement == AtLocationPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof AtLocation) && (refinement == AtLocationBasePropertiesEditionComponent.class || refinement == AtLocationNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class AtLocationPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AtLocation) && ((AtLocationPropertiesEditionComponent.BASE_PART.equals(part) && refinement == AtLocationPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof AtLocation) && ((AtLocationBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AtLocationBasePropertiesEditionComponent.class) || (AtLocationNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == AtLocationNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class AtLocationPropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof AtLocation) {
-			if (AtLocationPropertiesEditionComponent.BASE_PART.equals(part))
-				return new AtLocationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtLocationBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new AtLocationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtLocationNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new AtLocationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class AtLocationPropertiesEditionProvider extends PropertiesEditingProvid
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof AtLocation) {
-			if (AtLocationPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == AtLocationPropertiesEditionComponent.class)
-				return new AtLocationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtLocationBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == AtLocationBasePropertiesEditionComponent.class)
+				return new AtLocationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AtLocationNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == AtLocationNotesPropertiesEditionComponent.class)
+				return new AtLocationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

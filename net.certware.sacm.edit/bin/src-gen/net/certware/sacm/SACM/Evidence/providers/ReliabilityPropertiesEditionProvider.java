@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Reliability;
 
+import net.certware.sacm.SACM.Evidence.components.ReliabilityBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ReliabilityNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ReliabilityPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ReliabilityPropertiesEditionProvider extends PropertiesEditingProvi
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Reliability) && (ReliabilityPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Reliability) && (ReliabilityBasePropertiesEditionComponent.BASE_PART.equals(part) || ReliabilityNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ReliabilityPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Reliability) && (refinement == ReliabilityPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Reliability) && (refinement == ReliabilityBasePropertiesEditionComponent.class || refinement == ReliabilityNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ReliabilityPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Reliability) && ((ReliabilityPropertiesEditionComponent.BASE_PART.equals(part) && refinement == ReliabilityPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Reliability) && ((ReliabilityBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ReliabilityBasePropertiesEditionComponent.class) || (ReliabilityNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ReliabilityNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ReliabilityPropertiesEditionProvider extends PropertiesEditingProvi
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Reliability) {
-			if (ReliabilityPropertiesEditionComponent.BASE_PART.equals(part))
-				return new ReliabilityPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ReliabilityBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ReliabilityBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ReliabilityNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ReliabilityNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ReliabilityPropertiesEditionProvider extends PropertiesEditingProvi
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Reliability) {
-			if (ReliabilityPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ReliabilityPropertiesEditionComponent.class)
-				return new ReliabilityPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ReliabilityBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ReliabilityBasePropertiesEditionComponent.class)
+				return new ReliabilityBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ReliabilityNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ReliabilityNotesPropertiesEditionComponent.class)
+				return new ReliabilityNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.StartTime;
 
+import net.certware.sacm.SACM.Evidence.components.StartTimeBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.StartTimeNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.StartTimePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class StartTimePropertiesEditionProvider extends PropertiesEditingProvide
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof StartTime) && (StartTimePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof StartTime) && (StartTimeBasePropertiesEditionComponent.BASE_PART.equals(part) || StartTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class StartTimePropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof StartTime) && (refinement == StartTimePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof StartTime) && (refinement == StartTimeBasePropertiesEditionComponent.class || refinement == StartTimeNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class StartTimePropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof StartTime) && ((StartTimePropertiesEditionComponent.BASE_PART.equals(part) && refinement == StartTimePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof StartTime) && ((StartTimeBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == StartTimeBasePropertiesEditionComponent.class) || (StartTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == StartTimeNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class StartTimePropertiesEditionProvider extends PropertiesEditingProvide
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof StartTime) {
-			if (StartTimePropertiesEditionComponent.BASE_PART.equals(part))
-				return new StartTimePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StartTimeBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new StartTimeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StartTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new StartTimeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class StartTimePropertiesEditionProvider extends PropertiesEditingProvide
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof StartTime) {
-			if (StartTimePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == StartTimePropertiesEditionComponent.class)
-				return new StartTimePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StartTimeBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == StartTimeBasePropertiesEditionComponent.class)
+				return new StartTimeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (StartTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == StartTimeNotesPropertiesEditionComponent.class)
+				return new StartTimeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

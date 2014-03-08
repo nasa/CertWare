@@ -240,13 +240,6 @@ public class AssertedInferenceBasePropertiesEditionComponent extends SinglePartP
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.AssertedInference.Properties.id || key == ArgumentationViewsRepository.AssertedInference.Properties.description || key == ArgumentationViewsRepository.AssertedInference.Properties.content || key == ArgumentationViewsRepository.AssertedInference.Properties.source || key == ArgumentationViewsRepository.AssertedInference.Properties.target || key == ArgumentationViewsRepository.AssertedInference.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

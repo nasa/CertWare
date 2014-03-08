@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.AssuranceCase;
 import net.certware.sacm.SACM.SACMPackage;
 
+import net.certware.sacm.SACM.components.AssuranceCaseBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.components.AssuranceCaseNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.components.AssuranceCasePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class AssuranceCasePropertiesEditionProvider extends PropertiesEditingPro
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof AssuranceCase) && (AssuranceCasePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof AssuranceCase) && (AssuranceCaseBasePropertiesEditionComponent.BASE_PART.equals(part) || AssuranceCaseNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class AssuranceCasePropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AssuranceCase) && (refinement == AssuranceCasePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof AssuranceCase) && (refinement == AssuranceCaseBasePropertiesEditionComponent.class || refinement == AssuranceCaseNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class AssuranceCasePropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof AssuranceCase) && ((AssuranceCasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AssuranceCasePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof AssuranceCase) && ((AssuranceCaseBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == AssuranceCaseBasePropertiesEditionComponent.class) || (AssuranceCaseNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == AssuranceCaseNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class AssuranceCasePropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof AssuranceCase) {
-			if (AssuranceCasePropertiesEditionComponent.BASE_PART.equals(part))
-				return new AssuranceCasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssuranceCaseBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new AssuranceCaseBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssuranceCaseNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new AssuranceCaseNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class AssuranceCasePropertiesEditionProvider extends PropertiesEditingPro
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof AssuranceCase) {
-			if (AssuranceCasePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == AssuranceCasePropertiesEditionComponent.class)
-				return new AssuranceCasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssuranceCaseBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == AssuranceCaseBasePropertiesEditionComponent.class)
+				return new AssuranceCaseBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (AssuranceCaseNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == AssuranceCaseNotesPropertiesEditionComponent.class)
+				return new AssuranceCaseNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

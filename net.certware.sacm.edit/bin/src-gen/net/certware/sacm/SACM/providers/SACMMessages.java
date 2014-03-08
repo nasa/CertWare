@@ -23,6 +23,9 @@ public class SACMMessages extends NLS {
 	
 	public static String TaggedValuePropertiesEditionPart_PropertiesGroupLabel;
 
+	
+	public static String NotesPropertiesEditionPart_PropertiesGroupLabel;
+
 
 	
 	public static String Annotation_ReadOnly;
@@ -48,15 +51,15 @@ public class SACMMessages extends NLS {
 	
 	public static String TaggedValue_Part_Title;
 
+	
+	public static String Notes_ReadOnly;
+
+	
+	public static String Notes_Part_Title;
+
 
 	
 	public static String AnnotationPropertiesEditionPart_ContentLabel;
-
-	
-	public static String AssuranceCasePropertiesEditionPart_TaggedValueLabel;
-
-	
-	public static String AssuranceCasePropertiesEditionPart_AnnotationLabel;
 
 	
 	public static String AssuranceCasePropertiesEditionPart_IdLabel;
@@ -81,6 +84,12 @@ public class SACMMessages extends NLS {
 
 	
 	public static String TaggedValuePropertiesEditionPart_ValueLabel;
+
+	
+	public static String NotesPropertiesEditionPart_TaggedValueLabel;
+
+	
+	public static String NotesPropertiesEditionPart_AnnotationLabel;
 
 
 	

@@ -245,6 +245,9 @@ public class EvidenceMessages extends NLS {
 	
 	public static String ExtendedProjectPropertyPropertiesEditionPart_PropertiesGroupLabel;
 
+	
+	public static String NotesPropertiesEditionPart_PropertiesGroupLabel;
+
 
 	
 	public static String Consistency_ReadOnly;
@@ -713,6 +716,12 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ExtendedProjectProperty_Part_Title;
+
+	
+	public static String Notes_ReadOnly;
+
+	
+	public static String Notes_Part_Title;
 
 
 	
@@ -2733,6 +2742,12 @@ public class EvidenceMessages extends NLS {
 
 	
 	public static String ExtendedProjectPropertyPropertiesEditionPart_EventLabel;
+
+	
+	public static String NotesPropertiesEditionPart_TaggedValueLabel;
+
+	
+	public static String NotesPropertiesEditionPart_AnnotationLabel;
 
 
 	

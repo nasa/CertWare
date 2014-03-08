@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.UnknownObject;
 
+import net.certware.sacm.SACM.Evidence.components.UnknownObjectBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.UnknownObjectNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.UnknownObjectPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class UnknownObjectPropertiesEditionProvider extends PropertiesEditingPro
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof UnknownObject) && (UnknownObjectPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof UnknownObject) && (UnknownObjectBasePropertiesEditionComponent.BASE_PART.equals(part) || UnknownObjectNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class UnknownObjectPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof UnknownObject) && (refinement == UnknownObjectPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof UnknownObject) && (refinement == UnknownObjectBasePropertiesEditionComponent.class || refinement == UnknownObjectNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class UnknownObjectPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof UnknownObject) && ((UnknownObjectPropertiesEditionComponent.BASE_PART.equals(part) && refinement == UnknownObjectPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof UnknownObject) && ((UnknownObjectBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == UnknownObjectBasePropertiesEditionComponent.class) || (UnknownObjectNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == UnknownObjectNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class UnknownObjectPropertiesEditionProvider extends PropertiesEditingPro
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof UnknownObject) {
-			if (UnknownObjectPropertiesEditionComponent.BASE_PART.equals(part))
-				return new UnknownObjectPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UnknownObjectBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new UnknownObjectBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UnknownObjectNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new UnknownObjectNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class UnknownObjectPropertiesEditionProvider extends PropertiesEditingPro
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof UnknownObject) {
-			if (UnknownObjectPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == UnknownObjectPropertiesEditionComponent.class)
-				return new UnknownObjectPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UnknownObjectBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == UnknownObjectBasePropertiesEditionComponent.class)
+				return new UnknownObjectBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UnknownObjectNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == UnknownObjectNotesPropertiesEditionComponent.class)
+				return new UnknownObjectNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

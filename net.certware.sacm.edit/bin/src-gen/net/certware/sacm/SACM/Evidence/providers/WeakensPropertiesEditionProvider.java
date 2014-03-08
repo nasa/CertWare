@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Weakens;
 
+import net.certware.sacm.SACM.Evidence.components.WeakensBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.WeakensNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.WeakensPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class WeakensPropertiesEditionProvider extends PropertiesEditingProviderI
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Weakens) && (WeakensPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Weakens) && (WeakensBasePropertiesEditionComponent.BASE_PART.equals(part) || WeakensNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class WeakensPropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Weakens) && (refinement == WeakensPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Weakens) && (refinement == WeakensBasePropertiesEditionComponent.class || refinement == WeakensNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class WeakensPropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Weakens) && ((WeakensPropertiesEditionComponent.BASE_PART.equals(part) && refinement == WeakensPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Weakens) && ((WeakensBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == WeakensBasePropertiesEditionComponent.class) || (WeakensNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == WeakensNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class WeakensPropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Weakens) {
-			if (WeakensPropertiesEditionComponent.BASE_PART.equals(part))
-				return new WeakensPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (WeakensBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new WeakensBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (WeakensNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new WeakensNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class WeakensPropertiesEditionProvider extends PropertiesEditingProviderI
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Weakens) {
-			if (WeakensPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == WeakensPropertiesEditionComponent.class)
-				return new WeakensPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (WeakensBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == WeakensBasePropertiesEditionComponent.class)
+				return new WeakensBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (WeakensNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == WeakensNotesPropertiesEditionComponent.class)
+				return new WeakensNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

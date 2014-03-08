@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsModifiedBy;
 
+import net.certware.sacm.SACM.Evidence.components.IsModifiedByBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsModifiedByNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsModifiedByPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsModifiedByPropertiesEditionProvider extends PropertiesEditingProv
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsModifiedBy) && (IsModifiedByPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsModifiedBy) && (IsModifiedByBasePropertiesEditionComponent.BASE_PART.equals(part) || IsModifiedByNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsModifiedByPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsModifiedBy) && (refinement == IsModifiedByPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsModifiedBy) && (refinement == IsModifiedByBasePropertiesEditionComponent.class || refinement == IsModifiedByNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsModifiedByPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsModifiedBy) && ((IsModifiedByPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsModifiedByPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsModifiedBy) && ((IsModifiedByBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsModifiedByBasePropertiesEditionComponent.class) || (IsModifiedByNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsModifiedByNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsModifiedByPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsModifiedBy) {
-			if (IsModifiedByPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsModifiedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsModifiedByBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsModifiedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsModifiedByNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsModifiedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsModifiedByPropertiesEditionProvider extends PropertiesEditingProv
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsModifiedBy) {
-			if (IsModifiedByPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsModifiedByPropertiesEditionComponent.class)
-				return new IsModifiedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsModifiedByBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsModifiedByBasePropertiesEditionComponent.class)
+				return new IsModifiedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsModifiedByNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsModifiedByNotesPropertiesEditionComponent.class)
+				return new IsModifiedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

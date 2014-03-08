@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.HasSecurityClassification;
 
+import net.certware.sacm.SACM.Evidence.components.HasSecurityClassificationBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.HasSecurityClassificationNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.HasSecurityClassificationPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class HasSecurityClassificationPropertiesEditionProvider extends Properti
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof HasSecurityClassification) && (HasSecurityClassificationPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof HasSecurityClassification) && (HasSecurityClassificationBasePropertiesEditionComponent.BASE_PART.equals(part) || HasSecurityClassificationNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class HasSecurityClassificationPropertiesEditionProvider extends Properti
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasSecurityClassification) && (refinement == HasSecurityClassificationPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof HasSecurityClassification) && (refinement == HasSecurityClassificationBasePropertiesEditionComponent.class || refinement == HasSecurityClassificationNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class HasSecurityClassificationPropertiesEditionProvider extends Properti
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof HasSecurityClassification) && ((HasSecurityClassificationPropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasSecurityClassificationPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof HasSecurityClassification) && ((HasSecurityClassificationBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == HasSecurityClassificationBasePropertiesEditionComponent.class) || (HasSecurityClassificationNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == HasSecurityClassificationNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class HasSecurityClassificationPropertiesEditionProvider extends Properti
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof HasSecurityClassification) {
-			if (HasSecurityClassificationPropertiesEditionComponent.BASE_PART.equals(part))
-				return new HasSecurityClassificationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasSecurityClassificationBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new HasSecurityClassificationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasSecurityClassificationNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new HasSecurityClassificationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class HasSecurityClassificationPropertiesEditionProvider extends Properti
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof HasSecurityClassification) {
-			if (HasSecurityClassificationPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == HasSecurityClassificationPropertiesEditionComponent.class)
-				return new HasSecurityClassificationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasSecurityClassificationBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == HasSecurityClassificationBasePropertiesEditionComponent.class)
+				return new HasSecurityClassificationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (HasSecurityClassificationNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == HasSecurityClassificationNotesPropertiesEditionComponent.class)
+				return new HasSecurityClassificationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

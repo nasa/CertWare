@@ -2967,4 +2967,22 @@ public class EvidenceViewsRepository {
 	
 	}
 
+	/**
+	 * Notes view descriptor
+	 * 
+	 */
+	public static class Notes {
+		public static class Properties {
+	
+			
+			public static String taggedValue = "Evidence::Notes::properties::taggedValue";
+			
+			
+			public static String annotation = "Evidence::Notes::properties::annotation";
+			
+	
+		}
+	
+	}
+
 }

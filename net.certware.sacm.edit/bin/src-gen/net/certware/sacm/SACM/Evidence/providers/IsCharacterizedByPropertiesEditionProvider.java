@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.IsCharacterizedBy;
 
+import net.certware.sacm.SACM.Evidence.components.IsCharacterizedByBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.IsCharacterizedByNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.IsCharacterizedByPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class IsCharacterizedByPropertiesEditionProvider extends PropertiesEditin
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof IsCharacterizedBy) && (IsCharacterizedByPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof IsCharacterizedBy) && (IsCharacterizedByBasePropertiesEditionComponent.BASE_PART.equals(part) || IsCharacterizedByNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class IsCharacterizedByPropertiesEditionProvider extends PropertiesEditin
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsCharacterizedBy) && (refinement == IsCharacterizedByPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof IsCharacterizedBy) && (refinement == IsCharacterizedByBasePropertiesEditionComponent.class || refinement == IsCharacterizedByNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class IsCharacterizedByPropertiesEditionProvider extends PropertiesEditin
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof IsCharacterizedBy) && ((IsCharacterizedByPropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsCharacterizedByPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof IsCharacterizedBy) && ((IsCharacterizedByBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == IsCharacterizedByBasePropertiesEditionComponent.class) || (IsCharacterizedByNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == IsCharacterizedByNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class IsCharacterizedByPropertiesEditionProvider extends PropertiesEditin
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof IsCharacterizedBy) {
-			if (IsCharacterizedByPropertiesEditionComponent.BASE_PART.equals(part))
-				return new IsCharacterizedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCharacterizedByBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new IsCharacterizedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCharacterizedByNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new IsCharacterizedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class IsCharacterizedByPropertiesEditionProvider extends PropertiesEditin
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof IsCharacterizedBy) {
-			if (IsCharacterizedByPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == IsCharacterizedByPropertiesEditionComponent.class)
-				return new IsCharacterizedByPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCharacterizedByBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == IsCharacterizedByBasePropertiesEditionComponent.class)
+				return new IsCharacterizedByBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (IsCharacterizedByNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == IsCharacterizedByNotesPropertiesEditionComponent.class)
+				return new IsCharacterizedByNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

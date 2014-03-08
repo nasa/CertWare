@@ -50,7 +50,7 @@ public class NotesPropertiesEditionPartForm extends SectionPropertiesEditingPart
 	protected ReferencesTable annotation;
 	protected List<ViewerFilter> annotationBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> annotationFilters = new ArrayList<ViewerFilter>();
-	protected int invalid = -1;
+
 
 
 	/**
@@ -175,8 +175,8 @@ public class NotesPropertiesEditionPartForm extends SectionPropertiesEditingPart
 		GridData taggedValueData = new GridData(GridData.FILL_HORIZONTAL);
 		taggedValueData.horizontalSpan = 3;
 		this.taggedValue.setLayoutData(taggedValueData);
-		this.taggedValue.setLowerBound(invalid);
-		this.taggedValue.setUpperBound(invalid);
+		this.taggedValue.setLowerBound(0);
+		this.taggedValue.setUpperBound(-1);
 		taggedValue.setID(ArgumentationViewsRepository.Notes.Properties.taggedValue);
 		taggedValue.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createTaggedValueTableComposition
@@ -226,8 +226,8 @@ public class NotesPropertiesEditionPartForm extends SectionPropertiesEditingPart
 		GridData annotationData = new GridData(GridData.FILL_HORIZONTAL);
 		annotationData.horizontalSpan = 3;
 		this.annotation.setLayoutData(annotationData);
-		this.annotation.setLowerBound(invalid);
-		this.annotation.setUpperBound(invalid);
+		this.annotation.setLowerBound(0);
+		this.annotation.setUpperBound(-1);
 		annotation.setID(ArgumentationViewsRepository.Notes.Properties.annotation);
 		annotation.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
 		// Start of user code for createAnnotationTableComposition

@@ -20,12 +20,6 @@ public class ArgumentationViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Argumentation::Argumentation_::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::Argumentation_::properties::annotation";
-			
-			
 			public static String id = "Argumentation::Argumentation_::properties::id";
 			
 			
@@ -52,12 +46,6 @@ public class ArgumentationViewsRepository {
 	public static class CitationElement {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Argumentation::CitationElement::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::CitationElement::properties::annotation";
-			
 			
 			public static String id = "Argumentation::CitationElement::properties::id";
 			
@@ -86,12 +74,6 @@ public class ArgumentationViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Argumentation::InformationElement::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::InformationElement::properties::annotation";
-			
-			
 			public static String id = "Argumentation::InformationElement::properties::id";
 			
 			
@@ -118,12 +100,6 @@ public class ArgumentationViewsRepository {
 	public static class ArgumentReasoning {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Argumentation::ArgumentReasoning::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::ArgumentReasoning::properties::annotation";
-			
 			
 			public static String id = "Argumentation::ArgumentReasoning::properties::id";
 			
@@ -182,12 +158,6 @@ public class ArgumentationViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Argumentation::AssertedInference::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::AssertedInference::properties::annotation";
-			
-			
 			public static String id = "Argumentation::AssertedInference::properties::id";
 			
 			
@@ -214,12 +184,6 @@ public class ArgumentationViewsRepository {
 	public static class AssertedEvidence {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Argumentation::AssertedEvidence::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::AssertedEvidence::properties::annotation";
-			
 			
 			public static String id = "Argumentation::AssertedEvidence::properties::id";
 			
@@ -248,12 +212,6 @@ public class ArgumentationViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Argumentation::AssertedContext::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::AssertedContext::properties::annotation";
-			
-			
 			public static String id = "Argumentation::AssertedContext::properties::id";
 			
 			
@@ -281,12 +239,6 @@ public class ArgumentationViewsRepository {
 		public static class Properties {
 	
 			
-			public static String taggedValue = "Argumentation::AssertedChallenge::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::AssertedChallenge::properties::annotation";
-			
-			
 			public static String id = "Argumentation::AssertedChallenge::properties::id";
 			
 			
@@ -313,12 +265,6 @@ public class ArgumentationViewsRepository {
 	public static class AssertedCounterEvidence {
 		public static class Properties {
 	
-			
-			public static String taggedValue = "Argumentation::AssertedCounterEvidence::properties::taggedValue";
-			
-			
-			public static String annotation = "Argumentation::AssertedCounterEvidence::properties::annotation";
-			
 			
 			public static String id = "Argumentation::AssertedCounterEvidence::properties::id";
 			

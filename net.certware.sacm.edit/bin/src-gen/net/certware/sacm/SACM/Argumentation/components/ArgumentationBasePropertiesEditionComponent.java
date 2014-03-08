@@ -294,13 +294,6 @@ public class ArgumentationBasePropertiesEditionComponent extends SinglePartPrope
 		return new NotificationFilter[] {filter,};
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#mustBeComposed(java.lang.Object, int)
-	 */
-	public boolean mustBeComposed(Object key, int kind) {
-		return key == ArgumentationViewsRepository.Argumentation_.Properties.id || key == ArgumentationViewsRepository.Argumentation_.Properties.description || key == ArgumentationViewsRepository.Argumentation_.Properties.content || key == ArgumentationViewsRepository.Argumentation_.Properties.argumentation__ || key == ArgumentationViewsRepository.Argumentation_.Properties.argumentElement || key == ArgumentationViewsRepository.Argumentation_.Properties.class;
-	}
 
 	/**
 	 * {@inheritDoc}

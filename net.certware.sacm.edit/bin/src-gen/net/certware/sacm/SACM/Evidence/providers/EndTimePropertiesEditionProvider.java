@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EndTime;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.EndTimeBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.EndTimeNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.EndTimePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class EndTimePropertiesEditionProvider extends PropertiesEditingProviderI
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof EndTime) && (EndTimePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof EndTime) && (EndTimeBasePropertiesEditionComponent.BASE_PART.equals(part) || EndTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class EndTimePropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof EndTime) && (refinement == EndTimePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof EndTime) && (refinement == EndTimeBasePropertiesEditionComponent.class || refinement == EndTimeNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class EndTimePropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof EndTime) && ((EndTimePropertiesEditionComponent.BASE_PART.equals(part) && refinement == EndTimePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof EndTime) && ((EndTimeBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == EndTimeBasePropertiesEditionComponent.class) || (EndTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == EndTimeNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class EndTimePropertiesEditionProvider extends PropertiesEditingProviderI
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof EndTime) {
-			if (EndTimePropertiesEditionComponent.BASE_PART.equals(part))
-				return new EndTimePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EndTimeBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new EndTimeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EndTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new EndTimeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class EndTimePropertiesEditionProvider extends PropertiesEditingProviderI
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof EndTime) {
-			if (EndTimePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == EndTimePropertiesEditionComponent.class)
-				return new EndTimePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EndTimeBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == EndTimeBasePropertiesEditionComponent.class)
+				return new EndTimeBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (EndTimeNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == EndTimeNotesPropertiesEditionComponent.class)
+				return new EndTimeNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

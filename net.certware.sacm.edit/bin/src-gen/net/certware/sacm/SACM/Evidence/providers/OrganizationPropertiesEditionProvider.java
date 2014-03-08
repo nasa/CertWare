@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.Organization;
 
+import net.certware.sacm.SACM.Evidence.components.OrganizationBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.OrganizationNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.OrganizationPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class OrganizationPropertiesEditionProvider extends PropertiesEditingProv
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Organization) && (OrganizationPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Organization) && (OrganizationBasePropertiesEditionComponent.BASE_PART.equals(part) || OrganizationNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class OrganizationPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Organization) && (refinement == OrganizationPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Organization) && (refinement == OrganizationBasePropertiesEditionComponent.class || refinement == OrganizationNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class OrganizationPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Organization) && ((OrganizationPropertiesEditionComponent.BASE_PART.equals(part) && refinement == OrganizationPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Organization) && ((OrganizationBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == OrganizationBasePropertiesEditionComponent.class) || (OrganizationNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == OrganizationNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class OrganizationPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Organization) {
-			if (OrganizationPropertiesEditionComponent.BASE_PART.equals(part))
-				return new OrganizationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OrganizationBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new OrganizationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OrganizationNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new OrganizationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class OrganizationPropertiesEditionProvider extends PropertiesEditingProv
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Organization) {
-			if (OrganizationPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == OrganizationPropertiesEditionComponent.class)
-				return new OrganizationPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OrganizationBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == OrganizationBasePropertiesEditionComponent.class)
+				return new OrganizationBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (OrganizationNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == OrganizationNotesPropertiesEditionComponent.class)
+				return new OrganizationNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

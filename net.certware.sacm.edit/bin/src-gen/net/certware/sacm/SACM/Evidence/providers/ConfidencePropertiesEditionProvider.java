@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.Confidence;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 
+import net.certware.sacm.SACM.Evidence.components.ConfidenceBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.ConfidenceNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.ConfidencePropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class ConfidencePropertiesEditionProvider extends PropertiesEditingProvid
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof Confidence) && (ConfidencePropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof Confidence) && (ConfidenceBasePropertiesEditionComponent.BASE_PART.equals(part) || ConfidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class ConfidencePropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Confidence) && (refinement == ConfidencePropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof Confidence) && (refinement == ConfidenceBasePropertiesEditionComponent.class || refinement == ConfidenceNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class ConfidencePropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof Confidence) && ((ConfidencePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ConfidencePropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof Confidence) && ((ConfidenceBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == ConfidenceBasePropertiesEditionComponent.class) || (ConfidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == ConfidenceNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class ConfidencePropertiesEditionProvider extends PropertiesEditingProvid
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof Confidence) {
-			if (ConfidencePropertiesEditionComponent.BASE_PART.equals(part))
-				return new ConfidencePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ConfidenceBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new ConfidenceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ConfidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new ConfidenceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class ConfidencePropertiesEditionProvider extends PropertiesEditingProvid
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof Confidence) {
-			if (ConfidencePropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == ConfidencePropertiesEditionComponent.class)
-				return new ConfidencePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ConfidenceBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == ConfidenceBasePropertiesEditionComponent.class)
+				return new ConfidenceBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (ConfidenceNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == ConfidenceNotesPropertiesEditionComponent.class)
+				return new ConfidenceNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}

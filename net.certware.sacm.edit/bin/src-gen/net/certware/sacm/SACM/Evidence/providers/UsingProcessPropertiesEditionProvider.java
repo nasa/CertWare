@@ -6,6 +6,8 @@ import java.util.List;
 import net.certware.sacm.SACM.Evidence.EvidencePackage;
 import net.certware.sacm.SACM.Evidence.UsingProcess;
 
+import net.certware.sacm.SACM.Evidence.components.UsingProcessBasePropertiesEditionComponent;
+import net.certware.sacm.SACM.Evidence.components.UsingProcessNotesPropertiesEditionComponent;
 import net.certware.sacm.SACM.Evidence.components.UsingProcessPropertiesEditionComponent;
 
 import org.eclipse.emf.ecore.EObject;
@@ -59,7 +61,7 @@ public class UsingProcessPropertiesEditionProvider extends PropertiesEditingProv
 	 * 
 	 */
 	public boolean provides(PropertiesEditingContext editingContext, String part) {
-		return (editingContext.getEObject() instanceof UsingProcess) && (UsingProcessPropertiesEditionComponent.BASE_PART.equals(part));
+		return (editingContext.getEObject() instanceof UsingProcess) && (UsingProcessBasePropertiesEditionComponent.BASE_PART.equals(part) || UsingProcessNotesPropertiesEditionComponent.NOTES_PART.equals(part));
 	}
 
 	/**
@@ -69,7 +71,7 @@ public class UsingProcessPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof UsingProcess) && (refinement == UsingProcessPropertiesEditionComponent.class);
+		return (editingContext.getEObject() instanceof UsingProcess) && (refinement == UsingProcessBasePropertiesEditionComponent.class || refinement == UsingProcessNotesPropertiesEditionComponent.class);
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class UsingProcessPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean provides(PropertiesEditingContext editingContext, String part, java.lang.Class refinement) {
-		return (editingContext.getEObject() instanceof UsingProcess) && ((UsingProcessPropertiesEditionComponent.BASE_PART.equals(part) && refinement == UsingProcessPropertiesEditionComponent.class));
+		return (editingContext.getEObject() instanceof UsingProcess) && ((UsingProcessBasePropertiesEditionComponent.BASE_PART.equals(part) && refinement == UsingProcessBasePropertiesEditionComponent.class) || (UsingProcessNotesPropertiesEditionComponent.NOTES_PART.equals(part) && refinement == UsingProcessNotesPropertiesEditionComponent.class));
 	}
 
 	/**
@@ -101,8 +103,10 @@ public class UsingProcessPropertiesEditionProvider extends PropertiesEditingProv
 	 */
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part) {
 		if (editingContext.getEObject() instanceof UsingProcess) {
-			if (UsingProcessPropertiesEditionComponent.BASE_PART.equals(part))
-				return new UsingProcessPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UsingProcessBasePropertiesEditionComponent.BASE_PART.equals(part))
+				return new UsingProcessBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UsingProcessNotesPropertiesEditionComponent.NOTES_PART.equals(part))
+				return new UsingProcessNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part);
 	}
@@ -114,9 +118,12 @@ public class UsingProcessPropertiesEditionProvider extends PropertiesEditingProv
 	@SuppressWarnings("rawtypes")
 	public IPropertiesEditionComponent getPropertiesEditingComponent(PropertiesEditingContext editingContext, String mode, String part, java.lang.Class refinement) {
 		if (editingContext.getEObject() instanceof UsingProcess) {
-			if (UsingProcessPropertiesEditionComponent.BASE_PART.equals(part)
-				&& refinement == UsingProcessPropertiesEditionComponent.class)
-				return new UsingProcessPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UsingProcessBasePropertiesEditionComponent.BASE_PART.equals(part)
+				&& refinement == UsingProcessBasePropertiesEditionComponent.class)
+				return new UsingProcessBasePropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
+			if (UsingProcessNotesPropertiesEditionComponent.NOTES_PART.equals(part)
+				&& refinement == UsingProcessNotesPropertiesEditionComponent.class)
+				return new UsingProcessNotesPropertiesEditionComponent(editingContext, editingContext.getEObject(), mode);
 		}
 		return super.getPropertiesEditingComponent(editingContext, mode, part, refinement);
 	}
