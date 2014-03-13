@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare OMG SACM Graphiti Editor
+Bundle-SymbolicName: net.certware.sacm.graphiti;singleton:=true
+Bundle-Version: 2.0.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.core.runtime;bundle-version="3.9.0",
+ org.eclipse.core.resources;bundle-version="3.8.101",
+ org.eclipse.ui;bundle-version="3.105.0",
+ org.eclipse.ui.ide;bundle-version="3.9.1",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.1",
+ org.eclipse.emf.transaction;bundle-version="1.4.0",
+ org.eclipse.emf.workspace;bundle-version="1.5.1",
+ org.eclipse.graphiti,
+ org.eclipse.graphiti.ui,
+ net.certware.sacm,
+ net.certware.core;bundle-version="1.2.1",
+ org.eclipse.graphiti.export.batik;bundle-version="0.10.1"
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ClassPath: bin/

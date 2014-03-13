@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            id="net.certware.sacm.graphiti.diagramType1"
+            name="SACM Diagram Type"
+            type="sacm">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            class="net.certware.sacm.graphiti.dt.SacmDiagramTypeProvider"
+            id="net.certware.sacm.graphiti.diagramTypeProvider1"
+            name="SACM Model Diagram">
+         <diagramType
+               id="net.certware.sacm.graphiti.diagramType1">
+         </diagramType>
+         <imageProvider
+               id="net.certware.sacm.graphiti.imageProvider">
+         </imageProvider>
+      </diagramTypeProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="net.certware.core.ui.newwizard.category"
+            class="net.certware.sacm.graphiti.wizard.SacmNewDiagramWiz"
+            finalPerspective="net.certware.perspective"
+            icon="icons/obj16/sacm_sacm.png"
+            id="net.certware.sacm.graphiti.wizard.id"
+            name="SACM Diagram"
+            project="false">
+         <description>
+            Creates a graphical model for the SACM assurance case
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="net.certware.sacm.graphiti.wizard.id">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.imageProviders">
+      <imageProvider
+            class="net.certware.sacm.grapiti.ip.SacmDiagramImageProvider"
+            id="net.certware.sacm.graphiti.imageProvider">
+      </imageProvider>
+   </extension>
+
+</plugin>

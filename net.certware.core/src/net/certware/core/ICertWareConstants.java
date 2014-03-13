@@ -46,6 +46,8 @@ public interface ICertWareConstants {
 	public static final String SACM_EVIDENCE_EXTENSION = "evidence"; //$NON-NLS-1$
 	/** file extension for the SACM DSL models */
 	public static final String SACM_DSL_EXTENSION = "sacmdsl"; //$NON-NLS-1$
+	/** file extension for the SACM Diagram models */
+	public static final String SACM_DIAGRAM_EXTENSION = "sacmd"; //$NON-NLS-1$
 	/** file extension for the semi-formal proof model */
 	public static final String SFP_EXTENSION = "sfp"; //$NON-NLS-1$
 	/** file extension for the software metrics metamodel */
@@ -88,7 +90,8 @@ public interface ICertWareConstants {
 		//		CAE_EXTENSION,CAZ_EXTENSION,CAZ_DIAGRAM_EXTENSION,
 		//		EUR_EXTENSION,EUZ_EXTENSION,EUZ_DIAGRAM_EXTENSION,
 		//		SAEM_EXTENSION, 
-				SACM_EXTENSION, SACM_ARG_EXTENSION, SACM_EVIDENCE_EXTENSION, SACM_DSL_EXTENSION,
+				SACM_EXTENSION, SACM_ARG_EXTENSION, SACM_EVIDENCE_EXTENSION, 
+				SACM_DSL_EXTENSION, SACM_DIAGRAM_EXTENSION,
 				VCL_EXTENSION, SFP_EXTENSION, SMM_EXTENSION, MPX_EXTENSION, MSPDI_EXTENSION,
 				CPN_EXTENSION, SCO_EXTENSION, SPM_EXTENSION,
 				SFP_EXTENSION,
