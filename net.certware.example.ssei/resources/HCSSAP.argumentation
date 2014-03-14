@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation" id="Argumentation: HCSSAP" description="None" content="MoD SSEI Example from GSN">
+  <argumentElement xsi:type="ARM:Claim" id="Goal: hazCont" description="None&#x9;" content="SSRs at {tier n} address the potential additional hazardous contribution identified at {tier n}">
+    <taggedValue key="visibility" value="public"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRderived" description="None" content="SSRs sufficient to address identified HSFMs are defined"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: HSFMs" description="None" content="{{tier n} HSFMs}"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="HSMF context association" description="None" content="Goal context" source="//@argumentElement.1" target="//@argumentElement.2"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: SSRderived" description="None" content="Argument over each {tier n} HSFM"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: HSFMaddress" description="None" content="{HSFM} sufficiently addressed by one or more {SSRn}">
+    <taggedValue key="multiplicity" value="0 to n"/>
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Derived to Address" description="None" content="Inference" source="//@argumentElement.4" target="//@argumentElement.5"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Subgoal strategy inference" description="None" content="Inference" source="//@argumentElement.1" target="//@argumentElement.4"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Top to Derived" description="None" content="Subgoal" source="//@argumentElement.0" target="//@argumentElement.1"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: HSFMident" description="None" content="HSFMs correctly identified at {tier n}"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: HSFMs" description="None" content="{{tier n} HSFMs}" url="None"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="Goal context" description="None" content="None" source="//@argumentElement.9" target="//@argumentElement.10"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Subgoal assertion" description="None" content="Contribution to Identification" source="//@argumentElement.0" target="//@argumentElement.9"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: HSFMident" description="None" content="Argument over deviations from intended behavior at {tier n}"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: deviations_deviations" description="None" content="Potential deviations from intended behavior are sufficiently identified at {tier n}">
+    <taggedValue key="module" value="deviations"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="AR1" description="None" content="Association" source="//@argumentElement.13" target="//@argumentElement.14"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="AR2" description="None" content="Association" source="//@argumentElement.13" target="//@argumentElement.17"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: HSFMs" description="None" content="Those deviations at {tier n} which could result in hazardous behavior are identified as HSFMs">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: deviations" description="None" content="{{tier n} deviations}" url="None"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="Strategy context" description="None" content="None" source="//@argumentElement.13" target="//@argumentElement.18"/>
+</ARM:Argumentation>

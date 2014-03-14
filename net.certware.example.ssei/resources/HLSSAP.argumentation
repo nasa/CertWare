@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation" id="Argumentation: HLSSAP">
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SwSystem Safe" description="None" content="{software Y} is acceptably safe to operate within {system Z}">
+    <taggedValue key="visibility" value="public"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="main subgoal" description="subgoal" content="subgoal association" source="//@argumentElement.0" target="//@argumentElement.6"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="top-level goal context" description="goal context" content="context link" source="//@argumentElement.0" target="//@argumentElement.3 //@argumentElement.4 //@argumentElement.5"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: operating context" description="None" content="{Description of operating context of {system Z}}" url="None"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: system" description="None" content="{Description of {system Z}}" url="None"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: Sw" description="None" content="{Description of {software Y}}">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: swContributionAcc" description="None" content="The contribution made by {software Y} to {system Z} hazards is acceptable">
+    <taggedValue key="visibility" value="public"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" source="//@argumentElement.6" target="//@argumentElement.10"/>
+  <argumentElement xsi:type="ARM:AssertedContext" source="//@argumentElement.6" target="//@argumentElement.9"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: hazards" description="strategy context" content="{Description of hazards to which {software Y} may contribute." url="None">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: swContributionAcc" description="None" content="Agrument over each hazard to which {software Y} may contribute"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: Hazard" description="None" content="Software contribution(s) to {Hazard} is acceptably managed.">
+    <taggedValue key="multiplicity" value="zero or more"/>
+    <taggedValue key="visibility" value="public"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" source="//@argumentElement.11" target="//@argumentElement.13"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: contMit" description="None" content="Argument over each identified software contribution to {Hazard}"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: sw contribution" description="None" content="{software contribution} to {Hazard} is acceptably managed">
+    <taggedValue key="uninstantiated" value="true"/>
+    <taggedValue key="multiplicity" value="n"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: contIdent_contIdent" description="None" content="The ways in which {software Y} may contribute to {Hazard} are completely and correctly identified">
+    <taggedValue key="module" value="contIdent"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" source="//@argumentElement.13" target="//@argumentElement.14 //@argumentElement.15"/>
+  <argumentElement xsi:type="ARM:AssertedContext" source="//@argumentElement.13" target="//@argumentElement.18"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: contributions" description="strategy context" content="{Description of the ways in which {software Y} may contribute to {Hazard}"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: safetyRqt" description="goal context" content="Software contribution may in some cases be defined as an explicit safety requirement"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Strategy context" content="Con: hazards" url="None">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:InformationElement" id="Ass: hazards" description="None" content="Assumptions" url="None"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: Sw" description="None" content="{Description of {software Y}}" url="None">
+    <taggedValue key="uninstantiated" value="true"/>
+    <taggedValue key="optional" value="true"/>
+  </argumentElement>
+</ARM:Argumentation>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation" id="SCSAP" content="MoD SSEI SoBP Example">
+  <argumentElement xsi:type="ARM:Claim" id="Goal: sw contribution" content="{software contribution} to {Hazard} is acceptably managed at {tier n}"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: tierNdesign" content="{{tier n} design}"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="C1" content="toplevel goal context" source="//@argumentElement.0" target="//@argumentElement.1"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: sw contribution" content="Argument over SSRs identified for {tier n}"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="S2" content="strategy subgoals" source="//@argumentElement.3" target="//@argumentElement.6 //@argumentElement.7 //@argumentElement.8"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="SC" content="Strategy context" source="//@argumentElement.3" target="//@argumentElement.12 //@argumentElement.13"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: hazCont_hazCont" content="SSRs at {tier n} address the potential additional hazardous contribution identified at {tier n}">
+    <taggedValue key="module" value="hazCont"/>
+    <taggedValue key="optional" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRidentify_SSRidentify" content="SSRs from {tier n-1} have been adequately allocated, decomposed, apportioned and interpreted at {tier n}">
+    <taggedValue key="optional" value="true"/>
+    <taggedValue key="module" value="SSRidentify"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRnAddn" content="{SSRn} addressed through design at {tier n}">
+    <taggedValue key="multiplicity" value="zero or more on SSRs at {tier n}"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="SG1" content="Subgoals for SSRn goal" source="//@argumentElement.8" target="//@argumentElement.10 //@argumentElement.11"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRnSat" content="{SSRn} demonstrably satisfied through evidence provided at {tier n}">
+    <taggedValue key="undeveloped" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRnAddn+1" content="{SSRn} addressed through design at {tier n+1}">
+    <taggedValue key="recurse" value="Strat: sw contribution"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: tierNdesign" content="{{tier n} design}">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: SSRsN" content="{SSRs identified for {tier n}}">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="S1" content="toplevel goal strategy" source="//@argumentElement.0" target="//@argumentElement.3"/>
+</ARM:Argumentation>

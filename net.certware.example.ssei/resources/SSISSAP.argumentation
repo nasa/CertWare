@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation" id="SSISSAP" content="MoD SSEI SoBP example">
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRidentify" content="SSRs from {tier n-1} have been adequately allocated, decomposed, apportioned and interpreted at {tier n}">
+    <taggedValue key="visibility" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC1" source="//@argumentElement.0" target="//@argumentElement.24"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="AI1" source="//@argumentElement.0" target="//@argumentElement.3"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: SSRidentify" content="Argument over the {tier n} design and the SSRs specified at {tier n}"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="SG2" source="//@argumentElement.3" target="//@argumentElement.5 //@argumentElement.13"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRcapture" content="SSRs at {tier n} adequately capture the SSRs from {tier n-1} for the {tier n} design"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: SSRcapture" content="Argument over each SSR from {tier n-1}"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: SSRn" content="{SSRn-1} adequately captured by one or more {SSRn}">
+    <taggedValue key="unsubstantiated" value="true"/>
+    <taggedValue key="multiplicity" value="0 to n"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="SG4" source="//@argumentElement.6" target="//@argumentElement.7"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="AR2" source="//@argumentElement.5" target="//@argumentElement.6"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="con: tierNdesign" content="{tier n} design"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="con: SSRsN" content="{SSRs identified for {tier n}}">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC3" source="//@argumentElement.5" target="//@argumentElement.10 //@argumentElement.11"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: designDecisions" content="Design decisions taken at {tier n} facilitate satisfaction of the SSRs from {tier n-1}">
+    <taggedValue key="multiplicity" value="0 or 1"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: designDecisions" description="strategy" content="Argument over design decisions taken at {tier n}"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: designDecision" content="{design decision} facilitates satisfaction of SSRs from {tier n-1}">
+    <taggedValue key="unsubstantiated" value="true"/>
+    <taggedValue key="multiplicity" value="0 to n"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:InformationElement" id="con: relevantSSRs" content="SSRs relevant to {design decision} are {SSRs}">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC5" description="goal context" source="//@argumentElement.15" target="//@argumentElement.16"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="SG5" source="//@argumentElement.14" target="//@argumentElement.15"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: designDecisions" description="strategy context" content="Design decisions taken at {tier n}">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedContext" id="SG4" description="strategy context" source="//@argumentElement.14" target="//@argumentElement.19"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="SSG2" description="strategy subgoals" source="//@argumentElement.13" target="//@argumentElement.14"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="con: tierNdesign" description="goal context" content="{tier n} design"/>
+  <argumentElement xsi:type="ARM:AssertedContext" id="AC3" description="goal context" source="//@argumentElement.13" target="//@argumentElement.22"/>
+  <argumentElement xsi:type="ARM:InformationElement" id="con: SSRsN-1" content="{SSRs from {tier n-1}}">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+</ARM:Argumentation>

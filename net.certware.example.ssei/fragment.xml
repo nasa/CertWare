@@ -13,8 +13,8 @@
             name="High-Level Software Safety Argument Pattern"
             version="08/06/09">
          <resource
-               description="GSN pattern file"
-               structure="resources/HLSSAP.gsn">
+               description="SACM pattern file"
+               structure="resources/HLSSAP.argumentation">
          </resource>
          <resource
                description="Pattern Guide"
@@ -35,8 +35,8 @@
             name="Software Contribution Safety Argument Pattern"
             version="08/06/09">
          <resource
-               description="GSN pattern file"
-               structure="resources/SCSAP.gsn">
+               description="SACM pattern file"
+               structure="resources/SCSAP.argumentation">
          </resource>
          <resource
                description="Pattern Guide"
@@ -65,8 +65,8 @@
             name="SSR Identification Software Safety Argument Pattern"
             version="08/06/09">
          <resource
-               description="GSN pattern file"
-               structure="resources/SSISSAP.gsn">
+               description="SACM pattern file"
+               structure="resources/SSISSAP.argumentation">
          </resource>
          <resource
                description="Pattern Guide"
@@ -86,8 +86,8 @@
             name="Hazardous Contribution Software Safety Argument Pattern"
             version="08/06/09">
          <resource
-               description="GSN pattern file"
-               structure="resources/HCSSAP.gsn">
+               description="SACM pattern file"
+               structure="resources/HCSSAP.argumentation">
          </resource>
          <resource
                description="Pattern Guide"
@@ -111,8 +111,8 @@
                pattern_id="net.certware.example.ssei.pattern.scsap">
          </related_pattern>
          <resource
-               description="GSN pattern file"
-               structure="resources/AJSSAP.gsn">
+               description="SACM pattern file"
+               structure="resources/AJSSAP.argumentation">
          </resource>
          <resource
                description="Pattern Guide"
