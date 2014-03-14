@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARM:Argumentation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ARM="http://schema.omg.org/SACM/1.0/Argumentation" id="Argumentation: AJSSAP" description="SSEI SoBP Example" content="Adapted from GSN example">
+  <argumentElement xsi:type="ARM:Claim" id="Goal: Justification" description="None" content="Adopted argument is adequate">
+    <taggedValue key="visibility" value="public"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Start: Justification" content="Argument over assurance deficits"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: justification strategy" description="link" content="link" source="//@argumentElement.0" target="//@argumentElement.1"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDeficitIdentify_AssDeficitIdentify" description="None" content="Relevant assurance deficits have been correctly identified">
+    <taggedValue key="module" value="AssDeficitIdentify"/>
+    <taggedValue key="comment" value="m+n+p=total number of identified assurance deficits"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefImpact_AssDefImpact" description="None" content="The impact of assurance deficits on the claimed risk position of the argument have been identified">
+    <taggedValue key="module" value="AssDefImpact"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefTolerable" description="None" content="All assurance deficits whose impact is potentially 'tolerable' are acceptable or have been sufficiently addressed">
+    <taggedValue key="multiplicity" value="n = number of assurance deficits whose impact was initially considered potentially tolerable"/>
+    <taggedValue key="choice" value="1 of 2: Goal:Acceptable or Goal:AssDefAddress"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: Acceptable" description="None" content="Potentially tolerable {assurance deficit} is acceptable"/>
+  <argumentElement xsi:type="ARM:ArgumentReasoning" id="Strat: AssDefTolerable" description="None" content="Argument over an assessment of the associated costs and impact"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: tolerable strategy" description="None" content="Subgoal strategy" source="//@argumentElement.6" target="//@argumentElement.7"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: Cost" description="None&#x9;" content="Cost of taking further measure to address {assurance deficit} is out of proportion to the impact of not doing so">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: costDetermine_costDetermine" description="None" content="The cost of potential measures for addressing {assurance deficit} have been correctly determined">
+    <taggedValue key="module" value="costDetermine"/>
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference cost determine goal" content="Subgoal inference" source="//@argumentElement.7" target="//@argumentElement.10"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: furtherMeasures_furtherMeasures" description="None" content="Possible further measures have been considered">
+    <taggedValue key="module" value="furtherMeasures"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference subgoal cost" content="Subgoal inference" source="//@argumentElement.9" target="//@argumentElement.12"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference cost goal" description="None" content="Strategy subgoal" source="//@argumentElement.7" target="//@argumentElement.9"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: tolerable subgoal" description="None" content="Subgoal" source="//@argumentElement.5" target="//@argumentElement.6"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefIntolerable" description="None&#x9;" content="There are no assurance deficits whose impact is 'intolerable'"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefAddress" description="None" content="{Assurance deficit} has been sufficiently addressed by the addditional measures taken">
+    <taggedValue key="uninstantiated" value="true"/>
+    <taggedValue key="choice" value="1 of 3: Goal: AssDefAccept, Goal: ImpactNegligible, Goal: AssDefEliminate"/>
+    <taggedValue key="multiplicity" value="m = number of assurance deficits whose impact was initially considered intolerable"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:InformationElement" id="Con: MeasuresTaken" description="None" content="{measures taken} to address {assurance deficit}">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedContext" id="Context measures" description="None" content="Information element" source="//@argumentElement.17" target="//@argumentElement.18"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefAccept" description="None" content="Impact of {assurance deficit} is tolerable and acceptable">
+    <taggedValue key="uninstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Address to Accept" description="None" content="Subgoal" source="//@argumentElement.17" target="//@argumentElement.20"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: ImpactTolerable" description="None" content="Impact of {assurance deficit} has been shown to be potentially tolerable">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefImpact_AssDefImpact" description="None" content="The impact of assurance deficits on the claimed risk position of the argument have been determined">
+    <taggedValue key="module" value="AssDefImpact"/>
+    <taggedValue key="multiplicity" value="0 or 1"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Accept to Tolerable" description="None" content="Subgoal" source="//@argumentElement.20" target="//@argumentElement.22"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Tolerable to Impact" description="None" content="Subgoal" source="//@argumentElement.22" target="//@argumentElement.23"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefNegligible" description="None" content="The impact of any remaining assurance deficits is negligible"/>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: ImpactNegligible" description="None" content="Impact of {assurance deficit} has been shown to be negligible">
+    <taggedValue key="unsubstantiated" value="true"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:Claim" id="Goal: AssDefImpact_AssDefImpact" description="None" content="The impact of assurance deficits on the claimed risk position of the argument have been determined">
+    <taggedValue key="module" value="AssDefImpact"/>
+    <taggedValue key="multiplicity" value="0 or 1"/>
+  </argumentElement>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Negligible to Impact" description="None" content="Subgoal" source="//@argumentElement.27" target="//@argumentElement.28"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Define to Impact" description="None" content="Subgoal" source="//@argumentElement.26" target="//@argumentElement.27"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: identification goal" source="//@argumentElement.1" target="//@argumentElement.3"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: impact goal" source="//@argumentElement.1" target="//@argumentElement.4"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: tolerable goal" source="//@argumentElement.1" target="//@argumentElement.5"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: intolerable goal" source="//@argumentElement.1" target="//@argumentElement.16"/>
+  <argumentElement xsi:type="ARM:AssertedInference" id="Inference: negligible goal" description="none" content="goal" source="//@argumentElement.1" target="//@argumentElement.26"/>
+</ARM:Argumentation>
