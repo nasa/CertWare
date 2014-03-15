@@ -135,14 +135,16 @@ public class TaggedValueItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((TaggedValue)object).getKey();
+		String value = ((TaggedValue)object).getValue();
 		return label == null || label.length() == 0 ?
 			getString("_UI_TaggedValue_type") : //$NON-NLS-1$
-			getString("_UI_TaggedValue_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				// getString("_UI_TaggedValue_type") + " " + label + ':' + ' ' + value; //$NON-NLS-1$ //$NON-NLS-2$
+				label + ':' + ' ' + value; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
