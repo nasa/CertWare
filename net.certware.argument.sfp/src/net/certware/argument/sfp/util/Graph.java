@@ -37,6 +37,7 @@ public class Graph {
 		allocateElements(vc + 1);
 	}
 
+	@SuppressWarnings("rawtypes")
 	private void allocateElements(int n) {
 		adjacency = new Vector<Vector<?>>();
 		for (int i = 0; i < n; i++)

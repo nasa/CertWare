@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+//import net.certware.core.UrlBuilder.UrlParameter;
+
 /**
  * URL builder for parameter strings.
  * @author Eclipse Toast

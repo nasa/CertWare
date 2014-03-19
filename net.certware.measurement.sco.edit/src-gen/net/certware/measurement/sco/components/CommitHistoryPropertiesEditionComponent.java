@@ -124,6 +124,7 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updateSemanticModel(org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent)
 	 * 
 	 */
+	@SuppressWarnings("unused")
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		@SuppressWarnings("unused")
 		CommitHistory commitHistory = (CommitHistory)semanticObject;
@@ -200,7 +201,15 @@ public class CommitHistoryPropertiesEditionComponent extends SinglePartPropertie
 		return ret;
 	}
 
+<<<<<<< HEAD
 
 	
+=======
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+>>>>>>> refs/heads/master
 
 }

@@ -256,7 +256,15 @@ public class ArtifactCommitPropertiesEditionComponent extends SinglePartProperti
 		return ret;
 	}
 
+<<<<<<< HEAD
 
 	
+=======
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+>>>>>>> refs/heads/master
 
 }

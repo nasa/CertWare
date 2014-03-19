@@ -39,10 +39,15 @@ Workflow {
 			//fragment = ecore.EcoreGeneratorFragment {
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
 			//}
+<<<<<<< HEAD
 			//fragment = ecore.EcoreGeneratorFragment {
 			//	referencedGenModels = ""
 			//}
 
+=======
+			
+			fragment = ecore.EMFGeneratorFragment {}
+>>>>>>> refs/heads/master
 
 			// the serialization component
 			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
