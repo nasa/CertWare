@@ -13,31 +13,25 @@ CertWare is meant to be extended into other tool chains and other aspects of the
 
 h2. Documentation
 
-Documentation is stashed throughout the project workspace.  See the @net.certware.doc@ project in particular.  A version history is maintained in @net.certware.doc/wiki/versions.textile@ for convenient export to other formats.  The latest run of Javadoc usually is found in @net.certware.doc/javadoc@.  The project design and build notes are in @net.certware.doc/wiki/project.textile@.  When API analysis is done the results can be stored in @net.certware.api@ although there have not been API-related design issues to date. 
-
+Documentation is stashed throughout the project workspace.  See the @net.certware.doc@ project in particular.  A version history is maintained in @net.certware.doc/wiki/versions.textile@ for convenient export to other formats.  The latest run of Javadoc usually is found in @net.certware.doc/javadoc@.  The project design and build notes are in @net.certware.doc/wiki/project.textile@.  
 
 h2. Meta-Models
 
-The following tags are associated with the many meta-models used in the workbench.  We use these liberally throughout the models and plugin names.
+The following tags are associated with the many meta-models used in the workbench.  We use these liberally throughout the models, plugin names, and editor file extension associations.  Earlier users may notice the AML, ARM, CAE, EUR and GSN metamodels no longer are provided, dropping these in favor of the consolidated OMG SACM metamodel. 
 
-* @AML@ SRI structured argument markup language and its Ecore implementation
-* @ARM@ OMG argument metamodel and its Ecore implementation
-* @CAE@ A claim-argument-evidence metamodel derived from the ARM metamodel.
-* @CAZ@ A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
-* @EUR@ A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
-* @EUZ@ A diagram for EUROCONTROL notation derived from EUR and ARM metamodels. 
-* @GSN@ A goal structuring notation metamodel derived from the ARM metamodel.
-* @GSZ@ A diagram for goal structuring notation derived from GSN and ARM metamodels.
+* @CPN@ A CertWare-specific Planning Notation metamodel.  
 * @HEV@ Evidence settings for Hugin Bayesian networks.
+* @INTENT@ An intent specification DSL model for design and hazard support.
+* @MSPDI@ The MSPDI schema from Microsoft Project.
 * @NET@ Hugin Network models.
-* @SACM@ OMG's structured assurance case metamodel.
+* @SACM@ OMG's structured assurance case metamodel and its Ecore implementation.  Textual DSLs use extension @sacmdsl@ and graphical digrams will maintain two models -- the @sacm@ model and the @diagram@ model.  
+* @SCO@ A CertWare-specific software change order metamodel.
 * @SFP@ A semi-formal proof metamodel derived from an Xtext grammar for these proofs.
 * @SMM@ OMG software measurement metamodel and its Ecore implementation.
-* @VCL@ A verification checklist generic metamodel.
-* @MSPDI@ The MSPDI schema from Microsoft Project.
-* @CPN@ A CertWare-specific Planning Notation metamodel.  
 * @SPM@ A CertWare-specific software project management metrics metamodel.
-* @SCO@ A CertWare-specific software change order metamodel.
+* @STATE@ A state specification DSL to support intent specification DSL.  
+* @STPA@ A DSL for systems-theoretic process analysis.  
+* @VCL@ A verification checklist generic metamodel.
 
 
 h2. Eclipse Dependencies
@@ -45,38 +39,33 @@ h2. Eclipse Dependencies
 The following Eclipse product dependencies are needed for the given reasons:
 
 * @EEF@. We use the extended editing framework to generate better property sheets for the model editors.  The EEF model usually is found in the associated @edit@ plugin and we use the EEF framework to generate the needed parts.  Be sure to update plugin extensions when making design changes. See the @project.textile@ file for notes on running the EEF tools.
-* @Epsilon@, @Eugenia@, and @GMF@.  We use the Epsilon tools to create graphical editors for our models.  We package the Epsilon feature with the CertWare feature while the former is in incubation stage; we can remove the bundling later.  See the @project.textile@ file for notes on running these tools.  
+* @Epsilon@.  We use the Epsilon tools for model validation rules.  
 * @Xtext@.  We use Xtext DSLs for some new notations.  See the @project.textile@ file for notes on running the Xtext tools.
 * @ATL@.  We use the Atlas transformation tools to convert models of one type into models of another type.  See the @project.textile@ file for notes on running the Atlas tools.
 
 
 h2. Eclipse Design
 
-The majority of CertWare design is done with the EMF and ECore.  We described several metamodels and then generated the plugins to support them.  Afterward we added navigator contributions, help, validators, integrations, and other functional content.  The notes here and in the @project.textile@ file provide more details.  
+The majority of CertWare design is done with the EMF, Ecore, and Xtext.  We described several metamodels and then generated the plugins to support them.  Afterward in many cases we added navigator contributions, help, validators, integrations, and other functional content.  The notes here and in the @project.textile@ file provide more details.  
 
 h3. File Names and Extensions
 
-* @*.aml@ AML model files
-* @*.arm@ ARM model files
-* @*.gsn@ GSN model files
-* @*.gsz@ and @*.gsz_diagram@ are GSN diagram model and diagram files
-* @*.cae@ CAE model files
-* @*.caz@ and @*.caz_diagram@ are CAE diagram model and diagram files
-* @*.eur@ EUROCONTROL model files
-* @*.euz@ and @*.euz_diagram@ are EUROCONTROL diagram model and diagram files
+* @*.intent@ Intent specification DSL files
 * @*.hev@ Hugin evidence setting model files
 * @*.mspdi@ and @*.mpx@ are Microsoft Project (MSPDI) model files
 * @*.net@ and @*.hugin@ Hugin NET files
 * @*.sacm@ SACM model files
-* @*.saem@ SAEM model files
+* @*.sacmd@ SACM DSL model files
 * @*.sco@ SCO change order model files
 * @*.smm@ OMG Software Measurement Metamodel files
 * @*.spm@ Software Project Management metrics files 
+* @*.state@ State specification DSL model files
+* @*.stpa@ STPA DSL model files
 * @*.vcl@ Verification checklist model files
 
 h3. Editors
 
-Several editors are contributed by the EMF generator models. There are a few editors contributed by the Xtext generator models.  
+Several editors are contributed by the EMF generator models. There are a few textual editors contributed by the Xtext generator models.  
 
 h3. Views
 
@@ -101,20 +90,7 @@ h3. Navigator Contributions
 
 h3. Plugins Summary
 
-* @net.certware.argument.aml.*@ Argument model and editor support for SRI AML.  The core plugin contains the model (derived from an XSD schema) definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
-* @net.certware.argument.arm.*@ Argument model and editor support for OMG ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
-* @net.certware.argument.arm.help@ Help content for ARM models and related workbench contributions.    
-* @net.certware.argument.cae.*@ Argument model and editor support for CAE (ASCAD), built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification. 
-* @net.certware.argument.cae.help@ Help content for CAE models and related workbench contributions.
-* @net.certware.argument.caz.*@ Argument diagram graphical model equivalent for CAE models.    
-* @net.certware.argument.eur.*@ Argument model and editor support for EUROCONTROL notation, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
-* @net.certware.argument.eur.help@ Help content for EUROCONTROL models and related workbench contributions.    
-* @net.certware.argument.euz.*@ Argument diagram graphical model equivalent for EUROCONTROL models.    
-* @net.certware.argument.gsn.*@ Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
-* @net.certware.argument.gsn.help@ Help content for GSN models and related workbench contributions.  
-* @net.certware.argument.gsz.*@ Argument diagram graphical model equivalent for GSN models.
 * @net.certware.argument.sfp.*@ Semi-formal proof structured text argument models.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
-* @net.certware.argument.transform.gsn2arm.*@ An Atlas transformation model for converting GSN arguments to ARM arguments.  
 * @net.certware.branding@ Project branding plugin for feature definition.
 * @net.certware.core@ Core project content.
 * @net.certware.core.ui@ Core project UI content including extension bases.  Includes interface constants files applying across the project source base.  
@@ -128,6 +104,8 @@ h3. Plugins Summary
 * @net.certware.feature.*@ Feature packaging by core, argument style, and functionality features for update site publication.
 * @net.certware.help@ Project help files, cheat sheets and dynamic context support.
 * @net.certware.history.*@ History contributions for version control analysis.
+* @net.certware.intent.*@ Intent specification DSL and supporting plugins.
+* @net.certware.intent.state.*@ Intent state specification DSL and supporting plugins. 
 * @net.certware.launch@ Launch configuration shared files.
 * @net.certware.libs.doc@ Plugin packaging of docx4J 2.5 libraries.
 * @net.certware.lib.inference@ Plugin packaging of UCLA SamIam inference library.
@@ -139,6 +117,7 @@ h3. Plugins Summary
 * @net.certware.planning.mspdi.*@ Planning content model using Microsoft project data schema. The Microsoft MSPDI schema was coerced into an Ecore model, then the EMF plugins generated from this model.    
 * @net.certware.product@ Product definition for stand-alone application. 
 * @net.certware.sacm.*@ Object model and editor support for OMG's SACM.  
+* @net.certware.stpa.*@ STPA DSL definition and supporting plugins.
 * @net.certware.target@ CertWare project target definition.
 * @net.certware.update@ Update site definition project (currently unused).
 * @net.certware.verification.checklist.*@ Verification model and editor support for generic check lists. The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
@@ -147,9 +126,8 @@ h3. Plugins Summary
 
 h3. Target Platform
 
-* Eclipse Juno SR2 or later
-* Eclipse EGit
-* Eclipse Epsilon features
+* Eclipse Kepler or later
+* Eclipse Epsilon VCL features
 * Eclipse Extended Editing Framework
 * Eclipse RCP delta pack for multi-platform exports
 
@@ -164,17 +142,13 @@ h3. Delivery as a Feature
 The several @net.certware.*@ plug-ins and fragments (not including the testing fragments) are combined into several features and a single category definition.  Use the automated dependency calculation of the feature editors to identify the installation dependencies, then ensure there are no spurious plug-ins identified; if so, identify the source and repair the issue.  For complete feature deliveries, use the version tool in the feature editor to push the feature version identifier into the plugins and fragments.  Export to either a folder or archive file.  There are no platform-dependent requirements.  There are several features available, each bundling distinct functionality and identifying dependencies if necessary.  All features use the @core@ feature for shared functionality.  
 
 * @net.certware.feature@ Core feature used by all other features, providing logging, extensions, and other basic functionality.
-* @net.certware.feature.aml@ Support for AML arguments.
-* @net.certware.feature.arm@ Support for ARM arguments, and required by GSN, CAE, and EUROCONTROL arguments.
 * @net.certware.feature.bayes@ Support for Bayesian models of evidence.
-* @net.certware.feature.cae@ Support for CAE arguments.
 * @net.certware.feature.check@ Support for verification checklists.
-* @net.certware.feature.eur@ Support for EUROCONTROL arguments.
-* @net.certware.feature.gsn@ Support for GSN arguments.
+* @net.certware.feature.intent@ Support for intent and state specifications.
 * @net.certware.feature.measure@ Support for measurement collection and metrics.
 * @net.certware.feature.planning@ Support for time and resource planning notation.
 * @net.certware.feature.sacm@ Support for SACM arguments and evidence.
-* @net.certware.feature.saem@ Support for SAEM evidence.
+* @net.certware.feature.stpa@ Support for STPA models.
 * @net.certware.feature.sfp@ Support for semi-formal proof arguments.
 
 To use the delivery, import the desired features into an existing Eclipse workbench installation.  The installer will identify missing dependencies if any and prompt the user to install these prerequisites.  The features and contents are not digitally signed.  After installation, restart the workbench to update the commands and workbench parts.    
@@ -196,7 +170,7 @@ At this writing there are three ways to use the update site:
 
 h2. Not Included
 
-Certain model exports were once supported using the Apache POI libraries.  We have removed these for the initial NASA delivery.  We may reinstate these later under a different license.  
+Certain model exports were once supported using the Apache POI libraries.  We have removed these for the NASA deliveries.  We may reinstate these later under a different license.  
 
 
 h2. License
