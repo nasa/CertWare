@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="net.certware.state.sdk"
+	label="StateAnalysis SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="net.certware.state"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="net.certware.state.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>

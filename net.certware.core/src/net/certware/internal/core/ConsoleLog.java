@@ -146,12 +146,8 @@ class ConsoleLog extends Object implements LogService {
 	 * @see org.osgi.service.log.LogService#log(org.osgi.framework.ServiceReference,
 	 *      int, java.lang.String)
 	 */
-<<<<<<< HEAD
-	public void log(@SuppressWarnings("rawtypes") ServiceReference reference, int level, String message) {
-=======
 	@SuppressWarnings({ "rawtypes" })
 	public void log(ServiceReference reference, int level, String message) {
->>>>>>> refs/heads/master
 		log(reference, level, message, null);
 	}
 
@@ -159,13 +155,8 @@ class ConsoleLog extends Object implements LogService {
 	 * @see org.osgi.service.log.LogService#log(org.osgi.framework.ServiceReference,
 	 *      int, java.lang.String, java.lang.Throwable)
 	 */
-<<<<<<< HEAD
-	@SuppressWarnings("unchecked")
-	public void log(@SuppressWarnings("rawtypes") ServiceReference reference, int level, String message,
-=======
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void log(ServiceReference reference, int level, String message,
->>>>>>> refs/heads/master
 			Throwable throwable) {
 		OutputStream stream = getOutputStream(level);
 

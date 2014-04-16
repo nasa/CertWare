@@ -1,0 +1,96 @@
+grammar net.certware.state.StateAnalysis with org.eclipse.xtext.common.Terminals
+
+generate stateAnalysis "http://www.certware.net/state/StateAnalysis"
+
+System:
+	subsystems+=Subsystem*
+	;
+	
+Subsystem:
+	'Subsystem' 
+	name=ID 
+	deploymentSets += DeploymentSet*
+	;
+	
+DeploymentSet:
+	name=ID
+	deployments += Deployment*
+	;
+
+Deployment:
+	name=ID
+	components += Component*
+	;
+	
+Component:
+	name=ID
+	sv = StateVariable
+	controller += Controller+
+	estimator += Estimator+
+	;
+	
+StateVariable:
+	name=ID
+	stateConstraints += [StateConstraint]*
+	stateUpdates += [StateUpdate]*
+;
+
+Controller:
+	name=ID
+	stateConstraint += StateConstraint
+	hardwareCommand += HardwareCommand+
+;
+
+Estimator:
+	name=ID
+	hardwareMeasurement += HardwareMeasurement+
+;
+
+StateConstraint:
+	name=ID
+	controllers += [Controller]*
+	estimators += [Estimator]*
+;
+
+StateUpdate:
+	name=ID
+	controllers += [Controller]*
+	estimators += [Estimator]*
+;
+
+HardwareCommand:
+	name=ID
+	controller = [Controller]
+	adapter = [HardwareAdapter]
+;
+
+HardwareMeasurement:
+	name=ID
+	adapter = [HardwareAdapter]
+	estimator = [Estimator]
+;
+
+Device:
+	name=ID
+	description=STRING
+;
+
+DeviceCommand:
+	name=ID
+	adapter = [HardwareAdapter]
+	device = Device
+;
+
+DeviceMeasurement:
+	name=ID
+	adapter = [HardwareAdapter]
+	device = Device
+;
+
+HardwareAdapter:
+	name=ID
+	hardwareCommands += [HardwareCommand]*
+	hardwareMeasurements += [HardwareMeasurement]*
+	deviceCommands += [DeviceCommand]*
+	deviceMeasurements += [DeviceMeasurement]*
+;

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.state/src-gen" editDirectory="/net.certware.state.edit/src"
+    editorDirectory="/net.certware.state.editor/src" modelPluginID="net.certware.state"
+    forceOverwrite="true" modelName="StateAnalysis" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.state.edit"
+    editorPluginID="net.certware.state.editor" runtimeVersion="2.9">
+  <genPackages prefix="StateAnalysis" basePackage="net.certware.state" disposableProviderFactory="true"
+      fileExtensions="sa" ecorePackage="StateAnalysis.ecore#/">
+    <genClasses ecoreClass="StateAnalysis.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//System/subsystems"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//Subsystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Subsystem/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Subsystem/deploymentSets"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//DeploymentSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//DeploymentSet/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//DeploymentSet/deployments"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//Deployment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Deployment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Deployment/components"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Component/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/sv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/controller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/estimator"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//StateVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//StateVariable/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateVariable/stateConstraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateVariable/stateUpdates"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//Controller">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Controller/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Controller/stateConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Controller/hardwareCommand"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//Estimator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Estimator/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Estimator/hardwareMeasurement"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//StateConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//StateConstraint/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateConstraint/controllers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateConstraint/estimators"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//StateUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//StateUpdate/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateUpdate/controllers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateUpdate/estimators"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//HardwareCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//HardwareCommand/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareCommand/controller"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareCommand/adapter"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//HardwareMeasurement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//HardwareMeasurement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareMeasurement/adapter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareMeasurement/estimator"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//Device">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Device/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Device/description"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//DeviceCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//DeviceCommand/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//DeviceCommand/adapter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//DeviceCommand/device"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//DeviceMeasurement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//DeviceMeasurement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//DeviceMeasurement/adapter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//DeviceMeasurement/device"/>
+    </genClasses>
+    <genClasses ecoreClass="StateAnalysis.ecore#//HardwareAdapter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//HardwareAdapter/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/hardwareCommands"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/hardwareMeasurements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/deviceCommands"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/deviceMeasurements"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

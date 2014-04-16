@@ -249,11 +249,7 @@ public class LogProxy extends Object implements LogService {
 	 *      int, java.lang.String)
 	 */
 	@SuppressWarnings("rawtypes")
-<<<<<<< HEAD
 	public void log(org.osgi.framework.ServiceReference reference, int level, String message) {
-=======
-	public void log(ServiceReference reference, int level, String message) {
->>>>>>> refs/heads/master
 		log(reference, level, message, null);
 	}
 
