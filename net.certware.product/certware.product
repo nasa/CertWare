@@ -188,7 +188,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.sacm.dsl.ui"/>
       <plugin id="net.certware.sacm.edit"/>
       <plugin id="net.certware.sacm.editor"/>
-      <plugin id="net.certware.sacm.graphiti"/>
       <plugin id="net.certware.sacm.help"/>
       <plugin id="net.certware.sacm.navigator"/>
       <plugin id="net.certware.sacm.validator"/>
