@@ -26,4 +26,9 @@ local.properties
 # .cproject
 
 # PDT-specific
-.buildpath
+.buildpath/my.x
+/my.x.diagram
+/my.x.edit
+/my.x.editor
+/my.x.tests
+/my.x

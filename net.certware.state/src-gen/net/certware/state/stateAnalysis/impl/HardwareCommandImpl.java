@@ -2,15 +2,12 @@
  */
 package net.certware.state.stateAnalysis.impl;
 
-import net.certware.state.stateAnalysis.Controller;
-import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareCommand;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -23,8 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareCommandImpl#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareCommandImpl#getController <em>Controller</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareCommandImpl#getAdapter <em>Adapter</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareCommandImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,24 +49,24 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getController() <em>Controller</em>}' reference.
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getController()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected Controller controller;
+  protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAdapter() <em>Adapter</em>}' reference.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdapter()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected HardwareAdapter adapter;
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,19 +117,9 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Controller getController()
+  public String getDescription()
   {
-    if (controller != null && controller.eIsProxy())
-    {
-      InternalEObject oldController = (InternalEObject)controller;
-      controller = (Controller)eResolveProxy(oldController);
-      if (controller != oldController)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, StateAnalysisPackage.HARDWARE_COMMAND__CONTROLLER, oldController, controller));
-      }
-    }
-    return controller;
+    return description;
   }
 
   /**
@@ -141,65 +127,12 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public Controller basicGetController()
+  public void setDescription(String newDescription)
   {
-    return controller;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setController(Controller newController)
-  {
-    Controller oldController = controller;
-    controller = newController;
+    String oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_COMMAND__CONTROLLER, oldController, controller));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HardwareAdapter getAdapter()
-  {
-    if (adapter != null && adapter.eIsProxy())
-    {
-      InternalEObject oldAdapter = (InternalEObject)adapter;
-      adapter = (HardwareAdapter)eResolveProxy(oldAdapter);
-      if (adapter != oldAdapter)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, StateAnalysisPackage.HARDWARE_COMMAND__ADAPTER, oldAdapter, adapter));
-      }
-    }
-    return adapter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public HardwareAdapter basicGetAdapter()
-  {
-    return adapter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAdapter(HardwareAdapter newAdapter)
-  {
-    HardwareAdapter oldAdapter = adapter;
-    adapter = newAdapter;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_COMMAND__ADAPTER, oldAdapter, adapter));
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_COMMAND__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -214,12 +147,8 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
     {
       case StateAnalysisPackage.HARDWARE_COMMAND__NAME:
         return getName();
-      case StateAnalysisPackage.HARDWARE_COMMAND__CONTROLLER:
-        if (resolve) return getController();
-        return basicGetController();
-      case StateAnalysisPackage.HARDWARE_COMMAND__ADAPTER:
-        if (resolve) return getAdapter();
-        return basicGetAdapter();
+      case StateAnalysisPackage.HARDWARE_COMMAND__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,11 +166,8 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
       case StateAnalysisPackage.HARDWARE_COMMAND__NAME:
         setName((String)newValue);
         return;
-      case StateAnalysisPackage.HARDWARE_COMMAND__CONTROLLER:
-        setController((Controller)newValue);
-        return;
-      case StateAnalysisPackage.HARDWARE_COMMAND__ADAPTER:
-        setAdapter((HardwareAdapter)newValue);
+      case StateAnalysisPackage.HARDWARE_COMMAND__DESCRIPTION:
+        setDescription((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -260,11 +186,8 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
       case StateAnalysisPackage.HARDWARE_COMMAND__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case StateAnalysisPackage.HARDWARE_COMMAND__CONTROLLER:
-        setController((Controller)null);
-        return;
-      case StateAnalysisPackage.HARDWARE_COMMAND__ADAPTER:
-        setAdapter((HardwareAdapter)null);
+      case StateAnalysisPackage.HARDWARE_COMMAND__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -282,10 +205,8 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
     {
       case StateAnalysisPackage.HARDWARE_COMMAND__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.HARDWARE_COMMAND__CONTROLLER:
-        return controller != null;
-      case StateAnalysisPackage.HARDWARE_COMMAND__ADAPTER:
-        return adapter != null;
+      case StateAnalysisPackage.HARDWARE_COMMAND__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
   }
@@ -303,6 +224,8 @@ public class HardwareCommandImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

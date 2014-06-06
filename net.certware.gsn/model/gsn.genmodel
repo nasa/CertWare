@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright © 2014 National Aeronautics and Space Administration."
+    modelDirectory="/net.certware.gsn/src" modelPluginID="net.certware.gsn" modelName="Gsn"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory=""
+    testSuiteClass="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>gsn.ecore</foreignModel>
+  <genPackages prefix="Gsn" basePackage="net.certware.gsn" resource="XMI" disposableProviderFactory="true"
+      ecorePackage="gsn.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gsn.ecore#//ElementVisibility">
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ElementVisibility/Private"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//ElementVisibility/Public"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="gsn.ecore#//SolvedByMultiplicityExtension">
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//SolvedByMultiplicityExtension/Normal"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//SolvedByMultiplicityExtension/Optional"/>
+      <genEnumLiterals ecoreEnumLiteral="gsn.ecore#//SolvedByMultiplicityExtension/Multi"/>
+    </genEnums>
+    <genClasses ecoreClass="gsn.ecore#//Case">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Case/contains"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Case/autoID"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gsn.ecore#//ArgumentElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//ArgumentElement/tobeinstantiated"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//ArgumentElement/isPartOf"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gsn.ecore#//SolvedByTargetElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//SolvedByTargetElement/parentSolvedBy"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gsn.ecore#//InTheContextOfTargetElement"/>
+    <genClasses ecoreClass="gsn.ecore#//SolvedByModular">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//SolvedByModular/childSolvedByModular"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gsn.ecore#//SolvedByModular/parentSolvedByModuleElement"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//InContextOfModular">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gsn.ecore#//InContextOfModular/parentInConextOfModuleElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//InContextOfModular/modularContextualElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gsn.ecore#//SpinalElement"/>
+    <genClasses image="false" ecoreClass="gsn.ecore#//DecomposableSpinalElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//DecomposableSpinalElement/toBeDeveloped"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//DecomposableSpinalElement/childSolvedBy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//DecomposableSpinalElement/hasContext"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gsn.ecore#//ContextualElement"/>
+    <genClasses ecoreClass="gsn.ecore#//SolvedBy">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gsn.ecore#//SolvedBy/parentSpinalElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//SolvedBy/childSpinalelement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//SolvedBy/cardinality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//SolvedBy/multiextension"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//InContextOf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//InContextOf/contextualElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gsn.ecore#//InContextOf/contextOfSpinalElement"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//Goal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Goal/visibility"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference gsn.ecore#//Goal/isTopLevelGoalOf"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Goal/toBeSupportedByContract"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//Strategy"/>
+    <genClasses ecoreClass="gsn.ecore#//Solution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Solution/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//Context">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//Context/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//Justification"/>
+    <genClasses ecoreClass="gsn.ecore#//Assumption"/>
+    <genClasses ecoreClass="gsn.ecore#//AwayContext">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//AwayContext/pointsTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//AwayContext/moduleIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//AwaySolution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//AwaySolution/pointsTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//AwaySolution/moduleIdentifier"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//AwayGoal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//AwayGoal/pointsTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//AwayGoal/moduleIdentifier"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="gsn.ecore#//Module">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//Module/parentModuleOf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//Module/associatedWithOther"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Module/hasTopLevel"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference gsn.ecore#//Module/containsElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Module/parentSolvedByModular"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//Module/hasContext"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//ArgumentModule"/>
+    <genClasses ecoreClass="gsn.ecore#//ContractModule"/>
+    <genClasses image="false" ecoreClass="gsn.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//ModelElement/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//ModelElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference gsn.ecore#//ModelElement/containsAdditional"/>
+    </genClasses>
+    <genClasses ecoreClass="gsn.ecore#//TaggedValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//TaggedValue/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute gsn.ecore#//TaggedValue/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

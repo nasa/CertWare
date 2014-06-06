@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareMeasurement#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.HardwareMeasurement#getAdapter <em>Adapter</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.HardwareMeasurement#getEstimator <em>Estimator</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.HardwareMeasurement#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,55 +50,29 @@ public interface HardwareMeasurement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Adapter</b></em>' reference.
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Adapter</em>' reference isn't clear,
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Adapter</em>' reference.
-   * @see #setAdapter(HardwareAdapter)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareMeasurement_Adapter()
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareMeasurement_Description()
    * @model
    * @generated
    */
-  HardwareAdapter getAdapter();
+  String getDescription();
 
   /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.HardwareMeasurement#getAdapter <em>Adapter</em>}' reference.
+   * Sets the value of the '{@link net.certware.state.stateAnalysis.HardwareMeasurement#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Adapter</em>' reference.
-   * @see #getAdapter()
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
    * @generated
    */
-  void setAdapter(HardwareAdapter value);
-
-  /**
-   * Returns the value of the '<em><b>Estimator</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Estimator</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Estimator</em>' reference.
-   * @see #setEstimator(Estimator)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareMeasurement_Estimator()
-   * @model
-   * @generated
-   */
-  Estimator getEstimator();
-
-  /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.HardwareMeasurement#getEstimator <em>Estimator</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Estimator</em>' reference.
-   * @see #getEstimator()
-   * @generated
-   */
-  void setEstimator(Estimator value);
+  void setDescription(String value);
 
 } // HardwareMeasurement

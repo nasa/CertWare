@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gsn" nsURI="http://net.certware.org/GSN" nsPrefix="gsn">
+  <eClassifiers xsi:type="ecore:EClass" name="Case">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//ModelElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentElement" abstract="true" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tobeinstantiated" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isPartOf" lowerBound="1"
+        eType="#//Module" eOpposite="#//Module/containsElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SolvedByTargetElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSolvedBy" upperBound="-1"
+        eType="#//SolvedBy" eOpposite="#//SolvedBy/childSpinalelement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InTheContextOfTargetElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SolvedByModular">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childSolvedByModular" lowerBound="1"
+        eType="#//Module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSolvedByModuleElement"
+        lowerBound="1" eType="#//Module" eOpposite="#//Module/parentSolvedByModular"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InContextOfModular">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentInConextOfModuleElement"
+        lowerBound="1" eType="#//Module" eOpposite="#//Module/hasContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modularContextualElement"
+        lowerBound="1" eType="#//Module"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpinalElement" abstract="true" eSuperTypes="#//ArgumentElement #//SolvedByTargetElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DecomposableSpinalElement" abstract="true"
+      eSuperTypes="#//SpinalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeDeveloped" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childSolvedBy" upperBound="-1"
+        eType="#//SolvedBy" containment="true" eOpposite="#//SolvedBy/parentSpinalElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasContext" upperBound="-1"
+        eType="#//InContextOf" containment="true" eOpposite="#//InContextOf/contextOfSpinalElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextualElement" abstract="true" eSuperTypes="#//ArgumentElement #//InTheContextOfTargetElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SolvedBy">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSpinalElement" lowerBound="1"
+        eType="#//DecomposableSpinalElement" eOpposite="#//DecomposableSpinalElement/childSolvedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childSpinalelement" lowerBound="1"
+        eType="#//SolvedByTargetElement" eOpposite="#//SolvedByTargetElement/parentSolvedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiextension" eType="#//SolvedByMultiplicityExtension"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InContextOf">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextualElement" lowerBound="1"
+        eType="#//InTheContextOfTargetElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextOfSpinalElement"
+        lowerBound="1" eType="#//DecomposableSpinalElement" eOpposite="#//DecomposableSpinalElement/hasContext"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal" eSuperTypes="#//DecomposableSpinalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//ElementVisibility"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isTopLevelGoalOf" eType="#//Module"
+        eOpposite="#//Module/hasTopLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeSupportedByContract"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="#//DecomposableSpinalElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="#//SpinalElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//ElementVisibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="#//ContextualElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//ElementVisibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="#//ContextualElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="#//ContextualElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AwayContext" eSuperTypes="#//ContextualElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointsTo" lowerBound="1"
+        eType="#//Goal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleIdentifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AwaySolution" eSuperTypes="#//SpinalElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointsTo" lowerBound="1"
+        eType="#//Solution"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleIdentifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AwayGoal" eSuperTypes="#//SpinalElement #//InTheContextOfTargetElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointsTo" lowerBound="1"
+        eType="#//Goal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleIdentifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Module" abstract="true" eSuperTypes="#//ModelElement #//SolvedByTargetElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentModuleOf" upperBound="-1"
+        eType="#//Module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedWithOther" upperBound="-1"
+        eType="#//Module"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasTopLevel" upperBound="-1"
+        eType="#//Goal" containment="true" eOpposite="#//Goal/isTopLevelGoalOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsElement" upperBound="-1"
+        eType="#//ArgumentElement" eOpposite="#//ArgumentElement/isPartOf"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSolvedByModular"
+        upperBound="-1" eType="#//SolvedByModular" containment="true" eOpposite="#//SolvedByModular/parentSolvedByModuleElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasContext" upperBound="-1"
+        eType="#//InContextOfModular" containment="true" eOpposite="#//InContextOfModular/parentInConextOfModuleElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentModule" eSuperTypes="#//Module #//InTheContextOfTargetElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContractModule" eSuperTypes="#//Module"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsAdditional" upperBound="-1"
+        eType="#//TaggedValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaggedValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ElementVisibility">
+    <eLiterals name="Private"/>
+    <eLiterals name="Public" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SolvedByMultiplicityExtension">
+    <eLiterals name="Normal"/>
+    <eLiterals name="Optional" value="1"/>
+    <eLiterals name="Multi" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

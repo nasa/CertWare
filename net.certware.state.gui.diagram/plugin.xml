@@ -1,0 +1,953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="sad"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="sad"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/StateAnalysisDiagramFile.gif"
+         extensions="sad"
+         default="true"
+         class="stateAnalysis.diagram.part.StateAnalysisDiagramEditor"
+         matchingStrategy="stateAnalysis.diagram.part.StateAnalysisMatchingStrategy"
+         contributorClass="stateAnalysis.diagram.part.StateAnalysisDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="stateAnalysis.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/StateAnalysisDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="stateAnalysis.diagram.part.StateAnalysisCreationWizard"
+  	     id="stateAnalysis.diagram.part.StateAnalysisCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="net.certware.state.gui.diagram.InitDiagram"
+            nameFilter="*.stateanalysis"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="stateAnalysis.diagram.part.StateAnalysisInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="net.certware.state.gui.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="StateAnalysisPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="StateAnalysisPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="StateAnalysisPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="StateAnalysisRender">
+         <Priority name="Lowest"/>
+         <ViewId id="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="stateAnalysis.diagram.providers.StateAnalysisMarkerNavigationProvider">
+         <MarkerType name="net.certware.state.gui.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="StateAnalysis Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="stateAnalysis.diagram.providers.StateAnalysisValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="stateAnalysis.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="net.certware.state.gui.diagram.general"
+            name="%prefpage.net.certware.state.gui.diagram.general"
+            class="stateAnalysis.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="net.certware.state.gui.diagram.appearance"
+            name="%prefpage.net.certware.state.gui.diagram.appearance"
+            category="net.certware.state.gui.diagram.general"
+            class="stateAnalysis.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="net.certware.state.gui.diagram.connections"
+            name="%prefpage.net.certware.state.gui.diagram.connections"
+            category="net.certware.state.gui.diagram.general"
+            class="stateAnalysis.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="net.certware.state.gui.diagram.printing"
+            name="%prefpage.net.certware.state.gui.diagram.printing"
+            category="net.certware.state.gui.diagram.general"
+            class="stateAnalysis.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="net.certware.state.gui.diagram.rulersAndGrid"
+            name="%prefpage.net.certware.state.gui.diagram.rulersAndGrid"
+            category="net.certware.state.gui.diagram.general"
+            class="stateAnalysis.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="net.certware.state.gui.diagram"
+            labelProvider="stateAnalysis.diagram.sheet.StateAnalysisSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="net.certware.state.gui.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="net.certware.state.gui.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="stateAnalysis.diagram.sheet.StateAnalysisPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="stateAnalysis.diagram.providers.StateAnalysisViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="stateAnalysis"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="StateAnalysis"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3024,3025,3026,3004,3005,3006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="stateAnalysis.diagram.providers.StateAnalysisEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="StateAnalysis"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,3001,3002,3003,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3024,3025,3026,3004,3005,3006"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4001,4002"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5001,5002,5003,5004,5012,5008,5009,5010,5011,5015,5013,5014,5019,5016,5017,5018,5024,5020,5021,5027,5025,5026,5007,5005,5006"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7011,7012,7013,7014,7015,7016,7017,7018,7019,7020,7021,7022,7023,7024,7025,7026,7028,7029,7009,7010"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfSystemEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.SystemEditPart" id="System_1000"/>
+         <context elements="System_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfSubsystemEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.SubsystemEditPart" id="Subsystem_2001"/>
+         <context elements="Subsystem_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDeploymentSetEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DeploymentSetEditPart" id="DeploymentSet_3001"/>
+         <context elements="DeploymentSet_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDeploymentEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DeploymentEditPart" id="Deployment_3002"/>
+         <context elements="Deployment_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfComponentEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.ComponentEditPart" id="Component_3003"/>
+         <context elements="Component_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateVariableEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateVariableEditPart" id="StateVariable_3007"/>
+         <context elements="StateVariable_3007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraintEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateConstraintEditPart" id="StateConstraint_3008"/>
+         <context elements="StateConstraint_3008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraint2EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateConstraint2EditPart" id="StateConstraint_3009"/>
+         <context elements="StateConstraint_3009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateUpdateEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateUpdateEditPart" id="StateUpdate_3010"/>
+         <context elements="StateUpdate_3010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateVariable2EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateVariable2EditPart" id="StateVariable_3011"/>
+         <context elements="StateVariable_3011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfControllerEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.ControllerEditPart" id="Controller_3012"/>
+         <context elements="Controller_3012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraint3EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateConstraint3EditPart" id="StateConstraint_3013"/>
+         <context elements="StateConstraint_3013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareCommandEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.HardwareCommandEditPart" id="HardwareCommand_3014"/>
+         <context elements="HardwareCommand_3014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfEstimatorEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.EstimatorEditPart" id="Estimator_3015"/>
+         <context elements="Estimator_3015"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraint4EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateConstraint4EditPart" id="StateConstraint_3016"/>
+         <context elements="StateConstraint_3016"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateUpdate2EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateUpdate2EditPart" id="StateUpdate_3017"/>
+         <context elements="StateUpdate_3017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareMeasurementEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart" id="HardwareMeasurement_3018"/>
+         <context elements="HardwareMeasurement_3018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareAdapterEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart" id="HardwareAdapter_3019"/>
+         <context elements="HardwareAdapter_3019"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareCommand2EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart" id="HardwareCommand_3020"/>
+         <context elements="HardwareCommand_3020"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareMeasurement2EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.HardwareMeasurement2EditPart" id="HardwareMeasurement_3021"/>
+         <context elements="HardwareMeasurement_3021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDeviceEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DeviceEditPart" id="Device_3024"/>
+         <context elements="Device_3024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDeviceCommandEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DeviceCommandEditPart" id="DeviceCommand_3025"/>
+         <context elements="DeviceCommand_3025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDeviceMeasurementEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DeviceMeasurementEditPart" id="DeviceMeasurement_3026"/>
+         <context elements="DeviceMeasurement_3026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDataCollectionEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DataCollectionEditPart" id="DataCollection_3004"/>
+         <context elements="DataCollection_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfQosPolicyEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.QosPolicyEditPart" id="QosPolicy_3005"/>
+         <context elements="QosPolicy_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfDataProductEditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.DataProductEditPart" id="DataProduct_3006"/>
+         <context elements="DataProduct_3006"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="stateAnalysis.diagram.providers.StateAnalysisIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="stateAnalysis.diagram.providers.StateAnalysisParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="stateAnalysis.diagram.providers.StateAnalysisShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.System_1000"
+               name="%metatype.name.System_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="System"
+               edithelper="stateAnalysis.diagram.edit.helpers.SystemEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.Subsystem_2001"
+               name="%metatype.name.Subsystem_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Subsystem"
+               edithelper="stateAnalysis.diagram.edit.helpers.SubsystemEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.DeploymentSet_3001"
+               name="%metatype.name.DeploymentSet_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DeploymentSet"
+               edithelper="stateAnalysis.diagram.edit.helpers.DeploymentSetEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.Deployment_3002"
+               name="%metatype.name.Deployment_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Deployment"
+               edithelper="stateAnalysis.diagram.edit.helpers.DeploymentEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.Component_3003"
+               name="%metatype.name.Component_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Component"
+               edithelper="stateAnalysis.diagram.edit.helpers.ComponentEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.StateVariable_3007"
+               name="%metatype.name.StateVariable_3007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StateVariable"
+               edithelper="stateAnalysis.diagram.edit.helpers.StateVariableEditHelper">
+            <param name="semanticHint" value="3007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.StateConstraint_3008"
+               name="%metatype.name.StateConstraint_3008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StateConstraint"
+               edithelper="stateAnalysis.diagram.edit.helpers.StateConstraintEditHelper">
+            <param name="semanticHint" value="3008"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.StateConstraint_3009"
+               name="%metatype.name.StateConstraint_3009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.StateConstraint_3008"/>
+            <param name="semanticHint" value="3009"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.StateUpdate_3010"
+               name="%metatype.name.StateUpdate_3010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="StateUpdate"
+               edithelper="stateAnalysis.diagram.edit.helpers.StateUpdateEditHelper">
+            <param name="semanticHint" value="3010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.StateVariable_3011"
+               name="%metatype.name.StateVariable_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.StateVariable_3007"/>
+            <param name="semanticHint" value="3011"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.Controller_3012"
+               name="%metatype.name.Controller_3012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Controller"
+               edithelper="stateAnalysis.diagram.edit.helpers.ControllerEditHelper">
+            <param name="semanticHint" value="3012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.StateConstraint_3013"
+               name="%metatype.name.StateConstraint_3013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.StateConstraint_3008"/>
+            <param name="semanticHint" value="3013"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.HardwareCommand_3014"
+               name="%metatype.name.HardwareCommand_3014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HardwareCommand"
+               edithelper="stateAnalysis.diagram.edit.helpers.HardwareCommandEditHelper">
+            <param name="semanticHint" value="3014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.Estimator_3015"
+               name="%metatype.name.Estimator_3015"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Estimator"
+               edithelper="stateAnalysis.diagram.edit.helpers.EstimatorEditHelper">
+            <param name="semanticHint" value="3015"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.StateConstraint_3016"
+               name="%metatype.name.StateConstraint_3016"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.StateConstraint_3008"/>
+            <param name="semanticHint" value="3016"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.StateUpdate_3017"
+               name="%metatype.name.StateUpdate_3017"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.StateUpdate_3010"/>
+            <param name="semanticHint" value="3017"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.HardwareMeasurement_3018"
+               name="%metatype.name.HardwareMeasurement_3018"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HardwareMeasurement"
+               edithelper="stateAnalysis.diagram.edit.helpers.HardwareMeasurementEditHelper">
+            <param name="semanticHint" value="3018"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.HardwareAdapter_3019"
+               name="%metatype.name.HardwareAdapter_3019"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="HardwareAdapter"
+               edithelper="stateAnalysis.diagram.edit.helpers.HardwareAdapterEditHelper">
+            <param name="semanticHint" value="3019"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.HardwareCommand_3020"
+               name="%metatype.name.HardwareCommand_3020"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.HardwareCommand_3014"/>
+            <param name="semanticHint" value="3020"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.HardwareMeasurement_3021"
+               name="%metatype.name.HardwareMeasurement_3021"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.HardwareMeasurement_3018"/>
+            <param name="semanticHint" value="3021"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.Device_3024"
+               name="%metatype.name.Device_3024"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Device"
+               edithelper="stateAnalysis.diagram.edit.helpers.DeviceEditHelper">
+            <param name="semanticHint" value="3024"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.DeviceCommand_3025"
+               name="%metatype.name.DeviceCommand_3025"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DeviceCommand"
+               edithelper="stateAnalysis.diagram.edit.helpers.DeviceCommandEditHelper">
+            <param name="semanticHint" value="3025"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.DeviceMeasurement_3026"
+               name="%metatype.name.DeviceMeasurement_3026"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DeviceMeasurement"
+               edithelper="stateAnalysis.diagram.edit.helpers.DeviceMeasurementEditHelper">
+            <param name="semanticHint" value="3026"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.DataCollection_3004"
+               name="%metatype.name.DataCollection_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DataCollection"
+               edithelper="stateAnalysis.diagram.edit.helpers.DataCollectionEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.QosPolicy_3005"
+               name="%metatype.name.QosPolicy_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="QosPolicy"
+               edithelper="stateAnalysis.diagram.edit.helpers.QosPolicyEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <metamodelType
+               id="net.certware.state.gui.diagram.DataProduct_3006"
+               name="%metatype.name.DataProduct_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="DataProduct"
+               edithelper="stateAnalysis.diagram.edit.helpers.DataProductEditHelper">
+            <param name="semanticHint" value="3006"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.ControllerDelegates_4001"
+               name="%metatype.name.ControllerDelegates_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.EstimatorDistilledMeasurements_4002"
+               name="%metatype.name.EstimatorDistilledMeasurements_4002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4002"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="net.certware.state.gui.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="net.certware.state.gui.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="net.certware.state.gui.diagram.TypeContext">
+         <elementType ref="net.certware.state.gui.diagram.System_1000"/>
+         <elementType ref="net.certware.state.gui.diagram.Subsystem_2001"/>
+         <elementType ref="net.certware.state.gui.diagram.DeploymentSet_3001"/>
+         <elementType ref="net.certware.state.gui.diagram.Deployment_3002"/>
+         <elementType ref="net.certware.state.gui.diagram.Component_3003"/>
+         <elementType ref="net.certware.state.gui.diagram.StateVariable_3007"/>
+         <elementType ref="net.certware.state.gui.diagram.StateConstraint_3008"/>
+         <elementType ref="net.certware.state.gui.diagram.StateConstraint_3009"/>
+         <elementType ref="net.certware.state.gui.diagram.StateUpdate_3010"/>
+         <elementType ref="net.certware.state.gui.diagram.StateVariable_3011"/>
+         <elementType ref="net.certware.state.gui.diagram.Controller_3012"/>
+         <elementType ref="net.certware.state.gui.diagram.StateConstraint_3013"/>
+         <elementType ref="net.certware.state.gui.diagram.HardwareCommand_3014"/>
+         <elementType ref="net.certware.state.gui.diagram.Estimator_3015"/>
+         <elementType ref="net.certware.state.gui.diagram.StateConstraint_3016"/>
+         <elementType ref="net.certware.state.gui.diagram.StateUpdate_3017"/>
+         <elementType ref="net.certware.state.gui.diagram.HardwareMeasurement_3018"/>
+         <elementType ref="net.certware.state.gui.diagram.HardwareAdapter_3019"/>
+         <elementType ref="net.certware.state.gui.diagram.HardwareCommand_3020"/>
+         <elementType ref="net.certware.state.gui.diagram.HardwareMeasurement_3021"/>
+         <elementType ref="net.certware.state.gui.diagram.Device_3024"/>
+         <elementType ref="net.certware.state.gui.diagram.DeviceCommand_3025"/>
+         <elementType ref="net.certware.state.gui.diagram.DeviceMeasurement_3026"/>
+         <elementType ref="net.certware.state.gui.diagram.DataCollection_3004"/>
+         <elementType ref="net.certware.state.gui.diagram.QosPolicy_3005"/>
+         <elementType ref="net.certware.state.gui.diagram.DataProduct_3006"/>
+         <elementType ref="net.certware.state.gui.diagram.ControllerDelegates_4001"/>
+         <elementType ref="net.certware.state.gui.diagram.EstimatorDistilledMeasurements_4002"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="net.certware.state.gui.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="net.certware.state.gui.diagram"
+           properties="isURIEditorInput"
+           class="stateAnalysis.diagram.part.StateAnalysisUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="net.certware.state.gui.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="net.certware.state.gui.diagram"
+           properties="isShortcut"
+           class="stateAnalysis.diagram.part.StateAnalysisShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="net.certware.state.gui.diagram.resourceContent"/>
+			<contentExtension pattern="net.certware.state.gui.diagram.domainResourceContent"/>
+            <contentExtension pattern="net.certware.state.gui.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="net.certware.state.gui.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="net.certware.state.gui.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="stateAnalysis.diagram.navigator.StateAnalysisNavigatorContentProvider" 
+            labelProvider="stateAnalysis.diagram.navigator.StateAnalysisNavigatorLabelProvider"
+            icon="icons/obj16/StateAnalysisDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="sad"/>
+               </and>
+               <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="net.certware.state.gui.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="net.certware.state.gui.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="net.certware.state.gui.diagram.navigatorSorter" 
+               class="stateAnalysis.diagram.navigator.StateAnalysisNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="sad"/>
+                  </and>
+                  <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="net.certware.state.gui.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="stateAnalysis.diagram.navigator.StateAnalysisDomainNavigatorContentProvider" 
+            labelProvider="stateAnalysis.diagram.navigator.StateAnalysisDomainNavigatorLabelProvider"
+            icon="icons/obj16/StateAnalysisDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="stateanalysis"/>
+               </and>
+               <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="net.certware.state.gui.diagram.navigatorActionProvider"
+            class="stateAnalysis.diagram.navigator.StateAnalysisNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="net.certware.state.gui.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="net.certware.state.gui.diagram.navigatorLinkHelper"
+            class="stateAnalysis.diagram.navigator.StateAnalysisNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="net.certware.state.gui.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="stateAnalysis.diagram.part.StateAnalysisDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="stateAnalysis.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="stateAnalysis.diagram.updateDiagram"
+         contextId="stateAnalysis.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="net.certware.state.gui.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="stateAnalysis.diagram.edit.parts.SystemEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="net.certware.state.gui.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="stateAnalysis.diagram.part.StateAnalysisDiagramEditorID"
+         defaultHandler="stateAnalysis.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

@@ -1,0 +1,30 @@
+/*
+ * 
+ */
+package stateAnalysis.diagram.part;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
+
+/**
+ * @generated
+ */
+public class StateAnalysisLinkDescriptor extends UpdaterLinkDescriptor {
+	/**
+	 * @generated
+	 */
+	public StateAnalysisLinkDescriptor(EObject source, EObject destination,
+			IElementType elementType, int linkVID) {
+		super(source, destination, elementType, linkVID);
+	}
+
+	/**
+	 * @generated
+	 */
+	public StateAnalysisLinkDescriptor(EObject source, EObject destination,
+			EObject linkElement, IElementType elementType, int linkVID) {
+		super(source, destination, linkElement, elementType, linkVID);
+	}
+
+}

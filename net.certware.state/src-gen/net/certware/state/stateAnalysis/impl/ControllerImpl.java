@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -31,6 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getName <em>Name</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getDelegates <em>Delegates</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getStateConstraint <em>State Constraint</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getHardwareCommand <em>Hardware Command</em>}</li>
  * </ul>
@@ -59,6 +62,36 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getDelegates() <em>Delegates</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDelegates()
+   * @generated
+   * @ordered
+   */
+  protected EList<Controller> delegates;
 
   /**
    * The cached value of the '{@link #getStateConstraint() <em>State Constraint</em>}' containment reference list.
@@ -129,6 +162,43 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.CONTROLLER__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Controller> getDelegates()
+  {
+    if (delegates == null)
+    {
+      delegates = new EObjectResolvingEList<Controller>(Controller.class, this, StateAnalysisPackage.CONTROLLER__DELEGATES);
+    }
+    return delegates;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<StateConstraint> getStateConstraint()
   {
     if (stateConstraint == null)
@@ -182,6 +252,10 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
     {
       case StateAnalysisPackage.CONTROLLER__NAME:
         return getName();
+      case StateAnalysisPackage.CONTROLLER__DESCRIPTION:
+        return getDescription();
+      case StateAnalysisPackage.CONTROLLER__DELEGATES:
+        return getDelegates();
       case StateAnalysisPackage.CONTROLLER__STATE_CONSTRAINT:
         return getStateConstraint();
       case StateAnalysisPackage.CONTROLLER__HARDWARE_COMMAND:
@@ -203,6 +277,13 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
     {
       case StateAnalysisPackage.CONTROLLER__NAME:
         setName((String)newValue);
+        return;
+      case StateAnalysisPackage.CONTROLLER__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
+      case StateAnalysisPackage.CONTROLLER__DELEGATES:
+        getDelegates().clear();
+        getDelegates().addAll((Collection<? extends Controller>)newValue);
         return;
       case StateAnalysisPackage.CONTROLLER__STATE_CONSTRAINT:
         getStateConstraint().clear();
@@ -229,6 +310,12 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
       case StateAnalysisPackage.CONTROLLER__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case StateAnalysisPackage.CONTROLLER__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
+      case StateAnalysisPackage.CONTROLLER__DELEGATES:
+        getDelegates().clear();
+        return;
       case StateAnalysisPackage.CONTROLLER__STATE_CONSTRAINT:
         getStateConstraint().clear();
         return;
@@ -251,6 +338,10 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
     {
       case StateAnalysisPackage.CONTROLLER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case StateAnalysisPackage.CONTROLLER__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case StateAnalysisPackage.CONTROLLER__DELEGATES:
+        return delegates != null && !delegates.isEmpty();
       case StateAnalysisPackage.CONTROLLER__STATE_CONSTRAINT:
         return stateConstraint != null && !stateConstraint.isEmpty();
       case StateAnalysisPackage.CONTROLLER__HARDWARE_COMMAND:
@@ -272,6 +363,8 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

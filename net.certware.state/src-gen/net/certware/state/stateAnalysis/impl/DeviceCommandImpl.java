@@ -2,16 +2,12 @@
  */
 package net.certware.state.stateAnalysis.impl;
 
-import net.certware.state.stateAnalysis.Device;
 import net.certware.state.stateAnalysis.DeviceCommand;
-import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -24,8 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceCommandImpl#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceCommandImpl#getAdapter <em>Adapter</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceCommandImpl#getDevice <em>Device</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceCommandImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,24 +49,24 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAdapter() <em>Adapter</em>}' reference.
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdapter()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected HardwareAdapter adapter;
+  protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDevice() <em>Device</em>}' containment reference.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDevice()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected Device device;
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -122,19 +117,9 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public HardwareAdapter getAdapter()
+  public String getDescription()
   {
-    if (adapter != null && adapter.eIsProxy())
-    {
-      InternalEObject oldAdapter = (InternalEObject)adapter;
-      adapter = (HardwareAdapter)eResolveProxy(oldAdapter);
-      if (adapter != oldAdapter)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, StateAnalysisPackage.DEVICE_COMMAND__ADAPTER, oldAdapter, adapter));
-      }
-    }
-    return adapter;
+    return description;
   }
 
   /**
@@ -142,86 +127,12 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
    * <!-- end-user-doc -->
    * @generated
    */
-  public HardwareAdapter basicGetAdapter()
+  public void setDescription(String newDescription)
   {
-    return adapter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAdapter(HardwareAdapter newAdapter)
-  {
-    HardwareAdapter oldAdapter = adapter;
-    adapter = newAdapter;
+    String oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.DEVICE_COMMAND__ADAPTER, oldAdapter, adapter));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Device getDevice()
-  {
-    return device;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetDevice(Device newDevice, NotificationChain msgs)
-  {
-    Device oldDevice = device;
-    device = newDevice;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.DEVICE_COMMAND__DEVICE, oldDevice, newDevice);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDevice(Device newDevice)
-  {
-    if (newDevice != device)
-    {
-      NotificationChain msgs = null;
-      if (device != null)
-        msgs = ((InternalEObject)device).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateAnalysisPackage.DEVICE_COMMAND__DEVICE, null, msgs);
-      if (newDevice != null)
-        msgs = ((InternalEObject)newDevice).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateAnalysisPackage.DEVICE_COMMAND__DEVICE, null, msgs);
-      msgs = basicSetDevice(newDevice, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.DEVICE_COMMAND__DEVICE, newDevice, newDevice));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case StateAnalysisPackage.DEVICE_COMMAND__DEVICE:
-        return basicSetDevice(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.DEVICE_COMMAND__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -236,11 +147,8 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
     {
       case StateAnalysisPackage.DEVICE_COMMAND__NAME:
         return getName();
-      case StateAnalysisPackage.DEVICE_COMMAND__ADAPTER:
-        if (resolve) return getAdapter();
-        return basicGetAdapter();
-      case StateAnalysisPackage.DEVICE_COMMAND__DEVICE:
-        return getDevice();
+      case StateAnalysisPackage.DEVICE_COMMAND__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -258,11 +166,8 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
       case StateAnalysisPackage.DEVICE_COMMAND__NAME:
         setName((String)newValue);
         return;
-      case StateAnalysisPackage.DEVICE_COMMAND__ADAPTER:
-        setAdapter((HardwareAdapter)newValue);
-        return;
-      case StateAnalysisPackage.DEVICE_COMMAND__DEVICE:
-        setDevice((Device)newValue);
+      case StateAnalysisPackage.DEVICE_COMMAND__DESCRIPTION:
+        setDescription((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -281,11 +186,8 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
       case StateAnalysisPackage.DEVICE_COMMAND__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case StateAnalysisPackage.DEVICE_COMMAND__ADAPTER:
-        setAdapter((HardwareAdapter)null);
-        return;
-      case StateAnalysisPackage.DEVICE_COMMAND__DEVICE:
-        setDevice((Device)null);
+      case StateAnalysisPackage.DEVICE_COMMAND__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -303,10 +205,8 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
     {
       case StateAnalysisPackage.DEVICE_COMMAND__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.DEVICE_COMMAND__ADAPTER:
-        return adapter != null;
-      case StateAnalysisPackage.DEVICE_COMMAND__DEVICE:
-        return device != null;
+      case StateAnalysisPackage.DEVICE_COMMAND__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
   }
@@ -324,6 +224,8 @@ public class DeviceCommandImpl extends MinimalEObjectImpl.Container implements D
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

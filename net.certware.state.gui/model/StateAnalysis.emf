@@ -1,0 +1,190 @@
+@namespace(uri="http://www.certware.net/state/StateAnalysisGui", prefix="net.certware.state.gui")
+@gmf
+package stateAnalysis;
+
+@gmf.diagram(diagram.extension="sad")
+class System {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="free")
+  val Subsystem[*] subsystems;
+}
+
+@gmf.node(label="name",label.pattern="Subsystem: {0}")
+class Subsystem {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="free")
+  val DeploymentSet[*] deploymentSets;
+}
+
+@gmf.node(label="name",label.pattern="Deployment Set: {0}",
+tool.name="Deployment Set",
+tool.description="Creates a new deployment set for the system")
+class DeploymentSet {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="free")
+  val Deployment[*] deployments;
+}
+
+@gmf.node(label="name",label.pattern="Deployment: {0}",
+tool.name="Deployment",
+tool.description="Creates a new deployment for the deployment set")
+class Deployment {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="free")
+  val Component[*] components;
+  @gmf.compartment(collapsible="true",layout="free")
+  val DataCollection[*] catalogs;
+}
+
+@gmf.node(label="name",label.pattern="Component: {0}")
+class Component {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="free")
+  val StateVariable[*] stateVariables;
+  @gmf.compartment(collapsible="true",layout="free")
+  val Controller[*] controllers;
+  @gmf.compartment(collapsible="true",layout="free")
+  val Estimator[*] estimators;
+  @gmf.compartment(collapsible="true",layout="free")
+  val HardwareAdapter[*] adapters;
+}
+
+@gmf.node(label="name",label.pattern="Data Collection: {0}",
+tool.name="Data Collection")
+class DataCollection {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="list")
+  val QosPolicy[*] policies;
+  @gmf.compartment(collapsible="true",layout="list")
+  val DataProduct[*] products;
+}
+
+@gmf.node(label="name",label.pattern="QoS Policy: {0}",
+tool.name="QoS Policy")
+class QosPolicy {
+  attr String name;
+  attr String description;
+  attr String policy;
+}
+
+@gmf.node(label="name",label.pattern="Product: {0}",
+tool.name="Data Product")
+class DataProduct {
+  attr String name;
+  attr String description;
+  attr String content;
+}
+
+@gmf.node(label="name",label.pattern="SV: {0}",
+tool.name="State Variable")
+class StateVariable {
+  attr String name;
+  attr String description;
+  attr String representationType;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateConstraint[*] inStateConstraints;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateConstraint[*] outStateConstraints;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateUpdate[*] stateUpdates;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateVariable[*] influencedBy;
+}
+
+@gmf.node(label="name",label.pattern="Controller: {0}")
+class Controller {
+  attr String name;
+  attr String description;
+  @gmf.link(label="delegates")
+  unique ref Controller[*] delegates;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateConstraint[*] stateConstraint;
+  @gmf.compartment(collapsible="true",layout="list")
+  val HardwareCommand[*] hardwareCommand;
+}
+
+@gmf.node(label="name",label.pattern="Estimator: {0}")
+class Estimator {
+  attr String name;
+  attr String description;
+  @gmf.link(label="distilled")
+  unique ref Estimator[*] distilledMeasurements;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateConstraint[*] stateConstraints;
+  @gmf.compartment(collapsible="true",layout="list")
+  val StateUpdate[*] stateUpdates;
+  @gmf.compartment(collapsible="true",layout="list")
+  val HardwareMeasurement[*] hardwareMeasurement;
+}
+
+@gmf.node(label="name",label.pattern="Hardware Adapter: {0}",
+tool.name="Hardware Adapter")
+class HardwareAdapter {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="list")
+  val HardwareCommand[*] hardwareCommands;
+  @gmf.compartment(collapsible="true",layout="list")
+  val HardwareMeasurement[*] hardwareMeasurements;
+  @gmf.compartment(collapsible="true",layout="free")
+  val Device[*] devices;
+}
+
+@gmf.node(label="name",label.pattern="Device: {0}")
+class Device {
+  attr String name;
+  attr String description;
+  @gmf.compartment(collapsible="true",layout="list")
+  val DeviceCommand[*] deviceCommands;
+  @gmf.compartment(collapsible="true",layout="list")
+  val DeviceMeasurement[*] deviceMeasurements;
+}
+
+@gmf.node(label="name",label.pattern="State Constraint: {0}",
+tool.name="State Constraint")
+class StateConstraint {
+  attr String name;
+  attr String description;
+}
+
+@gmf.node(label="name",label.pattern="State Update: {0}",
+tool.name="State Update")
+class StateUpdate {
+  attr String name;
+  attr String description;
+}
+
+@gmf.node(label="name",label.pattern="Command: {0}",
+tool.name="Hardware Command")
+class HardwareCommand {
+  attr String name;
+  attr String description;
+}
+
+@gmf.node(label="name",label.pattern="Measurement: {0}",
+tool.name="Hardware Measurement")
+class HardwareMeasurement {
+  attr String name;
+  attr String description;
+}
+
+@gmf.node(label="name",label.pattern="Device Command: {0}",
+tool.name="Device Command")
+class DeviceCommand {
+  attr String name;
+  attr String description;
+}
+
+@gmf.node(label="name",label.pattern="Device Measurement: {0}",
+tool.name="Device Measurement")
+class DeviceMeasurement {
+  attr String name;
+  attr String description;
+}
+

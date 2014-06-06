@@ -4,6 +4,8 @@ package net.certware.state.stateAnalysis.util;
 
 import net.certware.state.stateAnalysis.Component;
 import net.certware.state.stateAnalysis.Controller;
+import net.certware.state.stateAnalysis.DataCollection;
+import net.certware.state.stateAnalysis.DataProduct;
 import net.certware.state.stateAnalysis.Deployment;
 import net.certware.state.stateAnalysis.DeploymentSet;
 import net.certware.state.stateAnalysis.Device;
@@ -13,6 +15,7 @@ import net.certware.state.stateAnalysis.Estimator;
 import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareCommand;
 import net.certware.state.stateAnalysis.HardwareMeasurement;
+import net.certware.state.stateAnalysis.QosPolicy;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateConstraint;
 import net.certware.state.stateAnalysis.StateUpdate;
@@ -103,6 +106,21 @@ public class StateAnalysisAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDeploymentSet(DeploymentSet object)
       {
         return createDeploymentSetAdapter();
+      }
+      @Override
+      public Adapter caseQosPolicy(QosPolicy object)
+      {
+        return createQosPolicyAdapter();
+      }
+      @Override
+      public Adapter caseDataProduct(DataProduct object)
+      {
+        return createDataProductAdapter();
+      }
+      @Override
+      public Adapter caseDataCollection(DataCollection object)
+      {
+        return createDataCollectionAdapter();
       }
       @Override
       public Adapter caseDeployment(Deployment object)
@@ -232,6 +250,51 @@ public class StateAnalysisAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDeploymentSetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.state.stateAnalysis.QosPolicy <em>Qos Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.state.stateAnalysis.QosPolicy
+   * @generated
+   */
+  public Adapter createQosPolicyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.state.stateAnalysis.DataProduct <em>Data Product</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.state.stateAnalysis.DataProduct
+   * @generated
+   */
+  public Adapter createDataProductAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link net.certware.state.stateAnalysis.DataCollection <em>Data Collection</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see net.certware.state.stateAnalysis.DataCollection
+   * @generated
+   */
+  public Adapter createDataCollectionAdapter()
   {
     return null;
   }

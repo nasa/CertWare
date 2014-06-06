@@ -1,0 +1,7 @@
+# Tracing options for the net.certware.state.gui.diagram plug-in
+
+# Common issues
+net.certware.state.gui.diagram/debug=false
+
+# Visual IDs
+net.certware.state.gui.diagram/debug/visualID=false

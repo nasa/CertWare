@@ -4,6 +4,8 @@ package net.certware.state.stateAnalysis.impl;
 
 import net.certware.state.stateAnalysis.Component;
 import net.certware.state.stateAnalysis.Controller;
+import net.certware.state.stateAnalysis.DataCollection;
+import net.certware.state.stateAnalysis.DataProduct;
 import net.certware.state.stateAnalysis.Deployment;
 import net.certware.state.stateAnalysis.DeploymentSet;
 import net.certware.state.stateAnalysis.Device;
@@ -13,6 +15,7 @@ import net.certware.state.stateAnalysis.Estimator;
 import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareCommand;
 import net.certware.state.stateAnalysis.HardwareMeasurement;
+import net.certware.state.stateAnalysis.QosPolicy;
 import net.certware.state.stateAnalysis.StateAnalysisFactory;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateConstraint;
@@ -83,6 +86,9 @@ public class StateAnalysisFactoryImpl extends EFactoryImpl implements StateAnaly
       case StateAnalysisPackage.SYSTEM: return createSystem();
       case StateAnalysisPackage.SUBSYSTEM: return createSubsystem();
       case StateAnalysisPackage.DEPLOYMENT_SET: return createDeploymentSet();
+      case StateAnalysisPackage.QOS_POLICY: return createQosPolicy();
+      case StateAnalysisPackage.DATA_PRODUCT: return createDataProduct();
+      case StateAnalysisPackage.DATA_COLLECTION: return createDataCollection();
       case StateAnalysisPackage.DEPLOYMENT: return createDeployment();
       case StateAnalysisPackage.COMPONENT: return createComponent();
       case StateAnalysisPackage.STATE_VARIABLE: return createStateVariable();
@@ -132,6 +138,39 @@ public class StateAnalysisFactoryImpl extends EFactoryImpl implements StateAnaly
   {
     DeploymentSetImpl deploymentSet = new DeploymentSetImpl();
     return deploymentSet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public QosPolicy createQosPolicy()
+  {
+    QosPolicyImpl qosPolicy = new QosPolicyImpl();
+    return qosPolicy;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataProduct createDataProduct()
+  {
+    DataProductImpl dataProduct = new DataProductImpl();
+    return dataProduct;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DataCollection createDataCollection()
+  {
+    DataCollectionImpl dataCollection = new DataCollectionImpl();
+    return dataCollection;
   }
 
   /**

@@ -4,6 +4,8 @@ package net.certware.state.stateAnalysis.util;
 
 import net.certware.state.stateAnalysis.Component;
 import net.certware.state.stateAnalysis.Controller;
+import net.certware.state.stateAnalysis.DataCollection;
+import net.certware.state.stateAnalysis.DataProduct;
 import net.certware.state.stateAnalysis.Deployment;
 import net.certware.state.stateAnalysis.DeploymentSet;
 import net.certware.state.stateAnalysis.Device;
@@ -13,6 +15,7 @@ import net.certware.state.stateAnalysis.Estimator;
 import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareCommand;
 import net.certware.state.stateAnalysis.HardwareMeasurement;
+import net.certware.state.stateAnalysis.QosPolicy;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateConstraint;
 import net.certware.state.stateAnalysis.StateUpdate;
@@ -105,6 +108,27 @@ public class StateAnalysisSwitch<T> extends Switch<T>
       {
         DeploymentSet deploymentSet = (DeploymentSet)theEObject;
         T result = caseDeploymentSet(deploymentSet);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case StateAnalysisPackage.QOS_POLICY:
+      {
+        QosPolicy qosPolicy = (QosPolicy)theEObject;
+        T result = caseQosPolicy(qosPolicy);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case StateAnalysisPackage.DATA_PRODUCT:
+      {
+        DataProduct dataProduct = (DataProduct)theEObject;
+        T result = caseDataProduct(dataProduct);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case StateAnalysisPackage.DATA_COLLECTION:
+      {
+        DataCollection dataCollection = (DataCollection)theEObject;
+        T result = caseDataCollection(dataCollection);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -247,6 +271,54 @@ public class StateAnalysisSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDeploymentSet(DeploymentSet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Qos Policy</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qos Policy</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQosPolicy(QosPolicy object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Product</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Product</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataProduct(DataProduct object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Data Collection</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Data Collection</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDataCollection(DataCollection object)
   {
     return null;
   }

@@ -50,6 +50,33 @@ public interface StateAnalysisFactory extends EFactory
   DeploymentSet createDeploymentSet();
 
   /**
+   * Returns a new object of class '<em>Qos Policy</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qos Policy</em>'.
+   * @generated
+   */
+  QosPolicy createQosPolicy();
+
+  /**
+   * Returns a new object of class '<em>Data Product</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Product</em>'.
+   * @generated
+   */
+  DataProduct createDataProduct();
+
+  /**
+   * Returns a new object of class '<em>Data Collection</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Data Collection</em>'.
+   * @generated
+   */
+  DataCollection createDataCollection();
+
+  /**
    * Returns a new object of class '<em>Deployment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

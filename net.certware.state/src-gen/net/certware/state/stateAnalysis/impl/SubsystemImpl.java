@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.SubsystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.SubsystemImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.SubsystemImpl#getDeploymentSets <em>Deployment Sets</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +58,26 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getDeploymentSets() <em>Deployment Sets</em>}' containment reference list.
@@ -117,6 +138,29 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.SUBSYSTEM__DESCRIPTION, oldDescription, description));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<DeploymentSet> getDeploymentSets()
   {
     if (deploymentSets == null)
@@ -154,6 +198,8 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
     {
       case StateAnalysisPackage.SUBSYSTEM__NAME:
         return getName();
+      case StateAnalysisPackage.SUBSYSTEM__DESCRIPTION:
+        return getDescription();
       case StateAnalysisPackage.SUBSYSTEM__DEPLOYMENT_SETS:
         return getDeploymentSets();
     }
@@ -173,6 +219,9 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
     {
       case StateAnalysisPackage.SUBSYSTEM__NAME:
         setName((String)newValue);
+        return;
+      case StateAnalysisPackage.SUBSYSTEM__DESCRIPTION:
+        setDescription((String)newValue);
         return;
       case StateAnalysisPackage.SUBSYSTEM__DEPLOYMENT_SETS:
         getDeploymentSets().clear();
@@ -195,6 +244,9 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
       case StateAnalysisPackage.SUBSYSTEM__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case StateAnalysisPackage.SUBSYSTEM__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
       case StateAnalysisPackage.SUBSYSTEM__DEPLOYMENT_SETS:
         getDeploymentSets().clear();
         return;
@@ -214,6 +266,8 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
     {
       case StateAnalysisPackage.SUBSYSTEM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case StateAnalysisPackage.SUBSYSTEM__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case StateAnalysisPackage.SUBSYSTEM__DEPLOYMENT_SETS:
         return deploymentSets != null && !deploymentSets.isEmpty();
     }
@@ -233,6 +287,8 @@ public class SubsystemImpl extends MinimalEObjectImpl.Container implements Subsy
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

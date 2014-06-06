@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.DeviceMeasurement#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.DeviceMeasurement#getAdapter <em>Adapter</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.DeviceMeasurement#getDevice <em>Device</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.DeviceMeasurement#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,55 +50,29 @@ public interface DeviceMeasurement extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Adapter</b></em>' reference.
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Adapter</em>' reference isn't clear,
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Adapter</em>' reference.
-   * @see #setAdapter(HardwareAdapter)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getDeviceMeasurement_Adapter()
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getDeviceMeasurement_Description()
    * @model
    * @generated
    */
-  HardwareAdapter getAdapter();
+  String getDescription();
 
   /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.DeviceMeasurement#getAdapter <em>Adapter</em>}' reference.
+   * Sets the value of the '{@link net.certware.state.stateAnalysis.DeviceMeasurement#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Adapter</em>' reference.
-   * @see #getAdapter()
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
    * @generated
    */
-  void setAdapter(HardwareAdapter value);
-
-  /**
-   * Returns the value of the '<em><b>Device</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Device</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Device</em>' containment reference.
-   * @see #setDevice(Device)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getDeviceMeasurement_Device()
-   * @model containment="true"
-   * @generated
-   */
-  Device getDevice();
-
-  /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.DeviceMeasurement#getDevice <em>Device</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Device</em>' containment reference.
-   * @see #getDevice()
-   * @generated
-   */
-  void setDevice(Device value);
+  void setDescription(String value);
 
 } // DeviceMeasurement

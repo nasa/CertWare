@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare GSN Models on SACM
+Bundle-Vendor: Kestrel Technology LLC
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: net.certware.gsn; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

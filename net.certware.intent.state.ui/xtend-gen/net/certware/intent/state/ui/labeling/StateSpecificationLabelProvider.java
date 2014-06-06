@@ -78,27 +78,32 @@ public class StateSpecificationLabelProvider extends DefaultEObjectLabelProvider
   
   public String text(final Specification s) {
     String _name = s.getName();
-    return (("Specification" + " ") + _name);
+    String _plus = (("Specification" + " ") + _name);
+    return _plus;
   }
   
   public String text(final Component c) {
     String _name = c.getName();
-    return (("Component" + " ") + _name);
+    String _plus = (("Component" + " ") + _name);
+    return _plus;
   }
   
   public String text(final Device d) {
     String _name = d.getName();
-    return (("Device" + " ") + _name);
+    String _plus = (("Device" + " ") + _name);
+    return _plus;
   }
   
   public String text(final ModeVariable m) {
     String _desc = m.getDesc();
-    return (("Mode" + " ") + _desc);
+    String _plus = (("Mode" + " ") + _desc);
+    return _plus;
   }
   
   public String text(final StateVariable s) {
     String _desc = s.getDesc();
-    return (("State" + " ") + _desc);
+    String _plus = (("State" + " ") + _desc);
+    return _plus;
   }
   
   public String text(final ModeElement m) {

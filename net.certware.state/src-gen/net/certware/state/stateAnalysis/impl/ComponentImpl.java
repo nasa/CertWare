@@ -7,6 +7,7 @@ import java.util.Collection;
 import net.certware.state.stateAnalysis.Component;
 import net.certware.state.stateAnalysis.Controller;
 import net.certware.state.stateAnalysis.Estimator;
+import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateVariable;
 
@@ -32,9 +33,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getSv <em>Sv</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getController <em>Controller</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getEstimator <em>Estimator</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getStateVariables <em>State Variables</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getControllers <em>Controllers</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getEstimators <em>Estimators</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.ComponentImpl#getAdapters <em>Adapters</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,34 +66,64 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSv() <em>Sv</em>}' containment reference.
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSv()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected StateVariable sv;
+  protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference list.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getController()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected EList<Controller> controller;
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getEstimator() <em>Estimator</em>}' containment reference list.
+   * The cached value of the '{@link #getStateVariables() <em>State Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEstimator()
+   * @see #getStateVariables()
    * @generated
    * @ordered
    */
-  protected EList<Estimator> estimator;
+  protected EList<StateVariable> stateVariables;
+
+  /**
+   * The cached value of the '{@link #getControllers() <em>Controllers</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getControllers()
+   * @generated
+   * @ordered
+   */
+  protected EList<Controller> controllers;
+
+  /**
+   * The cached value of the '{@link #getEstimators() <em>Estimators</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEstimators()
+   * @generated
+   * @ordered
+   */
+  protected EList<Estimator> estimators;
+
+  /**
+   * The cached value of the '{@link #getAdapters() <em>Adapters</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAdapters()
+   * @generated
+   * @ordered
+   */
+  protected EList<HardwareAdapter> adapters;
 
   /**
    * <!-- begin-user-doc -->
@@ -141,9 +174,9 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public StateVariable getSv()
+  public String getDescription()
   {
-    return sv;
+    return description;
   }
 
   /**
@@ -151,16 +184,12 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSv(StateVariable newSv, NotificationChain msgs)
+  public void setDescription(String newDescription)
   {
-    StateVariable oldSv = sv;
-    sv = newSv;
+    String oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.COMPONENT__SV, oldSv, newSv);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.COMPONENT__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -168,20 +197,13 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSv(StateVariable newSv)
+  public EList<StateVariable> getStateVariables()
   {
-    if (newSv != sv)
+    if (stateVariables == null)
     {
-      NotificationChain msgs = null;
-      if (sv != null)
-        msgs = ((InternalEObject)sv).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - StateAnalysisPackage.COMPONENT__SV, null, msgs);
-      if (newSv != null)
-        msgs = ((InternalEObject)newSv).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - StateAnalysisPackage.COMPONENT__SV, null, msgs);
-      msgs = basicSetSv(newSv, msgs);
-      if (msgs != null) msgs.dispatch();
+      stateVariables = new EObjectContainmentEList<StateVariable>(StateVariable.class, this, StateAnalysisPackage.COMPONENT__STATE_VARIABLES);
     }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.COMPONENT__SV, newSv, newSv));
+    return stateVariables;
   }
 
   /**
@@ -189,13 +211,13 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Controller> getController()
+  public EList<Controller> getControllers()
   {
-    if (controller == null)
+    if (controllers == null)
     {
-      controller = new EObjectContainmentEList<Controller>(Controller.class, this, StateAnalysisPackage.COMPONENT__CONTROLLER);
+      controllers = new EObjectContainmentEList<Controller>(Controller.class, this, StateAnalysisPackage.COMPONENT__CONTROLLERS);
     }
-    return controller;
+    return controllers;
   }
 
   /**
@@ -203,13 +225,27 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Estimator> getEstimator()
+  public EList<Estimator> getEstimators()
   {
-    if (estimator == null)
+    if (estimators == null)
     {
-      estimator = new EObjectContainmentEList<Estimator>(Estimator.class, this, StateAnalysisPackage.COMPONENT__ESTIMATOR);
+      estimators = new EObjectContainmentEList<Estimator>(Estimator.class, this, StateAnalysisPackage.COMPONENT__ESTIMATORS);
     }
-    return estimator;
+    return estimators;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<HardwareAdapter> getAdapters()
+  {
+    if (adapters == null)
+    {
+      adapters = new EObjectContainmentEList<HardwareAdapter>(HardwareAdapter.class, this, StateAnalysisPackage.COMPONENT__ADAPTERS);
+    }
+    return adapters;
   }
 
   /**
@@ -222,12 +258,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.COMPONENT__SV:
-        return basicSetSv(null, msgs);
-      case StateAnalysisPackage.COMPONENT__CONTROLLER:
-        return ((InternalEList<?>)getController()).basicRemove(otherEnd, msgs);
-      case StateAnalysisPackage.COMPONENT__ESTIMATOR:
-        return ((InternalEList<?>)getEstimator()).basicRemove(otherEnd, msgs);
+      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
+        return ((InternalEList<?>)getStateVariables()).basicRemove(otherEnd, msgs);
+      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
+        return ((InternalEList<?>)getControllers()).basicRemove(otherEnd, msgs);
+      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
+        return ((InternalEList<?>)getEstimators()).basicRemove(otherEnd, msgs);
+      case StateAnalysisPackage.COMPONENT__ADAPTERS:
+        return ((InternalEList<?>)getAdapters()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -244,12 +282,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
     {
       case StateAnalysisPackage.COMPONENT__NAME:
         return getName();
-      case StateAnalysisPackage.COMPONENT__SV:
-        return getSv();
-      case StateAnalysisPackage.COMPONENT__CONTROLLER:
-        return getController();
-      case StateAnalysisPackage.COMPONENT__ESTIMATOR:
-        return getEstimator();
+      case StateAnalysisPackage.COMPONENT__DESCRIPTION:
+        return getDescription();
+      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
+        return getStateVariables();
+      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
+        return getControllers();
+      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
+        return getEstimators();
+      case StateAnalysisPackage.COMPONENT__ADAPTERS:
+        return getAdapters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -268,16 +310,24 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
       case StateAnalysisPackage.COMPONENT__NAME:
         setName((String)newValue);
         return;
-      case StateAnalysisPackage.COMPONENT__SV:
-        setSv((StateVariable)newValue);
+      case StateAnalysisPackage.COMPONENT__DESCRIPTION:
+        setDescription((String)newValue);
         return;
-      case StateAnalysisPackage.COMPONENT__CONTROLLER:
-        getController().clear();
-        getController().addAll((Collection<? extends Controller>)newValue);
+      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
+        getStateVariables().clear();
+        getStateVariables().addAll((Collection<? extends StateVariable>)newValue);
         return;
-      case StateAnalysisPackage.COMPONENT__ESTIMATOR:
-        getEstimator().clear();
-        getEstimator().addAll((Collection<? extends Estimator>)newValue);
+      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
+        getControllers().clear();
+        getControllers().addAll((Collection<? extends Controller>)newValue);
+        return;
+      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
+        getEstimators().clear();
+        getEstimators().addAll((Collection<? extends Estimator>)newValue);
+        return;
+      case StateAnalysisPackage.COMPONENT__ADAPTERS:
+        getAdapters().clear();
+        getAdapters().addAll((Collection<? extends HardwareAdapter>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -296,14 +346,20 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
       case StateAnalysisPackage.COMPONENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case StateAnalysisPackage.COMPONENT__SV:
-        setSv((StateVariable)null);
+      case StateAnalysisPackage.COMPONENT__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case StateAnalysisPackage.COMPONENT__CONTROLLER:
-        getController().clear();
+      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
+        getStateVariables().clear();
         return;
-      case StateAnalysisPackage.COMPONENT__ESTIMATOR:
-        getEstimator().clear();
+      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
+        getControllers().clear();
+        return;
+      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
+        getEstimators().clear();
+        return;
+      case StateAnalysisPackage.COMPONENT__ADAPTERS:
+        getAdapters().clear();
         return;
     }
     super.eUnset(featureID);
@@ -321,12 +377,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
     {
       case StateAnalysisPackage.COMPONENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.COMPONENT__SV:
-        return sv != null;
-      case StateAnalysisPackage.COMPONENT__CONTROLLER:
-        return controller != null && !controller.isEmpty();
-      case StateAnalysisPackage.COMPONENT__ESTIMATOR:
-        return estimator != null && !estimator.isEmpty();
+      case StateAnalysisPackage.COMPONENT__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
+        return stateVariables != null && !stateVariables.isEmpty();
+      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
+        return controllers != null && !controllers.isEmpty();
+      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
+        return estimators != null && !estimators.isEmpty();
+      case StateAnalysisPackage.COMPONENT__ADAPTERS:
+        return adapters != null && !adapters.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -344,6 +404,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

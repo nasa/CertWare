@@ -67,13 +67,31 @@ public interface StateAnalysisPackage extends EPackage
   int SYSTEM = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYSTEM__DESCRIPTION = 1;
+
+  /**
    * The feature id for the '<em><b>Subsystems</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SYSTEM__SUBSYSTEMS = 0;
+  int SYSTEM__SUBSYSTEMS = 2;
 
   /**
    * The number of structural features of the '<em>System</em>' class.
@@ -82,7 +100,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SYSTEM_FEATURE_COUNT = 1;
+  int SYSTEM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.SubsystemImpl <em>Subsystem</em>}' class.
@@ -104,13 +122,22 @@ public interface StateAnalysisPackage extends EPackage
   int SUBSYSTEM__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSYSTEM__DESCRIPTION = 1;
+
+  /**
    * The feature id for the '<em><b>Deployment Sets</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUBSYSTEM__DEPLOYMENT_SETS = 1;
+  int SUBSYSTEM__DEPLOYMENT_SETS = 2;
 
   /**
    * The number of structural features of the '<em>Subsystem</em>' class.
@@ -119,7 +146,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUBSYSTEM_FEATURE_COUNT = 2;
+  int SUBSYSTEM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DeploymentSetImpl <em>Deployment Set</em>}' class.
@@ -141,13 +168,22 @@ public interface StateAnalysisPackage extends EPackage
   int DEPLOYMENT_SET__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPLOYMENT_SET__DESCRIPTION = 1;
+
+  /**
    * The feature id for the '<em><b>Deployments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEPLOYMENT_SET__DEPLOYMENTS = 1;
+  int DEPLOYMENT_SET__DEPLOYMENTS = 2;
 
   /**
    * The number of structural features of the '<em>Deployment Set</em>' class.
@@ -156,7 +192,154 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPLOYMENT_SET_FEATURE_COUNT = 2;
+  int DEPLOYMENT_SET_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.QosPolicyImpl <em>Qos Policy</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.state.stateAnalysis.impl.QosPolicyImpl
+   * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getQosPolicy()
+   * @generated
+   */
+  int QOS_POLICY = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QOS_POLICY__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QOS_POLICY__DESCRIPTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Policy</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QOS_POLICY__POLICY = 2;
+
+  /**
+   * The number of structural features of the '<em>Qos Policy</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QOS_POLICY_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DataProductImpl <em>Data Product</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.state.stateAnalysis.impl.DataProductImpl
+   * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDataProduct()
+   * @generated
+   */
+  int DATA_PRODUCT = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_PRODUCT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_PRODUCT__DESCRIPTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_PRODUCT__CONTENT = 2;
+
+  /**
+   * The number of structural features of the '<em>Data Product</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_PRODUCT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DataCollectionImpl <em>Data Collection</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see net.certware.state.stateAnalysis.impl.DataCollectionImpl
+   * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDataCollection()
+   * @generated
+   */
+  int DATA_COLLECTION = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_COLLECTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_COLLECTION__DESCRIPTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Policies</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_COLLECTION__POLICIES = 2;
+
+  /**
+   * The feature id for the '<em><b>Products</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_COLLECTION__PRODUCTS = 3;
+
+  /**
+   * The number of structural features of the '<em>Data Collection</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DATA_COLLECTION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DeploymentImpl <em>Deployment</em>}' class.
@@ -166,7 +349,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDeployment()
    * @generated
    */
-  int DEPLOYMENT = 3;
+  int DEPLOYMENT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -178,13 +361,31 @@ public interface StateAnalysisPackage extends EPackage
   int DEPLOYMENT__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPLOYMENT__DESCRIPTION = 1;
+
+  /**
    * The feature id for the '<em><b>Components</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEPLOYMENT__COMPONENTS = 1;
+  int DEPLOYMENT__COMPONENTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Catalogs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEPLOYMENT__CATALOGS = 3;
 
   /**
    * The number of structural features of the '<em>Deployment</em>' class.
@@ -193,7 +394,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEPLOYMENT_FEATURE_COUNT = 2;
+  int DEPLOYMENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.ComponentImpl <em>Component</em>}' class.
@@ -203,7 +404,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getComponent()
    * @generated
    */
-  int COMPONENT = 4;
+  int COMPONENT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -215,31 +416,49 @@ public interface StateAnalysisPackage extends EPackage
   int COMPONENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Sv</b></em>' containment reference.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__SV = 1;
+  int COMPONENT__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Controller</b></em>' containment reference list.
+   * The feature id for the '<em><b>State Variables</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__CONTROLLER = 2;
+  int COMPONENT__STATE_VARIABLES = 2;
 
   /**
-   * The feature id for the '<em><b>Estimator</b></em>' containment reference list.
+   * The feature id for the '<em><b>Controllers</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__ESTIMATOR = 3;
+  int COMPONENT__CONTROLLERS = 3;
+
+  /**
+   * The feature id for the '<em><b>Estimators</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__ESTIMATORS = 4;
+
+  /**
+   * The feature id for the '<em><b>Adapters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__ADAPTERS = 5;
 
   /**
    * The number of structural features of the '<em>Component</em>' class.
@@ -248,7 +467,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 4;
+  int COMPONENT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.StateVariableImpl <em>State Variable</em>}' class.
@@ -258,7 +477,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getStateVariable()
    * @generated
    */
-  int STATE_VARIABLE = 5;
+  int STATE_VARIABLE = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -270,22 +489,58 @@ public interface StateAnalysisPackage extends EPackage
   int STATE_VARIABLE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>State Constraints</b></em>' reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__STATE_CONSTRAINTS = 1;
+  int STATE_VARIABLE__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>State Updates</b></em>' reference list.
+   * The feature id for the '<em><b>Representation Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__STATE_UPDATES = 2;
+  int STATE_VARIABLE__REPRESENTATION_TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>In State Constraints</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE_VARIABLE__IN_STATE_CONSTRAINTS = 3;
+
+  /**
+   * The feature id for the '<em><b>Out State Constraints</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE_VARIABLE__OUT_STATE_CONSTRAINTS = 4;
+
+  /**
+   * The feature id for the '<em><b>State Updates</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE_VARIABLE__STATE_UPDATES = 5;
+
+  /**
+   * The feature id for the '<em><b>Influenced By</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE_VARIABLE__INFLUENCED_BY = 6;
 
   /**
    * The number of structural features of the '<em>State Variable</em>' class.
@@ -294,7 +549,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE_FEATURE_COUNT = 3;
+  int STATE_VARIABLE_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.ControllerImpl <em>Controller</em>}' class.
@@ -304,7 +559,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getController()
    * @generated
    */
-  int CONTROLLER = 6;
+  int CONTROLLER = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -316,13 +571,31 @@ public interface StateAnalysisPackage extends EPackage
   int CONTROLLER__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER__DESCRIPTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Delegates</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER__DELEGATES = 2;
+
+  /**
    * The feature id for the '<em><b>State Constraint</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROLLER__STATE_CONSTRAINT = 1;
+  int CONTROLLER__STATE_CONSTRAINT = 3;
 
   /**
    * The feature id for the '<em><b>Hardware Command</b></em>' containment reference list.
@@ -331,7 +604,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER__HARDWARE_COMMAND = 2;
+  int CONTROLLER__HARDWARE_COMMAND = 4;
 
   /**
    * The number of structural features of the '<em>Controller</em>' class.
@@ -340,7 +613,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER_FEATURE_COUNT = 3;
+  int CONTROLLER_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.EstimatorImpl <em>Estimator</em>}' class.
@@ -350,7 +623,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getEstimator()
    * @generated
    */
-  int ESTIMATOR = 7;
+  int ESTIMATOR = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -362,13 +635,49 @@ public interface StateAnalysisPackage extends EPackage
   int ESTIMATOR__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESTIMATOR__DESCRIPTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Distilled Measurements</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESTIMATOR__DISTILLED_MEASUREMENTS = 2;
+
+  /**
+   * The feature id for the '<em><b>State Constraints</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESTIMATOR__STATE_CONSTRAINTS = 3;
+
+  /**
+   * The feature id for the '<em><b>State Updates</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ESTIMATOR__STATE_UPDATES = 4;
+
+  /**
    * The feature id for the '<em><b>Hardware Measurement</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ESTIMATOR__HARDWARE_MEASUREMENT = 1;
+  int ESTIMATOR__HARDWARE_MEASUREMENT = 5;
 
   /**
    * The number of structural features of the '<em>Estimator</em>' class.
@@ -377,7 +686,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR_FEATURE_COUNT = 2;
+  int ESTIMATOR_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.StateConstraintImpl <em>State Constraint</em>}' class.
@@ -387,7 +696,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getStateConstraint()
    * @generated
    */
-  int STATE_CONSTRAINT = 8;
+  int STATE_CONSTRAINT = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -399,22 +708,13 @@ public interface StateAnalysisPackage extends EPackage
   int STATE_CONSTRAINT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Controllers</b></em>' reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_CONSTRAINT__CONTROLLERS = 1;
-
-  /**
-   * The feature id for the '<em><b>Estimators</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATE_CONSTRAINT__ESTIMATORS = 2;
+  int STATE_CONSTRAINT__DESCRIPTION = 1;
 
   /**
    * The number of structural features of the '<em>State Constraint</em>' class.
@@ -423,7 +723,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_CONSTRAINT_FEATURE_COUNT = 3;
+  int STATE_CONSTRAINT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.StateUpdateImpl <em>State Update</em>}' class.
@@ -433,7 +733,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getStateUpdate()
    * @generated
    */
-  int STATE_UPDATE = 9;
+  int STATE_UPDATE = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -445,22 +745,13 @@ public interface StateAnalysisPackage extends EPackage
   int STATE_UPDATE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Controllers</b></em>' reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_UPDATE__CONTROLLERS = 1;
-
-  /**
-   * The feature id for the '<em><b>Estimators</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STATE_UPDATE__ESTIMATORS = 2;
+  int STATE_UPDATE__DESCRIPTION = 1;
 
   /**
    * The number of structural features of the '<em>State Update</em>' class.
@@ -469,7 +760,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_UPDATE_FEATURE_COUNT = 3;
+  int STATE_UPDATE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.HardwareCommandImpl <em>Hardware Command</em>}' class.
@@ -479,7 +770,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getHardwareCommand()
    * @generated
    */
-  int HARDWARE_COMMAND = 10;
+  int HARDWARE_COMMAND = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -491,22 +782,13 @@ public interface StateAnalysisPackage extends EPackage
   int HARDWARE_COMMAND__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Controller</b></em>' reference.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HARDWARE_COMMAND__CONTROLLER = 1;
-
-  /**
-   * The feature id for the '<em><b>Adapter</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HARDWARE_COMMAND__ADAPTER = 2;
+  int HARDWARE_COMMAND__DESCRIPTION = 1;
 
   /**
    * The number of structural features of the '<em>Hardware Command</em>' class.
@@ -515,7 +797,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_COMMAND_FEATURE_COUNT = 3;
+  int HARDWARE_COMMAND_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.HardwareMeasurementImpl <em>Hardware Measurement</em>}' class.
@@ -525,7 +807,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getHardwareMeasurement()
    * @generated
    */
-  int HARDWARE_MEASUREMENT = 11;
+  int HARDWARE_MEASUREMENT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -537,22 +819,13 @@ public interface StateAnalysisPackage extends EPackage
   int HARDWARE_MEASUREMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Adapter</b></em>' reference.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HARDWARE_MEASUREMENT__ADAPTER = 1;
-
-  /**
-   * The feature id for the '<em><b>Estimator</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int HARDWARE_MEASUREMENT__ESTIMATOR = 2;
+  int HARDWARE_MEASUREMENT__DESCRIPTION = 1;
 
   /**
    * The number of structural features of the '<em>Hardware Measurement</em>' class.
@@ -561,7 +834,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_MEASUREMENT_FEATURE_COUNT = 3;
+  int HARDWARE_MEASUREMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DeviceImpl <em>Device</em>}' class.
@@ -571,7 +844,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDevice()
    * @generated
    */
-  int DEVICE = 12;
+  int DEVICE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -592,13 +865,31 @@ public interface StateAnalysisPackage extends EPackage
   int DEVICE__DESCRIPTION = 1;
 
   /**
+   * The feature id for the '<em><b>Device Commands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEVICE__DEVICE_COMMANDS = 2;
+
+  /**
+   * The feature id for the '<em><b>Device Measurements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEVICE__DEVICE_MEASUREMENTS = 3;
+
+  /**
    * The number of structural features of the '<em>Device</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEVICE_FEATURE_COUNT = 2;
+  int DEVICE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DeviceCommandImpl <em>Device Command</em>}' class.
@@ -608,7 +899,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDeviceCommand()
    * @generated
    */
-  int DEVICE_COMMAND = 13;
+  int DEVICE_COMMAND = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -620,22 +911,13 @@ public interface StateAnalysisPackage extends EPackage
   int DEVICE_COMMAND__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Adapter</b></em>' reference.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEVICE_COMMAND__ADAPTER = 1;
-
-  /**
-   * The feature id for the '<em><b>Device</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEVICE_COMMAND__DEVICE = 2;
+  int DEVICE_COMMAND__DESCRIPTION = 1;
 
   /**
    * The number of structural features of the '<em>Device Command</em>' class.
@@ -644,7 +926,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE_COMMAND_FEATURE_COUNT = 3;
+  int DEVICE_COMMAND_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.DeviceMeasurementImpl <em>Device Measurement</em>}' class.
@@ -654,7 +936,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDeviceMeasurement()
    * @generated
    */
-  int DEVICE_MEASUREMENT = 14;
+  int DEVICE_MEASUREMENT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -666,22 +948,13 @@ public interface StateAnalysisPackage extends EPackage
   int DEVICE_MEASUREMENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Adapter</b></em>' reference.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEVICE_MEASUREMENT__ADAPTER = 1;
-
-  /**
-   * The feature id for the '<em><b>Device</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEVICE_MEASUREMENT__DEVICE = 2;
+  int DEVICE_MEASUREMENT__DESCRIPTION = 1;
 
   /**
    * The number of structural features of the '<em>Device Measurement</em>' class.
@@ -690,7 +963,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEVICE_MEASUREMENT_FEATURE_COUNT = 3;
+  int DEVICE_MEASUREMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link net.certware.state.stateAnalysis.impl.HardwareAdapterImpl <em>Hardware Adapter</em>}' class.
@@ -700,7 +973,7 @@ public interface StateAnalysisPackage extends EPackage
    * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getHardwareAdapter()
    * @generated
    */
-  int HARDWARE_ADAPTER = 15;
+  int HARDWARE_ADAPTER = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -712,40 +985,49 @@ public interface StateAnalysisPackage extends EPackage
   int HARDWARE_ADAPTER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Hardware Commands</b></em>' reference list.
+   * The feature id for the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__HARDWARE_COMMANDS = 1;
+  int HARDWARE_ADAPTER__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Hardware Measurements</b></em>' reference list.
+   * The feature id for the '<em><b>Hardware Commands</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS = 2;
+  int HARDWARE_ADAPTER__HARDWARE_COMMANDS = 2;
 
   /**
-   * The feature id for the '<em><b>Device Commands</b></em>' reference list.
+   * The feature id for the '<em><b>Hardware Measurements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__DEVICE_COMMANDS = 3;
+  int HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS = 3;
 
   /**
-   * The feature id for the '<em><b>Device Measurements</b></em>' reference list.
+   * The feature id for the '<em><b>Device Commands</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__DEVICE_MEASUREMENTS = 4;
+  int HARDWARE_ADAPTER__DEVICE_COMMANDS = 4;
+
+  /**
+   * The feature id for the '<em><b>Device Measurements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HARDWARE_ADAPTER__DEVICE_MEASUREMENTS = 5;
 
   /**
    * The number of structural features of the '<em>Hardware Adapter</em>' class.
@@ -754,7 +1036,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER_FEATURE_COUNT = 5;
+  int HARDWARE_ADAPTER_FEATURE_COUNT = 6;
 
 
   /**
@@ -766,6 +1048,28 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EClass getSystem();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.System#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see net.certware.state.stateAnalysis.System#getName()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.System#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.System#getDescription()
+   * @see #getSystem()
+   * @generated
+   */
+  EAttribute getSystem_Description();
 
   /**
    * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.System#getSubsystems <em>Subsystems</em>}'.
@@ -800,6 +1104,17 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getSubsystem_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.Subsystem#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.Subsystem#getDescription()
+   * @see #getSubsystem()
+   * @generated
+   */
+  EAttribute getSubsystem_Description();
+
+  /**
    * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Subsystem#getDeploymentSets <em>Deployment Sets</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -832,6 +1147,17 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getDeploymentSet_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DeploymentSet#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.DeploymentSet#getDescription()
+   * @see #getDeploymentSet()
+   * @generated
+   */
+  EAttribute getDeploymentSet_Description();
+
+  /**
    * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.DeploymentSet#getDeployments <em>Deployments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -841,6 +1167,146 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EReference getDeploymentSet_Deployments();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.state.stateAnalysis.QosPolicy <em>Qos Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qos Policy</em>'.
+   * @see net.certware.state.stateAnalysis.QosPolicy
+   * @generated
+   */
+  EClass getQosPolicy();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.QosPolicy#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see net.certware.state.stateAnalysis.QosPolicy#getName()
+   * @see #getQosPolicy()
+   * @generated
+   */
+  EAttribute getQosPolicy_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.QosPolicy#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.QosPolicy#getDescription()
+   * @see #getQosPolicy()
+   * @generated
+   */
+  EAttribute getQosPolicy_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.QosPolicy#getPolicy <em>Policy</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Policy</em>'.
+   * @see net.certware.state.stateAnalysis.QosPolicy#getPolicy()
+   * @see #getQosPolicy()
+   * @generated
+   */
+  EAttribute getQosPolicy_Policy();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.state.stateAnalysis.DataProduct <em>Data Product</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Product</em>'.
+   * @see net.certware.state.stateAnalysis.DataProduct
+   * @generated
+   */
+  EClass getDataProduct();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DataProduct#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see net.certware.state.stateAnalysis.DataProduct#getName()
+   * @see #getDataProduct()
+   * @generated
+   */
+  EAttribute getDataProduct_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DataProduct#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.DataProduct#getDescription()
+   * @see #getDataProduct()
+   * @generated
+   */
+  EAttribute getDataProduct_Description();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DataProduct#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Content</em>'.
+   * @see net.certware.state.stateAnalysis.DataProduct#getContent()
+   * @see #getDataProduct()
+   * @generated
+   */
+  EAttribute getDataProduct_Content();
+
+  /**
+   * Returns the meta object for class '{@link net.certware.state.stateAnalysis.DataCollection <em>Data Collection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Data Collection</em>'.
+   * @see net.certware.state.stateAnalysis.DataCollection
+   * @generated
+   */
+  EClass getDataCollection();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DataCollection#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see net.certware.state.stateAnalysis.DataCollection#getName()
+   * @see #getDataCollection()
+   * @generated
+   */
+  EAttribute getDataCollection_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DataCollection#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.DataCollection#getDescription()
+   * @see #getDataCollection()
+   * @generated
+   */
+  EAttribute getDataCollection_Description();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.DataCollection#getPolicies <em>Policies</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Policies</em>'.
+   * @see net.certware.state.stateAnalysis.DataCollection#getPolicies()
+   * @see #getDataCollection()
+   * @generated
+   */
+  EReference getDataCollection_Policies();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.DataCollection#getProducts <em>Products</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Products</em>'.
+   * @see net.certware.state.stateAnalysis.DataCollection#getProducts()
+   * @see #getDataCollection()
+   * @generated
+   */
+  EReference getDataCollection_Products();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.Deployment <em>Deployment</em>}'.
@@ -864,6 +1330,17 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getDeployment_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.Deployment#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.Deployment#getDescription()
+   * @see #getDeployment()
+   * @generated
+   */
+  EAttribute getDeployment_Description();
+
+  /**
    * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Deployment#getComponents <em>Components</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -873,6 +1350,17 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EReference getDeployment_Components();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Deployment#getCatalogs <em>Catalogs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Catalogs</em>'.
+   * @see net.certware.state.stateAnalysis.Deployment#getCatalogs()
+   * @see #getDeployment()
+   * @generated
+   */
+  EReference getDeployment_Catalogs();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.Component <em>Component</em>}'.
@@ -896,37 +1384,59 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getComponent_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link net.certware.state.stateAnalysis.Component#getSv <em>Sv</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.Component#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Sv</em>'.
-   * @see net.certware.state.stateAnalysis.Component#getSv()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.Component#getDescription()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Sv();
+  EAttribute getComponent_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Component#getController <em>Controller</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Component#getStateVariables <em>State Variables</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Controller</em>'.
-   * @see net.certware.state.stateAnalysis.Component#getController()
+   * @return the meta object for the containment reference list '<em>State Variables</em>'.
+   * @see net.certware.state.stateAnalysis.Component#getStateVariables()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Controller();
+  EReference getComponent_StateVariables();
 
   /**
-   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Component#getEstimator <em>Estimator</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Component#getControllers <em>Controllers</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Estimator</em>'.
-   * @see net.certware.state.stateAnalysis.Component#getEstimator()
+   * @return the meta object for the containment reference list '<em>Controllers</em>'.
+   * @see net.certware.state.stateAnalysis.Component#getControllers()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Estimator();
+  EReference getComponent_Controllers();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Component#getEstimators <em>Estimators</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Estimators</em>'.
+   * @see net.certware.state.stateAnalysis.Component#getEstimators()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Estimators();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Component#getAdapters <em>Adapters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Adapters</em>'.
+   * @see net.certware.state.stateAnalysis.Component#getAdapters()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Adapters();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.StateVariable <em>State Variable</em>}'.
@@ -950,26 +1460,70 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getStateVariable_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.StateVariable#getStateConstraints <em>State Constraints</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.StateVariable#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>State Constraints</em>'.
-   * @see net.certware.state.stateAnalysis.StateVariable#getStateConstraints()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.StateVariable#getDescription()
    * @see #getStateVariable()
    * @generated
    */
-  EReference getStateVariable_StateConstraints();
+  EAttribute getStateVariable_Description();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.StateVariable#getStateUpdates <em>State Updates</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.StateVariable#getRepresentationType <em>Representation Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>State Updates</em>'.
+   * @return the meta object for the attribute '<em>Representation Type</em>'.
+   * @see net.certware.state.stateAnalysis.StateVariable#getRepresentationType()
+   * @see #getStateVariable()
+   * @generated
+   */
+  EAttribute getStateVariable_RepresentationType();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.StateVariable#getInStateConstraints <em>In State Constraints</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>In State Constraints</em>'.
+   * @see net.certware.state.stateAnalysis.StateVariable#getInStateConstraints()
+   * @see #getStateVariable()
+   * @generated
+   */
+  EReference getStateVariable_InStateConstraints();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.StateVariable#getOutStateConstraints <em>Out State Constraints</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Out State Constraints</em>'.
+   * @see net.certware.state.stateAnalysis.StateVariable#getOutStateConstraints()
+   * @see #getStateVariable()
+   * @generated
+   */
+  EReference getStateVariable_OutStateConstraints();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.StateVariable#getStateUpdates <em>State Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>State Updates</em>'.
    * @see net.certware.state.stateAnalysis.StateVariable#getStateUpdates()
    * @see #getStateVariable()
    * @generated
    */
   EReference getStateVariable_StateUpdates();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.StateVariable#getInfluencedBy <em>Influenced By</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Influenced By</em>'.
+   * @see net.certware.state.stateAnalysis.StateVariable#getInfluencedBy()
+   * @see #getStateVariable()
+   * @generated
+   */
+  EReference getStateVariable_InfluencedBy();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.Controller <em>Controller</em>}'.
@@ -991,6 +1545,28 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EAttribute getController_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.Controller#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.Controller#getDescription()
+   * @see #getController()
+   * @generated
+   */
+  EAttribute getController_Description();
+
+  /**
+   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.Controller#getDelegates <em>Delegates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Delegates</em>'.
+   * @see net.certware.state.stateAnalysis.Controller#getDelegates()
+   * @see #getController()
+   * @generated
+   */
+  EReference getController_Delegates();
 
   /**
    * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Controller#getStateConstraint <em>State Constraint</em>}'.
@@ -1036,6 +1612,50 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getEstimator_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.Estimator#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.Estimator#getDescription()
+   * @see #getEstimator()
+   * @generated
+   */
+  EAttribute getEstimator_Description();
+
+  /**
+   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.Estimator#getDistilledMeasurements <em>Distilled Measurements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Distilled Measurements</em>'.
+   * @see net.certware.state.stateAnalysis.Estimator#getDistilledMeasurements()
+   * @see #getEstimator()
+   * @generated
+   */
+  EReference getEstimator_DistilledMeasurements();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Estimator#getStateConstraints <em>State Constraints</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>State Constraints</em>'.
+   * @see net.certware.state.stateAnalysis.Estimator#getStateConstraints()
+   * @see #getEstimator()
+   * @generated
+   */
+  EReference getEstimator_StateConstraints();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Estimator#getStateUpdates <em>State Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>State Updates</em>'.
+   * @see net.certware.state.stateAnalysis.Estimator#getStateUpdates()
+   * @see #getEstimator()
+   * @generated
+   */
+  EReference getEstimator_StateUpdates();
+
+  /**
    * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Estimator#getHardwareMeasurement <em>Hardware Measurement</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1068,26 +1688,15 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getStateConstraint_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.StateConstraint#getControllers <em>Controllers</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.StateConstraint#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Controllers</em>'.
-   * @see net.certware.state.stateAnalysis.StateConstraint#getControllers()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.StateConstraint#getDescription()
    * @see #getStateConstraint()
    * @generated
    */
-  EReference getStateConstraint_Controllers();
-
-  /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.StateConstraint#getEstimators <em>Estimators</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Estimators</em>'.
-   * @see net.certware.state.stateAnalysis.StateConstraint#getEstimators()
-   * @see #getStateConstraint()
-   * @generated
-   */
-  EReference getStateConstraint_Estimators();
+  EAttribute getStateConstraint_Description();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.StateUpdate <em>State Update</em>}'.
@@ -1111,26 +1720,15 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getStateUpdate_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.StateUpdate#getControllers <em>Controllers</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.StateUpdate#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Controllers</em>'.
-   * @see net.certware.state.stateAnalysis.StateUpdate#getControllers()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.StateUpdate#getDescription()
    * @see #getStateUpdate()
    * @generated
    */
-  EReference getStateUpdate_Controllers();
-
-  /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.StateUpdate#getEstimators <em>Estimators</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Estimators</em>'.
-   * @see net.certware.state.stateAnalysis.StateUpdate#getEstimators()
-   * @see #getStateUpdate()
-   * @generated
-   */
-  EReference getStateUpdate_Estimators();
+  EAttribute getStateUpdate_Description();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.HardwareCommand <em>Hardware Command</em>}'.
@@ -1154,26 +1752,15 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getHardwareCommand_Name();
 
   /**
-   * Returns the meta object for the reference '{@link net.certware.state.stateAnalysis.HardwareCommand#getController <em>Controller</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.HardwareCommand#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Controller</em>'.
-   * @see net.certware.state.stateAnalysis.HardwareCommand#getController()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.HardwareCommand#getDescription()
    * @see #getHardwareCommand()
    * @generated
    */
-  EReference getHardwareCommand_Controller();
-
-  /**
-   * Returns the meta object for the reference '{@link net.certware.state.stateAnalysis.HardwareCommand#getAdapter <em>Adapter</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Adapter</em>'.
-   * @see net.certware.state.stateAnalysis.HardwareCommand#getAdapter()
-   * @see #getHardwareCommand()
-   * @generated
-   */
-  EReference getHardwareCommand_Adapter();
+  EAttribute getHardwareCommand_Description();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.HardwareMeasurement <em>Hardware Measurement</em>}'.
@@ -1197,26 +1784,15 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getHardwareMeasurement_Name();
 
   /**
-   * Returns the meta object for the reference '{@link net.certware.state.stateAnalysis.HardwareMeasurement#getAdapter <em>Adapter</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.HardwareMeasurement#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Adapter</em>'.
-   * @see net.certware.state.stateAnalysis.HardwareMeasurement#getAdapter()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.HardwareMeasurement#getDescription()
    * @see #getHardwareMeasurement()
    * @generated
    */
-  EReference getHardwareMeasurement_Adapter();
-
-  /**
-   * Returns the meta object for the reference '{@link net.certware.state.stateAnalysis.HardwareMeasurement#getEstimator <em>Estimator</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Estimator</em>'.
-   * @see net.certware.state.stateAnalysis.HardwareMeasurement#getEstimator()
-   * @see #getHardwareMeasurement()
-   * @generated
-   */
-  EReference getHardwareMeasurement_Estimator();
+  EAttribute getHardwareMeasurement_Description();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.Device <em>Device</em>}'.
@@ -1251,6 +1827,28 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getDevice_Description();
 
   /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Device#getDeviceCommands <em>Device Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Device Commands</em>'.
+   * @see net.certware.state.stateAnalysis.Device#getDeviceCommands()
+   * @see #getDevice()
+   * @generated
+   */
+  EReference getDevice_DeviceCommands();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.Device#getDeviceMeasurements <em>Device Measurements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Device Measurements</em>'.
+   * @see net.certware.state.stateAnalysis.Device#getDeviceMeasurements()
+   * @see #getDevice()
+   * @generated
+   */
+  EReference getDevice_DeviceMeasurements();
+
+  /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.DeviceCommand <em>Device Command</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1272,26 +1870,15 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getDeviceCommand_Name();
 
   /**
-   * Returns the meta object for the reference '{@link net.certware.state.stateAnalysis.DeviceCommand#getAdapter <em>Adapter</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DeviceCommand#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Adapter</em>'.
-   * @see net.certware.state.stateAnalysis.DeviceCommand#getAdapter()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.DeviceCommand#getDescription()
    * @see #getDeviceCommand()
    * @generated
    */
-  EReference getDeviceCommand_Adapter();
-
-  /**
-   * Returns the meta object for the containment reference '{@link net.certware.state.stateAnalysis.DeviceCommand#getDevice <em>Device</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Device</em>'.
-   * @see net.certware.state.stateAnalysis.DeviceCommand#getDevice()
-   * @see #getDeviceCommand()
-   * @generated
-   */
-  EReference getDeviceCommand_Device();
+  EAttribute getDeviceCommand_Description();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.DeviceMeasurement <em>Device Measurement</em>}'.
@@ -1315,26 +1902,15 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getDeviceMeasurement_Name();
 
   /**
-   * Returns the meta object for the reference '{@link net.certware.state.stateAnalysis.DeviceMeasurement#getAdapter <em>Adapter</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.DeviceMeasurement#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Adapter</em>'.
-   * @see net.certware.state.stateAnalysis.DeviceMeasurement#getAdapter()
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.DeviceMeasurement#getDescription()
    * @see #getDeviceMeasurement()
    * @generated
    */
-  EReference getDeviceMeasurement_Adapter();
-
-  /**
-   * Returns the meta object for the containment reference '{@link net.certware.state.stateAnalysis.DeviceMeasurement#getDevice <em>Device</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Device</em>'.
-   * @see net.certware.state.stateAnalysis.DeviceMeasurement#getDevice()
-   * @see #getDeviceMeasurement()
-   * @generated
-   */
-  EReference getDeviceMeasurement_Device();
+  EAttribute getDeviceMeasurement_Description();
 
   /**
    * Returns the meta object for class '{@link net.certware.state.stateAnalysis.HardwareAdapter <em>Hardware Adapter</em>}'.
@@ -1358,10 +1934,21 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getHardwareAdapter_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getHardwareCommands <em>Hardware Commands</em>}'.
+   * Returns the meta object for the attribute '{@link net.certware.state.stateAnalysis.HardwareAdapter#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Hardware Commands</em>'.
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see net.certware.state.stateAnalysis.HardwareAdapter#getDescription()
+   * @see #getHardwareAdapter()
+   * @generated
+   */
+  EAttribute getHardwareAdapter_Description();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getHardwareCommands <em>Hardware Commands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Hardware Commands</em>'.
    * @see net.certware.state.stateAnalysis.HardwareAdapter#getHardwareCommands()
    * @see #getHardwareAdapter()
    * @generated
@@ -1369,10 +1956,10 @@ public interface StateAnalysisPackage extends EPackage
   EReference getHardwareAdapter_HardwareCommands();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getHardwareMeasurements <em>Hardware Measurements</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getHardwareMeasurements <em>Hardware Measurements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Hardware Measurements</em>'.
+   * @return the meta object for the containment reference list '<em>Hardware Measurements</em>'.
    * @see net.certware.state.stateAnalysis.HardwareAdapter#getHardwareMeasurements()
    * @see #getHardwareAdapter()
    * @generated
@@ -1380,10 +1967,10 @@ public interface StateAnalysisPackage extends EPackage
   EReference getHardwareAdapter_HardwareMeasurements();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getDeviceCommands <em>Device Commands</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getDeviceCommands <em>Device Commands</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Device Commands</em>'.
+   * @return the meta object for the containment reference list '<em>Device Commands</em>'.
    * @see net.certware.state.stateAnalysis.HardwareAdapter#getDeviceCommands()
    * @see #getHardwareAdapter()
    * @generated
@@ -1391,10 +1978,10 @@ public interface StateAnalysisPackage extends EPackage
   EReference getHardwareAdapter_DeviceCommands();
 
   /**
-   * Returns the meta object for the reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getDeviceMeasurements <em>Device Measurements</em>}'.
+   * Returns the meta object for the containment reference list '{@link net.certware.state.stateAnalysis.HardwareAdapter#getDeviceMeasurements <em>Device Measurements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Device Measurements</em>'.
+   * @return the meta object for the containment reference list '<em>Device Measurements</em>'.
    * @see net.certware.state.stateAnalysis.HardwareAdapter#getDeviceMeasurements()
    * @see #getHardwareAdapter()
    * @generated
@@ -1435,6 +2022,22 @@ public interface StateAnalysisPackage extends EPackage
     EClass SYSTEM = eINSTANCE.getSystem();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__NAME = eINSTANCE.getSystem_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYSTEM__DESCRIPTION = eINSTANCE.getSystem_Description();
+
+    /**
      * The meta object literal for the '<em><b>Subsystems</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1459,6 +2062,14 @@ public interface StateAnalysisPackage extends EPackage
      * @generated
      */
     EAttribute SUBSYSTEM__NAME = eINSTANCE.getSubsystem_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUBSYSTEM__DESCRIPTION = eINSTANCE.getSubsystem_Description();
 
     /**
      * The meta object literal for the '<em><b>Deployment Sets</b></em>' containment reference list feature.
@@ -1487,12 +2098,130 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute DEPLOYMENT_SET__NAME = eINSTANCE.getDeploymentSet_Name();
 
     /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEPLOYMENT_SET__DESCRIPTION = eINSTANCE.getDeploymentSet_Description();
+
+    /**
      * The meta object literal for the '<em><b>Deployments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference DEPLOYMENT_SET__DEPLOYMENTS = eINSTANCE.getDeploymentSet_Deployments();
+
+    /**
+     * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.QosPolicyImpl <em>Qos Policy</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.state.stateAnalysis.impl.QosPolicyImpl
+     * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getQosPolicy()
+     * @generated
+     */
+    EClass QOS_POLICY = eINSTANCE.getQosPolicy();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QOS_POLICY__NAME = eINSTANCE.getQosPolicy_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QOS_POLICY__DESCRIPTION = eINSTANCE.getQosPolicy_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Policy</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QOS_POLICY__POLICY = eINSTANCE.getQosPolicy_Policy();
+
+    /**
+     * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.DataProductImpl <em>Data Product</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.state.stateAnalysis.impl.DataProductImpl
+     * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDataProduct()
+     * @generated
+     */
+    EClass DATA_PRODUCT = eINSTANCE.getDataProduct();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_PRODUCT__NAME = eINSTANCE.getDataProduct_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_PRODUCT__DESCRIPTION = eINSTANCE.getDataProduct_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_PRODUCT__CONTENT = eINSTANCE.getDataProduct_Content();
+
+    /**
+     * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.DataCollectionImpl <em>Data Collection</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see net.certware.state.stateAnalysis.impl.DataCollectionImpl
+     * @see net.certware.state.stateAnalysis.impl.StateAnalysisPackageImpl#getDataCollection()
+     * @generated
+     */
+    EClass DATA_COLLECTION = eINSTANCE.getDataCollection();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_COLLECTION__NAME = eINSTANCE.getDataCollection_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DATA_COLLECTION__DESCRIPTION = eINSTANCE.getDataCollection_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Policies</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_COLLECTION__POLICIES = eINSTANCE.getDataCollection_Policies();
+
+    /**
+     * The meta object literal for the '<em><b>Products</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA_COLLECTION__PRODUCTS = eINSTANCE.getDataCollection_Products();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.DeploymentImpl <em>Deployment</em>}' class.
@@ -1513,12 +2242,28 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute DEPLOYMENT__NAME = eINSTANCE.getDeployment_Name();
 
     /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEPLOYMENT__DESCRIPTION = eINSTANCE.getDeployment_Description();
+
+    /**
      * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference DEPLOYMENT__COMPONENTS = eINSTANCE.getDeployment_Components();
+
+    /**
+     * The meta object literal for the '<em><b>Catalogs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEPLOYMENT__CATALOGS = eINSTANCE.getDeployment_Catalogs();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.ComponentImpl <em>Component</em>}' class.
@@ -1539,28 +2284,44 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute COMPONENT__NAME = eINSTANCE.getComponent_Name();
 
     /**
-     * The meta object literal for the '<em><b>Sv</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__SV = eINSTANCE.getComponent_Sv();
+    EAttribute COMPONENT__DESCRIPTION = eINSTANCE.getComponent_Description();
 
     /**
-     * The meta object literal for the '<em><b>Controller</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>State Variables</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__CONTROLLER = eINSTANCE.getComponent_Controller();
+    EReference COMPONENT__STATE_VARIABLES = eINSTANCE.getComponent_StateVariables();
 
     /**
-     * The meta object literal for the '<em><b>Estimator</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Controllers</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__ESTIMATOR = eINSTANCE.getComponent_Estimator();
+    EReference COMPONENT__CONTROLLERS = eINSTANCE.getComponent_Controllers();
+
+    /**
+     * The meta object literal for the '<em><b>Estimators</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__ESTIMATORS = eINSTANCE.getComponent_Estimators();
+
+    /**
+     * The meta object literal for the '<em><b>Adapters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__ADAPTERS = eINSTANCE.getComponent_Adapters();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.StateVariableImpl <em>State Variable</em>}' class.
@@ -1581,20 +2342,52 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute STATE_VARIABLE__NAME = eINSTANCE.getStateVariable_Name();
 
     /**
-     * The meta object literal for the '<em><b>State Constraints</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATE_VARIABLE__STATE_CONSTRAINTS = eINSTANCE.getStateVariable_StateConstraints();
+    EAttribute STATE_VARIABLE__DESCRIPTION = eINSTANCE.getStateVariable_Description();
 
     /**
-     * The meta object literal for the '<em><b>State Updates</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Representation Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATE_VARIABLE__REPRESENTATION_TYPE = eINSTANCE.getStateVariable_RepresentationType();
+
+    /**
+     * The meta object literal for the '<em><b>In State Constraints</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATE_VARIABLE__IN_STATE_CONSTRAINTS = eINSTANCE.getStateVariable_InStateConstraints();
+
+    /**
+     * The meta object literal for the '<em><b>Out State Constraints</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATE_VARIABLE__OUT_STATE_CONSTRAINTS = eINSTANCE.getStateVariable_OutStateConstraints();
+
+    /**
+     * The meta object literal for the '<em><b>State Updates</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference STATE_VARIABLE__STATE_UPDATES = eINSTANCE.getStateVariable_StateUpdates();
+
+    /**
+     * The meta object literal for the '<em><b>Influenced By</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATE_VARIABLE__INFLUENCED_BY = eINSTANCE.getStateVariable_InfluencedBy();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.ControllerImpl <em>Controller</em>}' class.
@@ -1613,6 +2406,22 @@ public interface StateAnalysisPackage extends EPackage
      * @generated
      */
     EAttribute CONTROLLER__NAME = eINSTANCE.getController_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTROLLER__DESCRIPTION = eINSTANCE.getController_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Delegates</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTROLLER__DELEGATES = eINSTANCE.getController_Delegates();
 
     /**
      * The meta object literal for the '<em><b>State Constraint</b></em>' containment reference list feature.
@@ -1649,6 +2458,38 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute ESTIMATOR__NAME = eINSTANCE.getEstimator_Name();
 
     /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ESTIMATOR__DESCRIPTION = eINSTANCE.getEstimator_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Distilled Measurements</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ESTIMATOR__DISTILLED_MEASUREMENTS = eINSTANCE.getEstimator_DistilledMeasurements();
+
+    /**
+     * The meta object literal for the '<em><b>State Constraints</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ESTIMATOR__STATE_CONSTRAINTS = eINSTANCE.getEstimator_StateConstraints();
+
+    /**
+     * The meta object literal for the '<em><b>State Updates</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ESTIMATOR__STATE_UPDATES = eINSTANCE.getEstimator_StateUpdates();
+
+    /**
      * The meta object literal for the '<em><b>Hardware Measurement</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1675,20 +2516,12 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute STATE_CONSTRAINT__NAME = eINSTANCE.getStateConstraint_Name();
 
     /**
-     * The meta object literal for the '<em><b>Controllers</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATE_CONSTRAINT__CONTROLLERS = eINSTANCE.getStateConstraint_Controllers();
-
-    /**
-     * The meta object literal for the '<em><b>Estimators</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATE_CONSTRAINT__ESTIMATORS = eINSTANCE.getStateConstraint_Estimators();
+    EAttribute STATE_CONSTRAINT__DESCRIPTION = eINSTANCE.getStateConstraint_Description();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.StateUpdateImpl <em>State Update</em>}' class.
@@ -1709,20 +2542,12 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute STATE_UPDATE__NAME = eINSTANCE.getStateUpdate_Name();
 
     /**
-     * The meta object literal for the '<em><b>Controllers</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATE_UPDATE__CONTROLLERS = eINSTANCE.getStateUpdate_Controllers();
-
-    /**
-     * The meta object literal for the '<em><b>Estimators</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STATE_UPDATE__ESTIMATORS = eINSTANCE.getStateUpdate_Estimators();
+    EAttribute STATE_UPDATE__DESCRIPTION = eINSTANCE.getStateUpdate_Description();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.HardwareCommandImpl <em>Hardware Command</em>}' class.
@@ -1743,20 +2568,12 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute HARDWARE_COMMAND__NAME = eINSTANCE.getHardwareCommand_Name();
 
     /**
-     * The meta object literal for the '<em><b>Controller</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HARDWARE_COMMAND__CONTROLLER = eINSTANCE.getHardwareCommand_Controller();
-
-    /**
-     * The meta object literal for the '<em><b>Adapter</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HARDWARE_COMMAND__ADAPTER = eINSTANCE.getHardwareCommand_Adapter();
+    EAttribute HARDWARE_COMMAND__DESCRIPTION = eINSTANCE.getHardwareCommand_Description();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.HardwareMeasurementImpl <em>Hardware Measurement</em>}' class.
@@ -1777,20 +2594,12 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute HARDWARE_MEASUREMENT__NAME = eINSTANCE.getHardwareMeasurement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Adapter</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference HARDWARE_MEASUREMENT__ADAPTER = eINSTANCE.getHardwareMeasurement_Adapter();
-
-    /**
-     * The meta object literal for the '<em><b>Estimator</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference HARDWARE_MEASUREMENT__ESTIMATOR = eINSTANCE.getHardwareMeasurement_Estimator();
+    EAttribute HARDWARE_MEASUREMENT__DESCRIPTION = eINSTANCE.getHardwareMeasurement_Description();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.DeviceImpl <em>Device</em>}' class.
@@ -1819,6 +2628,22 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute DEVICE__DESCRIPTION = eINSTANCE.getDevice_Description();
 
     /**
+     * The meta object literal for the '<em><b>Device Commands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEVICE__DEVICE_COMMANDS = eINSTANCE.getDevice_DeviceCommands();
+
+    /**
+     * The meta object literal for the '<em><b>Device Measurements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEVICE__DEVICE_MEASUREMENTS = eINSTANCE.getDevice_DeviceMeasurements();
+
+    /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.DeviceCommandImpl <em>Device Command</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1837,20 +2662,12 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute DEVICE_COMMAND__NAME = eINSTANCE.getDeviceCommand_Name();
 
     /**
-     * The meta object literal for the '<em><b>Adapter</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEVICE_COMMAND__ADAPTER = eINSTANCE.getDeviceCommand_Adapter();
-
-    /**
-     * The meta object literal for the '<em><b>Device</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DEVICE_COMMAND__DEVICE = eINSTANCE.getDeviceCommand_Device();
+    EAttribute DEVICE_COMMAND__DESCRIPTION = eINSTANCE.getDeviceCommand_Description();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.DeviceMeasurementImpl <em>Device Measurement</em>}' class.
@@ -1871,20 +2688,12 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute DEVICE_MEASUREMENT__NAME = eINSTANCE.getDeviceMeasurement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Adapter</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEVICE_MEASUREMENT__ADAPTER = eINSTANCE.getDeviceMeasurement_Adapter();
-
-    /**
-     * The meta object literal for the '<em><b>Device</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DEVICE_MEASUREMENT__DEVICE = eINSTANCE.getDeviceMeasurement_Device();
+    EAttribute DEVICE_MEASUREMENT__DESCRIPTION = eINSTANCE.getDeviceMeasurement_Description();
 
     /**
      * The meta object literal for the '{@link net.certware.state.stateAnalysis.impl.HardwareAdapterImpl <em>Hardware Adapter</em>}' class.
@@ -1905,7 +2714,15 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute HARDWARE_ADAPTER__NAME = eINSTANCE.getHardwareAdapter_Name();
 
     /**
-     * The meta object literal for the '<em><b>Hardware Commands</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HARDWARE_ADAPTER__DESCRIPTION = eINSTANCE.getHardwareAdapter_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Hardware Commands</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1913,7 +2730,7 @@ public interface StateAnalysisPackage extends EPackage
     EReference HARDWARE_ADAPTER__HARDWARE_COMMANDS = eINSTANCE.getHardwareAdapter_HardwareCommands();
 
     /**
-     * The meta object literal for the '<em><b>Hardware Measurements</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Hardware Measurements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1921,7 +2738,7 @@ public interface StateAnalysisPackage extends EPackage
     EReference HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS = eINSTANCE.getHardwareAdapter_HardwareMeasurements();
 
     /**
-     * The meta object literal for the '<em><b>Device Commands</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Device Commands</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1929,7 +2746,7 @@ public interface StateAnalysisPackage extends EPackage
     EReference HARDWARE_ADAPTER__DEVICE_COMMANDS = eINSTANCE.getHardwareAdapter_DeviceCommands();
 
     /**
-     * The meta object literal for the '<em><b>Device Measurements</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Device Measurements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareCommand#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.HardwareCommand#getController <em>Controller</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.HardwareCommand#getAdapter <em>Adapter</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.HardwareCommand#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,55 +50,29 @@ public interface HardwareCommand extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Controller</b></em>' reference.
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Controller</em>' reference isn't clear,
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Controller</em>' reference.
-   * @see #setController(Controller)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareCommand_Controller()
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareCommand_Description()
    * @model
    * @generated
    */
-  Controller getController();
+  String getDescription();
 
   /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.HardwareCommand#getController <em>Controller</em>}' reference.
+   * Sets the value of the '{@link net.certware.state.stateAnalysis.HardwareCommand#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Controller</em>' reference.
-   * @see #getController()
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
    * @generated
    */
-  void setController(Controller value);
-
-  /**
-   * Returns the value of the '<em><b>Adapter</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Adapter</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Adapter</em>' reference.
-   * @see #setAdapter(HardwareAdapter)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareCommand_Adapter()
-   * @model
-   * @generated
-   */
-  HardwareAdapter getAdapter();
-
-  /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.HardwareCommand#getAdapter <em>Adapter</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Adapter</em>' reference.
-   * @see #getAdapter()
-   * @generated
-   */
-  void setAdapter(HardwareAdapter value);
+  void setDescription(String value);
 
 } // HardwareCommand

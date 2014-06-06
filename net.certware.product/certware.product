@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="CertWare" uid="product" id="net.certware.product.product" application="org.eclipse.ui.ide.workbench" version="2.0.1.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="CertWare" uid="product" id="net.certware.product.product" application="org.eclipse.ui.ide.workbench" version="2.0.2.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
@@ -191,6 +191,10 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.sacm.help"/>
       <plugin id="net.certware.sacm.navigator"/>
       <plugin id="net.certware.sacm.validator"/>
+      <plugin id="net.certware.state.gui"/>
+      <plugin id="net.certware.state.gui.diagram"/>
+      <plugin id="net.certware.state.gui.edit"/>
+      <plugin id="net.certware.state.gui.editor"/>
       <plugin id="net.certware.verification.checklist"/>
       <plugin id="net.certware.verification.checklist.edit"/>
       <plugin id="net.certware.verification.checklist.editor"/>
@@ -200,9 +204,18 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.antlr.runtime"/>
       <plugin id="org.antlr.runtime_3.1.b1"/>
       <plugin id="org.apache.ant"/>
+      <plugin id="org.apache.batik.bridge"/>
       <plugin id="org.apache.batik.css"/>
+      <plugin id="org.apache.batik.dom"/>
+      <plugin id="org.apache.batik.dom.svg"/>
+      <plugin id="org.apache.batik.ext.awt"/>
+      <plugin id="org.apache.batik.parser"/>
+      <plugin id="org.apache.batik.pdf"/>
+      <plugin id="org.apache.batik.svggen"/>
+      <plugin id="org.apache.batik.transcoder"/>
       <plugin id="org.apache.batik.util"/>
       <plugin id="org.apache.batik.util.gui"/>
+      <plugin id="org.apache.batik.xml"/>
       <plugin id="org.apache.commons.cli"/>
       <plugin id="org.apache.commons.codec"/>
       <plugin id="org.apache.commons.httpclient"/>
@@ -351,19 +364,35 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.gmf.runtime.common.core"/>
       <plugin id="org.eclipse.gmf.runtime.common.ui"/>
       <plugin id="org.eclipse.gmf.runtime.common.ui.action"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.action.ide"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.printing"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.printing.win32" fragment="true"/>
       <plugin id="org.eclipse.gmf.runtime.common.ui.services"/>
       <plugin id="org.eclipse.gmf.runtime.common.ui.services.action"/>
+      <plugin id="org.eclipse.gmf.runtime.common.ui.services.properties"/>
       <plugin id="org.eclipse.gmf.runtime.diagram.core"/>
       <plugin id="org.eclipse.gmf.runtime.diagram.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.actions"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.properties"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.render"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
+      <plugin id="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
       <plugin id="org.eclipse.gmf.runtime.draw2d.ui"/>
       <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render"/>
+      <plugin id="org.eclipse.gmf.runtime.draw2d.ui.render.awt"/>
       <plugin id="org.eclipse.gmf.runtime.emf.clipboard.core"/>
       <plugin id="org.eclipse.gmf.runtime.emf.commands.core"/>
       <plugin id="org.eclipse.gmf.runtime.emf.core"/>
       <plugin id="org.eclipse.gmf.runtime.emf.type.core"/>
       <plugin id="org.eclipse.gmf.runtime.emf.ui"/>
+      <plugin id="org.eclipse.gmf.runtime.emf.ui.properties"/>
       <plugin id="org.eclipse.gmf.runtime.gef.ui"/>
       <plugin id="org.eclipse.gmf.runtime.notation"/>
+      <plugin id="org.eclipse.gmf.tooling.runtime"/>
       <plugin id="org.eclipse.graphiti"/>
       <plugin id="org.eclipse.graphiti.mm"/>
       <plugin id="org.eclipse.graphiti.pattern"/>

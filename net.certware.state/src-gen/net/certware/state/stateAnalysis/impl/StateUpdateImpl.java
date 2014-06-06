@@ -2,23 +2,15 @@
  */
 package net.certware.state.stateAnalysis.impl;
 
-import java.util.Collection;
-
-import net.certware.state.stateAnalysis.Controller;
-import net.certware.state.stateAnalysis.Estimator;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateUpdate;
 
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,8 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.StateUpdateImpl#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.StateUpdateImpl#getControllers <em>Controllers</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.StateUpdateImpl#getEstimators <em>Estimators</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.StateUpdateImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,24 +49,24 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getControllers() <em>Controllers</em>}' reference list.
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getControllers()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected EList<Controller> controllers;
+  protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getEstimators() <em>Estimators</em>}' reference list.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEstimators()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected EList<Estimator> estimators;
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,13 +117,9 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Controller> getControllers()
+  public String getDescription()
   {
-    if (controllers == null)
-    {
-      controllers = new EObjectResolvingEList<Controller>(Controller.class, this, StateAnalysisPackage.STATE_UPDATE__CONTROLLERS);
-    }
-    return controllers;
+    return description;
   }
 
   /**
@@ -140,13 +127,12 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Estimator> getEstimators()
+  public void setDescription(String newDescription)
   {
-    if (estimators == null)
-    {
-      estimators = new EObjectResolvingEList<Estimator>(Estimator.class, this, StateAnalysisPackage.STATE_UPDATE__ESTIMATORS);
-    }
-    return estimators;
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.STATE_UPDATE__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -161,10 +147,8 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
     {
       case StateAnalysisPackage.STATE_UPDATE__NAME:
         return getName();
-      case StateAnalysisPackage.STATE_UPDATE__CONTROLLERS:
-        return getControllers();
-      case StateAnalysisPackage.STATE_UPDATE__ESTIMATORS:
-        return getEstimators();
+      case StateAnalysisPackage.STATE_UPDATE__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,7 +158,6 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -183,13 +166,8 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
       case StateAnalysisPackage.STATE_UPDATE__NAME:
         setName((String)newValue);
         return;
-      case StateAnalysisPackage.STATE_UPDATE__CONTROLLERS:
-        getControllers().clear();
-        getControllers().addAll((Collection<? extends Controller>)newValue);
-        return;
-      case StateAnalysisPackage.STATE_UPDATE__ESTIMATORS:
-        getEstimators().clear();
-        getEstimators().addAll((Collection<? extends Estimator>)newValue);
+      case StateAnalysisPackage.STATE_UPDATE__DESCRIPTION:
+        setDescription((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -208,11 +186,8 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
       case StateAnalysisPackage.STATE_UPDATE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case StateAnalysisPackage.STATE_UPDATE__CONTROLLERS:
-        getControllers().clear();
-        return;
-      case StateAnalysisPackage.STATE_UPDATE__ESTIMATORS:
-        getEstimators().clear();
+      case StateAnalysisPackage.STATE_UPDATE__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -230,10 +205,8 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
     {
       case StateAnalysisPackage.STATE_UPDATE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.STATE_UPDATE__CONTROLLERS:
-        return controllers != null && !controllers.isEmpty();
-      case StateAnalysisPackage.STATE_UPDATE__ESTIMATORS:
-        return estimators != null && !estimators.isEmpty();
+      case StateAnalysisPackage.STATE_UPDATE__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
   }
@@ -251,6 +224,8 @@ public class StateUpdateImpl extends MinimalEObjectImpl.Container implements Sta
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

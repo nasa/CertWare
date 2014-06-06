@@ -2,15 +2,26 @@
  */
 package net.certware.state.stateAnalysis.impl;
 
+import java.util.Collection;
+
 import net.certware.state.stateAnalysis.Device;
+import net.certware.state.stateAnalysis.DeviceCommand;
+import net.certware.state.stateAnalysis.DeviceMeasurement;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +32,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getDeviceCommands <em>Device Commands</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getDeviceMeasurements <em>Device Measurements</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +80,26 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * @ordered
    */
   protected String description = DESCRIPTION_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getDeviceCommands() <em>Device Commands</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeviceCommands()
+   * @generated
+   * @ordered
+   */
+  protected EList<DeviceCommand> deviceCommands;
+
+  /**
+   * The cached value of the '{@link #getDeviceMeasurements() <em>Device Measurements</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeviceMeasurements()
+   * @generated
+   * @ordered
+   */
+  protected EList<DeviceMeasurement> deviceMeasurements;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,6 +173,52 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<DeviceCommand> getDeviceCommands()
+  {
+    if (deviceCommands == null)
+    {
+      deviceCommands = new EObjectContainmentEList<DeviceCommand>(DeviceCommand.class, this, StateAnalysisPackage.DEVICE__DEVICE_COMMANDS);
+    }
+    return deviceCommands;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<DeviceMeasurement> getDeviceMeasurements()
+  {
+    if (deviceMeasurements == null)
+    {
+      deviceMeasurements = new EObjectContainmentEList<DeviceMeasurement>(DeviceMeasurement.class, this, StateAnalysisPackage.DEVICE__DEVICE_MEASUREMENTS);
+    }
+    return deviceMeasurements;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case StateAnalysisPackage.DEVICE__DEVICE_COMMANDS:
+        return ((InternalEList<?>)getDeviceCommands()).basicRemove(otherEnd, msgs);
+      case StateAnalysisPackage.DEVICE__DEVICE_MEASUREMENTS:
+        return ((InternalEList<?>)getDeviceMeasurements()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -149,6 +228,10 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
         return getName();
       case StateAnalysisPackage.DEVICE__DESCRIPTION:
         return getDescription();
+      case StateAnalysisPackage.DEVICE__DEVICE_COMMANDS:
+        return getDeviceCommands();
+      case StateAnalysisPackage.DEVICE__DEVICE_MEASUREMENTS:
+        return getDeviceMeasurements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -158,6 +241,7 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -168,6 +252,14 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
         return;
       case StateAnalysisPackage.DEVICE__DESCRIPTION:
         setDescription((String)newValue);
+        return;
+      case StateAnalysisPackage.DEVICE__DEVICE_COMMANDS:
+        getDeviceCommands().clear();
+        getDeviceCommands().addAll((Collection<? extends DeviceCommand>)newValue);
+        return;
+      case StateAnalysisPackage.DEVICE__DEVICE_MEASUREMENTS:
+        getDeviceMeasurements().clear();
+        getDeviceMeasurements().addAll((Collection<? extends DeviceMeasurement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -189,6 +281,12 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
       case StateAnalysisPackage.DEVICE__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
+      case StateAnalysisPackage.DEVICE__DEVICE_COMMANDS:
+        getDeviceCommands().clear();
+        return;
+      case StateAnalysisPackage.DEVICE__DEVICE_MEASUREMENTS:
+        getDeviceMeasurements().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -207,6 +305,10 @@ public class DeviceImpl extends MinimalEObjectImpl.Container implements Device
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case StateAnalysisPackage.DEVICE__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+      case StateAnalysisPackage.DEVICE__DEVICE_COMMANDS:
+        return deviceCommands != null && !deviceCommands.isEmpty();
+      case StateAnalysisPackage.DEVICE__DEVICE_MEASUREMENTS:
+        return deviceMeasurements != null && !deviceMeasurements.isEmpty();
     }
     return super.eIsSet(featureID);
   }

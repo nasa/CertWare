@@ -7,6 +7,7 @@ import java.util.Collection;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.Subsystem;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -14,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -26,6 +28,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.SystemImpl#getName <em>Name</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.SystemImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.SystemImpl#getSubsystems <em>Subsystems</em>}</li>
  * </ul>
  * </p>
@@ -34,6 +38,46 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SystemImpl extends MinimalEObjectImpl.Container implements net.certware.state.stateAnalysis.System
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESCRIPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected String description = DESCRIPTION_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getSubsystems() <em>Subsystems</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +107,52 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements net.cert
   protected EClass eStaticClass()
   {
     return StateAnalysisPackage.Literals.SYSTEM;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.SYSTEM__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(String newDescription)
+  {
+    String oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.SYSTEM__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -105,6 +195,10 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements net.cert
   {
     switch (featureID)
     {
+      case StateAnalysisPackage.SYSTEM__NAME:
+        return getName();
+      case StateAnalysisPackage.SYSTEM__DESCRIPTION:
+        return getDescription();
       case StateAnalysisPackage.SYSTEM__SUBSYSTEMS:
         return getSubsystems();
     }
@@ -122,6 +216,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements net.cert
   {
     switch (featureID)
     {
+      case StateAnalysisPackage.SYSTEM__NAME:
+        setName((String)newValue);
+        return;
+      case StateAnalysisPackage.SYSTEM__DESCRIPTION:
+        setDescription((String)newValue);
+        return;
       case StateAnalysisPackage.SYSTEM__SUBSYSTEMS:
         getSubsystems().clear();
         getSubsystems().addAll((Collection<? extends Subsystem>)newValue);
@@ -140,6 +240,12 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements net.cert
   {
     switch (featureID)
     {
+      case StateAnalysisPackage.SYSTEM__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case StateAnalysisPackage.SYSTEM__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
+        return;
       case StateAnalysisPackage.SYSTEM__SUBSYSTEMS:
         getSubsystems().clear();
         return;
@@ -157,10 +263,33 @@ public class SystemImpl extends MinimalEObjectImpl.Container implements net.cert
   {
     switch (featureID)
     {
+      case StateAnalysisPackage.SYSTEM__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case StateAnalysisPackage.SYSTEM__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case StateAnalysisPackage.SYSTEM__SUBSYSTEMS:
         return subsystems != null && !subsystems.isEmpty();
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", description: ");
+    result.append(description);
+    result.append(')');
+    return result.toString();
   }
 
 } //SystemImpl

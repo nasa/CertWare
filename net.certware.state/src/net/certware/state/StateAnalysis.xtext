@@ -3,94 +3,150 @@ grammar net.certware.state.StateAnalysis with org.eclipse.xtext.common.Terminals
 generate stateAnalysis "http://www.certware.net/state/StateAnalysis"
 
 System:
-	subsystems+=Subsystem*
+	'System'
+	name=ID
+	description=STRING
+	'subsystems' '{' subsystems+=Subsystem* '}'
 	;
 	
 Subsystem:
 	'Subsystem' 
 	name=ID 
-	deploymentSets += DeploymentSet*
-	;
+	description=STRING
+	'sets' '{' deploymentSets += DeploymentSet* '}'
+;
 	
 DeploymentSet:
+	'DeploymentSet'
 	name=ID
-	deployments += Deployment*
-	;
+	description=STRING
+	'deployments' '{' deployments += Deployment* '}'
+;
+
+QosPolicy:
+	'QosPolicy'
+	name=ID
+	description=STRING
+	'policy' policy=STRING
+;
+
+DataProduct:
+	'DataProduct'
+	name=ID
+	description=STRING
+	'content' content=STRING
+;
+
+DataCollection:
+	'DataCollection'
+	name=ID
+	description=STRING
+	'policies' '{' policies += QosPolicy* '}'
+	'products' '{' products += DataProduct* '}'
+;
 
 Deployment:
+	'Deployment'
 	name=ID
-	components += Component*
-	;
+	description=STRING
+	'components' '{' components += Component* '}'
+	'catalogs ' '{' catalogs += DataCollection* '}'
+;
 	
 Component:
+	'Component'
 	name=ID
-	sv = StateVariable
-	controller += Controller+
-	estimator += Estimator+
-	;
+	description=STRING
+	'variables' '{' stateVariables += StateVariable+ '}'
+	'controllers' '{' controllers += Controller+ '}'
+	'estimators' '{' estimators += Estimator+ '}'
+	'adapters' '{' adapters += HardwareAdapter+ '}'
+;
 	
+StateRepresentationType:
+	'TIMELINE' | 'DERIVED' | 'GRAPH'
+;
+
 StateVariable:
+	'StateVariable'
 	name=ID
-	stateConstraints += [StateConstraint]*
-	stateUpdates += [StateUpdate]*
+	description=STRING
+	'type' representationType=StateRepresentationType
+	'in' '{' inStateConstraints += StateConstraint* '}'
+	'out' '{' outStateConstraints += StateConstraint* '}'
+	'updates' '{' stateUpdates += StateUpdate* '}'
+	'influenced' '{' influencedBy += StateVariable* '}'
 ;
 
 Controller:
+	'Controller'
 	name=ID
-	stateConstraint += StateConstraint
-	hardwareCommand += HardwareCommand+
+	description=STRING
+	'delegates' '{' delegates += [Controller]* '}'
+	'constraings' '{' stateConstraint += StateConstraint+ '}'
+	'commands' '{' hardwareCommand += HardwareCommand+ '}'
 ;
 
 Estimator:
+	'Estimator'
 	name=ID
-	hardwareMeasurement += HardwareMeasurement+
+	description=STRING
+	'distills' '{' distilledMeasurements += [Estimator]* '}'
+	'constraints' '{' stateConstraints += StateConstraint* '}'
+	'updates' '{' stateUpdates += StateUpdate+ '}'
+	'measurement' '{' hardwareMeasurement += HardwareMeasurement+ '}'
 ;
 
 StateConstraint:
-	name=ID
-	controllers += [Controller]*
-	estimators += [Estimator]*
-;
-
-StateUpdate:
-	name=ID
-	controllers += [Controller]*
-	estimators += [Estimator]*
-;
-
-HardwareCommand:
-	name=ID
-	controller = [Controller]
-	adapter = [HardwareAdapter]
-;
-
-HardwareMeasurement:
-	name=ID
-	adapter = [HardwareAdapter]
-	estimator = [Estimator]
-;
-
-Device:
+	'Constraint'
 	name=ID
 	description=STRING
 ;
 
-DeviceCommand:
+StateUpdate:
+	'StateUpdate'
 	name=ID
-	adapter = [HardwareAdapter]
-	device = Device
+	description=STRING
+;
+
+HardwareCommand:
+	'HardwareCommand'
+	name=ID
+	description=STRING
+;
+
+HardwareMeasurement:
+	'HardwareMeasurement'
+	name=ID
+	description=STRING
+;
+
+Device:
+	'Device'
+	name=ID
+	description=STRING
+	'deviceCommands' '{' deviceCommands += DeviceCommand* '}'
+	'deviceMeasurements' '{' deviceMeasurements += DeviceMeasurement* '}'	
+;
+
+DeviceCommand:
+	'DeviceCommand'
+	name=ID
+	description=STRING
 ;
 
 DeviceMeasurement:
+	'DeviceMeasurement'
 	name=ID
-	adapter = [HardwareAdapter]
-	device = Device
+	description=ID
 ;
 
 HardwareAdapter:
+	'HardwareAdapter'
 	name=ID
-	hardwareCommands += [HardwareCommand]*
-	hardwareMeasurements += [HardwareMeasurement]*
-	deviceCommands += [DeviceCommand]*
-	deviceMeasurements += [DeviceMeasurement]*
+	description=ID
+	'hardwareCommands' '{' hardwareCommands += HardwareCommand* '}'
+	'hardwareMeasurements' '{' hardwareMeasurements += HardwareMeasurement* '}'
+	'deviceCommands' '{' deviceCommands += DeviceCommand* '}'
+	'deviceMeasurements' '{' deviceMeasurements += DeviceMeasurement* '}'
 ;

@@ -2,8 +2,6 @@
  */
 package net.certware.state.stateAnalysis;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.StateUpdate#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.StateUpdate#getControllers <em>Controllers</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.StateUpdate#getEstimators <em>Estimators</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.StateUpdate#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,35 +50,29 @@ public interface StateUpdate extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Controllers</b></em>' reference list.
-   * The list contents are of type {@link net.certware.state.stateAnalysis.Controller}.
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Controllers</em>' reference list isn't clear,
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Controllers</em>' reference list.
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getStateUpdate_Controllers()
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getStateUpdate_Description()
    * @model
    * @generated
    */
-  EList<Controller> getControllers();
+  String getDescription();
 
   /**
-   * Returns the value of the '<em><b>Estimators</b></em>' reference list.
-   * The list contents are of type {@link net.certware.state.stateAnalysis.Estimator}.
+   * Sets the value of the '{@link net.certware.state.stateAnalysis.StateUpdate#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Estimators</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Estimators</em>' reference list.
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getStateUpdate_Estimators()
-   * @model
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
    * @generated
    */
-  EList<Estimator> getEstimators();
+  void setDescription(String value);
 
 } // StateUpdate

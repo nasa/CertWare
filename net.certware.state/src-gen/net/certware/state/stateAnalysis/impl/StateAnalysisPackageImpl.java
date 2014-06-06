@@ -4,6 +4,8 @@ package net.certware.state.stateAnalysis.impl;
 
 import net.certware.state.stateAnalysis.Component;
 import net.certware.state.stateAnalysis.Controller;
+import net.certware.state.stateAnalysis.DataCollection;
+import net.certware.state.stateAnalysis.DataProduct;
 import net.certware.state.stateAnalysis.Deployment;
 import net.certware.state.stateAnalysis.DeploymentSet;
 import net.certware.state.stateAnalysis.Device;
@@ -13,6 +15,7 @@ import net.certware.state.stateAnalysis.Estimator;
 import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareCommand;
 import net.certware.state.stateAnalysis.HardwareMeasurement;
+import net.certware.state.stateAnalysis.QosPolicy;
 import net.certware.state.stateAnalysis.StateAnalysisFactory;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateConstraint;
@@ -55,6 +58,27 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * @generated
    */
   private EClass deploymentSetEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qosPolicyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataProductEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass dataCollectionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -225,9 +249,29 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSystem_Name()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSystem_Description()
+  {
+    return (EAttribute)systemEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getSystem_Subsystems()
   {
-    return (EReference)systemEClass.getEStructuralFeatures().get(0);
+    return (EReference)systemEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -255,9 +299,19 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSubsystem_Description()
+  {
+    return (EAttribute)subsystemEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getSubsystem_DeploymentSets()
   {
-    return (EReference)subsystemEClass.getEStructuralFeatures().get(1);
+    return (EReference)subsystemEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -285,9 +339,149 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getDeploymentSet_Description()
+  {
+    return (EAttribute)deploymentSetEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getDeploymentSet_Deployments()
   {
-    return (EReference)deploymentSetEClass.getEStructuralFeatures().get(1);
+    return (EReference)deploymentSetEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getQosPolicy()
+  {
+    return qosPolicyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQosPolicy_Name()
+  {
+    return (EAttribute)qosPolicyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQosPolicy_Description()
+  {
+    return (EAttribute)qosPolicyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQosPolicy_Policy()
+  {
+    return (EAttribute)qosPolicyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDataProduct()
+  {
+    return dataProductEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataProduct_Name()
+  {
+    return (EAttribute)dataProductEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataProduct_Description()
+  {
+    return (EAttribute)dataProductEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataProduct_Content()
+  {
+    return (EAttribute)dataProductEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDataCollection()
+  {
+    return dataCollectionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataCollection_Name()
+  {
+    return (EAttribute)dataCollectionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDataCollection_Description()
+  {
+    return (EAttribute)dataCollectionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDataCollection_Policies()
+  {
+    return (EReference)dataCollectionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDataCollection_Products()
+  {
+    return (EReference)dataCollectionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -315,9 +509,29 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getDeployment_Description()
+  {
+    return (EAttribute)deploymentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getDeployment_Components()
   {
-    return (EReference)deploymentEClass.getEStructuralFeatures().get(1);
+    return (EReference)deploymentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDeployment_Catalogs()
+  {
+    return (EReference)deploymentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -345,9 +559,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Sv()
+  public EAttribute getComponent_Description()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -355,7 +569,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Controller()
+  public EReference getComponent_StateVariables()
   {
     return (EReference)componentEClass.getEStructuralFeatures().get(2);
   }
@@ -365,9 +579,29 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Estimator()
+  public EReference getComponent_Controllers()
   {
     return (EReference)componentEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponent_Estimators()
+  {
+    return (EReference)componentEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponent_Adapters()
+  {
+    return (EReference)componentEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -395,9 +629,39 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStateVariable_StateConstraints()
+  public EAttribute getStateVariable_Description()
   {
-    return (EReference)stateVariableEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)stateVariableEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStateVariable_RepresentationType()
+  {
+    return (EAttribute)stateVariableEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStateVariable_InStateConstraints()
+  {
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStateVariable_OutStateConstraints()
+  {
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -407,7 +671,17 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getStateVariable_StateUpdates()
   {
-    return (EReference)stateVariableEClass.getEStructuralFeatures().get(2);
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStateVariable_InfluencedBy()
+  {
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -435,9 +709,29 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getController_Description()
+  {
+    return (EAttribute)controllerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getController_Delegates()
+  {
+    return (EReference)controllerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getController_StateConstraint()
   {
-    return (EReference)controllerEClass.getEStructuralFeatures().get(1);
+    return (EReference)controllerEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -447,7 +741,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getController_HardwareCommand()
   {
-    return (EReference)controllerEClass.getEStructuralFeatures().get(2);
+    return (EReference)controllerEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -475,9 +769,49 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEstimator_Description()
+  {
+    return (EAttribute)estimatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEstimator_DistilledMeasurements()
+  {
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEstimator_StateConstraints()
+  {
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEstimator_StateUpdates()
+  {
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getEstimator_HardwareMeasurement()
   {
-    return (EReference)estimatorEClass.getEStructuralFeatures().get(1);
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -505,19 +839,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStateConstraint_Controllers()
+  public EAttribute getStateConstraint_Description()
   {
-    return (EReference)stateConstraintEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStateConstraint_Estimators()
-  {
-    return (EReference)stateConstraintEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)stateConstraintEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -545,19 +869,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStateUpdate_Controllers()
+  public EAttribute getStateUpdate_Description()
   {
-    return (EReference)stateUpdateEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getStateUpdate_Estimators()
-  {
-    return (EReference)stateUpdateEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)stateUpdateEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -585,19 +899,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHardwareCommand_Controller()
+  public EAttribute getHardwareCommand_Description()
   {
-    return (EReference)hardwareCommandEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getHardwareCommand_Adapter()
-  {
-    return (EReference)hardwareCommandEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)hardwareCommandEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -625,19 +929,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHardwareMeasurement_Adapter()
+  public EAttribute getHardwareMeasurement_Description()
   {
-    return (EReference)hardwareMeasurementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getHardwareMeasurement_Estimator()
-  {
-    return (EReference)hardwareMeasurementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)hardwareMeasurementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -675,6 +969,26 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getDevice_DeviceCommands()
+  {
+    return (EReference)deviceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDevice_DeviceMeasurements()
+  {
+    return (EReference)deviceEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getDeviceCommand()
   {
     return deviceCommandEClass;
@@ -695,19 +1009,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDeviceCommand_Adapter()
+  public EAttribute getDeviceCommand_Description()
   {
-    return (EReference)deviceCommandEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDeviceCommand_Device()
-  {
-    return (EReference)deviceCommandEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)deviceCommandEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -735,19 +1039,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDeviceMeasurement_Adapter()
+  public EAttribute getDeviceMeasurement_Description()
   {
-    return (EReference)deviceMeasurementEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDeviceMeasurement_Device()
-  {
-    return (EReference)deviceMeasurementEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)deviceMeasurementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -775,9 +1069,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHardwareAdapter_HardwareCommands()
+  public EAttribute getHardwareAdapter_Description()
   {
-    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)hardwareAdapterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -785,7 +1079,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHardwareAdapter_HardwareMeasurements()
+  public EReference getHardwareAdapter_HardwareCommands()
   {
     return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(2);
   }
@@ -795,7 +1089,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHardwareAdapter_DeviceCommands()
+  public EReference getHardwareAdapter_HardwareMeasurements()
   {
     return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(3);
   }
@@ -805,9 +1099,19 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getHardwareAdapter_DeviceMeasurements()
+  public EReference getHardwareAdapter_DeviceCommands()
   {
     return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getHardwareAdapter_DeviceMeasurements()
+  {
+    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -841,76 +1145,107 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
 
     // Create classes and their features
     systemEClass = createEClass(SYSTEM);
+    createEAttribute(systemEClass, SYSTEM__NAME);
+    createEAttribute(systemEClass, SYSTEM__DESCRIPTION);
     createEReference(systemEClass, SYSTEM__SUBSYSTEMS);
 
     subsystemEClass = createEClass(SUBSYSTEM);
     createEAttribute(subsystemEClass, SUBSYSTEM__NAME);
+    createEAttribute(subsystemEClass, SUBSYSTEM__DESCRIPTION);
     createEReference(subsystemEClass, SUBSYSTEM__DEPLOYMENT_SETS);
 
     deploymentSetEClass = createEClass(DEPLOYMENT_SET);
     createEAttribute(deploymentSetEClass, DEPLOYMENT_SET__NAME);
+    createEAttribute(deploymentSetEClass, DEPLOYMENT_SET__DESCRIPTION);
     createEReference(deploymentSetEClass, DEPLOYMENT_SET__DEPLOYMENTS);
+
+    qosPolicyEClass = createEClass(QOS_POLICY);
+    createEAttribute(qosPolicyEClass, QOS_POLICY__NAME);
+    createEAttribute(qosPolicyEClass, QOS_POLICY__DESCRIPTION);
+    createEAttribute(qosPolicyEClass, QOS_POLICY__POLICY);
+
+    dataProductEClass = createEClass(DATA_PRODUCT);
+    createEAttribute(dataProductEClass, DATA_PRODUCT__NAME);
+    createEAttribute(dataProductEClass, DATA_PRODUCT__DESCRIPTION);
+    createEAttribute(dataProductEClass, DATA_PRODUCT__CONTENT);
+
+    dataCollectionEClass = createEClass(DATA_COLLECTION);
+    createEAttribute(dataCollectionEClass, DATA_COLLECTION__NAME);
+    createEAttribute(dataCollectionEClass, DATA_COLLECTION__DESCRIPTION);
+    createEReference(dataCollectionEClass, DATA_COLLECTION__POLICIES);
+    createEReference(dataCollectionEClass, DATA_COLLECTION__PRODUCTS);
 
     deploymentEClass = createEClass(DEPLOYMENT);
     createEAttribute(deploymentEClass, DEPLOYMENT__NAME);
+    createEAttribute(deploymentEClass, DEPLOYMENT__DESCRIPTION);
     createEReference(deploymentEClass, DEPLOYMENT__COMPONENTS);
+    createEReference(deploymentEClass, DEPLOYMENT__CATALOGS);
 
     componentEClass = createEClass(COMPONENT);
     createEAttribute(componentEClass, COMPONENT__NAME);
-    createEReference(componentEClass, COMPONENT__SV);
-    createEReference(componentEClass, COMPONENT__CONTROLLER);
-    createEReference(componentEClass, COMPONENT__ESTIMATOR);
+    createEAttribute(componentEClass, COMPONENT__DESCRIPTION);
+    createEReference(componentEClass, COMPONENT__STATE_VARIABLES);
+    createEReference(componentEClass, COMPONENT__CONTROLLERS);
+    createEReference(componentEClass, COMPONENT__ESTIMATORS);
+    createEReference(componentEClass, COMPONENT__ADAPTERS);
 
     stateVariableEClass = createEClass(STATE_VARIABLE);
     createEAttribute(stateVariableEClass, STATE_VARIABLE__NAME);
-    createEReference(stateVariableEClass, STATE_VARIABLE__STATE_CONSTRAINTS);
+    createEAttribute(stateVariableEClass, STATE_VARIABLE__DESCRIPTION);
+    createEAttribute(stateVariableEClass, STATE_VARIABLE__REPRESENTATION_TYPE);
+    createEReference(stateVariableEClass, STATE_VARIABLE__IN_STATE_CONSTRAINTS);
+    createEReference(stateVariableEClass, STATE_VARIABLE__OUT_STATE_CONSTRAINTS);
     createEReference(stateVariableEClass, STATE_VARIABLE__STATE_UPDATES);
+    createEReference(stateVariableEClass, STATE_VARIABLE__INFLUENCED_BY);
 
     controllerEClass = createEClass(CONTROLLER);
     createEAttribute(controllerEClass, CONTROLLER__NAME);
+    createEAttribute(controllerEClass, CONTROLLER__DESCRIPTION);
+    createEReference(controllerEClass, CONTROLLER__DELEGATES);
     createEReference(controllerEClass, CONTROLLER__STATE_CONSTRAINT);
     createEReference(controllerEClass, CONTROLLER__HARDWARE_COMMAND);
 
     estimatorEClass = createEClass(ESTIMATOR);
     createEAttribute(estimatorEClass, ESTIMATOR__NAME);
+    createEAttribute(estimatorEClass, ESTIMATOR__DESCRIPTION);
+    createEReference(estimatorEClass, ESTIMATOR__DISTILLED_MEASUREMENTS);
+    createEReference(estimatorEClass, ESTIMATOR__STATE_CONSTRAINTS);
+    createEReference(estimatorEClass, ESTIMATOR__STATE_UPDATES);
     createEReference(estimatorEClass, ESTIMATOR__HARDWARE_MEASUREMENT);
 
     stateConstraintEClass = createEClass(STATE_CONSTRAINT);
     createEAttribute(stateConstraintEClass, STATE_CONSTRAINT__NAME);
-    createEReference(stateConstraintEClass, STATE_CONSTRAINT__CONTROLLERS);
-    createEReference(stateConstraintEClass, STATE_CONSTRAINT__ESTIMATORS);
+    createEAttribute(stateConstraintEClass, STATE_CONSTRAINT__DESCRIPTION);
 
     stateUpdateEClass = createEClass(STATE_UPDATE);
     createEAttribute(stateUpdateEClass, STATE_UPDATE__NAME);
-    createEReference(stateUpdateEClass, STATE_UPDATE__CONTROLLERS);
-    createEReference(stateUpdateEClass, STATE_UPDATE__ESTIMATORS);
+    createEAttribute(stateUpdateEClass, STATE_UPDATE__DESCRIPTION);
 
     hardwareCommandEClass = createEClass(HARDWARE_COMMAND);
     createEAttribute(hardwareCommandEClass, HARDWARE_COMMAND__NAME);
-    createEReference(hardwareCommandEClass, HARDWARE_COMMAND__CONTROLLER);
-    createEReference(hardwareCommandEClass, HARDWARE_COMMAND__ADAPTER);
+    createEAttribute(hardwareCommandEClass, HARDWARE_COMMAND__DESCRIPTION);
 
     hardwareMeasurementEClass = createEClass(HARDWARE_MEASUREMENT);
     createEAttribute(hardwareMeasurementEClass, HARDWARE_MEASUREMENT__NAME);
-    createEReference(hardwareMeasurementEClass, HARDWARE_MEASUREMENT__ADAPTER);
-    createEReference(hardwareMeasurementEClass, HARDWARE_MEASUREMENT__ESTIMATOR);
+    createEAttribute(hardwareMeasurementEClass, HARDWARE_MEASUREMENT__DESCRIPTION);
 
     deviceEClass = createEClass(DEVICE);
     createEAttribute(deviceEClass, DEVICE__NAME);
     createEAttribute(deviceEClass, DEVICE__DESCRIPTION);
+    createEReference(deviceEClass, DEVICE__DEVICE_COMMANDS);
+    createEReference(deviceEClass, DEVICE__DEVICE_MEASUREMENTS);
 
     deviceCommandEClass = createEClass(DEVICE_COMMAND);
     createEAttribute(deviceCommandEClass, DEVICE_COMMAND__NAME);
-    createEReference(deviceCommandEClass, DEVICE_COMMAND__ADAPTER);
-    createEReference(deviceCommandEClass, DEVICE_COMMAND__DEVICE);
+    createEAttribute(deviceCommandEClass, DEVICE_COMMAND__DESCRIPTION);
 
     deviceMeasurementEClass = createEClass(DEVICE_MEASUREMENT);
     createEAttribute(deviceMeasurementEClass, DEVICE_MEASUREMENT__NAME);
-    createEReference(deviceMeasurementEClass, DEVICE_MEASUREMENT__ADAPTER);
-    createEReference(deviceMeasurementEClass, DEVICE_MEASUREMENT__DEVICE);
+    createEAttribute(deviceMeasurementEClass, DEVICE_MEASUREMENT__DESCRIPTION);
 
     hardwareAdapterEClass = createEClass(HARDWARE_ADAPTER);
     createEAttribute(hardwareAdapterEClass, HARDWARE_ADAPTER__NAME);
+    createEAttribute(hardwareAdapterEClass, HARDWARE_ADAPTER__DESCRIPTION);
     createEReference(hardwareAdapterEClass, HARDWARE_ADAPTER__HARDWARE_COMMANDS);
     createEReference(hardwareAdapterEClass, HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS);
     createEReference(hardwareAdapterEClass, HARDWARE_ADAPTER__DEVICE_COMMANDS);
@@ -949,80 +1284,111 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
 
     // Initialize classes and features; add operations and parameters
     initEClass(systemEClass, net.certware.state.stateAnalysis.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, net.certware.state.stateAnalysis.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSystem_Description(), ecorePackage.getEString(), "description", null, 0, 1, net.certware.state.stateAnalysis.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSystem_Subsystems(), this.getSubsystem(), null, "subsystems", null, 0, -1, net.certware.state.stateAnalysis.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subsystemEClass, Subsystem.class, "Subsystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSubsystem_Name(), ecorePackage.getEString(), "name", null, 0, 1, Subsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSubsystem_Description(), ecorePackage.getEString(), "description", null, 0, 1, Subsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubsystem_DeploymentSets(), this.getDeploymentSet(), null, "deploymentSets", null, 0, -1, Subsystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deploymentSetEClass, DeploymentSet.class, "DeploymentSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDeploymentSet_Name(), ecorePackage.getEString(), "name", null, 0, 1, DeploymentSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDeploymentSet_Description(), ecorePackage.getEString(), "description", null, 0, 1, DeploymentSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeploymentSet_Deployments(), this.getDeployment(), null, "deployments", null, 0, -1, DeploymentSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qosPolicyEClass, QosPolicy.class, "QosPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQosPolicy_Name(), ecorePackage.getEString(), "name", null, 0, 1, QosPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQosPolicy_Description(), ecorePackage.getEString(), "description", null, 0, 1, QosPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getQosPolicy_Policy(), ecorePackage.getEString(), "policy", null, 0, 1, QosPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataProductEClass, DataProduct.class, "DataProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataProduct_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataProduct_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataProduct_Content(), ecorePackage.getEString(), "content", null, 0, 1, DataProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(dataCollectionEClass, DataCollection.class, "DataCollection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDataCollection_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDataCollection_Description(), ecorePackage.getEString(), "description", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataCollection_Policies(), this.getQosPolicy(), null, "policies", null, 0, -1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDataCollection_Products(), this.getDataProduct(), null, "products", null, 0, -1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deploymentEClass, Deployment.class, "Deployment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDeployment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDeployment_Description(), ecorePackage.getEString(), "description", null, 0, 1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeployment_Components(), this.getComponent(), null, "components", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeployment_Catalogs(), this.getDataCollection(), null, "catalogs", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Sv(), this.getStateVariable(), null, "sv", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Controller(), this.getController(), null, "controller", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Estimator(), this.getEstimator(), null, "estimator", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponent_Description(), ecorePackage.getEString(), "description", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_StateVariables(), this.getStateVariable(), null, "stateVariables", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Controllers(), this.getController(), null, "controllers", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Estimators(), this.getEstimator(), null, "estimators", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_Adapters(), this.getHardwareAdapter(), null, "adapters", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateVariableEClass, StateVariable.class, "StateVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStateVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStateVariable_StateConstraints(), this.getStateConstraint(), null, "stateConstraints", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStateVariable_StateUpdates(), this.getStateUpdate(), null, "stateUpdates", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStateVariable_Description(), ecorePackage.getEString(), "description", null, 0, 1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStateVariable_RepresentationType(), ecorePackage.getEString(), "representationType", null, 0, 1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStateVariable_InStateConstraints(), this.getStateConstraint(), null, "inStateConstraints", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStateVariable_OutStateConstraints(), this.getStateConstraint(), null, "outStateConstraints", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStateVariable_StateUpdates(), this.getStateUpdate(), null, "stateUpdates", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStateVariable_InfluencedBy(), this.getStateVariable(), null, "influencedBy", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getController_Name(), ecorePackage.getEString(), "name", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getController_Description(), ecorePackage.getEString(), "description", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getController_Delegates(), this.getController(), null, "delegates", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getController_StateConstraint(), this.getStateConstraint(), null, "stateConstraint", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getController_HardwareCommand(), this.getHardwareCommand(), null, "hardwareCommand", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(estimatorEClass, Estimator.class, "Estimator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEstimator_Name(), ecorePackage.getEString(), "name", null, 0, 1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEstimator_Description(), ecorePackage.getEString(), "description", null, 0, 1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEstimator_DistilledMeasurements(), this.getEstimator(), null, "distilledMeasurements", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEstimator_StateConstraints(), this.getStateConstraint(), null, "stateConstraints", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEstimator_StateUpdates(), this.getStateUpdate(), null, "stateUpdates", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEstimator_HardwareMeasurement(), this.getHardwareMeasurement(), null, "hardwareMeasurement", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateConstraintEClass, StateConstraint.class, "StateConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStateConstraint_Name(), ecorePackage.getEString(), "name", null, 0, 1, StateConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStateConstraint_Controllers(), this.getController(), null, "controllers", null, 0, -1, StateConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStateConstraint_Estimators(), this.getEstimator(), null, "estimators", null, 0, -1, StateConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStateConstraint_Description(), ecorePackage.getEString(), "description", null, 0, 1, StateConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateUpdateEClass, StateUpdate.class, "StateUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStateUpdate_Name(), ecorePackage.getEString(), "name", null, 0, 1, StateUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStateUpdate_Controllers(), this.getController(), null, "controllers", null, 0, -1, StateUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStateUpdate_Estimators(), this.getEstimator(), null, "estimators", null, 0, -1, StateUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStateUpdate_Description(), ecorePackage.getEString(), "description", null, 0, 1, StateUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(hardwareCommandEClass, HardwareCommand.class, "HardwareCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHardwareCommand_Name(), ecorePackage.getEString(), "name", null, 0, 1, HardwareCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareCommand_Controller(), this.getController(), null, "controller", null, 0, 1, HardwareCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareCommand_Adapter(), this.getHardwareAdapter(), null, "adapter", null, 0, 1, HardwareCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHardwareCommand_Description(), ecorePackage.getEString(), "description", null, 0, 1, HardwareCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(hardwareMeasurementEClass, HardwareMeasurement.class, "HardwareMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHardwareMeasurement_Name(), ecorePackage.getEString(), "name", null, 0, 1, HardwareMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareMeasurement_Adapter(), this.getHardwareAdapter(), null, "adapter", null, 0, 1, HardwareMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareMeasurement_Estimator(), this.getEstimator(), null, "estimator", null, 0, 1, HardwareMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHardwareMeasurement_Description(), ecorePackage.getEString(), "description", null, 0, 1, HardwareMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceEClass, Device.class, "Device", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDevice_Name(), ecorePackage.getEString(), "name", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDevice_Description(), ecorePackage.getEString(), "description", null, 0, 1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_DeviceCommands(), this.getDeviceCommand(), null, "deviceCommands", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDevice_DeviceMeasurements(), this.getDeviceMeasurement(), null, "deviceMeasurements", null, 0, -1, Device.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceCommandEClass, DeviceCommand.class, "DeviceCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDeviceCommand_Name(), ecorePackage.getEString(), "name", null, 0, 1, DeviceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeviceCommand_Adapter(), this.getHardwareAdapter(), null, "adapter", null, 0, 1, DeviceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeviceCommand_Device(), this.getDevice(), null, "device", null, 0, 1, DeviceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDeviceCommand_Description(), ecorePackage.getEString(), "description", null, 0, 1, DeviceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deviceMeasurementEClass, DeviceMeasurement.class, "DeviceMeasurement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDeviceMeasurement_Name(), ecorePackage.getEString(), "name", null, 0, 1, DeviceMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeviceMeasurement_Adapter(), this.getHardwareAdapter(), null, "adapter", null, 0, 1, DeviceMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeviceMeasurement_Device(), this.getDevice(), null, "device", null, 0, 1, DeviceMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDeviceMeasurement_Description(), ecorePackage.getEString(), "description", null, 0, 1, DeviceMeasurement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(hardwareAdapterEClass, HardwareAdapter.class, "HardwareAdapter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getHardwareAdapter_Name(), ecorePackage.getEString(), "name", null, 0, 1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareAdapter_HardwareCommands(), this.getHardwareCommand(), null, "hardwareCommands", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareAdapter_HardwareMeasurements(), this.getHardwareMeasurement(), null, "hardwareMeasurements", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareAdapter_DeviceCommands(), this.getDeviceCommand(), null, "deviceCommands", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getHardwareAdapter_DeviceMeasurements(), this.getDeviceMeasurement(), null, "deviceMeasurements", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getHardwareAdapter_Description(), ecorePackage.getEString(), "description", null, 0, 1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHardwareAdapter_HardwareCommands(), this.getHardwareCommand(), null, "hardwareCommands", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHardwareAdapter_HardwareMeasurements(), this.getHardwareMeasurement(), null, "hardwareMeasurements", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHardwareAdapter_DeviceCommands(), this.getDeviceCommand(), null, "deviceCommands", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHardwareAdapter_DeviceMeasurements(), this.getDeviceMeasurement(), null, "deviceMeasurements", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

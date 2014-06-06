@@ -5,6 +5,8 @@ import com.google.inject.Provider;
 import net.certware.state.services.StateAnalysisGrammarAccess;
 import net.certware.state.stateAnalysis.Component;
 import net.certware.state.stateAnalysis.Controller;
+import net.certware.state.stateAnalysis.DataCollection;
+import net.certware.state.stateAnalysis.DataProduct;
 import net.certware.state.stateAnalysis.Deployment;
 import net.certware.state.stateAnalysis.DeploymentSet;
 import net.certware.state.stateAnalysis.Device;
@@ -14,6 +16,7 @@ import net.certware.state.stateAnalysis.Estimator;
 import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareCommand;
 import net.certware.state.stateAnalysis.HardwareMeasurement;
+import net.certware.state.stateAnalysis.QosPolicy;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 import net.certware.state.stateAnalysis.StateConstraint;
 import net.certware.state.stateAnalysis.StateUpdate;
@@ -48,6 +51,18 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 			case StateAnalysisPackage.CONTROLLER:
 				if(context == grammarAccess.getControllerRule()) {
 					sequence_Controller(context, (Controller) semanticObject); 
+					return; 
+				}
+				else break;
+			case StateAnalysisPackage.DATA_COLLECTION:
+				if(context == grammarAccess.getDataCollectionRule()) {
+					sequence_DataCollection(context, (DataCollection) semanticObject); 
+					return; 
+				}
+				else break;
+			case StateAnalysisPackage.DATA_PRODUCT:
+				if(context == grammarAccess.getDataProductRule()) {
+					sequence_DataProduct(context, (DataProduct) semanticObject); 
 					return; 
 				}
 				else break;
@@ -105,6 +120,12 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 					return; 
 				}
 				else break;
+			case StateAnalysisPackage.QOS_POLICY:
+				if(context == grammarAccess.getQosPolicyRule()) {
+					sequence_QosPolicy(context, (QosPolicy) semanticObject); 
+					return; 
+				}
+				else break;
 			case StateAnalysisPackage.STATE_CONSTRAINT:
 				if(context == grammarAccess.getStateConstraintRule()) {
 					sequence_StateConstraint(context, (StateConstraint) semanticObject); 
@@ -141,7 +162,14 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID sv=StateVariable controller+=Controller+ estimator+=Estimator+)
+	 *     (
+	 *         name=ID 
+	 *         description=STRING 
+	 *         stateVariables+=StateVariable+ 
+	 *         controllers+=Controller+ 
+	 *         estimators+=Estimator+ 
+	 *         adapters+=HardwareAdapter+
+	 *     )
 	 */
 	protected void sequence_Component(EObject context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -150,7 +178,7 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID stateConstraint+=StateConstraint hardwareCommand+=HardwareCommand+)
+	 *     (name=ID description=STRING delegates+=[Controller|ID]* stateConstraint+=StateConstraint+ hardwareCommand+=HardwareCommand+)
 	 */
 	protected void sequence_Controller(EObject context, Controller semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -159,7 +187,38 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID deployments+=Deployment*)
+	 *     (name=ID description=STRING policies+=QosPolicy* products+=DataProduct*)
+	 */
+	protected void sequence_DataCollection(EObject context, DataCollection semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID description=STRING content=STRING)
+	 */
+	protected void sequence_DataProduct(EObject context, DataProduct semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DATA_PRODUCT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DATA_PRODUCT__NAME));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DATA_PRODUCT__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DATA_PRODUCT__DESCRIPTION));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DATA_PRODUCT__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DATA_PRODUCT__CONTENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDataProductAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDataProductAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getDataProductAccess().getContentSTRINGTerminalRuleCall_4_0(), semanticObject.getContent());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID description=STRING deployments+=Deployment*)
 	 */
 	protected void sequence_DeploymentSet(EObject context, DeploymentSet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -168,7 +227,7 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID components+=Component*)
+	 *     (name=ID description=STRING components+=Component* catalogs+=DataCollection*)
 	 */
 	protected void sequence_Deployment(EObject context, Deployment semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -177,70 +236,61 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID adapter=[HardwareAdapter|ID] device=Device)
+	 *     (name=ID description=STRING)
 	 */
 	protected void sequence_DeviceCommand(EObject context, DeviceCommand semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__NAME));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__ADAPTER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__ADAPTER));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__DEVICE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__DEVICE));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_COMMAND__DESCRIPTION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDeviceCommandAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDeviceCommandAccess().getAdapterHardwareAdapterIDTerminalRuleCall_1_0_1(), semanticObject.getAdapter());
-		feeder.accept(grammarAccess.getDeviceCommandAccess().getDeviceDeviceParserRuleCall_2_0(), semanticObject.getDevice());
+		feeder.accept(grammarAccess.getDeviceCommandAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDeviceCommandAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID adapter=[HardwareAdapter|ID] device=Device)
+	 *     (name=ID description=ID)
 	 */
 	protected void sequence_DeviceMeasurement(EObject context, DeviceMeasurement semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__ADAPTER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__ADAPTER));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__DEVICE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__DEVICE));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE_MEASUREMENT__DESCRIPTION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDeviceMeasurementAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDeviceMeasurementAccess().getAdapterHardwareAdapterIDTerminalRuleCall_1_0_1(), semanticObject.getAdapter());
-		feeder.accept(grammarAccess.getDeviceMeasurementAccess().getDeviceDeviceParserRuleCall_2_0(), semanticObject.getDevice());
+		feeder.accept(grammarAccess.getDeviceMeasurementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDeviceMeasurementAccess().getDescriptionIDTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID description=STRING)
+	 *     (name=ID description=STRING deviceCommands+=DeviceCommand* deviceMeasurements+=DeviceMeasurement*)
 	 */
 	protected void sequence_Device(EObject context, Device semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE__NAME));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.DEVICE__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.DEVICE__DESCRIPTION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDeviceAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDeviceAccess().getDescriptionSTRINGTerminalRuleCall_1_0(), semanticObject.getDescription());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID hardwareMeasurement+=HardwareMeasurement+)
+	 *     (
+	 *         name=ID 
+	 *         description=STRING 
+	 *         distilledMeasurements+=[Estimator|ID]* 
+	 *         stateConstraints+=StateConstraint* 
+	 *         stateUpdates+=StateUpdate+ 
+	 *         hardwareMeasurement+=HardwareMeasurement+
+	 *     )
 	 */
 	protected void sequence_Estimator(EObject context, Estimator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -251,10 +301,11 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         hardwareCommands+=[HardwareCommand|ID]* 
-	 *         hardwareMeasurements+=[HardwareMeasurement|ID]* 
-	 *         deviceCommands+=[DeviceCommand|ID]* 
-	 *         deviceMeasurements+=[DeviceMeasurement|ID]*
+	 *         description=ID 
+	 *         hardwareCommands+=HardwareCommand* 
+	 *         hardwareMeasurements+=HardwareMeasurement* 
+	 *         deviceCommands+=DeviceCommand* 
+	 *         deviceMeasurements+=DeviceMeasurement*
 	 *     )
 	 */
 	protected void sequence_HardwareAdapter(EObject context, HardwareAdapter semanticObject) {
@@ -264,69 +315,113 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID controller=[Controller|ID] adapter=[HardwareAdapter|ID])
+	 *     (name=ID description=STRING)
 	 */
 	protected void sequence_HardwareCommand(EObject context, HardwareCommand semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__NAME));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__CONTROLLER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__CONTROLLER));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__ADAPTER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__ADAPTER));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_COMMAND__DESCRIPTION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getHardwareCommandAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getHardwareCommandAccess().getControllerControllerIDTerminalRuleCall_1_0_1(), semanticObject.getController());
-		feeder.accept(grammarAccess.getHardwareCommandAccess().getAdapterHardwareAdapterIDTerminalRuleCall_2_0_1(), semanticObject.getAdapter());
+		feeder.accept(grammarAccess.getHardwareCommandAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getHardwareCommandAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID adapter=[HardwareAdapter|ID] estimator=[Estimator|ID])
+	 *     (name=ID description=STRING)
 	 */
 	protected void sequence_HardwareMeasurement(EObject context, HardwareMeasurement semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__NAME));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__ADAPTER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__ADAPTER));
-			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__ESTIMATOR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__ESTIMATOR));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.HARDWARE_MEASUREMENT__DESCRIPTION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getHardwareMeasurementAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getHardwareMeasurementAccess().getAdapterHardwareAdapterIDTerminalRuleCall_1_0_1(), semanticObject.getAdapter());
-		feeder.accept(grammarAccess.getHardwareMeasurementAccess().getEstimatorEstimatorIDTerminalRuleCall_2_0_1(), semanticObject.getEstimator());
+		feeder.accept(grammarAccess.getHardwareMeasurementAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getHardwareMeasurementAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID controllers+=[Controller|ID]* estimators+=[Estimator|ID]*)
+	 *     (name=ID description=STRING policy=STRING)
+	 */
+	protected void sequence_QosPolicy(EObject context, QosPolicy semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.QOS_POLICY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.QOS_POLICY__NAME));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.QOS_POLICY__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.QOS_POLICY__DESCRIPTION));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.QOS_POLICY__POLICY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.QOS_POLICY__POLICY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQosPolicyAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getQosPolicyAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getQosPolicyAccess().getPolicySTRINGTerminalRuleCall_4_0(), semanticObject.getPolicy());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=ID description=STRING)
 	 */
 	protected void sequence_StateConstraint(EObject context, StateConstraint semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.STATE_CONSTRAINT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.STATE_CONSTRAINT__NAME));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.STATE_CONSTRAINT__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.STATE_CONSTRAINT__DESCRIPTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStateConstraintAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStateConstraintAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID controllers+=[Controller|ID]* estimators+=[Estimator|ID]*)
+	 *     (name=ID description=STRING)
 	 */
 	protected void sequence_StateUpdate(EObject context, StateUpdate semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.STATE_UPDATE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.STATE_UPDATE__NAME));
+			if(transientValues.isValueTransient(semanticObject, StateAnalysisPackage.Literals.STATE_UPDATE__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, StateAnalysisPackage.Literals.STATE_UPDATE__DESCRIPTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getStateUpdateAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStateUpdateAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID stateConstraints+=[StateConstraint|ID]* stateUpdates+=[StateUpdate|ID]*)
+	 *     (
+	 *         name=ID 
+	 *         description=STRING 
+	 *         representationType=StateRepresentationType 
+	 *         inStateConstraints+=StateConstraint* 
+	 *         outStateConstraints+=StateConstraint* 
+	 *         stateUpdates+=StateUpdate* 
+	 *         influencedBy+=StateVariable*
+	 *     )
 	 */
 	protected void sequence_StateVariable(EObject context, StateVariable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -335,7 +430,7 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     (name=ID deploymentSets+=DeploymentSet*)
+	 *     (name=ID description=STRING deploymentSets+=DeploymentSet*)
 	 */
 	protected void sequence_Subsystem(EObject context, Subsystem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -344,7 +439,7 @@ public class StateAnalysisSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Constraint:
-	 *     subsystems+=Subsystem*
+	 *     (name=ID description=STRING subsystems+=Subsystem*)
 	 */
 	protected void sequence_System(EObject context, net.certware.state.stateAnalysis.System semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

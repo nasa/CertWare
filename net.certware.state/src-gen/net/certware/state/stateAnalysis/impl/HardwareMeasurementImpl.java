@@ -2,15 +2,12 @@
  */
 package net.certware.state.stateAnalysis.impl;
 
-import net.certware.state.stateAnalysis.Estimator;
-import net.certware.state.stateAnalysis.HardwareAdapter;
 import net.certware.state.stateAnalysis.HardwareMeasurement;
 import net.certware.state.stateAnalysis.StateAnalysisPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -23,8 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareMeasurementImpl#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareMeasurementImpl#getAdapter <em>Adapter</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareMeasurementImpl#getEstimator <em>Estimator</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareMeasurementImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,24 +49,24 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAdapter() <em>Adapter</em>}' reference.
+   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAdapter()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected HardwareAdapter adapter;
+  protected static final String DESCRIPTION_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getEstimator() <em>Estimator</em>}' reference.
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEstimator()
+   * @see #getDescription()
    * @generated
    * @ordered
    */
-  protected Estimator estimator;
+  protected String description = DESCRIPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,19 +117,9 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public HardwareAdapter getAdapter()
+  public String getDescription()
   {
-    if (adapter != null && adapter.eIsProxy())
-    {
-      InternalEObject oldAdapter = (InternalEObject)adapter;
-      adapter = (HardwareAdapter)eResolveProxy(oldAdapter);
-      if (adapter != oldAdapter)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, StateAnalysisPackage.HARDWARE_MEASUREMENT__ADAPTER, oldAdapter, adapter));
-      }
-    }
-    return adapter;
+    return description;
   }
 
   /**
@@ -141,65 +127,12 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public HardwareAdapter basicGetAdapter()
+  public void setDescription(String newDescription)
   {
-    return adapter;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAdapter(HardwareAdapter newAdapter)
-  {
-    HardwareAdapter oldAdapter = adapter;
-    adapter = newAdapter;
+    String oldDescription = description;
+    description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_MEASUREMENT__ADAPTER, oldAdapter, adapter));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Estimator getEstimator()
-  {
-    if (estimator != null && estimator.eIsProxy())
-    {
-      InternalEObject oldEstimator = (InternalEObject)estimator;
-      estimator = (Estimator)eResolveProxy(oldEstimator);
-      if (estimator != oldEstimator)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, StateAnalysisPackage.HARDWARE_MEASUREMENT__ESTIMATOR, oldEstimator, estimator));
-      }
-    }
-    return estimator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Estimator basicGetEstimator()
-  {
-    return estimator;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setEstimator(Estimator newEstimator)
-  {
-    Estimator oldEstimator = estimator;
-    estimator = newEstimator;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_MEASUREMENT__ESTIMATOR, oldEstimator, estimator));
+      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_MEASUREMENT__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -214,12 +147,8 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
     {
       case StateAnalysisPackage.HARDWARE_MEASUREMENT__NAME:
         return getName();
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ADAPTER:
-        if (resolve) return getAdapter();
-        return basicGetAdapter();
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ESTIMATOR:
-        if (resolve) return getEstimator();
-        return basicGetEstimator();
+      case StateAnalysisPackage.HARDWARE_MEASUREMENT__DESCRIPTION:
+        return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,11 +166,8 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
       case StateAnalysisPackage.HARDWARE_MEASUREMENT__NAME:
         setName((String)newValue);
         return;
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ADAPTER:
-        setAdapter((HardwareAdapter)newValue);
-        return;
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ESTIMATOR:
-        setEstimator((Estimator)newValue);
+      case StateAnalysisPackage.HARDWARE_MEASUREMENT__DESCRIPTION:
+        setDescription((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -260,11 +186,8 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
       case StateAnalysisPackage.HARDWARE_MEASUREMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ADAPTER:
-        setAdapter((HardwareAdapter)null);
-        return;
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ESTIMATOR:
-        setEstimator((Estimator)null);
+      case StateAnalysisPackage.HARDWARE_MEASUREMENT__DESCRIPTION:
+        setDescription(DESCRIPTION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -282,10 +205,8 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
     {
       case StateAnalysisPackage.HARDWARE_MEASUREMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ADAPTER:
-        return adapter != null;
-      case StateAnalysisPackage.HARDWARE_MEASUREMENT__ESTIMATOR:
-        return estimator != null;
+      case StateAnalysisPackage.HARDWARE_MEASUREMENT__DESCRIPTION:
+        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
   }
@@ -303,6 +224,8 @@ public class HardwareMeasurementImpl extends MinimalEObjectImpl.Container implem
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", description: ");
+    result.append(description);
     result.append(')');
     return result.toString();
   }

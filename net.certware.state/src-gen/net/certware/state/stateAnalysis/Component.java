@@ -15,9 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.Component#getName <em>Name</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.Component#getSv <em>Sv</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.Component#getController <em>Controller</em>}</li>
- *   <li>{@link net.certware.state.stateAnalysis.Component#getEstimator <em>Estimator</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.Component#getDescription <em>Description</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.Component#getStateVariables <em>State Variables</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.Component#getControllers <em>Controllers</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.Component#getEstimators <em>Estimators</em>}</li>
+ *   <li>{@link net.certware.state.stateAnalysis.Component#getAdapters <em>Adapters</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,61 +56,93 @@ public interface Component extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Sv</b></em>' containment reference.
+   * Returns the value of the '<em><b>Description</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Sv</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Description</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Sv</em>' containment reference.
-   * @see #setSv(StateVariable)
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Sv()
+   * @return the value of the '<em>Description</em>' attribute.
+   * @see #setDescription(String)
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Description()
+   * @model
+   * @generated
+   */
+  String getDescription();
+
+  /**
+   * Sets the value of the '{@link net.certware.state.stateAnalysis.Component#getDescription <em>Description</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Description</em>' attribute.
+   * @see #getDescription()
+   * @generated
+   */
+  void setDescription(String value);
+
+  /**
+   * Returns the value of the '<em><b>State Variables</b></em>' containment reference list.
+   * The list contents are of type {@link net.certware.state.stateAnalysis.StateVariable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>State Variables</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>State Variables</em>' containment reference list.
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_StateVariables()
    * @model containment="true"
    * @generated
    */
-  StateVariable getSv();
+  EList<StateVariable> getStateVariables();
 
   /**
-   * Sets the value of the '{@link net.certware.state.stateAnalysis.Component#getSv <em>Sv</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sv</em>' containment reference.
-   * @see #getSv()
-   * @generated
-   */
-  void setSv(StateVariable value);
-
-  /**
-   * Returns the value of the '<em><b>Controller</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Controllers</b></em>' containment reference list.
    * The list contents are of type {@link net.certware.state.stateAnalysis.Controller}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Controller</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Controllers</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Controller</em>' containment reference list.
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Controller()
+   * @return the value of the '<em>Controllers</em>' containment reference list.
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Controllers()
    * @model containment="true"
    * @generated
    */
-  EList<Controller> getController();
+  EList<Controller> getControllers();
 
   /**
-   * Returns the value of the '<em><b>Estimator</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Estimators</b></em>' containment reference list.
    * The list contents are of type {@link net.certware.state.stateAnalysis.Estimator}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Estimator</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Estimators</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Estimator</em>' containment reference list.
-   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Estimator()
+   * @return the value of the '<em>Estimators</em>' containment reference list.
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Estimators()
    * @model containment="true"
    * @generated
    */
-  EList<Estimator> getEstimator();
+  EList<Estimator> getEstimators();
+
+  /**
+   * Returns the value of the '<em><b>Adapters</b></em>' containment reference list.
+   * The list contents are of type {@link net.certware.state.stateAnalysis.HardwareAdapter}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Adapters</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Adapters</em>' containment reference list.
+   * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getComponent_Adapters()
+   * @model containment="true"
+   * @generated
+   */
+  EList<HardwareAdapter> getAdapters();
 
 } // Component
