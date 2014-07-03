@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link stateAnalysis.StateVariable#getName <em>Name</em>}</li>
- *   <li>{@link stateAnalysis.StateVariable#getDescription <em>Description</em>}</li>
  *   <li>{@link stateAnalysis.StateVariable#getRepresentationType <em>Representation Type</em>}</li>
  *   <li>{@link stateAnalysis.StateVariable#getInStateConstraints <em>In State Constraints</em>}</li>
  *   <li>{@link stateAnalysis.StateVariable#getOutStateConstraints <em>Out State Constraints</em>}</li>
@@ -28,60 +26,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="gmf.node label='name' label.pattern='SV: {0}' tool.name='State Variable'"
  * @generated
  */
-public interface StateVariable extends EObject
+public interface StateVariable extends Component
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see stateAnalysis.StateAnalysisPackage#getStateVariable_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link stateAnalysis.StateVariable#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see stateAnalysis.StateAnalysisPackage#getStateVariable_Description()
-   * @model
-   * @generated
-   */
-  String getDescription();
-
-  /**
-   * Sets the value of the '{@link stateAnalysis.StateVariable#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
-  void setDescription(String value);
-
   /**
    * Returns the value of the '<em><b>Representation Type</b></em>' attribute.
    * <!-- begin-user-doc -->

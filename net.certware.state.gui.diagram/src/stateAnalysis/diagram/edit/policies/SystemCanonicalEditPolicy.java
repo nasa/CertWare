@@ -289,18 +289,18 @@ public class SystemCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID: {
+		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-						.getComponent_3003ContainedLinks(view));
+						.getStateVariable_3027ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID: {
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-						.getStateVariable_3007ContainedLinks(view));
+						.getStateVariable_3011ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -329,18 +329,10 @@ public class SystemCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-						.getStateVariable_3011ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
 		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-						.getController_3012ContainedLinks(view));
+						.getController_3028ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -364,7 +356,7 @@ public class SystemCanonicalEditPolicy extends CanonicalEditPolicy {
 		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-						.getEstimator_3015ContainedLinks(view));
+						.getEstimator_3029ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
@@ -396,7 +388,7 @@ public class SystemCanonicalEditPolicy extends CanonicalEditPolicy {
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-						.getHardwareAdapter_3019ContainedLinks(view));
+						.getHardwareAdapter_3030ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

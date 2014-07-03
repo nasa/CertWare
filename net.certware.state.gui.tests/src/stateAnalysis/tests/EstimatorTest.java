@@ -15,16 +15,8 @@ import stateAnalysis.StateAnalysisFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EstimatorTest extends TestCase
+public class EstimatorTest extends ComponentTest
 {
-
-  /**
-   * The fixture for this Estimator test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected Estimator fixture = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -48,25 +40,15 @@ public class EstimatorTest extends TestCase
   }
 
   /**
-   * Sets the fixture for this Estimator test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void setFixture(Estimator fixture)
-  {
-    this.fixture = fixture;
-  }
-
-  /**
    * Returns the fixture for this Estimator test case.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   protected Estimator getFixture()
   {
-    return fixture;
+    return (Estimator)fixture;
   }
 
   /**

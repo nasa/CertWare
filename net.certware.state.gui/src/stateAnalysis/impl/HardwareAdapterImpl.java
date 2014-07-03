@@ -33,8 +33,6 @@ import stateAnalysis.StateAnalysisPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link stateAnalysis.impl.HardwareAdapterImpl#getName <em>Name</em>}</li>
- *   <li>{@link stateAnalysis.impl.HardwareAdapterImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link stateAnalysis.impl.HardwareAdapterImpl#getHardwareCommands <em>Hardware Commands</em>}</li>
  *   <li>{@link stateAnalysis.impl.HardwareAdapterImpl#getHardwareMeasurements <em>Hardware Measurements</em>}</li>
  *   <li>{@link stateAnalysis.impl.HardwareAdapterImpl#getDevices <em>Devices</em>}</li>
@@ -43,48 +41,8 @@ import stateAnalysis.StateAnalysisPackage;
  *
  * @generated
  */
-public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
+public class HardwareAdapterImpl extends ComponentImpl implements HardwareAdapter
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getHardwareCommands() <em>Hardware Commands</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -134,52 +92,6 @@ public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
   protected EClass eStaticClass()
   {
     return StateAnalysisPackage.Literals.HARDWARE_ADAPTER;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_ADAPTER__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDescription()
-  {
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDescription(String newDescription)
-  {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.HARDWARE_ADAPTER__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -254,10 +166,6 @@ public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.HARDWARE_ADAPTER__NAME:
-        return getName();
-      case StateAnalysisPackage.HARDWARE_ADAPTER__DESCRIPTION:
-        return getDescription();
       case StateAnalysisPackage.HARDWARE_ADAPTER__HARDWARE_COMMANDS:
         return getHardwareCommands();
       case StateAnalysisPackage.HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS:
@@ -279,12 +187,6 @@ public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.HARDWARE_ADAPTER__NAME:
-        setName((String)newValue);
-        return;
-      case StateAnalysisPackage.HARDWARE_ADAPTER__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
       case StateAnalysisPackage.HARDWARE_ADAPTER__HARDWARE_COMMANDS:
         getHardwareCommands().clear();
         getHardwareCommands().addAll((Collection<? extends HardwareCommand>)newValue);
@@ -311,12 +213,6 @@ public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.HARDWARE_ADAPTER__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case StateAnalysisPackage.HARDWARE_ADAPTER__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
       case StateAnalysisPackage.HARDWARE_ADAPTER__HARDWARE_COMMANDS:
         getHardwareCommands().clear();
         return;
@@ -340,10 +236,6 @@ public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.HARDWARE_ADAPTER__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.HARDWARE_ADAPTER__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case StateAnalysisPackage.HARDWARE_ADAPTER__HARDWARE_COMMANDS:
         return hardwareCommands != null && !hardwareCommands.isEmpty();
       case StateAnalysisPackage.HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS:
@@ -352,25 +244,6 @@ public class HardwareAdapterImpl extends EObjectImpl implements HardwareAdapter
         return devices != null && !devices.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
   }
 
 } //HardwareAdapterImpl

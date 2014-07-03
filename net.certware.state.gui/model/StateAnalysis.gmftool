@@ -12,15 +12,6 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Component"
-          description="Create new Component">
-        <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
-      </tools>
-      <tools
-          xsi:type="gmftool:CreationTool"
           title="Controller"
           description="Create new Controller">
         <smallIcon

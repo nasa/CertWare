@@ -25,9 +25,24 @@ public class DeploymentDeploymentComponentsCompartmentItemSemanticEditPolicy
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (stateAnalysis.diagram.providers.StateAnalysisElementTypes.Component_3003 == req
+		if (stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027 == req
 				.getElementType()) {
-			return getGEFWrapper(new stateAnalysis.diagram.edit.commands.ComponentCreateCommand(
+			return getGEFWrapper(new stateAnalysis.diagram.edit.commands.StateVariableCreateCommand(
+					req));
+		}
+		if (stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028 == req
+				.getElementType()) {
+			return getGEFWrapper(new stateAnalysis.diagram.edit.commands.ControllerCreateCommand(
+					req));
+		}
+		if (stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029 == req
+				.getElementType()) {
+			return getGEFWrapper(new stateAnalysis.diagram.edit.commands.EstimatorCreateCommand(
+					req));
+		}
+		if (stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030 == req
+				.getElementType()) {
+			return getGEFWrapper(new stateAnalysis.diagram.edit.commands.HardwareAdapterCreateCommand(
 					req));
 		}
 		return super.getCreateCommand(req);

@@ -98,7 +98,7 @@ public class StateAnalysisModelingAssistantProviderOfEstimatorEditPart extends
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == stateAnalysis.diagram.providers.StateAnalysisElementTypes.EstimatorDistilledMeasurements_4002) {
-			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015);
+			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029);
 		}
 		return types;
 	}
@@ -144,7 +144,7 @@ public class StateAnalysisModelingAssistantProviderOfEstimatorEditPart extends
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == stateAnalysis.diagram.providers.StateAnalysisElementTypes.EstimatorDistilledMeasurements_4002) {
-			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015);
+			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029);
 		}
 		return types;
 	}

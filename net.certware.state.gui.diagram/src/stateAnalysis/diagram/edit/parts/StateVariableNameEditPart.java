@@ -57,7 +57,7 @@ public class StateVariableNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5012;
+	public static final int VISUAL_ID = 5028;
 
 	/**
 	 * @generated
@@ -309,7 +309,7 @@ public class StateVariableNameEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
 					.getParser(
-							stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007,
+							stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027,
 							getParserElement(),
 							stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 									.getType(stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID));

@@ -57,7 +57,7 @@ public class ControllerNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5015;
+	public static final int VISUAL_ID = 5029;
 
 	/**
 	 * @generated
@@ -309,7 +309,7 @@ public class ControllerNameEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
 					.getParser(
-							stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012,
+							stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028,
 							getParserElement(),
 							stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 									.getType(stateAnalysis.diagram.edit.parts.ControllerNameEditPart.VISUAL_ID));

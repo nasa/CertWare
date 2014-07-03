@@ -58,7 +58,7 @@ public class HardwareAdapterHardwareAdapterHardwareMeasurementsCompartmentCanoni
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> childDescriptors = stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-				.getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7025SemanticChildren(viewObject);
+				.getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7040SemanticChildren(viewObject);
 		for (stateAnalysis.diagram.part.StateAnalysisNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -91,7 +91,7 @@ public class HardwareAdapterHardwareAdapterHardwareMeasurementsCompartmentCanoni
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> childDescriptors = stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-				.getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7025SemanticChildren((View) getHost()
+				.getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7040SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

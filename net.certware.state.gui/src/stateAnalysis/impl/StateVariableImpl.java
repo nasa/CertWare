@@ -30,8 +30,6 @@ import stateAnalysis.StateVariable;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link stateAnalysis.impl.StateVariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link stateAnalysis.impl.StateVariableImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link stateAnalysis.impl.StateVariableImpl#getRepresentationType <em>Representation Type</em>}</li>
  *   <li>{@link stateAnalysis.impl.StateVariableImpl#getInStateConstraints <em>In State Constraints</em>}</li>
  *   <li>{@link stateAnalysis.impl.StateVariableImpl#getOutStateConstraints <em>Out State Constraints</em>}</li>
@@ -42,48 +40,8 @@ import stateAnalysis.StateVariable;
  *
  * @generated
  */
-public class StateVariableImpl extends EObjectImpl implements StateVariable
+public class StateVariableImpl extends ComponentImpl implements StateVariable
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
-
   /**
    * The default value of the '{@link #getRepresentationType() <em>Representation Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -163,52 +121,6 @@ public class StateVariableImpl extends EObjectImpl implements StateVariable
   protected EClass eStaticClass()
   {
     return StateAnalysisPackage.Literals.STATE_VARIABLE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.STATE_VARIABLE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDescription()
-  {
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDescription(String newDescription)
-  {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.STATE_VARIABLE__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -322,10 +234,6 @@ public class StateVariableImpl extends EObjectImpl implements StateVariable
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.STATE_VARIABLE__NAME:
-        return getName();
-      case StateAnalysisPackage.STATE_VARIABLE__DESCRIPTION:
-        return getDescription();
       case StateAnalysisPackage.STATE_VARIABLE__REPRESENTATION_TYPE:
         return getRepresentationType();
       case StateAnalysisPackage.STATE_VARIABLE__IN_STATE_CONSTRAINTS:
@@ -351,12 +259,6 @@ public class StateVariableImpl extends EObjectImpl implements StateVariable
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.STATE_VARIABLE__NAME:
-        setName((String)newValue);
-        return;
-      case StateAnalysisPackage.STATE_VARIABLE__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
       case StateAnalysisPackage.STATE_VARIABLE__REPRESENTATION_TYPE:
         setRepresentationType((String)newValue);
         return;
@@ -390,12 +292,6 @@ public class StateVariableImpl extends EObjectImpl implements StateVariable
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.STATE_VARIABLE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case StateAnalysisPackage.STATE_VARIABLE__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
       case StateAnalysisPackage.STATE_VARIABLE__REPRESENTATION_TYPE:
         setRepresentationType(REPRESENTATION_TYPE_EDEFAULT);
         return;
@@ -425,10 +321,6 @@ public class StateVariableImpl extends EObjectImpl implements StateVariable
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.STATE_VARIABLE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.STATE_VARIABLE__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case StateAnalysisPackage.STATE_VARIABLE__REPRESENTATION_TYPE:
         return REPRESENTATION_TYPE_EDEFAULT == null ? representationType != null : !REPRESENTATION_TYPE_EDEFAULT.equals(representationType);
       case StateAnalysisPackage.STATE_VARIABLE__IN_STATE_CONSTRAINTS:
@@ -454,11 +346,7 @@ public class StateVariableImpl extends EObjectImpl implements StateVariable
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(", representationType: ");
+    result.append(" (representationType: ");
     result.append(representationType);
     result.append(')');
     return result.toString();

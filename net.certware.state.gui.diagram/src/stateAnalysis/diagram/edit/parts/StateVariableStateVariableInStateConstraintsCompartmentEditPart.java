@@ -31,7 +31,7 @@ public class StateVariableStateVariableInStateConstraintsCompartmentEditPart
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7011;
+	public static final int VISUAL_ID = 7030;
 
 	/**
 	 * @generated

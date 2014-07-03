@@ -150,6 +150,7 @@ public class StateAnalysisSwitch<T> extends Switch<T>
       {
         StateVariable stateVariable = (StateVariable)theEObject;
         T result = caseStateVariable(stateVariable);
+        if (result == null) result = caseComponent(stateVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -157,6 +158,7 @@ public class StateAnalysisSwitch<T> extends Switch<T>
       {
         Controller controller = (Controller)theEObject;
         T result = caseController(controller);
+        if (result == null) result = caseComponent(controller);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -164,6 +166,7 @@ public class StateAnalysisSwitch<T> extends Switch<T>
       {
         Estimator estimator = (Estimator)theEObject;
         T result = caseEstimator(estimator);
+        if (result == null) result = caseComponent(estimator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -171,6 +174,7 @@ public class StateAnalysisSwitch<T> extends Switch<T>
       {
         HardwareAdapter hardwareAdapter = (HardwareAdapter)theEObject;
         T result = caseHardwareAdapter(hardwareAdapter);
+        if (result == null) result = caseComponent(hardwareAdapter);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

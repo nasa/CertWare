@@ -18,7 +18,7 @@ public class StateVariableStateVariableOutStateConstraintsCompartmentItemSemanti
 	 */
 	public StateVariableStateVariableOutStateConstraintsCompartmentItemSemanticEditPolicy() {
 		super(
-				stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007);
+				stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027);
 	}
 
 	/**

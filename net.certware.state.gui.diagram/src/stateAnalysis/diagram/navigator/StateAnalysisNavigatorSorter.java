@@ -13,12 +13,12 @@ public class StateAnalysisNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 7031;
+	private static final int GROUP_CATEGORY = 7043;
 
 	/**
 	 * @generated
 	 */
-	private static final int SHORTCUTS_CATEGORY = 7030;
+	private static final int SHORTCUTS_CATEGORY = 7042;
 
 	/**
 	 * @generated

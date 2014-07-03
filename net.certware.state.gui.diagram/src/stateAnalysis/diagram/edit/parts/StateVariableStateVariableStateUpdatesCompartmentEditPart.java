@@ -31,7 +31,7 @@ public class StateVariableStateVariableStateUpdatesCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7013;
+	public static final int VISUAL_ID = 7032;
 
 	/**
 	 * @generated

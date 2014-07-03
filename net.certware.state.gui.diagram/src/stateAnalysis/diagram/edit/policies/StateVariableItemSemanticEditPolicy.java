@@ -27,7 +27,7 @@ public class StateVariableItemSemanticEditPolicy
 	 */
 	public StateVariableItemSemanticEditPolicy() {
 		super(
-				stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007);
+				stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027);
 	}
 
 	/**

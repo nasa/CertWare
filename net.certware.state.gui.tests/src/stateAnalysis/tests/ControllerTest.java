@@ -15,16 +15,8 @@ import stateAnalysis.StateAnalysisFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ControllerTest extends TestCase
+public class ControllerTest extends ComponentTest
 {
-
-  /**
-   * The fixture for this Controller test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected Controller fixture = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -48,25 +40,15 @@ public class ControllerTest extends TestCase
   }
 
   /**
-   * Sets the fixture for this Controller test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void setFixture(Controller fixture)
-  {
-    this.fixture = fixture;
-  }
-
-  /**
    * Returns the fixture for this Controller test case.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   protected Controller getFixture()
   {
-    return fixture;
+    return (Controller)fixture;
   }
 
   /**

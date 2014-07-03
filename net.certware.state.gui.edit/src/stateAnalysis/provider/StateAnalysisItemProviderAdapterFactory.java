@@ -249,31 +249,6 @@ public class StateAnalysisItemProviderAdapterFactory extends StateAnalysisAdapte
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link stateAnalysis.Component} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ComponentItemProvider componentItemProvider;
-
-  /**
-   * This creates an adapter for a {@link stateAnalysis.Component}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createComponentAdapter()
-  {
-    if (componentItemProvider == null)
-    {
-      componentItemProvider = new ComponentItemProvider(this);
-    }
-
-    return componentItemProvider;
-  }
-
-  /**
    * This keeps track of the one adapter used for all {@link stateAnalysis.StateVariable} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -663,7 +638,6 @@ public class StateAnalysisItemProviderAdapterFactory extends StateAnalysisAdapte
     if (subsystemItemProvider != null) subsystemItemProvider.dispose();
     if (deploymentSetItemProvider != null) deploymentSetItemProvider.dispose();
     if (deploymentItemProvider != null) deploymentItemProvider.dispose();
-    if (componentItemProvider != null) componentItemProvider.dispose();
     if (dataCollectionItemProvider != null) dataCollectionItemProvider.dispose();
     if (qosPolicyItemProvider != null) qosPolicyItemProvider.dispose();
     if (dataProductItemProvider != null) dataProductItemProvider.dispose();

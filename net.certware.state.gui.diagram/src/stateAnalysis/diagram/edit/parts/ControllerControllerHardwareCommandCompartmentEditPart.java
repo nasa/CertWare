@@ -31,7 +31,7 @@ public class ControllerControllerHardwareCommandCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7020;
+	public static final int VISUAL_ID = 7035;
 
 	/**
 	 * @generated

@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link stateAnalysis.Controller#getName <em>Name</em>}</li>
- *   <li>{@link stateAnalysis.Controller#getDescription <em>Description</em>}</li>
  *   <li>{@link stateAnalysis.Controller#getDelegates <em>Delegates</em>}</li>
  *   <li>{@link stateAnalysis.Controller#getStateConstraint <em>State Constraint</em>}</li>
  *   <li>{@link stateAnalysis.Controller#getHardwareCommand <em>Hardware Command</em>}</li>
@@ -26,60 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="gmf.node label='name' label.pattern='Controller: {0}'"
  * @generated
  */
-public interface Controller extends EObject
+public interface Controller extends Component
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see stateAnalysis.StateAnalysisPackage#getController_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link stateAnalysis.Controller#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see stateAnalysis.StateAnalysisPackage#getController_Description()
-   * @model
-   * @generated
-   */
-  String getDescription();
-
-  /**
-   * Sets the value of the '{@link stateAnalysis.Controller#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
-  void setDescription(String value);
-
   /**
    * Returns the value of the '<em><b>Delegates</b></em>' reference list.
    * The list contents are of type {@link stateAnalysis.Controller}.

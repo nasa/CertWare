@@ -56,8 +56,8 @@ public class StateVariableCreateCommand extends EditElementCommand {
 		stateAnalysis.StateVariable newElement = stateAnalysis.StateAnalysisFactory.eINSTANCE
 				.createStateVariable();
 
-		stateAnalysis.Component owner = (stateAnalysis.Component) getElementToEdit();
-		owner.getStateVariables().add(newElement);
+		stateAnalysis.Deployment owner = (stateAnalysis.Deployment) getElementToEdit();
+		owner.getComponents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

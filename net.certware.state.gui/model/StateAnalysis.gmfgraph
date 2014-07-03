@@ -114,60 +114,6 @@
           figure="//@figures.0/@descriptors.2/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
-        name="ComponentFigure">
-      <actualFigure
-          xsi:type="gmfgraph:RoundedRectangle"
-          name="ComponentFigure">
-        <border
-            xsi:type="gmfgraph:MarginBorder">
-          <insets
-              top="5"
-              left="5"
-              bottom="5"
-              right="5"/>
-        </border>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ComponentLabelFigure"
-            text="Component">
-          <maximumSize
-              dx="10000"
-              dy="50"/>
-        </children>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentStateVariablesCompartmentFigure"
-            outline="false"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentControllersCompartmentFigure"
-            outline="false"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentEstimatorsCompartmentFigure"
-            outline="false"/>
-        <children
-            xsi:type="gmfgraph:Rectangle"
-            name="ComponentAdaptersCompartmentFigure"
-            outline="false"/>
-      </actualFigure>
-      <accessors
-          accessor="getFigureComponentLabelFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
-      <accessors
-          accessor="getComponentStateVariablesCompartmentFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
-      <accessors
-          accessor="getComponentControllersCompartmentFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
-      <accessors
-          accessor="getComponentEstimatorsCompartmentFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.3"/>
-      <accessors
-          accessor="getComponentAdaptersCompartmentFigure"
-          figure="//@figures.0/@descriptors.3/@actualFigure/@children.4"/>
-    </descriptors>
-    <descriptors
         name="DataCollectionFigure">
       <actualFigure
           xsi:type="gmfgraph:RoundedRectangle"
@@ -199,13 +145,13 @@
       </actualFigure>
       <accessors
           accessor="getFigureDataCollectionLabelFigure"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
       <accessors
           accessor="getDataCollectionPoliciesCompartmentFigure"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
       <accessors
           accessor="getDataCollectionProductsCompartmentFigure"
-          figure="//@figures.0/@descriptors.4/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="QosPolicyFigure">
@@ -227,7 +173,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureQosPolicyLabelFigure"
-          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DataProductFigure">
@@ -249,7 +195,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureDataProductLabelFigure"
-          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="StateVariableFigure">
@@ -291,19 +237,19 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateVariableLabelFigure"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
       <accessors
           accessor="getStateVariableInStateConstraintsCompartmentFigure"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
       <accessors
           accessor="getStateVariableOutStateConstraintsCompartmentFigure"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.2"/>
       <accessors
           accessor="getStateVariableStateUpdatesCompartmentFigure"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.3"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.3"/>
       <accessors
           accessor="getStateVariableInfluencedByCompartmentFigure"
-          figure="//@figures.0/@descriptors.7/@actualFigure/@children.4"/>
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.4"/>
     </descriptors>
     <descriptors
         name="ControllerFigure">
@@ -337,13 +283,13 @@
       </actualFigure>
       <accessors
           accessor="getFigureControllerLabelFigure"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
       <accessors
           accessor="getControllerStateConstraintCompartmentFigure"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.1"/>
       <accessors
           accessor="getControllerHardwareCommandCompartmentFigure"
-          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="EstimatorFigure">
@@ -381,16 +327,16 @@
       </actualFigure>
       <accessors
           accessor="getFigureEstimatorLabelFigure"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
       <accessors
           accessor="getEstimatorStateConstraintsCompartmentFigure"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
       <accessors
           accessor="getEstimatorStateUpdatesCompartmentFigure"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.2"/>
       <accessors
           accessor="getEstimatorHardwareMeasurementCompartmentFigure"
-          figure="//@figures.0/@descriptors.9/@actualFigure/@children.3"/>
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.3"/>
     </descriptors>
     <descriptors
         name="HardwareAdapterFigure">
@@ -428,16 +374,16 @@
       </actualFigure>
       <accessors
           accessor="getFigureHardwareAdapterLabelFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
       <accessors
           accessor="getHardwareAdapterHardwareCommandsCompartmentFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
       <accessors
           accessor="getHardwareAdapterHardwareMeasurementsCompartmentFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.2"/>
       <accessors
           accessor="getHardwareAdapterDevicesCompartmentFigure"
-          figure="//@figures.0/@descriptors.10/@actualFigure/@children.3"/>
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.3"/>
     </descriptors>
     <descriptors
         name="DeviceFigure">
@@ -471,13 +417,13 @@
       </actualFigure>
       <accessors
           accessor="getFigureDeviceLabelFigure"
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
       <accessors
           accessor="getDeviceDeviceCommandsCompartmentFigure"
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.1"/>
       <accessors
           accessor="getDeviceDeviceMeasurementsCompartmentFigure"
-          figure="//@figures.0/@descriptors.11/@actualFigure/@children.2"/>
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.2"/>
     </descriptors>
     <descriptors
         name="StateConstraintFigure">
@@ -499,7 +445,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateConstraintLabelFigure"
-          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="StateUpdateFigure">
@@ -521,7 +467,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureStateUpdateLabelFigure"
-          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="HardwareCommandFigure">
@@ -543,7 +489,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureHardwareCommandLabelFigure"
-          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="HardwareMeasurementFigure">
@@ -565,7 +511,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureHardwareMeasurementLabelFigure"
-          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DeviceCommandFigure">
@@ -587,7 +533,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureDeviceCommandLabelFigure"
-          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="DeviceMeasurementFigure">
@@ -609,7 +555,7 @@
       </actualFigure>
       <accessors
           accessor="getFigureDeviceMeasurementLabelFigure"
-          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors
         name="ControllerDelegatesFigure">
@@ -647,9 +593,6 @@
   <nodes
       name="Deployment"
       figure="DeploymentFigure"/>
-  <nodes
-      name="Component"
-      figure="ComponentFigure"/>
   <nodes
       name="DataCollection"
       figure="DataCollectionFigure"/>
@@ -719,105 +662,85 @@
       collapsible="true"
       accessor="//@figures.0/@descriptors.2/@accessors.2"/>
   <compartments
-      name="ComponentStateVariablesCompartment"
-      figure="ComponentFigure"
-      collapsible="true"
-      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <compartments
-      name="ComponentControllersCompartment"
-      figure="ComponentFigure"
-      collapsible="true"
-      accessor="//@figures.0/@descriptors.3/@accessors.2"/>
-  <compartments
-      name="ComponentEstimatorsCompartment"
-      figure="ComponentFigure"
-      collapsible="true"
-      accessor="//@figures.0/@descriptors.3/@accessors.3"/>
-  <compartments
-      name="ComponentAdaptersCompartment"
-      figure="ComponentFigure"
-      collapsible="true"
-      accessor="//@figures.0/@descriptors.3/@accessors.4"/>
-  <compartments
       name="DataCollectionPoliciesCompartment"
       figure="DataCollectionFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.4/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.1"/>
   <compartments
       name="DataCollectionProductsCompartment"
       figure="DataCollectionFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.4/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.2"/>
   <compartments
       name="StateVariableInStateConstraintsCompartment"
       figure="StateVariableFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.1"/>
   <compartments
       name="StateVariableOutStateConstraintsCompartment"
       figure="StateVariableFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.7/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.2"/>
   <compartments
       name="StateVariableStateUpdatesCompartment"
       figure="StateVariableFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.7/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.3"/>
   <compartments
       name="StateVariableInfluencedByCompartment"
       figure="StateVariableFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.7/@accessors.4"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.4"/>
   <compartments
       name="ControllerStateConstraintCompartment"
       figure="ControllerFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.1"/>
   <compartments
       name="ControllerHardwareCommandCompartment"
       figure="ControllerFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.8/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.2"/>
   <compartments
       name="EstimatorStateConstraintsCompartment"
       figure="EstimatorFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.1"/>
   <compartments
       name="EstimatorStateUpdatesCompartment"
       figure="EstimatorFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.2"/>
   <compartments
       name="EstimatorHardwareMeasurementCompartment"
       figure="EstimatorFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.9/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.3"/>
   <compartments
       name="HardwareAdapterHardwareCommandsCompartment"
       figure="HardwareAdapterFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.1"/>
   <compartments
       name="HardwareAdapterHardwareMeasurementsCompartment"
       figure="HardwareAdapterFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.10/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.2"/>
   <compartments
       name="HardwareAdapterDevicesCompartment"
       figure="HardwareAdapterFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.10/@accessors.3"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.3"/>
   <compartments
       name="DeviceDeviceCommandsCompartment"
       figure="DeviceFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.11/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.1"/>
   <compartments
       name="DeviceDeviceMeasurementsCompartment"
       figure="DeviceFigure"
       collapsible="true"
-      accessor="//@figures.0/@descriptors.11/@accessors.2"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.2"/>
   <labels
       name="SubsystemLabel"
       figure="SubsystemFigure"
@@ -831,65 +754,61 @@
       figure="DeploymentFigure"
       accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels
-      name="ComponentLabel"
-      figure="ComponentFigure"
-      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <labels
       name="DataCollectionLabel"
       figure="DataCollectionFigure"
-      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
   <labels
       name="QosPolicyLabel"
       figure="QosPolicyFigure"
-      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
   <labels
       name="DataProductLabel"
       figure="DataProductFigure"
-      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
   <labels
       name="StateVariableLabel"
       figure="StateVariableFigure"
-      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
   <labels
       name="ControllerLabel"
       figure="ControllerFigure"
-      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels
       name="EstimatorLabel"
       figure="EstimatorFigure"
-      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels
       name="HardwareAdapterLabel"
       figure="HardwareAdapterFigure"
-      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels
       name="DeviceLabel"
       figure="DeviceFigure"
-      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels
       name="StateConstraintLabel"
       figure="StateConstraintFigure"
-      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels
       name="StateUpdateLabel"
       figure="StateUpdateFigure"
-      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
   <labels
       name="HardwareCommandLabel"
       figure="HardwareCommandFigure"
-      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
   <labels
       name="HardwareMeasurementLabel"
       figure="HardwareMeasurementFigure"
-      accessor="//@figures.0/@descriptors.15/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
   <labels
       name="DeviceCommandLabel"
       figure="DeviceCommandFigure"
-      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.15/@accessors.0"/>
   <labels
       name="DeviceMeasurementLabel"
       figure="DeviceMeasurementFigure"
-      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
   <labels
       name="ControllerDelegatesExternalLabel"
       figure="ControllerDelegatesExternalLabelFigure"

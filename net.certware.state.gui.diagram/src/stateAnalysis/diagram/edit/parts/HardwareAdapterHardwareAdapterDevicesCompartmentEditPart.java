@@ -29,7 +29,7 @@ public class HardwareAdapterHardwareAdapterDevicesCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7026;
+	public static final int VISUAL_ID = 7041;
 
 	/**
 	 * @generated

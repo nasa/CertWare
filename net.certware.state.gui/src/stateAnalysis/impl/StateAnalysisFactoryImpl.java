@@ -87,7 +87,6 @@ public class StateAnalysisFactoryImpl extends EFactoryImpl implements StateAnaly
       case StateAnalysisPackage.SUBSYSTEM: return createSubsystem();
       case StateAnalysisPackage.DEPLOYMENT_SET: return createDeploymentSet();
       case StateAnalysisPackage.DEPLOYMENT: return createDeployment();
-      case StateAnalysisPackage.COMPONENT: return createComponent();
       case StateAnalysisPackage.DATA_COLLECTION: return createDataCollection();
       case StateAnalysisPackage.QOS_POLICY: return createQosPolicy();
       case StateAnalysisPackage.DATA_PRODUCT: return createDataProduct();
@@ -182,17 +181,6 @@ public class StateAnalysisFactoryImpl extends EFactoryImpl implements StateAnaly
   {
     DeploymentImpl deployment = new DeploymentImpl();
     return deployment;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Component createComponent()
-  {
-    ComponentImpl component = new ComponentImpl();
-    return component;
   }
 
   /**

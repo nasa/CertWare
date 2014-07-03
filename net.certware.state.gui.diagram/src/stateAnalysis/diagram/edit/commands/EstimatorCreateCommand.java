@@ -56,8 +56,8 @@ public class EstimatorCreateCommand extends EditElementCommand {
 		stateAnalysis.Estimator newElement = stateAnalysis.StateAnalysisFactory.eINSTANCE
 				.createEstimator();
 
-		stateAnalysis.Component owner = (stateAnalysis.Component) getElementToEdit();
-		owner.getEstimators().add(newElement);
+		stateAnalysis.Deployment owner = (stateAnalysis.Deployment) getElementToEdit();
+		owner.getComponents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

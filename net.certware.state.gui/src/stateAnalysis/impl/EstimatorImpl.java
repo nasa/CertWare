@@ -32,8 +32,6 @@ import stateAnalysis.StateUpdate;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link stateAnalysis.impl.EstimatorImpl#getName <em>Name</em>}</li>
- *   <li>{@link stateAnalysis.impl.EstimatorImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link stateAnalysis.impl.EstimatorImpl#getDistilledMeasurements <em>Distilled Measurements</em>}</li>
  *   <li>{@link stateAnalysis.impl.EstimatorImpl#getStateConstraints <em>State Constraints</em>}</li>
  *   <li>{@link stateAnalysis.impl.EstimatorImpl#getStateUpdates <em>State Updates</em>}</li>
@@ -43,48 +41,8 @@ import stateAnalysis.StateUpdate;
  *
  * @generated
  */
-public class EstimatorImpl extends EObjectImpl implements Estimator
+public class EstimatorImpl extends ComponentImpl implements Estimator
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected static final String DESCRIPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDescription()
-   * @generated
-   * @ordered
-   */
-  protected String description = DESCRIPTION_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getDistilledMeasurements() <em>Distilled Measurements</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -144,52 +102,6 @@ public class EstimatorImpl extends EObjectImpl implements Estimator
   protected EClass eStaticClass()
   {
     return StateAnalysisPackage.Literals.ESTIMATOR;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.ESTIMATOR__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDescription()
-  {
-    return description;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDescription(String newDescription)
-  {
-    String oldDescription = description;
-    description = newDescription;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, StateAnalysisPackage.ESTIMATOR__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -278,10 +190,6 @@ public class EstimatorImpl extends EObjectImpl implements Estimator
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.ESTIMATOR__NAME:
-        return getName();
-      case StateAnalysisPackage.ESTIMATOR__DESCRIPTION:
-        return getDescription();
       case StateAnalysisPackage.ESTIMATOR__DISTILLED_MEASUREMENTS:
         return getDistilledMeasurements();
       case StateAnalysisPackage.ESTIMATOR__STATE_CONSTRAINTS:
@@ -305,12 +213,6 @@ public class EstimatorImpl extends EObjectImpl implements Estimator
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.ESTIMATOR__NAME:
-        setName((String)newValue);
-        return;
-      case StateAnalysisPackage.ESTIMATOR__DESCRIPTION:
-        setDescription((String)newValue);
-        return;
       case StateAnalysisPackage.ESTIMATOR__DISTILLED_MEASUREMENTS:
         getDistilledMeasurements().clear();
         getDistilledMeasurements().addAll((Collection<? extends Estimator>)newValue);
@@ -341,12 +243,6 @@ public class EstimatorImpl extends EObjectImpl implements Estimator
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.ESTIMATOR__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case StateAnalysisPackage.ESTIMATOR__DESCRIPTION:
-        setDescription(DESCRIPTION_EDEFAULT);
-        return;
       case StateAnalysisPackage.ESTIMATOR__DISTILLED_MEASUREMENTS:
         getDistilledMeasurements().clear();
         return;
@@ -373,10 +269,6 @@ public class EstimatorImpl extends EObjectImpl implements Estimator
   {
     switch (featureID)
     {
-      case StateAnalysisPackage.ESTIMATOR__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case StateAnalysisPackage.ESTIMATOR__DESCRIPTION:
-        return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case StateAnalysisPackage.ESTIMATOR__DISTILLED_MEASUREMENTS:
         return distilledMeasurements != null && !distilledMeasurements.isEmpty();
       case StateAnalysisPackage.ESTIMATOR__STATE_CONSTRAINTS:
@@ -387,25 +279,6 @@ public class EstimatorImpl extends EObjectImpl implements Estimator
         return hardwareMeasurement != null && !hardwareMeasurement.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", description: ");
-    result.append(description);
-    result.append(')');
-    return result.toString();
   }
 
 } //EstimatorImpl

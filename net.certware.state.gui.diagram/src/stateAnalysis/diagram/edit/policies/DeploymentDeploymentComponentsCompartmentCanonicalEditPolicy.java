@@ -78,8 +78,16 @@ public class DeploymentDeploymentComponentsCompartmentCanonicalEditPolicy
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID == stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+		int visualID = stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 				.getVisualID(view);
+		switch (visualID) {
+		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
+		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
+		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
+		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
+			return true;
+		}
+		return false;
 	}
 
 	/**

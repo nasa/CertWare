@@ -58,7 +58,7 @@ public class StateVariableStateVariableInfluencedByCompartmentCanonicalEditPolic
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> childDescriptors = stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-				.getStateVariableStateVariableInfluencedByCompartment_7014SemanticChildren(viewObject);
+				.getStateVariableStateVariableInfluencedByCompartment_7033SemanticChildren(viewObject);
 		for (stateAnalysis.diagram.part.StateAnalysisNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -91,7 +91,7 @@ public class StateVariableStateVariableInfluencedByCompartmentCanonicalEditPolic
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> childDescriptors = stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-				.getStateVariableStateVariableInfluencedByCompartment_7014SemanticChildren((View) getHost()
+				.getStateVariableStateVariableInfluencedByCompartment_7033SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

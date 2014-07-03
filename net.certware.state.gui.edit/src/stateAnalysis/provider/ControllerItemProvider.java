@@ -35,7 +35,7 @@ import stateAnalysis.StateAnalysisPackage;
  * @generated
  */
 public class ControllerItemProvider
-  extends ItemProviderAdapter
+  extends ComponentItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
@@ -67,57 +67,9 @@ public class ControllerItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addNamePropertyDescriptor(object);
-      addDescriptionPropertyDescriptor(object);
       addDelegatesPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
-  }
-
-  /**
-   * This adds a property descriptor for the Name feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addNamePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Controller_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Controller_name_feature", "_UI_Controller_type"),
-         StateAnalysisPackage.Literals.CONTROLLER__NAME,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Description feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addDescriptionPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Controller_description_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Controller_description_feature", "_UI_Controller_type"),
-         StateAnalysisPackage.Literals.CONTROLLER__DESCRIPTION,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
   }
 
   /**
@@ -218,10 +170,6 @@ public class ControllerItemProvider
 
     switch (notification.getFeatureID(Controller.class))
     {
-      case StateAnalysisPackage.CONTROLLER__NAME:
-      case StateAnalysisPackage.CONTROLLER__DESCRIPTION:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
       case StateAnalysisPackage.CONTROLLER__STATE_CONSTRAINT:
       case StateAnalysisPackage.CONTROLLER__HARDWARE_COMMAND:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -251,18 +199,6 @@ public class ControllerItemProvider
       (createChildParameter
         (StateAnalysisPackage.Literals.CONTROLLER__HARDWARE_COMMAND,
          StateAnalysisFactory.eINSTANCE.createHardwareCommand()));
-  }
-
-  /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ResourceLocator getResourceLocator()
-  {
-    return StateAnalysisEditPlugin.INSTANCE;
   }
 
 }

@@ -18,7 +18,7 @@ public class EstimatorEstimatorHardwareMeasurementCompartmentItemSemanticEditPol
 	 */
 	public EstimatorEstimatorHardwareMeasurementCompartmentItemSemanticEditPolicy() {
 		super(
-				stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015);
+				stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029);
 	}
 
 	/**

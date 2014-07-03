@@ -102,9 +102,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?Deployment", stateAnalysis.diagram.providers.StateAnalysisElementTypes.Deployment_3002); //$NON-NLS-1$
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?Component", stateAnalysis.diagram.providers.StateAnalysisElementTypes.Component_3003); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.DataCollectionEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?DataCollection", stateAnalysis.diagram.providers.StateAnalysisElementTypes.DataCollection_3004); //$NON-NLS-1$
@@ -114,9 +111,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 		case stateAnalysis.diagram.edit.parts.DataProductEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?DataProduct", stateAnalysis.diagram.providers.StateAnalysisElementTypes.DataProduct_3006); //$NON-NLS-1$
-		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?StateVariable", stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?StateConstraint", stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3008); //$NON-NLS-1$
@@ -129,18 +123,12 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?StateVariable", stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3011); //$NON-NLS-1$
-		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?Controller", stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?StateConstraint", stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3013); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?HardwareCommand", stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareCommand_3014); //$NON-NLS-1$
-		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?Estimator", stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?StateConstraint", stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3016); //$NON-NLS-1$
@@ -150,9 +138,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?HardwareMeasurement", stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareMeasurement_3018); //$NON-NLS-1$
-		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return getImage(
-					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?HardwareAdapter", stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3019); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?HardwareCommand", stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareCommand_3020); //$NON-NLS-1$
@@ -168,6 +153,18 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 		case stateAnalysis.diagram.edit.parts.DeviceMeasurementEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?DeviceMeasurement", stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeviceMeasurement_3026); //$NON-NLS-1$
+		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?StateVariable", stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027); //$NON-NLS-1$
+		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?Controller", stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028); //$NON-NLS-1$
+		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?Estimator", stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029); //$NON-NLS-1$
+		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Node?http://www.certware.net/state/StateAnalysisGui?HardwareAdapter", stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030); //$NON-NLS-1$
 		case stateAnalysis.diagram.edit.parts.ControllerDelegatesEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?http://www.certware.net/state/StateAnalysisGui?Controller?delegates", stateAnalysis.diagram.providers.StateAnalysisElementTypes.ControllerDelegates_4001); //$NON-NLS-1$
@@ -246,16 +243,12 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			return getDeploymentSet_3001Text(view);
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getDeployment_3002Text(view);
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return getComponent_3003Text(view);
 		case stateAnalysis.diagram.edit.parts.DataCollectionEditPart.VISUAL_ID:
 			return getDataCollection_3004Text(view);
 		case stateAnalysis.diagram.edit.parts.QosPolicyEditPart.VISUAL_ID:
 			return getQosPolicy_3005Text(view);
 		case stateAnalysis.diagram.edit.parts.DataProductEditPart.VISUAL_ID:
 			return getDataProduct_3006Text(view);
-		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return getStateVariable_3007Text(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return getStateConstraint_3008Text(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
@@ -264,22 +257,16 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			return getStateUpdate_3010Text(view);
 		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
 			return getStateVariable_3011Text(view);
-		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return getController_3012Text(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return getStateConstraint_3013Text(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID:
 			return getHardwareCommand_3014Text(view);
-		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return getEstimator_3015Text(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return getStateConstraint_3016Text(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdate2EditPart.VISUAL_ID:
 			return getStateUpdate_3017Text(view);
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart.VISUAL_ID:
 			return getHardwareMeasurement_3018Text(view);
-		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return getHardwareAdapter_3019Text(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return getHardwareCommand_3020Text(view);
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurement2EditPart.VISUAL_ID:
@@ -290,6 +277,14 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			return getDeviceCommand_3025Text(view);
 		case stateAnalysis.diagram.edit.parts.DeviceMeasurementEditPart.VISUAL_ID:
 			return getDeviceMeasurement_3026Text(view);
+		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
+			return getStateVariable_3027Text(view);
+		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
+			return getController_3028Text(view);
+		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
+			return getEstimator_3029Text(view);
+		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
+			return getHardwareAdapter_3030Text(view);
 		case stateAnalysis.diagram.edit.parts.ControllerDelegatesEditPart.VISUAL_ID:
 			return getControllerDelegates_4001Text(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorDistilledMeasurementsEditPart.VISUAL_ID:
@@ -384,28 +379,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getComponent_3003Text(View view) {
-		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
-				.getParser(
-						stateAnalysis.diagram.providers.StateAnalysisElementTypes.Component_3003,
-						view.getElement() != null ? view.getElement() : view,
-						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-								.getType(stateAnalysis.diagram.edit.parts.ComponentNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5004); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
 	private String getDataCollection_3004Text(View view) {
 		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
 				.getParser(
@@ -465,28 +438,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5006); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getStateVariable_3007Text(View view) {
-		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
-				.getParser(
-						stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007,
-						view.getElement() != null ? view.getElement() : view,
-						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-								.getType(stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5012); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -582,28 +533,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getController_3012Text(View view) {
-		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
-				.getParser(
-						stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012,
-						view.getElement() != null ? view.getElement() : view,
-						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-								.getType(stateAnalysis.diagram.edit.parts.ControllerNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5015); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
 	private String getStateConstraint_3013Text(View view) {
 		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
 				.getParser(
@@ -641,28 +570,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5014); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getEstimator_3015Text(View view) {
-		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
-				.getParser(
-						stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015,
-						view.getElement() != null ? view.getElement() : view,
-						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-								.getType(stateAnalysis.diagram.edit.parts.EstimatorNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5019); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -729,28 +636,6 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5018); //$NON-NLS-1$
-			return ""; //$NON-NLS-1$
-		}
-	}
-
-	/**
-	 * @generated
-	 */
-	private String getHardwareAdapter_3019Text(View view) {
-		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
-				.getParser(
-						stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3019,
-						view.getElement() != null ? view.getElement() : view,
-						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-								.getType(stateAnalysis.diagram.edit.parts.HardwareAdapterNameEditPart.VISUAL_ID));
-		if (parser != null) {
-			return parser.getPrintString(new EObjectAdapter(
-					view.getElement() != null ? view.getElement() : view),
-					ParserOptions.NONE.intValue());
-		} else {
-			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
-					.getInstance().logError(
-							"Parser was not found for label " + 5024); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}
@@ -861,6 +746,94 @@ public class StateAnalysisNavigatorLabelProvider extends LabelProvider
 			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
 					.getInstance().logError(
 							"Parser was not found for label " + 5026); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getStateVariable_3027Text(View view) {
+		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
+				.getParser(
+						stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027,
+						view.getElement() != null ? view.getElement() : view,
+						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+								.getType(stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5028); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getController_3028Text(View view) {
+		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
+				.getParser(
+						stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028,
+						view.getElement() != null ? view.getElement() : view,
+						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+								.getType(stateAnalysis.diagram.edit.parts.ControllerNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5029); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getEstimator_3029Text(View view) {
+		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
+				.getParser(
+						stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029,
+						view.getElement() != null ? view.getElement() : view,
+						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+								.getType(stateAnalysis.diagram.edit.parts.EstimatorNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5030); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getHardwareAdapter_3030Text(View view) {
+		IParser parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
+				.getParser(
+						stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030,
+						view.getElement() != null ? view.getElement() : view,
+						stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+								.getType(stateAnalysis.diagram.edit.parts.HardwareAdapterNameEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin
+					.getInstance().logError(
+							"Parser was not found for label " + 5031); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

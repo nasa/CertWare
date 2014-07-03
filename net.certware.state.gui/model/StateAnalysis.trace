@@ -37,25 +37,6 @@
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3003"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Component') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Deployment') and _containmentMF_.name = 'components')">
-    <nodeLabelTraces
-        visualID="5004"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7005"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7006"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7007"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7008"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
       visualID="3004"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'DataCollection') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Deployment') and _containmentMF_.name = 'catalogs')">
     <nodeLabelTraces
@@ -80,25 +61,6 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'DataProduct') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'DataCollection') and _containmentMF_.name = 'products')">
     <nodeLabelTraces
         visualID="5006"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3007"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'StateVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Component') and _containmentMF_.name = 'stateVariables')">
-    <nodeLabelTraces
-        visualID="5012"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7011"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7012"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7013"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7014"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -142,19 +104,6 @@
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
-      visualID="3012"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Controller') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Component') and _containmentMF_.name = 'controllers')">
-    <nodeLabelTraces
-        visualID="5015"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7019"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7020"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
       visualID="3013"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'StateConstraint') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Controller') and _containmentMF_.name = 'stateConstraint')">
     <nodeLabelTraces
@@ -166,22 +115,6 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'HardwareCommand') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Controller') and _containmentMF_.name = 'hardwareCommand')">
     <nodeLabelTraces
         visualID="5014"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3015"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Estimator') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Component') and _containmentMF_.name = 'estimators')">
-    <nodeLabelTraces
-        visualID="5019"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7021"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7022"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7023"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -203,22 +136,6 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'HardwareMeasurement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Estimator') and _containmentMF_.name = 'hardwareMeasurement')">
     <nodeLabelTraces
         visualID="5018"
-        queryText="true"/>
-  </childNodeTraces>
-  <childNodeTraces
-      visualID="3019"
-      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'HardwareAdapter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Component') and _containmentMF_.name = 'adapters')">
-    <nodeLabelTraces
-        visualID="5024"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7024"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7025"
-        queryText="true"/>
-    <compartmentTraces
-        visualID="7026"
         queryText="true"/>
   </childNodeTraces>
   <childNodeTraces
@@ -260,6 +177,70 @@
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'DeviceMeasurement') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Device') and _containmentMF_.name = 'deviceMeasurements')">
     <nodeLabelTraces
         visualID="5026"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3027"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'StateVariable') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Deployment') and _containmentMF_.name = 'components')">
+    <nodeLabelTraces
+        visualID="5028"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7030"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7031"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7032"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7033"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3028"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Controller') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Deployment') and _containmentMF_.name = 'components')">
+    <nodeLabelTraces
+        visualID="5029"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7034"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7035"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3029"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Estimator') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Deployment') and _containmentMF_.name = 'components')">
+    <nodeLabelTraces
+        visualID="5030"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7036"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7037"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7038"
+        queryText="true"/>
+  </childNodeTraces>
+  <childNodeTraces
+      visualID="3030"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'HardwareAdapter') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'http://www.certware.net/state/StateAnalysisGui' and _eClass_.name = 'Deployment') and _containmentMF_.name = 'components')">
+    <nodeLabelTraces
+        visualID="5031"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7039"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7040"
+        queryText="true"/>
+    <compartmentTraces
+        visualID="7041"
         queryText="true"/>
   </childNodeTraces>
   <linkTraces

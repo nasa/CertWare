@@ -32,7 +32,7 @@ public class ControllerItemSemanticEditPolicy
 	 */
 	public ControllerItemSemanticEditPolicy() {
 		super(
-				stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012);
+				stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028);
 	}
 
 	/**

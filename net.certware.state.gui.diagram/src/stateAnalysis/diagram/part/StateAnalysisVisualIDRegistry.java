@@ -141,39 +141,27 @@ public class StateAnalysisVisualIDRegistry {
 			}
 			break;
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentComponentsCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getComponent()
+			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getStateVariable()
 					.isSuperTypeOf(domainElement.eClass())) {
-				return stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID;
+				return stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID;
+			}
+			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getController()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID;
+			}
+			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getEstimator()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID;
+			}
+			if (stateAnalysis.StateAnalysisPackage.eINSTANCE
+					.getHardwareAdapter().isSuperTypeOf(domainElement.eClass())) {
+				return stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID;
 			}
 			break;
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentCatalogsCompartmentEditPart.VISUAL_ID:
 			if (stateAnalysis.StateAnalysisPackage.eINSTANCE
 					.getDataCollection().isSuperTypeOf(domainElement.eClass())) {
 				return stateAnalysis.diagram.edit.parts.DataCollectionEditPart.VISUAL_ID;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getStateVariable()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getController()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.StateAnalysisPackage.eINSTANCE.getEstimator()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.StateAnalysisPackage.eINSTANCE
-					.getHardwareAdapter().isSuperTypeOf(domainElement.eClass())) {
-				return stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID;
 			}
 			break;
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartmentEditPart.VISUAL_ID:
@@ -359,23 +347,6 @@ public class StateAnalysisVisualIDRegistry {
 				return true;
 			}
 			break;
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.ComponentNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
 			if (stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -393,21 +364,6 @@ public class StateAnalysisVisualIDRegistry {
 				return true;
 			}
 			break;
-		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.StateConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.StateConstraintName2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.StateUpdateNameEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
 			if (stateAnalysis.diagram.edit.parts.StateVariableName2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -422,6 +378,21 @@ public class StateAnalysisVisualIDRegistry {
 				return true;
 			}
 			if (stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartment2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
+			if (stateAnalysis.diagram.edit.parts.StateConstraintNameEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
+			if (stateAnalysis.diagram.edit.parts.StateConstraintName2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
+			if (stateAnalysis.diagram.edit.parts.StateUpdateNameEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -552,32 +523,21 @@ public class StateAnalysisVisualIDRegistry {
 			}
 			break;
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentComponentsCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID == nodeVisualID) {
+			if (stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentCatalogsCompartmentEditPart.VISUAL_ID:
 			if (stateAnalysis.diagram.edit.parts.DataCollectionEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID:
-			if (stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -737,10 +697,6 @@ public class StateAnalysisVisualIDRegistry {
 		case stateAnalysis.diagram.edit.parts.DeploymentSetDeploymentSetDeploymentsCompartmentEditPart.VISUAL_ID:
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentComponentsCompartmentEditPart.VISUAL_ID:
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentCatalogsCompartmentEditPart.VISUAL_ID:
-		case stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID:
-		case stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID:
-		case stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID:
-		case stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID:
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartmentEditPart.VISUAL_ID:
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableOutStateConstraintsCompartmentEditPart.VISUAL_ID:
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableStateUpdatesCompartmentEditPart.VISUAL_ID:

@@ -73,41 +73,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="label.pattern" value="Component: {0}"/>
-    </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stateVariables" upperBound="-1"
-        eType="#//StateVariable" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="collapsible" value="true"/>
-        <details key="layout" value="free"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controllers" upperBound="-1"
-        eType="#//Controller" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="collapsible" value="true"/>
-        <details key="layout" value="free"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="estimators" upperBound="-1"
-        eType="#//Estimator" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="collapsible" value="true"/>
-        <details key="layout" value="free"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="adapters" upperBound="-1"
-        eType="#//HardwareAdapter" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="collapsible" value="true"/>
-        <details key="layout" value="free"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataCollection">
     <eAnnotations source="gmf.node">
@@ -152,14 +120,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StateVariable">
+  <eClassifiers xsi:type="ecore:EClass" name="StateVariable" eSuperTypes="#//Component">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="label.pattern" value="SV: {0}"/>
       <details key="tool.name" value="State Variable"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="representationType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inStateConstraints" upperBound="-1"
         eType="#//StateConstraint" containment="true">
@@ -190,13 +156,11 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller">
+  <eClassifiers xsi:type="ecore:EClass" name="Controller" eSuperTypes="#//Component">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="label.pattern" value="Controller: {0}"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="delegates" upperBound="-1"
         eType="#//Controller">
       <eAnnotations source="gmf.link">
@@ -218,13 +182,11 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Estimator">
+  <eClassifiers xsi:type="ecore:EClass" name="Estimator" eSuperTypes="#//Component">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="label.pattern" value="Estimator: {0}"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="distilledMeasurements"
         upperBound="-1" eType="#//Estimator">
       <eAnnotations source="gmf.link">
@@ -253,14 +215,12 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HardwareAdapter">
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareAdapter" eSuperTypes="#//Component">
     <eAnnotations source="gmf.node">
       <details key="label" value="name"/>
       <details key="label.pattern" value="Hardware Adapter: {0}"/>
       <details key="tool.name" value="Hardware Adapter"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="hardwareCommands" upperBound="-1"
         eType="#//HardwareCommand" containment="true">
       <eAnnotations source="gmf.compartment">

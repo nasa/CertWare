@@ -39,7 +39,7 @@ public class ControllerEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 3012;
+	public static final int VISUAL_ID = 3028;
 
 	/**
 	 * @generated

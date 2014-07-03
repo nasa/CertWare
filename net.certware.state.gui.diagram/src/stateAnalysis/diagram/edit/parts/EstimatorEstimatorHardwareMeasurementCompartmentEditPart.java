@@ -31,7 +31,7 @@ public class EstimatorEstimatorHardwareMeasurementCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7023;
+	public static final int VISUAL_ID = 7038;
 
 	/**
 	 * @generated

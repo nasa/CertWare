@@ -40,18 +40,18 @@ class Deployment {
   val DataCollection[*] catalogs;
 }
 
-@gmf.node(label="name",label.pattern="Component: {0}")
-class Component {
+// @gmf.node(label="name",label.pattern="Component: {0}")
+abstract class Component {
   attr String name;
   attr String description;
-  @gmf.compartment(collapsible="true",layout="free")
-  val StateVariable[*] stateVariables;
-  @gmf.compartment(collapsible="true",layout="free")
-  val Controller[*] controllers;
-  @gmf.compartment(collapsible="true",layout="free")
-  val Estimator[*] estimators;
-  @gmf.compartment(collapsible="true",layout="free")
-  val HardwareAdapter[*] adapters;
+//  @gmf.compartment(collapsible="true",layout="free")
+//  val StateVariable[*] stateVariables;
+//  @gmf.compartment(collapsible="true",layout="free")
+//  val Controller[*] controllers;
+//  @gmf.compartment(collapsible="true",layout="free")
+//  val Estimator[*] estimators;
+//  @gmf.compartment(collapsible="true",layout="free")
+//  val HardwareAdapter[*] adapters;
 }
 
 @gmf.node(label="name",label.pattern="Data Collection: {0}",
@@ -83,9 +83,9 @@ class DataProduct {
 
 @gmf.node(label="name",label.pattern="SV: {0}",
 tool.name="State Variable")
-class StateVariable {
-  attr String name;
-  attr String description;
+class StateVariable extends Component {
+//  attr String name;
+//  attr String description;
   attr String representationType;
   @gmf.compartment(collapsible="true",layout="list")
   val StateConstraint[*] inStateConstraints;
@@ -98,9 +98,9 @@ class StateVariable {
 }
 
 @gmf.node(label="name",label.pattern="Controller: {0}")
-class Controller {
-  attr String name;
-  attr String description;
+class Controller extends Component {
+//  attr String name;
+//  attr String description;
   @gmf.link(label="delegates")
   unique ref Controller[*] delegates;
   @gmf.compartment(collapsible="true",layout="list")
@@ -110,9 +110,9 @@ class Controller {
 }
 
 @gmf.node(label="name",label.pattern="Estimator: {0}")
-class Estimator {
-  attr String name;
-  attr String description;
+class Estimator extends Component {
+//  attr String name;
+//  attr String description;
   @gmf.link(label="distilled")
   unique ref Estimator[*] distilledMeasurements;
   @gmf.compartment(collapsible="true",layout="list")
@@ -125,9 +125,9 @@ class Estimator {
 
 @gmf.node(label="name",label.pattern="Hardware Adapter: {0}",
 tool.name="Hardware Adapter")
-class HardwareAdapter {
-  attr String name;
-  attr String description;
+class HardwareAdapter extends Component {
+//  attr String name;
+//  attr String description;
   @gmf.compartment(collapsible="true",layout="list")
   val HardwareCommand[*] hardwareCommands;
   @gmf.compartment(collapsible="true",layout="list")

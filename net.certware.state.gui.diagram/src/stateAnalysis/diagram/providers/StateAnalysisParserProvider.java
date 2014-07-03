@@ -91,45 +91,23 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser componentName_5004Parser;
+	private IParser stateVariableName_5028Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getComponentName_5004Parser() {
-		if (componentName_5004Parser == null) {
+	private IParser getStateVariableName_5028Parser() {
+		if (stateVariableName_5028Parser == null) {
 			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
 					.getComponent_Name() };
-			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
-					features);
-			parser.setViewPattern("Component: {0}"); //$NON-NLS-1$
-			parser.setEditorPattern("Component: {0}"); //$NON-NLS-1$
-			parser.setEditPattern("Component: {0}"); //$NON-NLS-1$
-			componentName_5004Parser = parser;
-		}
-		return componentName_5004Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser stateVariableName_5012Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getStateVariableName_5012Parser() {
-		if (stateVariableName_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
-					.getStateVariable_Name() };
 			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
 					features);
 			parser.setViewPattern("SV: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("SV: {0}"); //$NON-NLS-1$
 			parser.setEditPattern("SV: {0}"); //$NON-NLS-1$
-			stateVariableName_5012Parser = parser;
+			stateVariableName_5028Parser = parser;
 		}
-		return stateVariableName_5012Parser;
+		return stateVariableName_5028Parser;
 	}
 
 	/**
@@ -201,6 +179,28 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser controllerName_5029Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getControllerName_5029Parser() {
+		if (controllerName_5029Parser == null) {
+			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
+					.getComponent_Name() };
+			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
+					features);
+			parser.setViewPattern("Controller: {0}"); //$NON-NLS-1$
+			parser.setEditorPattern("Controller: {0}"); //$NON-NLS-1$
+			parser.setEditPattern("Controller: {0}"); //$NON-NLS-1$
+			controllerName_5029Parser = parser;
+		}
+		return controllerName_5029Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser stateVariableName_5011Parser;
 
 	/**
@@ -209,7 +209,7 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 	private IParser getStateVariableName_5011Parser() {
 		if (stateVariableName_5011Parser == null) {
 			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
-					.getStateVariable_Name() };
+					.getComponent_Name() };
 			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
 					features);
 			parser.setViewPattern("SV: {0}"); //$NON-NLS-1$
@@ -218,28 +218,6 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 			stateVariableName_5011Parser = parser;
 		}
 		return stateVariableName_5011Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser controllerName_5015Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getControllerName_5015Parser() {
-		if (controllerName_5015Parser == null) {
-			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
-					.getController_Name() };
-			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
-					features);
-			parser.setViewPattern("Controller: {0}"); //$NON-NLS-1$
-			parser.setEditorPattern("Controller: {0}"); //$NON-NLS-1$
-			parser.setEditPattern("Controller: {0}"); //$NON-NLS-1$
-			controllerName_5015Parser = parser;
-		}
-		return controllerName_5015Parser;
 	}
 
 	/**
@@ -289,23 +267,23 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser estimatorName_5019Parser;
+	private IParser estimatorName_5030Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getEstimatorName_5019Parser() {
-		if (estimatorName_5019Parser == null) {
+	private IParser getEstimatorName_5030Parser() {
+		if (estimatorName_5030Parser == null) {
 			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
-					.getEstimator_Name() };
+					.getComponent_Name() };
 			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
 					features);
 			parser.setViewPattern("Estimator: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Estimator: {0}"); //$NON-NLS-1$
 			parser.setEditPattern("Estimator: {0}"); //$NON-NLS-1$
-			estimatorName_5019Parser = parser;
+			estimatorName_5030Parser = parser;
 		}
-		return estimatorName_5019Parser;
+		return estimatorName_5030Parser;
 	}
 
 	/**
@@ -377,23 +355,23 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser hardwareAdapterName_5024Parser;
+	private IParser hardwareAdapterName_5031Parser;
 
 	/**
 	 * @generated
 	 */
-	private IParser getHardwareAdapterName_5024Parser() {
-		if (hardwareAdapterName_5024Parser == null) {
+	private IParser getHardwareAdapterName_5031Parser() {
+		if (hardwareAdapterName_5031Parser == null) {
 			EAttribute[] features = new EAttribute[] { stateAnalysis.StateAnalysisPackage.eINSTANCE
-					.getHardwareAdapter_Name() };
+					.getComponent_Name() };
 			stateAnalysis.diagram.parsers.MessageFormatParser parser = new stateAnalysis.diagram.parsers.MessageFormatParser(
 					features);
 			parser.setViewPattern("Hardware Adapter: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Hardware Adapter: {0}"); //$NON-NLS-1$
 			parser.setEditPattern("Hardware Adapter: {0}"); //$NON-NLS-1$
-			hardwareAdapterName_5024Parser = parser;
+			hardwareAdapterName_5031Parser = parser;
 		}
-		return hardwareAdapterName_5024Parser;
+		return hardwareAdapterName_5031Parser;
 	}
 
 	/**
@@ -583,26 +561,24 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 			return getDeploymentSetName_5002Parser();
 		case stateAnalysis.diagram.edit.parts.DeploymentNameEditPart.VISUAL_ID:
 			return getDeploymentName_5003Parser();
-		case stateAnalysis.diagram.edit.parts.ComponentNameEditPart.VISUAL_ID:
-			return getComponentName_5004Parser();
 		case stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID:
-			return getStateVariableName_5012Parser();
+			return getStateVariableName_5028Parser();
+		case stateAnalysis.diagram.edit.parts.StateVariableName2EditPart.VISUAL_ID:
+			return getStateVariableName_5011Parser();
 		case stateAnalysis.diagram.edit.parts.StateConstraintNameEditPart.VISUAL_ID:
 			return getStateConstraintName_5008Parser();
 		case stateAnalysis.diagram.edit.parts.StateConstraintName2EditPart.VISUAL_ID:
 			return getStateConstraintName_5009Parser();
 		case stateAnalysis.diagram.edit.parts.StateUpdateNameEditPart.VISUAL_ID:
 			return getStateUpdateName_5010Parser();
-		case stateAnalysis.diagram.edit.parts.StateVariableName2EditPart.VISUAL_ID:
-			return getStateVariableName_5011Parser();
 		case stateAnalysis.diagram.edit.parts.ControllerNameEditPart.VISUAL_ID:
-			return getControllerName_5015Parser();
+			return getControllerName_5029Parser();
 		case stateAnalysis.diagram.edit.parts.StateConstraintName3EditPart.VISUAL_ID:
 			return getStateConstraintName_5013Parser();
 		case stateAnalysis.diagram.edit.parts.HardwareCommandNameEditPart.VISUAL_ID:
 			return getHardwareCommandName_5014Parser();
 		case stateAnalysis.diagram.edit.parts.EstimatorNameEditPart.VISUAL_ID:
-			return getEstimatorName_5019Parser();
+			return getEstimatorName_5030Parser();
 		case stateAnalysis.diagram.edit.parts.StateConstraintName4EditPart.VISUAL_ID:
 			return getStateConstraintName_5016Parser();
 		case stateAnalysis.diagram.edit.parts.StateUpdateName2EditPart.VISUAL_ID:
@@ -610,7 +586,7 @@ public class StateAnalysisParserProvider extends AbstractProvider implements
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementNameEditPart.VISUAL_ID:
 			return getHardwareMeasurementName_5018Parser();
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterNameEditPart.VISUAL_ID:
-			return getHardwareAdapterName_5024Parser();
+			return getHardwareAdapterName_5031Parser();
 		case stateAnalysis.diagram.edit.parts.HardwareCommandName2EditPart.VISUAL_ID:
 			return getHardwareCommandName_5020Parser();
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementName2EditPart.VISUAL_ID:

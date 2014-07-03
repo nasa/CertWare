@@ -18,7 +18,7 @@ public class ControllerControllerStateConstraintCompartmentItemSemanticEditPolic
 	 */
 	public ControllerControllerStateConstraintCompartmentItemSemanticEditPolicy() {
 		super(
-				stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012);
+				stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028);
 	}
 
 	/**

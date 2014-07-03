@@ -56,8 +56,8 @@ public class HardwareAdapterCreateCommand extends EditElementCommand {
 		stateAnalysis.HardwareAdapter newElement = stateAnalysis.StateAnalysisFactory.eINSTANCE
 				.createHardwareAdapter();
 
-		stateAnalysis.Component owner = (stateAnalysis.Component) getElementToEdit();
-		owner.getAdapters().add(newElement);
+		stateAnalysis.Deployment owner = (stateAnalysis.Deployment) getElementToEdit();
+		owner.getComponents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

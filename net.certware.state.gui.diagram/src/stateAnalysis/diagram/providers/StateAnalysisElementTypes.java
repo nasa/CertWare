@@ -67,12 +67,7 @@ public class StateAnalysisElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Component_3003 = getElementType("net.certware.state.gui.diagram.Component_3003"); //$NON-NLS-1$
-
-	/**
-	 * @generated
-	 */
-	public static final IElementType StateVariable_3007 = getElementType("net.certware.state.gui.diagram.StateVariable_3007"); //$NON-NLS-1$
+	public static final IElementType StateVariable_3027 = getElementType("net.certware.state.gui.diagram.StateVariable_3027"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -92,12 +87,12 @@ public class StateAnalysisElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType StateVariable_3011 = getElementType("net.certware.state.gui.diagram.StateVariable_3011"); //$NON-NLS-1$
+	public static final IElementType Controller_3028 = getElementType("net.certware.state.gui.diagram.Controller_3028"); //$NON-NLS-1$
 
 	/**
 	 * @generated
 	 */
-	public static final IElementType Controller_3012 = getElementType("net.certware.state.gui.diagram.Controller_3012"); //$NON-NLS-1$
+	public static final IElementType StateVariable_3011 = getElementType("net.certware.state.gui.diagram.StateVariable_3011"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -112,7 +107,7 @@ public class StateAnalysisElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Estimator_3015 = getElementType("net.certware.state.gui.diagram.Estimator_3015"); //$NON-NLS-1$
+	public static final IElementType Estimator_3029 = getElementType("net.certware.state.gui.diagram.Estimator_3029"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -132,7 +127,7 @@ public class StateAnalysisElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType HardwareAdapter_3019 = getElementType("net.certware.state.gui.diagram.HardwareAdapter_3019"); //$NON-NLS-1$
+	public static final IElementType HardwareAdapter_3030 = getElementType("net.certware.state.gui.diagram.HardwareAdapter_3030"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -235,10 +230,11 @@ public class StateAnalysisElementTypes {
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getDeployment());
 
-			elements.put(Component_3003,
-					stateAnalysis.StateAnalysisPackage.eINSTANCE.getComponent());
+			elements.put(StateVariable_3027,
+					stateAnalysis.StateAnalysisPackage.eINSTANCE
+							.getStateVariable());
 
-			elements.put(StateVariable_3007,
+			elements.put(StateVariable_3011,
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getStateVariable());
 
@@ -254,11 +250,7 @@ public class StateAnalysisElementTypes {
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getStateUpdate());
 
-			elements.put(StateVariable_3011,
-					stateAnalysis.StateAnalysisPackage.eINSTANCE
-							.getStateVariable());
-
-			elements.put(Controller_3012,
+			elements.put(Controller_3028,
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getController());
 
@@ -270,7 +262,7 @@ public class StateAnalysisElementTypes {
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getHardwareCommand());
 
-			elements.put(Estimator_3015,
+			elements.put(Estimator_3029,
 					stateAnalysis.StateAnalysisPackage.eINSTANCE.getEstimator());
 
 			elements.put(StateConstraint_3016,
@@ -285,7 +277,7 @@ public class StateAnalysisElementTypes {
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getHardwareMeasurement());
 
-			elements.put(HardwareAdapter_3019,
+			elements.put(HardwareAdapter_3030,
 					stateAnalysis.StateAnalysisPackage.eINSTANCE
 							.getHardwareAdapter());
 
@@ -347,20 +339,19 @@ public class StateAnalysisElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Subsystem_2001);
 			KNOWN_ELEMENT_TYPES.add(DeploymentSet_3001);
 			KNOWN_ELEMENT_TYPES.add(Deployment_3002);
-			KNOWN_ELEMENT_TYPES.add(Component_3003);
-			KNOWN_ELEMENT_TYPES.add(StateVariable_3007);
+			KNOWN_ELEMENT_TYPES.add(StateVariable_3027);
+			KNOWN_ELEMENT_TYPES.add(StateVariable_3011);
 			KNOWN_ELEMENT_TYPES.add(StateConstraint_3008);
 			KNOWN_ELEMENT_TYPES.add(StateConstraint_3009);
 			KNOWN_ELEMENT_TYPES.add(StateUpdate_3010);
-			KNOWN_ELEMENT_TYPES.add(StateVariable_3011);
-			KNOWN_ELEMENT_TYPES.add(Controller_3012);
+			KNOWN_ELEMENT_TYPES.add(Controller_3028);
 			KNOWN_ELEMENT_TYPES.add(StateConstraint_3013);
 			KNOWN_ELEMENT_TYPES.add(HardwareCommand_3014);
-			KNOWN_ELEMENT_TYPES.add(Estimator_3015);
+			KNOWN_ELEMENT_TYPES.add(Estimator_3029);
 			KNOWN_ELEMENT_TYPES.add(StateConstraint_3016);
 			KNOWN_ELEMENT_TYPES.add(StateUpdate_3017);
 			KNOWN_ELEMENT_TYPES.add(HardwareMeasurement_3018);
-			KNOWN_ELEMENT_TYPES.add(HardwareAdapter_3019);
+			KNOWN_ELEMENT_TYPES.add(HardwareAdapter_3030);
 			KNOWN_ELEMENT_TYPES.add(HardwareCommand_3020);
 			KNOWN_ELEMENT_TYPES.add(HardwareMeasurement_3021);
 			KNOWN_ELEMENT_TYPES.add(Device_3024);
@@ -388,26 +379,24 @@ public class StateAnalysisElementTypes {
 			return DeploymentSet_3001;
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return Deployment_3002;
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return Component_3003;
 		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return StateVariable_3007;
+			return StateVariable_3027;
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+			return StateVariable_3011;
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return StateConstraint_3008;
 		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
 			return StateConstraint_3009;
 		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
 			return StateUpdate_3010;
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
-			return StateVariable_3011;
 		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return Controller_3012;
+			return Controller_3028;
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return StateConstraint_3013;
 		case stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID:
 			return HardwareCommand_3014;
 		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return Estimator_3015;
+			return Estimator_3029;
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return StateConstraint_3016;
 		case stateAnalysis.diagram.edit.parts.StateUpdate2EditPart.VISUAL_ID:
@@ -415,7 +404,7 @@ public class StateAnalysisElementTypes {
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart.VISUAL_ID:
 			return HardwareMeasurement_3018;
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return HardwareAdapter_3019;
+			return HardwareAdapter_3030;
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return HardwareCommand_3020;
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurement2EditPart.VISUAL_ID:

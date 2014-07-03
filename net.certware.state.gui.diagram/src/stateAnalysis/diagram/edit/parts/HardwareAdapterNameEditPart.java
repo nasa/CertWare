@@ -57,7 +57,7 @@ public class HardwareAdapterNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5024;
+	public static final int VISUAL_ID = 5031;
 
 	/**
 	 * @generated
@@ -309,7 +309,7 @@ public class HardwareAdapterNameEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
 					.getParser(
-							stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3019,
+							stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030,
 							getParserElement(),
 							stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 									.getType(stateAnalysis.diagram.edit.parts.HardwareAdapterNameEditPart.VISUAL_ID));

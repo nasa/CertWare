@@ -37,24 +37,23 @@ public class StateAnalysisPaletteFactory {
 		PaletteDrawer paletteContainer = new PaletteDrawer(
 				stateAnalysis.diagram.part.Messages.Objects1Group_title);
 		paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
-		paletteContainer.add(createComponent1CreationTool());
-		paletteContainer.add(createController2CreationTool());
-		paletteContainer.add(createDataCollection3CreationTool());
-		paletteContainer.add(createDataProduct4CreationTool());
-		paletteContainer.add(createDeployment5CreationTool());
-		paletteContainer.add(createDeploymentSet6CreationTool());
-		paletteContainer.add(createDevice7CreationTool());
-		paletteContainer.add(createDeviceCommand8CreationTool());
-		paletteContainer.add(createDeviceMeasurement9CreationTool());
-		paletteContainer.add(createEstimator10CreationTool());
-		paletteContainer.add(createHardwareAdapter11CreationTool());
-		paletteContainer.add(createHardwareCommand12CreationTool());
-		paletteContainer.add(createHardwareMeasurement13CreationTool());
-		paletteContainer.add(createQoSPolicy14CreationTool());
-		paletteContainer.add(createStateConstraint15CreationTool());
-		paletteContainer.add(createStateUpdate16CreationTool());
-		paletteContainer.add(createStateVariable17CreationTool());
-		paletteContainer.add(createSubsystem18CreationTool());
+		paletteContainer.add(createController1CreationTool());
+		paletteContainer.add(createDataCollection2CreationTool());
+		paletteContainer.add(createDataProduct3CreationTool());
+		paletteContainer.add(createDeployment4CreationTool());
+		paletteContainer.add(createDeploymentSet5CreationTool());
+		paletteContainer.add(createDevice6CreationTool());
+		paletteContainer.add(createDeviceCommand7CreationTool());
+		paletteContainer.add(createDeviceMeasurement8CreationTool());
+		paletteContainer.add(createEstimator9CreationTool());
+		paletteContainer.add(createHardwareAdapter10CreationTool());
+		paletteContainer.add(createHardwareCommand11CreationTool());
+		paletteContainer.add(createHardwareMeasurement12CreationTool());
+		paletteContainer.add(createQoSPolicy13CreationTool());
+		paletteContainer.add(createStateConstraint14CreationTool());
+		paletteContainer.add(createStateUpdate15CreationTool());
+		paletteContainer.add(createStateVariable16CreationTool());
+		paletteContainer.add(createSubsystem17CreationTool());
 		return paletteContainer;
 	}
 
@@ -74,15 +73,15 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createComponent1CreationTool() {
+	private ToolEntry createController1CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.Component1CreationTool_title,
-				stateAnalysis.diagram.part.Messages.Component1CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.Controller1CreationTool_title,
+				stateAnalysis.diagram.part.Messages.Controller1CreationTool_desc,
 				Collections
-						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Component_3003));
-		entry.setId("createComponent1CreationTool"); //$NON-NLS-1$
+						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028));
+		entry.setId("createController1CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
-				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Component_3003));
+				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -90,29 +89,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createController2CreationTool() {
+	private ToolEntry createDataCollection2CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.Controller2CreationTool_title,
-				stateAnalysis.diagram.part.Messages.Controller2CreationTool_desc,
-				Collections
-						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012));
-		entry.setId("createController2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
-				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createDataCollection3CreationTool() {
-		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.DataCollection3CreationTool_title,
-				stateAnalysis.diagram.part.Messages.DataCollection3CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.DataCollection2CreationTool_title,
+				stateAnalysis.diagram.part.Messages.DataCollection2CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DataCollection_3004));
-		entry.setId("createDataCollection3CreationTool"); //$NON-NLS-1$
+		entry.setId("createDataCollection2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DataCollection_3004));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -122,13 +105,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDataProduct4CreationTool() {
+	private ToolEntry createDataProduct3CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.DataProduct4CreationTool_title,
-				stateAnalysis.diagram.part.Messages.DataProduct4CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.DataProduct3CreationTool_title,
+				stateAnalysis.diagram.part.Messages.DataProduct3CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DataProduct_3006));
-		entry.setId("createDataProduct4CreationTool"); //$NON-NLS-1$
+		entry.setId("createDataProduct3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DataProduct_3006));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -138,13 +121,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDeployment5CreationTool() {
+	private ToolEntry createDeployment4CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.Deployment5CreationTool_title,
-				stateAnalysis.diagram.part.Messages.Deployment5CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.Deployment4CreationTool_title,
+				stateAnalysis.diagram.part.Messages.Deployment4CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Deployment_3002));
-		entry.setId("createDeployment5CreationTool"); //$NON-NLS-1$
+		entry.setId("createDeployment4CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Deployment_3002));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -154,13 +137,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDeploymentSet6CreationTool() {
+	private ToolEntry createDeploymentSet5CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.DeploymentSet6CreationTool_title,
-				stateAnalysis.diagram.part.Messages.DeploymentSet6CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.DeploymentSet5CreationTool_title,
+				stateAnalysis.diagram.part.Messages.DeploymentSet5CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeploymentSet_3001));
-		entry.setId("createDeploymentSet6CreationTool"); //$NON-NLS-1$
+		entry.setId("createDeploymentSet5CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeploymentSet_3001));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -170,13 +153,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDevice7CreationTool() {
+	private ToolEntry createDevice6CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.Device7CreationTool_title,
-				stateAnalysis.diagram.part.Messages.Device7CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.Device6CreationTool_title,
+				stateAnalysis.diagram.part.Messages.Device6CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Device_3024));
-		entry.setId("createDevice7CreationTool"); //$NON-NLS-1$
+		entry.setId("createDevice6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Device_3024));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -186,13 +169,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDeviceCommand8CreationTool() {
+	private ToolEntry createDeviceCommand7CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.DeviceCommand8CreationTool_title,
-				stateAnalysis.diagram.part.Messages.DeviceCommand8CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.DeviceCommand7CreationTool_title,
+				stateAnalysis.diagram.part.Messages.DeviceCommand7CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeviceCommand_3025));
-		entry.setId("createDeviceCommand8CreationTool"); //$NON-NLS-1$
+		entry.setId("createDeviceCommand7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeviceCommand_3025));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -202,13 +185,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createDeviceMeasurement9CreationTool() {
+	private ToolEntry createDeviceMeasurement8CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.DeviceMeasurement9CreationTool_title,
-				stateAnalysis.diagram.part.Messages.DeviceMeasurement9CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.DeviceMeasurement8CreationTool_title,
+				stateAnalysis.diagram.part.Messages.DeviceMeasurement8CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeviceMeasurement_3026));
-		entry.setId("createDeviceMeasurement9CreationTool"); //$NON-NLS-1$
+		entry.setId("createDeviceMeasurement8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.DeviceMeasurement_3026));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -218,15 +201,15 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createEstimator10CreationTool() {
+	private ToolEntry createEstimator9CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.Estimator10CreationTool_title,
-				stateAnalysis.diagram.part.Messages.Estimator10CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.Estimator9CreationTool_title,
+				stateAnalysis.diagram.part.Messages.Estimator9CreationTool_desc,
 				Collections
-						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015));
-		entry.setId("createEstimator10CreationTool"); //$NON-NLS-1$
+						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029));
+		entry.setId("createEstimator9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
-				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015));
+				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -234,15 +217,15 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createHardwareAdapter11CreationTool() {
+	private ToolEntry createHardwareAdapter10CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.HardwareAdapter11CreationTool_title,
-				stateAnalysis.diagram.part.Messages.HardwareAdapter11CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.HardwareAdapter10CreationTool_title,
+				stateAnalysis.diagram.part.Messages.HardwareAdapter10CreationTool_desc,
 				Collections
-						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3019));
-		entry.setId("createHardwareAdapter11CreationTool"); //$NON-NLS-1$
+						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030));
+		entry.setId("createHardwareAdapter10CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
-				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3019));
+				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -250,15 +233,15 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createHardwareCommand12CreationTool() {
+	private ToolEntry createHardwareCommand11CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareCommand_3014);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareCommand_3020);
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.HardwareCommand12CreationTool_title,
-				stateAnalysis.diagram.part.Messages.HardwareCommand12CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.HardwareCommand11CreationTool_title,
+				stateAnalysis.diagram.part.Messages.HardwareCommand11CreationTool_desc,
 				types);
-		entry.setId("createHardwareCommand12CreationTool"); //$NON-NLS-1$
+		entry.setId("createHardwareCommand11CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareCommand_3014));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -268,15 +251,15 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createHardwareMeasurement13CreationTool() {
+	private ToolEntry createHardwareMeasurement12CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareMeasurement_3018);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareMeasurement_3021);
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.HardwareMeasurement13CreationTool_title,
-				stateAnalysis.diagram.part.Messages.HardwareMeasurement13CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.HardwareMeasurement12CreationTool_title,
+				stateAnalysis.diagram.part.Messages.HardwareMeasurement12CreationTool_desc,
 				types);
-		entry.setId("createHardwareMeasurement13CreationTool"); //$NON-NLS-1$
+		entry.setId("createHardwareMeasurement12CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareMeasurement_3018));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -286,13 +269,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createQoSPolicy14CreationTool() {
+	private ToolEntry createQoSPolicy13CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.QoSPolicy14CreationTool_title,
-				stateAnalysis.diagram.part.Messages.QoSPolicy14CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.QoSPolicy13CreationTool_title,
+				stateAnalysis.diagram.part.Messages.QoSPolicy13CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.QosPolicy_3005));
-		entry.setId("createQoSPolicy14CreationTool"); //$NON-NLS-1$
+		entry.setId("createQoSPolicy13CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.QosPolicy_3005));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -302,17 +285,17 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStateConstraint15CreationTool() {
+	private ToolEntry createStateConstraint14CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(4);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3008);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3009);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3013);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3016);
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.StateConstraint15CreationTool_title,
-				stateAnalysis.diagram.part.Messages.StateConstraint15CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.StateConstraint14CreationTool_title,
+				stateAnalysis.diagram.part.Messages.StateConstraint14CreationTool_desc,
 				types);
-		entry.setId("createStateConstraint15CreationTool"); //$NON-NLS-1$
+		entry.setId("createStateConstraint14CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateConstraint_3008));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -322,15 +305,15 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStateUpdate16CreationTool() {
+	private ToolEntry createStateUpdate15CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateUpdate_3010);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateUpdate_3017);
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.StateUpdate16CreationTool_title,
-				stateAnalysis.diagram.part.Messages.StateUpdate16CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.StateUpdate15CreationTool_title,
+				stateAnalysis.diagram.part.Messages.StateUpdate15CreationTool_desc,
 				types);
-		entry.setId("createStateUpdate16CreationTool"); //$NON-NLS-1$
+		entry.setId("createStateUpdate15CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateUpdate_3010));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -340,17 +323,17 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createStateVariable17CreationTool() {
+	private ToolEntry createStateVariable16CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007);
+		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027);
 		types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3011);
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.StateVariable17CreationTool_title,
-				stateAnalysis.diagram.part.Messages.StateVariable17CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.StateVariable16CreationTool_title,
+				stateAnalysis.diagram.part.Messages.StateVariable16CreationTool_desc,
 				types);
-		entry.setId("createStateVariable17CreationTool"); //$NON-NLS-1$
+		entry.setId("createStateVariable16CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
-				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3007));
+				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -358,13 +341,13 @@ public class StateAnalysisPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createSubsystem18CreationTool() {
+	private ToolEntry createSubsystem17CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				stateAnalysis.diagram.part.Messages.Subsystem18CreationTool_title,
-				stateAnalysis.diagram.part.Messages.Subsystem18CreationTool_desc,
+				stateAnalysis.diagram.part.Messages.Subsystem17CreationTool_title,
+				stateAnalysis.diagram.part.Messages.Subsystem17CreationTool_desc,
 				Collections
 						.singletonList(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Subsystem_2001));
-		entry.setId("createSubsystem18CreationTool"); //$NON-NLS-1$
+		entry.setId("createSubsystem17CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(stateAnalysis.diagram.providers.StateAnalysisElementTypes
 				.getImageDescriptor(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Subsystem_2001));
 		entry.setLargeIcon(entry.getSmallIcon());

@@ -46,22 +46,14 @@ public class StateAnalysisDiagramUpdater {
 			return getDeploymentDeploymentComponentsCompartment_7003SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.DeploymentDeploymentCatalogsCompartmentEditPart.VISUAL_ID:
 			return getDeploymentDeploymentCatalogsCompartment_7004SemanticChildren(view);
-		case stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID:
-			return getComponentComponentStateVariablesCompartment_7005SemanticChildren(view);
-		case stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID:
-			return getComponentComponentControllersCompartment_7006SemanticChildren(view);
-		case stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID:
-			return getComponentComponentEstimatorsCompartment_7007SemanticChildren(view);
-		case stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID:
-			return getComponentComponentAdaptersCompartment_7008SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartmentEditPart.VISUAL_ID:
-			return getStateVariableStateVariableInStateConstraintsCompartment_7011SemanticChildren(view);
+			return getStateVariableStateVariableInStateConstraintsCompartment_7030SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableOutStateConstraintsCompartmentEditPart.VISUAL_ID:
-			return getStateVariableStateVariableOutStateConstraintsCompartment_7012SemanticChildren(view);
+			return getStateVariableStateVariableOutStateConstraintsCompartment_7031SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableStateUpdatesCompartmentEditPart.VISUAL_ID:
-			return getStateVariableStateVariableStateUpdatesCompartment_7013SemanticChildren(view);
+			return getStateVariableStateVariableStateUpdatesCompartment_7032SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartmentEditPart.VISUAL_ID:
-			return getStateVariableStateVariableInfluencedByCompartment_7014SemanticChildren(view);
+			return getStateVariableStateVariableInfluencedByCompartment_7033SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartment2EditPart.VISUAL_ID:
 			return getStateVariableStateVariableInStateConstraintsCompartment_7015SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableOutStateConstraintsCompartment2EditPart.VISUAL_ID:
@@ -71,21 +63,21 @@ public class StateAnalysisDiagramUpdater {
 		case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartment2EditPart.VISUAL_ID:
 			return getStateVariableStateVariableInfluencedByCompartment_7018SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.ControllerControllerStateConstraintCompartmentEditPart.VISUAL_ID:
-			return getControllerControllerStateConstraintCompartment_7019SemanticChildren(view);
+			return getControllerControllerStateConstraintCompartment_7034SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.ControllerControllerHardwareCommandCompartmentEditPart.VISUAL_ID:
-			return getControllerControllerHardwareCommandCompartment_7020SemanticChildren(view);
+			return getControllerControllerHardwareCommandCompartment_7035SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorEstimatorStateConstraintsCompartmentEditPart.VISUAL_ID:
-			return getEstimatorEstimatorStateConstraintsCompartment_7021SemanticChildren(view);
+			return getEstimatorEstimatorStateConstraintsCompartment_7036SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorEstimatorStateUpdatesCompartmentEditPart.VISUAL_ID:
-			return getEstimatorEstimatorStateUpdatesCompartment_7022SemanticChildren(view);
+			return getEstimatorEstimatorStateUpdatesCompartment_7037SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorEstimatorHardwareMeasurementCompartmentEditPart.VISUAL_ID:
-			return getEstimatorEstimatorHardwareMeasurementCompartment_7023SemanticChildren(view);
+			return getEstimatorEstimatorHardwareMeasurementCompartment_7038SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterHardwareAdapterHardwareCommandsCompartmentEditPart.VISUAL_ID:
-			return getHardwareAdapterHardwareAdapterHardwareCommandsCompartment_7024SemanticChildren(view);
+			return getHardwareAdapterHardwareAdapterHardwareCommandsCompartment_7039SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterHardwareAdapterHardwareMeasurementsCompartmentEditPart.VISUAL_ID:
-			return getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7025SemanticChildren(view);
+			return getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7040SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterHardwareAdapterDevicesCompartmentEditPart.VISUAL_ID:
-			return getHardwareAdapterHardwareAdapterDevicesCompartment_7026SemanticChildren(view);
+			return getHardwareAdapterHardwareAdapterDevicesCompartment_7041SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.DeviceDeviceDeviceCommandsCompartmentEditPart.VISUAL_ID:
 			return getDeviceDeviceDeviceCommandsCompartment_7028SemanticChildren(view);
 		case stateAnalysis.diagram.edit.parts.DeviceDeviceDeviceMeasurementsCompartmentEditPart.VISUAL_ID:
@@ -205,7 +197,22 @@ public class StateAnalysisDiagramUpdater {
 					.next();
 			int visualID = stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 					.getNodeVisualID(view, childElement);
-			if (visualID == stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID) {
+			if (visualID == stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID) {
+				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+			if (visualID == stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID) {
+				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+			if (visualID == stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID) {
+				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
+						childElement, visualID));
+				continue;
+			}
+			if (visualID == stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID) {
 				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
 						childElement, visualID));
 				continue;
@@ -247,127 +254,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getComponentComponentStateVariablesCompartment_7005SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		stateAnalysis.Component modelElement = (stateAnalysis.Component) containerView
-				.getElement();
-		LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> result = new LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getStateVariables().iterator(); it
-				.hasNext();) {
-			stateAnalysis.StateVariable childElement = (stateAnalysis.StateVariable) it
-					.next();
-			int visualID = stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID) {
-				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getComponentComponentControllersCompartment_7006SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		stateAnalysis.Component modelElement = (stateAnalysis.Component) containerView
-				.getElement();
-		LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> result = new LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getControllers().iterator(); it
-				.hasNext();) {
-			stateAnalysis.Controller childElement = (stateAnalysis.Controller) it
-					.next();
-			int visualID = stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID) {
-				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getComponentComponentEstimatorsCompartment_7007SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		stateAnalysis.Component modelElement = (stateAnalysis.Component) containerView
-				.getElement();
-		LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> result = new LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getEstimators().iterator(); it
-				.hasNext();) {
-			stateAnalysis.Estimator childElement = (stateAnalysis.Estimator) it
-					.next();
-			int visualID = stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID) {
-				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getComponentComponentAdaptersCompartment_7008SemanticChildren(
-			View view) {
-		if (false == view.eContainer() instanceof View) {
-			return Collections.emptyList();
-		}
-		View containerView = (View) view.eContainer();
-		if (!containerView.isSetElement()) {
-			return Collections.emptyList();
-		}
-		stateAnalysis.Component modelElement = (stateAnalysis.Component) containerView
-				.getElement();
-		LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> result = new LinkedList<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getAdapters().iterator(); it
-				.hasNext();) {
-			stateAnalysis.HardwareAdapter childElement = (stateAnalysis.HardwareAdapter) it
-					.next();
-			int visualID = stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-					.getNodeVisualID(view, childElement);
-			if (visualID == stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID) {
-				result.add(new stateAnalysis.diagram.part.StateAnalysisNodeDescriptor(
-						childElement, visualID));
-				continue;
-			}
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableInStateConstraintsCompartment_7011SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableInStateConstraintsCompartment_7030SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -397,7 +284,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableOutStateConstraintsCompartment_7012SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableOutStateConstraintsCompartment_7031SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -427,7 +314,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableStateUpdatesCompartment_7013SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableStateUpdatesCompartment_7032SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -457,7 +344,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableInfluencedByCompartment_7014SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getStateVariableStateVariableInfluencedByCompartment_7033SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -607,7 +494,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getControllerControllerStateConstraintCompartment_7019SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getControllerControllerStateConstraintCompartment_7034SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -637,7 +524,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getControllerControllerHardwareCommandCompartment_7020SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getControllerControllerHardwareCommandCompartment_7035SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -667,7 +554,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getEstimatorEstimatorStateConstraintsCompartment_7021SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getEstimatorEstimatorStateConstraintsCompartment_7036SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -697,7 +584,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getEstimatorEstimatorStateUpdatesCompartment_7022SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getEstimatorEstimatorStateUpdatesCompartment_7037SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -727,7 +614,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getEstimatorEstimatorHardwareMeasurementCompartment_7023SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getEstimatorEstimatorHardwareMeasurementCompartment_7038SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -757,7 +644,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getHardwareAdapterHardwareAdapterHardwareCommandsCompartment_7024SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getHardwareAdapterHardwareAdapterHardwareCommandsCompartment_7039SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -787,7 +674,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7025SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getHardwareAdapterHardwareAdapterHardwareMeasurementsCompartment_7040SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -817,7 +704,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getHardwareAdapterHardwareAdapterDevicesCompartment_7026SemanticChildren(
+	public static List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> getHardwareAdapterHardwareAdapterDevicesCompartment_7041SemanticChildren(
 			View view) {
 		if (false == view.eContainer() instanceof View) {
 			return Collections.emptyList();
@@ -979,26 +866,24 @@ public class StateAnalysisDiagramUpdater {
 			return getDeploymentSet_3001ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getDeployment_3002ContainedLinks(view);
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return getComponent_3003ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return getStateVariable_3007ContainedLinks(view);
+			return getStateVariable_3027ContainedLinks(view);
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+			return getStateVariable_3011ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return getStateConstraint_3008ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
 			return getStateConstraint_3009ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
 			return getStateUpdate_3010ContainedLinks(view);
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
-			return getStateVariable_3011ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return getController_3012ContainedLinks(view);
+			return getController_3028ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return getStateConstraint_3013ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID:
 			return getHardwareCommand_3014ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return getEstimator_3015ContainedLinks(view);
+			return getEstimator_3029ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return getStateConstraint_3016ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdate2EditPart.VISUAL_ID:
@@ -1006,7 +891,7 @@ public class StateAnalysisDiagramUpdater {
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart.VISUAL_ID:
 			return getHardwareMeasurement_3018ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return getHardwareAdapter_3019ContainedLinks(view);
+			return getHardwareAdapter_3030ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return getHardwareCommand_3020ContainedLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurement2EditPart.VISUAL_ID:
@@ -1040,26 +925,24 @@ public class StateAnalysisDiagramUpdater {
 			return getDeploymentSet_3001IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getDeployment_3002IncomingLinks(view);
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return getComponent_3003IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return getStateVariable_3007IncomingLinks(view);
+			return getStateVariable_3027IncomingLinks(view);
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+			return getStateVariable_3011IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return getStateConstraint_3008IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
 			return getStateConstraint_3009IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
 			return getStateUpdate_3010IncomingLinks(view);
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
-			return getStateVariable_3011IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return getController_3012IncomingLinks(view);
+			return getController_3028IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return getStateConstraint_3013IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID:
 			return getHardwareCommand_3014IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return getEstimator_3015IncomingLinks(view);
+			return getEstimator_3029IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return getStateConstraint_3016IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdate2EditPart.VISUAL_ID:
@@ -1067,7 +950,7 @@ public class StateAnalysisDiagramUpdater {
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart.VISUAL_ID:
 			return getHardwareMeasurement_3018IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return getHardwareAdapter_3019IncomingLinks(view);
+			return getHardwareAdapter_3030IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return getHardwareCommand_3020IncomingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurement2EditPart.VISUAL_ID:
@@ -1101,26 +984,24 @@ public class StateAnalysisDiagramUpdater {
 			return getDeploymentSet_3001OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return getDeployment_3002OutgoingLinks(view);
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return getComponent_3003OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return getStateVariable_3007OutgoingLinks(view);
+			return getStateVariable_3027OutgoingLinks(view);
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+			return getStateVariable_3011OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return getStateConstraint_3008OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
 			return getStateConstraint_3009OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
 			return getStateUpdate_3010OutgoingLinks(view);
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
-			return getStateVariable_3011OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return getController_3012OutgoingLinks(view);
+			return getController_3028OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return getStateConstraint_3013OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID:
 			return getHardwareCommand_3014OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return getEstimator_3015OutgoingLinks(view);
+			return getEstimator_3029OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return getStateConstraint_3016OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.StateUpdate2EditPart.VISUAL_ID:
@@ -1128,7 +1009,7 @@ public class StateAnalysisDiagramUpdater {
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurementEditPart.VISUAL_ID:
 			return getHardwareMeasurement_3018OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return getHardwareAdapter_3019OutgoingLinks(view);
+			return getHardwareAdapter_3030OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return getHardwareCommand_3020OutgoingLinks(view);
 		case stateAnalysis.diagram.edit.parts.HardwareMeasurement2EditPart.VISUAL_ID:
@@ -1184,15 +1065,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getComponent_3003ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3007ContainedLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3027ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1224,21 +1097,21 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3011ContainedLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getController_3012ContainedLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getController_3028ContainedLinks(
 			View view) {
 		stateAnalysis.Controller modelElement = (stateAnalysis.Controller) view
 				.getElement();
 		LinkedList<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> result = new LinkedList<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Controller_Delegates_4001(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3011ContainedLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -1260,7 +1133,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getEstimator_3015ContainedLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getEstimator_3029ContainedLinks(
 			View view) {
 		stateAnalysis.Estimator modelElement = (stateAnalysis.Estimator) view
 				.getElement();
@@ -1296,7 +1169,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getHardwareAdapter_3019ContainedLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getHardwareAdapter_3030ContainedLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1392,15 +1265,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getComponent_3003IncomingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3007IncomingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3027IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1432,15 +1297,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3011IncomingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getController_3012IncomingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getController_3028IncomingLinks(
 			View view) {
 		stateAnalysis.Controller modelElement = (stateAnalysis.Controller) view
 				.getElement();
@@ -1450,6 +1307,14 @@ public class StateAnalysisDiagramUpdater {
 		result.addAll(getIncomingFeatureModelFacetLinks_Controller_Delegates_4001(
 				modelElement, crossReferences));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3011IncomingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -1471,7 +1336,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getEstimator_3015IncomingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getEstimator_3029IncomingLinks(
 			View view) {
 		stateAnalysis.Estimator modelElement = (stateAnalysis.Estimator) view
 				.getElement();
@@ -1510,7 +1375,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getHardwareAdapter_3019IncomingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getHardwareAdapter_3030IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1606,15 +1471,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getComponent_3003OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3007OutgoingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3027OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -1646,21 +1503,21 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3011OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getController_3012OutgoingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getController_3028OutgoingLinks(
 			View view) {
 		stateAnalysis.Controller modelElement = (stateAnalysis.Controller) view
 				.getElement();
 		LinkedList<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> result = new LinkedList<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Controller_Delegates_4001(modelElement));
 		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getStateVariable_3011OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
 	}
 
 	/**
@@ -1682,7 +1539,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getEstimator_3015OutgoingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getEstimator_3029OutgoingLinks(
 			View view) {
 		stateAnalysis.Estimator modelElement = (stateAnalysis.Estimator) view
 				.getElement();
@@ -1718,7 +1575,7 @@ public class StateAnalysisDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getHardwareAdapter_3019OutgoingLinks(
+	public static List<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> getHardwareAdapter_3030OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
 	}

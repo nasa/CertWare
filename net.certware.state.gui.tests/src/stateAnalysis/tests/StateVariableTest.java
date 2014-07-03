@@ -15,16 +15,8 @@ import stateAnalysis.StateVariable;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StateVariableTest extends TestCase
+public class StateVariableTest extends ComponentTest
 {
-
-  /**
-   * The fixture for this State Variable test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected StateVariable fixture = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -48,25 +40,15 @@ public class StateVariableTest extends TestCase
   }
 
   /**
-   * Sets the fixture for this State Variable test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void setFixture(StateVariable fixture)
-  {
-    this.fixture = fixture;
-  }
-
-  /**
    * Returns the fixture for this State Variable test case.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   protected StateVariable getFixture()
   {
-    return fixture;
+    return (StateVariable)fixture;
   }
 
   /**

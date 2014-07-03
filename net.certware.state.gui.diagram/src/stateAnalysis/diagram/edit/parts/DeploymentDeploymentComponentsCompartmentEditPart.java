@@ -15,6 +15,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditP
 import org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateUnspecifiedTypeConnectionRequest;
 import org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest;
+import org.eclipse.gmf.runtime.diagram.ui.requests.RequestConstants;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.ConstrainedToolbarLayout;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
@@ -95,12 +96,34 @@ public class DeploymentDeploymentComponentsCompartmentEditPart extends
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter
 					.getAdapter(IElementType.class);
-			if (type == stateAnalysis.diagram.providers.StateAnalysisElementTypes.Component_3003) {
+			if (type == stateAnalysis.diagram.providers.StateAnalysisElementTypes.StateVariable_3027) {
+				return this;
+			}
+			if (type == stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028) {
+				return this;
+			}
+			if (type == stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029) {
+				return this;
+			}
+			if (type == stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);
 		}
 		if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+			if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
+				for (Object type : ((CreateUnspecifiedTypeConnectionRequest) request)
+						.getElementTypes()) {
+					if (type instanceof IElementType) {
+						IElementType elementType = (IElementType) type;
+						if (elementType
+								.equals(stateAnalysis.diagram.providers.StateAnalysisElementTypes.ControllerDelegates_4001)
+								|| elementType
+										.equals(stateAnalysis.diagram.providers.StateAnalysisElementTypes.EstimatorDistilledMeasurements_4002))
+							return super.getTargetEditPart(request);
+					}
+				}
+			}
 			return getParent().getTargetEditPart(request);
 		}
 		return super.getTargetEditPart(request);

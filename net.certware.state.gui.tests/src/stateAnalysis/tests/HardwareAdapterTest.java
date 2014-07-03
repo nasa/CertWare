@@ -15,16 +15,8 @@ import stateAnalysis.StateAnalysisFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class HardwareAdapterTest extends TestCase
+public class HardwareAdapterTest extends ComponentTest
 {
-
-  /**
-   * The fixture for this Hardware Adapter test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected HardwareAdapter fixture = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -48,25 +40,15 @@ public class HardwareAdapterTest extends TestCase
   }
 
   /**
-   * Sets the fixture for this Hardware Adapter test case.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void setFixture(HardwareAdapter fixture)
-  {
-    this.fixture = fixture;
-  }
-
-  /**
    * Returns the fixture for this Hardware Adapter test case.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   protected HardwareAdapter getFixture()
   {
-    return fixture;
+    return (HardwareAdapter)fixture;
   }
 
   /**

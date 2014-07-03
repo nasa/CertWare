@@ -58,7 +58,7 @@ public class ControllerControllerHardwareCommandCompartmentCanonicalEditPolicy
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> childDescriptors = stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-				.getControllerControllerHardwareCommandCompartment_7020SemanticChildren(viewObject);
+				.getControllerControllerHardwareCommandCompartment_7035SemanticChildren(viewObject);
 		for (stateAnalysis.diagram.part.StateAnalysisNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -91,7 +91,7 @@ public class ControllerControllerHardwareCommandCompartmentCanonicalEditPolicy
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<stateAnalysis.diagram.part.StateAnalysisNodeDescriptor> childDescriptors = stateAnalysis.diagram.part.StateAnalysisDiagramUpdater
-				.getControllerControllerHardwareCommandCompartment_7020SemanticChildren((View) getHost()
+				.getControllerControllerHardwareCommandCompartment_7035SemanticChildren((View) getHost()
 						.getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours

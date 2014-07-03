@@ -256,182 +256,172 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String Component1CreationTool_title;
+	public static String Controller1CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Component1CreationTool_desc;
+	public static String Controller1CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Controller2CreationTool_title;
+	public static String DataCollection2CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Controller2CreationTool_desc;
+	public static String DataCollection2CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DataCollection3CreationTool_title;
+	public static String DataProduct3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DataCollection3CreationTool_desc;
+	public static String DataProduct3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DataProduct4CreationTool_title;
+	public static String Deployment4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DataProduct4CreationTool_desc;
+	public static String Deployment4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Deployment5CreationTool_title;
+	public static String DeploymentSet5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Deployment5CreationTool_desc;
+	public static String DeploymentSet5CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DeploymentSet6CreationTool_title;
+	public static String Device6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DeploymentSet6CreationTool_desc;
+	public static String Device6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Device7CreationTool_title;
+	public static String DeviceCommand7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Device7CreationTool_desc;
+	public static String DeviceCommand7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DeviceCommand8CreationTool_title;
+	public static String DeviceMeasurement8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DeviceCommand8CreationTool_desc;
+	public static String DeviceMeasurement8CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String DeviceMeasurement9CreationTool_title;
+	public static String Estimator9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String DeviceMeasurement9CreationTool_desc;
+	public static String Estimator9CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Estimator10CreationTool_title;
+	public static String HardwareAdapter10CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Estimator10CreationTool_desc;
+	public static String HardwareAdapter10CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwareAdapter11CreationTool_title;
+	public static String HardwareCommand11CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwareAdapter11CreationTool_desc;
+	public static String HardwareCommand11CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwareCommand12CreationTool_title;
+	public static String HardwareMeasurement12CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwareCommand12CreationTool_desc;
+	public static String HardwareMeasurement12CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwareMeasurement13CreationTool_title;
+	public static String QoSPolicy13CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String HardwareMeasurement13CreationTool_desc;
+	public static String QoSPolicy13CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String QoSPolicy14CreationTool_title;
+	public static String StateConstraint14CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String QoSPolicy14CreationTool_desc;
+	public static String StateConstraint14CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StateConstraint15CreationTool_title;
+	public static String StateUpdate15CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateConstraint15CreationTool_desc;
+	public static String StateUpdate15CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StateUpdate16CreationTool_title;
+	public static String StateVariable16CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateUpdate16CreationTool_desc;
+	public static String StateVariable16CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String StateVariable17CreationTool_title;
+	public static String Subsystem17CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String StateVariable17CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Subsystem18CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Subsystem18CreationTool_desc;
+	public static String Subsystem17CreationTool_desc;
 
 	/**
 	 * @generated
@@ -472,26 +462,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String DeploymentDeploymentCatalogsCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ComponentComponentStateVariablesCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ComponentComponentControllersCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ComponentComponentEstimatorsCompartmentEditPart_title;
-
-	/**
-	 * @generated
-	 */
-	public static String ComponentComponentAdaptersCompartmentEditPart_title;
 
 	/**
 	 * @generated
@@ -606,22 +576,22 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Controller_3012_incominglinks;
+	public static String NavigatorGroupName_Controller_3028_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Controller_3012_outgoinglinks;
+	public static String NavigatorGroupName_Controller_3028_outgoinglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Estimator_3015_incominglinks;
+	public static String NavigatorGroupName_Estimator_3029_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_Estimator_3015_outgoinglinks;
+	public static String NavigatorGroupName_Estimator_3029_outgoinglinks;
 
 	/**
 	 * @generated

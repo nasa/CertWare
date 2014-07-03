@@ -14,8 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link stateAnalysis.HardwareAdapter#getName <em>Name</em>}</li>
- *   <li>{@link stateAnalysis.HardwareAdapter#getDescription <em>Description</em>}</li>
  *   <li>{@link stateAnalysis.HardwareAdapter#getHardwareCommands <em>Hardware Commands</em>}</li>
  *   <li>{@link stateAnalysis.HardwareAdapter#getHardwareMeasurements <em>Hardware Measurements</em>}</li>
  *   <li>{@link stateAnalysis.HardwareAdapter#getDevices <em>Devices</em>}</li>
@@ -26,60 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  * @model annotation="gmf.node label='name' label.pattern='Hardware Adapter: {0}' tool.name='Hardware Adapter'"
  * @generated
  */
-public interface HardwareAdapter extends EObject
+public interface HardwareAdapter extends Component
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see stateAnalysis.StateAnalysisPackage#getHardwareAdapter_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link stateAnalysis.HardwareAdapter#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Description</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Description</em>' attribute.
-   * @see #setDescription(String)
-   * @see stateAnalysis.StateAnalysisPackage#getHardwareAdapter_Description()
-   * @model
-   * @generated
-   */
-  String getDescription();
-
-  /**
-   * Sets the value of the '{@link stateAnalysis.HardwareAdapter#getDescription <em>Description</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Description</em>' attribute.
-   * @see #getDescription()
-   * @generated
-   */
-  void setDescription(String value);
-
   /**
    * Returns the value of the '<em><b>Hardware Commands</b></em>' containment reference list.
    * The list contents are of type {@link stateAnalysis.HardwareCommand}.

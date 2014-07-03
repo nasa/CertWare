@@ -31,7 +31,7 @@ public class EstimatorEstimatorStateUpdatesCompartmentEditPart extends
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7022;
+	public static final int VISUAL_ID = 7037;
 
 	/**
 	 * @generated

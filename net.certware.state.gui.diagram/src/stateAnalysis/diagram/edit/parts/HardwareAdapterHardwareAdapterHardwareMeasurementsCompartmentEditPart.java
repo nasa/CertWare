@@ -31,7 +31,7 @@ public class HardwareAdapterHardwareAdapterHardwareMeasurementsCompartmentEditPa
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 7025;
+	public static final int VISUAL_ID = 7040;
 
 	/**
 	 * @generated

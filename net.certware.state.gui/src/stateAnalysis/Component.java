@@ -16,15 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link stateAnalysis.Component#getName <em>Name</em>}</li>
  *   <li>{@link stateAnalysis.Component#getDescription <em>Description</em>}</li>
- *   <li>{@link stateAnalysis.Component#getStateVariables <em>State Variables</em>}</li>
- *   <li>{@link stateAnalysis.Component#getControllers <em>Controllers</em>}</li>
- *   <li>{@link stateAnalysis.Component#getEstimators <em>Estimators</em>}</li>
- *   <li>{@link stateAnalysis.Component#getAdapters <em>Adapters</em>}</li>
  * </ul>
  * </p>
  *
  * @see stateAnalysis.StateAnalysisPackage#getComponent()
- * @model annotation="gmf.node label='name' label.pattern='Component: {0}'"
+ * @model abstract="true"
  * @generated
  */
 public interface Component extends EObject
@@ -80,73 +76,5 @@ public interface Component extends EObject
    * @generated
    */
   void setDescription(String value);
-
-  /**
-   * Returns the value of the '<em><b>State Variables</b></em>' containment reference list.
-   * The list contents are of type {@link stateAnalysis.StateVariable}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>State Variables</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>State Variables</em>' containment reference list.
-   * @see stateAnalysis.StateAnalysisPackage#getComponent_StateVariables()
-   * @model containment="true"
-   *        annotation="gmf.compartment collapsible='true' layout='free'"
-   * @generated
-   */
-  EList<StateVariable> getStateVariables();
-
-  /**
-   * Returns the value of the '<em><b>Controllers</b></em>' containment reference list.
-   * The list contents are of type {@link stateAnalysis.Controller}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Controllers</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Controllers</em>' containment reference list.
-   * @see stateAnalysis.StateAnalysisPackage#getComponent_Controllers()
-   * @model containment="true"
-   *        annotation="gmf.compartment collapsible='true' layout='free'"
-   * @generated
-   */
-  EList<Controller> getControllers();
-
-  /**
-   * Returns the value of the '<em><b>Estimators</b></em>' containment reference list.
-   * The list contents are of type {@link stateAnalysis.Estimator}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Estimators</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Estimators</em>' containment reference list.
-   * @see stateAnalysis.StateAnalysisPackage#getComponent_Estimators()
-   * @model containment="true"
-   *        annotation="gmf.compartment collapsible='true' layout='free'"
-   * @generated
-   */
-  EList<Estimator> getEstimators();
-
-  /**
-   * Returns the value of the '<em><b>Adapters</b></em>' containment reference list.
-   * The list contents are of type {@link stateAnalysis.HardwareAdapter}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Adapters</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Adapters</em>' containment reference list.
-   * @see stateAnalysis.StateAnalysisPackage#getComponent_Adapters()
-   * @model containment="true"
-   *        annotation="gmf.compartment collapsible='true' layout='free'"
-   * @generated
-   */
-  EList<HardwareAdapter> getAdapters();
 
 } // Component

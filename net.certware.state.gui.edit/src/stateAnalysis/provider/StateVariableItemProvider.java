@@ -35,7 +35,7 @@ import stateAnalysis.StateVariable;
  * @generated
  */
 public class StateVariableItemProvider
-  extends ItemProviderAdapter
+  extends ComponentItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
@@ -67,57 +67,9 @@ public class StateVariableItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addNamePropertyDescriptor(object);
-      addDescriptionPropertyDescriptor(object);
       addRepresentationTypePropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
-  }
-
-  /**
-   * This adds a property descriptor for the Name feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addNamePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_StateVariable_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_StateVariable_name_feature", "_UI_StateVariable_type"),
-         StateAnalysisPackage.Literals.STATE_VARIABLE__NAME,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Description feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addDescriptionPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_StateVariable_description_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_StateVariable_description_feature", "_UI_StateVariable_type"),
-         StateAnalysisPackage.Literals.STATE_VARIABLE__DESCRIPTION,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
   }
 
   /**
@@ -220,8 +172,6 @@ public class StateVariableItemProvider
 
     switch (notification.getFeatureID(StateVariable.class))
     {
-      case StateAnalysisPackage.STATE_VARIABLE__NAME:
-      case StateAnalysisPackage.STATE_VARIABLE__DESCRIPTION:
       case StateAnalysisPackage.STATE_VARIABLE__REPRESENTATION_TYPE:
         fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
         return;
@@ -291,18 +241,6 @@ public class StateVariableItemProvider
          new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
     }
     return super.getCreateChildText(owner, feature, child, selection);
-  }
-
-  /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ResourceLocator getResourceLocator()
-  {
-    return StateAnalysisEditPlugin.INSTANCE;
   }
 
 }

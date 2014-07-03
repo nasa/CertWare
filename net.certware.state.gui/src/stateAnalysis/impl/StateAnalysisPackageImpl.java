@@ -569,46 +569,6 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_StateVariables()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponent_Controllers()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponent_Estimators()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponent_Adapters()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStateVariable()
   {
     return stateVariableEClass;
@@ -619,7 +579,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStateVariable_Name()
+  public EAttribute getStateVariable_RepresentationType()
   {
     return (EAttribute)stateVariableEClass.getEStructuralFeatures().get(0);
   }
@@ -629,29 +589,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStateVariable_Description()
-  {
-    return (EAttribute)stateVariableEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStateVariable_RepresentationType()
-  {
-    return (EAttribute)stateVariableEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getStateVariable_InStateConstraints()
   {
-    return (EReference)stateVariableEClass.getEStructuralFeatures().get(3);
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -661,7 +601,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getStateVariable_OutStateConstraints()
   {
-    return (EReference)stateVariableEClass.getEStructuralFeatures().get(4);
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -671,7 +611,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getStateVariable_StateUpdates()
   {
-    return (EReference)stateVariableEClass.getEStructuralFeatures().get(5);
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -681,7 +621,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getStateVariable_InfluencedBy()
   {
-    return (EReference)stateVariableEClass.getEStructuralFeatures().get(6);
+    return (EReference)stateVariableEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -699,29 +639,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getController_Name()
-  {
-    return (EAttribute)controllerEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getController_Description()
-  {
-    return (EAttribute)controllerEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getController_Delegates()
   {
-    return (EReference)controllerEClass.getEStructuralFeatures().get(2);
+    return (EReference)controllerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -731,7 +651,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getController_StateConstraint()
   {
-    return (EReference)controllerEClass.getEStructuralFeatures().get(3);
+    return (EReference)controllerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -741,7 +661,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getController_HardwareCommand()
   {
-    return (EReference)controllerEClass.getEStructuralFeatures().get(4);
+    return (EReference)controllerEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -759,29 +679,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEstimator_Name()
-  {
-    return (EAttribute)estimatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEstimator_Description()
-  {
-    return (EAttribute)estimatorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getEstimator_DistilledMeasurements()
   {
-    return (EReference)estimatorEClass.getEStructuralFeatures().get(2);
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -791,7 +691,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getEstimator_StateConstraints()
   {
-    return (EReference)estimatorEClass.getEStructuralFeatures().get(3);
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -801,7 +701,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getEstimator_StateUpdates()
   {
-    return (EReference)estimatorEClass.getEStructuralFeatures().get(4);
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -811,7 +711,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getEstimator_HardwareMeasurement()
   {
-    return (EReference)estimatorEClass.getEStructuralFeatures().get(5);
+    return (EReference)estimatorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1059,29 +959,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getHardwareAdapter_Name()
-  {
-    return (EAttribute)hardwareAdapterEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getHardwareAdapter_Description()
-  {
-    return (EAttribute)hardwareAdapterEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getHardwareAdapter_HardwareCommands()
   {
-    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(2);
+    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1091,7 +971,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getHardwareAdapter_HardwareMeasurements()
   {
-    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(3);
+    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1101,7 +981,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   public EReference getHardwareAdapter_Devices()
   {
-    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(4);
+    return (EReference)hardwareAdapterEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1158,10 +1038,6 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     componentEClass = createEClass(COMPONENT);
     createEAttribute(componentEClass, COMPONENT__NAME);
     createEAttribute(componentEClass, COMPONENT__DESCRIPTION);
-    createEReference(componentEClass, COMPONENT__STATE_VARIABLES);
-    createEReference(componentEClass, COMPONENT__CONTROLLERS);
-    createEReference(componentEClass, COMPONENT__ESTIMATORS);
-    createEReference(componentEClass, COMPONENT__ADAPTERS);
 
     dataCollectionEClass = createEClass(DATA_COLLECTION);
     createEAttribute(dataCollectionEClass, DATA_COLLECTION__NAME);
@@ -1180,8 +1056,6 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     createEAttribute(dataProductEClass, DATA_PRODUCT__CONTENT);
 
     stateVariableEClass = createEClass(STATE_VARIABLE);
-    createEAttribute(stateVariableEClass, STATE_VARIABLE__NAME);
-    createEAttribute(stateVariableEClass, STATE_VARIABLE__DESCRIPTION);
     createEAttribute(stateVariableEClass, STATE_VARIABLE__REPRESENTATION_TYPE);
     createEReference(stateVariableEClass, STATE_VARIABLE__IN_STATE_CONSTRAINTS);
     createEReference(stateVariableEClass, STATE_VARIABLE__OUT_STATE_CONSTRAINTS);
@@ -1189,23 +1063,17 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     createEReference(stateVariableEClass, STATE_VARIABLE__INFLUENCED_BY);
 
     controllerEClass = createEClass(CONTROLLER);
-    createEAttribute(controllerEClass, CONTROLLER__NAME);
-    createEAttribute(controllerEClass, CONTROLLER__DESCRIPTION);
     createEReference(controllerEClass, CONTROLLER__DELEGATES);
     createEReference(controllerEClass, CONTROLLER__STATE_CONSTRAINT);
     createEReference(controllerEClass, CONTROLLER__HARDWARE_COMMAND);
 
     estimatorEClass = createEClass(ESTIMATOR);
-    createEAttribute(estimatorEClass, ESTIMATOR__NAME);
-    createEAttribute(estimatorEClass, ESTIMATOR__DESCRIPTION);
     createEReference(estimatorEClass, ESTIMATOR__DISTILLED_MEASUREMENTS);
     createEReference(estimatorEClass, ESTIMATOR__STATE_CONSTRAINTS);
     createEReference(estimatorEClass, ESTIMATOR__STATE_UPDATES);
     createEReference(estimatorEClass, ESTIMATOR__HARDWARE_MEASUREMENT);
 
     hardwareAdapterEClass = createEClass(HARDWARE_ADAPTER);
-    createEAttribute(hardwareAdapterEClass, HARDWARE_ADAPTER__NAME);
-    createEAttribute(hardwareAdapterEClass, HARDWARE_ADAPTER__DESCRIPTION);
     createEReference(hardwareAdapterEClass, HARDWARE_ADAPTER__HARDWARE_COMMANDS);
     createEReference(hardwareAdapterEClass, HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS);
     createEReference(hardwareAdapterEClass, HARDWARE_ADAPTER__DEVICES);
@@ -1270,6 +1138,10 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    stateVariableEClass.getESuperTypes().add(this.getComponent());
+    controllerEClass.getESuperTypes().add(this.getComponent());
+    estimatorEClass.getESuperTypes().add(this.getComponent());
+    hardwareAdapterEClass.getESuperTypes().add(this.getComponent());
 
     // Initialize classes and features; add operations and parameters
     initEClass(systemEClass, stateAnalysis.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1293,13 +1165,9 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     initEReference(getDeployment_Components(), this.getComponent(), null, "components", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDeployment_Catalogs(), this.getDataCollection(), null, "catalogs", null, 0, -1, Deployment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(componentEClass, Component.class, "Component", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComponent_Description(), ecorePackage.getEString(), "description", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_StateVariables(), this.getStateVariable(), null, "stateVariables", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Controllers(), this.getController(), null, "controllers", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Estimators(), this.getEstimator(), null, "estimators", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Adapters(), this.getHardwareAdapter(), null, "adapters", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataCollectionEClass, DataCollection.class, "DataCollection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDataCollection_Name(), ecorePackage.getEString(), "name", null, 0, 1, DataCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1318,8 +1186,6 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     initEAttribute(getDataProduct_Content(), ecorePackage.getEString(), "content", null, 0, 1, DataProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateVariableEClass, StateVariable.class, "StateVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStateVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getStateVariable_Description(), ecorePackage.getEString(), "description", null, 0, 1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getStateVariable_RepresentationType(), ecorePackage.getEString(), "representationType", null, 0, 1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStateVariable_InStateConstraints(), this.getStateConstraint(), null, "inStateConstraints", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStateVariable_OutStateConstraints(), this.getStateConstraint(), null, "outStateConstraints", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1327,23 +1193,17 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
     initEReference(getStateVariable_InfluencedBy(), this.getStateVariable(), null, "influencedBy", null, 0, -1, StateVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getController_Name(), ecorePackage.getEString(), "name", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getController_Description(), ecorePackage.getEString(), "description", null, 0, 1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getController_Delegates(), this.getController(), null, "delegates", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getController_StateConstraint(), this.getStateConstraint(), null, "stateConstraint", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getController_HardwareCommand(), this.getHardwareCommand(), null, "hardwareCommand", null, 0, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(estimatorEClass, Estimator.class, "Estimator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEstimator_Name(), ecorePackage.getEString(), "name", null, 0, 1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEstimator_Description(), ecorePackage.getEString(), "description", null, 0, 1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEstimator_DistilledMeasurements(), this.getEstimator(), null, "distilledMeasurements", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEstimator_StateConstraints(), this.getStateConstraint(), null, "stateConstraints", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEstimator_StateUpdates(), this.getStateUpdate(), null, "stateUpdates", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEstimator_HardwareMeasurement(), this.getHardwareMeasurement(), null, "hardwareMeasurement", null, 0, -1, Estimator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(hardwareAdapterEClass, HardwareAdapter.class, "HardwareAdapter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getHardwareAdapter_Name(), ecorePackage.getEString(), "name", null, 0, 1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getHardwareAdapter_Description(), ecorePackage.getEString(), "description", null, 0, 1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getHardwareAdapter_HardwareCommands(), this.getHardwareCommand(), null, "hardwareCommands", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getHardwareAdapter_HardwareMeasurements(), this.getHardwareMeasurement(), null, "hardwareMeasurements", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getHardwareAdapter_Devices(), this.getDevice(), null, "devices", null, 0, -1, HardwareAdapter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1408,7 +1268,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
        source, 
        new String[] 
        {
-       });																																														
+       });																																									
   }
 
   /**
@@ -1426,7 +1286,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
        new String[] 
        {
        "diagram.extension", "sad"
-       });																																													
+       });																																								
   }
 
   /**
@@ -1472,38 +1332,6 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
        });		
     addAnnotation
       (getDeployment_Catalogs(), 
-       source, 
-       new String[] 
-       {
-       "collapsible", "true",
-       "layout", "free"
-       });			
-    addAnnotation
-      (getComponent_StateVariables(), 
-       source, 
-       new String[] 
-       {
-       "collapsible", "true",
-       "layout", "free"
-       });		
-    addAnnotation
-      (getComponent_Controllers(), 
-       source, 
-       new String[] 
-       {
-       "collapsible", "true",
-       "layout", "free"
-       });		
-    addAnnotation
-      (getComponent_Estimators(), 
-       source, 
-       new String[] 
-       {
-       "collapsible", "true",
-       "layout", "free"
-       });		
-    addAnnotation
-      (getComponent_Adapters(), 
        source, 
        new String[] 
        {
@@ -1678,14 +1506,6 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
        "tool.description", "Creates a new deployment for the deployment set"
        });				
     addAnnotation
-      (componentEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "name",
-       "label.pattern", "Component: {0}"
-       });						
-    addAnnotation
       (dataCollectionEClass, 
        source, 
        new String[] 
@@ -1818,7 +1638,7 @@ public class StateAnalysisPackageImpl extends EPackageImpl implements StateAnaly
    */
   protected void createGmf_4Annotations()
   {
-    String source = "gmf.link";																												
+    String source = "gmf.link";																							
     addAnnotation
       (getController_Delegates(), 
        source, 

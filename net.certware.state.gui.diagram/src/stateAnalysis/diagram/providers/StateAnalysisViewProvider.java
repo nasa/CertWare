@@ -144,7 +144,6 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 				case stateAnalysis.diagram.edit.parts.SubsystemEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.DeploymentSetEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
-				case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
@@ -159,8 +158,8 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 				case stateAnalysis.diagram.edit.parts.DataCollectionEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.QosPolicyEditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.DataProductEditPart.VISUAL_ID:
-				case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+				case stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 				case stateAnalysis.diagram.edit.parts.StateUpdate2EditPart.VISUAL_ID:
@@ -181,12 +180,11 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 		return stateAnalysis.diagram.edit.parts.SubsystemEditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.DeploymentSetEditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID == visualID
-				|| stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID == visualID
+				|| stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID == visualID
-				|| stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID == visualID
 				|| stateAnalysis.diagram.edit.parts.HardwareCommandEditPart.VISUAL_ID == visualID
@@ -271,11 +269,11 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 		case stateAnalysis.diagram.edit.parts.DeploymentEditPart.VISUAL_ID:
 			return createDeployment_3002(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-			return createComponent_3003(domainElement, containerView, index,
-					persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
-			return createStateVariable_3007(domainElement, containerView,
+			return createStateVariable_3027(domainElement, containerView,
+					index, persisted, preferencesHint);
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+			return createStateVariable_3011(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
 			return createStateConstraint_3008(domainElement, containerView,
@@ -286,11 +284,8 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 		case stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID:
 			return createStateUpdate_3010(domainElement, containerView, index,
 					persisted, preferencesHint);
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
-			return createStateVariable_3011(domainElement, containerView,
-					index, persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
-			return createController_3012(domainElement, containerView, index,
+			return createController_3028(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.StateConstraint3EditPart.VISUAL_ID:
 			return createStateConstraint_3013(domainElement, containerView,
@@ -299,7 +294,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 			return createHardwareCommand_3014(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID:
-			return createEstimator_3015(domainElement, containerView, index,
+			return createEstimator_3029(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.StateConstraint4EditPart.VISUAL_ID:
 			return createStateConstraint_3016(domainElement, containerView,
@@ -311,7 +306,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 			return createHardwareMeasurement_3018(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID:
-			return createHardwareAdapter_3019(domainElement, containerView,
+			return createHardwareAdapter_3030(domainElement, containerView,
 					index, persisted, preferencesHint);
 		case stateAnalysis.diagram.edit.parts.HardwareCommand2EditPart.VISUAL_ID:
 			return createHardwareCommand_3020(domainElement, containerView,
@@ -533,75 +528,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createComponent_3003(EObject domainElement, View containerView,
-			int index, boolean persisted, PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
-		node.getStyles().add(
-				NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-				.getType(stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
-		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5004 = createLabel(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ComponentNameEditPart.VISUAL_ID));
-		createCompartment(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID),
-				true, false, false, false);
-		createCompartment(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID),
-				true, false, false, false);
-		createCompartment(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID),
-				true, false, false, false);
-		createCompartment(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID),
-				true, false, false, false);
-		return node;
-	}
-
-	/**
-	 * @generated
-	 */
-	public Node createStateVariable_3007(EObject domainElement,
+	public Node createStateVariable_3027(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -640,7 +567,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5012 = createLabel(
+		Node label5028 = createLabel(
 				node,
 				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 						.getType(stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID));
@@ -811,6 +738,65 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	public Node createController_3028(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.getStyles().add(
+				NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+				.getType(stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5029 = createLabel(
+				node,
+				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+						.getType(stateAnalysis.diagram.edit.parts.ControllerNameEditPart.VISUAL_ID));
+		createCompartment(
+				node,
+				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+						.getType(stateAnalysis.diagram.edit.parts.ControllerControllerStateConstraintCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		createCompartment(
+				node,
+				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+						.getType(stateAnalysis.diagram.edit.parts.ControllerControllerHardwareCommandCompartmentEditPart.VISUAL_ID),
+				true, false, true, true);
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
 	public Node createStateVariable_3011(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
@@ -873,65 +859,6 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 				node,
 				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 						.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartment2EditPart.VISUAL_ID),
-				true, false, true, true);
-		return node;
-	}
-
-	/**
-	 * @generated
-	 */
-	public Node createController_3012(EObject domainElement,
-			View containerView, int index, boolean persisted,
-			PreferencesHint preferencesHint) {
-		Shape node = NotationFactory.eINSTANCE.createShape();
-		node.getStyles().add(
-				NotationFactory.eINSTANCE.createHintedDiagramLinkStyle());
-		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-				.getType(stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID));
-		ViewUtil.insertChildView(containerView, node, index, persisted);
-		node.setElement(domainElement);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
-				.getPreferenceStore();
-
-		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
-				FigureUtilities.RGBToInteger(lineRGB));
-		FontStyle nodeFontStyle = (FontStyle) node
-				.getStyle(NotationPackage.Literals.FONT_STYLE);
-		if (nodeFontStyle != null) {
-			FontData fontData = PreferenceConverter.getFontData(prefStore,
-					IPreferenceConstants.PREF_DEFAULT_FONT);
-			nodeFontStyle.setFontName(fontData.getName());
-			nodeFontStyle.setFontHeight(fontData.getHeight());
-			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
-			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
-			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
-					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
-			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
-					.intValue());
-		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5015 = createLabel(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ControllerNameEditPart.VISUAL_ID));
-		createCompartment(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ControllerControllerStateConstraintCompartmentEditPart.VISUAL_ID),
-				true, false, true, true);
-		createCompartment(
-				node,
-				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-						.getType(stateAnalysis.diagram.edit.parts.ControllerControllerHardwareCommandCompartmentEditPart.VISUAL_ID),
 				true, false, true, true);
 		return node;
 	}
@@ -1033,7 +960,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createEstimator_3015(EObject domainElement, View containerView,
+	public Node createEstimator_3029(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.getStyles().add(
@@ -1071,7 +998,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5019 = createLabel(
+		Node label5030 = createLabel(
 				node,
 				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 						.getType(stateAnalysis.diagram.edit.parts.EstimatorNameEditPart.VISUAL_ID));
@@ -1237,7 +1164,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Node createHardwareAdapter_3019(EObject domainElement,
+	public Node createHardwareAdapter_3030(EObject domainElement,
 			View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -1276,7 +1203,7 @@ public class StateAnalysisViewProvider extends AbstractProvider implements
 		ViewUtil.setStructuralFeatureValue(node,
 				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5024 = createLabel(
+		Node label5031 = createLabel(
 				node,
 				stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 						.getType(stateAnalysis.diagram.edit.parts.HardwareAdapterNameEditPart.VISUAL_ID));

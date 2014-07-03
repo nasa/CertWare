@@ -86,15 +86,6 @@ public interface StateAnalysisFactory extends EFactory
   Deployment createDeployment();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
-   * @generated
-   */
-  Component createComponent();
-
-  /**
    * Returns a new object of class '<em>State Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

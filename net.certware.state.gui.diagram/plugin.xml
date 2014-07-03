@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="StateAnalysis"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3003,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3024,3025,3026,3004,3005,3006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001,3002,3027,3011,3008,3009,3010,3028,3013,3014,3029,3016,3017,3018,3030,3020,3021,3024,3025,3026,3004,3005,3006"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002"/>
       </viewProvider>
    </extension>
@@ -271,16 +271,16 @@
             <method name="getType()" value="StateAnalysis"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,3001,3002,3003,3007,3008,3009,3010,3011,3012,3013,3014,3015,3016,3017,3018,3019,3020,3021,3024,3025,3026,3004,3005,3006"/>
+            <method name="getType()" value="2001,3001,3002,3027,3011,3008,3009,3010,3028,3013,3014,3029,3016,3017,3018,3030,3020,3021,3024,3025,3026,3004,3005,3006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001,4002"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5002,5003,5004,5012,5008,5009,5010,5011,5015,5013,5014,5019,5016,5017,5018,5024,5020,5021,5027,5025,5026,5007,5005,5006"/>
+            <method name="getType()" value="5001,5002,5003,5028,5011,5008,5009,5010,5029,5013,5014,5030,5016,5017,5018,5031,5020,5021,5027,5025,5026,5007,5005,5006"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7011,7012,7013,7014,7015,7016,7017,7018,7019,7020,7021,7022,7023,7024,7025,7026,7028,7029,7009,7010"/>
+            <method name="getType()" value="7001,7002,7003,7004,7030,7031,7032,7033,7015,7016,7017,7018,7034,7035,7036,7037,7038,7039,7040,7041,7028,7029,7009,7010"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -309,15 +309,15 @@
          <object class="stateAnalysis.diagram.edit.parts.DeploymentEditPart" id="Deployment_3002"/>
          <context elements="Deployment_3002"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfComponentEditPart">
-         <Priority name="Lowest"/>
-         <object class="stateAnalysis.diagram.edit.parts.ComponentEditPart" id="Component_3003"/>
-         <context elements="Component_3003"/>
-      </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateVariableEditPart">
          <Priority name="Lowest"/>
-         <object class="stateAnalysis.diagram.edit.parts.StateVariableEditPart" id="StateVariable_3007"/>
-         <context elements="StateVariable_3007"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateVariableEditPart" id="StateVariable_3027"/>
+         <context elements="StateVariable_3027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateVariable2EditPart">
+         <Priority name="Lowest"/>
+         <object class="stateAnalysis.diagram.edit.parts.StateVariable2EditPart" id="StateVariable_3011"/>
+         <context elements="StateVariable_3011"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraintEditPart">
          <Priority name="Lowest"/>
@@ -334,15 +334,10 @@
          <object class="stateAnalysis.diagram.edit.parts.StateUpdateEditPart" id="StateUpdate_3010"/>
          <context elements="StateUpdate_3010"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateVariable2EditPart">
-         <Priority name="Lowest"/>
-         <object class="stateAnalysis.diagram.edit.parts.StateVariable2EditPart" id="StateVariable_3011"/>
-         <context elements="StateVariable_3011"/>
-      </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfControllerEditPart">
          <Priority name="Lowest"/>
-         <object class="stateAnalysis.diagram.edit.parts.ControllerEditPart" id="Controller_3012"/>
-         <context elements="Controller_3012"/>
+         <object class="stateAnalysis.diagram.edit.parts.ControllerEditPart" id="Controller_3028"/>
+         <context elements="Controller_3028"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraint3EditPart">
          <Priority name="Lowest"/>
@@ -356,8 +351,8 @@
       </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfEstimatorEditPart">
          <Priority name="Lowest"/>
-         <object class="stateAnalysis.diagram.edit.parts.EstimatorEditPart" id="Estimator_3015"/>
-         <context elements="Estimator_3015"/>
+         <object class="stateAnalysis.diagram.edit.parts.EstimatorEditPart" id="Estimator_3029"/>
+         <context elements="Estimator_3029"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfStateConstraint4EditPart">
          <Priority name="Lowest"/>
@@ -376,8 +371,8 @@
       </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareAdapterEditPart">
          <Priority name="Lowest"/>
-         <object class="stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart" id="HardwareAdapter_3019"/>
-         <context elements="HardwareAdapter_3019"/>
+         <object class="stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart" id="HardwareAdapter_3030"/>
+         <context elements="HardwareAdapter_3030"/>
       </modelingAssistantProvider>
             <modelingAssistantProvider class="stateAnalysis.diagram.providers.assistants.StateAnalysisModelingAssistantProviderOfHardwareCommand2EditPart">
          <Priority name="Lowest"/>
@@ -492,23 +487,22 @@
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
          <metamodelType
-               id="net.certware.state.gui.diagram.Component_3003"
-               name="%metatype.name.Component_3003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Component"
-               edithelper="stateAnalysis.diagram.edit.helpers.ComponentEditHelper">
-            <param name="semanticHint" value="3003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
-         <metamodelType
-               id="net.certware.state.gui.diagram.StateVariable_3007"
-               name="%metatype.name.StateVariable_3007"
+               id="net.certware.state.gui.diagram.StateVariable_3027"
+               name="%metatype.name.StateVariable_3027"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="StateVariable"
                edithelper="stateAnalysis.diagram.edit.helpers.StateVariableEditHelper">
-            <param name="semanticHint" value="3007"/>
+            <param name="semanticHint" value="3027"/>
          </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
+         <specializationType
+               id="net.certware.state.gui.diagram.StateVariable_3011"
+               name="%metatype.name.StateVariable_3011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="net.certware.state.gui.diagram.StateVariable_3027"/>
+            <param name="semanticHint" value="3011"/>
+         </specializationType>
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
          <metamodelType
@@ -540,22 +534,13 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
-         <specializationType
-               id="net.certware.state.gui.diagram.StateVariable_3011"
-               name="%metatype.name.StateVariable_3011"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="net.certware.state.gui.diagram.StateVariable_3007"/>
-            <param name="semanticHint" value="3011"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
          <metamodelType
-               id="net.certware.state.gui.diagram.Controller_3012"
-               name="%metatype.name.Controller_3012"
+               id="net.certware.state.gui.diagram.Controller_3028"
+               name="%metatype.name.Controller_3028"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Controller"
                edithelper="stateAnalysis.diagram.edit.helpers.ControllerEditHelper">
-            <param name="semanticHint" value="3012"/>
+            <param name="semanticHint" value="3028"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
@@ -579,12 +564,12 @@
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
          <metamodelType
-               id="net.certware.state.gui.diagram.Estimator_3015"
-               name="%metatype.name.Estimator_3015"
+               id="net.certware.state.gui.diagram.Estimator_3029"
+               name="%metatype.name.Estimator_3029"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Estimator"
                edithelper="stateAnalysis.diagram.edit.helpers.EstimatorEditHelper">
-            <param name="semanticHint" value="3015"/>
+            <param name="semanticHint" value="3029"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
@@ -617,12 +602,12 @@
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
          <metamodelType
-               id="net.certware.state.gui.diagram.HardwareAdapter_3019"
-               name="%metatype.name.HardwareAdapter_3019"
+               id="net.certware.state.gui.diagram.HardwareAdapter_3030"
+               name="%metatype.name.HardwareAdapter_3030"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="HardwareAdapter"
                edithelper="stateAnalysis.diagram.edit.helpers.HardwareAdapterEditHelper">
-            <param name="semanticHint" value="3019"/>
+            <param name="semanticHint" value="3030"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://www.certware.net/state/StateAnalysisGui">
@@ -737,20 +722,19 @@
          <elementType ref="net.certware.state.gui.diagram.Subsystem_2001"/>
          <elementType ref="net.certware.state.gui.diagram.DeploymentSet_3001"/>
          <elementType ref="net.certware.state.gui.diagram.Deployment_3002"/>
-         <elementType ref="net.certware.state.gui.diagram.Component_3003"/>
-         <elementType ref="net.certware.state.gui.diagram.StateVariable_3007"/>
+         <elementType ref="net.certware.state.gui.diagram.StateVariable_3027"/>
+         <elementType ref="net.certware.state.gui.diagram.StateVariable_3011"/>
          <elementType ref="net.certware.state.gui.diagram.StateConstraint_3008"/>
          <elementType ref="net.certware.state.gui.diagram.StateConstraint_3009"/>
          <elementType ref="net.certware.state.gui.diagram.StateUpdate_3010"/>
-         <elementType ref="net.certware.state.gui.diagram.StateVariable_3011"/>
-         <elementType ref="net.certware.state.gui.diagram.Controller_3012"/>
+         <elementType ref="net.certware.state.gui.diagram.Controller_3028"/>
          <elementType ref="net.certware.state.gui.diagram.StateConstraint_3013"/>
          <elementType ref="net.certware.state.gui.diagram.HardwareCommand_3014"/>
-         <elementType ref="net.certware.state.gui.diagram.Estimator_3015"/>
+         <elementType ref="net.certware.state.gui.diagram.Estimator_3029"/>
          <elementType ref="net.certware.state.gui.diagram.StateConstraint_3016"/>
          <elementType ref="net.certware.state.gui.diagram.StateUpdate_3017"/>
          <elementType ref="net.certware.state.gui.diagram.HardwareMeasurement_3018"/>
-         <elementType ref="net.certware.state.gui.diagram.HardwareAdapter_3019"/>
+         <elementType ref="net.certware.state.gui.diagram.HardwareAdapter_3030"/>
          <elementType ref="net.certware.state.gui.diagram.HardwareCommand_3020"/>
          <elementType ref="net.certware.state.gui.diagram.HardwareMeasurement_3021"/>
          <elementType ref="net.certware.state.gui.diagram.Device_3024"/>

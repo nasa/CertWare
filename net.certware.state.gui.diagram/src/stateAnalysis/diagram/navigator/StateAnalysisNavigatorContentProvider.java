@@ -309,7 +309,37 @@ public class StateAnalysisNavigatorContentProvider implements
 			connectedViews = getChildrenByType(
 					connectedViews,
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID));
+							.getType(stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.DeploymentDeploymentComponentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.DeploymentDeploymentComponentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.DeploymentDeploymentComponentsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			connectedViews = getChildrenByType(
@@ -320,53 +350,6 @@ public class StateAnalysisNavigatorContentProvider implements
 					connectedViews,
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 							.getType(stateAnalysis.diagram.edit.parts.DataCollectionEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			return result.toArray();
-		}
-
-		case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID: {
-			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.EstimatorEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.HardwareAdapterEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			return result.toArray();
@@ -399,57 +382,20 @@ public class StateAnalysisNavigatorContentProvider implements
 			return result.toArray();
 		}
 
-		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID: {
+		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID: {
 			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableOutStateConstraintsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableStateUpdatesCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartmentEditPart.VISUAL_ID));
+							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartment2EditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(
 					connectedViews,
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 							.getType(stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
-			return result.toArray();
-		}
-
-		case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID: {
-			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
@@ -480,14 +426,78 @@ public class StateAnalysisNavigatorContentProvider implements
 							.getType(stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
+			return result.toArray();
+		}
+
+		case stateAnalysis.diagram.edit.parts.DeviceEditPart.VISUAL_ID: {
+			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
 					Collections.singleton(sv),
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartment2EditPart.VISUAL_ID));
+							.getType(stateAnalysis.diagram.edit.parts.DeviceDeviceDeviceCommandsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.DeviceCommandEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.DeviceDeviceDeviceMeasurementsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.DeviceMeasurementEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			return result.toArray();
+		}
+
+		case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID: {
+			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
+			Node sv = (Node) view;
+			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInfluencedByCompartmentEditPart.VISUAL_ID));
 			connectedViews = getChildrenByType(
 					connectedViews,
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 							.getType(stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableOutStateConstraintsCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateConstraint2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement,
+					false));
+			connectedViews = getChildrenByType(
+					Collections.singleton(sv),
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateVariableStateVariableStateUpdatesCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(
+					connectedViews,
+					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
+							.getType(stateAnalysis.diagram.edit.parts.StateUpdateEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			return result.toArray();
@@ -497,10 +507,10 @@ public class StateAnalysisNavigatorContentProvider implements
 			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup incominglinks = new stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup(
-					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Controller_3012_incominglinks,
+					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Controller_3028_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup outgoinglinks = new stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup(
-					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Controller_3012_outgoinglinks,
+					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Controller_3028_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
@@ -548,10 +558,10 @@ public class StateAnalysisNavigatorContentProvider implements
 			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup incominglinks = new stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup(
-					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Estimator_3015_incominglinks,
+					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Estimator_3029_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup outgoinglinks = new stateAnalysis.diagram.navigator.StateAnalysisNavigatorGroup(
-					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Estimator_3015_outgoinglinks,
+					stateAnalysis.diagram.part.Messages.NavigatorGroupName_Estimator_3029_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(
@@ -637,33 +647,6 @@ public class StateAnalysisNavigatorContentProvider implements
 					connectedViews,
 					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 							.getType(stateAnalysis.diagram.edit.parts.DeviceEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			return result.toArray();
-		}
-
-		case stateAnalysis.diagram.edit.parts.DeviceEditPart.VISUAL_ID: {
-			LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem> result = new LinkedList<stateAnalysis.diagram.navigator.StateAnalysisAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.DeviceDeviceDeviceCommandsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.DeviceCommandEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.DeviceDeviceDeviceMeasurementsCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(
-					connectedViews,
-					stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
-							.getType(stateAnalysis.diagram.edit.parts.DeviceMeasurementEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement,
 					false));
 			return result.toArray();

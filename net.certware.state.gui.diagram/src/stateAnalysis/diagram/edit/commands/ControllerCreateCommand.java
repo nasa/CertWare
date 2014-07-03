@@ -56,8 +56,8 @@ public class ControllerCreateCommand extends EditElementCommand {
 		stateAnalysis.Controller newElement = stateAnalysis.StateAnalysisFactory.eINSTANCE
 				.createController();
 
-		stateAnalysis.Component owner = (stateAnalysis.Component) getElementToEdit();
-		owner.getControllers().add(newElement);
+		stateAnalysis.Deployment owner = (stateAnalysis.Deployment) getElementToEdit();
+		owner.getComponents().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

@@ -308,49 +308,13 @@ public interface StateAnalysisPackage extends EPackage
   int COMPONENT__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>State Variables</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__STATE_VARIABLES = 2;
-
-  /**
-   * The feature id for the '<em><b>Controllers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__CONTROLLERS = 3;
-
-  /**
-   * The feature id for the '<em><b>Estimators</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__ESTIMATORS = 4;
-
-  /**
-   * The feature id for the '<em><b>Adapters</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__ADAPTERS = 5;
-
-  /**
    * The number of structural features of the '<em>Component</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 6;
+  int COMPONENT_FEATURE_COUNT = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -486,7 +450,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__NAME = 0;
+  int STATE_VARIABLE__NAME = COMPONENT__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -495,7 +459,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__DESCRIPTION = 1;
+  int STATE_VARIABLE__DESCRIPTION = COMPONENT__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Representation Type</b></em>' attribute.
@@ -504,7 +468,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__REPRESENTATION_TYPE = 2;
+  int STATE_VARIABLE__REPRESENTATION_TYPE = COMPONENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>In State Constraints</b></em>' containment reference list.
@@ -513,7 +477,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__IN_STATE_CONSTRAINTS = 3;
+  int STATE_VARIABLE__IN_STATE_CONSTRAINTS = COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Out State Constraints</b></em>' containment reference list.
@@ -522,7 +486,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__OUT_STATE_CONSTRAINTS = 4;
+  int STATE_VARIABLE__OUT_STATE_CONSTRAINTS = COMPONENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>State Updates</b></em>' containment reference list.
@@ -531,7 +495,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__STATE_UPDATES = 5;
+  int STATE_VARIABLE__STATE_UPDATES = COMPONENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Influenced By</b></em>' containment reference list.
@@ -540,7 +504,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE__INFLUENCED_BY = 6;
+  int STATE_VARIABLE__INFLUENCED_BY = COMPONENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>State Variable</em>' class.
@@ -549,7 +513,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_VARIABLE_FEATURE_COUNT = 7;
+  int STATE_VARIABLE_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link stateAnalysis.impl.ControllerImpl <em>Controller</em>}' class.
@@ -568,7 +532,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER__NAME = 0;
+  int CONTROLLER__NAME = COMPONENT__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -577,7 +541,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER__DESCRIPTION = 1;
+  int CONTROLLER__DESCRIPTION = COMPONENT__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Delegates</b></em>' reference list.
@@ -586,7 +550,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER__DELEGATES = 2;
+  int CONTROLLER__DELEGATES = COMPONENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>State Constraint</b></em>' containment reference list.
@@ -595,7 +559,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER__STATE_CONSTRAINT = 3;
+  int CONTROLLER__STATE_CONSTRAINT = COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Hardware Command</b></em>' containment reference list.
@@ -604,7 +568,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER__HARDWARE_COMMAND = 4;
+  int CONTROLLER__HARDWARE_COMMAND = COMPONENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Controller</em>' class.
@@ -613,7 +577,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLLER_FEATURE_COUNT = 5;
+  int CONTROLLER_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link stateAnalysis.impl.EstimatorImpl <em>Estimator</em>}' class.
@@ -632,7 +596,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR__NAME = 0;
+  int ESTIMATOR__NAME = COMPONENT__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -641,7 +605,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR__DESCRIPTION = 1;
+  int ESTIMATOR__DESCRIPTION = COMPONENT__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Distilled Measurements</b></em>' reference list.
@@ -650,7 +614,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR__DISTILLED_MEASUREMENTS = 2;
+  int ESTIMATOR__DISTILLED_MEASUREMENTS = COMPONENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>State Constraints</b></em>' containment reference list.
@@ -659,7 +623,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR__STATE_CONSTRAINTS = 3;
+  int ESTIMATOR__STATE_CONSTRAINTS = COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>State Updates</b></em>' containment reference list.
@@ -668,7 +632,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR__STATE_UPDATES = 4;
+  int ESTIMATOR__STATE_UPDATES = COMPONENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Hardware Measurement</b></em>' containment reference list.
@@ -677,7 +641,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR__HARDWARE_MEASUREMENT = 5;
+  int ESTIMATOR__HARDWARE_MEASUREMENT = COMPONENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Estimator</em>' class.
@@ -686,7 +650,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ESTIMATOR_FEATURE_COUNT = 6;
+  int ESTIMATOR_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link stateAnalysis.impl.StateConstraintImpl <em>State Constraint</em>}' class.
@@ -775,7 +739,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__NAME = 0;
+  int HARDWARE_ADAPTER__NAME = COMPONENT__NAME;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -784,7 +748,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__DESCRIPTION = 1;
+  int HARDWARE_ADAPTER__DESCRIPTION = COMPONENT__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Hardware Commands</b></em>' containment reference list.
@@ -793,7 +757,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__HARDWARE_COMMANDS = 2;
+  int HARDWARE_ADAPTER__HARDWARE_COMMANDS = COMPONENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Hardware Measurements</b></em>' containment reference list.
@@ -802,7 +766,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS = 3;
+  int HARDWARE_ADAPTER__HARDWARE_MEASUREMENTS = COMPONENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Devices</b></em>' containment reference list.
@@ -811,7 +775,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER__DEVICES = 4;
+  int HARDWARE_ADAPTER__DEVICES = COMPONENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Hardware Adapter</em>' class.
@@ -820,7 +784,7 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    * @ordered
    */
-  int HARDWARE_ADAPTER_FEATURE_COUNT = 5;
+  int HARDWARE_ADAPTER_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1386,50 +1350,6 @@ public interface StateAnalysisPackage extends EPackage
   EAttribute getComponent_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link stateAnalysis.Component#getStateVariables <em>State Variables</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>State Variables</em>'.
-   * @see stateAnalysis.Component#getStateVariables()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_StateVariables();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link stateAnalysis.Component#getControllers <em>Controllers</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Controllers</em>'.
-   * @see stateAnalysis.Component#getControllers()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Controllers();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link stateAnalysis.Component#getEstimators <em>Estimators</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Estimators</em>'.
-   * @see stateAnalysis.Component#getEstimators()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Estimators();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link stateAnalysis.Component#getAdapters <em>Adapters</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Adapters</em>'.
-   * @see stateAnalysis.Component#getAdapters()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Adapters();
-
-  /**
    * Returns the meta object for class '{@link stateAnalysis.StateVariable <em>State Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1438,28 +1358,6 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EClass getStateVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.StateVariable#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see stateAnalysis.StateVariable#getName()
-   * @see #getStateVariable()
-   * @generated
-   */
-  EAttribute getStateVariable_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.StateVariable#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see stateAnalysis.StateVariable#getDescription()
-   * @see #getStateVariable()
-   * @generated
-   */
-  EAttribute getStateVariable_Description();
 
   /**
    * Returns the meta object for the attribute '{@link stateAnalysis.StateVariable#getRepresentationType <em>Representation Type</em>}'.
@@ -1527,28 +1425,6 @@ public interface StateAnalysisPackage extends EPackage
   EClass getController();
 
   /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.Controller#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see stateAnalysis.Controller#getName()
-   * @see #getController()
-   * @generated
-   */
-  EAttribute getController_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.Controller#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see stateAnalysis.Controller#getDescription()
-   * @see #getController()
-   * @generated
-   */
-  EAttribute getController_Description();
-
-  /**
    * Returns the meta object for the reference list '{@link stateAnalysis.Controller#getDelegates <em>Delegates</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1590,28 +1466,6 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EClass getEstimator();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.Estimator#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see stateAnalysis.Estimator#getName()
-   * @see #getEstimator()
-   * @generated
-   */
-  EAttribute getEstimator_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.Estimator#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see stateAnalysis.Estimator#getDescription()
-   * @see #getEstimator()
-   * @generated
-   */
-  EAttribute getEstimator_Description();
 
   /**
    * Returns the meta object for the reference list '{@link stateAnalysis.Estimator#getDistilledMeasurements <em>Distilled Measurements</em>}'.
@@ -1912,28 +1766,6 @@ public interface StateAnalysisPackage extends EPackage
    * @generated
    */
   EClass getHardwareAdapter();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.HardwareAdapter#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see stateAnalysis.HardwareAdapter#getName()
-   * @see #getHardwareAdapter()
-   * @generated
-   */
-  EAttribute getHardwareAdapter_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link stateAnalysis.HardwareAdapter#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Description</em>'.
-   * @see stateAnalysis.HardwareAdapter#getDescription()
-   * @see #getHardwareAdapter()
-   * @generated
-   */
-  EAttribute getHardwareAdapter_Description();
 
   /**
    * Returns the meta object for the containment reference list '{@link stateAnalysis.HardwareAdapter#getHardwareCommands <em>Hardware Commands</em>}'.
@@ -2272,38 +2104,6 @@ public interface StateAnalysisPackage extends EPackage
     EAttribute COMPONENT__DESCRIPTION = eINSTANCE.getComponent_Description();
 
     /**
-     * The meta object literal for the '<em><b>State Variables</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__STATE_VARIABLES = eINSTANCE.getComponent_StateVariables();
-
-    /**
-     * The meta object literal for the '<em><b>Controllers</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__CONTROLLERS = eINSTANCE.getComponent_Controllers();
-
-    /**
-     * The meta object literal for the '<em><b>Estimators</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__ESTIMATORS = eINSTANCE.getComponent_Estimators();
-
-    /**
-     * The meta object literal for the '<em><b>Adapters</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__ADAPTERS = eINSTANCE.getComponent_Adapters();
-
-    /**
      * The meta object literal for the '{@link stateAnalysis.impl.StateVariableImpl <em>State Variable</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2312,22 +2112,6 @@ public interface StateAnalysisPackage extends EPackage
      * @generated
      */
     EClass STATE_VARIABLE = eINSTANCE.getStateVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STATE_VARIABLE__NAME = eINSTANCE.getStateVariable_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STATE_VARIABLE__DESCRIPTION = eINSTANCE.getStateVariable_Description();
 
     /**
      * The meta object literal for the '<em><b>Representation Type</b></em>' attribute feature.
@@ -2380,22 +2164,6 @@ public interface StateAnalysisPackage extends EPackage
     EClass CONTROLLER = eINSTANCE.getController();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTROLLER__NAME = eINSTANCE.getController_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTROLLER__DESCRIPTION = eINSTANCE.getController_Description();
-
-    /**
      * The meta object literal for the '<em><b>Delegates</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2428,22 +2196,6 @@ public interface StateAnalysisPackage extends EPackage
      * @generated
      */
     EClass ESTIMATOR = eINSTANCE.getEstimator();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ESTIMATOR__NAME = eINSTANCE.getEstimator_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ESTIMATOR__DESCRIPTION = eINSTANCE.getEstimator_Description();
 
     /**
      * The meta object literal for the '<em><b>Distilled Measurements</b></em>' reference list feature.
@@ -2684,22 +2436,6 @@ public interface StateAnalysisPackage extends EPackage
      * @generated
      */
     EClass HARDWARE_ADAPTER = eINSTANCE.getHardwareAdapter();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HARDWARE_ADAPTER__NAME = eINSTANCE.getHardwareAdapter_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute HARDWARE_ADAPTER__DESCRIPTION = eINSTANCE.getHardwareAdapter_Description();
 
     /**
      * The meta object literal for the '<em><b>Hardware Commands</b></em>' containment reference list feature.

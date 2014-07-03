@@ -97,7 +97,7 @@ public class StateAnalysisModelingAssistantProviderOfControllerEditPart extends
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == stateAnalysis.diagram.providers.StateAnalysisElementTypes.ControllerDelegates_4001) {
-			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012);
+			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028);
 		}
 		return types;
 	}
@@ -143,7 +143,7 @@ public class StateAnalysisModelingAssistantProviderOfControllerEditPart extends
 			IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == stateAnalysis.diagram.providers.StateAnalysisElementTypes.ControllerDelegates_4001) {
-			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3012);
+			types.add(stateAnalysis.diagram.providers.StateAnalysisElementTypes.Controller_3028);
 		}
 		return types;
 	}

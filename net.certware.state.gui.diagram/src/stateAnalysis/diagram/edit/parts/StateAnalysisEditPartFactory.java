@@ -51,20 +51,20 @@ public class StateAnalysisEditPartFactory implements EditPartFactory {
 				return new stateAnalysis.diagram.edit.parts.DeploymentNameEditPart(
 						view);
 
-			case stateAnalysis.diagram.edit.parts.ComponentEditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.ComponentEditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.ComponentNameEditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.ComponentNameEditPart(
-						view);
-
 			case stateAnalysis.diagram.edit.parts.StateVariableEditPart.VISUAL_ID:
 				return new stateAnalysis.diagram.edit.parts.StateVariableEditPart(
 						view);
 
 			case stateAnalysis.diagram.edit.parts.StateVariableNameEditPart.VISUAL_ID:
 				return new stateAnalysis.diagram.edit.parts.StateVariableNameEditPart(
+						view);
+
+			case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
+				return new stateAnalysis.diagram.edit.parts.StateVariable2EditPart(
+						view);
+
+			case stateAnalysis.diagram.edit.parts.StateVariableName2EditPart.VISUAL_ID:
+				return new stateAnalysis.diagram.edit.parts.StateVariableName2EditPart(
 						view);
 
 			case stateAnalysis.diagram.edit.parts.StateConstraintEditPart.VISUAL_ID:
@@ -89,14 +89,6 @@ public class StateAnalysisEditPartFactory implements EditPartFactory {
 
 			case stateAnalysis.diagram.edit.parts.StateUpdateNameEditPart.VISUAL_ID:
 				return new stateAnalysis.diagram.edit.parts.StateUpdateNameEditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.StateVariable2EditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.StateVariable2EditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.StateVariableName2EditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.StateVariableName2EditPart(
 						view);
 
 			case stateAnalysis.diagram.edit.parts.ControllerEditPart.VISUAL_ID:
@@ -240,22 +232,6 @@ public class StateAnalysisEditPartFactory implements EditPartFactory {
 
 			case stateAnalysis.diagram.edit.parts.DeploymentDeploymentCatalogsCompartmentEditPart.VISUAL_ID:
 				return new stateAnalysis.diagram.edit.parts.DeploymentDeploymentCatalogsCompartmentEditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.ComponentComponentStateVariablesCompartmentEditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.ComponentComponentControllersCompartmentEditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.ComponentComponentEstimatorsCompartmentEditPart(
-						view);
-
-			case stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart.VISUAL_ID:
-				return new stateAnalysis.diagram.edit.parts.ComponentComponentAdaptersCompartmentEditPart(
 						view);
 
 			case stateAnalysis.diagram.edit.parts.StateVariableStateVariableInStateConstraintsCompartmentEditPart.VISUAL_ID:

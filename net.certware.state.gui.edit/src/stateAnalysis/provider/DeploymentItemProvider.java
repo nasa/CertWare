@@ -221,7 +221,22 @@ public class DeploymentItemProvider
     newChildDescriptors.add
       (createChildParameter
         (StateAnalysisPackage.Literals.DEPLOYMENT__COMPONENTS,
-         StateAnalysisFactory.eINSTANCE.createComponent()));
+         StateAnalysisFactory.eINSTANCE.createStateVariable()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (StateAnalysisPackage.Literals.DEPLOYMENT__COMPONENTS,
+         StateAnalysisFactory.eINSTANCE.createController()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (StateAnalysisPackage.Literals.DEPLOYMENT__COMPONENTS,
+         StateAnalysisFactory.eINSTANCE.createEstimator()));
+
+    newChildDescriptors.add
+      (createChildParameter
+        (StateAnalysisPackage.Literals.DEPLOYMENT__COMPONENTS,
+         StateAnalysisFactory.eINSTANCE.createHardwareAdapter()));
 
     newChildDescriptors.add
       (createChildParameter

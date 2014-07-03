@@ -26,13 +26,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Deployment/components"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Deployment/catalogs"/>
     </genClasses>
-    <genClasses ecoreClass="StateAnalysis.ecore#//Component">
+    <genClasses image="false" ecoreClass="StateAnalysis.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Component/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Component/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/stateVariables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/controllers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/estimators"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Component/adapters"/>
     </genClasses>
     <genClasses ecoreClass="StateAnalysis.ecore#//DataCollection">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//DataCollection/name"/>
@@ -51,8 +47,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//DataProduct/content"/>
     </genClasses>
     <genClasses ecoreClass="StateAnalysis.ecore#//StateVariable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//StateVariable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//StateVariable/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//StateVariable/representationType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateVariable/inStateConstraints"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateVariable/outStateConstraints"/>
@@ -60,23 +54,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//StateVariable/influencedBy"/>
     </genClasses>
     <genClasses ecoreClass="StateAnalysis.ecore#//Controller">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Controller/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Controller/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Controller/delegates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Controller/stateConstraint"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Controller/hardwareCommand"/>
     </genClasses>
     <genClasses ecoreClass="StateAnalysis.ecore#//Estimator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Estimator/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//Estimator/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Estimator/distilledMeasurements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Estimator/stateConstraints"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Estimator/stateUpdates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//Estimator/hardwareMeasurement"/>
     </genClasses>
     <genClasses ecoreClass="StateAnalysis.ecore#//HardwareAdapter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//HardwareAdapter/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute StateAnalysis.ecore#//HardwareAdapter/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/hardwareCommands"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/hardwareMeasurements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference StateAnalysis.ecore#//HardwareAdapter/devices"/>

@@ -57,7 +57,7 @@ public class EstimatorNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 5019;
+	public static final int VISUAL_ID = 5030;
 
 	/**
 	 * @generated
@@ -309,7 +309,7 @@ public class EstimatorNameEditPart extends CompartmentEditPart implements
 		if (parser == null) {
 			parser = stateAnalysis.diagram.providers.StateAnalysisParserProvider
 					.getParser(
-							stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3015,
+							stateAnalysis.diagram.providers.StateAnalysisElementTypes.Estimator_3029,
 							getParserElement(),
 							stateAnalysis.diagram.part.StateAnalysisVisualIDRegistry
 									.getType(stateAnalysis.diagram.edit.parts.EstimatorNameEditPart.VISUAL_ID));

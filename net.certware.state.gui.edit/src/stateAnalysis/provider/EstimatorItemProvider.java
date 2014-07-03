@@ -35,7 +35,7 @@ import stateAnalysis.StateAnalysisPackage;
  * @generated
  */
 public class EstimatorItemProvider
-  extends ItemProviderAdapter
+  extends ComponentItemProvider
   implements
     IEditingDomainItemProvider,
     IStructuredItemContentProvider,
@@ -67,57 +67,9 @@ public class EstimatorItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addNamePropertyDescriptor(object);
-      addDescriptionPropertyDescriptor(object);
       addDistilledMeasurementsPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
-  }
-
-  /**
-   * This adds a property descriptor for the Name feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addNamePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Estimator_name_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Estimator_name_feature", "_UI_Estimator_type"),
-         StateAnalysisPackage.Literals.ESTIMATOR__NAME,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
-  }
-
-  /**
-   * This adds a property descriptor for the Description feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addDescriptionPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add
-      (createItemPropertyDescriptor
-        (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-         getResourceLocator(),
-         getString("_UI_Estimator_description_feature"),
-         getString("_UI_PropertyDescriptor_description", "_UI_Estimator_description_feature", "_UI_Estimator_type"),
-         StateAnalysisPackage.Literals.ESTIMATOR__DESCRIPTION,
-         true,
-         false,
-         false,
-         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-         null,
-         null));
   }
 
   /**
@@ -219,10 +171,6 @@ public class EstimatorItemProvider
 
     switch (notification.getFeatureID(Estimator.class))
     {
-      case StateAnalysisPackage.ESTIMATOR__NAME:
-      case StateAnalysisPackage.ESTIMATOR__DESCRIPTION:
-        fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-        return;
       case StateAnalysisPackage.ESTIMATOR__STATE_CONSTRAINTS:
       case StateAnalysisPackage.ESTIMATOR__STATE_UPDATES:
       case StateAnalysisPackage.ESTIMATOR__HARDWARE_MEASUREMENT:
@@ -258,18 +206,6 @@ public class EstimatorItemProvider
       (createChildParameter
         (StateAnalysisPackage.Literals.ESTIMATOR__HARDWARE_MEASUREMENT,
          StateAnalysisFactory.eINSTANCE.createHardwareMeasurement()));
-  }
-
-  /**
-   * Return the resource locator for this item provider's resources.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ResourceLocator getResourceLocator()
-  {
-    return StateAnalysisEditPlugin.INSTANCE;
   }
 
 }

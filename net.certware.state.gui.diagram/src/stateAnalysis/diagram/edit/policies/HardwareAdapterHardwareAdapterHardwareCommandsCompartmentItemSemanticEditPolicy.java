@@ -18,7 +18,7 @@ public class HardwareAdapterHardwareAdapterHardwareCommandsCompartmentItemSemant
 	 */
 	public HardwareAdapterHardwareAdapterHardwareCommandsCompartmentItemSemanticEditPolicy() {
 		super(
-				stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3019);
+				stateAnalysis.diagram.providers.StateAnalysisElementTypes.HardwareAdapter_3030);
 	}
 
 	/**

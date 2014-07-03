@@ -34,16 +34,12 @@ import stateAnalysis.StateVariable;
  * <ul>
  *   <li>{@link stateAnalysis.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link stateAnalysis.impl.ComponentImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link stateAnalysis.impl.ComponentImpl#getStateVariables <em>State Variables</em>}</li>
- *   <li>{@link stateAnalysis.impl.ComponentImpl#getControllers <em>Controllers</em>}</li>
- *   <li>{@link stateAnalysis.impl.ComponentImpl#getEstimators <em>Estimators</em>}</li>
- *   <li>{@link stateAnalysis.impl.ComponentImpl#getAdapters <em>Adapters</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ComponentImpl extends EObjectImpl implements Component
+public abstract class ComponentImpl extends EObjectImpl implements Component
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -84,46 +80,6 @@ public class ComponentImpl extends EObjectImpl implements Component
    * @ordered
    */
   protected String description = DESCRIPTION_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getStateVariables() <em>State Variables</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getStateVariables()
-   * @generated
-   * @ordered
-   */
-  protected EList<StateVariable> stateVariables;
-
-  /**
-   * The cached value of the '{@link #getControllers() <em>Controllers</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getControllers()
-   * @generated
-   * @ordered
-   */
-  protected EList<Controller> controllers;
-
-  /**
-   * The cached value of the '{@link #getEstimators() <em>Estimators</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEstimators()
-   * @generated
-   * @ordered
-   */
-  protected EList<Estimator> estimators;
-
-  /**
-   * The cached value of the '{@link #getAdapters() <em>Adapters</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAdapters()
-   * @generated
-   * @ordered
-   */
-  protected EList<HardwareAdapter> adapters;
 
   /**
    * <!-- begin-user-doc -->
@@ -197,84 +153,6 @@ public class ComponentImpl extends EObjectImpl implements Component
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StateVariable> getStateVariables()
-  {
-    if (stateVariables == null)
-    {
-      stateVariables = new EObjectContainmentEList<StateVariable>(StateVariable.class, this, StateAnalysisPackage.COMPONENT__STATE_VARIABLES);
-    }
-    return stateVariables;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Controller> getControllers()
-  {
-    if (controllers == null)
-    {
-      controllers = new EObjectContainmentEList<Controller>(Controller.class, this, StateAnalysisPackage.COMPONENT__CONTROLLERS);
-    }
-    return controllers;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Estimator> getEstimators()
-  {
-    if (estimators == null)
-    {
-      estimators = new EObjectContainmentEList<Estimator>(Estimator.class, this, StateAnalysisPackage.COMPONENT__ESTIMATORS);
-    }
-    return estimators;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<HardwareAdapter> getAdapters()
-  {
-    if (adapters == null)
-    {
-      adapters = new EObjectContainmentEList<HardwareAdapter>(HardwareAdapter.class, this, StateAnalysisPackage.COMPONENT__ADAPTERS);
-    }
-    return adapters;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
-        return ((InternalEList<?>)getStateVariables()).basicRemove(otherEnd, msgs);
-      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
-        return ((InternalEList<?>)getControllers()).basicRemove(otherEnd, msgs);
-      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
-        return ((InternalEList<?>)getEstimators()).basicRemove(otherEnd, msgs);
-      case StateAnalysisPackage.COMPONENT__ADAPTERS:
-        return ((InternalEList<?>)getAdapters()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -284,14 +162,6 @@ public class ComponentImpl extends EObjectImpl implements Component
         return getName();
       case StateAnalysisPackage.COMPONENT__DESCRIPTION:
         return getDescription();
-      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
-        return getStateVariables();
-      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
-        return getControllers();
-      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
-        return getEstimators();
-      case StateAnalysisPackage.COMPONENT__ADAPTERS:
-        return getAdapters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -313,22 +183,6 @@ public class ComponentImpl extends EObjectImpl implements Component
       case StateAnalysisPackage.COMPONENT__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
-        getStateVariables().clear();
-        getStateVariables().addAll((Collection<? extends StateVariable>)newValue);
-        return;
-      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
-        getControllers().clear();
-        getControllers().addAll((Collection<? extends Controller>)newValue);
-        return;
-      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
-        getEstimators().clear();
-        getEstimators().addAll((Collection<? extends Estimator>)newValue);
-        return;
-      case StateAnalysisPackage.COMPONENT__ADAPTERS:
-        getAdapters().clear();
-        getAdapters().addAll((Collection<? extends HardwareAdapter>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -349,18 +203,6 @@ public class ComponentImpl extends EObjectImpl implements Component
       case StateAnalysisPackage.COMPONENT__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
-        getStateVariables().clear();
-        return;
-      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
-        getControllers().clear();
-        return;
-      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
-        getEstimators().clear();
-        return;
-      case StateAnalysisPackage.COMPONENT__ADAPTERS:
-        getAdapters().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -379,14 +221,6 @@ public class ComponentImpl extends EObjectImpl implements Component
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case StateAnalysisPackage.COMPONENT__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case StateAnalysisPackage.COMPONENT__STATE_VARIABLES:
-        return stateVariables != null && !stateVariables.isEmpty();
-      case StateAnalysisPackage.COMPONENT__CONTROLLERS:
-        return controllers != null && !controllers.isEmpty();
-      case StateAnalysisPackage.COMPONENT__ESTIMATORS:
-        return estimators != null && !estimators.isEmpty();
-      case StateAnalysisPackage.COMPONENT__ADAPTERS:
-        return adapters != null && !adapters.isEmpty();
     }
     return super.eIsSet(featureID);
   }
