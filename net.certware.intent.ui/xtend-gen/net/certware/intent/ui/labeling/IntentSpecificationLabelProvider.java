@@ -104,16 +104,14 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
         return (("Operation" + " ") + _name_6);
       }
       String _name_7 = e.getName();
-      String _plus = (("Intent" + " ") + _name_7);
-      _xblockexpression = (_plus);
+      _xblockexpression = (("Intent" + " ") + _name_7);
     }
     return _xblockexpression;
   }
   
   public String text(final Refinement e) {
     String _name = e.getName();
-    String _plus = (("Refinement" + " ") + _name);
-    return _plus;
+    return (("Refinement" + " ") + _name);
   }
   
   public String text(final Decomposition e) {
@@ -142,8 +140,7 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
         return (("V&V" + " ") + _name_3);
       }
       String _name_4 = e.getName();
-      String _plus = (("Decomposition" + " ") + _name_4);
-      _xblockexpression = (_plus);
+      _xblockexpression = (("Decomposition" + " ") + _name_4);
     }
     return _xblockexpression;
   }
@@ -192,8 +189,7 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
         return (("Table" + " ") + _name_5);
       }
       String _name_6 = e.getName();
-      String _plus = (("Item" + " ") + _name_6);
-      _xblockexpression = (_plus);
+      _xblockexpression = (("Item" + " ") + _name_6);
     }
     return _xblockexpression;
   }
@@ -234,8 +230,7 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
         return (("Input" + " ") + _name_5);
       }
       String _name_6 = e.getName();
-      String _plus = (("Model" + " ") + _name_6);
-      _xblockexpression = (_plus);
+      _xblockexpression = (("Model" + " ") + _name_6);
     }
     return _xblockexpression;
   }
@@ -269,8 +264,7 @@ public class IntentSpecificationLabelProvider extends DefaultEObjectLabelProvide
         return (("Constraint" + " ") + _name_3);
       }
       String _name_4 = e.getName();
-      String _plus = (("List" + " ") + _name_4);
-      _xblockexpression = (_plus);
+      _xblockexpression = (("List" + " ") + _name_4);
     }
     return _xblockexpression;
   }

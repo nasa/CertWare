@@ -108,14 +108,12 @@ public class HazardAnalysisLabelProvider extends DefaultEObjectLabelProvider {
   
   public String text(final Accident e) {
     String _ranking = e.getRanking();
-    String _plus = (("Accident" + " ") + _ranking);
-    return _plus;
+    return (("Accident" + " ") + _ranking);
   }
   
   public String text(final Incident e) {
     String _ranking = e.getRanking();
-    String _plus = (("Incident" + " ") + _ranking);
-    return _plus;
+    return (("Incident" + " ") + _ranking);
   }
   
   public String text(final Hazard e) {
@@ -132,61 +130,51 @@ public class HazardAnalysisLabelProvider extends DefaultEObjectLabelProvider {
   
   public String text(final HazardExposure e) {
     String _exposure = e.getExposure();
-    String _plus = (("Exposure" + " ") + _exposure);
-    return _plus;
+    return (("Exposure" + " ") + _exposure);
   }
   
   public String text(final HazardAccidentLikelihood e) {
     String _likelihood = e.getLikelihood();
-    String _plus = (("Accident Likelihood" + " ") + _likelihood);
-    return _plus;
+    return (("Accident Likelihood" + " ") + _likelihood);
   }
   
   public String text(final HazardSeverity e) {
     String _value = e.getValue();
-    String _plus = (("Hazard Severity" + " ") + _value);
-    return _plus;
+    return (("Hazard Severity" + " ") + _value);
   }
   
   public String text(final HazardLikelihood e) {
     String _value = e.getValue();
-    String _plus = (("Hazard Likelihood" + " ") + _value);
-    return _plus;
+    return (("Hazard Likelihood" + " ") + _value);
   }
   
   public String text(final Constraint e) {
     String _constraint = e.getConstraint();
-    String _plus = (("Constraint" + " ") + _constraint);
-    return _plus;
+    return (("Constraint" + " ") + _constraint);
   }
   
   public String text(final Requirement e) {
     String _requirement = e.getRequirement();
-    String _plus = (("Requirement" + " ") + _requirement);
-    return _plus;
+    return (("Requirement" + " ") + _requirement);
   }
   
   public String text(final Design e) {
     String _allocation = e.getAllocation();
-    String _plus = (("Design" + " ") + _allocation);
-    return _plus;
+    return (("Design" + " ") + _allocation);
   }
   
   public String text(final Scenario e) {
     String _scenario = e.getScenario();
-    String _plus = (("Scenario" + " ") + _scenario);
-    return _plus;
+    return (("Scenario" + " ") + _scenario);
   }
   
   public String text(final Control e) {
     String _control = e.getControl();
-    String _plus = (("Control" + " ") + _control);
-    return _plus;
+    return (("Control" + " ") + _control);
   }
   
   public String text(final Note e) {
     String _note = e.getNote();
-    String _plus = (("Note" + " ") + _note);
-    return _plus;
+    return (("Note" + " ") + _note);
   }
 }

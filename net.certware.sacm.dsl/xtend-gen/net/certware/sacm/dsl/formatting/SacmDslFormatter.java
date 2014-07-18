@@ -28,8 +28,8 @@ public class SacmDslFormatter extends AbstractDeclarativeFormatter {
   private SacmDslGrammarAccess _sacmDslGrammarAccess;
   
   protected void configureFormatting(final FormattingConfig c) {
-    List<Pair<Keyword,Keyword>> _findKeywordPairs = this._sacmDslGrammarAccess.findKeywordPairs("{", "}");
-    for (final Pair<Keyword,Keyword> pair : _findKeywordPairs) {
+    List<Pair<Keyword, Keyword>> _findKeywordPairs = this._sacmDslGrammarAccess.findKeywordPairs("{", "}");
+    for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {
       {
         Keyword _first = pair.getFirst();
         Keyword _second = pair.getSecond();
