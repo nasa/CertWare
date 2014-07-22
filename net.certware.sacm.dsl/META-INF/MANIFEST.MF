@@ -12,19 +12,17 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
  org.eclipse.emf.mwe2.launch;resolution:=optional,
- net.certware.sacm;bundle-version="1.0.0",
  org.eclipse.xtext.util,
  org.antlr.runtime,
- org.eclipse.xtext.common.types
+ org.eclipse.xtext.common.types,
+ net.certware.sacm;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.sacm.dsl,
- net.certware.sacm.dsl.services,
- net.certware.sacm.dsl.serializer,
- net.certware.sacm.dsl.parser.antlr,
- net.certware.sacm.dsl.parser.antlr.internal,
- net.certware.sacm.dsl.validation,
- net.certware.sacm.dsl.scoping,
+ net.certware.sacm.dsl.formatting,
  net.certware.sacm.dsl.generator,
- net.certware.sacm.dsl.formatting
+ net.certware.sacm.dsl.parser.antlr.internal,
+ net.certware.sacm.dsl.scoping,
+ net.certware.sacm.dsl.services,
+ net.certware.sacm.dsl.validation

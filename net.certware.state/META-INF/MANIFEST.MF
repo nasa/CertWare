@@ -21,14 +21,9 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.state,
- net.certware.state.services,
- net.certware.state.stateAnalysis,
- net.certware.state.stateAnalysis.impl,
- net.certware.state.stateAnalysis.util,
- net.certware.state.serializer,
- net.certware.state.parser.antlr,
- net.certware.state.parser.antlr.internal,
- net.certware.state.validation,
- net.certware.state.scoping,
+ net.certware.state.formatting,
  net.certware.state.generator,
- net.certware.state.formatting
+ net.certware.state.parser.antlr.internal,
+ net.certware.state.scoping,
+ net.certware.state.services,
+ net.certware.state.validation

@@ -21,14 +21,11 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.hazard.stpa,
- net.certware.hazard.stpa.services,
  net.certware.hazard.stpa.hazardAnalysis,
  net.certware.hazard.stpa.hazardAnalysis.impl,
  net.certware.hazard.stpa.hazardAnalysis.util,
- net.certware.hazard.stpa.serializer,
  net.certware.hazard.stpa.parser.antlr,
  net.certware.hazard.stpa.parser.antlr.internal,
- net.certware.hazard.stpa.validation,
- net.certware.hazard.stpa.scoping,
- net.certware.hazard.stpa.generator,
- net.certware.hazard.stpa.formatting
+ net.certware.hazard.stpa.serializer,
+ net.certware.hazard.stpa.services,
+ net.certware.hazard.stpa.validation

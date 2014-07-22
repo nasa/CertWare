@@ -21,14 +21,10 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.intent,
- net.certware.intent.services,
- net.certware.intent.intentSpecification,
- net.certware.intent.intentSpecification.impl,
- net.certware.intent.intentSpecification.util,
- net.certware.intent.serializer,
- net.certware.intent.parser.antlr,
- net.certware.intent.parser.antlr.internal,
- net.certware.intent.validation,
- net.certware.intent.scoping,
+ net.certware.intent.formatting,
  net.certware.intent.generator,
- net.certware.intent.formatting
+ net.certware.intent.intentSpecification,
+ net.certware.intent.parser.antlr.internal,
+ net.certware.intent.scoping,
+ net.certware.intent.services,
+ net.certware.intent.validation

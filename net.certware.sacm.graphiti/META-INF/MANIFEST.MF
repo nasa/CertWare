@@ -14,8 +14,7 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.graphiti,
  org.eclipse.graphiti.ui,
  net.certware.sacm,
- net.certware.core;bundle-version="1.2.1",
- org.eclipse.graphiti.export.batik;bundle-version="0.10.1"
+ net.certware.core;bundle-version="1.2.1"
 Bundle-Vendor: Kestrel Technology LLC
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: bin/
