@@ -23,8 +23,10 @@ Require-Bundle: net.certware.intent.state;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: net.certware.intent.state.ui.quickfix,
+Export-Package: net.certware.intent.state.ui,
  net.certware.intent.state.ui.contentassist,
  net.certware.intent.state.ui.contentassist.antlr,
- net.certware.intent.state.ui.internal
+ net.certware.intent.state.ui.contentassist.antlr.internal,
+ net.certware.intent.state.ui.internal,
+ net.certware.intent.state.ui.wizard
 Bundle-Activator: net.certware.intent.state.ui.internal.StateSpecificationActivator

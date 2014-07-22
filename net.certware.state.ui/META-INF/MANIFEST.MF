@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: net.certware.state.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: Kestrel Technology LLC
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: net.certware.state.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -18,9 +18,10 @@ Require-Bundle: net.certware.state;visibility:=reexport,
  org.eclipse.compare
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: net.certware.state.ui.quickfix,
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: net.certware.state.ui,
  net.certware.state.ui.contentassist,
  net.certware.state.ui.contentassist.antlr,
+ net.certware.state.ui.contentassist.antlr.internal,
  net.certware.state.ui.internal
 Bundle-Activator: net.certware.state.ui.internal.StateAnalysisActivator
