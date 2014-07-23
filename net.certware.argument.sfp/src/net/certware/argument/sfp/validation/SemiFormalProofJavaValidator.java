@@ -206,7 +206,6 @@ public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaVal
 	 * Issues error if proof statement references contain cycles.
 	 * @param proof proof to validate
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Check
 	public void proofHasNoCycles(Proof proof) {
 		if ( proof == null || proof.getProofSteps() == null ) 
