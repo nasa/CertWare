@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>certware</artifactId>
-    <groupId>net.certware.tycho.build</groupId>
+    <artifactId>CertWare</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    		<groupId>net.certware.tycho.build</groupId>
   </parent>
-  <groupId>net.certware.tycho.build</groupId>
+  <groupId>net.certware.feature.sacm</groupId>
   <artifactId>net.certware.feature.sacm</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-feature</packaging>

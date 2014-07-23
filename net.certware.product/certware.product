@@ -14,8 +14,10 @@
    </configIni>
 
    <launcherArgs>
-      <programArgs>-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog</programArgs>
-      <vmArgsMac>-XstartOnFirstThread</vmArgsMac>
+      <programArgs>-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread
+      </vmArgsMac>
    </launcherArgs>
 
    <windowImages i16="/net.certware.product/icons/obj16/certware.gif" i32="/net.certware.product/icons/obj32/certware-32.gif" i48="/net.certware.product/icons/obj48/certware-48.gif" i64="/net.certware.product/icons/obj64/certware-64.gif" i128="/net.certware.product/icons/obj128/certware-128.gif"/>
@@ -110,8 +112,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="com.google.inject"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="com.jcraft.jsch"/>
-      <plugin id="com.sun.syndication"/>
-      <plugin id="de.itemis.xtext.antlr"/>
       <plugin id="javaewah"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
@@ -130,10 +130,8 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.evidence.hugin.instance"/>
       <plugin id="net.certware.evidence.hugin.instance.edit"/>
       <plugin id="net.certware.evidence.hugin.instance.editor"/>
-      <plugin id="net.certware.evidence.hugin.test"/>
       <plugin id="net.certware.evidence.hugin.ui"/>
       <plugin id="net.certware.evidence.hugin.view"/>
-      <plugin id="net.certware.evidence.inference.test"/>
       <plugin id="net.certware.example"/>
       <plugin id="net.certware.example.checklist" fragment="true"/>
       <plugin id="net.certware.example.net" fragment="true"/>
@@ -142,6 +140,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.example.ssei" fragment="true"/>
       <plugin id="net.certware.export"/>
       <plugin id="net.certware.export.sacm"/>
+      <plugin id="net.certware.gsn"/>
       <plugin id="net.certware.hazard"/>
       <plugin id="net.certware.hazard.edit"/>
       <plugin id="net.certware.hazard.editor"/>
@@ -184,23 +183,23 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.product"/>
       <plugin id="net.certware.sacm"/>
       <plugin id="net.certware.sacm.dsl"/>
-      <plugin id="net.certware.sacm.dsl.tests"/>
       <plugin id="net.certware.sacm.dsl.ui"/>
       <plugin id="net.certware.sacm.edit"/>
       <plugin id="net.certware.sacm.editor"/>
       <plugin id="net.certware.sacm.help"/>
       <plugin id="net.certware.sacm.navigator"/>
       <plugin id="net.certware.sacm.validator"/>
+      <plugin id="net.certware.state"/>
       <plugin id="net.certware.state.gui"/>
       <plugin id="net.certware.state.gui.diagram"/>
       <plugin id="net.certware.state.gui.edit"/>
       <plugin id="net.certware.state.gui.editor"/>
+      <plugin id="net.certware.state.ui"/>
       <plugin id="net.certware.verification.checklist"/>
       <plugin id="net.certware.verification.checklist.edit"/>
       <plugin id="net.certware.verification.checklist.editor"/>
       <plugin id="net.certware.verification.checklist.navigator"/>
       <plugin id="net.certware.verification.checklist.view"/>
-      <plugin id="org.antlr.generator"/>
       <plugin id="org.antlr.runtime"/>
       <plugin id="org.antlr.runtime_3.1.b1"/>
       <plugin id="org.apache.ant"/>
@@ -247,13 +246,13 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.core.externaltools"/>
       <plugin id="org.eclipse.core.filebuffers"/>
       <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.java7" fragment="true"/>
       <plugin id="org.eclipse.core.filesystem.macosx" fragment="true"/>
       <plugin id="org.eclipse.core.jobs"/>
       <plugin id="org.eclipse.core.net"/>
       <plugin id="org.eclipse.core.resources"/>
       <plugin id="org.eclipse.core.runtime"/>
       <plugin id="org.eclipse.core.runtime.compatibility"/>
-      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
       <plugin id="org.eclipse.core.variables"/>
       <plugin id="org.eclipse.debug.core"/>
@@ -278,15 +277,10 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.e4.ui.workbench.renderers.swt.cocoa" fragment="true"/>
       <plugin id="org.eclipse.e4.ui.workbench.swt"/>
       <plugin id="org.eclipse.e4.ui.workbench3"/>
-      <plugin id="org.eclipse.egf.common"/>
-      <plugin id="org.eclipse.egf.common.ui"/>
-      <plugin id="org.eclipse.egf.core"/>
-      <plugin id="org.eclipse.egf.core.pde"/>
-      <plugin id="org.eclipse.egf.core.platform"/>
-      <plugin id="org.eclipse.egf.core.ui"/>
       <plugin id="org.eclipse.egit"/>
       <plugin id="org.eclipse.egit.core"/>
       <plugin id="org.eclipse.emf"/>
+      <plugin id="org.eclipse.emf.cdo.ecore.retrofit" fragment="true"/>
       <plugin id="org.eclipse.emf.codegen"/>
       <plugin id="org.eclipse.emf.codegen.ecore"/>
       <plugin id="org.eclipse.emf.codegen.ecore.ui"/>
@@ -306,6 +300,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.emf.eef.runtime.extended"/>
       <plugin id="org.eclipse.emf.eef.views"/>
       <plugin id="org.eclipse.emf.mapping"/>
+      <plugin id="org.eclipse.emf.mapping.xsd2ecore"/>
       <plugin id="org.eclipse.emf.mwe.core"/>
       <plugin id="org.eclipse.emf.mwe.utils"/>
       <plugin id="org.eclipse.emf.mwe2.language"/>
@@ -401,7 +396,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.help.base"/>
       <plugin id="org.eclipse.help.ui"/>
-      <plugin id="org.eclipse.jdt.annotation"/>
       <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
       <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
       <plugin id="org.eclipse.jdt.core"/>
@@ -448,6 +442,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.ocl.common"/>
       <plugin id="org.eclipse.ocl.ecore"/>
       <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.pde.build"/>
       <plugin id="org.eclipse.pde.core"/>
@@ -462,6 +457,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.ui"/>
       <plugin id="org.eclipse.ui.browser"/>
       <plugin id="org.eclipse.ui.cheatsheets"/>
+      <plugin id="org.eclipse.ui.cocoa" fragment="true"/>
       <plugin id="org.eclipse.ui.console"/>
       <plugin id="org.eclipse.ui.editors"/>
       <plugin id="org.eclipse.ui.externaltools"/>
@@ -472,6 +468,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.ui.intro.universal"/>
       <plugin id="org.eclipse.ui.navigator"/>
       <plugin id="org.eclipse.ui.navigator.resources"/>
+      <plugin id="org.eclipse.ui.trace"/>
       <plugin id="org.eclipse.ui.views"/>
       <plugin id="org.eclipse.ui.views.log"/>
       <plugin id="org.eclipse.ui.views.properties.tabbed"/>
@@ -502,7 +499,6 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.xtext.xbase"/>
       <plugin id="org.eclipse.xtext.xbase.lib"/>
       <plugin id="org.hamcrest.core"/>
-      <plugin id="org.jdom"/>
       <plugin id="org.junit"/>
       <plugin id="org.objectweb.asm"/>
       <plugin id="org.sat4j.core"/>
@@ -513,5 +509,13 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.w3c.dom.svg"/>
    </plugins>
 
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
 
 </product>

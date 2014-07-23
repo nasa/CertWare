@@ -1,17 +1,17 @@
 *.pydevproject
 # .project
 .metadata
-bin/**
-target/
-target/**
-tmp/**
-tmp/**/*
+bin/
+# target/
+# target/**
+tmp/
+tmp/
 *.tmp
 *.bak
 *.swp
 *~.nib
 local.properties
-.classpath
+# .classpath
 .settings/
 .loadpath
 *.class
@@ -26,9 +26,13 @@ local.properties
 # .cproject
 
 # PDT-specific
+.buildpath
 .buildpath/my.x
 /my.x.diagram
 /my.x.edit
 /my.x.editor
 /my.x.tests
 /my.x
+
+# TeXlipse plugin
+.texlipse

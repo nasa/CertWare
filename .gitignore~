@@ -1,7 +1,9 @@
 *.pydevproject
-.project
+# .project
 .metadata
 bin/**
+target/
+target/**
 tmp/**
 tmp/**/*
 *.tmp
@@ -21,7 +23,12 @@ local.properties
 *.launch
 
 # CDT-specific
-.cproject
+# .cproject
 
 # PDT-specific
-.buildpath
+.buildpath/my.x
+/my.x.diagram
+/my.x.edit
+/my.x.editor
+/my.x.tests
+/my.x

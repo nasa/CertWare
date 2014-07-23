@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.certware.tycho.build</groupId>
-	<artifactId>certware</artifactId>
+	<artifactId>CertWare</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
@@ -35,18 +35,28 @@
 		<module>net.certware.feature</module>
 		<module>net.certware.feature.bayes</module>
 		<module>net.certware.feature.check</module>
+		<module>net.certware.feature.intent</module>
 		<module>net.certware.feature.measure</module>
 		<module>net.certware.feature.planning</module>
 		<module>net.certware.feature.sacm</module>
 		<module>net.certware.feature.sfp</module>
+		<module>net.certware.feature.stpa</module>
 		<module>net.certware.feature.updatesite</module>
+		<module>net.certware.gsn</module>
 		<module>net.certware.hazard</module>
 		<module>net.certware.hazard.edit</module>
 		<module>net.certware.hazard.editor</module>
+		<module>net.certware.hazard.stpa</module>
+		<module>net.certware.hazard.stpa.ui</module>
 		<module>net.certware.help</module>
 		<module>net.certware.history</module>
 		<module>net.certware.history.egit</module>
 		<module>net.certware.history.tasks</module>
+		<module>net.certware.intent</module>
+		<module>net.certware.intent.help</module>
+		<module>net.certware.intent.state</module>
+		<module>net.certware.intent.state.ui</module>
+		<module>net.certware.intent.ui</module>
 		<module>net.certware.intro</module>
 		<module>net.certware.libs.doc</module>
 		<module>net.certware.libs.inference</module>
@@ -74,34 +84,39 @@
 		<module>net.certware.planning.mspdi.editor</module>
 		<module>net.certware.product</module>
 		<module>net.certware.sacm</module>
-		<!--  <module>net.certware.sacm.diagram</module> -->
 		<module>net.certware.sacm.dsl</module>
-		<module>net.certware.sacm.dsl.tests</module>
 		<module>net.certware.sacm.dsl.ui</module>
 		<module>net.certware.sacm.edit</module>
 		<module>net.certware.sacm.editor</module>
-		<module>net.certware.sacm.eef</module>
+		<module>net.certware.sacm.graphiti</module>
 		<module>net.certware.sacm.help</module>
 		<module>net.certware.sacm.navigator</module>
 		<module>net.certware.sacm.validator</module>
+		<module>net.certware.state</module>
+		<module>net.certware.state.gui</module>
+		<module>net.certware.state.gui.diagram</module>
+		<module>net.certware.state.gui.edit</module>
+		<module>net.certware.state.gui.editor</module>
+		<module>net.certware.state.ui</module>
 		<module>net.certware.verification.checklist</module>
 		<module>net.certware.verification.checklist.edit</module>
 		<module>net.certware.verification.checklist.editor</module>
 		<module>net.certware.verification.checklist.navigator</module>
 		<module>net.certware.verification.checklist.view</module>
-	</modules>
+ 	</modules>
 	<properties>
-		<tycho.version>0.18.1</tycho.version>
-		<tycho-extras.version>0.18.1</tycho-extras.version>
+		<tycho.version>0.20.0</tycho.version>
+		<tycho-extras.version>0.20.0</tycho-extras.version>
 		<kepler-repo.url>http://download.eclipse.org/releases/kepler</kepler-repo.url>
+		<luna-repo.url>http://download.eclipse.org/releases/luna</luna-repo.url>
 		<epsilon-repo.url>http://download.eclipse.org/epsilon/updates</epsilon-repo.url>
 		<tycho-repo.url>https://oss.sonatype.org/content/groups/public/</tycho-repo.url>
 		<project.name>certware</project.name>
 	</properties>
 	<repositories>
 		<repository>
-			<id>kepler</id>
-			<url>${kepler-repo.url}</url>
+			<id>luna</id>
+			<url>${luna-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
@@ -124,6 +139,7 @@
 	</pluginRepositories>
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
@@ -180,6 +196,11 @@
 					</execution>
 				</executions>
 			</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho.version}</version>
+				</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>

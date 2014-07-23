@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>certware</artifactId>
+    <artifactId>CertWare</artifactId>
     <groupId>net.certware.tycho.build</groupId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
