@@ -119,6 +119,7 @@ public class StateAnalysisValidationDecoratorProvider extends AbstractProvider
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	private static void refreshDecorators(String viewId, Diagram diagram) {
 		final List decorators = viewId != null ? (List) allDecorators
 				.get(viewId) : null;
@@ -302,6 +303,7 @@ public class StateAnalysisValidationDecoratorProvider extends AbstractProvider
 		/**
 		 * @generated
 		 */
+		@SuppressWarnings("rawtypes")
 		public void activate() {
 			if (viewId == null) {
 				return;
@@ -335,6 +337,7 @@ public class StateAnalysisValidationDecoratorProvider extends AbstractProvider
 		/**
 		 * @generated
 		 */
+		@SuppressWarnings("rawtypes")
 		public void deactivate() {
 			if (viewId == null) {
 				return;

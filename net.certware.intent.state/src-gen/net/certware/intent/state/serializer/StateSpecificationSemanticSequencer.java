@@ -1,7 +1,5 @@
 package net.certware.intent.state.serializer;
 
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 import net.certware.intent.state.services.StateSpecificationGrammarAccess;
 import net.certware.intent.state.stateSpecification.BigUnitValue;
 import net.certware.intent.state.stateSpecification.Component;
@@ -27,17 +25,14 @@ import net.certware.intent.state.stateSpecification.Trigger;
 import net.certware.intent.state.stateSpecification.TriggerTable;
 import net.certware.intent.state.stateSpecification.ValueList;
 import net.certware.intent.state.stateSpecification.ValueRange;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class StateSpecificationSemanticSequencer extends AbstractDelegatingSemanticSequencer {

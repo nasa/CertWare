@@ -1,6 +1,5 @@
 package net.certware.evidence.hugin.view.tree;
 
-import net.certware.evidence.hugin.view.tree.VariableNode;
 
 
 /**

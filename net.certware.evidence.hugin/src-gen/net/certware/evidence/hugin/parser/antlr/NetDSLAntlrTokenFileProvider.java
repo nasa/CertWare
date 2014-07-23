@@ -4,6 +4,7 @@
 package net.certware.evidence.hugin.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class NetDSLAntlrTokenFileProvider implements IAntlrTokenFileProvider {

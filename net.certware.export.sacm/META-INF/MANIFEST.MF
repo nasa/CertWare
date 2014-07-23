@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.export.sacm;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.certware.export.sacm.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: net.certware.core.ui.log,
  org.eclipse.core.commands,
  org.eclipse.core.resources,

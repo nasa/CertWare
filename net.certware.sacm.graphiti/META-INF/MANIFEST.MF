@@ -16,5 +16,5 @@ Require-Bundle: org.eclipse.emf.ecore,
  net.certware.sacm,
  net.certware.core;bundle-version="1.2.1"
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ClassPath: .

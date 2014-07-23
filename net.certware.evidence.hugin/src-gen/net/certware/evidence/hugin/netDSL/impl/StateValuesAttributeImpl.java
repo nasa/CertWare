@@ -5,17 +5,14 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
-import java.lang.Integer;
-
 import java.util.Collection;
 
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
 import net.certware.evidence.hugin.netDSL.StateValuesAttribute;
+import net.certware.evidence.hugin.netDSL.Integer;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
@@ -69,11 +66,11 @@ public class StateValuesAttributeImpl extends AttributeImpl implements StateValu
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Integer> getNumbers()
+  public EList<net.certware.evidence.hugin.netDSL.Integer> getNumbers()
   {
     if (numbers == null)
     {
-      numbers = new EDataTypeEList<Integer>(Integer.class, this, NetDSLPackage.STATE_VALUES_ATTRIBUTE__NUMBERS);
+      numbers = new EDataTypeEList<net.certware.evidence.hugin.netDSL.Integer>(Integer.class, this, NetDSLPackage.STATE_VALUES_ATTRIBUTE__NUMBERS);
     }
     return numbers;
   }

@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.verification.checklist.navigator;singleton:=tr
 Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.verification.checklist.navigator.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: net.certware.core,
  net.certware.core.ui.log,
  net.certware.verification.checklist,

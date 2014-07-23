@@ -4,7 +4,7 @@ Bundle-Name: CertWare Project Intro Page
 Bundle-SymbolicName: net.certware.intro;singleton:=true
 Bundle-Version: 1.2.3.qualifier
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Require-Bundle: org.eclipse.ui.intro,
  org.eclipse.ui.intro.universal,
  org.eclipse.ui,

@@ -4,8 +4,8 @@
  */
 package net.certware.evidence.hugin.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.DefaultUiModule;
 
 /**
  * Manual modifications go to {net.certware.evidence.hugin.ui.NetDSLUiModule}

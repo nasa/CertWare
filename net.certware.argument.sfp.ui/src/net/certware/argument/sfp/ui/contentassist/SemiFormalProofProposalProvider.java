@@ -3,7 +3,6 @@
 */
 package net.certware.argument.sfp.ui.contentassist;
 
-import net.certware.argument.sfp.ui.contentassist.AbstractSemiFormalProofProposalProvider;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */

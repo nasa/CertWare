@@ -6,14 +6,17 @@ package net.certware.evidence.hugin.instance.impl;
 
 import java.util.Map;
 
-import net.certware.evidence.hugin.instance.*;
+import net.certware.evidence.hugin.instance.EngineSettings;
+import net.certware.evidence.hugin.instance.InstanceFactory;
+import net.certware.evidence.hugin.instance.InstanceNetwork;
+import net.certware.evidence.hugin.instance.InstancePackage;
+import net.certware.evidence.hugin.instance.InstanceState;
+import net.certware.evidence.hugin.instance.InstanceVariable;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

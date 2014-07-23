@@ -3,12 +3,12 @@
  */
 package net.certware.argument.sfp.ui;
 
+import net.certware.argument.sfp.ui.internal.SemiFormalProofActivator;
+
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
-
-import net.certware.argument.sfp.ui.internal.SemiFormalProofActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly

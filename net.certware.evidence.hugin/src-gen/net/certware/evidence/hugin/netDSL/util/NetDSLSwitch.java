@@ -69,7 +69,6 @@ import net.certware.evidence.hugin.netDSL.unaryExpression;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
 /**

@@ -3,10 +3,11 @@
 */
 package net.certware.evidence.hugin.parser.antlr;
 
-import com.google.inject.Inject;
+import net.certware.evidence.hugin.services.NetDSLGrammarAccess;
 
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import net.certware.evidence.hugin.services.NetDSLGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class NetDSLParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

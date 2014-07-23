@@ -38,6 +38,7 @@ public class StateAnalysisDiagramUpdateCommand implements IHandler {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection selection = PlatformUI.getWorkbench()
 				.getActiveWorkbenchWindow().getSelectionService()

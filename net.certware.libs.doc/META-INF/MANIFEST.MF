@@ -395,4 +395,4 @@ Export-Package: .,
  org.pptx4j.model,
  org.pptx4j.pml,
  org.pptx4j.samples
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

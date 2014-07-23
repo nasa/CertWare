@@ -67,6 +67,7 @@ public class StateAnalysisBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	 * 
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
 			Object view = ((ReconnectRequest) request).getConnectionEditPart()
@@ -282,6 +283,7 @@ public class StateAnalysisBaseItemSemanticEditPolicy extends SemanticEditPolicy 
 	 * Clean all shortcuts to the host element from the same diagram
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
 		for (Iterator it = view.getDiagram().getChildren().iterator(); it

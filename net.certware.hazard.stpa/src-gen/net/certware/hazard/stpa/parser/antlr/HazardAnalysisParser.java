@@ -3,10 +3,11 @@
 */
 package net.certware.hazard.stpa.parser.antlr;
 
-import com.google.inject.Inject;
+import net.certware.hazard.stpa.services.HazardAnalysisGrammarAccess;
 
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import net.certware.hazard.stpa.services.HazardAnalysisGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class HazardAnalysisParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

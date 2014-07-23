@@ -247,6 +247,7 @@ public class SystemCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	private Collection<stateAnalysis.diagram.part.StateAnalysisLinkDescriptor> collectAllLinks(
 			View view, Domain2Notation domain2NotationMap) {
 		if (!stateAnalysis.diagram.edit.parts.SystemEditPart.MODEL_ID

@@ -135,6 +135,7 @@ public class OpenDiagramEditPolicy extends OpenEditPolicy {
 			}
 			try {
 				new WorkspaceModifyOperation() {
+					@SuppressWarnings("rawtypes")
 					protected void execute(IProgressMonitor monitor)
 							throws CoreException, InvocationTargetException,
 							InterruptedException {

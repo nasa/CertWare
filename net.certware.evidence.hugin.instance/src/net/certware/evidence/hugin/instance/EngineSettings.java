@@ -5,7 +5,6 @@
 package net.certware.evidence.hugin.instance;
 
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

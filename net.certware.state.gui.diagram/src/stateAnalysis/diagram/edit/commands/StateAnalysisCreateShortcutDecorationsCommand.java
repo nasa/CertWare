@@ -27,11 +27,13 @@ public class StateAnalysisCreateShortcutDecorationsCommand extends
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	private List myDescriptors;
 
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	public StateAnalysisCreateShortcutDecorationsCommand(
 			TransactionalEditingDomain editingDomain, View parentView,
 			List viewDescriptors) {
@@ -52,6 +54,7 @@ public class StateAnalysisCreateShortcutDecorationsCommand extends
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
 			IAdaptable info) throws ExecutionException {
 		for (Iterator it = myDescriptors.iterator(); it.hasNext();) {

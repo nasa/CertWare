@@ -5,8 +5,6 @@
  */
 package net.certware.evidence.hugin.netDSL.impl;
 
-import java.lang.Integer;
-
 import net.certware.evidence.hugin.netDSL.Expression;
 import net.certware.evidence.hugin.netDSL.IntegerLiteral;
 import net.certware.evidence.hugin.netDSL.NetDSLPackage;
@@ -22,10 +20,8 @@ import net.certware.evidence.hugin.netDSL.unaryExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

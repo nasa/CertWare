@@ -2,15 +2,24 @@
  */
 package net.certware.argument.sfp.semiFormalProof.impl;
 
-import net.certware.argument.sfp.semiFormalProof.*;
+import net.certware.argument.sfp.semiFormalProof.Conjunction;
+import net.certware.argument.sfp.semiFormalProof.Entailment;
+import net.certware.argument.sfp.semiFormalProof.Justification;
+import net.certware.argument.sfp.semiFormalProof.Justifications;
+import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.argument.sfp.semiFormalProof.ProofSteps;
+import net.certware.argument.sfp.semiFormalProof.QuotedAssertion;
+import net.certware.argument.sfp.semiFormalProof.SemiFormalProofFactory;
+import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
+import net.certware.argument.sfp.semiFormalProof.Statement;
+import net.certware.argument.sfp.semiFormalProof.Validation;
+import net.certware.argument.sfp.semiFormalProof.ValidationKind;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

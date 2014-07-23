@@ -25,6 +25,7 @@ public class StateAnalysisNavigatorGroup extends
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	private Collection myChildren = new LinkedList();
 
 	/**

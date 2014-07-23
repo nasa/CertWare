@@ -3,7 +3,6 @@
 package net.certware.argument.sfp.semiFormalProof;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

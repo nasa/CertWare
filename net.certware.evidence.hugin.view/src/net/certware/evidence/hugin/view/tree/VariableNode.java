@@ -3,7 +3,6 @@ package net.certware.evidence.hugin.view.tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.certware.evidence.hugin.view.tree.VariableNodeState;
 import edu.ucla.belief.io.hugin.HuginNode;
 
 /**

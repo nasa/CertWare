@@ -31,6 +31,7 @@ public class StateAnalysisMarkerNavigationProvider extends
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected void doGotoMarker(IMarker marker) {
 		String elementId = marker
 				.getAttribute(

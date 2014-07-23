@@ -4,8 +4,8 @@ import java.util.List;
 
 import net.certware.core.ui.log.CertWareLog;
 import net.certware.evidence.hugin.view.ViewTree;
-import net.certware.evidence.hugin.view.tree.VariableNode;
 import net.certware.evidence.hugin.view.jobs.MapCalculationJob;
+import net.certware.evidence.hugin.view.tree.VariableNode;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;

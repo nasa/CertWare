@@ -109,6 +109,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("deprecation")
 	public static void runNonUIValidation(View view) {
 		DiagramEditPart diagramEditPart = OffscreenEditPartFactory
 				.getInstance().createDiagramEditPart(view.getDiagram());
@@ -171,6 +172,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	private static void createMarkers(IFile target, IStatus validationStatus,
 			DiagramEditPart diagramEditPart) {
 		if (validationStatus.isOK()) {
@@ -196,6 +198,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	private static void createMarkers(IFile target,
 			Diagnostic emfValidationStatus, DiagramEditPart diagramEditPart) {
 		if (emfValidationStatus.getSeverity() == Diagnostic.OK) {
@@ -259,6 +262,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private static Set<EObject> collectTargetElements(IStatus status,
 			Set<EObject> targetElementCollector, List allConstraintStatuses) {
 		if (status instanceof IConstraintStatus) {
@@ -279,6 +283,7 @@ public class ValidateAction extends Action {
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static Set<EObject> collectTargetElements(Diagnostic diagnostic,
 			Set<EObject> targetElementCollector, List allDiagnostics) {
 		List data = diagnostic.getData();

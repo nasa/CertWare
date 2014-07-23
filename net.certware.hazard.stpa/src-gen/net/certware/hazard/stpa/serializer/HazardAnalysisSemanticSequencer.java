@@ -1,7 +1,5 @@
 package net.certware.hazard.stpa.serializer;
 
-import com.google.inject.Inject;
-import com.google.inject.Provider;
 import net.certware.hazard.stpa.hazardAnalysis.Accident;
 import net.certware.hazard.stpa.hazardAnalysis.Constraint;
 import net.certware.hazard.stpa.hazardAnalysis.Control;
@@ -20,17 +18,14 @@ import net.certware.hazard.stpa.hazardAnalysis.Requirement;
 import net.certware.hazard.stpa.hazardAnalysis.RiskLevel;
 import net.certware.hazard.stpa.hazardAnalysis.Scenario;
 import net.certware.hazard.stpa.services.HazardAnalysisGrammarAccess;
+
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
-import org.eclipse.xtext.serializer.diagnostic.ISemanticSequencerDiagnosticProvider;
-import org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic.Acceptor;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.GenericSequencer;
 import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEObjectProvider;
-import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class HazardAnalysisSemanticSequencer extends AbstractDelegatingSemanticSequencer {

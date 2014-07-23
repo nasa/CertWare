@@ -5,8 +5,6 @@
  */
 package net.certware.evidence.hugin.netDSL;
 
-import java.lang.Integer;
-
 import org.eclipse.emf.common.util.EList;
 
 /**

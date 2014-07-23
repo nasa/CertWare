@@ -13,5 +13,5 @@ Import-Package: org.apache.log4j,org.junit;version="4.5.0",org.junit.r
  rg.junit.runner.notification;version="4.5.0",org.junit.runners;versio
  n="4.5.0",org.junit.runners.model;version="4.5.0",org.hamcrest.core
 Bundle-SymbolicName: net.certware.sacm.dsl.tests; singleton:=true
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 

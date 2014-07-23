@@ -6,13 +6,15 @@ package net.certware.evidence.hugin.instance.util;
 
 import java.util.Map;
 
-import net.certware.evidence.hugin.instance.*;
+import net.certware.evidence.hugin.instance.EngineSettings;
+import net.certware.evidence.hugin.instance.InstanceNetwork;
+import net.certware.evidence.hugin.instance.InstancePackage;
+import net.certware.evidence.hugin.instance.InstanceState;
+import net.certware.evidence.hugin.instance.InstanceVariable;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

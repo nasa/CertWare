@@ -2,14 +2,29 @@
  */
 package net.certware.hazard.stpa.hazardAnalysis.impl;
 
-import net.certware.hazard.stpa.hazardAnalysis.*;
+import net.certware.hazard.stpa.hazardAnalysis.Accident;
+import net.certware.hazard.stpa.hazardAnalysis.Constraint;
+import net.certware.hazard.stpa.hazardAnalysis.Control;
+import net.certware.hazard.stpa.hazardAnalysis.Design;
+import net.certware.hazard.stpa.hazardAnalysis.Hazard;
+import net.certware.hazard.stpa.hazardAnalysis.HazardAccidentLikelihood;
+import net.certware.hazard.stpa.hazardAnalysis.HazardAnalysisFactory;
+import net.certware.hazard.stpa.hazardAnalysis.HazardAnalysisPackage;
+import net.certware.hazard.stpa.hazardAnalysis.HazardExposure;
+import net.certware.hazard.stpa.hazardAnalysis.HazardLevel;
+import net.certware.hazard.stpa.hazardAnalysis.HazardLikelihood;
+import net.certware.hazard.stpa.hazardAnalysis.HazardSeverity;
+import net.certware.hazard.stpa.hazardAnalysis.Incident;
+import net.certware.hazard.stpa.hazardAnalysis.Model;
+import net.certware.hazard.stpa.hazardAnalysis.Note;
+import net.certware.hazard.stpa.hazardAnalysis.Requirement;
+import net.certware.hazard.stpa.hazardAnalysis.RiskLevel;
+import net.certware.hazard.stpa.hazardAnalysis.Scenario;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

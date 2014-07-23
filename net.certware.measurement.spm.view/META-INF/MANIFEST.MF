@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.measurement.spm.view;singleton:=true
 Bundle-Version: 1.2.2.qualifier
 Bundle-Activator: net.certware.measurement.spm.view.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.emf.edit.ui.provider,
  org.eclipse.ui.dialogs,
  org.osgi.framework

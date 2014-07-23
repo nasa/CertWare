@@ -5,4 +5,4 @@ Bundle-SymbolicName: net.certware.evidence.hugin.test;singleton:=true
 Bundle-Version: 1.2.1.qualifier
 Bundle-ClassPath: net.certware.evidence.hugin.test
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

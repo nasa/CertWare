@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.history.egit;singleton:=true
 Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.history.egit.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.team.core,
  org.eclipse.team.core.history,
  org.eclipse.ui.actions,

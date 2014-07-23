@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.argument.sfp.review;singleton:=true
 Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.argument.sfp.review.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: net.certware.argument.sfp,
  net.certware.argument.sfp.semiFormalProof,
  net.certware.argument.sfp.semiFormalProof.impl,

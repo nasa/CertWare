@@ -3,7 +3,6 @@
  */
 package net.certware.hazard.stpa.validation;
 
-import net.certware.hazard.stpa.validation.AbstractHazardAnalysisValidator;
 
 /**
  * Custom validation rules.

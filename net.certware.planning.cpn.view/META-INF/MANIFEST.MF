@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.planning.cpn.view;singleton:=true
 Bundle-Version: 1.2.2.qualifier
 Bundle-Activator: net.certware.planning.cpn.view.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: net.certware.core,
  net.certware.core.ui,
  net.certware.core.ui.log,

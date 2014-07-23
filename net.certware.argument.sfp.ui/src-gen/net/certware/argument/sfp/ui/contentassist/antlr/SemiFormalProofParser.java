@@ -4,8 +4,10 @@
 package net.certware.argument.sfp.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+
+import net.certware.argument.sfp.services.SemiFormalProofGrammarAccess;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
@@ -14,8 +16,6 @@ import org.eclipse.xtext.ui.editor.contentassist.antlr.FollowElement;
 import org.eclipse.xtext.ui.editor.contentassist.antlr.internal.AbstractInternalContentAssistParser;
 
 import com.google.inject.Inject;
-
-import net.certware.argument.sfp.services.SemiFormalProofGrammarAccess;
 
 public class SemiFormalProofParser extends AbstractContentAssistParser {
 	

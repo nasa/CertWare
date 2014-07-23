@@ -7,9 +7,7 @@ import net.certware.argument.sfp.semiFormalProof.Validation;
 import net.certware.argument.sfp.semiFormalProof.ValidationKind;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 

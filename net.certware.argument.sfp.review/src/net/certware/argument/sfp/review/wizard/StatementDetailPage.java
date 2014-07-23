@@ -1,12 +1,12 @@
 package net.certware.argument.sfp.review.wizard;
 
+import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.core.ui.help.IHelpContext;
+
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.help.IWorkbenchHelpSystem;
-
-import net.certware.argument.sfp.semiFormalProof.Proof;
-import net.certware.core.ui.help.IHelpContext;
 
 
 

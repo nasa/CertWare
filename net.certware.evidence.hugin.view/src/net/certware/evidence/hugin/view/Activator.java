@@ -2,6 +2,8 @@ package net.certware.evidence.hugin.view;
 
 import java.net.URL;
 
+import net.certware.core.ui.CertWareUIPlugin;
+
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -9,8 +11,6 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.osgi.framework.Bundle;
-
-import net.certware.core.ui.CertWareUIPlugin;
 
 /**
  * CertWareUIPlugin to launch the plugin.

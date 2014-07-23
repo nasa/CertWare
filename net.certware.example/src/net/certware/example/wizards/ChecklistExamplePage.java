@@ -1,11 +1,11 @@
 package net.certware.example.wizards;
 
+import net.certware.core.ui.help.IHelpContext;
+import net.certware.example.ExampleContributions;
+
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.help.IWorkbenchHelpSystem;
-
-import net.certware.core.ui.help.IHelpContext;
-import net.certware.example.ExampleContributions;
 
 
 

@@ -12,9 +12,10 @@ Require-Bundle: org.apache.commons.logging;resolution:=optional,
  org.antlr.runtime,
  org.eclipse.xtext.common.types,
  org.eclipse.xtext,
- org.eclipse.xtext.generator
+ org.eclipse.xtext.generator,
+ net.certware.sacm;bundle-version="1.0.0"
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: net.certware.planning.cpn,
  net.certware.planning.cpn.scoping,
  net.certware.planning.cpn.formatting,

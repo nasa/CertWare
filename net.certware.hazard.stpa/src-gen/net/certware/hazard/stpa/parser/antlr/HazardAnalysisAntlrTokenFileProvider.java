@@ -4,6 +4,7 @@
 package net.certware.hazard.stpa.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class HazardAnalysisAntlrTokenFileProvider implements IAntlrTokenFileProvider {

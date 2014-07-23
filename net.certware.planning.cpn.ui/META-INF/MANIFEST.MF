@@ -19,7 +19,7 @@ Require-Bundle: net.certware.planning.cpn;visibility:=reexport,
  org.eclipse.xpand
 Import-Package: net.certware.core.ui,
  org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: net.certware.planning.cpn.ui.contentassist.antlr,
  net.certware.planning.cpn.ui.quickfix,
  net.certware.planning.cpn.ui.contentassist

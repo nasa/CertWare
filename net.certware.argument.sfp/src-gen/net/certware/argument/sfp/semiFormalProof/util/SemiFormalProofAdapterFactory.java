@@ -2,13 +2,20 @@
  */
 package net.certware.argument.sfp.semiFormalProof.util;
 
-import net.certware.argument.sfp.semiFormalProof.*;
+import net.certware.argument.sfp.semiFormalProof.Conjunction;
+import net.certware.argument.sfp.semiFormalProof.Entailment;
+import net.certware.argument.sfp.semiFormalProof.Justification;
+import net.certware.argument.sfp.semiFormalProof.Justifications;
+import net.certware.argument.sfp.semiFormalProof.Proof;
+import net.certware.argument.sfp.semiFormalProof.ProofSteps;
+import net.certware.argument.sfp.semiFormalProof.QuotedAssertion;
+import net.certware.argument.sfp.semiFormalProof.SemiFormalProofPackage;
+import net.certware.argument.sfp.semiFormalProof.Statement;
+import net.certware.argument.sfp.semiFormalProof.Validation;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

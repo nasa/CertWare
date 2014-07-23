@@ -354,6 +354,7 @@ public class StateAnalysisDiagramEditor extends DiagramDocumentEditor implements
 		/**
 		 * @generated
 		 */
+		@SuppressWarnings("rawtypes")
 		protected List getObjectsBeingDropped() {
 			TransferData data = getCurrentEvent().currentDataType;
 			HashSet<URI> uris = new HashSet<URI>();

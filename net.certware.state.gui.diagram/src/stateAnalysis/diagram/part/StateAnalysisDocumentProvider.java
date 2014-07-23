@@ -202,6 +202,7 @@ public class StateAnalysisDocumentProvider extends AbstractDocumentProvider
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked", "restriction" })
 	protected void setDocumentContent(IDocument document, IEditorInput element)
 			throws CoreException {
 		IDiagramDocument diagramDocument = (IDiagramDocument) document;

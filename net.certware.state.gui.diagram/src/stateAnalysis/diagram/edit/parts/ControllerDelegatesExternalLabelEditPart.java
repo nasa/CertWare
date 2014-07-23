@@ -53,6 +53,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
+@SuppressWarnings("deprecation")
 public class ControllerDelegatesExternalLabelEditPart extends LabelEditPart
 		implements ITextAwareEditPart {
 
@@ -568,6 +569,7 @@ public class ControllerDelegatesExternalLabelEditPart extends LabelEditPart
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {

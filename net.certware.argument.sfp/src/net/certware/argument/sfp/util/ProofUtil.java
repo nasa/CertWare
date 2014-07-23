@@ -1,8 +1,5 @@
 package net.certware.argument.sfp.util;
 
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
-
 import net.certware.argument.sfp.semiFormalProof.Conjunction;
 import net.certware.argument.sfp.semiFormalProof.Entailment;
 import net.certware.argument.sfp.semiFormalProof.Justification;
@@ -10,6 +7,9 @@ import net.certware.argument.sfp.semiFormalProof.Justifications;
 import net.certware.argument.sfp.semiFormalProof.Proof;
 import net.certware.argument.sfp.semiFormalProof.Statement;
 import net.certware.argument.sfp.semiFormalProof.ValidationKind;
+
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * Proof utilities. 

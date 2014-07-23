@@ -10,14 +10,13 @@ import net.certware.evidence.hugin.instance.EngineSettings;
 import net.certware.evidence.hugin.instance.InstanceFactory;
 import net.certware.evidence.hugin.instance.InstanceNetwork;
 import net.certware.evidence.hugin.instance.InstancePackage;
-
 import net.certware.evidence.hugin.instance.InstanceState;
 import net.certware.evidence.hugin.instance.InstanceVariable;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**

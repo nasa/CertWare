@@ -3,12 +3,17 @@
 */
 package net.certware.evidence.hugin.parseTreeConstruction;
 
-import org.eclipse.emf.ecore.*;
-import org.eclipse.xtext.*;
+import net.certware.evidence.hugin.services.NetDSLGrammarAccess;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.Group;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.parsetree.reconstr.IEObjectConsumer;
 import org.eclipse.xtext.parsetree.reconstr.impl.AbstractParseTreeConstructor;
-
-import net.certware.evidence.hugin.services.NetDSLGrammarAccess;
 
 import com.google.inject.Inject;
 

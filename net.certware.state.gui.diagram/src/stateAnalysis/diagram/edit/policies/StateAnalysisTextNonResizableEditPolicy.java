@@ -222,6 +222,7 @@ public class StateAnalysisTextNonResizableEditPolicy extends
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected List createSelectionHandles() {
 		MoveHandle moveHandle = new MoveHandle((GraphicalEditPart) getHost());
 		moveHandle.setBorder(null);

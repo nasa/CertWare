@@ -18,7 +18,6 @@ Require-Bundle: org.eclipse.xtext,
  org.antlr.runtime,
  net.certware.core.ui
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: net.certware.argument.sfp,
  net.certware.argument.sfp.parseTreeConstruction,
  net.certware.argument.sfp.parser.antlr,
@@ -32,3 +31,4 @@ Export-Package: net.certware.argument.sfp,
  net.certware.argument.sfp.scoping,
  net.certware.argument.sfp.formatting
 Eclipse-RegisterBuddy: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7

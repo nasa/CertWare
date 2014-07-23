@@ -3,10 +3,11 @@
 */
 package net.certware.intent.state.parser.antlr;
 
-import com.google.inject.Inject;
+import net.certware.intent.state.services.StateSpecificationGrammarAccess;
 
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import net.certware.intent.state.services.StateSpecificationGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class StateSpecificationParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

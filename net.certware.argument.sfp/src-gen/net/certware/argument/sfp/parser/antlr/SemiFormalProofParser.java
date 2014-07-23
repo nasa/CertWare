@@ -3,10 +3,11 @@
 */
 package net.certware.argument.sfp.parser.antlr;
 
-import com.google.inject.Inject;
+import net.certware.argument.sfp.services.SemiFormalProofGrammarAccess;
 
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-import net.certware.argument.sfp.services.SemiFormalProofGrammarAccess;
+
+import com.google.inject.Inject;
 
 public class SemiFormalProofParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {
 	

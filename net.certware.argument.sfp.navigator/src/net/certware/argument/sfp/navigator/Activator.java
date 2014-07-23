@@ -1,8 +1,8 @@
 package net.certware.argument.sfp.navigator;
 
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * CertWareUIPlugin for navigator plugin.

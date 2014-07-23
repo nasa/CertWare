@@ -1,8 +1,9 @@
 package net.certware.hazard.stpa.serializer;
 
-import com.google.inject.Inject;
 import java.util.List;
+
 import net.certware.hazard.stpa.services.HazardAnalysisGrammarAccess;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
@@ -10,6 +11,8 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("all")
 public class HazardAnalysisSyntacticSequencer extends AbstractSyntacticSequencer {

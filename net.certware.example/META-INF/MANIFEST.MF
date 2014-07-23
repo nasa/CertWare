@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.example;singleton:=true
 Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.example.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.help,
  org.eclipse.ui.forms,
  org.eclipse.ui.forms.events,

@@ -2,11 +2,33 @@
  */
 package net.certware.intent.state.stateSpecification.util;
 
-import net.certware.intent.state.stateSpecification.*;
+import net.certware.intent.state.stateSpecification.BigUnitValue;
+import net.certware.intent.state.stateSpecification.Component;
+import net.certware.intent.state.stateSpecification.ComponentInput;
+import net.certware.intent.state.stateSpecification.ComponentOutput;
+import net.certware.intent.state.stateSpecification.Device;
+import net.certware.intent.state.stateSpecification.DeviceInput;
+import net.certware.intent.state.stateSpecification.DeviceOutput;
+import net.certware.intent.state.stateSpecification.Input;
+import net.certware.intent.state.stateSpecification.Mode;
+import net.certware.intent.state.stateSpecification.ModeElement;
+import net.certware.intent.state.stateSpecification.ModeElementType;
+import net.certware.intent.state.stateSpecification.ModeVariable;
+import net.certware.intent.state.stateSpecification.Output;
+import net.certware.intent.state.stateSpecification.Specification;
+import net.certware.intent.state.stateSpecification.State;
+import net.certware.intent.state.stateSpecification.StateElement;
+import net.certware.intent.state.stateSpecification.StateList;
+import net.certware.intent.state.stateSpecification.StateSpecificationPackage;
+import net.certware.intent.state.stateSpecification.StateValue;
+import net.certware.intent.state.stateSpecification.StateVariable;
+import net.certware.intent.state.stateSpecification.Trigger;
+import net.certware.intent.state.stateSpecification.TriggerTable;
+import net.certware.intent.state.stateSpecification.ValueList;
+import net.certware.intent.state.stateSpecification.ValueRange;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
 
 /**

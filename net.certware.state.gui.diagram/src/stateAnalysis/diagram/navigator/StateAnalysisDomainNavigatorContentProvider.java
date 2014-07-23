@@ -199,6 +199,7 @@ public class StateAnalysisDomainNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object[] wrapEObjects(Object[] objects, Object parentElement) {
 		Collection result = new ArrayList();
 		for (int i = 0; i < objects.length; i++) {
