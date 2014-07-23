@@ -2,6 +2,7 @@
 # .project
 .metadata
 bin/
+target/
 target/**
 # target/**
 tmp/

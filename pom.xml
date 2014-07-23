@@ -32,16 +32,6 @@
 		<module>net.certware.example.ssei</module>
 		<module>net.certware.export</module>
 		<module>net.certware.export.sacm</module>
-		<module>net.certware.feature</module>
-		<module>net.certware.feature.bayes</module>
-		<module>net.certware.feature.check</module>
-		<module>net.certware.feature.intent</module>
-		<module>net.certware.feature.measure</module>
-		<module>net.certware.feature.planning</module>
-		<module>net.certware.feature.sacm</module>
-		<module>net.certware.feature.sfp</module>
-		<module>net.certware.feature.stpa</module>
-		<module>net.certware.feature.updatesite</module>
 		<module>net.certware.gsn</module>
 		<module>net.certware.hazard</module>
 		<module>net.certware.hazard.edit</module>
@@ -103,6 +93,16 @@
 		<module>net.certware.verification.checklist.editor</module>
 		<module>net.certware.verification.checklist.navigator</module>
 		<module>net.certware.verification.checklist.view</module>
+		<module>net.certware.feature</module>
+		<module>net.certware.feature.bayes</module>
+		<module>net.certware.feature.check</module>
+		<module>net.certware.feature.intent</module>
+		<module>net.certware.feature.measure</module>
+		<module>net.certware.feature.planning</module>
+		<module>net.certware.feature.sacm</module>
+		<module>net.certware.feature.sfp</module>
+		<module>net.certware.feature.stpa</module>
+		<module>net.certware.feature.updatesite</module>
  	</modules>
 	<properties>
 		<tycho.version>0.20.0</tycho.version>
@@ -201,6 +201,12 @@
 					<artifactId>tycho-p2-repository-plugin</artifactId>
 					<version>${tycho.version}</version>
 				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho.extras</groupId>
+					<artifactId>tycho-source-feature-plugin</artifactId>
+					<version>${tycho-extras.version}</version>
+				</plugin>
+
 		</plugins>
 		<pluginManagement>
 			<plugins>
