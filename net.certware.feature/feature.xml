@@ -223,60 +223,60 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
          id="net.certware.branding"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="net.certware.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.core.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.2.2"/>
 
    <plugin
          id="net.certware.example"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.1"
          unpack="false"/>
 
    <plugin
          id="net.certware.export"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.1"
          unpack="false"/>
 
    <plugin
          id="net.certware.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.2.1"/>
 
    <plugin
          id="net.certware.libs.doc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.antlr.runtime"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+         version="1.2.1"/>
 
    <plugin
          id="net.certware.intro"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.3"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.core"
+         download-size="0"
+         install-size="0"
+         version="1.2.1"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.core.ui"
+         download-size="0"
+         install-size="0"
+         version="1.2.2"
+         unpack="false"/>
+
+   <plugin
+         id="org.antlr.runtime"
+         download-size="0"
+         install-size="0"
+         version="3.2.0"
          unpack="false"/>
 
 </feature>
