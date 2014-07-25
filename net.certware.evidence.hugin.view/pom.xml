@@ -17,7 +17,7 @@
     <groupId>net.certware.tycho.build</groupId>
     <artifactId>net.certware.libs.inference</artifactId>
     <version>1.2.1-SNAPSHOT</version>
-    <systemPath>${basedir}/inflib.jar</systemPath>
+    <systemPath>${basedir}/../net.certware.libs.inference/inflib.jar</systemPath>
     <scope>system</scope>
   </dependency>
   </dependencies>
