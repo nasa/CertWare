@@ -105,8 +105,8 @@
 		<module>net.certware.feature.updatesite</module>
  	</modules>
 	<properties>
-		<tycho.version>0.20.0</tycho.version>
-		<tycho-extras.version>0.20.0</tycho-extras.version>
+		<tycho.version>0.21.0</tycho.version>
+		<tycho-extras.version>0.21.0</tycho-extras.version>
 		<kepler-repo.url>http://download.eclipse.org/releases/kepler</kepler-repo.url>
 		<luna-repo.url>http://download.eclipse.org/releases/luna</luna-repo.url>
 		<epsilon-repo.url>http://download.eclipse.org/epsilon/updates</epsilon-repo.url>

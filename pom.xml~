@@ -21,10 +21,10 @@
 		<module>net.certware.evidence.hugin.instance</module>
 		<module>net.certware.evidence.hugin.instance.edit</module>
 		<module>net.certware.evidence.hugin.instance.editor</module>
-		<module>net.certware.evidence.hugin.test</module>
+		<!-- <module>net.certware.evidence.hugin.test</module> -->
 		<module>net.certware.evidence.hugin.ui</module>
 		<module>net.certware.evidence.hugin.view</module>
-		<module>net.certware.evidence.inference.test</module>
+		<!-- <module>net.certware.evidence.inference.test</module> -->
 		<module>net.certware.example</module>
 		<module>net.certware.example.checklist</module>
 		<module>net.certware.example.net</module>

@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <groupId>net.certware.tycho.build</groupId>
-  <artifactId>net.certware.state.edit</artifactId>
+  <artifactId>net.certware.state.gui.edit</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>
