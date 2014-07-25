@@ -3,6 +3,7 @@
  */
 package net.certware.intent.state.validation;
 
+import net.certware.intent.state.validation.AbstractStateSpecificationValidator;
 
 /**
  * Custom validation rules.

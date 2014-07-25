@@ -16,14 +16,15 @@
 		<module>net.certware.branding</module>
 		<module>net.certware.core</module>
 		<module>net.certware.core.ui</module>
+		<module>net.certware.libs.inference</module>
 		<module>net.certware.evidence.hugin</module>
 		<module>net.certware.evidence.hugin.instance</module>
 		<module>net.certware.evidence.hugin.instance.edit</module>
 		<module>net.certware.evidence.hugin.instance.editor</module>
-		<module>net.certware.evidence.hugin.test</module>
+		<!-- <module>net.certware.evidence.hugin.test</module> -->
 		<module>net.certware.evidence.hugin.ui</module>
 		<module>net.certware.evidence.hugin.view</module>
-		<module>net.certware.evidence.inference.test</module>
+		<!-- <module>net.certware.evidence.inference.test</module> -->
 		<module>net.certware.example</module>
 		<module>net.certware.example.checklist</module>
 		<module>net.certware.example.net</module>
@@ -49,7 +50,6 @@
 		<module>net.certware.intent.ui</module>
 		<module>net.certware.intro</module>
 		<module>net.certware.libs.doc</module>
-		<module>net.certware.libs.inference</module>
 		<module>net.certware.measurement.sco</module>
 		<module>net.certware.measurement.sco.edit</module>
 		<module>net.certware.measurement.sco.editor</module>
@@ -149,23 +149,52 @@
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-versions-plugin</artifactId>
-				<version>${tycho.version}</version>
+				<version>${tycho.version}</version>			
 			</plugin>
 			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<configuration>
-					<environments>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86</arch>
-						</environment>
-						<environment>
-							<os>linux</os>
-							<ws>gtk</ws>
-							<arch>x86_64</arch>
-						</environment>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-clean-plugin</artifactId>
+			  <version>2.5</version>
+			  <configuration>
+			    <filesets>
+			      <fileset>
+				<directory>${basedir}/src-gen</directory>
+			      </fileset>
+			      <fileset>
+				<directory>${basedir}/xtend-gen</directory>
+			      </fileset>
+			      <!-- clean ui plugin as well -->
+			      <fileset>
+				<directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+			      </fileset>
+			      <fileset>
+				<directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+			      </fileset>
+			      <!-- clean test fragment as well -->
+			      <fileset>
+				<directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
+			      </fileset>
+			      <fileset>
+				<directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
+			      </fileset>
+			    </filesets>
+			  </configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>target-platform-configuration</artifactId>
+			  <configuration>
+			    <environments>
+			      <environment>
+				<os>linux</os>
+				<ws>gtk</ws>
+				<arch>x86</arch>
+			      </environment>
+			      <environment>
+				<os>linux</os>
+				<ws>gtk</ws>
+				<arch>x86_64</arch>
+			      </environment>
 						<environment>
 							<os>win32</os>
 							<ws>win32</ws>
