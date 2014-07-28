@@ -7,8 +7,30 @@
     <version>0.0.1-SNAPSHOT</version>
     		<groupId>net.certware.tycho.build</groupId>
   </parent>
+
   <groupId>net.certware.tycho.build</groupId>
   <artifactId>net.certware.argument.sfp</artifactId>
-  <version>1.2.2-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  
+  <name>Argument SFP Language</name>
+
+  <build>
+    <plugins>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-clean-plugin</artifactId>
+	<executions>
+	  <execution>
+	    <id>gen-clean</id>
+	    <phase>clean</phase>
+	    </execution>
+	  </executions>
+	</plugin>
+      <plugin>
+	<groupId>org.eclipse.xtend</groupId>
+	<artifactId>xtend-maven-plugin</artifactId>
+	</plugin>
+      </plugins>
+    </build>
+
 </project>

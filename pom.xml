@@ -111,7 +111,9 @@
 		<luna-repo.url>http://download.eclipse.org/releases/luna</luna-repo.url>
 		<epsilon-repo.url>http://download.eclipse.org/epsilon/updates</epsilon-repo.url>
 		<tycho-repo.url>https://oss.sonatype.org/content/groups/public/</tycho-repo.url>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.name>certware</project.name>
+		<xtext.version>2.6.1</xtext.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -124,6 +126,12 @@
 			<url>${epsilon-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
+		<repository>
+		  <id>Xtext Update Site</id>
+		  <layout>p2</layout>
+		  <url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</url>
+		</repository>
+	
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -321,6 +329,24 @@
 							</repository>
 						</baselineRepositories>
 					</configuration>
+				</plugin>
+				<plugin>
+				  <groupId>org.eclipse.xtend</groupId>
+				  <artifactId>xtend-maven-plugin</artifactId>
+				  <version>${xtext.version}</version>
+				  <executions>
+				    <execution>
+				      <goals>
+					<goal>compile</goal>
+					<goal>xtend-install-debug-info</goal>
+					<goal>testCompile</goal>
+					<goal>xtend-test-install-debug-info</goal>
+					</goals>
+				      </execution>
+				    </executions>
+				  <configuration>
+				    <outputDirectory>xtend-gen</outputDirectory>
+				    </configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>

@@ -72,7 +72,6 @@
 		<module>net.certware.planning.mspdi</module>
 		<module>net.certware.planning.mspdi.edit</module>
 		<module>net.certware.planning.mspdi.editor</module>
-		<module>net.certware.product</module>
 		<module>net.certware.sacm</module>
 		<module>net.certware.sacm.dsl</module>
 		<module>net.certware.sacm.dsl.ui</module>
@@ -103,6 +102,7 @@
 		<module>net.certware.feature.sfp</module>
 		<module>net.certware.feature.stpa</module>
 		<module>net.certware.feature.updatesite</module>
+		<module>net.certware.product</module>
  	</modules>
 	<properties>
 		<tycho.version>0.21.0</tycho.version>
