@@ -4,9 +4,9 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
 var file.extensions = "sfp"
 var projectName = "net.certware.argument.sfp"
+var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
 var runtimeProject = "../${projectName}"
 
 Workflow {
