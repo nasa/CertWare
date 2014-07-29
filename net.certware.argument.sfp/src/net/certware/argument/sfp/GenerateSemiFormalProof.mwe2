@@ -4,13 +4,27 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "file:/net/certware/argument/sfp/SemiFormalProof.xtext"
+var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
 var file.extensions = "sfp"
 var projectName = "net.certware.argument.sfp"
 var runtimeProject = "../${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
+    // use an XtextResourceset throughout the process, which is able to resolve classpath:/ URIs.
+       resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
+       
+       // add mappings from platform:/resource to classpath:/
+       uriMap = {
+       	      from = "platform:/resource/org.eclipse.xtext.xbase/"
+    	      	   to = "classpath:/"
+    		   }
+    		   uriMap = {
+    		   	  from = "platform:/resource/org.eclipse.xtext.common.types/"
+    			       to = "classpath:/"
+    			       }
+
+	// register current project and its siblings for platform URI map, not on classpath
 		platformUri = "${runtimeProject}/.."
 		// registerGenModelFile = "${runtimeProject}/model/generated/SemiFormalProof.genmodel"
 	}
@@ -28,7 +42,10 @@ Workflow {
 		pathUiProject = "${runtimeProject}.ui"
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
-		language = {
+	
+		language = auto-inject {# auto-inject added for maven
+			 forcedResourceSet = theResourceSet # added for maven
+
 			uri = grammarURI
 			fileExtensions = file.extensions
 
