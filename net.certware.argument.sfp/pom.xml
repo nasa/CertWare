@@ -60,14 +60,8 @@
 	  <includePluginDependencies>true</includePluginDependencies>
 	  <mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
 	  <arguments>
-
-	    <argument>
-	      -p
-	      </argument>
-	    <argument>
-	      runtimeProject=/${project.basedir}
-	      </argument>
-	    </arguments>
+	    <argument> file://${project.basedir}/src/net/certware/argument/sfp/GenerateSemiFormalProof.mwe2</argument>
+	  </arguments>
 	  </configuration>
 	<dependencies>
 	  <dependency>
