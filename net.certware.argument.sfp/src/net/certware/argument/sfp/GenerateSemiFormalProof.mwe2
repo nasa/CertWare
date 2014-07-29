@@ -17,16 +17,16 @@ Workflow {
        // add mappings from platform:/resource to classpath:/
        uriMap = {
        	      from = "platform:/resource/org.eclipse.xtext.xbase/"
-    	      	   to = "classpath:/"
-    		   }
-    		   uriMap = {
-    		   	  from = "platform:/resource/org.eclipse.xtext.common.types/"
-    			       to = "classpath:/"
-    			       }
+    	   to = "classpath:/"
+    	   }
+    	 uriMap = {
+    	   	  from = "platform:/resource/org.eclipse.xtext.common.types/"
+    		       to = "classpath:/"
+    		       }
 
 	// register current project and its siblings for platform URI map, not on classpath
-		platformUri = "${runtimeProject}/.."
-		// registerGenModelFile = "${runtimeProject}/model/generated/SemiFormalProof.genmodel"
+	platformUri = "${runtimeProject}/.."
+	// registerGenModelFile = "${runtimeProject}/model/generated/SemiFormalProof.genmodel"
 	}
 
 	component = DirectoryCleaner {
@@ -43,8 +43,8 @@ Workflow {
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
 	
-		language = auto-inject {# auto-inject added for maven
-			 forcedResourceSet = theResourceSet # added for maven
+		language = auto-inject {
+			 forcedResourceSet = theResourceSet
 
 			uri = grammarURI
 			fileExtensions = file.extensions
