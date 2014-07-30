@@ -4,14 +4,28 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/net/certware/evidence/hugin/NetDSL.xtext"
 var file.extensions = "net"
 var projectName = "net.certware.evidence.hugin"
+var grammarURI = "platform:/resource/${projectName}/src/net/certware/evidence/hugin/NetDSL.xtext"
 var runtimeProject = "../${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
-		platformUri = "${runtimeProject}/.."
+
+    // use an XtextResourceset throughout the process, which is able to resolve classpath:/ URIs.
+       resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
+
+       // add mappings from platform:/resource to classpath:/
+       uriMap = {
+              from = "platform:/resource/org.eclipse.xtext.xbase/"
+           to = "classpath:/"
+           }
+         uriMap = {
+                  from = "platform:/resource/org.eclipse.xtext.common.types/"
+                       to = "classpath:/"
+                       }
+
+	platformUri = "${runtimeProject}/.."
 	}
 
 	component = DirectoryCleaner {
