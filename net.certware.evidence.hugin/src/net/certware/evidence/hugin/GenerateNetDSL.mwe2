@@ -41,7 +41,9 @@ Workflow {
 		pathUiProject = "${runtimeProject}.ui"
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
-		language = {
+		language = auto-inject {
+			 forcedResourceSet = theResourceSet
+
 			uri = grammarURI
 			fileExtensions = file.extensions
 
