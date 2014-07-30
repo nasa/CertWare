@@ -62,7 +62,7 @@
 	  <arguments>
 	    <argument> file://${project.basedir}/src/net/certware/argument/sfp/GenerateSemiFormalProof.mwe2</argument>
 	    <argument>-p</argument>
-	    <argument>runtimeProject=/${project.basedir}
+	    <argument>runtimeProject=/${project.basedir}</argument>
 	  </arguments>
 	  </configuration>
 	<dependencies>
