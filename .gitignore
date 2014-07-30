@@ -1,5 +1,4 @@
 *.pydevproject
-# .project
 .metadata
 bin/
 target/
@@ -14,7 +13,6 @@ tmp/
 *.swp
 *~.nib
 local.properties
-# .classpath
 .settings/
 .loadpath
 *.class
