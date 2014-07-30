@@ -25,7 +25,7 @@ Workflow {
     		       }
 
 	// register current project and its siblings for platform URI map, not on classpath
-	platformUri = "platform:/resource/net/certware/argument/sfp"   // "${runtimeProject}" // "${runtimeProject}/.."
+	platformUri = "platform:/resource/net.certware.argument.sfp/"   // "${runtimeProject}" // "${runtimeProject}/.."
 	// registerGenModelFile = "${runtimeProject}/model/generated/SemiFormalProof.genmodel"
 	}
 
