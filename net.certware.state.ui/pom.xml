@@ -11,4 +11,25 @@
   <artifactId>net.certware.state.ui</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+
+  <name>State Analysis Language UI</name>
+
+    <build>
+    <plugins>
+      <plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>gen-clean</id>
+            <phase>clean</phase>
+            </execution>
+          </executions>
+        </plugin>
+      <plugin>
+        <groupId>org.eclipse.xtend</groupId>
+        <artifactId>xtend-maven-plugin</artifactId>
+</plugin>
+</plugins>
+  </build>
 </project>
