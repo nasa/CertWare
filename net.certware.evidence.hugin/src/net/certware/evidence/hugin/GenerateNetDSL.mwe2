@@ -17,15 +17,15 @@ Workflow {
 
        // add mappings from platform:/resource to classpath:/
        uriMap = {
-              from = "platform:/resource/org.eclipse.xtext.xbase/"
+           from = "platform:/resource/org.eclipse.xtext.xbase/"
            to = "classpath:/"
-           }
-         uriMap = {
-                  from = "platform:/resource/org.eclipse.xtext.common.types/"
-                       to = "classpath:/"
-                       }
+       }
+       uriMap = {
+           from = "platform:/resource/org.eclipse.xtext.common.types/"
+           to = "classpath:/"
+       }
 
-	platformUri = "${runtimeProject}/.."
+	platformUri = "${runtimeProject}/" # "${runtimeProject}/.."
 	}
 
 	component = DirectoryCleaner {

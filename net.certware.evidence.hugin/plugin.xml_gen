@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.certware.net/evidence/hugin/NetDSL" 
        class = "net.certware.evidence.hugin.netDSL.NetDSLPackage"
-       genModel = "net/certware/evidence/hugin/NetDSL.genmodel" /> 
+       genModel = "model/generated/NetDSL.genmodel" /> 
 	
   </extension>
 
