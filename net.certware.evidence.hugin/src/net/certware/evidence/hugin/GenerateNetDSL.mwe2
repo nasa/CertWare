@@ -25,7 +25,7 @@ Workflow {
            to = "classpath:/"
        }
 
-	platformUri = "${runtimeProject}/" # "${runtimeProject}/.."
+	platformUri = "${runtimeProject}/" // "${runtimeProject}/.."
 	}
 
 	component = DirectoryCleaner {
