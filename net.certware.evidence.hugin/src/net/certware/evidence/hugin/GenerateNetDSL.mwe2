@@ -7,12 +7,13 @@ import org.eclipse.xtext.ui.generator.*
 var file.extensions = "net"
 var projectName = "net.certware.evidence.hugin"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/evidence/hugin/NetDSL.xtext"
-var runtimeProject = "../${projectName}"
+var runtimeProject = "platform:/resource/${projectName} //"../${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
 
     // use an XtextResourceset throughout the process, which is able to resolve classpath:/ URIs.
+    scanClassPath = true
        resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
 
        // add mappings from platform:/resource to classpath:/
@@ -25,8 +26,8 @@ Workflow {
            to = "classpath:/"
        }
 
-	platformUri = "${runtimeProject}/" // "${runtimeProject}/.."
-	}
+       platformUri = "${runtimeProject}/.."
+       }
 
 	component = DirectoryCleaner {
 		directory = "${runtimeProject}/src-gen"
