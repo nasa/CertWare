@@ -7,7 +7,7 @@ import org.eclipse.xtext.ui.generator.*
 var file.extensions = "net"
 var projectName = "net.certware.evidence.hugin"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/evidence/hugin/NetDSL.xtext"
-var runtimeProject = "platform:/resource/${projectName} //"../${projectName}"
+var runtimeProject = "platform:/resource/${projectName}" //"../${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
