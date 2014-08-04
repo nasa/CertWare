@@ -11,4 +11,5 @@
   <artifactId>net.certware.core.ui</artifactId>
   <version>1.2.2-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>Core UI Internals</name>
 </project>

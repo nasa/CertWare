@@ -11,4 +11,5 @@
   <artifactId>net.certware.planning.cpn.ui</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare Planning Language UI</name>
 </project>
