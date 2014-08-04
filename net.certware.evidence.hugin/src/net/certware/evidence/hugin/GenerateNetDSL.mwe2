@@ -13,7 +13,7 @@ Workflow {
     bean = StandaloneSetup {
 
     	 // use an XtextResourceset throughout the process, which is able to resolve classpath:/ URIs.
-	 scanClassPath = true
+	 // scanClassPath = true
        	 resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
 
        	 // add mappings from platform:/resource to classpath:/
@@ -49,25 +49,30 @@ Workflow {
 			fileExtensions = file.extensions
 
 			// Java API to access grammar elements (required by several other fragments)
-			fragment = grammarAccess.GrammarAccessFragment {}
+			fragment = grammarAccess.GrammarAccessFragment auto-inject {}
 
 			// generates Java API for the generated EPackages 
 			//fragment = ecore.EcoreGeneratorFragment {
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
 			//}
 
-			fragment = ecore.EMFGeneratorFragment {}
+			fragment = ecore.EMFGeneratorFragment auto-inject {
+				 javaModelDirector = "/${projectName}/src-gen"
+			}
 
 			// the serialization component
-			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+			// fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+			fragment = serializer.SerializerFragment auto-inject {
+				 generateStub = false
+			}
 
 			// a custom ResourceFactory for use with EMF 
-			fragment = resourceFactory.ResourceFactoryFragment {
+			fragment = resourceFactory.ResourceFactoryFragment auto-inject {
 				fileExtensions = file.extensions
 			}
 
 			// The antlr parser generator fragment.
-			fragment = parser.antlr.XtextAntlrGeneratorFragment {
+			fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
 			options = {
 					backtrack = true
 				}
@@ -80,33 +85,55 @@ Workflow {
 				// registerForImportedPackages = true
 			}
 
+
+
 			// scoping and exporting API
 			// fragment = scoping.ImportURIScopingFragment {}
 			// fragment = exporting.SimpleNamesFragment {}
 
 			// scoping and exporting API 
-			fragment = scoping.ImportNamespacesScopingFragment {}
-			fragment = exporting.QualifiedNamesFragment {}
-			fragment = builder.BuilderIntegrationFragment {}
+			fragment = scoping.ImportNamespacesScopingFragment auto-inject {}
+			fragment = exporting.QualifiedNamesFragment auto-inject {}
+			fragment = builder.BuilderIntegrationFragment auto-inject {}
+
+			fragment = generator.GeneratorFragment auto-inject {}
 
 			// formatter API 
-			fragment = formatting.FormatterFragment {}
+			fragment = formatting.FormatterFragment auto-inject {}
 
 			// labeling API 
-			fragment = labeling.LabelProviderFragment {}
+			fragment = labeling.LabelProviderFragment auto-inject {}
 
 			// outline API 
-			fragment = outline.OutlineTreeProviderFragment {}
-			fragment = outline.QuickOutlineFragment {}
+			fragment = outline.OutlineTreeProviderFragment auto-inject {}
+			fragment = outline.QuickOutlineFragment auto-inject {}
 			
 			// quickfix API 
-			fragment = quickfix.QuickfixProviderFragment {}
+			fragment = quickfix.QuickfixProviderFragment auto-inject {}
 
 			// content assist API  
-			fragment = contentAssist.JavaBasedContentAssistFragment {}
+			fragment = contentAssist.JavaBasedContentAssistFragment auto-inject {}
 
 			// generates a more lightweight Antlr parser and lexer tailored for content assist  
-			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
+			fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
+
+			// generates junit test support classes into Generator#pathTestProject
+			// fragment = junit.Junit4Fragment auto-inject {}
+    
+			// rename refactoring
+    			// fragment = refactoring.RefactorElementNameFragment auto-inject {}
+    
+			// provides the necessary bindings for java types integration
+    			fragment = types.TypesGeneratorFragment auto-inject {}
+    
+			// generates the required bindings only if the grammar inherits from Xbase
+    			// fragment = xbase.XbaseGeneratorFragment auto-inject {}
+    
+			// provides a preference page for template proposals
+    			// fragment = templates.CodetemplatesGeneratorFragment auto-inject {}
+    
+			// provides a compare view
+    			// fragment = compare.CompareFragment auto-inject {}
 
 			// project wizard (optional) 
 			// fragment = projectWizard.SimpleProjectWizardFragment {
