@@ -247,6 +247,39 @@
         <persistent value="true"/>
     </extension>
 
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="net"
+            >
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="net.certware.evidence.hugin.NetDSL"
+            class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.evidence.hugin.NetDSL.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="net.certware.evidence.hugin.ui.keyword_NetDSL"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="net.certware.evidence.hugin.NetDSL"
+            class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.evidence.hugin.NetDSL.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="net.certware.evidence.hugin.ui.keyword_NetDSL"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">
