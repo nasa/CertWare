@@ -4,24 +4,38 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/net/certware/intent/IntentSpecification.xtext"
 var fileExtensions = "intent"
-var fileExtension = "intent"
 var projectName = "net.certware.intent"
+var grammarURI = "platform:/resource/${projectName}/src/net/certware/intent/IntentSpecification.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
+var encoding = "UTF-8"
 
 Workflow {
     bean = StandaloneSetup {
+    	 resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
+       uriMap = {
+              from = "platform:/resource/org.eclipse.xtext.xbase/"
+           to = "classpath:/"
+           }
+         uriMap = {
+                  from = "platform:/resource/org.eclipse.xtext.common.types/"
+                       to = "classpath:/"
+                       }
+
     	scanClassPath = true
     	platformUri = "${runtimeProject}/.."
     	// The following two lines can be removed, if Xbase is not used.
-    	registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
-    	registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
+    	//registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
+    	//registerGenModelFile = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
     }
     
     component = DirectoryCleaner {
     	directory = "${runtimeProject}/src-gen"
+    }
+    
+    component = DirectoryCleaner {
+    	directory = "${runtimeProject}/model"
     }
     
     component = DirectoryCleaner {
@@ -39,6 +53,8 @@ Workflow {
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
     	language = auto-inject {
+		 forcedResourceSet = theResourceSet
+
     		uri = grammarURI
     
     		// Java API to access grammar elements (required by several other fragments)

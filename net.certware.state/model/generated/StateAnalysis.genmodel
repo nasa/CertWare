@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="//Users/mrb/CertWare/net.certware.state/src-gen"
-    editDirectory="//Users/mrb/CertWare/net.certware.state.edit/src" editorDirectory="//Users/mrb/CertWare/net.certware.state.editor/src"
-    modelPluginID="net.certware.state" forceOverwrite="true" modelName="StateAnalysis"
-    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.state"
-    editorPluginID="net.certware.state" runtimeVersion="2.10">
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.state/src-gen" editDirectory="/net.certware.state.edit/src"
+    editorDirectory="/net.certware.state.editor/src" modelPluginID="net.certware.state"
+    forceOverwrite="true" modelName="StateAnalysis" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.state.edit"
+    editorPluginID="net.certware.state.editor" runtimeVersion="2.10">
   <genPackages prefix="StateAnalysis" basePackage="net.certware.state" disposableProviderFactory="true"
       fileExtensions="sa" ecorePackage="StateAnalysis.ecore#/">
     <genClasses ecoreClass="StateAnalysis.ecore#//System">
