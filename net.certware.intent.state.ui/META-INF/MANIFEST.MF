@@ -28,5 +28,6 @@ Export-Package: net.certware.intent.state.ui,
  net.certware.intent.state.ui.contentassist.antlr,
  net.certware.intent.state.ui.contentassist.antlr.internal,
  net.certware.intent.state.ui.internal,
- net.certware.intent.state.ui.wizard
+ net.certware.intent.state.ui.wizard,
+ net.certware.intent.state.ui.quickfix
 Bundle-Activator: net.certware.intent.state.ui.internal.StateSpecificationActivator
