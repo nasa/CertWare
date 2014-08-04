@@ -7,6 +7,14 @@
 	<artifactId>CertWare</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<name>CertWare Project</name>
+	<description>Workbench for safety case preparation and analysis</description>
+
+	<issueManagement>
+	  <system>GitHub Issues</system>
+	  <url>https://github.com/nasa/CertWare/issues</url>
+	  </issueManagement>
+
 	<modules>
 		<module>net.certware.argument.sfp</module>
 		<module>net.certware.argument.sfp.help</module>
@@ -114,6 +122,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.name>certware</project.name>
 		<xtext.version>2.6.1</xtext.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<manifest-location>META-INF</manifest-location>
 	</properties>
 	<repositories>
 		<repository>

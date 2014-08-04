@@ -3,14 +3,20 @@
 
 <plugin>
 
-  <extension point="org.eclipse.emf.ecore.generated_package">
+<!--  <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.certware.net/evidence/hugin/NetDSL" 
        class = "net.certware.evidence.hugin.netDSL.NetDSLPackage"
        genModel = "net/certware/evidence/hugin/NetDSL.genmodel" /> 
 	
-  </extension>
+  </extension> -->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package
+       uri = "http://www.certware.net/evidence/hugin/NetDSL"
+       class = "net.certware.evidence.hugin.netDSL.NetDSLPackage"
+       genModel = "model/generated/NetDSL.genmodel" />
 
+  </extension>
 
 
 
