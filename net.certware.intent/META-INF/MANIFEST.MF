@@ -16,7 +16,8 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  org.antlr.runtime,
- org.eclipse.xtext.common.types
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
@@ -27,4 +28,8 @@ Export-Package: net.certware.intent,
  net.certware.intent.parser.antlr.internal,
  net.certware.intent.scoping,
  net.certware.intent.services,
- net.certware.intent.validation
+ net.certware.intent.validation,
+ net.certware.intent.intentSpecification.impl,
+ net.certware.intent.intentSpecification.util,
+ net.certware.intent.serializer,
+ net.certware.intent.parser.antlr
