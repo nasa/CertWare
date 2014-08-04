@@ -23,5 +23,6 @@ Export-Package: net.certware.state.ui,
  net.certware.state.ui.contentassist,
  net.certware.state.ui.contentassist.antlr,
  net.certware.state.ui.contentassist.antlr.internal,
- net.certware.state.ui.internal
+ net.certware.state.ui.internal,
+ net.certware.state.ui.quickfix
 Bundle-Activator: net.certware.state.ui.internal.StateAnalysisActivator

@@ -250,7 +250,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="net.certware.state.ui.StateAnalysisExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="net.certware.state.ui.StateAnalysisExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="sa"
+            >
       </participant>
    </extension>
    <extension
