@@ -57,11 +57,11 @@ Workflow {
 			//}
 
 			fragment = ecore.EMFGeneratorFragment auto-inject {
-				 javaModelDirector = "/${projectName}/src-gen"
+				 javaModelDirectory = "/${projectName}/src-gen"
 			}
 
 			// the serialization component
-			// fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+			// old fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
 			fragment = serializer.SerializerFragment auto-inject {
 				 generateStub = false
 			}
