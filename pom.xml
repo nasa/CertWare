@@ -170,35 +170,6 @@
 				<version>${tycho.version}</version>			
 			</plugin>
 			<plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-clean-plugin</artifactId>
-			  <version>2.5</version>
-			  <configuration>
-			    <filesets>
-			      <fileset>
-				<directory>${basedir}/src-gen</directory>
-			      </fileset>
-			      <fileset>
-				<directory>${basedir}/xtend-gen</directory>
-			      </fileset>
-			      <!-- clean ui plugin as well -->
-			      <fileset>
-				<directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
-			      </fileset>
-			      <fileset>
-				<directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
-			      </fileset>
-			      <!-- clean test fragment as well -->
-			      <fileset>
-				<directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
-			      </fileset>
-			      <fileset>
-				<directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
-			      </fileset>
-			    </filesets>
-			  </configuration>
-			</plugin>
-			<plugin>
 			  <groupId>org.eclipse.tycho</groupId>
 			  <artifactId>target-platform-configuration</artifactId>
 			  <configuration>
@@ -257,122 +228,159 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>target-platform-configuration</artifactId>
-					<version>${tycho.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-compiler-plugin</artifactId>
-					<version>${tycho.version}</version>
-					<configuration>
-						<compilerArguments>
-							<inlineJSR />
-							<enableJavadoc />
-							<encoding>ISO-8859-1</encoding>
-						</compilerArguments>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-packaging-plugin</artifactId>
-					<version>${tycho.version}</version>
-					<dependencies>
-						<dependency>
-							<groupId>org.eclipse.tycho.extras</groupId>
-							<artifactId>tycho-buildtimestamp-jgit</artifactId>
-							<version>${tycho-extras.version}</version>
-						</dependency>
-					</dependencies>
-					<configuration>
-						<strictBinIncludes>false</strictBinIncludes>
-						<format>'v'yyyyMMdd-HHmm</format>
-						<timestampProvider>jgit</timestampProvider>
-						<jgit.ignore>
-						</jgit.ignore>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-surefire-plugin</artifactId>
-					<version>${tycho.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-source-plugin</artifactId>
-					<version>${tycho.version}</version>
-					<configuration>
-						<strictSrcIncludes>false</strictSrcIncludes>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-p2-director-plugin</artifactId>
-					<version>${tycho.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-p2-repository-plugin</artifactId>
-					<version>${tycho.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho.extras</groupId>
-					<artifactId>tycho-source-feature-plugin</artifactId>
-					<version>${tycho-extras.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho.extras</groupId>
-					<artifactId>tycho-custom-bundle-plugin</artifactId>
-					<version>${tycho-extras.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.eclipse.tycho</groupId>
-					<artifactId>tycho-p2-plugin</artifactId>
-					<version>${tycho.version}</version>
-					<configuration>
-						<baselineMode>warn</baselineMode>
-						<baselineReplace>none</baselineReplace>
-						<baselineRepositories>
-							<repository>
-								<url>http://download.eclipse.org/eclipse/updates/4.3</url>
-							</repository>
-						</baselineRepositories>
-					</configuration>
-				</plugin>
-				<plugin>
-				  <groupId>org.eclipse.xtend</groupId>
-				  <artifactId>xtend-maven-plugin</artifactId>
-				  <version>${xtext.version}</version>
-				  <executions>
-				    <execution>
-				      <goals>
-					<goal>compile</goal>
-					<goal>xtend-install-debug-info</goal>
-					<goal>testCompile</goal>
-					<goal>xtend-test-install-debug-info</goal>
-					</goals>
-				      </execution>
-				    </executions>
-				  <configuration>
-				    <outputDirectory>xtend-gen</outputDirectory>
-				    </configuration>
-				</plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-clean-plugin</artifactId>
+			  <version>2.5</version>
+			  <executions>
+			    <execution>
+			      <id>gen-clean</id>
+			      <goals>
+				<goal>clean</goal>
+			      </goals>
+			      <configuration>
+				<filesets>
+				  <fileset>
+				    <directory>${basedir}/src-gen</directory>
+				  </fileset>
+				  <fileset>
+				    <directory>${basedir}/xtend-gen</directory>
+				  </fileset>
+				  <!-- clean ui plugin as well -->
+				  <fileset>
+				    <directory>${basedir}/../${project.artifactId}.ui/src-gen</directory>
+				  </fileset>
+				  <fileset>
+				    <directory>${basedir}/../${project.artifactId}.ui/xtend-gen</directory>
+				  </fileset>
+				  <!-- clean test fragment as well -->
+				  <fileset>
+				    <directory>${basedir}/../${project.artifactId}.tests/src-gen</directory>
+				  </fileset>
+				  <fileset>
+				    <directory>${basedir}/../${project.artifactId}.tests/xtend-gen</directory>
+				  </fileset>
+				</filesets>
+			      </configuration>
+			    </execution>
+			  </executions>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>target-platform-configuration</artifactId>
+			  <version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-compiler-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			  <configuration>
+			    <compilerArguments>
+			      <inlineJSR />
+			      <enableJavadoc />
+			      <encoding>ISO-8859-1</encoding>
+			    </compilerArguments>
+			  </configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-packaging-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			  <dependencies>
+			    <dependency>
+			      <groupId>org.eclipse.tycho.extras</groupId>
+			      <artifactId>tycho-buildtimestamp-jgit</artifactId>
+			      <version>${tycho-extras.version}</version>
+			    </dependency>
+			  </dependencies>
+			  <configuration>
+			    <strictBinIncludes>false</strictBinIncludes>
+			    <format>'v'yyyyMMdd-HHmm</format>
+			    <timestampProvider>jgit</timestampProvider>
+			    <jgit.ignore>
+			    </jgit.ignore>
+			  </configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-surefire-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-source-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			  <configuration>
+			    <strictSrcIncludes>false</strictSrcIncludes>
+			  </configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-p2-director-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-p2-repository-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho.extras</groupId>
+			  <artifactId>tycho-source-feature-plugin</artifactId>
+			  <version>${tycho-extras.version}</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho.extras</groupId>
+			  <artifactId>tycho-custom-bundle-plugin</artifactId>
+			  <version>${tycho-extras.version}</version>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.tycho</groupId>
+			  <artifactId>tycho-p2-plugin</artifactId>
+			  <version>${tycho.version}</version>
+			  <configuration>
+			    <baselineMode>warn</baselineMode>
+			    <baselineReplace>none</baselineReplace>
+			    <baselineRepositories>
+			      <repository>
+				<url>http://download.eclipse.org/eclipse/updates/4.3</url>
+			      </repository>
+			    </baselineRepositories>
+			  </configuration>
+			</plugin>
+			<plugin>
+			  <groupId>org.eclipse.xtend</groupId>
+			  <artifactId>xtend-maven-plugin</artifactId>
+			  <version>${xtext.version}</version>
+			  <executions>
+			    <execution>
+			      <goals>
+				<goal>compile</goal>
+				<goal>xtend-install-debug-info</goal>
+				<goal>testCompile</goal>
+				<goal>xtend-test-install-debug-info</goal>
+			      </goals>
+			    </execution>
+			  </executions>
+			  <configuration>
+			    <outputDirectory>xtend-gen</outputDirectory>
+			  </configuration>
+			</plugin>
 			</plugins>
 		</pluginManagement>
 		<extensions>
-		<!-- Enabling the use of FTP -->
-		<extension>
-		<groupId>org.apache.maven.wagon</groupId>
-		<artifactId>wagon-ftp</artifactId>
-		<version>1.0-beta-6</version>
+		  <!-- Enabling the use of FTP -->
+		  <extension>
+		    <groupId>org.apache.maven.wagon</groupId>
+		    <artifactId>wagon-ftp</artifactId>
+		    <version>1.0-beta-6</version>
 		</extension></extensions>
 	</build>
 	
 	<distributionManagement>
-	<repository>
-	<id>ftp-repository</id>
-	<url>ftp://repository.mycompany.com/repository</url>
-	</repository>
+	  <repository>
+	    <id>ftp-repository</id>
+	    <url>ftp://repository.mycompany.com/repository</url>
+	  </repository>
 	</distributionManagement>
 </project>
