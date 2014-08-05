@@ -11,4 +11,5 @@
   <artifactId>net.certware.history.tasks</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare History Task Integration</name>
 </project>

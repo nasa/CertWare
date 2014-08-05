@@ -12,4 +12,14 @@
   <version>1.2.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   <name>CertWare History Git Integration</name>
+  <dependencies>
+    <dependency>
+      <groupId>net.certware.tycho.build</groupId>
+      <artifactId>net.certware.history</artifactId>
+      <version>1.2.1-SNAPSHOT</version>
+      <!-- <systemPath>${basedir}/../net.certware.libs.inference/inflib.jar</systemPath>
+      <scope>system</scope> -->
+    </dependency>
+  </dependencies>
+
 </project>
