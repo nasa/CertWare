@@ -12,16 +12,4 @@
   <version>1.1.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   <name>Example SACM Fragment</name>
-
-  <dependencies>
-    <dependency>
-      <groupId>net.certware.tycho.build</groupId>
-      <artifactId>net.certware.example</artifactId>
-      <version>1.2.1-SNAPSHOT</version>
-      <!-- <systemPath>${maven.dependency.net.certware.example.path}</systemPath>-->
-      <systemPath>${project.basedir}../net.certware.example</systemPath>
-      <scope>system</scope>
-    </dependency>
-  </dependencies>
-
 </project>
