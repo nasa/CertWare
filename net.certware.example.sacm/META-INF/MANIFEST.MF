@@ -5,5 +5,5 @@ Bundle-SymbolicName: net.certware.example.sacm;singleton:=true
 Bundle-Version: 1.1.0.qualifier
 Bundle-ClassPath: net.certware.example.sacm
 Bundle-Vendor: Kestrel Technology LLC
-Fragment-Host: net.certware.example
+Fragment-Host: net.certware.example;bundle-version="1.2.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
