@@ -7,8 +7,9 @@
     		<groupId>net.certware.tycho.build</groupId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>net.certware.example.ssei</groupId>
+  <groupId>net.certware.tycho.build</groupId>
   <artifactId>net.certware.example.ssei</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>Example SSEI Fragment</name>
 </project>

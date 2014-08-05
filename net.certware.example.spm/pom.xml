@@ -5,7 +5,7 @@
   <parent>
     <artifactId>CertWare</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    		<groupId>net.certware.tycho.build</groupId>
+    <groupId>net.certware.tycho.build</groupId>
   </parent>
   <groupId>net.certware.tycho.build</groupId>
   <artifactId>net.certware.example.spm</artifactId>

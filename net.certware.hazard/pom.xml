@@ -11,4 +11,5 @@
   <artifactId>net.certware.hazard</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare Hazard Model</name>
 </project>

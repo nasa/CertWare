@@ -10,6 +10,7 @@
   <groupId>net.certware.tycho.build</groupId>
   <artifactId>net.certware.export.sacm</artifactId>
   <version>1.0.0-SNAPSHOT</version>
+  <name>CertWare SACM Export Fragment</name>
   <packaging>eclipse-plugin</packaging>
       <dependencies>
       <dependency>

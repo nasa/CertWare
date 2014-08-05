@@ -11,4 +11,5 @@
   <artifactId>net.certware.feature</artifactId>
   <!-- <version>1.2.3-SNAPSHOT</version> -->
   <packaging>eclipse-feature</packaging>
+  <name>CertWare Feature</name>
 </project>

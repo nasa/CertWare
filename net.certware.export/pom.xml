@@ -10,6 +10,7 @@
   <groupId>net.certware.tycho.build</groupId>
   <artifactId>net.certware.export</artifactId>
   <version>1.2.1-SNAPSHOT</version>
+  <name>CertWare Export Host Plugin</name>
   <packaging>eclipse-plugin</packaging>
     <dependencies>
       <dependency>
