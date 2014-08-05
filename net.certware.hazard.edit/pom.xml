@@ -11,4 +11,5 @@
   <artifactId>net.certware.hazard.edit</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>Hazard Model Edit Support</name>
 </project>
