@@ -18,8 +18,7 @@
       <groupId>net.certware.tycho.build</groupId>
       <artifactId>net.certware.example</artifactId>
       <version>1.2.1-SNAPSHOT</version>
-      <!-- <systemPath>${basedir}/../net.certware.libs.inference/inflib.jar</systemPath> -->
-      <relativePath>${maven.dependency.net.certware.example.path}</relativePath>
+      <systemPath>${maven.dependency.net.certware.example.path}</systemPath>
       <scope>system</scope>
     </dependency>
   </dependencies>
