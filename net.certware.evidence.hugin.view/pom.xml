@@ -6,19 +6,19 @@
     <artifactId>CertWare</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <groupId>net.certware.tycho.build</groupId>
-
+    
   </parent>
   <groupId>net.certware.tycho.build</groupId>
   <artifactId>net.certware.evidence.hugin.view</artifactId>
   <version>1.2.4-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   <dependencies>
-        <dependency>
-    <groupId>net.certware.tycho.build</groupId>
-    <artifactId>net.certware.libs.inference</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
-    <systemPath>${basedir}/../net.certware.libs.inference/inflib.jar</systemPath>
-    <scope>system</scope>
-  </dependency>
+    <dependency>
+      <groupId>net.certware.tycho.build</groupId>
+      <artifactId>net.certware.libs.inference</artifactId>
+      <version>1.2.1-SNAPSHOT</version>
+      <systemPath>${basedir}/../net.certware.libs.inference/inflib.jar</systemPath>
+      <scope>system</scope>
+    </dependency>
   </dependencies>
 </project>
