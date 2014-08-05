@@ -11,4 +11,5 @@
   <artifactId>net.certware.verification.checklist.view</artifactId>
   <version>1.2.2-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare Checklist Viewer</name>
 </project>

@@ -11,4 +11,5 @@
   <artifactId>net.certware.verification.checklist.navigator</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare Checklist Navigator Contribution</name>
 </project>

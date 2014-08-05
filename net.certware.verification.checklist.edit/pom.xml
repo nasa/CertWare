@@ -11,4 +11,5 @@
   <artifactId>net.certware.verification.checklist.edit</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare Checklist Edit Support</name>
 </project>

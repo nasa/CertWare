@@ -11,4 +11,5 @@
   <artifactId>net.certware.sacm.editor</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+  <name>CertWare SACM Editor</name>
 </project>
