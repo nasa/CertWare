@@ -21,7 +21,7 @@ Workflow {
           to = "classpath:/"
           }
 
-    	// scanClassPath = true
+    	scanClassPath = true
     	platformUri = "${runtimeProject}/.."
     }
     
