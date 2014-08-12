@@ -23,7 +23,7 @@ Workflow {
 
     	// scanClassPath = true
     	// platformUri = "${runtimeProject}/.."
-	platformUti = "${runtimeProject}
+	platformUti = "${runtimeProject}"
     }
     
     component = DirectoryCleaner {
