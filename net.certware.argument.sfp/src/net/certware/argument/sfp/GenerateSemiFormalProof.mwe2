@@ -7,7 +7,7 @@ import org.eclipse.xtext.ui.generator.*
 var file.extensions = "sfp"
 var projectName = "net.certware.argument.sfp"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
-// var runtimeProject = "../${projectName}"
+var runtimeProject = "../${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
