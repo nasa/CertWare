@@ -57,7 +57,14 @@ Workflow {
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
 			//}
 			
-			fragment = ecore.EMFGeneratorFragment {}
+			// fragment = ecore.EMFGeneratorFragment {}
+    		// generates Java API for the generated EPackages
+    		fragment = ecore.EcoreGeneratorFragment auto-inject {
+    		// referencedGenModels = "
+    		//  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
+    		//  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
+    		// "
+    		}
 
 			// the serialization component
 			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
