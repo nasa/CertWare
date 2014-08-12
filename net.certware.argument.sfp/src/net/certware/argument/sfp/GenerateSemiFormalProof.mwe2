@@ -7,11 +7,12 @@ import org.eclipse.xtext.ui.generator.*
 var file.extensions = "sfp"
 var projectName = "net.certware.argument.sfp"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
-var runtimeProject = "../${projectName}"
+// var runtimeProject = "../${projectName}"
+var runtimeProject = "platforom:/resource/${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
-    	 resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
+       resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
        uriMap = {
           from = "platform:/resource/org.eclipse.xtext.xbase/"
            to = "classpath:/"
@@ -21,8 +22,8 @@ Workflow {
           to = "classpath:/"
           }
 
-    	// scanClassPath = true
-    	 platformUri = "${runtimeProject}/.."
+    	scanClassPath = true
+    	platformUri = "${runtimeProject}/.."
     }
     
     component = DirectoryCleaner {
@@ -37,9 +38,9 @@ Workflow {
     	directory = "${runtimeProject}/model"
     }
 
-    component = DirectoryCleaner {
-    	directory = "${runtimeProject}.tests/src-gen"
-    }
+    //component = DirectoryCleaner {
+    //	directory = "${runtimeProject}.tests/src-gen"
+    //}
     
     component = Generator {
     	pathRtProject = runtimeProject
@@ -48,22 +49,17 @@ Workflow {
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
     	language = auto-inject {
-		 forcedResourceSet = theResourceSet
+		forcedResourceSet = theResourceSet
     		uri = grammarURI
     
     		// Java API to access grammar elements (required by several other fragments)
     		fragment = grammarAccess.GrammarAccessFragment auto-inject {}
     
     		// generates Java API for the generated EPackages
-    		fragment = ecore.EcoreGeneratorFragment auto-inject {
-    		// referencedGenModels = "
-    		//  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
-    		//  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
-    		// "
-    		}
+    		fragment = ecore.EcoreGeneratorFragment auto-inject {}
     
     		// the old serialization component
-    		// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}    
+    		// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}
     
     		// serializer 2.0
     		fragment = serializer.SerializerFragment auto-inject {
@@ -74,21 +70,12 @@ Workflow {
     		fragment = resourceFactory.ResourceFactoryFragment auto-inject {}
     
     		// The antlr parser generator fragment.
-    		fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {
-    		//  options = {
-    		//      backtrack = true
-    		//  }
-    		}
+    		fragment = parser.antlr.XtextAntlrGeneratorFragment auto-inject {}
     
     		// Xtend-based API for validation
     		fragment = validation.ValidatorFragment auto-inject {
-    		//    composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
     		    composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
     		}
-    
-    		// old scoping and exporting API
-    		// fragment = scoping.ImportURIScopingFragment auto-inject {}
-    		// fragment = exporting.SimpleNamesFragment auto-inject {}
     
     		// scoping and exporting API
     		fragment = scoping.ImportNamespacesScopingFragment auto-inject {}
