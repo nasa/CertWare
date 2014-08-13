@@ -4,11 +4,11 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var file.extensions = "sfp"
+var fileExtensions = "sfp"
 var projectName = "net.certware.argument.sfp"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
-// var runtimeProject = "../${projectName}"
-var runtimeProject = "platforom:/resource/${projectName}"
+var runtimeProject = "../${projectName}"
+// var runtimeProject = "platforom:/resource/${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
@@ -56,7 +56,7 @@ Workflow {
     		fragment = grammarAccess.GrammarAccessFragment auto-inject {}
     
     		// generates Java API for the generated EPackages
-    		fragment = ecore.EcoreGeneratorFragment auto-inject {}
+    		fragment = ecore.EMFGeneratorFragment auto-inject {}
     
     		// the old serialization component
     		// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}
