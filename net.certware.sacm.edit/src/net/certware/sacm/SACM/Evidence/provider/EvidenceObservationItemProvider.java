@@ -29,15 +29,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class EvidenceObservationItemProvider
-	extends EvidenceEvaluationItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+	extends EvidenceEvaluationItemProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

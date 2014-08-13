@@ -16,10 +16,12 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
  org.antlr.runtime,
- net.certware.core.ui
-Import-Package: org.apache.log4j
+ net.certware.core.ui,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
 Export-Package: net.certware.argument.sfp,
- net.certware.argument.sfp.parseTreeConstruction,
  net.certware.argument.sfp.parser.antlr,
  net.certware.argument.sfp.parser.antlr.internal,
  net.certware.argument.sfp.semiFormalProof,
@@ -29,6 +31,8 @@ Export-Package: net.certware.argument.sfp,
  net.certware.argument.sfp.util,
  net.certware.argument.sfp.validation,
  net.certware.argument.sfp.scoping,
- net.certware.argument.sfp.formatting
+ net.certware.argument.sfp.formatting,
+ net.certware.argument.sfp.serializer,
+ net.certware.argument.sfp.generator
 Eclipse-RegisterBuddy: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

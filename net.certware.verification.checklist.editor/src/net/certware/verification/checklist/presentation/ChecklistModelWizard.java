@@ -76,7 +76,7 @@ public class ChecklistModelWizard extends Wizard implements INewWizard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 
 	/**
 	 * The supported extensions for created files.

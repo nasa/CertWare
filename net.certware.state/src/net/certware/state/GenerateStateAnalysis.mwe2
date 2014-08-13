@@ -13,17 +13,17 @@ var encoding = "UTF-8"
 
 Workflow {
     bean = StandaloneSetup {
-    	 resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
-       uriMap = {
-              from = "platform:/resource/org.eclipse.xtext.xbase/"
+    	resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
+       	uriMap = {
+           from = "platform:/resource/org.eclipse.xtext.xbase/"
            to = "classpath:/"
            }
-         uriMap = {
-                  from = "platform:/resource/org.eclipse.xtext.common.types/"
-                       to = "classpath:/"
-                       }
+        uriMap = {
+           from = "platform:/resource/org.eclipse.xtext.common.types/"
+           to = "classpath:/"
+           }
 
-    	scanClassPath = true
+    	// scanClassPath = true
     	platformUri = "${runtimeProject}/.."
     	// The following two lines can be removed, if Xbase is not used.
     	//registerGeneratedEPackage = "org.eclipse.xtext.xbase.XbasePackage"
@@ -42,18 +42,19 @@ Workflow {
     	directory = "${runtimeProject}.ui/src-gen"
     }
     
-    component = DirectoryCleaner {
-    	directory = "${runtimeProject}.tests/src-gen"
-    }
+    //component = DirectoryCleaner {
+    //	directory = "${runtimeProject}.tests/src-gen"
+    //}
     
     component = Generator {
     	pathRtProject = runtimeProject
     	pathUiProject = "${runtimeProject}.ui"
-    	pathTestProject = "${runtimeProject}.tests"
+    	//pathTestProject = "${runtimeProject}.tests"
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
     	encoding = encoding
     	language = auto-inject {
+    		
 		 forcedResourceSet = theResourceSet
 
     		uri = grammarURI
@@ -62,14 +63,8 @@ Workflow {
     		fragment = grammarAccess.GrammarAccessFragment auto-inject {}
     
     		// generates Java API for the generated EPackages
-    		fragment = ecore.EcoreGeneratorFragment auto-inject {
-    		// referencedGenModels = "
-    		//  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
-    		//  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
-    		// "
-    		}
-    		// generates Java API for the generated EPackages
-    		//fragment = ecore.EMFGeneratorFragment auto-inject {}
+
+    		fragment = ecore.EMFGeneratorFragment auto-inject {}
     
     		// the old serialization component
     		// fragment = parseTreeConstructor.ParseTreeConstructorFragment auto-inject {}    
@@ -127,7 +122,7 @@ Workflow {
     		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
     
     		// generates junit test support classes into Generator#pathTestProject
-    		fragment = junit.Junit4Fragment auto-inject {}
+    		//fragment = junit.Junit4Fragment auto-inject {}
     
     		// rename refactoring
     		fragment = refactoring.RefactorElementNameFragment auto-inject {}

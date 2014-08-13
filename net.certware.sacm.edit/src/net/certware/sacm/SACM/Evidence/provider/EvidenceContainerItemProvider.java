@@ -42,15 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class EvidenceContainerItemProvider
-	extends ModelElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+	extends ModelElementItemProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

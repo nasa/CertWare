@@ -33,15 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class HasRoleInItemProvider
-	extends ProjectPropertyItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+	extends ProjectPropertyItemProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

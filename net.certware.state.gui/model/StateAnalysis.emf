@@ -1,3 +1,4 @@
+
 @namespace(uri="http://www.certware.net/state/StateAnalysisGui", prefix="net.certware.state.gui")
 @gmf
 package stateAnalysis;

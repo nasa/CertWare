@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.certware.net/hazard/stpa/HazardAnalysis" 
        class = "net.certware.hazard.stpa.hazardAnalysis.HazardAnalysisPackage"
-       genModel = "net/certware/hazard/stpa/HazardAnalysis.genmodel" /> 
+       genModel = "model/generated/HazardAnalysis.genmodel" /> 
 	
   </extension>
 

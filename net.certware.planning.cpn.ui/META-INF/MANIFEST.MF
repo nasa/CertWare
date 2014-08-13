@@ -16,9 +16,13 @@ Require-Bundle: net.certware.planning.cpn;visibility:=reexport,
  org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.xtend,
- org.eclipse.xpand
+ org.eclipse.xpand,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
 Import-Package: net.certware.core.ui,
- org.apache.log4j
+ org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: net.certware.planning.cpn.ui.contentassist.antlr,
  net.certware.planning.cpn.ui.quickfix,

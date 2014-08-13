@@ -125,7 +125,7 @@ public class EvidenceFactoryImpl extends EFactoryImpl implements EvidenceFactory
 	 */
 	public static EvidenceFactory init() {
 		try {
-			EvidenceFactory theEvidenceFactory = (EvidenceFactory)EPackage.Registry.INSTANCE.getEFactory("http://schema.omg.org/SACM/1.0/Evidence"); //$NON-NLS-1$ 
+			EvidenceFactory theEvidenceFactory = (EvidenceFactory)EPackage.Registry.INSTANCE.getEFactory(EvidencePackage.eNS_URI);
 			if (theEvidenceFactory != null) {
 				return theEvidenceFactory;
 			}

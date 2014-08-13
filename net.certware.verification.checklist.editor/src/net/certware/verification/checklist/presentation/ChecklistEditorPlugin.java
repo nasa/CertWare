@@ -20,7 +20,7 @@ public final class ChecklistEditorPlugin extends EMFPlugin {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 	
 	/**
 	 * Keep track of the singleton.

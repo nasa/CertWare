@@ -20,6 +20,22 @@
       </wizard>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated checklist -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.certware.verification.checklist.presentation.ChecklistModelWizardID"
+            name="%_UI_ChecklistModelWizard_label"
+            class="net.certware.verification.checklist.presentation.ChecklistModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ChecklistModelFile.gif">
+         <description>%_UI_ChecklistModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
    <extension point="org.eclipse.ui.editors">
       <editor
             id="net.certware.verification.checklist.presentation.ChecklistEditorID"

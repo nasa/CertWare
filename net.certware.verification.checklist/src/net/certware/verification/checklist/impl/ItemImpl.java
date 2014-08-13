@@ -38,7 +38,7 @@ public class ItemImpl extends EObjectImpl implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 
 	/**
 	 * The default value of the '{@link #getIdentifier() <em>Identifier</em>}' attribute.

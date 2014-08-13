@@ -523,7 +523,7 @@ public class SACMPackageImpl extends EPackageImpl implements SACMPackage {
 	 * @generated
 	 */
 	protected void createNullAnnotations() {
-		String source = null;		
+		String source = null;	
 		addAnnotation
 		  (datetimeEClass, 
 		   source, 
@@ -531,7 +531,7 @@ public class SACMPackageImpl extends EPackageImpl implements SACMPackage {
 		   },
 		   new URI[] {
 			 URI.createURI(eNS_URI).appendFragment("//Datetime") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (booleanEDataType, 
 		   source, 
@@ -539,7 +539,7 @@ public class SACMPackageImpl extends EPackageImpl implements SACMPackage {
 		   },
 		   new URI[] {
 			 URI.createURI(eNS_URI).appendFragment("//Boolean") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (integerEDataType, 
 		   source, 
@@ -547,7 +547,7 @@ public class SACMPackageImpl extends EPackageImpl implements SACMPackage {
 		   },
 		   new URI[] {
 			 URI.createURI(eNS_URI).appendFragment("//Integer") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (stringEDataType, 
 		   source, 

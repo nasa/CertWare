@@ -1,0 +1,14 @@
+?IMPORT net::certware::argument::sfp::ui::wizard?
+
+?DEFINE main FOR SemiFormalProofProjectInfo?
+?EXPAND model FOR this?
+?ENDDEFINE?
+
+?DEFINE model FOR SemiFormalProofProjectInfo?
+?FILE "src/model/Model.semiformalproof"-?
+/*
+ * This is an example model
+ */
+Hello Xtext!
+?ENDFILE?
+?ENDDEFINE?

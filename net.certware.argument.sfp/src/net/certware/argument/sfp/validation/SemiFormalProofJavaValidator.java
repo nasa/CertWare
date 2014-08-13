@@ -23,6 +23,7 @@ import net.certware.argument.sfp.util.ProofUtil;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.mwe2.language.validation.AbstractMwe2JavaValidator;
 import org.eclipse.xtext.validation.Check;
 
 /**
@@ -31,7 +32,7 @@ import org.eclipse.xtext.validation.Check;
  * @author mrb
  * @since 1.0.3
  */
-public class SemiFormalProofJavaValidator extends AbstractSemiFormalProofJavaValidator {
+public class SemiFormalProofJavaValidator extends AbstractMwe2JavaValidator {
 
 	/**
 	 * Justification must have one of its parts.

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="sco.ecore#/"
-    outputs="ScoXMI.xsd#/">
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="sco.ecore#/" outputs="ScoXMI.xsd#/">
   <nested inputs="sco.ecore#/" outputs="ScoXMI.xsd#/">
     <nested inputs="sco.ecore#//ChangeOrderType" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition">
       <nested inputs="sco.ecore#//ChangeOrderType/Critical" outputs="ScoXMI.xsd#//ChangeOrderType;XSDSimpleTypeDefinition/XSDEnumerationFacet"/>

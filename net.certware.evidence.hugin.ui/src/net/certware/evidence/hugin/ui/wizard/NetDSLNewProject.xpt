@@ -1,0 +1,14 @@
+?IMPORT net::certware::evidence::hugin::ui::wizard?
+
+?DEFINE main FOR NetDSLProjectInfo?
+?EXPAND model FOR this?
+?ENDDEFINE?
+
+?DEFINE model FOR NetDSLProjectInfo?
+?FILE "src/model/Model.netdsl"-?
+/*
+ * This is an example model
+ */
+Hello Xtext!
+?ENDFILE?
+?ENDDEFINE?

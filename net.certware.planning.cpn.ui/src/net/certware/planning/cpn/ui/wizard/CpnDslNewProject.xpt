@@ -1,0 +1,14 @@
+?IMPORT net::certware::planning::cpn::ui::wizard?
+
+?DEFINE main FOR CpnDslProjectInfo?
+?EXPAND model FOR this?
+?ENDDEFINE?
+
+?DEFINE model FOR CpnDslProjectInfo?
+?FILE "src/model/Model.cpndsl"-?
+/*
+ * This is an example model
+ */
+Hello Xtext!
+?ENDFILE?
+?ENDDEFINE?

@@ -30,7 +30,7 @@ public class ScoFactoryImpl extends EFactoryImpl implements ScoFactory {
 	 */
 	public static ScoFactory init() {
 		try {
-			ScoFactory theScoFactory = (ScoFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.certware.net/sco"); //$NON-NLS-1$ 
+			ScoFactory theScoFactory = (ScoFactory)EPackage.Registry.INSTANCE.getEFactory(ScoPackage.eNS_URI);
 			if (theScoFactory != null) {
 				return theScoFactory;
 			}
@@ -217,7 +217,7 @@ public class ScoFactoryImpl extends EFactoryImpl implements ScoFactory {
 	 * @generated
 	 */
 	public String convertChangeOrderTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+		return convertChangeOrderType((ChangeOrderType)instanceValue);
 	}
 
 	/**

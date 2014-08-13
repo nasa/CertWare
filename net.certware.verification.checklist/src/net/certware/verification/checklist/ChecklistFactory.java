@@ -20,7 +20,7 @@ public interface ChecklistFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 
 	/**
 	 * The singleton instance of the factory.

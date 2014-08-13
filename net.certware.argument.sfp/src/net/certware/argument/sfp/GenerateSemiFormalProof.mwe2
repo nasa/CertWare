@@ -8,7 +8,7 @@ var fileExtensions = "sfp"
 var projectName = "net.certware.argument.sfp"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/argument/sfp/SemiFormalProof.xtext"
 var runtimeProject = "../${projectName}"
-// var runtimeProject = "platforom:/resource/${projectName}"
+// var runtimeProject = "platform:/resource/${projectName}"
 
 Workflow {
     bean = StandaloneSetup {
@@ -45,11 +45,11 @@ Workflow {
     component = Generator {
     	pathRtProject = runtimeProject
     	pathUiProject = "${runtimeProject}.ui"
-    	pathTestProject = "${runtimeProject}.tests"
+    	// pathTestProject = "${runtimeProject}.tests"
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
     	language = auto-inject {
-		forcedResourceSet = theResourceSet
+			forcedResourceSet = theResourceSet
     		uri = grammarURI
     
     		// Java API to access grammar elements (required by several other fragments)
@@ -105,7 +105,7 @@ Workflow {
     		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
     
     		// generates junit test support classes into Generator#pathTestProject
-    		fragment = junit.Junit4Fragment auto-inject {}
+    		//fragment = junit.Junit4Fragment auto-inject {}
     
     		// project wizard (optional)
     		fragment = projectWizard.SimpleProjectWizardFragment auto-inject {

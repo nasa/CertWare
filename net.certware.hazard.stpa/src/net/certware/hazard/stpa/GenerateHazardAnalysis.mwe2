@@ -9,7 +9,6 @@ var projectName = "net.certware.hazard.stpa"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/hazard/stpa/HazardAnalysis.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
-var encoding = "UTF-8"
 
 
 Workflow {
@@ -43,14 +42,14 @@ Workflow {
     	directory = "${runtimeProject}/model"
     }
 
-    component = DirectoryCleaner {
-    	directory = "${runtimeProject}.tests/src-gen"
-    }
+    //component = DirectoryCleaner {
+    //	directory = "${runtimeProject}.tests/src-gen"
+    //}
     
     component = Generator {
     	pathRtProject = runtimeProject
     	pathUiProject = "${runtimeProject}.ui"
-    	pathTestProject = "${runtimeProject}.tests"
+    	//pathTestProject = "${runtimeProject}.tests"
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
     	language = auto-inject {
@@ -61,7 +60,7 @@ Workflow {
     		fragment = grammarAccess.GrammarAccessFragment auto-inject {}
     
     		// generates Java API for the generated EPackages
-    		fragment = ecore.EcoreGeneratorFragment auto-inject {
+    		fragment = ecore.EMFGeneratorFragment auto-inject {
     		// referencedGenModels = "
     		//  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
     		//  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
@@ -124,7 +123,7 @@ Workflow {
     		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
     
     		// generates junit test support classes into Generator#pathTestProject
-    		fragment = junit.Junit4Fragment auto-inject {}
+    		//fragment = junit.Junit4Fragment auto-inject {}
     
     		// project wizard (optional)
     		fragment = projectWizard.SimpleProjectWizardFragment auto-inject {

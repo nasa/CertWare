@@ -7,16 +7,23 @@ Bundle-SymbolicName: net.certware.evidence.hugin.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.evidence.hugin;visibility:=reexport,
  org.eclipse.xtext.ui,
- org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
  org.antlr.runtime,
- net.certware.core.ui;bundle-version="1.1.0",
- org.eclipse.xtext.common.types.ui
+ net.certware.core.ui,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.xtend,
+ org.eclipse.xpand,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
 Import-Package: org.apache.log4j,
- org.eclipse.xtext.ui.editor.outline.actions
+ org.eclipse.xtext.ui.editor.outline.actions,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: net.certware.evidence.hugin.ui.contentassist.antlr,
  net.certware.evidence.hugin.ui.quickfix,

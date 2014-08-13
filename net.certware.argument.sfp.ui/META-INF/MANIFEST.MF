@@ -13,17 +13,26 @@ Require-Bundle: net.certware.argument.sfp;visibility:=reexport,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
  org.antlr.runtime,
- org.eclipse.ui.forms
+ org.eclipse.ui.forms,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.xtend,
+ org.eclipse.xpand,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
 Import-Package: net.certware.core.ui,
  net.certware.core.ui.help,
  net.certware.core.ui.log,
  org.apache.log4j,
  org.eclipse.help,
  org.eclipse.ui.forms,
- org.eclipse.ui.forms.events
+ org.eclipse.ui.forms.events,
+ org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: net.certware.argument.sfp.ui.contentassist.antlr,
  net.certware.argument.sfp.ui.quickfix,
- net.certware.argument.sfp.ui.contentassist
+ net.certware.argument.sfp.ui.contentassist,
+ net.certware.argument.sfp.ui.internal
 Bundle-Activator: net.certware.argument.sfp.ui.internal.SemiFormalProofActivator
 Eclipse-RegisterBuddy: org.apache.log4j

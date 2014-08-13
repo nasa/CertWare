@@ -4,12 +4,20 @@
 
 package net.certware.measurement.sco.util;
 
-import java.util.List;
+import net.certware.measurement.sco.ArtifactCommit;
+import net.certware.measurement.sco.ArtifactIdentifier;
+import net.certware.measurement.sco.ChangeOrderCount;
+import net.certware.measurement.sco.CommitHistory;
+import net.certware.measurement.sco.CriticalDefectChangeOrders;
+import net.certware.measurement.sco.ImprovementChangeOrders;
+import net.certware.measurement.sco.NewFeatureChangeOrders;
+import net.certware.measurement.sco.NormalDefectChangeOrders;
+import net.certware.measurement.sco.ScoPackage;
+import net.certware.measurement.sco.TotalChangeOrders;
 
-import net.certware.measurement.sco.*;
-
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see net.certware.measurement.sco.ScoPackage
  * @generated
  */
-public class ScoSwitch<T> {
+public class ScoSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -46,14 +54,16 @@ public class ScoSwitch<T> {
 	}
 
 	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
+	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
+	 * @parameter ePackage the package in question.
+	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
-	public T doSwitch(EObject theEObject) {
-		return doSwitch(theEObject.eClass(), theEObject);
+	@Override
+	protected boolean isSwitchFor(EPackage ePackage) {
+		return ePackage == modelPackage;
 	}
 
 	/**
@@ -63,26 +73,7 @@ public class ScoSwitch<T> {
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
-	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
-			return doSwitch(theEClass.getClassifierID(), theEObject);
-		}
-		else {
-			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
-					defaultCase(theEObject) :
-					doSwitch(eSuperTypes.get(0), theEObject);
-		}
-	}
-
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the first non-null result returned by a <code>caseXXX</code> call.
-	 * @generated
-	 */
+	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ScoPackage.CHANGE_ORDER_COUNT: {
@@ -294,6 +285,7 @@ public class ScoSwitch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
 	 */
+	@Override
 	public T defaultCase(EObject object) {
 		return null;
 	}

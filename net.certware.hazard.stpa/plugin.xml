@@ -3,14 +3,20 @@
 
 <plugin>
 
-  <extension point="org.eclipse.emf.ecore.generated_package">
+<!--  <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
        uri = "http://www.certware.net/hazard/stpa/HazardAnalysis" 
        class = "net.certware.hazard.stpa.hazardAnalysis.HazardAnalysisPackage"
        genModel = "net/certware/hazard/stpa/HazardAnalysis.genmodel" /> 
 	
+  </extension> -->
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.certware.net/hazard/stpa/HazardAnalysis" 
+       class = "net.certware.hazard.stpa.hazardAnalysis.HazardAnalysisPackage"
+       genModel = "model/generated/HazardAnalysis.genmodel" /> 
+	
   </extension>
-
-
 
 </plugin>

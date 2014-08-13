@@ -34,15 +34,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class EvidenceEvaluationItemProvider
-	extends EvidenceAssertionItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+	extends EvidenceAssertionItemProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

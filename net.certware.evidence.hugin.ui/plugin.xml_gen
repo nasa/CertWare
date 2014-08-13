@@ -224,28 +224,28 @@
     </extension>
 
 
-    <!-- marker definitions for net.certware.evidence.hugin.NetDSL -->
-    <extension
-            id="netdsl.check.fast"
-            name="NetDSL Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="netdsl.check.normal"
-            name="NetDSL Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="netdsl.check.expensive"
-            name="NetDSL Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
-    </extension>
+	<!-- marker definitions for net.certware.evidence.hugin.NetDSL -->
+	<extension
+	        id="netdsl.check.fast"
+	        name="NetDSL Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="netdsl.check.normal"
+	        name="NetDSL Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="netdsl.check.expensive"
+	        name="NetDSL Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
 
    <extension
          point="org.eclipse.xtext.builder.participant">
@@ -341,5 +341,58 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.evidence.hugin.NetDSL.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="net.certware.evidence.hugin.NetDSL.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="net.certware.evidence.hugin.NetDSL"
+	        class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="net.certware.evidence.hugin.NetDSL.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="net.certware.evidence.hugin.ui.keyword_NetDSL"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="net.certware.evidence.hugin.NetDSL.compare.contentViewers"
+            class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="net">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="net.certware.evidence.hugin.NetDSL.compare.contentMergeViewers"
+            class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="net" label="NetDSL Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="net.certware.evidence.hugin.NetDSL.editors.documentProviders"
+            class="net.certware.evidence.hugin.ui.NetDSLExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="net">
+    </provider>
+  </extension>
 
 </plugin>

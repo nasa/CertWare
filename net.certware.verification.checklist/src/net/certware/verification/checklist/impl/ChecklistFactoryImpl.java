@@ -27,7 +27,7 @@ public class ChecklistFactoryImpl extends EFactoryImpl implements ChecklistFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final String copyright = "CertWare Project\nCopyright (c) 2010 National Aeronautics and Space Administration.  All rights reserved."; //$NON-NLS-1$
+	public static final String copyright = "Copyright (c) 2010 National Aeronautics and Space Administration"; //$NON-NLS-1$
 
 	/**
 	 * Creates the default factory implementation.
@@ -37,7 +37,7 @@ public class ChecklistFactoryImpl extends EFactoryImpl implements ChecklistFacto
 	 */
 	public static ChecklistFactory init() {
 		try {
-			ChecklistFactory theChecklistFactory = (ChecklistFactory)EPackage.Registry.INSTANCE.getEFactory("checklist"); //$NON-NLS-1$ 
+			ChecklistFactory theChecklistFactory = (ChecklistFactory)EPackage.Registry.INSTANCE.getEFactory(ChecklistPackage.eNS_URI);
 			if (theChecklistFactory != null) {
 				return theChecklistFactory;
 			}

@@ -224,6 +224,62 @@
     </extension>
 
 
+	<!-- marker definitions for net.certware.planning.cpn.CpnDsl -->
+	<extension
+	        id="cpndsl.check.fast"
+	        name="CpnDsl Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="cpndsl.check.normal"
+	        name="CpnDsl Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="cpndsl.check.expensive"
+	        name="CpnDsl Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="cpn"
+            >
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="net.certware.planning.cpn.CpnDsl"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.planning.cpn.CpnDsl.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="net.certware.planning.cpn.CpnDsl"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.planning.cpn.CpnDsl.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
 	<!-- Quick Outline -->
 	<extension
 		point="org.eclipse.ui.handlers">
@@ -285,5 +341,69 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
+            id="net.certware.planning.cpn.ui.wizard.CpnDslNewProjectWizard"
+            name="CpnDsl Project"
+            project="true">
+      </wizard>
+   </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="net.certware.planning.cpn.CpnDsl.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="net.certware.planning.cpn.CpnDsl"
+	        class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="net.certware.planning.cpn.CpnDsl.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="net.certware.planning.cpn.ui.keyword_CpnDsl"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="net.certware.planning.cpn.CpnDsl.compare.contentViewers"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="cpn">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="net.certware.planning.cpn.CpnDsl.compare.contentMergeViewers"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="cpn" label="CpnDsl Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="net.certware.planning.cpn.CpnDsl.editors.documentProviders"
+            class="net.certware.planning.cpn.ui.CpnDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="cpn">
+    </provider>
+  </extension>
 
 </plugin>

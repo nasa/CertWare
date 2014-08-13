@@ -36,7 +36,7 @@ public class ArgumentationFactoryImpl extends EFactoryImpl implements Argumentat
 	 */
 	public static ArgumentationFactory init() {
 		try {
-			ArgumentationFactory theArgumentationFactory = (ArgumentationFactory)EPackage.Registry.INSTANCE.getEFactory("http://schema.omg.org/SACM/1.0/Argumentation"); //$NON-NLS-1$ 
+			ArgumentationFactory theArgumentationFactory = (ArgumentationFactory)EPackage.Registry.INSTANCE.getEFactory(ArgumentationPackage.eNS_URI);
 			if (theArgumentationFactory != null) {
 				return theArgumentationFactory;
 			}

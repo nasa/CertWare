@@ -23,5 +23,6 @@ Export-Package: net.certware.sacm.dsl.ui,
  net.certware.sacm.dsl.ui.contentassist,
  net.certware.sacm.dsl.ui.contentassist.antlr,
  net.certware.sacm.dsl.ui.contentassist.antlr.internal,
- net.certware.sacm.dsl.ui.internal
+ net.certware.sacm.dsl.ui.internal,
+ net.certware.sacm.dsl.ui.quickfix
 Bundle-Activator: net.certware.sacm.dsl.ui.internal.SacmDslActivator

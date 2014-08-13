@@ -4,7 +4,7 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var file.extensions = "cpn"
+var fileExtensions = "cpn"
 var projectName = "net.certware.planning.cpn"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/planning/cpn/CpnDsl.xtext"
 var sacmName = "net.certware.sacm"
@@ -52,13 +52,12 @@ Workflow {
 		 forcedResourceSet = theResourceSet
 
 			uri = grammarURI
-			fileExtensions = file.extensions
-			/ Java API to access grammar elements (required by several other fragments)
+			// Java API to access grammar elements (required by several other fragments)
 			fragment = grammarAccess.GrammarAccessFragment auto-inject {}
 
 
     		// generates Java API for the generated EPackages
-    		fragment = ecore.EcoreGeneratorFragment auto-inject {
+    		fragment = ecore.EMFGeneratorFragment auto-inject {
     		// referencedGenModels = "
     		//  platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel,
     		//  platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel
@@ -121,7 +120,7 @@ Workflow {
     		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
     
     		// generates junit test support classes into Generator#pathTestProject
-    		fragment = junit.Junit4Fragment auto-inject {}
+    		//fragment = junit.Junit4Fragment auto-inject {}
     
     		// project wizard (optional)
     		fragment = projectWizard.SimpleProjectWizardFragment auto-inject {

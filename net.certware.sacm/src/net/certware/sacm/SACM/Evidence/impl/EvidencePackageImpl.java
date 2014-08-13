@@ -3742,7 +3742,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 	 * @generated
 	 */
 	protected void createNullAnnotations() {
-		String source = null;		
+		String source = null;	
 		addAnnotation
 		  (this, 
 		   source, 
@@ -3750,7 +3750,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceAttributeEClass, 
 		   source, 
@@ -3758,7 +3758,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceAttribute") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (consistencyEClass, 
 		   source, 
@@ -3766,7 +3766,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Consistency") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (completenessEClass, 
 		   source, 
@@ -3774,7 +3774,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Completeness") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (documentEClass, 
 		   source, 
@@ -3782,7 +3782,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Document") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (confidenceEClass, 
 		   source, 
@@ -3790,7 +3790,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Confidence") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (approvedByEClass, 
 		   source, 
@@ -3798,7 +3798,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ApprovedBy") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (createdByEClass, 
 		   source, 
@@ -3806,7 +3806,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/CreatedBy") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (toolEClass, 
 		   source, 
@@ -3814,7 +3814,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Tool") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (methodEClass, 
 		   source, 
@@ -3822,7 +3822,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Method") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceItemEClass, 
 		   source, 
@@ -3830,7 +3830,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceItem") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isBasedOnEClass, 
 		   source, 
@@ -3838,7 +3838,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsBasedOn") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (formalAssertionEClass, 
 		   source, 
@@ -3846,7 +3846,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/FormalAssertion") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isAEClass, 
 		   source, 
@@ -3854,7 +3854,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsA") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isCharacterizedByEClass, 
 		   source, 
@@ -3862,7 +3862,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsCharacterizedBy") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (personEClass, 
 		   source, 
@@ -3870,7 +3870,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Person") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (organizationEClass, 
 		   source, 
@@ -3878,7 +3878,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Organization") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceContainerEClass, 
 		   source, 
@@ -3886,7 +3886,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceContainer") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (endTimeEClass, 
 		   source, 
@@ -3894,7 +3894,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EndTime") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (assertionEClass, 
 		   source, 
@@ -3902,7 +3902,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Assertion") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (objectEClass, 
 		   source, 
@@ -3910,7 +3910,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Object") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (compositeObjectEClass, 
 		   source, 
@@ -3918,7 +3918,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/CompositeObject") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (roleBindingEClass, 
 		   source, 
@@ -3926,7 +3926,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/RoleBinding") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (startTimeEClass, 
 		   source, 
@@ -3934,7 +3934,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/StartTime") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (relevanceEClass, 
 		   source, 
@@ -3942,7 +3942,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Relevance") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (significanceEClass, 
 		   source, 
@@ -3950,7 +3950,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Significance") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (accuracyEClass, 
 		   source, 
@@ -3958,7 +3958,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Accuracy") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (hasRoleInEClass, 
 		   source, 
@@ -3966,7 +3966,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/HasRoleIn") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isScopedByEClass, 
 		   source, 
@@ -3974,7 +3974,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsScopedBy") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (effectiveTimeEClass, 
 		   source, 
@@ -3982,7 +3982,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EffectiveTime") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (atTimeEClass, 
 		   source, 
@@ -3990,7 +3990,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/AtTime") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (originalityEClass, 
 		   source, 
@@ -3998,7 +3998,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Originality") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (reportingEClass, 
 		   source, 
@@ -4006,7 +4006,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Reporting") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (reliabilityEClass, 
 		   source, 
@@ -4014,7 +4014,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Reliability") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (supportsEClass, 
 		   source, 
@@ -4022,7 +4022,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Supports") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isGeneratedAtEClass, 
 		   source, 
@@ -4030,7 +4030,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsGeneratedAt") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (collectionMethodEClass, 
 		   source, 
@@ -4038,7 +4038,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/CollectionMethod") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceRelationEClass, 
 		   source, 
@@ -4046,7 +4046,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceRelation") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (supportEClass, 
 		   source, 
@@ -4054,7 +4054,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Support") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (conflictsEClass, 
 		   source, 
@@ -4062,7 +4062,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Conflicts") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (refutesEClass, 
 		   source, 
@@ -4070,7 +4070,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Refutes") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (negatesEClass, 
 		   source, 
@@ -4078,7 +4078,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Negates") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (unknownObjectEClass, 
 		   source, 
@@ -4086,7 +4086,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/UnknownObject") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceEvaluationEClass, 
 		   source, 
@@ -4094,7 +4094,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceEvaluation") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (resolvesEClass, 
 		   source, 
@@ -4102,7 +4102,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Resolves") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (stakeholderEClass, 
 		   source, 
@@ -4110,7 +4110,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Stakeholder") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceRequestEClass, 
 		   source, 
@@ -4118,7 +4118,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceRequest") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (projectObjectiveEClass, 
 		   source, 
@@ -4126,7 +4126,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ProjectObjective") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (activityEClass, 
 		   source, 
@@ -4134,7 +4134,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Activity") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (dependsOnEClass, 
 		   source, 
@@ -4142,7 +4142,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/DependsOn") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (satisfiesEClass, 
 		   source, 
@@ -4150,7 +4150,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Satisfies") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (projectElementEClass, 
 		   source, 
@@ -4158,7 +4158,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ProjectElement") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (referencedClaimEClass, 
 		   source, 
@@ -4166,7 +4166,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ReferencedClaim") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceObservationEClass, 
 		   source, 
@@ -4174,7 +4174,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceObservation") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceResolutionEClass, 
 		   source, 
@@ -4182,7 +4182,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceResolution") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (weakensEClass, 
 		   source, 
@@ -4190,7 +4190,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Weakens") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (amplifiesEClass, 
 		   source, 
@@ -4198,7 +4198,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Amplifies") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (contributesEClass, 
 		   source, 
@@ -4206,7 +4206,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Contributes") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (challengesEClass, 
 		   source, 
@@ -4214,7 +4214,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Challenges") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (strengthEClass, 
 		   source, 
@@ -4222,7 +4222,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Strength") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isAcquiredAtEClass, 
 		   source, 
@@ -4230,7 +4230,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsAcquiredAt") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isTransferredToEClass, 
 		   source, 
@@ -4238,7 +4238,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsTransferredTo") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (documentPropertyEClass, 
 		   source, 
@@ -4246,7 +4246,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/DocumentProperty") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceEventEClass, 
 		   source, 
@@ -4254,7 +4254,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceEvent") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (ownedByEClass, 
 		   source, 
@@ -4262,7 +4262,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/OwnedBy") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (provenanceEClass, 
 		   source, 
@@ -4270,7 +4270,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Provenance") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (timingPropertyEClass, 
 		   source, 
@@ -4278,7 +4278,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/TimingProperty") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isPartOfEClass, 
 		   source, 
@@ -4286,7 +4286,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsPartOf") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isRevokedAtEClass, 
 		   source, 
@@ -4294,7 +4294,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsRevokedAt") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (providesContextEClass, 
 		   source, 
@@ -4302,7 +4302,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ProvidesContext") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (formalObjectEClass, 
 		   source, 
@@ -4310,7 +4310,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/FormalObject") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (meansThatEClass, 
 		   source, 
@@ -4318,7 +4318,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/MeansThat") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceElementEClass, 
 		   source, 
@@ -4326,7 +4326,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceElement") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (careOfEClass, 
 		   source, 
@@ -4334,7 +4334,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/CareOf") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (custodyPropertyEClass, 
 		   source, 
@@ -4342,7 +4342,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/CustodyProperty") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (atLocationEClass, 
 		   source, 
@@ -4350,7 +4350,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/AtLocation") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isCreatedAtEClass, 
 		   source, 
@@ -4358,7 +4358,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsCreatedAt") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (requiresContainerEClass, 
 		   source, 
@@ -4366,7 +4366,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/RequiresContainer") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (projectPropertyEClass, 
 		   source, 
@@ -4374,7 +4374,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ProjectProperty") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (serviceEClass, 
 		   source, 
@@ -4382,7 +4382,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Service") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (hasElectronicSourceEClass, 
 		   source, 
@@ -4390,7 +4390,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/HasElectronicSource") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isExpressedInLanguageEClass, 
 		   source, 
@@ -4398,7 +4398,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsExpressedInLanguage") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (usingProcessEClass, 
 		   source, 
@@ -4406,7 +4406,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/UsingProcess") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (hasSecurityClassificationEClass, 
 		   source, 
@@ -4414,7 +4414,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/HasSecurityClassification") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (isReleaseableToEClass, 
 		   source, 
@@ -4422,7 +4422,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/IsReleaseableTo") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceGroupEClass, 
 		   source, 
@@ -4430,7 +4430,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceGroup") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (hasVersionEClass, 
 		   source, 
@@ -4438,7 +4438,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/HasVersion") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (hasMediaEClass, 
 		   source, 
@@ -4446,7 +4446,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/HasMedia") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (exhibitEClass, 
 		   source, 
@@ -4454,7 +4454,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Exhibit") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (formalElementEClass, 
 		   source, 
@@ -4462,7 +4462,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/FormalElement") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (exhibitPropertyEClass, 
 		   source, 
@@ -4470,7 +4470,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ExhibitProperty") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (evidenceInterpretationEClass, 
 		   source, 
@@ -4478,7 +4478,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/EvidenceInterpretation") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (reliabilityLevelEEnum, 
 		   source, 
@@ -4486,7 +4486,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ReliabilityLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (completenessLevelEEnum, 
 		   source, 
@@ -4494,7 +4494,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/CompletenessLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (originalityLevelEEnum, 
 		   source, 
@@ -4502,7 +4502,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/OriginalityLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (consistencyLevelEEnum, 
 		   source, 
@@ -4510,7 +4510,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ConsistencyLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (levelEEnum, 
 		   source, 
@@ -4518,7 +4518,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/Level") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (supportLevelEEnum, 
 		   source, 
@@ -4526,7 +4526,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/SupportLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (reportingLevelEEnum, 
 		   source, 
@@ -4534,7 +4534,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ReportingLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (confidenceLevelEEnum, 
 		   source, 
@@ -4542,7 +4542,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/ConfidenceLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (accuracyLevelEEnum, 
 		   source, 
@@ -4550,7 +4550,7 @@ public class EvidencePackageImpl extends EPackageImpl implements EvidencePackage
 		   },
 		   new URI[] {
 			 URI.createURI(SACMPackage.eNS_URI).appendFragment("//Evidence/AccuracyLevel") //$NON-NLS-1$
-		   });		
+		   });	
 		addAnnotation
 		  (standardOfProofEEnum, 
 		   source, 

@@ -101,6 +101,65 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 		viewer = (StructuredViewer) aViewer;
 	}
 
+
+	
+	/**
+	 * Visitor for iterating over the resource content.
+	 */
+	public ChecklistSwitch<Boolean> visitorc = new ChecklistSwitch<Boolean> () {
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Category</em>'.
+		 * @param object the target of the switch.
+		 * @return always returns true
+		 */
+		public Boolean caseCategory(Category object) {
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Checklist</em>'.
+		 * @param object the target of the switch.
+		 * @return always returns true
+		 */
+		public Boolean caseChecklist(Checklist object) {
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
+		 * Increments the item count.
+		 * Increments the count of the applicable choice result on the item.
+		 * @param item the target of the switch.
+		 * @return always returns true
+		 */
+		public Boolean caseItem(Item item) {
+			incrementItemCount();
+			Choices choices = item.getResult();
+			
+			if ( choices.getValue() == Choices.NO_VALUE ) {
+				incrementNoResultCount();
+			} else if ( choices.getValue() == Choices.NOT_APPLICABLE_VALUE ) {
+				incrementNaResultCount();
+			} else if ( choices.getValue() == Choices.YES_VALUE ) {
+				incrementYesResultCount();	
+			} else if ( choices.getValue() == Choices.UNKNOWN_VALUE ) {
+				incrementUnknownResultCount();
+			}
+			return Boolean.TRUE;
+		}
+
+		/**
+		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
+		 * @param object the target of the switch.
+		 * @return always returns true
+		 */
+		public Boolean defaultCase(EObject object) {
+			return Boolean.TRUE;
+		}
+
+	};
+
 	/**
 	 * Visitor for resource change deltas.
 	 * @param delta resource change delta
@@ -241,8 +300,8 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 
 					// visit the model, collect statistics
 					for ( final Iterator<EObject> i = resource.getAllContents(); i.hasNext(); ) {
-						EObject eo = i.next(); // $codepro.audit.disable variableDeclaredInLoop
-						visitor.doSwitch(eo);
+						EObject eo = i.next(); 
+						visitorc.doSwitch(eo);
 					} // iterator
 
 					TreeData td = null; // $codepro.audit.disable localDeclaration
@@ -282,68 +341,6 @@ implements ITreeContentProvider, IResourceChangeListener, IResourceDeltaVisitor,
 	} // method
 
 
-
-	
-	/**
-	 * Visitor for iterating over the resource content.
-	 */
-	public ChecklistSwitch<Boolean> visitor = new ChecklistSwitch<Boolean> () {
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Category</em>'.
-		 * @param object the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseCategory(Category object) {
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Checklist</em>'.
-		 * @param object the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseChecklist(Checklist object) {
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
-		 * Increments the item count.
-		 * Increments the count of the applicable choice result on the item.
-		 * @param item the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-		 */
-		public Boolean caseItem(Item item) {
-			incrementItemCount();
-			Choices choices = item.getResult();
-			
-			if ( choices.getValue() == Choices.NO_VALUE ) {
-				incrementNoResultCount();
-			} else if ( choices.getValue() == Choices.NOT_APPLICABLE_VALUE ) {
-				incrementNaResultCount();
-			} else if ( choices.getValue() == Choices.YES_VALUE ) {
-				incrementYesResultCount();	
-			} else if ( choices.getValue() == Choices.UNKNOWN_VALUE ) {
-				incrementUnknownResultCount();
-			}
-			return Boolean.TRUE;
-		}
-
-		/**
-		 * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
-		 * @param object the target of the switch.
-		 * @return always returns true
-		 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-		 */
-		public Boolean defaultCase(EObject object) {
-			return Boolean.TRUE;
-		}
-
-	};
 
 
 	/**

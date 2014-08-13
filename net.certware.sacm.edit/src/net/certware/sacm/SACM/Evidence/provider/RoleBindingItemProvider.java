@@ -39,15 +39,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class RoleBindingItemProvider
-	extends UtilityElementItemProvider
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource,
-		IItemColorProvider,
-		IItemFontProvider {
+	extends UtilityElementItemProvider {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

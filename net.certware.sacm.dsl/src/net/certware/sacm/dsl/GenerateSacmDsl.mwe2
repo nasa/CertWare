@@ -7,14 +7,24 @@ import org.eclipse.xtext.ui.generator.*
 //import net.certware.sacm.SACM.Evidence.EvidencePackage
 //import net.certware.sacm.SACM.Argumentation.ArgumentationPackage
 
-var grammarURI = "classpath:/net/certware/sacm/dsl/SacmDsl.xtext"
 var fileExtensions = "sacmdsl"
 var projectName = "net.certware.sacm.dsl"
+var grammarURI = "platform:/resource/${projectName}/src/net/certware/sacm/dsl/SacmDsl.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 
+
 Workflow {
-	bean = StandaloneSetup {
+	bean = StandaloneSetup {    	 
+		resourceSet = org.eclipse.xtext.resource.XtextResourceSet:theResourceSet {}
+		       uriMap = {
+              from = "platform:/resource/org.eclipse.xtext.xbase/"
+           to = "classpath:/"
+           }
+         uriMap = {
+                  from = "platform:/resource/org.eclipse.xtext.common.types/"
+                       to = "classpath:/"
+                       }
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
 		registerGeneratedEPackage = "net.certware.sacm.SACM.SACMPackage"
@@ -35,17 +45,18 @@ Workflow {
 	component = Generator {
 		pathRtProject = runtimeProject
 		pathUiProject = "${runtimeProject}.ui"
-		pathTestProject = "${runtimeProject}.tests"
+		//pathTestProject = "${runtimeProject}.tests"
 		projectNameRt = projectName
 		projectNameUi = "${projectName}.ui"
 		language = auto-inject {
+					 forcedResourceSet = theResourceSet
 			uri = grammarURI
 
 			// Java API to access grammar elements (required by several other fragments)
 			fragment = grammarAccess.GrammarAccessFragment auto-inject {}
 
 			// generates Java API for the generated EPackages
-			// fragment = ecore.EcoreGeneratorFragment auto-inject {}
+			fragment = ecore.EMFGeneratorFragment auto-inject {}
 
 			// the Ecore2Xtext specific terminal converter
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment auto-inject {}
@@ -111,7 +122,7 @@ Workflow {
 			}
 			
 			// generates junit test support classes into Generator#pathTestProject
-			fragment = junit.Junit4Fragment auto-inject {}
+			//fragment = junit.Junit4Fragment auto-inject {}
 
 			// project wizard (optional) 
 			// fragment = projectWizard.SimpleProjectWizardFragment auto-inject {

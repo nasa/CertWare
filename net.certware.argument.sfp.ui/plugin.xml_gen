@@ -224,27 +224,60 @@
     </extension>
 
 
-    <!-- marker definitions for net.certware.argument.sfp.SemiFormalProof -->
-    <extension
-            id="semiformalproof.check.fast"
-            name="SemiFormalProof Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.fast"/>
-        <persistent value="true"/>
+	<!-- marker definitions for net.certware.argument.sfp.SemiFormalProof -->
+	<extension
+	        id="semiformalproof.check.fast"
+	        name="SemiFormalProof Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="semiformalproof.check.normal"
+	        name="SemiFormalProof Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="semiformalproof.check.expensive"
+	        name="SemiFormalProof Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="sfp"
+            >
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="net.certware.argument.sfp.SemiFormalProof"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.argument.sfp.SemiFormalProof.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
+        </page>
     </extension>
     <extension
-            id="semiformalproof.check.normal"
-            name="SemiFormalProof Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.normal"/>
-        <persistent value="true"/>
-    </extension>
-    <extension
-            id="semiformalproof.check.expensive"
-            name="SemiFormalProof Problem"
-            point="org.eclipse.core.resources.markers">
-        <super type="org.eclipse.xtext.ui.check.expensive"/>
-        <persistent value="true"/>
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="net.certware.argument.sfp.SemiFormalProof"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.argument.sfp.SemiFormalProof.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
     </extension>
 
 	<!-- Quick Outline -->
@@ -308,5 +341,69 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:net.certware.argument.sfp.ui.wizard.SemiFormalProofNewProjectWizard"
+            id="net.certware.argument.sfp.ui.wizard.SemiFormalProofNewProjectWizard"
+            name="SemiFormalProof Project"
+            project="true">
+      </wizard>
+   </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="net.certware.argument.sfp.SemiFormalProof.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="net.certware.argument.sfp.SemiFormalProof"
+	        class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="net.certware.argument.sfp.SemiFormalProof.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="net.certware.argument.sfp.ui.keyword_SemiFormalProof"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="net.certware.argument.sfp.SemiFormalProof.compare.contentViewers"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="sfp">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="net.certware.argument.sfp.SemiFormalProof.compare.contentMergeViewers"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="sfp" label="SemiFormalProof Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="net.certware.argument.sfp.SemiFormalProof.editors.documentProviders"
+            class="net.certware.argument.sfp.ui.SemiFormalProofExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="sfp">
+    </provider>
+  </extension>
 
 </plugin>

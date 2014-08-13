@@ -5,7 +5,6 @@
 package net.certware.measurement.sco.provider;
 
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
 
 /**
