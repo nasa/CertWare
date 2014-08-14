@@ -116,7 +116,7 @@ public interface Item extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Result</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"UNKNOWN"</code>.
 	 * The literals are from the enumeration {@link net.certware.verification.checklist.Choices}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -128,7 +128,7 @@ public interface Item extends EObject {
 	 * @see net.certware.verification.checklist.Choices
 	 * @see #setResult(Choices)
 	 * @see net.certware.verification.checklist.ChecklistPackage#getItem_Result()
-	 * @model default="" required="true"
+	 * @model default="UNKNOWN" required="true"
 	 * @generated
 	 */
 	Choices getResult();

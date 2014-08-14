@@ -194,89 +194,85 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
    </url>
 
    <requires>
-      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="org.eclipse.ui" version="3.6.1" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.draw2d"/>
-      <import plugin="org.eclipse.osgi"/>
-      <import plugin="org.eclipse.osgi.services"/>
-      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.jface.text"/>
-      <import plugin="org.eclipse.ui.forms"/>
-      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.ui" version="3.6.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide"/>
       <import plugin="org.eclipse.help"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.core.commands"/>
       <import plugin="org.eclipse.core.jobs"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.ui.workbench"/>
-      <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.ui.intro"/>
       <import plugin="org.eclipse.ui.intro.universal"/>
-      <import plugin="org.junit"/>
+      <import plugin="org.eclipse.jface.text"/>
       <import feature="org.eclipse.emf" version="2.9.0.v20130610-0406"/>
+      <import plugin="org.eclipse.core.runtime" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
    </requires>
 
    <plugin
          id="net.certware.branding"
          download-size="0"
          install-size="0"
-         version="1.2.2.qualifier"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.certware.example"
          download-size="0"
          install-size="0"
-         version="1.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="net.certware.export"
          download-size="0"
          install-size="0"
-         version="1.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="net.certware.help"
          download-size="0"
          install-size="0"
-         version="1.2.1.qualifier"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.certware.libs.doc"
          download-size="0"
          install-size="0"
-         version="1.2.1.qualifier"/>
+         version="0.0.0"/>
 
    <plugin
          id="net.certware.intro"
          download-size="0"
          install-size="0"
-         version="1.2.3.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="net.certware.core"
          download-size="0"
          install-size="0"
-         version="1.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="net.certware.core.ui"
          download-size="0"
          install-size="0"
-         version="1.2.2.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.antlr.runtime"
          download-size="0"
          install-size="0"
-         version="3.2.0.v201101311130"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

@@ -125,9 +125,9 @@ Workflow {
     		//fragment = junit.Junit4Fragment auto-inject {}
     
     		// project wizard (optional)
-    		fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
-    		     generatorProjectName = "${projectName}"
-    		}
+    		//fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
+    		//     generatorProjectName = "${projectName}"
+    		//}
     
     		// rename refactoring
     		fragment = refactoring.RefactorElementNameFragment auto-inject {}

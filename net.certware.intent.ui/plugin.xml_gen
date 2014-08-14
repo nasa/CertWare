@@ -341,17 +341,6 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
-
-   <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            category="org.eclipse.xtext.projectwiz"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            name="IntentSpecification Project"
-            project="true">
-      </wizard>
-   </extension>
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 

@@ -4,13 +4,14 @@
  */
 package net.certware.verification.checklist.util;
 
-import net.certware.verification.checklist.*;
+import net.certware.verification.checklist.Category;
+import net.certware.verification.checklist.Checklist;
+import net.certware.verification.checklist.ChecklistPackage;
+import net.certware.verification.checklist.Item;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

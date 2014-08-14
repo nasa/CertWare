@@ -9,7 +9,7 @@ var projectName = "net.certware.intent"
 var grammarURI = "platform:/resource/${projectName}/src/net/certware/intent/IntentSpecification.xtext"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
-var encoding = "UTF-8"
+
 
 Workflow {
     bean = StandaloneSetup {
@@ -42,14 +42,14 @@ Workflow {
     	directory = "${runtimeProject}.ui/src-gen"
     }
     
-    component = DirectoryCleaner {
-    	directory = "${runtimeProject}.tests/src-gen"
-    }
+    //component = DirectoryCleaner {
+    //	directory = "${runtimeProject}.tests/src-gen"
+    //}
     
     component = Generator {
     	pathRtProject = runtimeProject
     	pathUiProject = "${runtimeProject}.ui"
-    	pathTestProject = "${runtimeProject}.tests"
+    	//pathTestProject = "${runtimeProject}.tests"
     	projectNameRt = projectName
     	projectNameUi = "${projectName}.ui"
     	language = auto-inject {
@@ -124,12 +124,12 @@ Workflow {
     		fragment = parser.antlr.XtextAntlrUiGeneratorFragment auto-inject {}
     
     		// generates junit test support classes into Generator#pathTestProject
-    		fragment = junit.Junit4Fragment auto-inject {}
+    		//fragment = junit.Junit4Fragment auto-inject {}
     
     		// project wizard (optional)
-    		fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
-    			generatorProjectName = "${projectName}"
-    		}
+    		//fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
+    		//	generatorProjectName = "${projectName}"
+    		//}
     
     		// rename refactoring
     		fragment = refactoring.RefactorElementNameFragment auto-inject {}

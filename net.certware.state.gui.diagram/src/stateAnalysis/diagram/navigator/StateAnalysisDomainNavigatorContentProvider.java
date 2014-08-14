@@ -60,6 +60,7 @@ public class StateAnalysisDomainNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public StateAnalysisDomainNavigatorContentProvider() {
 		myAdapterFctoryContentProvier = new AdapterFactoryContentProvider(
 				stateAnalysis.diagram.part.StateAnalysisDiagramEditorPlugin

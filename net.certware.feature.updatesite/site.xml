@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description name="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite">
-      CertWare safety case workbench.  Loaded from master branch of repository.
+   <description name="Certware" url="http://updatesite.certware.net.s3-website-us-east-1.amazonaws.com">
+      Certware structured argumentation workbench.
    </description>
    <feature url="features/net.certware.feature_1.2.3.qualifier.jar" id="net.certware.feature" version="1.2.3.qualifier">
       <category name="certware_category"/>
@@ -24,9 +24,9 @@
    <feature url="features/net.certware.feature.sfp_1.2.3.qualifier.jar" id="net.certware.feature.sfp" version="1.2.3.qualifier">
       <category name="certware_category"/>
    </feature>
-   <category-def name="certware_category" label="CertWare">
+   <category-def name="certware_category" label="Certware">
       <description>
-         CertWare safety case workbench
+         Certware safety case workbench
       </description>
    </category-def>
 </site>

@@ -18,7 +18,7 @@ Require-Bundle: org.eclipse.xtext,
  org.antlr.runtime,
  net.certware.core.ui,
  org.eclipse.xtext.common.types,
- org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+ org.objectweb.asm;resolution:=optional
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Export-Package: net.certware.argument.sfp,

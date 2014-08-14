@@ -4,6 +4,7 @@
       label="CertWare SFP Notation Support"
       version="1.2.3.qualifier"
       provider-name="Kestrel Technology LLC"
+      plugin="net.certware.branding"
       license-feature="net.certware.feature"
       license-feature-version="1.2.3.qualifier">
 
@@ -115,6 +116,15 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <import plugin="org.eclipse.ui.editors"/>
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="net.certware.core.ui"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="net.certware.core"/>
+      <import plugin="org.eclipse.xtend"/>
+      <import plugin="org.eclipse.xpand"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.compare"/>
    </requires>
 
    <plugin

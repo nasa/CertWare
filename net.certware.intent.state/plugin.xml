@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.certware.net/intent/state/StateSpecification" 
        class = "net.certware.intent.state.stateSpecification.StateSpecificationPackage"
-       genModel = "net/certware/intent/state/StateSpecification.genmodel" /> 
+       genModel = "model/generated/StateSpecification.genmodel" /> 
 	
   </extension>
 

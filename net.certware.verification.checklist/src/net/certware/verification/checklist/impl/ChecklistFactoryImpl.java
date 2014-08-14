@@ -4,15 +4,18 @@
  */
 package net.certware.verification.checklist.impl;
 
-import net.certware.verification.checklist.*;
+import net.certware.verification.checklist.Category;
+import net.certware.verification.checklist.Checklist;
+import net.certware.verification.checklist.ChecklistFactory;
+import net.certware.verification.checklist.ChecklistPackage;
+import net.certware.verification.checklist.Choices;
+import net.certware.verification.checklist.Item;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**

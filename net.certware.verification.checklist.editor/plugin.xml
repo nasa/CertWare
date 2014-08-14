@@ -48,6 +48,7 @@
    </extension>
 
   <!-- EEF extensions -->
+  <!--
   <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionProvider">
       <PropertiesEditionComponentProvider
@@ -59,7 +60,7 @@
       <PropertiesEditionPolicyProvider
             providerClass="net.certware.verification.checklist.providers.ChecklistPackagePropertiesEditionProvider">
       </PropertiesEditionPolicyProvider>
-   </extension>
+   </extension> -->
    <extension
          point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
       <PropertiesEditionPartProvider

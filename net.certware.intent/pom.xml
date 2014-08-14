@@ -29,9 +29,9 @@
 		<fileset>
 		  <directory>${basedir}/src-gen/</directory>
 		</fileset>
-		<fileset>
+		<!-- <fileset>
 		  <directory>${basedir}/model/generated/</directory>
-		</fileset>
+		</fileset> -->
 		<fileset>
 		  <directory>${basedir}/../${project.artifactId}.ui/src-gen/</directory>
 		</fileset>

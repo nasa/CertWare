@@ -8,10 +8,10 @@
       <product
             application="org.eclipse.ui.ide.workbench"
             description="CertWare Application Workbench"
-            name="CertWare">
+            name="Certware">
          <property
                name="appName"
-               value="CertWare">
+               value="Certware">
          </property>
          <property
                name="preferenceCustomization"

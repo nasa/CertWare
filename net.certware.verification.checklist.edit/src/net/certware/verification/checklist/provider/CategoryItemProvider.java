@@ -11,16 +11,12 @@ import java.util.List;
 import net.certware.verification.checklist.Category;
 import net.certware.verification.checklist.ChecklistFactory;
 import net.certware.verification.checklist.ChecklistPackage;
-
 import net.certware.verification.checklist.edit.provider.ChecklistEditPlugin;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;

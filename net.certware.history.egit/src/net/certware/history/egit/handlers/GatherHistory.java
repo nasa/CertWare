@@ -50,6 +50,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
  * @author mrb
  * @since 1.1
  */
+@SuppressWarnings("restriction")
 public class GatherHistory implements ICertWareConstants {
 
 	/** model file encoding as XML resource */

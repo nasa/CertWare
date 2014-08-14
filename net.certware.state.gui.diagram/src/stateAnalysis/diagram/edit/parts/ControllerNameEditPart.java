@@ -51,6 +51,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
+@SuppressWarnings("deprecation")
 public class ControllerNameEditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 

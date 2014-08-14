@@ -5,7 +5,6 @@
 package net.certware.verification.checklist;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

@@ -22,7 +22,7 @@ reserved.
 
    <url>
       <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
-      <discovery label="CertWare" url="http://github.com/nasa/CertWare/update"/>
+      <discovery label="CertWare" url="http://github.com/nasa/CertWare"/>
    </url>
 
    <includes
@@ -48,17 +48,26 @@ reserved.
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.xtext.builder"/>
-      <import plugin="org.eclipse.jface"/>
-      <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.emf.common.ui"/>
       <import plugin="org.eclipse.core.expressions"/>
-      <import plugin="org.eclipse.osgi"/>
-      <import plugin="org.eclipse.core.contenttype"/>
       <import plugin="org.eclipse.core.jobs"/>
       <import plugin="org.eclipse.equinox.preferences"/>
       <import plugin="org.eclipse.help"/>
+      <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.osgi"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="net.certware.core.ui"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtend"/>
+      <import plugin="org.eclipse.xpand"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="net.certware.core"/>
+      <import plugin="net.certware.example"/>
    </requires>
 
    <plugin

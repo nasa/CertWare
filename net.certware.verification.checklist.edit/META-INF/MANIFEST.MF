@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.verification.checklist.edit;singleton:=true
 Bundle-Version: 1.2.1.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: .,
+ target/classes/
 Bundle-Activator: net.certware.verification.checklist.edit.provider.ChecklistEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

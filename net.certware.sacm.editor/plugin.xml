@@ -63,6 +63,8 @@
       </wizard>
    </extension>
 
+null
+null
    <extension point="org.eclipse.ui.newWizards">
       <wizard
             id="net.certware.sacm.SACM.Argumentation.presentation.ArgumentationModelWizardID"
@@ -102,6 +104,8 @@
       </wizard>
    </extension>
 
+null
+null
    <extension point="org.eclipse.ui.newWizards">
       <wizard
             id="net.certware.sacm.SACM.Evidence.presentation.EvidenceModelWizardID"

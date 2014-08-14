@@ -7,7 +7,7 @@
     <package 
        uri = "http://www.certware.net/intent/IntentSpecification" 
        class = "net.certware.intent.intentSpecification.IntentSpecificationPackage"
-       genModel = "net/certware/intent/IntentSpecification.genmodel" /> 
+       genModel = "model/generated/IntentSpecification.genmodel" /> 
 	
   </extension>
 

@@ -48,6 +48,7 @@ import org.eclipse.team.core.history.ITag;
  * @author mrb
  * @since 1.1
  */
+@SuppressWarnings("restriction")
 public class DumpHistory implements ICertWareConstants {
 
 	/**
