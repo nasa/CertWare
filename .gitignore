@@ -2,11 +2,11 @@
 .metadata
 bin/
 target/
-generated/
-*/generated/*
-generated-sources/
-src-gen/
-xtend-gen/
+# generated/
+# */generated/*
+# generated-sources/
+# src-gen/
+# xtend-gen/
 .DS_Store
 tmp/
 *.tmp

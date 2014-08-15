@@ -2,7 +2,7 @@
 <feature
       id="net.certware.feature.sacm"
       label="CertWare OMG SACM"
-      version="1.0.0.qualifier"
+      version="1.1.0.qualifier"
       provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding"
       license-feature="net.certware.feature"
@@ -68,6 +68,7 @@ reserved.
       <import plugin="org.eclipse.core.jobs"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
    </requires>
 
    <plugin
@@ -138,5 +139,12 @@ reserved.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="net.certware.example.ssei"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
 
 </feature>

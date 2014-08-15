@@ -27,4 +27,9 @@ Export-Package: net.certware.evidence.hugin,
  net.certware.evidence.hugin.netDSL.util,
  net.certware.evidence.hugin.parser.antlr,
  net.certware.evidence.hugin.parser.antlr.internal,
- net.certware.evidence.hugin.services
+ net.certware.evidence.hugin.services,
+ net.certware.evidence.hugin.serializer,
+ net.certware.evidence.hugin.validation,
+ net.certware.evidence.hugin.scoping,
+ net.certware.evidence.hugin.generator,
+ net.certware.evidence.hugin.formatting

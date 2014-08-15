@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.evidence.hugin/src-gen" editDirectory="/net.certware.evidence.hugin.edit/src"
+    editorDirectory="/net.certware.evidence.hugin.editor/src" modelPluginID="net.certware.evidence.hugin"
+    forceOverwrite="true" modelName="NetDSL" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.evidence.hugin.edit"
+    editorPluginID="net.certware.evidence.hugin.editor" runtimeVersion="2.10">
+  <genPackages prefix="NetDSL" basePackage="net.certware.evidence.hugin" disposableProviderFactory="true"
+      fileExtensions="net" ecorePackage="NetDSL.ecore#/">
+    <genClasses ecoreClass="NetDSL.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Model/domain"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//Integer/i"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//DomainDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//DomainDefinition/header"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//DomainDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//DomainHeader">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//DomainHeader/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//DomainElement"/>
+    <genClasses ecoreClass="NetDSL.ecore#//Attribute"/>
+    <genClasses ecoreClass="NetDSL.ecore#//BasicNode">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//BasicNode/keyword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//BasicNode/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//BasicNode/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//StatesAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//StatesAttribute/states"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//LabelAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//LabelAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//PositionAttribute"/>
+    <genClasses ecoreClass="NetDSL.ecore#//SubtypeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//SubtypeAttribute/subtype"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//StateValuesAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//StateValuesAttribute/numbers"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//ApplicationAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//ApplicationAttribute/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//ApplicationAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//NodeSizeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//NodeSizeAttribute/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//NodeSizeAttribute/height"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//Potential">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Potential/graph"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Potential/model"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//PotentialGraph">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//PotentialGraph/children"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//PotentialGraph/parents"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//PotentialModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialModel/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//PotentialAttribute"/>
+    <genClasses ecoreClass="NetDSL.ecore#//PotentialDataAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialDataAttribute/data"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//MatrixRow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MatrixRow/r1"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//PotentialTableAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialTableAttribute/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialTableAttribute/samples"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//PotentialTableAttribute/data"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//ModelNodesAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//ModelNodesAttribute/configurations"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//SamplesAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//SamplesAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//ModelDataAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//ModelDataAttribute/sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//ClassDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//ClassDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//ClassDefinition/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//ClassElement"/>
+    <genClasses ecoreClass="NetDSL.ecore#//ClassInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//ClassInstance/instanceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//ClassInstance/className"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//ClassInstance/input"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//ClassInstance/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//ClassInstance/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//InputBindings">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//InputBindings/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//InputBindings/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//InputBinding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//InputBinding/formal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//InputBinding/actual"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//OutputBindings">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//OutputBindings/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//OutputBindings/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//OutputBinding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//OutputBinding/actual"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//OutputBinding/formal"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//NodeAttributes"/>
+    <genClasses ecoreClass="NetDSL.ecore#//ExpressionSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//ExpressionSequence/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//Expression/op"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//assignmentOpExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//orExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//andExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//relationalExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//additiveExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//multiplicativeExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//unaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//unaryExpression/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//Operator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Operator/sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//TermExpression"/>
+    <genClasses ecoreClass="NetDSL.ecore#//TermLiteral"/>
+    <genClasses ecoreClass="NetDSL.ecore#//IntegerLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//IntegerLiteral/x"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//IntegerLiteral/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//IntegerLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List5">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List5/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List4">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List4/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List3">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List3/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List2">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List2/list"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//List1">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//List1/items"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Assignment/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//Assignment/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//AssignmentOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//AssignmentOp/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//AssignmentOp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//OrExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//OrExp/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//OrExp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//AndExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//AndExp/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//AndExp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//RelationalExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//RelationalExp/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//RelationalExp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//AdditiveExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//AdditiveExp/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//AdditiveExp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//MultiplicativeExp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MultiplicativeExp/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference NetDSL.ecore#//MultiplicativeExp/right"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//VarRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//VarRef/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//BooleanLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//BooleanLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//StringLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="NetDSL.ecore#//DoubleLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute NetDSL.ecore#//DoubleLiteral/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
