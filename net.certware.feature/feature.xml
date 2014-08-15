@@ -7,7 +7,7 @@
       plugin="net.certware.branding">
 
    <description url="http://nasa.github.com/CertWare">
-      CertWare safety case development software core plugins.
+      CertWare structured argumentation workbench software core plugins.
    </description>
 
    <copyright>
@@ -189,8 +189,7 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
    </license>
 
    <url>
-      <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
-      <discovery label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
+      <update label="CertWare" url="http://updatesite.certware.net"/>
    </url>
 
    <requires>

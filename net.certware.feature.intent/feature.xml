@@ -23,8 +23,7 @@ reserved.
    </license>
 
    <url>
-      <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
-      <discovery label="CertWare" url="http://github.com/nasa/CertWare/update"/>
+      <update label="CertWare" url="http://updatesite.certware.net"/>
    </url>
 
    <includes
@@ -40,7 +39,6 @@ reserved.
       <import plugin="org.eclipse.xtext.common.types"/>
       <import plugin="org.apache.log4j"/>
       <import plugin="org.eclipse.xtext.xbase.lib"/>
-      <import plugin="org.eclipse.help"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
@@ -54,17 +52,11 @@ reserved.
       <import plugin="org.eclipse.xtext.common.types.ui"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
       <import plugin="org.eclipse.compare"/>
+      <import plugin="org.eclipse.help"/>
    </requires>
 
    <plugin
          id="net.certware.intent"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="net.certware.intent.help"
          download-size="0"
          install-size="0"
          version="0.0.0"

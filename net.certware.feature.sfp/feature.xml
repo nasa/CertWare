@@ -81,8 +81,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
    </license>
 
    <url>
-      <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
-      <discovery label="CertWare" url="http://github.com/nasa/CertWare/update"/>
+      <update label="CertWare" url="http://updatesite.certware.net"/>
    </url>
 
    <includes
