@@ -14,6 +14,69 @@ class Case extends SACM.AssuranceCase   {
         attr Boolean autoID = true;
 }
 
+        
+enum ElementVisibility {
+        Private;
+        Public;
+}
+        
+enum SolvedByMultiplicityExtension{
+        Normal;
+        Optional;
+        Multi;
+}
+
+
+class InContextOfModular{
+        ref Module [1] #hasContext parentInConextOfModuleElement;
+        ref Module [1] modularContextualElement;
+}
+    
+    
+abstract class ModelElement : SACM.ModelElement {
+        attr String [1] identifier;
+        attr String [1] description;
+        val SACM.TaggedValue [*] containsAdditional;
+                
+}
+
+
+abstract class SpinalElement extends ArgumentElement,SolvedByTargetElement {
+}
+
+abstract class DecomposableSpinalElement extends SpinalElement {
+        attr Boolean toBeDeveloped=false;
+        val SolvedBy [*] #parentSpinalElement childSolvedBy;
+        val InContextOf [*] #contextOfSpinalElement hasContext;
+}
+
+class Goal extends SACM.Argumentation.Claim {
+       attr ElementVisibility visibility;
+       ref Module [0..1] #hasTopLevel isTopLevelGoalOf;
+}
+
+
+class SolvedByModular{
+        ref Module [1] childSolvedByModular;
+        ref Module [1] #parentSolvedByModular parentSolvedByModuleElement;
+}
+
+abstract class Module extends ModelElement,SolvedByTargetElement {
+        ref Module [*] parentModuleOf;
+        ref Module [*] associatedWithOther;
+		val Goal [*] #isTopLevelGoalOf hasTopLevel; 
+        ref ArgumentElement [*] #isPartOf containsElement;
+      	val SolvedByModular [*] #parentSolvedByModuleElement parentSolvedByModular;
+        val InContextOfModular [*] #parentInConextOfModuleElement hasContext;
+} 
+
+class SolvedBy {
+        ref DecomposableSpinalElement [1] #childSolvedBy parentSpinalElement;
+        ref SolvedByTargetElement [1] #parentSolvedBy childSpinalelement;
+        attr String cardinality; 
+        attr SolvedByMultiplicityExtension multiextension;
+}
+
 abstract class ArgumentElement extends ModelElement {
         attr Boolean tobeinstantiated=false;
         ref Module [1] #containsElement isPartOf;
@@ -27,49 +90,24 @@ abstract class InTheContextOfTargetElement{
            
 }
 
-class SolvedByModular{
-        ref Module [1] childSolvedByModular;
-        ref Module [1] #parentSolvedByModular parentSolvedByModuleElement;
-}
+////////////////
 
-class InContextOfModular{
-        ref Module [1] #hasContext parentInConextOfModuleElement;
-        ref Module [1] modularContextualElement;
-}
-        
-abstract class SpinalElement extends ArgumentElement,SolvedByTargetElement {
-}
-
-abstract class DecomposableSpinalElement extends SpinalElement {
-        attr Boolean toBeDeveloped=false;
-        val SolvedBy [*] #parentSpinalElement childSolvedBy;
-        val InContextOf [*] #contextOfSpinalElement hasContext;
-}
 
 abstract class ContextualElement extends ArgumentElement,InTheContextOfTargetElement {
 }
 
 
-class SolvedBy {
-        ref DecomposableSpinalElement [1] #childSolvedBy parentSpinalElement;
-        ref SolvedByTargetElement [1] #parentSolvedBy childSpinalelement;
-        attr String cardinality; 
-        attr SolvedByMultiplicityExtension multiextension;
-}
+
 
 class InContextOf {
         ref InTheContextOfTargetElement [1] contextualElement;
         ref DecomposableSpinalElement [1] #hasContext contextOfSpinalElement;
 }
 
-class Goal extends SACM.Argumentation.Claim {
-       attr ElementVisibility visibility;
-       ref Module [0..1] #hasTopLevel isTopLevelGoalOf;
-}
 
 
 class Strategy SACM.Argumentation.ArgumentReasoning {  
-        
+
 }
 
 class Solution extends SpinalElement  {
@@ -109,15 +147,7 @@ class AwayGoal extends SpinalElement,InTheContextOfTargetElement {
         ref Goal [1] pointsTo;
         attr String [1] moduleIdentifier;
 }
-        
-abstract class Module extends ModelElement,SolvedByTargetElement {
-        ref Module [*] parentModuleOf;
-        ref Module [*] associatedWithOther;
-		val Goal [*] #isTopLevelGoalOf hasTopLevel; 
-        ref ArgumentElement [*] #isPartOf containsElement;
-      	val SolvedByModular [*] #parentSolvedByModuleElement parentSolvedByModular;
-        val InContextOfModular [*] #parentInConextOfModuleElement hasContext;
-} 
+
         
 
 class ArgumentModule extends Module,InTheContextOfTargetElement {
@@ -129,25 +159,12 @@ class ContractModule extends Module {
         
 }
 
-abstract class ModelElement : SACM.ModelElement {
-        attr String [1] identifier;
-        attr String [1] description;
-        val SACM.TaggedValue [*] containsAdditional;
-                
+
+
+class TaggedValue {
+       attr String [1] key;
+       attr String [1] value;
 }
 
-// class TaggedValue {
-//       attr String [1] key;
-//       attr String [1] value;
-//}
-        
-enum ElementVisibility {
-        Private;
-        Public;
-}
-        
-enum SolvedByMultiplicityExtension{
-        Normal;
-        Optional;
-        Multi;
-}
+
+    

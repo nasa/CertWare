@@ -1,0 +1,108 @@
+/**
+ * Validation rules and fixes for GSN models.
+ * Epsilon Validation Language
+ * @author mrb
+ */
+ 
+// goal nodes
+context Goal {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Goal ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// must have content 
+	// fix sets content to TBS and sets the associated flag
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Goal ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Goal ' + self.identifier
+			do {
+				self.content := 'TBS';
+				self.toBeSupported := true;
+			}
+		}
+	}
+	
+	// the goal node cannot contain itself as a subgoal
+	constraint NoContainsSelf {
+		guard : self.satisfies('HasIdentifier')
+		check : not self.subGoals.includes(self)
+		message: 'Goal ' + self.identifier + ' cannot include itself as a subgoal' 
+		fix {
+			title : 'Remove ' + self.identifier + ' from subgoals list'
+			do {
+				self.subGoals.remove(self);
+			}
+		}
+	}
+	
+	// the goal should have at least one solution or strategy
+	critique HasSolutions {
+		guard : self.satisfies('HasIdentifier')
+		check : (not self.goalSolutions.isEmpty()) or (not self.strategies.isEmpty())
+		message : 'Goal ' + self.identifier + ' has no solutions or strategies'
+		fix {
+			title : 'Set the to-be-supported flag as a reminder'
+			do {
+				self.toBeSupported := true;
+			}
+		}
+	}
+} // goal context
+
+
+// solutions context
+context Solution {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Solution ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// should have evidence contributions
+	critique HasEvidence {
+		check : not self.solutionEvidence.isEmpty()
+		message : 'Solution ' + self.identifier + ' requires evidence'
+	}
+	
+} // solution context
+
+// strategies context
+context Strategy {
+
+	// must have an identifier
+	constraint HasIdentifier {
+		check : self.identifier.isDefined()
+		message : 'Strategy ' + self.eClass().name + ' requires identifier'
+	}
+	
+	// must have content 
+	// fix sets content to TBS
+	constraint HasContent {
+		guard : self.satisfies('HasIdentifier')
+		check : self.content.isDefined()
+		message : 'Strategy ' + self.identifier + ' requires content'
+		fix {
+			title : 'Add TBS to Strategy ' + self.identifier
+			do {
+				self.content := 'TBS';
+			}
+		}
+	}
+	
+	// the strategy should have at least one solution or sub-goal
+	critique HasSolutions {
+		guard : self.satisfies('HasIdentifier')
+		check : (not self.strategySolutions.isEmpty()) or (not self.goals.isEmpty())
+		message : 'Strategy ' + self.identifier + ' has no solutions or goals'
+	}
+	
+} // strategy context
+
+

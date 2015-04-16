@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arm:Argument xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arm="http://www.omg.org/ARM">
+  <containsArgumentElement xsi:type="arm:Claim" identifier="C1" description="" content="C/S logic is fault free"/>
+  <containsArgumentElement xsi:type="arm:ArgumentReasoning" identifier="RC1.1" description="" content="Argument by omission of all identified software hazards"/>
+  <containsArgumentElement xsi:type="arm:ArgumentReasoning" identifier="RC1.2" description="" content="Argument by satisfaction of all C/S safety requirements"/>
+  <containsArgumentElement xsi:type="arm:InformationElement" identifier="IRC1.1" description="Identified software hazards" content=""/>
+  <containsArgumentElement xsi:type="arm:Claim" identifier="C1.1" description="" content="Unintended opening of press (after PoNR) can only occur as a result of component failure"/>
+  <containsArgumentElement xsi:type="arm:Claim" identifier="C1.2" description="" content="Unintended closing of press can only occur as a result of component failure"/>
+  <containsArgumentElement xsi:type="arm:Claim" identifier="C2.1" description="" content="Press controls being 'jammed on' will cause press to halt"/>
+  <containsArgumentElement xsi:type="arm:Claim" identifier="C2.2" description="" content="Release of controls prior to press passing physical PoNR will cause press operation to abort"/>
+  <containsArgumentElement xsi:type="arm:Claim" identifier="C2.3" description="" content="C/S fails safe (halts on) and annunciates (by sounding Klaxon) all component failures"/>
+  <containsArgumentElement xsi:type="arm:InformationElement" identifier="S1.1" description="" content="Fault tree analysis cutsets for event 'Hand trapped in press due to command error'"/>
+  <containsArgumentElement xsi:type="arm:InformationElement" identifier="S1.2" description="" content="Hazard directed test results"/>
+  <containsArgumentElement xsi:type="arm:EvidenceAssertion" identifier="C2.1.1" description="" content="Failure 1 of PLC state machine includes BUTTON_IN remaining true"/>
+  <containsArgumentElement xsi:type="arm:EvidenceAssertion" identifier="C2.2.1" description="" content="Abort transition of PLC state machine includes BUTTON_IN going false"/>
+  <containsArgumentElement xsi:type="arm:InformationElement" identifier="S2.1" description="" content="black box testing"/>
+  <containsArgumentElement xsi:type="arm:InformationElement" identifier="S2.2.1" description="" content="C/S state machine"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="C1.1.1" description="" target="//@containsArgumentElement.4" source="//@containsArgumentElement.0"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="C1.1.2" description="" content="" target="//@containsArgumentElement.5" source="//@containsArgumentElement.0"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="C1.2.1" description="" content="" target="//@containsArgumentElement.6" source="//@containsArgumentElement.0"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="C1.2.2" description="" content="" target="//@containsArgumentElement.7" source="//@containsArgumentElement.0"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="C1.2.3" description="" target="//@containsArgumentElement.8" source="//@containsArgumentElement.0"/>
+  <containsArgumentLink xsi:type="arm:AssertedContext" identifier="CIRC1.1" description="" content="" target="//@containsArgumentElement.3" source="//@containsArgumentElement.1"/>
+  <containsArgumentLink xsi:type="arm:AssertedEvidence" identifier="S1.1" description="" content="" target="//@containsArgumentElement.9" source="//@containsArgumentElement.4 //@containsArgumentElement.5"/>
+  <containsArgumentLink xsi:type="arm:AssertedEvidence" identifier="S1.2" description="" content="" target="//@containsArgumentElement.10" source="//@containsArgumentElement.4 //@containsArgumentElement.5"/>
+  <containsArgumentLink xsi:type="arm:AssertedEvidence" identifier="SC2.1" description="" content="" target="//@containsArgumentElement.13" source="//@containsArgumentElement.6"/>
+  <containsArgumentLink xsi:type="arm:AssertedEvidence" identifier="SC2.1.1" description="" content="" target="//@containsArgumentElement.14" source="//@containsArgumentElement.11"/>
+  <containsArgumentLink xsi:type="arm:AssertedEvidence" identifier="SC2.2.1" description="" content="" target="//@containsArgumentElement.14" source="//@containsArgumentElement.12"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="DI C2.1" description="" content="" target="//@containsArgumentElement.11" source="//@containsArgumentElement.6"/>
+  <containsArgumentLink xsi:type="arm:AssertedInference" identifier="DI C2.2" description="" content="" target="//@containsArgumentElement.12" source="//@containsArgumentElement.7"/>
+</arm:Argument>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+ <plugin>
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.certware.net/gsn"
+            class="net.certware.argument.gsn.providers.GsnEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="net.certware.argument.gsn.providers.GsnPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+  <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="net.certware.argument.gsn.properties"
+            labelProvider="org.eclipse.emf.eef.runtime.ui.utils.EEFLabelProvider">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="net.certware.argument.gsn.properties">
+         <propertyTab
+               id="Base"
+               label="Base"
+               category="default">
+         </propertyTab>
+
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="net.certware.argument.gsn.properties">
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.GoalPropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.GoalPropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Goal"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.StrategyPropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.StrategyPropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Strategy"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.JustificationPropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.JustificationPropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Justification"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.ContextPropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.ContextPropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Context"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.AssumptionPropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.AssumptionPropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Assumption"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.SolutionPropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.SolutionPropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Solution"
+               tab="Base">
+         </propertySection>
+         <propertySection
+               class="net.certware.argument.gsn.parts.forms.EvidencePropertiesEditionPartForm"
+               filter="net.certware.argument.gsn.providers.EvidencePropertiesEditionProvider$EditionFilter"
+               id="net.certware.argument.gsn.section.Evidence"
+               tab="Base">
+         </propertySection>
+      </propertySections>
+   </extension>
+ </plugin>

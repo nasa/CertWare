@@ -44,9 +44,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
         EList<Intent> list = container.getIntents();
         Iterator<Intent> iter = list.iterator();
         Intent lastItem = ((Intent) null);
-        boolean _hasNext = iter.hasNext();
-        boolean _while = _hasNext;
-        while (_while) {
+        while (iter.hasNext()) {
           {
             Intent item = iter.next();
             String _name = item.getName();
@@ -55,8 +53,6 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
               lastItem = item;
             }
           }
-          boolean _hasNext_1 = iter.hasNext();
-          _while = _hasNext_1;
         }
         boolean _notEquals = (!Objects.equal(lastItem, null));
         if (_notEquals) {
@@ -86,9 +82,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
         EList<Decomposition> list = container.getDecompositions();
         Iterator<Decomposition> iter = list.iterator();
         Decomposition lastItem = ((Decomposition) null);
-        boolean _hasNext = iter.hasNext();
-        boolean _while = _hasNext;
-        while (_while) {
+        while (iter.hasNext()) {
           {
             Decomposition _next = iter.next();
             Decomposition item = ((Decomposition) _next);
@@ -98,8 +92,6 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
               lastItem = item;
             }
           }
-          boolean _hasNext_1 = iter.hasNext();
-          _while = _hasNext_1;
         }
         boolean _notEquals = (!Objects.equal(lastItem, null));
         if (_notEquals) {
@@ -129,9 +121,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
         EList<ListItem> list = outerList.getItemReferences();
         Iterator<ListItem> iter = list.iterator();
         ListItem lastItem = ((ListItem) null);
-        boolean _hasNext = iter.hasNext();
-        boolean _while = _hasNext;
-        while (_while) {
+        while (iter.hasNext()) {
           {
             ListItem item = iter.next();
             String _name = item.getName();
@@ -140,8 +130,6 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
               lastItem = item;
             }
           }
-          boolean _hasNext_1 = iter.hasNext();
-          _while = _hasNext_1;
         }
         boolean _notEquals = (!Objects.equal(lastItem, null));
         if (_notEquals) {
@@ -168,9 +156,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
         EList<ModelItem> list = outerList.getModelReferences();
         Iterator<ModelItem> iter = list.iterator();
         ModelItem lastItem = ((ModelItem) null);
-        boolean _hasNext = iter.hasNext();
-        boolean _while = _hasNext;
-        while (_while) {
+        while (iter.hasNext()) {
           {
             ModelItem item = iter.next();
             String _name = item.getName();
@@ -179,8 +165,6 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
               lastItem = item;
             }
           }
-          boolean _hasNext_1 = iter.hasNext();
-          _while = _hasNext_1;
         }
         boolean _notEquals = (!Objects.equal(lastItem, null));
         if (_notEquals) {

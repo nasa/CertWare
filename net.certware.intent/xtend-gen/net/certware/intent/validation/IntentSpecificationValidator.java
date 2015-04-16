@@ -43,9 +43,7 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
     final HashSet<String> visitedIntentTypeNames = CollectionLiterals.<String>newHashSet();
     EList<Intent> intents = refinement.getIntents();
     ListIterator<Intent> i = intents.listIterator();
-    boolean _hasNext = i.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (i.hasNext()) {
       {
         Intent _next = i.next();
         Intent d = ((Intent) _next);
@@ -60,8 +58,6 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         }
         visitedIntentTypeNames.add(typeName);
       }
-      boolean _hasNext_1 = i.hasNext();
-      _while = _hasNext_1;
     }
   }
   
@@ -70,9 +66,7 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
     final HashSet<String> visitedDecompositionTypeNames = CollectionLiterals.<String>newHashSet();
     EList<Decomposition> decompositions = intent.getDecompositions();
     ListIterator<Decomposition> i = decompositions.listIterator();
-    boolean _hasNext = i.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (i.hasNext()) {
       {
         Decomposition _next = i.next();
         Decomposition d = ((Decomposition) _next);
@@ -87,8 +81,6 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         }
         visitedDecompositionTypeNames.add(typeName);
       }
-      boolean _hasNext_1 = i.hasNext();
-      _while = _hasNext_1;
     }
   }
   
@@ -97,9 +89,7 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
     final HashSet<ListItem> visitedListItems = CollectionLiterals.<ListItem>newHashSet();
     EList<ListItem> items = decomposition.getItems();
     ListIterator<ListItem> i = items.listIterator();
-    boolean _hasNext = i.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (i.hasNext()) {
       {
         ListItem d = i.next();
         boolean _contains = visitedListItems.contains(d);
@@ -114,8 +104,6 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         }
         visitedListItems.add(d);
       }
-      boolean _hasNext_1 = i.hasNext();
-      _while = _hasNext_1;
     }
   }
   
@@ -124,9 +112,7 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
     final HashSet<ModelItem> visitedModelItems = CollectionLiterals.<ModelItem>newHashSet();
     EList<ModelItem> items = decomposition.getModels();
     ListIterator<ModelItem> i = items.listIterator();
-    boolean _hasNext = i.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (i.hasNext()) {
       {
         ModelItem _next = i.next();
         ModelItem d = ((ModelItem) _next);
@@ -142,8 +128,6 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         }
         visitedModelItems.add(d);
       }
-      boolean _hasNext_1 = i.hasNext();
-      _while = _hasNext_1;
     }
   }
   
@@ -153,9 +137,7 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
     visitedListItems.add(item);
     EList<ListItem> items = item.getItemReferences();
     ListIterator<ListItem> i = items.listIterator();
-    boolean _hasNext = i.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (i.hasNext()) {
       {
         ListItem _next = i.next();
         ListItem d = ((ListItem) _next);
@@ -171,8 +153,6 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         }
         visitedListItems.add(d);
       }
-      boolean _hasNext_1 = i.hasNext();
-      _while = _hasNext_1;
     }
   }
   
@@ -181,9 +161,7 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
     final HashSet<ModelItem> visitedModelItems = CollectionLiterals.<ModelItem>newHashSet();
     EList<ModelItem> items = item.getModelReferences();
     ListIterator<ModelItem> i = items.listIterator();
-    boolean _hasNext = i.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (i.hasNext()) {
       {
         ModelItem _next = i.next();
         ModelItem d = ((ModelItem) _next);
@@ -199,8 +177,6 @@ public class IntentSpecificationValidator extends AbstractIntentSpecificationVal
         }
         visitedModelItems.add(d);
       }
-      boolean _hasNext_1 = i.hasNext();
-      _while = _hasNext_1;
     }
   }
 }

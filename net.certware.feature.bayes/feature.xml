@@ -17,7 +17,9 @@ reserved.
    </copyright>
 
    <license url="http://nasa.github.com/CertWare/license.html">
-      The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The inference engine is licensed for education and research non-commercial use only. See the accompanying NASA Open Source Agreement for details.
+      UCLA Non-Commercial Use Only
+
+The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The inference engine is licensed for education and research non-commercial use only. See the accompanying NASA Open Source Agreement for details.
    </license>
 
    <url>

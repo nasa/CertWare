@@ -21,13 +21,13 @@
    <feature url="features/net.certware.feature.planning_1.2.3.201408141746.jar" id="net.certware.feature.planning" version="1.2.3.201408141746">
       <category name="certware-update"/>
    </feature>
-   <feature url="features/net.certware.feature.sacm_1.0.0.201408141746.jar" id="net.certware.feature.sacm" version="1.0.0.201408141746">
-      <category name="certware-update"/>
-   </feature>
    <feature url="features/net.certware.feature.sfp_1.2.3.201408141746.jar" id="net.certware.feature.sfp" version="1.2.3.201408141746">
       <category name="certware-update"/>
    </feature>
    <feature url="features/net.certware.feature.stpa_1.0.0.201408141746.jar" id="net.certware.feature.stpa" version="1.0.0.201408141746">
+      <category name="certware-update"/>
+   </feature>
+   <feature url="features/net.certware.feature.sacm_1.1.0.201410031003.jar" id="net.certware.feature.sacm" version="1.1.0.201410031003">
       <category name="certware-update"/>
    </feature>
    <category-def name="certware-update" label="CertWare">

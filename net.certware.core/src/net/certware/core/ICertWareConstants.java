@@ -17,9 +17,9 @@ public interface ICertWareConstants {
 	/** file extension for the AML model */
 	//public static final String AML_EXTENSION = "aml"; //$NON-NLS-1$
 	/** file extension for the ARM model */
-	//public static final String ARM_EXTENSION = "arm"; //$NON-NLS-1$
+	public static final String ARM_EXTENSION = "arm"; //$NON-NLS-1$
 	/** file extension for the GSN model */
-	//public static final String GSN_EXTENSION = "gsn"; //$NON-NLS-1$
+	public static final String GSN_EXTENSION = "gsn"; //$NON-NLS-1$
 	/** file extension for the GSN diagram models */
 	//public static final String GSZ_EXTENSION = "gsz"; //$NON-NLS-1$
 	/** file extension for the GSN diagrams */

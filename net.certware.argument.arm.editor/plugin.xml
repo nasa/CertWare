@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 Object Management Group (ARM metamodel)
+ Copyright (c) 2010-2011 United States Government as represented by the Administrator for The National Aeronautics and Space Administration.  All Rights Reserved.  (generated models) 
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated arm -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="net.certware.argument.arm.presentation.ArmModelWizardID"
+            name="%_UI_ArmModelWizard_label"
+            class="net.certware.argument.arm.presentation.ArmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArmModelFile.gif">
+         <description>%_UI_ArmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated arm -->
+      <editor
+            id="net.certware.argument.arm.presentation.ArmEditorID"
+            name="%_UI_ArmEditor_label"
+            icon="icons/full/obj16/ArmModelFile.gif"
+            extensions="arm"
+            class="net.certware.argument.arm.presentation.ArmEditor"
+            contributorClass="net.certware.argument.arm.presentation.ArmActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

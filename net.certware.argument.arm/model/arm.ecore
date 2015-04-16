@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arm"
+    nsURI="http://www.omg.org/ARM" nsPrefix="arm">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="#//String">
+      <eAnnotations source="gmf.label"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isTagged" upperBound="-1"
+        eType="#//TaggedValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaggedValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsArgumentElement"
+        upperBound="-1" eType="#//ArgumentElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsArgumentLink" upperBound="-1"
+        eType="#//ArgumentLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsArgument" upperBound="-1"
+        eType="#//Argument" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentElement" abstract="true" eSuperTypes="#//ModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentLink" abstract="true" eSuperTypes="#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" upperBound="-1"
+        eType="#//ModelElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" upperBound="-1"
+        eType="#//ModelElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertedRelationship" abstract="true"
+      eSuperTypes="#//ArgumentLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Annotation" eSuperTypes="#//ArgumentLink"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertedInference" eSuperTypes="#//AssertedRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertedEvidence" eSuperTypes="#//AssertedRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertedContext" eSuperTypes="#//AssertedRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertedCounterEvidence" eSuperTypes="#//AssertedRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AssertedChallenge" eSuperTypes="#//AssertedRelationship"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReasoningElement" abstract="true" eSuperTypes="#//ArgumentElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Claim" eSuperTypes="#//ReasoningElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assumed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toBeSupported" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EvidenceAssertion" eSuperTypes="#//Claim"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InformationElement" eSuperTypes="#//ArgumentElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArgumentReasoning" eSuperTypes="#//ReasoningElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="describes" upperBound="-1"
+        eType="#//AssertedInference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasStructure" eType="#//Argument"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CitationElement" eSuperTypes="#//ArgumentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refersToArgumentElement"
+        eType="#//ArgumentElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refersToArgument" eType="#//Argument"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Integer" instanceClassName="java.lang.Integer"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Boolean" instanceClassName="java.lang.Boolean"/>
+</ecore:EPackage>
