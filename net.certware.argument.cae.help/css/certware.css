@@ -1,0 +1,26 @@
+/* 
+ * CertWare Project Help Page Style Sheet
+ * @since 1.0 
+ */
+body {background-image:url('bg-gradient.png');background-repeat:repeat-x;}
+hr {color:darkslateblue;}
+h1 {font-size:125%; font-family:arial; color:darkblue; text-align:left}
+h2 {font-size:110%; font-family:arial; color:darkred; text-align:left}
+p {font-size:100%; font-family:arial; color:black; text-align:left; margin-left:5px;}
+
+a:link {color:blue;}
+a:visited {color:navy;}
+a:hover {color:green;}
+a:active {color:blue;}
+
+.background {font-size:100%; font-family:arial; color:black; text-align:left; margin-left:5px;}
+.application {font-size:100%; font-family:arial; color:black; text-align:left; margin-left:5px;}
+
+.reference {font-size:10pt; margin-left:5px; font-family:arial; text-align:left; vertical-align:bottom}
+.reference p, .reference li {font-size: 75%; font-family:arial; text-align:left; vertical-align:bottom}
+.reference ul { /* list-style:none */}
+
+
+/* unused fragments
+border:1px solid blue; 
+*/

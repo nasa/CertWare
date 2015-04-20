@@ -20,22 +20,7 @@
       </wizard>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated SACM -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="net.certware.sacm.SACM.presentation.SACMModelWizardID"
-            name="%_UI_SACMModelWizard_label"
-            class="net.certware.sacm.SACM.presentation.SACMModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/SACMModelFile.gif">
-         <description>%_UI_SACMModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
+null
    <extension point="org.eclipse.ui.editors">
       <editor
             id="net.certware.sacm.SACM.presentation.SACMEditorID"

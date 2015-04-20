@@ -25,7 +25,7 @@ public interface ICertWareConstants {
 	/** file extension for the GSN diagrams */
 	//public static final String GSZ_DIAGRAM_EXTENSION = "gsz_diagram"; //$NON-NLS-1$
 	/** file extension for the CAE model */
-	//public static final String CAE_EXTENSION = "cae"; //$NON-NLS-1$
+	public static final String CAE_EXTENSION = "cae"; //$NON-NLS-1$
 	/** file extension for the CAE diagram models */
 	//public static final String CAZ_EXTENSION = "caz"; //$NON-NLS-1$
 	/** file extension for the CAE diagrams */

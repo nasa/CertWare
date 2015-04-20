@@ -12,7 +12,7 @@ Require-Bundle: org.apache.commons.logging;resolution:=optional,
  org.antlr.runtime,
  org.eclipse.xtext,
  org.eclipse.xtext.generator,
- net.certware.sacm,
+ net.certware.sacm;visibility:=reexport,
  org.eclipse.emf.mwe2.launch,
  org.eclipse.xtext.util,
  org.eclipse.emf.common,
@@ -20,7 +20,7 @@ Require-Bundle: org.apache.commons.logging;resolution:=optional,
  org.eclipse.xtext.common.types
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.planning.cpn,
  net.certware.planning.cpn.scoping,
  net.certware.planning.cpn.formatting,
