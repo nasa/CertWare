@@ -28,8 +28,7 @@ The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The in
 
    <includes
          id="net.certware.feature"
-         version="0.0.0"
-         search-location="both"/>
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.xtext"/>
@@ -37,7 +36,9 @@ The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The in
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
       <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit"/>
@@ -49,6 +50,13 @@ The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The in
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="net.certware.core.ui"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtend"/>
+      <import plugin="org.eclipse.xpand"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="net.certware.core"/>
       <import plugin="org.eclipse.emf.common.ui"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.core.jobs"/>
@@ -59,15 +67,6 @@ The Bayesian Reasoning feature employs the UCLA SamIam inference engine.  The in
       <import plugin="org.eclipse.ui.forms"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.osgi"/>
-      <import plugin="org.eclipse.xtext.common.types"/>
-      <import plugin="org.eclipse.xtext.xbase.lib"/>
-      <import plugin="net.certware.core.ui"/>
-      <import plugin="org.eclipse.xtext.common.types.ui"/>
-      <import plugin="org.eclipse.xtend"/>
-      <import plugin="org.eclipse.xpand"/>
-      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
-      <import plugin="org.eclipse.compare"/>
-      <import plugin="net.certware.core"/>
       <import plugin="net.certware.example"/>
    </requires>
 

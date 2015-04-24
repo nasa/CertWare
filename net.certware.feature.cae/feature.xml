@@ -4,6 +4,7 @@
       label="CertWare CAE Notation Support"
       version="1.2.3.qualifier"
       provider-name="Kestrel Technology LLC"
+      plugin="net.certware.branding"
       license-feature="net.certware.feature"
       license-feature-version="1.2.3.qualifier">
 
@@ -81,8 +82,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
    </license>
 
    <url>
-      <update label="CertWare" url="https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite"/>
-      <discovery label="CertWare" url="http://github.com/nasa/CertWare/update"/>
+      <update label="CertWare" url="http://updatesite.certware.net"/>
    </url>
 
    <includes

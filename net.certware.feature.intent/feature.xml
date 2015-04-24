@@ -52,7 +52,6 @@ reserved.
       <import plugin="org.eclipse.xtext.common.types.ui"/>
       <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
       <import plugin="org.eclipse.compare"/>
-      <import plugin="org.eclipse.help"/>
    </requires>
 
    <plugin

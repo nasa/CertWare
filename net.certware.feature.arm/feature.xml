@@ -83,13 +83,11 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
 
    <url>
       <update label="CertWare" url="http://updatesite.certware.net"/>
-      <discovery label="CertWare" url="http://nasa.github.com/CertWare"/>
    </url>
 
    <includes
          id="net.certware.feature"
-         version="0.0.0"
-         search-location="both"/>
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.core.runtime"/>

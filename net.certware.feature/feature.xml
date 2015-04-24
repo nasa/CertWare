@@ -190,6 +190,9 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
 
    <url>
       <update label="CertWare" url="http://updatesite.certware.net"/>
+      <discovery label="Epsilon" url="http://download.eclipse.org/epsilon/updates"/>
+      <discovery label="Eclipse EEF" url="http://download.eclipse.org/modeling/emft/eef/updates/releases"/>
+      <discovery label="Graphiti" url="http://download.eclipse.org/graphiti/updates/0.11.0"/>
    </url>
 
    <requires>
