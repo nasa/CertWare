@@ -117,25 +117,12 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <import plugin="org.eclipse.core.commands"/>
       <import plugin="org.eclipse.ui.cheatsheets"/>
       <import plugin="org.eclipse.core.expressions"/>
-      <import plugin="org.eclipse.ui.views"/>
       <import plugin="org.eclipse.ui.navigator.resources"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.core"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.commands.core"/>
-      <import plugin="org.eclipse.gmf.runtime.emf.ui.properties"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.properties"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.providers.ide"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.render"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.resources.editor.ide"/>
-      <import plugin="org.eclipse.draw2d"/>
-      <import plugin="org.eclipse.gmf.runtime.draw2d.ui"/>
-      <import plugin="org.eclipse.gef"/>
-      <import plugin="org.eclipse.emf.validation"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
       <import plugin="net.certware.argument.diagram.figures"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="net.certware.core.ui" version="1.1.0" match="greaterOrEqual"/>
    </requires>
 
@@ -231,6 +218,13 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
 
    <plugin
          id="net.certware.argument.gsz.validator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="net.certware.argument.diagram.figures"
          download-size="0"
          install-size="0"
          version="0.0.0"

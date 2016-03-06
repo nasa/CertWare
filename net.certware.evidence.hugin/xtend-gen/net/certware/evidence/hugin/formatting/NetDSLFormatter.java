@@ -27,6 +27,7 @@ public class NetDSLFormatter extends AbstractDeclarativeFormatter {
   @Extension
   private NetDSLGrammarAccess _netDSLGrammarAccess;
   
+  @Override
   protected void configureFormatting(final FormattingConfig c) {
     List<Pair<Keyword, Keyword>> _findKeywordPairs = this._netDSLGrammarAccess.findKeywordPairs("{", "}");
     for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {

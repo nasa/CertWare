@@ -36,6 +36,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String _get = _data[0];
     String _plus = (("Remove intent named" + " ") + _get);
     final ISemanticModification _function = new ISemanticModification() {
+      @Override
       public void apply(final EObject element, final IModificationContext context) throws Exception {
         Refinement container = ((Refinement) element);
         String[] _data = issue.getData();
@@ -74,6 +75,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String _get = _data[0];
     String _plus = (("Remove decomposition named" + " ") + _get);
     final ISemanticModification _function = new ISemanticModification() {
+      @Override
       public void apply(final EObject element, final IModificationContext context) throws Exception {
         Intent container = ((Intent) element);
         String[] _data = issue.getData();
@@ -113,6 +115,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String _get = _data[0];
     String _plus = (("Remove list item named" + " ") + _get);
     final ISemanticModification _function = new ISemanticModification() {
+      @Override
       public void apply(final EObject element, final IModificationContext context) throws Exception {
         ListItem outerList = ((ListItem) element);
         String[] _data = issue.getData();
@@ -148,6 +151,7 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String _get = _data[0];
     String _plus = (("Remove model item named" + " ") + _get);
     final ISemanticModification _function = new ISemanticModification() {
+      @Override
       public void apply(final EObject element, final IModificationContext context) throws Exception {
         ListItem outerList = ((ListItem) element);
         String[] _data = issue.getData();
