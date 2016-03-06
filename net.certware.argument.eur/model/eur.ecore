@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="eur"
+    nsURI="http://www.certware.net/eur" nsPrefix="eur">
+  <eClassifiers xsi:type="ecore:EClass" name="Argument" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//Claim">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategy" upperBound="-1"
+        eType="#//Strategy" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" unique="false"
+        upperBound="-1" eType="#//Assumption"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" unique="false"
+        upperBound="-1" eType="#//Context"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" upperBound="-1"
+        eType="#//Solution" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argument" upperBound="-1"
+        eType="#//Argument" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" unique="false"
+        upperBound="-1" eType="#//Criteria"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justification" upperBound="-1"
+        eType="#//Justification" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Strategy" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//ReasoningElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argument" upperBound="-1"
+        eType="#//Argument" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="justification" upperBound="-1"
+        eType="#//Justification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="solution" ordered="false"
+        unique="false" upperBound="-1" eType="#//Solution"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" unique="false"
+        upperBound="-1" eType="#//Criteria"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" upperBound="-1"
+        eType="#//Assumption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="#//Context" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategies" upperBound="-1"
+        eType="#//Strategy" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Solution" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" unique="false"
+        upperBound="-1" eType="#//Context"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="evidence" lowerBound="1"
+        eType="ecore:EClass ../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="criteria" unique="false"
+        upperBound="-1" eType="#//Criteria"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Context" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" unique="false"
+        upperBound="-1" eType="#//Assumption"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Justification" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Criteria" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" unique="false"
+        upperBound="-1" eType="#//Context"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assumption" unique="false"
+        upperBound="-1" eType="#//Assumption"/>
+  </eClassifiers>
+</ecore:EPackage>

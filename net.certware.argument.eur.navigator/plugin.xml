@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+         <commonFilter
+               activeByDefault="false"
+               class="net.certware.argument.eur.navigator.filters.NavigatorFilter"
+               description="Filters the EUROCONTROL model files"
+               id="net.certware.argument.eur.navigator.filters.filefilter"
+               name="CertWare EUROCONTROL Models"
+               visibleInUI="true">
+      </commonFilter>
+            <navigatorContent
+            activeByDefault="true"
+            contentProvider="net.certware.argument.eur.navigator.ContentProvider"
+            icon="icons/obj16/property.gif"
+            id="net.certware.argument.eur.navigator.navigatorContent"
+            labelProvider="net.certware.argument.eur.navigator.LabelProvider"
+            name="EUROCONTROL Model Conditions"
+            priority="high"
+            providesSaveables="false">
+         <triggerPoints>
+            <or>
+               <and>
+                  <instanceof
+                        value="org.eclipse.core.resources.IResource">
+                  </instanceof>
+                  <test
+                        forcePluginActivation="true"
+                        property="org.eclipse.core.resources.extension"
+                        value="eur">
+                  </test>
+               </and>
+               <instanceof
+                     value="net.certware.argument.eur.navigator.TreeData">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="net.certware.argument.eur.navigator.TreeData">
+               </instanceof>
+            </or>
+         </possibleChildren>
+      </navigatorContent>
+   </extension>
+      <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.argument.eur.navigator.filters.*">
+            </contentExtension>
+            <contentExtension
+                  isRoot="false"
+                  pattern="net.certware.argument.eur.navigator.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+
+</plugin>

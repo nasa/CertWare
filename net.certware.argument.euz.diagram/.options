@@ -1,0 +1,7 @@
+# Tracing options for the net.certware.argument.euz.diagram plug-in
+
+# Common issues
+net.certware.argument.euz.diagram/debug=false
+
+# Visual IDs
+net.certware.argument.euz.diagram/debug/visualID=false

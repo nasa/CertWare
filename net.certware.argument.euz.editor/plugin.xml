@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2010 National Aeronautics and Space Administration
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <wizard
+            id="net.certware.argument.euz.presentation.EuzModelWizardID"
+            name="%_UI_EuzModelWizard_label"
+            class="net.certware.argument.euz.presentation.EuzModelWizard"
+            category="net.certware.core.ui.newwizard.category"
+            icon="icons/full/obj16/EuzModelFile.gif">
+         <description>%_UI_EuzModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="net.certware.argument.euz.presentation.EuzEditorID"
+            name="%_UI_EuzEditor_label"
+            icon="icons/full/obj16/EuzModelFile.gif"
+            extensions="euz"
+            class="net.certware.argument.euz.presentation.EuzEditor"
+            contributorClass="net.certware.argument.euz.presentation.EuzActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

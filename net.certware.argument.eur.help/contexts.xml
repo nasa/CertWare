@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<contexts>
+	<context id="eur_editor_argument_context" title="EUROCONTROL Argument">
+		<description>
+		This element represents an argument node in a EUROCONTROL argument.
+		A goal (or sub-goal) captures an intention of what the argument is meant to accomplish.
+		</description>
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="eur_editor_strategy_context" title="EUROCONTROL Strategy">
+		<description>
+		This element represents a strategy in a EUROCONTROL argument.
+		Use these nodes to decompose a higher-level argument into a strategy for achieving that goal.
+		</description>
+		<topic href="html/topics/strategy_node.html" label="Strategy Nodes" />
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="eur_editor_solution_context" title="EUROCONTROL Solution">
+		<description>
+		This element represents a solution in a EUROCONTROL argument.
+		A solution is meant to fulfill its parent goal.  
+		</description>
+		<topic href="html/topics/solution_node.html" label="Solution Nodes" />
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="eur_editor_assumption_context" title="EUROCONTROL Assumption">
+		<description>
+		This element represents an assumption in a EUROCONTROL argument.
+		Assumption nodes capture information necessary to support the argument, but which may be challenged.
+		</description>
+		<topic href="html/topics/assumption_node.html" label="Assumption Nodes" />
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="eur_editor_justification_context" title="EUROCONTROL Justification">
+		<description>
+		This element represents a justification in a EUROCONTROL argument.
+		A justification explains why a particular strategy has been adopted.
+		</description>
+		<topic href="html/topics/justification_node.html" label="Justification Nodes" />
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="eur_editor_context_context" title="EUROCONTROL Context">
+		<description>
+		This element represents a context in a EUROCONTROL argument.
+		A context node attaches contextual information to another node to explain its relevance.
+		</description>
+		<topic href="html/topics/context_node.html" label="Justification Nodes" />
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+	<context id="eur_editor_criteria_context" title="EUROCONTROL Criteria">
+		<description>
+		This element represents a criterion in a EUROCONTROL argument.
+		A criteria node attaches assessment support information to another node.
+		</description>
+		<topic href="html/topics/context_node.html" label="Justification Nodes" />
+		<topic href="html/concepts/eur.html" label="EUROCONTROL Notation" />
+		<topic href="html/tasks/creating.html" label="Creating Arguments" />
+		<topic href="html/tasks/validating.html" label="Validating Arguments" />
+	</context>
+</contexts>

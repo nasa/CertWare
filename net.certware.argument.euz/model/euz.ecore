@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_b7TYwPfSEd-ygqq5y8o0Pg"
+    name="euz" nsURI="http://www.certware.net/euz" nsPrefix="euz">
+  <eAnnotations xmi:id="_b7TYwffSEd-ygqq5y8o0Pg" source="gmf">
+    <details xmi:id="_b7TYwvfSEd-ygqq5y8o0Pg" key="foo" value="euz"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7TYw_fSEd-ygqq5y8o0Pg" name="ArgumentDiagram">
+    <eAnnotations source="gmf.diagram">
+      <details key="model.extension" value="euz"/>
+      <details key="diagram.extension" value="euzd"/>
+      <details key="onefile" value="false"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_b7TYxPfSEd-ygqq5y8o0Pg"
+        name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7TYxvfSEd-ygqq5y8o0Pg"
+        name="arguments" upperBound="-1" eType="#_b7T_1vfSEd-ygqq5y8o0Pg" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7TYx_fSEd-ygqq5y8o0Pg"
+        name="strategies" upperBound="-1" eType="#_b7Um6PfSEd-ygqq5y8o0Pg" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7T_0PfSEd-ygqq5y8o0Pg"
+        name="solutions" upperBound="-1" eType="#_b7VN9vfSEd-ygqq5y8o0Pg" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7T_0ffSEd-ygqq5y8o0Pg"
+        name="assumptions" upperBound="-1" eType="#//Assumption" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7T_0vfSEd-ygqq5y8o0Pg"
+        name="justifications" upperBound="-1" eType="#_b7V1B_fSEd-ygqq5y8o0Pg" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7T_0_fSEd-ygqq5y8o0Pg"
+        name="contexts" upperBound="-1" eType="#_b7V1A_fSEd-ygqq5y8o0Pg" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7T_1PfSEd-ygqq5y8o0Pg"
+        name="criteria" upperBound="-1" eType="#_b7V1CffSEd-ygqq5y8o0Pg" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7T_1ffSEd-ygqq5y8o0Pg"
+        name="evidence" upperBound="-1" eType="#_b7WcFPfSEd-ygqq5y8o0Pg" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7T_1vfSEd-ygqq5y8o0Pg" name="Argument"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//Claim">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Argument {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="rectangle"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="152,251,152"/>
+      <details key="tool.name" value="Argument Node"/>
+      <details key="tool.description" value="Creates an argument node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/rectangle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/rectangle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7Um4PfSEd-ygqq5y8o0Pg"
+        name="argumentStrategies" upperBound="-1" eType="#_b7Um6PfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Strategy"/>
+        <details key="tool.description" value="Links an argument with its strategy"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7Um4ffSEd-ygqq5y8o0Pg"
+        name="argumentAssumptions" upperBound="-1" eType="#//Assumption">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Assumption"/>
+        <details key="tool.description" value="Links an argument with its assumption"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7Um4vfSEd-ygqq5y8o0Pg"
+        name="argumentContexts" upperBound="-1" eType="#_b7V1A_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Context"/>
+        <details key="tool.description" value="Links an argument with its context"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7Um4_fSEd-ygqq5y8o0Pg"
+        name="argumentSolutions" upperBound="-1" eType="#_b7VN9vfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Solution"/>
+        <details key="tool.description" value="Links an argument with its solution"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7Um5vfSEd-ygqq5y8o0Pg"
+        name="argumentCriteria" upperBound="-1" eType="#_b7V1CffSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Criteria"/>
+        <details key="tool.description" value="Links an argument with its criteria"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7Um5_fSEd-ygqq5y8o0Pg"
+        name="argumentJustifications" upperBound="-1" eType="#_b7V1B_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Justification"/>
+        <details key="tool.description" value="Links an argument with its justification"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subArguments" upperBound="-1"
+        eType="#_b7T_1vfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Argument with Sub-Argument"/>
+        <details key="tool.description" value="Links an argument with its sub-argument"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7V1A_fSEd-ygqq5y8o0Pg" name="Context"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Context {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="rounded"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="250,250,250"/>
+      <details key="tool.name" value="Context Node"/>
+      <details key="tool.description" value="Creates a context node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7V1BffSEd-ygqq5y8o0Pg"
+        name="contextAssumptions" upperBound="-1" eType="#//Assumption">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Context with Assumption"/>
+        <details key="tool.description" value="Links a context with its assumption"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7V1CffSEd-ygqq5y8o0Pg" name="Criteria"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Criteria {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="rounded"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="250,250,250"/>
+      <details key="tool.name" value="Criteria Node"/>
+      <details key="tool.description" value="Creates a criteria node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7WcEPfSEd-ygqq5y8o0Pg"
+        name="criteriaContexts" upperBound="-1" eType="#_b7V1A_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Criteria with Context"/>
+        <details key="tool.description" value="Links criteria with its context"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7WcEvfSEd-ygqq5y8o0Pg"
+        name="criteriaAssumptions" upperBound="-1" eType="#//Assumption">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Criteria with Assumption"/>
+        <details key="tool.description" value="Links criteria with is assumption"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7Um6PfSEd-ygqq5y8o0Pg" name="Strategy"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//ReasoningElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Strategy {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="net.certware.argument.diagram.figures.ParallelogramFigure"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="250,250,250"/>
+      <details key="tool.name" value="Strategy Node"/>
+      <details key="tool.description" value="Creates a strategy node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/parallelogram.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/parallelogram.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7VN8PfSEd-ygqq5y8o0Pg"
+        name="strategyArguments" upperBound="-1" eType="#_b7T_1vfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="target.decoration" value="filledclosedarrow"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Strategy with Argument"/>
+        <details key="tool.description" value="Links a strategy with its argument"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7VN8vfSEd-ygqq5y8o0Pg"
+        name="strategyJustifications" upperBound="-1" eType="#_b7V1B_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Strategy with Justification"/>
+        <details key="tool.description" value="Links and argument with its strategy"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7VN9PfSEd-ygqq5y8o0Pg"
+        name="strategyCriteria" upperBound="-1" eType="#_b7V1CffSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Strategy with Criteria"/>
+        <details key="tool.description" value="Links a strategy with its criteria"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7VN9ffSEd-ygqq5y8o0Pg"
+        name="strategyAssumptions" upperBound="-1" eType="#//Assumption">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Strategy with Assumption"/>
+        <details key="tool.description" value="Links a strategy with its assumption"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategyStrategies" upperBound="-1"
+        eType="#_b7Um6PfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Strategy with Assumption"/>
+        <details key="tool.description" value="Links a strategy with its assumption"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="strategyContexts" upperBound="-1"
+        eType="#_b7V1A_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Criteria with Context"/>
+        <details key="tool.description" value="Links criteria with its context"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7VN9vfSEd-ygqq5y8o0Pg" name="Solution"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Solution {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="250,250,250"/>
+      <details key="tool.name" value="Solution Node"/>
+      <details key="tool.description" value="Creates a solution node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/circle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/circle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7VN-PfSEd-ygqq5y8o0Pg"
+        name="solutionContexts" upperBound="-1" eType="#_b7V1A_fSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Solution with Context"/>
+        <details key="tool.description" value="Links a solution with its context"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7VN-ffSEd-ygqq5y8o0Pg"
+        name="solutionEvidence" upperBound="-1" eType="#_b7WcFPfSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Solution with Evidence"/>
+        <details key="tool.description" value="Links a solution with its evidence"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_b7V1APfSEd-ygqq5y8o0Pg"
+        name="solutionCriteria" upperBound="-1" eType="#_b7V1CffSEd-ygqq5y8o0Pg">
+      <eAnnotations source="gmf.link">
+        <details key="width" value="1"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="tool.name" value="Solution with Criteria"/>
+        <details key="tool.description" value="Links a solution with its context"/>
+        <details key="tool.small.path" value="icons/obj16/connector.png"/>
+        <details key="tool.small.bundle" value="net.certware.core.ui"/>
+        <details key="tool.large.path" value="icons/obj16/connector.png"/>
+        <details key="tool.large.bundle" value="net.certware.core.ui"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assumption" eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Assumption {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="rounded"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="0,240,240"/>
+      <details key="tool.name" value="Assumption Node"/>
+      <details key="tool.description" value="Creates an assumption node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7V1B_fSEd-ygqq5y8o0Pg" name="Justification"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//InformationElement">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Justification {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="rounded"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="250,250,250"/>
+      <details key="tool.name" value="Justification Node"/>
+      <details key="tool.description" value="Creates a justification node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/rounded-rectangle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_b7WcFPfSEd-ygqq5y8o0Pg" name="Evidence"
+      eSuperTypes="../../net.certware.argument.arm/model/arm.ecore#//AssertedEvidence">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="identifier"/>
+      <details key="label.pattern" value="Evidence {0}"/>
+      <details key="label.icon" value="true"/>
+      <details key="label.placement" value="internal"/>
+      <details key="label.readonly" value="false"/>
+      <details key="figure" value="ellipse"/>
+      <details key="border.style" value="solid"/>
+      <details key="size" value="100,60"/>
+      <details key="color" value="135,206,250"/>
+      <details key="tool.name" value="Evidence Node"/>
+      <details key="tool.description" value="Creates an evidence node on the diagram canvas"/>
+      <details key="tool.small.path" value="icons/obj16/circle.png"/>
+      <details key="tool.small.bundle" value="net.certware.core.ui"/>
+      <details key="tool.large.path" value="icons/obj16/circle.png"/>
+      <details key="tool.large.bundle" value="net.certware.core.ui"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>
