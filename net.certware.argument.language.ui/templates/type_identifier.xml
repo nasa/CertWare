@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="net.certware.argument.language.L.Program" deleted="false" description="Structure of type identifier statement" enabled="true" id="identifier" name="TypeIdentifierStatement">type ${id} = ${identifier} .</template></templates>

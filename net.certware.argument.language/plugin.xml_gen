@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.certware.net/argument/language/L" 
+       class = "net.certware.argument.language.l.LPackage"
+       genModel = "model/generated/L.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

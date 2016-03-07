@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare L Language Solver
+Bundle-SymbolicName: net.certware.argument.language.ui.solver.linux;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: net.certware.argument.language.ui.solver.linux
+Fragment-Host: net.certware.argument.language.ui;bundle-version="1.0.0"
+Eclipse-PlatformFilter: (& (osgi.os=linux))
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Texas Tech University

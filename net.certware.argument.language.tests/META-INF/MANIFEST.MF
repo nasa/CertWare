@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: net.certware.argument.language.tests
+Bundle-SymbolicName: net.certware.argument.language.tests;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: net.certware.argument.language.tests
+Bundle-Vendor: Kestrel Technology LLC
+Require-Bundle: net.certware.argument.language,
+ net.certware.argument.language.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtext.junit4,
+ org.eclipse.ui.workbench;resolution:=optional,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.apache.log4j,
+ org.hamcrest.core,
+ org.junit;version="4.5.0",
+ org.junit.runner;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0"
+Bundle-ActivationPolicy: lazy
+Export-Package: net.certware.argument.language

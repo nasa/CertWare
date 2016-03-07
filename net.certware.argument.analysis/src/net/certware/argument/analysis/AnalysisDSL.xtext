@@ -1,0 +1,66 @@
+// CertWare ABSA project DSL for L solver output
+// E-BNF grammar specification by Evgenii Balai
+// Rendering for Xtext by Matt Barry
+// 7 October 2015 
+grammar net.certware.argument.analysis.AnalysisDSL with org.eclipse.xtext.common.Terminals
+
+generate analysisDSL "http://www.certware.net/argument/analysis/AnalysisDSL"
+
+
+// first rule must be a parser rule
+// an output file consists of some number of lines followed by SATISFIABLE or UNSATISFIABLE keyword
+// we assume the output file is scanned as ASCII text but it need not be stored this way
+Output:
+	lines += Line* (SATISFIABLE | UNSATISFIABLE)
+;
+
+// several terminals
+// using default whitespace terminals from imported grammar
+terminal NUMBER : '0' |  ('1'..'9')('0'..'9')* ; 
+terminal IDENTIFIER: ('a'..'z')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+//terminal PREDICATE_NAME : ('a'..'z')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+//terminal CONSTANT_SYMBOL : ('a'..'z')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+//terminal FUNCTIONAL_SYMBOL : ('a'..'z')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+
+terminal SATISFIABLE : 'SATISFIABLE';
+terminal UNSATISFIABLE : 'UNSATISFIABLE';
+
+
+// more parser rules
+// a line contains one or more classic literals
+Line:
+	items += ClassicLiteral+
+;
+
+// a classic literal is an atom with an optional negation sign
+ClassicLiteral:
+	neg='-'? atom=Atom 
+;
+
+// an atom is a predicate name with an optional terms expression in parentheses	
+Atom:
+	name=PREDICATE_NAME( '(' (terms=Terms)? ')' )?
+;
+
+PREDICATE_NAME: IDENTIFIER
+	
+;
+
+// a terms expression is one or more terms separated by commas
+Terms:
+	car=Term (',' cdr+=Term)*
+;
+
+// a term is a constant symbol, a number with optional sign, or 
+// a functional symbol with optional terms in parentheses
+Term:
+	cs=CONSTANT_SYMBOL| sign=('-')? n=NUMBER | fs=FUNCTIONAL_SYMBOL '(' terms=Terms ')' 
+;
+
+CONSTANT_SYMBOL:IDENTIFIER
+	
+;
+
+FUNCTIONAL_SYMBOL:IDENTIFIER
+	
+;

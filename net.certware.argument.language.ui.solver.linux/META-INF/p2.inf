@@ -1,0 +1,3 @@
+ instructions.install = \
+    chmod(targetDir:@artifact,targetFile:solver,permissions:755),\
+    chmod(targetDir:@artifact,targetFile:translator,permissions:755);

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+   <extension-point id="solver" name="solver" schema="schema/net.certware.argument.language.ui.solver.exsd"/>
+
+
+   
+   
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+              class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="L"
+              icon="icons/obj16/L_16.png"
+              id="net.certware.argument.language.L"
+              name="L Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="net.certware.argument.language.L.validate">
+         <activeWhen>
+            <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+            </reference>
+         </activeWhen>
+      	</handler>
+      	
+      	 <handler
+            class="net.certware.argument.language.ui.SolveHandler"
+            commandId="net.certware.argument.language.L.solve">
+         <activeWhen>
+            <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+            </reference>
+         </activeWhen>
+      	</handler>
+      	
+      	 <handler
+            class="net.certware.argument.language.ui.CheckHandler"
+            commandId="net.certware.argument.language.L.check">
+         <activeWhen>
+            <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+            </reference>
+         </activeWhen>
+      	</handler>
+      	
+      	
+      	<!-- copy qualified name -->
+        <handler
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
+            <activeWhen>
+				<reference definitionId="net.certware.argument.language.L.Editor.opened" />
+            </activeWhen>
+        </handler>
+        <handler
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
+            <activeWhen>
+            	<and>
+            		<reference definitionId="net.certware.argument.language.L.XtextEditor.opened" />
+	                <iterate>
+						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+					</iterate>
+				</and>
+            </activeWhen>
+        </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="net.certware.argument.language.L.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.argument.language.L" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+        <definition id="net.certware.argument.language.L.XtextEditor.opened">
+            <and>
+                <reference definitionId="isXtextEditorActive"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.argument.language.L" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="net.certware.argument.language.L"
+            name="L Language">
+            <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+        </page>
+        <page
+            category="net.certware.argument.language.L"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="net.certware.argument.language.L.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+        </page>
+        <page
+            category="net.certware.argument.language.L"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="net.certware.argument.language.L.templates"
+            name="Templates">
+            <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="net.certware.argument.language.L"
+            name="L">
+            <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="net.certware.argument.language.ui.keyword_L"
+            label="L"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="net.certware.argument.language.L.validate"
+            name="Validate L Expressions">
+      </command>
+      
+      <command
+            description="Trigger solving"
+            id="net.certware.argument.language.L.solve"
+            name="Compute Models">
+      </command>
+      
+      
+      <command
+            description="Trigger checking safety"
+            id="net.certware.argument.language.L.check"
+            name="Check Safety">
+      </command>
+      
+      
+      <!-- copy qualified name -->
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="net.certware.argument.language.L.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+         
+         
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="net.certware.argument.language.L.solve"
+                 style="push"
+                 tooltip="Compute Models">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+        
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="net.certware.argument.language.L.check"
+                 style="push"
+                 tooltip="Check Safety">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+        
+        
+        
+         <!-- copy qualified name -->
+         <menuContribution locationURI="popup:#TextEditorContext?after=copy">
+         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
+         		style="push" tooltip="Copy Qualified Name">
+            	<visibleWhen checkEnabled="false">
+                	<reference definitionId="net.certware.argument.language.L.Editor.opened" />
+            	</visibleWhen>
+         	</command>  
+         </menuContribution>
+         <menuContribution locationURI="menu:edit?after=copy">
+         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            	style="push" tooltip="Copy Qualified Name">
+            	<visibleWhen checkEnabled="false">
+                	<reference definitionId="net.certware.argument.language.L.Editor.opened" />
+            	</visibleWhen>
+         	</command>  
+         </menuContribution>
+         <menuContribution locationURI="popup:org.eclipse.xtext.ui.outline?after=additions">
+			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName" 
+				style="push" tooltip="Copy Qualified Name">
+         		<visibleWhen checkEnabled="false">
+	            	<and>
+	            		<reference definitionId="net.certware.argument.language.L.XtextEditor.opened" />
+						<iterate>
+							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
+						</iterate>
+					</and>
+				</visibleWhen>
+			</command>
+         </menuContribution>
+         <menuContribution
+               allPopups="false"
+               locationURI="menu:org.eclipse.ui.main.menu">
+            <menu
+                  label="label">
+            </menu>
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="net.certware.argument.language.L.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="net.certware.argument.language.L.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="L">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="L">
+        </resourceServiceProvider>
+    </extension>
+
+
+	<!-- marker definitions for net.certware.argument.language.L -->
+	<extension
+	        id="l.check.fast"
+	        name="L Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="l.check.normal"
+	        name="L Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="l.check.expensive"
+	        name="L Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="L"
+            >
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="net.certware.argument.language.L"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.argument.language.L.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="net.certware.argument.language.L"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="net.certware.argument.language.L.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.argument.language.L.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="net.certware.argument.language.L.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+    <!-- quickfix marker resolution generator for net.certware.argument.language.L -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="net.certware.argument.language.ui.l.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="net.certware.argument.language.ui.l.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="net.certware.argument.language.ui.l.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.argument.language.L.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="net.certware.argument.language.L.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="net.certware.argument.language.L"
+	        class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="net.certware.argument.language.L.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="net.certware.argument.language.ui.keyword_L"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="net.certware.argument.language.L.compare.contentViewers"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="L">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="net.certware.argument.language.L.compare.contentMergeViewers"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="L" label="L Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="net.certware.argument.language.L.editors.documentProviders"
+            class="net.certware.argument.language.ui.LExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="L">
+    </provider>
+  </extension>
+  <extension
+        point="org.eclipse.ui.preferencePages">
+     <page
+           category="net.certware.argument.language.L"
+           class="net.certware.argument.language.ui.preferences.OutlinePreferencePage"
+           id="net.certware.argument.language.L.outline"
+           name="Outline View">
+        <keywordReference
+              id="net.certware.argument.language.ui.keyword_L">
+        </keywordReference>
+     </page>
+  </extension>
+  <extension
+        point="org.eclipse.core.runtime.preferences">
+     <initializer
+           class="net.certware.argument.language.ui.preferences.OutlinePreferenceInitializer">
+     </initializer>
+  </extension>
+
+</plugin>

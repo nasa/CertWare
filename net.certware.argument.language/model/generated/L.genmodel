@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.argument.language/src-gen" editDirectory="/net.certware.argument.language.edit/src"
+    editorDirectory="/net.certware.argument.language.editor/src" modelPluginID="net.certware.argument.language"
+    forceOverwrite="true" modelName="L" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="net.certware.argument.language.edit"
+    editorPluginID="net.certware.argument.language.editor" runtimeVersion="2.11">
+  <genPackages prefix="L" basePackage="net.certware.argument.language" disposableProviderFactory="true"
+      fileExtensions="L" ecorePackage="L.ecore#/">
+    <genClasses ecoreClass="L.ecore#//Program">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Program/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//BasicTerm"/>
+    <genClasses ecoreClass="L.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//Variable/identifier"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//TypedVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//TypedVariable/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TypedVariable/var"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//ArithmeticTerm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//ArithmeticTerm/term"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//ArithmeticTerm/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//ArithmeticTerm/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//ArithmeticLiteral">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//ArithmeticLiteral/v"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//ArithmeticLiteral/tv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//ArithmeticLiteral/const"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//ArithmeticLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//GroundArithmeticTerm"/>
+    <genClasses ecoreClass="L.ecore#//GroundArithmeticLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//GroundArithmeticLiteral/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//GroundArithmeticLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//FunctionalTerm"/>
+    <genClasses ecoreClass="L.ecore#//GroundFunctionalTerm"/>
+    <genClasses ecoreClass="L.ecore#//BasicTerms">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//BasicTerms/car"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//BasicTerms/cdr"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//GroundTerms">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//GroundTerms/car"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//GroundTerms/cdr"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//GroundTerm"/>
+    <genClasses ecoreClass="L.ecore#//QuantifiedTerm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//QuantifiedTerm/name"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//UniversalQuantifiedTerm"/>
+    <genClasses ecoreClass="L.ecore#//ExistentialQuantifiedTerm"/>
+    <genClasses ecoreClass="L.ecore#//Term"/>
+    <genClasses ecoreClass="L.ecore#//Terms">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Terms/car"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Terms/cdr"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//ConstantDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//ConstantDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//ConstantDeclaration/cv"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//TypeId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//TypeId/name"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//TypeDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TypeDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TypeDeclaration/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Limit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Limit/cv"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Set">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//Set/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Set/terms"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Range">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Range/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Range/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//SetExpression"/>
+    <genClasses ecoreClass="L.ecore#//SetConstruct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//SetConstruct/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//SetConstruct/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//TVars">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TVars/car"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TVars/cdr"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//TVar">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TVar/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//TVar/id"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Atom"/>
+    <genClasses ecoreClass="L.ecore#//PredicateAtom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//PredicateAtom/fid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//PredicateAtom/terms"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//BasicPredicateAtom">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//BasicPredicateAtom/fid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//BasicPredicateAtom/terms"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//BuiltInAtom">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//BuiltInAtom/lhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//BuiltInAtom/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//BuiltInAtom/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//BasicAtom"/>
+    <genClasses ecoreClass="L.ecore#//Sentence"/>
+    <genClasses ecoreClass="L.ecore#//SentenceExpr"/>
+    <genClasses ecoreClass="L.ecore#//SentenceLiteral"/>
+    <genClasses ecoreClass="L.ecore#//pSentence"/>
+    <genClasses ecoreClass="L.ecore#//pSentenceLiteral"/>
+    <genClasses ecoreClass="L.ecore#//MaybeLiteral"/>
+    <genClasses ecoreClass="L.ecore#//CardinalityConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//CardinalityConstraint/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//CardinalityConstraint/atom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//CardinalityConstraint/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Bound">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Bound/av"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Rule/head"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute L.ecore#//Rule/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//Rule/body"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//Head"/>
+    <genClasses ecoreClass="L.ecore#//Statement"/>
+    <genClasses ecoreClass="L.ecore#//Addition"/>
+    <genClasses ecoreClass="L.ecore#//Multiplication"/>
+    <genClasses ecoreClass="L.ecore#//GroundAddition"/>
+    <genClasses ecoreClass="L.ecore#//GroundMultiplication"/>
+    <genClasses ecoreClass="L.ecore#//SetAddition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//SetAddition/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//SetAddition/right"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//SetMultiplication">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//SetMultiplication/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//SetMultiplication/right"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//OrSentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//OrSentence/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//OrSentence/right"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//AndSentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//AndSentence/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//AndSentence/right"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//pOrSentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//pOrSentence/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//pOrSentence/right"/>
+    </genClasses>
+    <genClasses ecoreClass="L.ecore#//pAndSentence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//pAndSentence/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference L.ecore#//pAndSentence/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,286 @@
+grammar net.certware.argument.language.L with org.eclipse.xtext.common.Terminals
+
+generate l "http://www.certware.net/argument/language/L"
+
+// basic model is the program of section 1.13
+Program:
+	statements+=Statement*;
+
+	// identifier with first character lower
+terminal LID:
+	('a'..'z') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+	// identifier with first character upper
+terminal UID:
+	('A'..'Z') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
+
+	// 1.1 Symbols
+//Symbol:
+//	IntegerNumeral |
+//	Identifier |
+//	SpecialCharacter
+//;
+
+// IntegerNumeral:  MRB replaced with direct substitution of terminal INT
+//	INT // provided by Terminals and returning ECore Integer type 
+// ;
+
+// Identifier:  MRB replaced with direct substitution of terminal ID
+//	ID // provided by Terminals and returning ECore String type
+//;
+
+//SpecialCharacter:
+//	'>' | '=' | '<' | '+' | '-' | '*' | '{' | '}' | '(' | ')' | ',' | '.' | '|'	
+//;
+
+
+// 1.2 Basic Terms, 1.14.1 Terms
+BasicTerm:
+// NumericConstant |    // INT  covered by ArithmeticTerm
+// Variable |           // UID  covered by ArithmeticTerm
+	TypedVariable | // ID UID
+	ArithmeticTerm | // Addition | Multiplication
+	FunctionalTerm // ID ( BasicTerms )
+;
+
+// Vu: non-negative integers only
+//NumericConstant:
+//	value=INT;
+terminal NUMERIC_CONSTANT:
+	('0'..'9')+;
+
+Variable:
+	identifier=UID;
+
+TypedVariable:
+	name=LID var=Variable;
+
+	// our version of a left-factored equivalent of the recursive grammar from the spec
+ArithmeticTerm:
+	Addition;
+
+Addition returns ArithmeticTerm:
+	Multiplication ({Addition.lhs=current} ('+' | '-') rhs=Multiplication)*;
+
+Multiplication returns ArithmeticTerm:
+	Primary ({Multiplication.lhs=current} ('*' | '/' | '%') rhs=Primary)*;
+
+	// Vu: removed explicitly negative arithmetic expressions
+Primary returns ArithmeticTerm:
+/*(minus='-')?*/ term=ArithmeticLiteral |
+	/*(minus='-')?*/ '(' term=Addition ')';
+
+ArithmeticLiteral:
+	v=Variable | // UID
+	tv=TypedVariable |
+	const=LID | //CONST
+	value=NUMERIC_CONSTANT;
+
+	// ground arithmetic term from 1.2 and  1.14.1, 
+// reuse the definition of Arithmetic Term
+GroundArithmeticTerm:
+	GroundAddition;
+
+GroundAddition returns ArithmeticTerm:
+	GroundMultiplication ({GroundAddition.lhs=current} ('+' | '-') rhs=GroundMultiplication)*;
+
+GroundMultiplication returns ArithmeticTerm:
+	GroundPrimary ({GroundMultiplication.lhs=current} ('*' | '/' | '%') rhs=Primary)*;
+
+GroundPrimary returns ArithmeticTerm:
+/*(minus='-')?*/ term=GroundArithmeticLiteral |
+	/*(minus='-')?*/ '(' term=Addition ')';
+
+GroundArithmeticLiteral:
+	identifier=LID | value=NUMERIC_CONSTANT;
+
+FunctionalTerm:
+// ID'('terms+=BasicTerm+')'
+	LID '(' Terms ')';
+
+GroundFunctionalTerm:
+// ID'('terms+=BasicTerm+')'
+	LID '(' GroundTerms ')';
+
+BasicTerms:
+	car=BasicTerm (',' cdr+=BasicTerm)*;
+
+GroundTerms:
+	car=GroundTerm (',' cdr+=GroundTerm)*;
+
+GroundTerm:
+	GroundArithmeticTerm | GroundFunctionalTerm;
+
+	// 1.6 Quantified Terms, 1.14.1 Terms
+QuantifiedTerm:
+// Quantifier LID (Variable)?  mrb changed to scope on type ID
+// Quantifier id=[TypeId] (var=Variable)? // okay with Quantifier rule
+// ('every' name=[TypeId]) | 
+// ('some' name=[TVar])
+	UniversalQuantifiedTerm | ExistentialQuantifiedTerm;
+
+	// Vu: forbid `predicateName(quantifier typeName VarName)
+UniversalQuantifiedTerm:
+	'every' name=TypeId;
+
+ExistentialQuantifiedTerm:
+	'some' name=TypeId;
+
+	//Quantifier:
+//	mrb removed for explicit scope disambiguation in QuantifiedTerm rule above
+//	'every' | 'some';
+
+// 1.7 Terms, 1.14.1 Terms
+Term:
+	BasicTerm |
+	QuantifiedTerm;
+
+Terms:
+	car=Term (',' cdr+=Term)*;
+
+	// 1.14.2, 1.3 Constant Declaration
+ConstantDeclaration:
+	'const' name=LID
+	'='
+	// (cv=NumericConstant | iv=INT | av=ArithmeticTerm )
+	cv=GroundArithmeticTerm
+	'.';
+
+	// 1.5 Type Declarations, 1.14.3 Type Declarations
+// mrb added type ID so we can use it in scoping rules
+TypeId:
+	name=LID;
+
+TypeDeclaration:
+	'type' name=TypeId '=' exp=SetExpression '.';
+
+Limit:
+//id=ID | 
+// nc=NumericConstant | at=ArithmeticTerm
+	cv=GroundArithmeticTerm;
+
+	// Vu: forbid empty type
+Set:
+	lhs='{' (terms=GroundTerms) '}';
+
+Range:
+	'{' lhs=Limit '.' '.' rhs=Limit '}';
+
+SetExpression:
+	SetAddition // | SetMultiplication
+;
+
+SetConstruct:
+	lhs=BasicTerm 'where' rhs=TVars;
+
+TVars:
+	car=TVar (',' cdr+=TVar)*;
+
+TVar:
+// var=Variable 'in' id=LID // mrb updated for scope additions
+	var=Variable 'in' id=TypeId;
+
+SetAddition returns SetExpression:
+	SetMultiplication ({SetAddition.left=current} '+' right=SetMultiplication)*;
+
+SetMultiplication returns SetExpression:
+	SetPrimary ({SetMultiplication.left=current} ('*' | '\\') right=SetPrimary)*;
+
+SetPrimary returns SetExpression:
+	SetLiteral | '(' SetAddition ')';
+
+SetLiteral returns SetExpression:
+	Set | Range | SetConstruct | LID;
+
+	// 1.8 Atoms, 1.14.4 Atoms
+Atom:
+	PredicateAtom |
+	BuiltInAtom;
+
+PredicateAtom:
+	fid=LID ('(' terms=Terms ')')?;
+
+BasicPredicateAtom:
+	fid=LID ('(' terms=BasicTerms ')')?;
+
+BuiltInAtom:
+	lhs=BasicTerm op=AtomOp rhs=BasicTerm;
+
+BasicAtom:
+	BasicPredicateAtom | BuiltInAtom;
+
+AtomOp:
+	'>' | '<' | '>=' | '<=' | '=' | '!='; // note <> not used in 1.14.4
+
+
+// Sentences: 1.9. grammar section 1.14.5
+Sentence:
+	OrSentence // | AndSentence | NotSentence
+;
+
+// our left-factored version of the left-recursive grammar from specification
+OrSentence returns SentenceExpr:
+	AndSentence ({OrSentence.left=current} 'or' right=AndSentence)* // right=OrSentence
+;
+
+AndSentence returns SentenceExpr:
+	PrimarySentence ({AndSentence.left=current} ('and' | ',') right=PrimarySentence)* // right=AndSentence
+;
+
+PrimarySentence returns SentenceExpr:
+	SentenceLiteral |
+	'(' OrSentence ')';
+
+SentenceLiteral:
+	Atom |
+	'not' BasicAtom;
+
+	// Predicate Sentences 
+pSentence:
+	pOrSentence;
+
+	// our left-factored version of the left-recursive grammar from specification
+pOrSentence returns SentenceExpr:
+	pAndSentence ({pOrSentence.left=current} 'or' right=pAndSentence)* // right=pOrSentence
+;
+
+pAndSentence returns SentenceExpr:
+	pPrimarySentence ({pAndSentence.left=current} 'and' right=pPrimarySentence)* // right=pAndSentence
+;
+
+pPrimarySentence returns SentenceExpr:
+	pSentenceLiteral |
+	'(' pOrSentence ')';
+
+pSentenceLiteral:
+	PredicateAtom |
+	'not' BasicPredicateAtom;
+
+	// 1.10 Maybe Literals, 1.14.5 Maybe Literals
+MaybeLiteral:
+	'maybe' BasicPredicateAtom;
+
+	// 1.11 Cardinality Constraint, 1.14.7 Cardinality Constraints
+CardinalityConstraint:
+	lhs=Bound '<=' '|' '{' atom=BasicPredicateAtom '}' '|' '<=' rhs=Bound;
+
+Bound:
+// av=ArithmeticTerm | iv=INT | cv=NumericConstant
+	av=ArithmeticTerm // | cv=NumericConstant | id=ID
+;
+
+// 1.12 Rules, 1.14.8 Rules
+Rule:
+	head=Head (condition='if' body=Sentence)? '.';
+
+Head:
+	pSentence | MaybeLiteral | CardinalityConstraint;
+
+	// 1.13 Program, 1.14.9 Program
+// by 1.14.9 a program consists of const_decls, type_decls, and rules
+// these are our statements
+Statement:
+	Rule | TypeDeclaration | ConstantDeclaration;
+
+	// 1.15 Comments
+// by default the generated editor will enable /* */ and // comments

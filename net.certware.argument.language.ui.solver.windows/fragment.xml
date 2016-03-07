@@ -1,0 +1,12 @@
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.argument.language.ui.solver">
+   <artifacts
+      id = "net.certware.argument.language.ui.solver.artifacts"
+      asp_solver = "clingo"
+      l_to_sparc_translator = "translator"
+      sparc_to_asp_translator = "sparc.jar">
+   </artifacts>
+   </extension>
+  </fragment>

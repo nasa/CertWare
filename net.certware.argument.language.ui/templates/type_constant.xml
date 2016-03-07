@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="net.certware.argument.language.L.Program" deleted="false" description="Structure of type constant statement" enabled="true" id="constant" name="TypeConstantStatement">type ${id} = ${const} .</template></templates>
