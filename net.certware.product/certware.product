@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Certware" uid="product" id="net.certware.product.product" application="org.eclipse.ui.ide.workbench" version="2.0.2.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="Certware" uid="product" id="net.certware.product.product" application="org.eclipse.ui.ide.workbench" version="2.0.3.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
@@ -41,7 +41,7 @@
    <license>
         <url>http://updatesite.certware.net</url>
         <text>
-   Copyright (c) 2011-2014 United States Government as represented by
+   Copyright (c) 2011-2016 United States Government as represented by
 the National Aeronautics and Space Administration.  All rights
 reserved.
 
@@ -118,6 +118,53 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="javax.servlet"/>
       <plugin id="javax.xml"/>
       <plugin id="lpg.runtime.java"/>
+      <plugin id="net.certware.argument.analysis"/>
+      <plugin id="net.certware.argument.analysis.tests"/>
+      <plugin id="net.certware.argument.analysis.ui"/>
+      <plugin id="net.certware.argument.arm"/>
+      <plugin id="net.certware.argument.arm.edit"/>
+      <plugin id="net.certware.argument.arm.editor"/>
+      <plugin id="net.certware.argument.arm.help"/>
+      <plugin id="net.certware.argument.arm.navigator"/>
+      <plugin id="net.certware.argument.cae"/>
+      <plugin id="net.certware.argument.cae.edit"/>
+      <plugin id="net.certware.argument.cae.editor"/>
+      <plugin id="net.certware.argument.cae.help"/>
+      <plugin id="net.certware.argument.cae.navigator"/>
+      <plugin id="net.certware.argument.caz"/>
+      <plugin id="net.certware.argument.caz.diagram"/>
+      <plugin id="net.certware.argument.caz.edit"/>
+      <plugin id="net.certware.argument.caz.editor"/>
+      <plugin id="net.certware.argument.caz.validator"/>
+      <plugin id="net.certware.argument.diagram.figures"/>
+      <plugin id="net.certware.argument.eur"/>
+      <plugin id="net.certware.argument.eur.edit"/>
+      <plugin id="net.certware.argument.eur.editor"/>
+      <plugin id="net.certware.argument.eur.help"/>
+      <plugin id="net.certware.argument.eur.navigator"/>
+      <plugin id="net.certware.argument.eur.navigator.test" fragment="true"/>
+      <plugin id="net.certware.argument.eur.test" fragment="true"/>
+      <plugin id="net.certware.argument.euz"/>
+      <plugin id="net.certware.argument.euz.diagram"/>
+      <plugin id="net.certware.argument.euz.edit"/>
+      <plugin id="net.certware.argument.euz.editor"/>
+      <plugin id="net.certware.argument.euz.validator"/>
+      <plugin id="net.certware.argument.gsn"/>
+      <plugin id="net.certware.argument.gsn.edit"/>
+      <plugin id="net.certware.argument.gsn.editor"/>
+      <plugin id="net.certware.argument.gsn.help"/>
+      <plugin id="net.certware.argument.gsn.navigator"/>
+      <plugin id="net.certware.argument.gsn.validator"/>
+      <plugin id="net.certware.argument.gsz"/>
+      <plugin id="net.certware.argument.gsz.diagram"/>
+      <plugin id="net.certware.argument.gsz.edit"/>
+      <plugin id="net.certware.argument.gsz.editor"/>
+      <plugin id="net.certware.argument.gsz.validator"/>
+      <plugin id="net.certware.argument.language"/>
+      <plugin id="net.certware.argument.language.tests"/>
+      <plugin id="net.certware.argument.language.ui"/>
+      <plugin id="net.certware.argument.language.ui.solver.linux" fragment="true"/>
+      <plugin id="net.certware.argument.language.ui.solver.windows" fragment="true"/>
       <plugin id="net.certware.argument.sfp"/>
       <plugin id="net.certware.argument.sfp.help"/>
       <plugin id="net.certware.argument.sfp.navigator"/>
@@ -132,15 +179,24 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.evidence.hugin.instance.editor"/>
       <plugin id="net.certware.evidence.hugin.ui"/>
       <plugin id="net.certware.evidence.hugin.view"/>
+      <plugin id="net.certware.evidence.saem"/>
+      <plugin id="net.certware.evidence.saem.edit"/>
+      <plugin id="net.certware.evidence.saem.editor"/>
       <plugin id="net.certware.example"/>
+      <plugin id="net.certware.example.arm" fragment="true"/>
+      <plugin id="net.certware.example.cae" fragment="true"/>
       <plugin id="net.certware.example.checklist" fragment="true"/>
+      <plugin id="net.certware.example.eur" fragment="true"/>
+      <plugin id="net.certware.example.gsn" fragment="true"/>
+      <plugin id="net.certware.example.llang" fragment="true"/>
       <plugin id="net.certware.example.net" fragment="true"/>
       <plugin id="net.certware.example.sacm" fragment="true"/>
       <plugin id="net.certware.example.spm" fragment="true"/>
       <plugin id="net.certware.example.ssei" fragment="true"/>
       <plugin id="net.certware.export"/>
+      <plugin id="net.certware.export.arm"/>
+      <plugin id="net.certware.export.gsn"/>
       <plugin id="net.certware.export.sacm"/>
-      <plugin id="net.certware.gsn"/>
       <plugin id="net.certware.hazard"/>
       <plugin id="net.certware.hazard.edit"/>
       <plugin id="net.certware.hazard.editor"/>
@@ -149,9 +205,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.help"/>
       <plugin id="net.certware.history"/>
       <plugin id="net.certware.history.egit"/>
-      <plugin id="net.certware.history.tasks"/>
       <plugin id="net.certware.intent"/>
-      <plugin id="net.certware.intent.help"/>
       <plugin id="net.certware.intent.state"/>
       <plugin id="net.certware.intent.state.ui"/>
       <plugin id="net.certware.intent.ui"/>
@@ -182,10 +236,9 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="net.certware.planning.mspdi.editor"/>
       <plugin id="net.certware.product"/>
       <plugin id="net.certware.sacm"/>
-      <plugin id="net.certware.sacm.dsl"/>
-      <plugin id="net.certware.sacm.dsl.ui"/>
       <plugin id="net.certware.sacm.edit"/>
       <plugin id="net.certware.sacm.editor"/>
+      <plugin id="net.certware.sacm.graphiti"/>
       <plugin id="net.certware.sacm.help"/>
       <plugin id="net.certware.sacm.navigator"/>
       <plugin id="net.certware.sacm.validator"/>
@@ -219,6 +272,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.apache.commons.codec"/>
       <plugin id="org.apache.commons.httpclient"/>
       <plugin id="org.apache.commons.io"/>
+      <plugin id="org.apache.commons.jxpath"/>
       <plugin id="org.apache.commons.lang"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.log4j"/>
@@ -261,8 +315,10 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.e4.core.commands"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
+      <plugin id="org.eclipse.e4.core.di.annotations"/>
       <plugin id="org.eclipse.e4.core.di.extensions"/>
       <plugin id="org.eclipse.e4.core.services"/>
+      <plugin id="org.eclipse.e4.emf.xpath"/>
       <plugin id="org.eclipse.e4.ui.bindings"/>
       <plugin id="org.eclipse.e4.ui.css.core"/>
       <plugin id="org.eclipse.e4.ui.css.swt"/>
@@ -396,6 +452,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.help.base"/>
       <plugin id="org.eclipse.help.ui"/>
+      <plugin id="org.eclipse.jdt.annotation"/>
       <plugin id="org.eclipse.jdt.compiler.apt" fragment="true"/>
       <plugin id="org.eclipse.jdt.compiler.tool" fragment="true"/>
       <plugin id="org.eclipse.jdt.core"/>
@@ -480,14 +537,17 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.xsd.edit"/>
       <plugin id="org.eclipse.xtend"/>
       <plugin id="org.eclipse.xtend.lib"/>
+      <plugin id="org.eclipse.xtend.lib.macro"/>
       <plugin id="org.eclipse.xtend.typesystem.emf"/>
       <plugin id="org.eclipse.xtext"/>
       <plugin id="org.eclipse.xtext.builder"/>
+      <plugin id="org.eclipse.xtext.builder.standalone"/>
       <plugin id="org.eclipse.xtext.common.types"/>
       <plugin id="org.eclipse.xtext.common.types.edit"/>
       <plugin id="org.eclipse.xtext.common.types.ui"/>
       <plugin id="org.eclipse.xtext.ecore"/>
       <plugin id="org.eclipse.xtext.generator"/>
+      <plugin id="org.eclipse.xtext.ide"/>
       <plugin id="org.eclipse.xtext.junit4"/>
       <plugin id="org.eclipse.xtext.logging" fragment="true"/>
       <plugin id="org.eclipse.xtext.smap"/>
@@ -498,11 +558,15 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <plugin id="org.eclipse.xtext.util"/>
       <plugin id="org.eclipse.xtext.xbase"/>
       <plugin id="org.eclipse.xtext.xbase.lib"/>
+      <plugin id="org.eclipse.xtext.xtext.generator"/>
       <plugin id="org.hamcrest.core"/>
       <plugin id="org.junit"/>
       <plugin id="org.objectweb.asm"/>
       <plugin id="org.sat4j.core"/>
       <plugin id="org.sat4j.pb"/>
+      <plugin id="org.slf4j.api"/>
+      <plugin id="org.slf4j.impl.log4j12" fragment="true"/>
+      <plugin id="org.tukaani.xz"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.events"/>
       <plugin id="org.w3c.dom.smil"/>
@@ -521,5 +585,12 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
    <repositories>
       <repository location="http://updatesite.certware.net" enabled="true" />
    </repositories>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
 
 </product>

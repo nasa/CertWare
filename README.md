@@ -7,20 +7,20 @@ of safety, assurance, or dependability cases.  CertWare adopts several
 types of structured argument models and provides an implementation of
 tools to support writing and verifying arguments using the chosen
 model.  The implementations are a baseline meant to be enhanced and
-further integrated into development tools chains.  Both textual and
-graphical editors are implemented. The implementation is done in
-Eclipse, as a large collection of Eclipse plugins and features, using
+further integrated into development tools chains.  The workbench includes textual, semi-structured text, semi-structured tree, and graphical editors.
+The workbench implementation is done in and for Eclipse,
+as a large collection of Eclipse plugins and features, using
 several model generation tools to facilitate implementation and
 maintenance.  See the Meta-Models section below for the kinds of
 models already incorporated into the workbench.
 
 CertWare provides some prototype contributions for project management
 metrics (metrics about the case argument structure), and project
-planning (time and resources for case production).  It also provides a
-novel approach to argument production using semi-formal proofs.
+planning (time and resources for case production).  It provides a
+novel approach to argument production using semi-formal proofs.  It provides a novel approach to logical argument analysis using semi-structured text together with an answer set solver to analyze the argument.  It provides modeling tools for producing fault trees from physical system descriptions.  
 
 CertWare is meant to be extended into other tool chains and other
-aspects of the assurance lifecycle, so feel free to extend in any
+aspects of the assurance lifecycle, so feel free to extend it in any
 direction you see fit.
 
 
@@ -48,6 +48,7 @@ names, and editor file extension associations.
 * **L** CertWare L argumentation language and analyzer.
 * **MSPDI** The MSPDI schema from Microsoft Project.
 * **NET** Hugin Network models.
+* **SA** State Analysis metamodel based on the JPL mission data system approach to performing state analysis and elaboration.
 * **SACM** OMG's structured assurance case metamodel and its Ecore
   implementation.  Textual DSLs use extension ```sacmdsl``` and graphical
   diagrams will maintain two models -- the ```sacm``` model and the
@@ -104,10 +105,12 @@ more details.
 * ```*.result``` CertWare L language solved analysis result files.
 * ```*.sacm``` SACM model files
 * ```*.sacmd``` SACM DSL model files
+* ```*.sad``` State analysis diagram files
 * ```*.sco``` SCO change order model files
 * ```*.smm``` OMG Software Measurement Metamodel files
 * ```*.spm``` Software Project Management metrics files
 * ```*.state``` State specification DSL model files
+* ```*.stateanalysis``` State analysis model files
 * ```*.stpa``` STPA DSL model files
 * ```*.vcl``` Verification checklist model files
 
@@ -171,6 +174,19 @@ a few textual editors contributed by the Xtext generator models.
 
 ### Plugins Summary
 
+* ```net.certware.argument.analysis.*``` Output handlers for the L language solvers. This includes a grammar definition in Xtext and its generated edit model and editor, although we use it only for reading the output of the built-in L solvers.  Fragments provide executable solvers for certain platforms.  
+* ```net.certware.argument.arm.*``` Argument model and editor support for OMG ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.  
+* ```net.certware.argument.arm.help``` Help content for ARM models and related workbench contributions.    
+* ```net.certware.argument.cae.*``` Argument model and editor support for CAE (ASCAD), built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* ```net.certware.argument.cae.help``` Help content for CAE models and related workbench contributions.
+* ```net.certware.argument.caz.*``` Argument diagram graphical model equivalent for CAE models.    
+* ```net.certware.argument.eur.*``` Argument model and editor support for EUROCONTROL notation, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* ```net.certware.argument.eur.help``` Help content for EUROCONTROL models and related workbench contributions.    
+* ```net.certware.argument.euz.*``` Argument diagram graphical model equivalent for EUROCONTROL models.    
+* ```net.certware.argument.gsn.*``` Argument model and editor support for GSN, built on ARM.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
+* ```net.certware.argument.gsn.help``` Help content for GSN models and related workbench contributions.  
+* ```net.certware.argument.gsz.*``` Argument diagram graphical model equivalent for GSN models.
+* ```net.certware.argument.language.*``` Input editor for the L language for argumentation using semi-structured text.  We provide a grammar for Xtext and use the modeling tools to produce the edit model and user interface.  We provide additional features for validation and context-sensitive editor improvements such as type support.  The saved L argument file should be sent to an L solver as provided in the analysis plugins.  
 * ```net.certware.argument.sfp.*``` Semi-formal proof structured text argument models.  The core plugin contains the model definition and generator.  The edit plugin contains the extended editing framework support models.  The editor plugin is modified to use extended editing features for property specification.
 * ```net.certware.branding``` Project branding plugin for feature definition.
 * ```net.certware.core``` Core project content.
@@ -183,6 +199,8 @@ a few textual editors contributed by the Xtext generator models.
 * ```net.certware.example``` Example wizard and host plugin for contributing fragments.
 * ```net.certware.export``` Exporting model resources to other formats.  
 * ```net.certware.feature.*``` Feature packaging by core, argument style, and functionality features for update site publication.
+* ```net.certware.hazard.*``` Basic hazard analysis metamodel and editor with supporting plugins.  
+* ```net.certware.hazard.stpa.*``` Extensions to the hazard analysis to support the Leveson STPA approach to analysis.  Uses an STPA DSL as created by CertWare and rendered in Xtext.
 * ```net.certware.help``` Project help files, cheat sheets and dynamic context support.
 * ```net.certware.history.*``` History contributions for version control analysis.
 * ```net.certware.intent.*``` Intent specification DSL and supporting plugins.
@@ -198,6 +216,7 @@ a few textual editors contributed by the Xtext generator models.
 * ```net.certware.planning.mspdi.*``` Planning content model using Microsoft project data schema. The Microsoft MSPDI schema was coerced into an Ecore model, then the EMF plugins generated from this model.    
 * ```net.certware.product``` Product definition for stand-alone application.
 * ```net.certware.sacm.*``` Object model and editor support for OMG's SACM.  
+* ```net.certware.state.*``` State analysis metamodel, tree editor, and graphical editor support and supporting plugins.  
 * ```net.certware.stpa.*``` STPA DSL definition and supporting plugins.
 * ```net.certware.target``` CertWare project target definition.
 * ```net.certware.update``` Update site definition project (currently unused).
@@ -271,26 +290,20 @@ dependencies.
 
 To prepare an update site for publishing, first regenerate the latest
 features as described above from the ```net.certware.feature``` project.
-Then go to the update site project at
+Afterward go to the update site project at ```updatesite2016xxxx``` or
 ```net.certware.feature.updatesite``` and open the ```site.xml``` definition
 file.  Use the site definition editor to add the new features with
-their updated version identifier.  Click build all to build the update
+their updated version identifier.  Click **Build All** to build the update
 site.  The resulting update site is usable in the remote and local
 repositories, when pushed back to GitHub, or when copied say to an
-Amazon S3 location for other users.
+AWS S3 location for other users.
 
-At this writing there are three ways to use the update site:
+At this writing there are two ways to use the update site:
 
 * Install from the local copy of the repository. In this case add a
   software installation site using the Eclipse software install dialog
   to point to the local repository and the
   ```net.certware.feature.updatesite``` folder.
-* Install from the remote copy of the repository at GitHub.  In this
-  case add a software installation site using the Eclipse software
-  install dialog to point to the remote repository using the URL
-  ```https://github.com/nasa/CertWare/raw/master/net.certware.feature.updatesite```.
-  Note that the raw segment (not tree) is required for the update site
-  to work.
 * Install from the Amazon S3 copy.  In this case add a software
   installation site using the Eclipse software install dialog to point
   to the S3 repository at ```http://certware-update.s3.amazonaws.com```.
@@ -298,12 +311,12 @@ At this writing there are three ways to use the update site:
   than what is found in the GitHub repository, and that updating this
   copy requires Kestrel Technology accounts to update at Amazon.
 
+It used to be the case we could use GitHub's raw tree paths to support update site delivery, but its subsequent limitations to file size have prevented successful delivery in recent times.
 
 ## Not Included
 
 Certain model exports were once supported using the Apache POI
-libraries.  We have removed these for the NASA deliveries.  We may
-reinstate these later under a different license.
+libraries.  Owing to the government's uneasiness over the derived license terms we have removed these for the NASA deliveries.  We may reinstate these later under a different license.
 
 
 ## License
