@@ -27,7 +27,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
@@ -73,12 +75,12 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 	/**
 	 * Settings for solution ReferencesTable
 	 */
-	private	ReferencesTableSettings solutionSettings;
+	private ReferencesTableSettings solutionSettings;
 	
 	/**
 	 * Settings for criteria ReferencesTable
 	 */
-	private	ReferencesTableSettings criteriaSettings;
+	private ReferencesTableSettings criteriaSettings;
 	
 	/**
 	 * Settings for assumption ReferencesTable
@@ -118,17 +120,18 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
 			editingPart.setContext(elt, allResource);
+			
 			final Strategy strategy = (Strategy)elt;
 			final StrategyPropertiesEditionPart basePart = (StrategyPropertiesEditionPart)editingPart;
 			// init values
-			if (strategy.getIdentifier() != null && isAccessible(EurViewsRepository.Strategy.Properties.identifier))
-				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getIdentifier()));
+			if (isAccessible(EurViewsRepository.Strategy.Properties.identifier))
+				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, strategy.getIdentifier()));
 			
-			if (strategy.getDescription() != null && isAccessible(EurViewsRepository.Strategy.Properties.description))
-				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getDescription()));
+			if (isAccessible(EurViewsRepository.Strategy.Properties.description))
+				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, strategy.getDescription()));
 			
-			if (strategy.getContent() != null && isAccessible(EurViewsRepository.Strategy.Properties.content))
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), strategy.getContent()));
+			if (isAccessible(EurViewsRepository.Strategy.Properties.content))
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, strategy.getContent()));
 			
 			if (isAccessible(EurViewsRepository.Strategy.Properties.isTagged)) {
 				isTaggedSettings = new ReferencesTableSettings(strategy, ArmPackage.eINSTANCE.getModelElement_IsTagged());
@@ -166,8 +169,8 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 			
 			
 			
-			basePart.addFilterToIsTagged(new ViewerFilter() {
-			
+			if (isAccessible(EurViewsRepository.Strategy.Properties.isTagged)) {
+				basePart.addFilterToIsTagged(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -177,13 +180,13 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for isTagged
+				});
+				// Start of user code for additional businessfilters for isTagged
 			
 			// End of user code
-			
-			basePart.addFilterToArgument(new ViewerFilter() {
-			
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.argument)) {
+				basePart.addFilterToArgument(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -193,13 +196,13 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Argument); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for argument
+				});
+				// Start of user code for additional businessfilters for argument
 			
 			// End of user code
-			
-			basePart.addFilterToJustification(new ViewerFilter() {
-			
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.justification)) {
+				basePart.addFilterToJustification(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -209,51 +212,25 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Justification); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for justification
+				});
+				// Start of user code for additional businessfilters for justification
 			
 			// End of user code
-			
-			basePart.addFilterToSolution(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInSolutionTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToSolution(new EObjectFilter(EurPackage.eINSTANCE.getSolution()));
-			// Start of user code for additional businessfilters for solution
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.solution)) {
+				basePart.addFilterToSolution(new EObjectFilter(EurPackage.Literals.SOLUTION));
+				// Start of user code for additional businessfilters for solution
 			
 			// End of user code
-			
-			basePart.addFilterToCriteria(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInCriteriaTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToCriteria(new EObjectFilter(EurPackage.eINSTANCE.getCriteria()));
-			// Start of user code for additional businessfilters for criteria
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.criteria)) {
+				basePart.addFilterToCriteria(new EObjectFilter(EurPackage.Literals.CRITERIA));
+				// Start of user code for additional businessfilters for criteria
 			
 			// End of user code
-			
-			basePart.addFilterToAssumption(new ViewerFilter() {
-			
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.assumption)) {
+				basePart.addFilterToAssumption(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -263,13 +240,13 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Assumption); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for assumption
+				});
+				// Start of user code for additional businessfilters for assumption
 			
 			// End of user code
-			
-			basePart.addFilterToContexts(new ViewerFilter() {
-			
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.contexts)) {
+				basePart.addFilterToContexts(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -279,12 +256,12 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Context); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for contexts
+				});
+				// Start of user code for additional businessfilters for contexts
 			// End of user code
-			
-			basePart.addFilterToStrategies(new ViewerFilter() {
-			
+			}
+			if (isAccessible(EurViewsRepository.Strategy.Properties.strategies)) {
+				basePart.addFilterToStrategies(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -294,10 +271,10 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof Strategy); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for strategies
+				});
+				// Start of user code for additional businessfilters for strategies
 			// End of user code
-			
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -368,13 +345,13 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Strategy strategy = (Strategy)semanticObject;
 		if (EurViewsRepository.Strategy.Properties.identifier == event.getAffectedEditor()) {
-			strategy.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			strategy.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (EurViewsRepository.Strategy.Properties.description == event.getAffectedEditor()) {
-			strategy.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			strategy.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (EurViewsRepository.Strategy.Properties.content == event.getAffectedEditor()) {
-			strategy.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			strategy.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (EurViewsRepository.Strategy.Properties.isTagged == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.ADD) {
@@ -555,25 +532,26 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		super.updatePart(msg);
+		if (editingPart.isVisible()) {
 			StrategyPropertiesEditionPart basePart = (StrategyPropertiesEditionPart)editingPart;
-			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(EurViewsRepository.Strategy.Properties.identifier)) {
+			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EurViewsRepository.Strategy.Properties.identifier)) {
 				if (msg.getNewValue() != null) {
-					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setIdentifier("");
 				}
 			}
-			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(EurViewsRepository.Strategy.Properties.description)) {
+			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EurViewsRepository.Strategy.Properties.description)) {
 				if (msg.getNewValue() != null) {
-					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setDescription("");
 				}
 			}
-			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(EurViewsRepository.Strategy.Properties.content)) {
+			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EurViewsRepository.Strategy.Properties.content)) {
 				if (msg.getNewValue() != null) {
-					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setContent("");
 				}
@@ -598,6 +576,28 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getNotificationFilters()
+	 */
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
+			ArmPackage.eINSTANCE.getModelElement_Identifier(),
+			ArmPackage.eINSTANCE.getModelElement_Description(),
+			ArmPackage.eINSTANCE.getModelElement_Content(),
+			ArmPackage.eINSTANCE.getModelElement_IsTagged(),
+			EurPackage.eINSTANCE.getStrategy_Argument(),
+			EurPackage.eINSTANCE.getStrategy_Justification(),
+			EurPackage.eINSTANCE.getStrategy_Solution(),
+			EurPackage.eINSTANCE.getStrategy_Criteria(),
+			EurPackage.eINSTANCE.getStrategy_Assumption(),
+			EurPackage.eINSTANCE.getStrategy_Contexts(),
+			EurPackage.eINSTANCE.getStrategy_Strategies()		);
+		return new NotificationFilter[] {filter,};
+	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -612,21 +612,21 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 				if (EurViewsRepository.Strategy.Properties.identifier == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
 				if (EurViewsRepository.Strategy.Properties.description == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
 				if (EurViewsRepository.Strategy.Properties.content == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}
@@ -638,5 +638,10 @@ public class StrategyPropertiesEditionComponent extends SinglePartPropertiesEdit
 		}
 		return ret;
 	}
+
+
+	
+
+	
 
 }

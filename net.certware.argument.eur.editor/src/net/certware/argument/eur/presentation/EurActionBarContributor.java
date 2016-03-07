@@ -6,8 +6,6 @@ package net.certware.argument.eur.presentation;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import net.certware.argument.eur.editor.presentation.EurEditorPlugin;
-
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;

@@ -62,32 +62,32 @@ public class ArgumentPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-protected ReferencesTable isTagged;
-protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable isTagged;
+	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	protected Button assumed;
 	protected Button toBeSupported;
-protected ReferencesTable strategy;
-protected List<ViewerFilter> strategyBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> strategyFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable strategy;
+	protected List<ViewerFilter> strategyBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> strategyFilters = new ArrayList<ViewerFilter>();
 	protected ReferencesTable assumption;
 	protected List<ViewerFilter> assumptionBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> assumptionFilters = new ArrayList<ViewerFilter>();
 	protected ReferencesTable context;
 	protected List<ViewerFilter> contextBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> contextFilters = new ArrayList<ViewerFilter>();
-protected ReferencesTable solution;
-protected List<ViewerFilter> solutionBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> solutionFilters = new ArrayList<ViewerFilter>();
-protected ReferencesTable argument;
-protected List<ViewerFilter> argumentBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> argumentFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable solution;
+	protected List<ViewerFilter> solutionBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> solutionFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable argument;
+	protected List<ViewerFilter> argumentBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> argumentFilters = new ArrayList<ViewerFilter>();
 	protected ReferencesTable criteria;
 	protected List<ViewerFilter> criteriaBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> criteriaFilters = new ArrayList<ViewerFilter>();
-protected ReferencesTable justification;
-protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable justification;
+	protected List<ViewerFilter> justificationBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>();
 
 
 
@@ -210,8 +210,8 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 	
 	protected Composite createIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.ArgumentPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Argument.Properties.identifier, EurViewsRepository.SWT_KIND));
-		identifier = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Argument.Properties.identifier, EurMessages.ArgumentPropertiesEditionPart_IdentifierLabel);
+		identifier = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData identifierData = new GridData(GridData.FILL_HORIZONTAL);
 		identifier.setLayoutData(identifierData);
 		identifier.addFocusListener(new FocusAdapter() {
@@ -251,13 +251,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		EditingUtils.setID(identifier, EurViewsRepository.Argument.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Argument.Properties.identifier, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createIdentifierText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createDescriptionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.ArgumentPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Argument.Properties.description, EurViewsRepository.SWT_KIND));
-		description = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Argument.Properties.description, EurMessages.ArgumentPropertiesEditionPart_DescriptionLabel);
+		description = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
 		description.setLayoutData(descriptionData);
 		description.addFocusListener(new FocusAdapter() {
@@ -297,13 +300,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		EditingUtils.setID(description, EurViewsRepository.Argument.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Argument.Properties.description, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createDescriptionText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createContentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.ArgumentPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Argument.Properties.content, EurViewsRepository.SWT_KIND));
-		content = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Argument.Properties.content, EurMessages.ArgumentPropertiesEditionPart_ContentLabel);
+		content = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
@@ -343,6 +349,9 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		EditingUtils.setID(content, EurViewsRepository.Argument.Properties.content);
 		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Argument.Properties.content, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createContentText
+
+		// End of user code
 		return parent;
 	}
 
@@ -351,7 +360,7 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createIsTaggedAdvancedTableComposition(Composite parent) {
-		this.isTagged = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+		this.isTagged = new ReferencesTable(getDescription(EurViewsRepository.Argument.Properties.isTagged, EurMessages.ArgumentPropertiesEditionPart_IsTaggedLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, EurViewsRepository.Argument.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				isTagged.refresh();
@@ -391,13 +400,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		this.isTagged.setUpperBound(-1);
 		isTagged.setID(EurViewsRepository.Argument.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createIsTaggedAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createAssumedCheckbox(Composite parent) {
 		assumed = new Button(parent, SWT.CHECK);
-		assumed.setText(EurMessages.ArgumentPropertiesEditionPart_AssumedLabel);
+		assumed.setText(getDescription(EurViewsRepository.Argument.Properties.assumed, EurMessages.ArgumentPropertiesEditionPart_AssumedLabel));
 		assumed.addSelectionListener(new SelectionAdapter() {
 
 			/**
@@ -418,13 +430,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		EditingUtils.setID(assumed, EurViewsRepository.Argument.Properties.assumed);
 		EditingUtils.setEEFtype(assumed, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Argument.Properties.assumed, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createAssumedCheckbox
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createToBeSupportedCheckbox(Composite parent) {
 		toBeSupported = new Button(parent, SWT.CHECK);
-		toBeSupported.setText(EurMessages.ArgumentPropertiesEditionPart_ToBeSupportedLabel);
+		toBeSupported.setText(getDescription(EurViewsRepository.Argument.Properties.toBeSupported, EurMessages.ArgumentPropertiesEditionPart_ToBeSupportedLabel));
 		toBeSupported.addSelectionListener(new SelectionAdapter() {
 
 			/**
@@ -445,6 +460,9 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		EditingUtils.setID(toBeSupported, EurViewsRepository.Argument.Properties.toBeSupported);
 		EditingUtils.setEEFtype(toBeSupported, "eef::Checkbox"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Argument.Properties.toBeSupported, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createToBeSupportedCheckbox
+
+		// End of user code
 		return parent;
 	}
 
@@ -453,7 +471,7 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createStrategyAdvancedTableComposition(Composite parent) {
-		this.strategy = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_StrategyLabel, new ReferencesTableListener() {
+		this.strategy = new ReferencesTable(getDescription(EurViewsRepository.Argument.Properties.strategy, EurMessages.ArgumentPropertiesEditionPart_StrategyLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, EurViewsRepository.Argument.Properties.strategy, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				strategy.refresh();
@@ -493,6 +511,9 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		this.strategy.setUpperBound(-1);
 		strategy.setID(EurViewsRepository.Argument.Properties.strategy);
 		strategy.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createStrategyAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
@@ -500,7 +521,8 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createAssumptionAdvancedReferencesTable(Composite parent) {
-		this.assumption = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_AssumptionLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Argument.Properties.assumption, EurMessages.ArgumentPropertiesEditionPart_AssumptionLabel);		 
+		this.assumption = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addAssumption(); }
 			public void handleEdit(EObject element) { editAssumption(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveAssumption(element, oldIndex, newIndex); }
@@ -581,7 +603,8 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createContextAdvancedReferencesTable(Composite parent) {
-		this.context = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_ContextLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Argument.Properties.context, EurMessages.ArgumentPropertiesEditionPart_ContextLabel);		 
+		this.context = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addContext(); }
 			public void handleEdit(EObject element) { editContext(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveContext(element, oldIndex, newIndex); }
@@ -647,13 +670,13 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected void editContext(EObject element) {
-		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
+		EObjectPropertiesEditionContext rcontext = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
 		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
 		if (provider != null) {
-			PropertiesEditingPolicy policy = provider.getPolicy(context);
+			PropertiesEditingPolicy policy = provider.getPolicy(rcontext);
 			if (policy != null) {
 				policy.execute();
-				//context.refresh();
+				context.refresh();
 			}
 		}
 	}
@@ -663,7 +686,7 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createSolutionAdvancedTableComposition(Composite parent) {
-		this.solution = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_SolutionLabel, new ReferencesTableListener() {
+		this.solution = new ReferencesTable(getDescription(EurViewsRepository.Argument.Properties.solution, EurMessages.ArgumentPropertiesEditionPart_SolutionLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, EurViewsRepository.Argument.Properties.solution, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				solution.refresh();
@@ -703,6 +726,9 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		this.solution.setUpperBound(-1);
 		solution.setID(EurViewsRepository.Argument.Properties.solution);
 		solution.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createSolutionAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
@@ -711,7 +737,7 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createArgumentAdvancedTableComposition(Composite parent) {
-		this.argument = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_ArgumentLabel, new ReferencesTableListener() {
+		this.argument = new ReferencesTable(getDescription(EurViewsRepository.Argument.Properties.argument_, EurMessages.ArgumentPropertiesEditionPart_ArgumentLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, EurViewsRepository.Argument.Properties.argument_, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				argument.refresh();
@@ -751,6 +777,9 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		this.argument.setUpperBound(-1);
 		argument.setID(EurViewsRepository.Argument.Properties.argument_);
 		argument.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createArgumentAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
@@ -758,7 +787,8 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createCriteriaAdvancedReferencesTable(Composite parent) {
-		this.criteria = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_CriteriaLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Argument.Properties.criteria, EurMessages.ArgumentPropertiesEditionPart_CriteriaLabel);		 
+		this.criteria = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addCriteria(); }
 			public void handleEdit(EObject element) { editCriteria(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveCriteria(element, oldIndex, newIndex); }
@@ -840,7 +870,7 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	 * 
 	 */
 	protected Composite createJustificationAdvancedTableComposition(Composite parent) {
-		this.justification = new ReferencesTable(EurMessages.ArgumentPropertiesEditionPart_JustificationLabel, new ReferencesTableListener() {
+		this.justification = new ReferencesTable(getDescription(EurViewsRepository.Argument.Properties.justification, EurMessages.ArgumentPropertiesEditionPart_JustificationLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(ArgumentPropertiesEditionPartImpl.this, EurViewsRepository.Argument.Properties.justification, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				justification.refresh();
@@ -880,9 +910,11 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		this.justification.setUpperBound(-1);
 		justification.setID(EurViewsRepository.Argument.Properties.justification);
 		justification.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createJustificationAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -919,8 +951,15 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		} else {
 			identifier.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.identifier);
+		if (eefElementEditorReadOnlyState && identifier.isEnabled()) {
+			identifier.setEnabled(false);
+			identifier.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !identifier.isEnabled()) {
+			identifier.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -944,8 +983,15 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		} else {
 			description.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.description);
+		if (eefElementEditorReadOnlyState && description.isEnabled()) {
+			description.setEnabled(false);
+			description.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !description.isEnabled()) {
+			description.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -969,8 +1015,15 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		} else {
 			content.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.content);
+		if (eefElementEditorReadOnlyState && content.isEnabled()) {
+			content.setEnabled(false);
+			content.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !content.isEnabled()) {
+			content.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -985,6 +1038,14 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		isTagged.setContentProvider(contentProvider);
 		isTagged.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.isTagged);
+		if (eefElementEditorReadOnlyState && isTagged.isEnabled()) {
+			isTagged.setEnabled(false);
+			isTagged.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !isTagged.isEnabled()) {
+			isTagged.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1030,7 +1091,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		return ((ReferencesTableSettings)isTagged.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1053,8 +1113,15 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		} else {
 			assumed.setSelection(false);
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.assumed);
+		if (eefElementEditorReadOnlyState && assumed.isEnabled()) {
+			assumed.setEnabled(false);
+			assumed.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !assumed.isEnabled()) {
+			assumed.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -1078,8 +1145,15 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		} else {
 			toBeSupported.setSelection(false);
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.toBeSupported);
+		if (eefElementEditorReadOnlyState && toBeSupported.isEnabled()) {
+			toBeSupported.setEnabled(false);
+			toBeSupported.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !toBeSupported.isEnabled()) {
+			toBeSupported.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -1094,6 +1168,14 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		strategy.setContentProvider(contentProvider);
 		strategy.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.strategy);
+		if (eefElementEditorReadOnlyState && strategy.isEnabled()) {
+			strategy.setEnabled(false);
+			strategy.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !strategy.isEnabled()) {
+			strategy.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1141,7 +1223,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1153,6 +1234,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		assumption.setContentProvider(contentProvider);
 		assumption.setInput(settings);
+		assumptionBusinessFilters.clear();
+		assumptionFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.assumption);
+		if (eefElementEditorReadOnlyState && assumption.getTable().isEnabled()) {
+			assumption.setEnabled(false);
+			assumption.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !assumption.getTable().isEnabled()) {
+			assumption.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -1197,7 +1288,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1209,6 +1299,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		context.setContentProvider(contentProvider);
 		context.setInput(settings);
+		contextBusinessFilters.clear();
+		contextFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.context);
+		if (eefElementEditorReadOnlyState && context.getTable().isEnabled()) {
+			context.setEnabled(false);
+			context.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !context.getTable().isEnabled()) {
+			context.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -1253,7 +1353,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1265,6 +1364,14 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		solution.setContentProvider(contentProvider);
 		solution.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.solution);
+		if (eefElementEditorReadOnlyState && solution.isEnabled()) {
+			solution.setEnabled(false);
+			solution.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !solution.isEnabled()) {
+			solution.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1312,7 +1419,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1324,6 +1430,14 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		argument.setContentProvider(contentProvider);
 		argument.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.argument_);
+		if (eefElementEditorReadOnlyState && argument.isEnabled()) {
+			argument.setEnabled(false);
+			argument.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !argument.isEnabled()) {
+			argument.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1371,7 +1485,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1383,6 +1496,16 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		criteria.setContentProvider(contentProvider);
 		criteria.setInput(settings);
+		criteriaBusinessFilters.clear();
+		criteriaFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.criteria);
+		if (eefElementEditorReadOnlyState && criteria.getTable().isEnabled()) {
+			criteria.setEnabled(false);
+			criteria.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !criteria.getTable().isEnabled()) {
+			criteria.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -1427,7 +1550,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1439,6 +1561,14 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		justification.setContentProvider(contentProvider);
 		justification.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Argument.Properties.justification);
+		if (eefElementEditorReadOnlyState && justification.isEnabled()) {
+			justification.setEnabled(false);
+			justification.setToolTipText(EurMessages.Argument_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !justification.isEnabled()) {
+			justification.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1483,7 +1613,6 @@ protected List<ViewerFilter> justificationFilters = new ArrayList<ViewerFilter>(
 	public boolean isContainedInJustificationTable(EObject element) {
 		return ((ReferencesTableSettings)justification.getInput()).contains(element);
 	}
-
 
 
 

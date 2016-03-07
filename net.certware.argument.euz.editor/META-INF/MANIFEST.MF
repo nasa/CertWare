@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: net.certware.argument.euz.editor.presentation.EuzEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.argument.euz.editor.presentation,
  net.certware.argument.euz.presentation
 Require-Bundle: org.eclipse.core.runtime,

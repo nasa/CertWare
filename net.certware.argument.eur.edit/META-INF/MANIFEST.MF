@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: net.certware.argument.eur.edit.provider.EurEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.argument.eur.components,
  net.certware.argument.eur.edit.provider,
  net.certware.argument.eur.parts,
@@ -19,5 +19,11 @@ Require-Bundle: org.eclipse.core.runtime,
  net.certware.argument.eur;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
  net.certware.argument.arm;visibility:=reexport,
- net.certware.argument.arm.edit;visibility:=reexport
+ net.certware.argument.arm.edit;visibility:=reexport,
+ org.eclipse.emf.eef.runtime;visibility:=reexport,
+ org.eclipse.emf.eef.runtime.extended
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.core.resources,
+ org.eclipse.emf.eef.runtime.ui.editor,
+ org.eclipse.emf.transaction,
+ org.eclipse.ui.ide

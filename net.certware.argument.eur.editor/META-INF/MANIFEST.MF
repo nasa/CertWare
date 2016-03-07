@@ -4,12 +4,11 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.argument.eur.editor;singleton:=true
 Bundle-Version: 1.2.1.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: net.certware.argument.eur.editor.presentation.EurEditorPlugin$Implementation
+Bundle-Activator: net.certware.argument.eur.presentation.EurEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: net.certware.argument.eur.editor.presentation,
- net.certware.argument.eur.presentation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: net.certware.argument.eur.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  net.certware.argument.eur.edit;visibility:=reexport,
@@ -19,5 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  net.certware.argument.arm.edit;visibility:=reexport,
  net.certware.core.ui;bundle-version="1.1.0"
 Bundle-ActivationPolicy: lazy
-Import-Package: net.certware.core.ui.help,
+Import-Package: net.certware.argument.eur.presentation,
+ net.certware.core.ui.help,
+ org.eclipse.emf.eef.runtime.ui.editor,
  org.eclipse.help

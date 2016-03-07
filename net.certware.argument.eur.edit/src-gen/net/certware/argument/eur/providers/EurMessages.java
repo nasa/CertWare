@@ -34,6 +34,7 @@ public class EurMessages extends NLS {
 	
 	public static String CriteriaPropertiesEditionPart_PropertiesGroupLabel;
 
+
 	
 	public static String Argument_ReadOnly;
 
@@ -75,6 +76,7 @@ public class EurMessages extends NLS {
 
 	
 	public static String Criteria_Part_Title;
+
 
 	
 	public static String ArgumentPropertiesEditionPart_IdentifierLabel;
@@ -231,6 +233,7 @@ public class EurMessages extends NLS {
 
 	
 	public static String CriteriaPropertiesEditionPart_AssumptionLabel;
+
 
 	
 	public static String PropertiesEditionPart_DocumentationLabel;

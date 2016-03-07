@@ -5,7 +5,7 @@ Bundle-SymbolicName: net.certware.argument.eur.navigator;singleton:=true
 Bundle-Version: 1.2.1.qualifier
 Bundle-Activator: net.certware.argument.eur.navigator.Activator
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: net.certware.argument.arm,
  net.certware.argument.eur,
  net.certware.argument.eur.util,

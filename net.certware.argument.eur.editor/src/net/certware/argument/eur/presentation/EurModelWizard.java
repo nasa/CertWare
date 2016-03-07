@@ -17,7 +17,6 @@ import java.util.StringTokenizer;
 import net.certware.argument.eur.EurFactory;
 import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.edit.provider.EurEditPlugin;
-import net.certware.argument.eur.editor.presentation.EurEditorPlugin;
 import net.certware.core.ui.CertWareUI;
 
 import org.eclipse.core.resources.IContainer;

@@ -4,6 +4,7 @@
 package net.certware.argument.eur.providers;
 
 import net.certware.argument.eur.parts.EurViewsRepository;
+
 import net.certware.argument.eur.parts.forms.ArgumentPropertiesEditionPartForm;
 import net.certware.argument.eur.parts.forms.AssumptionPropertiesEditionPartForm;
 import net.certware.argument.eur.parts.forms.ContextPropertiesEditionPartForm;
@@ -11,6 +12,7 @@ import net.certware.argument.eur.parts.forms.CriteriaPropertiesEditionPartForm;
 import net.certware.argument.eur.parts.forms.JustificationPropertiesEditionPartForm;
 import net.certware.argument.eur.parts.forms.SolutionPropertiesEditionPartForm;
 import net.certware.argument.eur.parts.forms.StrategyPropertiesEditionPartForm;
+
 import net.certware.argument.eur.parts.impl.ArgumentPropertiesEditionPartImpl;
 import net.certware.argument.eur.parts.impl.AssumptionPropertiesEditionPartImpl;
 import net.certware.argument.eur.parts.impl.ContextPropertiesEditionPartImpl;
@@ -20,11 +22,10 @@ import net.certware.argument.eur.parts.impl.SolutionPropertiesEditionPartImpl;
 import net.certware.argument.eur.parts.impl.StrategyPropertiesEditionPartImpl;
 
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+
 import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
+
 import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
-
-
-
 
 /**
  * 

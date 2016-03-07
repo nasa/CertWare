@@ -18,6 +18,7 @@ import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
 import org.eclipse.emf.eef.runtime.impl.parts.CompositePropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
@@ -52,7 +53,7 @@ import org.eclipse.ui.forms.widgets.Section;
  * 
  * 
  */
-public class JustificationPropertiesEditionPartForm extends CompositePropertiesEditionPart implements IFormPropertiesEditionPart, JustificationPropertiesEditionPart {
+public class JustificationPropertiesEditionPartForm extends SectionPropertiesEditingPart implements IFormPropertiesEditionPart, JustificationPropertiesEditionPart {
 
 	protected Text identifier;
 	protected Text description;
@@ -62,6 +63,11 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
+
+	/**
+	 * For {@link ISection} use only.
+	 */
+	public JustificationPropertiesEditionPartForm() { super(); }
 
 	/**
 	 * Default constructor
@@ -114,13 +120,13 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 					return createPropertiesGroup(widgetFactory, parent);
 				}
 				if (key == EurViewsRepository.Justification.Properties.identifier) {
-					return 		createIdentifierText(widgetFactory, parent);
+					return createIdentifierText(widgetFactory, parent);
 				}
 				if (key == EurViewsRepository.Justification.Properties.description) {
-					return 		createDescriptionText(widgetFactory, parent);
+					return createDescriptionText(widgetFactory, parent);
 				}
 				if (key == EurViewsRepository.Justification.Properties.content) {
-					return 		createContentText(widgetFactory, parent);
+					return createContentText(widgetFactory, parent);
 				}
 				if (key == EurViewsRepository.Justification.Properties.isTagged) {
 					return createIsTaggedTableComposition(widgetFactory, parent);
@@ -149,7 +155,7 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 
 	
 	protected Composite createIdentifierText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, EurMessages.JustificationPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Justification.Properties.identifier, EurViewsRepository.FORM_KIND));
+		createDescription(parent, EurViewsRepository.Justification.Properties.identifier, EurMessages.JustificationPropertiesEditionPart_IdentifierLabel);
 		identifier = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		identifier.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -163,8 +169,33 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(JustificationPropertiesEditionPartForm.this, EurViewsRepository.Justification.Properties.identifier, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							JustificationPropertiesEditionPartForm.this,
+							EurViewsRepository.Justification.Properties.identifier,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, identifier.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									JustificationPropertiesEditionPartForm.this,
+									EurViewsRepository.Justification.Properties.identifier,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, identifier.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									JustificationPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		identifier.addKeyListener(new KeyAdapter() {
@@ -184,12 +215,15 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		EditingUtils.setID(identifier, EurViewsRepository.Justification.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Justification.Properties.identifier, EurViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createIdentifierText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createDescriptionText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, EurMessages.JustificationPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Justification.Properties.description, EurViewsRepository.FORM_KIND));
+		createDescription(parent, EurViewsRepository.Justification.Properties.description, EurMessages.JustificationPropertiesEditionPart_DescriptionLabel);
 		description = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		description.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -203,8 +237,33 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(JustificationPropertiesEditionPartForm.this, EurViewsRepository.Justification.Properties.description, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							JustificationPropertiesEditionPartForm.this,
+							EurViewsRepository.Justification.Properties.description,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, description.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									JustificationPropertiesEditionPartForm.this,
+									EurViewsRepository.Justification.Properties.description,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, description.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									JustificationPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		description.addKeyListener(new KeyAdapter() {
@@ -224,12 +283,15 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		EditingUtils.setID(description, EurViewsRepository.Justification.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Justification.Properties.description, EurViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createDescriptionText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createContentText(FormToolkit widgetFactory, Composite parent) {
-		FormUtils.createPartLabel(widgetFactory, parent, EurMessages.JustificationPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Justification.Properties.content, EurViewsRepository.FORM_KIND));
+		createDescription(parent, EurViewsRepository.Justification.Properties.content, EurMessages.JustificationPropertiesEditionPart_ContentLabel);
 		content = widgetFactory.createText(parent, ""); //$NON-NLS-1$
 		content.setData(FormToolkit.KEY_DRAW_BORDER, FormToolkit.TEXT_BORDER);
 		widgetFactory.paintBordersFor(parent);
@@ -243,8 +305,33 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 			@Override
 			@SuppressWarnings("synthetic-access")
 			public void focusLost(FocusEvent e) {
-				if (propertiesEditionComponent != null)
-					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(JustificationPropertiesEditionPartForm.this, EurViewsRepository.Justification.Properties.content, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(
+							JustificationPropertiesEditionPartForm.this,
+							EurViewsRepository.Justification.Properties.content,
+							PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.SET, null, content.getText()));
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									JustificationPropertiesEditionPartForm.this,
+									EurViewsRepository.Justification.Properties.content,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_LOST,
+									null, content.getText()));
+				}
+			}
+
+			/**
+			 * @see org.eclipse.swt.events.FocusAdapter#focusGained(org.eclipse.swt.events.FocusEvent)
+			 */
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (propertiesEditionComponent != null) {
+					propertiesEditionComponent
+							.firePropertiesChanged(new PropertiesEditionEvent(
+									JustificationPropertiesEditionPartForm.this,
+									null,
+									PropertiesEditionEvent.FOCUS_CHANGED, PropertiesEditionEvent.FOCUS_GAINED,
+									null, null));
+				}
 			}
 		});
 		content.addKeyListener(new KeyAdapter() {
@@ -264,6 +351,9 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		EditingUtils.setID(content, EurViewsRepository.Justification.Properties.content);
 		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		FormUtils.createHelpButton(widgetFactory, parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Justification.Properties.content, EurViewsRepository.FORM_KIND), null); //$NON-NLS-1$
+		// Start of user code for createContentText
+
+		// End of user code
 		return parent;
 	}
 
@@ -272,7 +362,7 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 	 * 
 	 */
 	protected Composite createIsTaggedTableComposition(FormToolkit widgetFactory, Composite parent) {
-		this.isTagged = new ReferencesTable(EurMessages.JustificationPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+		this.isTagged = new ReferencesTable(getDescription(EurViewsRepository.Justification.Properties.isTagged, EurMessages.JustificationPropertiesEditionPart_IsTaggedLabel), new ReferencesTableListener() {
 			public void handleAdd() {
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(JustificationPropertiesEditionPartForm.this, EurViewsRepository.Justification.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				isTagged.refresh();
@@ -312,9 +402,11 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		this.isTagged.setUpperBound(-1);
 		isTagged.setID(EurViewsRepository.Justification.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createIsTaggedTableComposition
+
+		// End of user code
 		return parent;
 	}
-
 
 
 	/**
@@ -351,8 +443,15 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		} else {
 			identifier.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Justification.Properties.identifier);
+		if (eefElementEditorReadOnlyState && identifier.isEnabled()) {
+			identifier.setEnabled(false);
+			identifier.setToolTipText(EurMessages.Justification_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !identifier.isEnabled()) {
+			identifier.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -376,8 +475,15 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		} else {
 			description.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Justification.Properties.description);
+		if (eefElementEditorReadOnlyState && description.isEnabled()) {
+			description.setEnabled(false);
+			description.setToolTipText(EurMessages.Justification_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !description.isEnabled()) {
+			description.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -401,8 +507,15 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		} else {
 			content.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Justification.Properties.content);
+		if (eefElementEditorReadOnlyState && content.isEnabled()) {
+			content.setEnabled(false);
+			content.setToolTipText(EurMessages.Justification_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !content.isEnabled()) {
+			content.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -417,6 +530,14 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		isTagged.setContentProvider(contentProvider);
 		isTagged.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Justification.Properties.isTagged);
+		if (eefElementEditorReadOnlyState && isTagged.isEnabled()) {
+			isTagged.setEnabled(false);
+			isTagged.setToolTipText(EurMessages.Justification_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !isTagged.isEnabled()) {
+			isTagged.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -461,6 +582,8 @@ public class JustificationPropertiesEditionPartForm extends CompositePropertiesE
 	public boolean isContainedInIsTaggedTable(EObject element) {
 		return ((ReferencesTableSettings)isTagged.getInput()).contains(element);
 	}
+
+
 
 
 

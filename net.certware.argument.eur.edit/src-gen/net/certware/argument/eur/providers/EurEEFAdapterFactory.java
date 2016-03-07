@@ -7,7 +7,6 @@ import net.certware.argument.eur.util.EurAdapterFactory;
 
 import org.eclipse.emf.common.notify.Adapter;
 
-
 /**
  * 
  * 

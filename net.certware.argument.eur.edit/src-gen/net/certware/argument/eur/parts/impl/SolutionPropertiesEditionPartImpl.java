@@ -68,9 +68,9 @@ public class SolutionPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-protected ReferencesTable isTagged;
-protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable isTagged;
+	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	protected ReferencesTable target;
 	protected List<ViewerFilter> targetBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> targetFilters = new ArrayList<ViewerFilter>();
@@ -190,8 +190,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.SolutionPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Solution.Properties.identifier, EurViewsRepository.SWT_KIND));
-		identifier = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Solution.Properties.identifier, EurMessages.SolutionPropertiesEditionPart_IdentifierLabel);
+		identifier = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData identifierData = new GridData(GridData.FILL_HORIZONTAL);
 		identifier.setLayoutData(identifierData);
 		identifier.addFocusListener(new FocusAdapter() {
@@ -231,13 +231,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(identifier, EurViewsRepository.Solution.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Solution.Properties.identifier, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createIdentifierText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createDescriptionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.SolutionPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Solution.Properties.description, EurViewsRepository.SWT_KIND));
-		description = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Solution.Properties.description, EurMessages.SolutionPropertiesEditionPart_DescriptionLabel);
+		description = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
 		description.setLayoutData(descriptionData);
 		description.addFocusListener(new FocusAdapter() {
@@ -277,13 +280,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(description, EurViewsRepository.Solution.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Solution.Properties.description, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createDescriptionText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createContentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.SolutionPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Solution.Properties.content, EurViewsRepository.SWT_KIND));
-		content = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Solution.Properties.content, EurMessages.SolutionPropertiesEditionPart_ContentLabel);
+		content = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
@@ -323,6 +329,9 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(content, EurViewsRepository.Solution.Properties.content);
 		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Solution.Properties.content, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createContentText
+
+		// End of user code
 		return parent;
 	}
 
@@ -331,7 +340,7 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createIsTaggedAdvancedTableComposition(Composite parent) {
-		this.isTagged = new ReferencesTable(EurMessages.SolutionPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+		this.isTagged = new ReferencesTable(getDescription(EurViewsRepository.Solution.Properties.isTagged, EurMessages.SolutionPropertiesEditionPart_IsTaggedLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(SolutionPropertiesEditionPartImpl.this, EurViewsRepository.Solution.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				isTagged.refresh();
@@ -371,6 +380,9 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		this.isTagged.setUpperBound(-1);
 		isTagged.setID(EurViewsRepository.Solution.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createIsTaggedAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
@@ -378,7 +390,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createTargetAdvancedReferencesTable(Composite parent) {
-		this.target = new ReferencesTable(EurMessages.SolutionPropertiesEditionPart_TargetLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Solution.Properties.target, EurMessages.SolutionPropertiesEditionPart_TargetLabel);		 
+		this.target = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addTarget(); }
 			public void handleEdit(EObject element) { editTarget(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveTarget(element, oldIndex, newIndex); }
@@ -459,7 +472,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createSourceAdvancedReferencesTable(Composite parent) {
-		this.source = new ReferencesTable(EurMessages.SolutionPropertiesEditionPart_SourceLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Solution.Properties.source, EurMessages.SolutionPropertiesEditionPart_SourceLabel);		 
+		this.source = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addSource(); }
 			public void handleEdit(EObject element) { editSource(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveSource(element, oldIndex, newIndex); }
@@ -540,7 +554,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createContextAdvancedReferencesTable(Composite parent) {
-		this.context = new ReferencesTable(EurMessages.SolutionPropertiesEditionPart_ContextLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Solution.Properties.context, EurMessages.SolutionPropertiesEditionPart_ContextLabel);		 
+		this.context = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addContext(); }
 			public void handleEdit(EObject element) { editContext(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveContext(element, oldIndex, newIndex); }
@@ -606,13 +621,13 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected void editContext(EObject element) {
-		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
+		EObjectPropertiesEditionContext rcontext = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
 		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
 		if (provider != null) {
-			PropertiesEditingPolicy policy = provider.getPolicy(context);
+			PropertiesEditingPolicy policy = provider.getPolicy(rcontext);
 			if (policy != null) {
 				policy.execute();
-				//context.refresh();
+				context.refresh();
 			}
 		}
 	}
@@ -622,7 +637,7 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createEvidenceFlatComboViewer(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.SolutionPropertiesEditionPart_EvidenceLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Solution.Properties.evidence, EurViewsRepository.SWT_KIND));
+		createDescription(parent, EurViewsRepository.Solution.Properties.evidence, EurMessages.SolutionPropertiesEditionPart_EvidenceLabel);
 		evidence = new EObjectFlatComboViewer(parent, !propertiesEditionComponent.isRequired(EurViewsRepository.Solution.Properties.evidence, EurViewsRepository.SWT_KIND));
 		evidence.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 
@@ -637,6 +652,9 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		evidence.setLayoutData(evidenceData);
 		evidence.setID(EurViewsRepository.Solution.Properties.evidence);
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Solution.Properties.evidence, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createEvidenceFlatComboViewer
+
+		// End of user code
 		return parent;
 	}
 
@@ -644,7 +662,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createCriteriaAdvancedReferencesTable(Composite parent) {
-		this.criteria = new ReferencesTable(EurMessages.SolutionPropertiesEditionPart_CriteriaLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Solution.Properties.criteria, EurMessages.SolutionPropertiesEditionPart_CriteriaLabel);		 
+		this.criteria = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addCriteria(); }
 			public void handleEdit(EObject element) { editCriteria(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveCriteria(element, oldIndex, newIndex); }
@@ -722,7 +741,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	}
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -757,8 +775,15 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			identifier.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.identifier);
+		if (eefElementEditorReadOnlyState && identifier.isEnabled()) {
+			identifier.setEnabled(false);
+			identifier.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !identifier.isEnabled()) {
+			identifier.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -782,8 +807,15 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			description.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.description);
+		if (eefElementEditorReadOnlyState && description.isEnabled()) {
+			description.setEnabled(false);
+			description.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !description.isEnabled()) {
+			description.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -807,8 +839,15 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			content.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.content);
+		if (eefElementEditorReadOnlyState && content.isEnabled()) {
+			content.setEnabled(false);
+			content.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !content.isEnabled()) {
+			content.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -823,6 +862,14 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		isTagged.setContentProvider(contentProvider);
 		isTagged.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.isTagged);
+		if (eefElementEditorReadOnlyState && isTagged.isEnabled()) {
+			isTagged.setEnabled(false);
+			isTagged.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !isTagged.isEnabled()) {
+			isTagged.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -870,7 +917,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -882,6 +928,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		target.setContentProvider(contentProvider);
 		target.setInput(settings);
+		targetBusinessFilters.clear();
+		targetFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.target);
+		if (eefElementEditorReadOnlyState && target.getTable().isEnabled()) {
+			target.setEnabled(false);
+			target.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !target.getTable().isEnabled()) {
+			target.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -926,7 +982,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -938,6 +993,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		source.setContentProvider(contentProvider);
 		source.setInput(settings);
+		sourceBusinessFilters.clear();
+		sourceFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.source);
+		if (eefElementEditorReadOnlyState && source.getTable().isEnabled()) {
+			source.setEnabled(false);
+			source.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !source.getTable().isEnabled()) {
+			source.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -982,7 +1047,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -994,6 +1058,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		context.setContentProvider(contentProvider);
 		context.setInput(settings);
+		contextBusinessFilters.clear();
+		contextFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.context);
+		if (eefElementEditorReadOnlyState && context.getTable().isEnabled()) {
+			context.setEnabled(false);
+			context.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !context.getTable().isEnabled()) {
+			context.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -1036,7 +1110,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		return ((ReferencesTableSettings)context.getInput()).contains(element);
 	}
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1062,6 +1135,14 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		if (current != null) {
 			evidence.setSelection(new StructuredSelection(settings.getValue()));
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.evidence);
+		if (eefElementEditorReadOnlyState && evidence.isEnabled()) {
+			evidence.setEnabled(false);
+			evidence.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !evidence.isEnabled()) {
+			evidence.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1076,6 +1157,14 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			evidence.setSelection(new StructuredSelection()); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.evidence);
+		if (eefElementEditorReadOnlyState && evidence.isEnabled()) {
+			evidence.setEnabled(false);
+			evidence.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !evidence.isEnabled()) {
+			evidence.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -1109,7 +1198,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -1121,6 +1209,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		criteria.setContentProvider(contentProvider);
 		criteria.setInput(settings);
+		criteriaBusinessFilters.clear();
+		criteriaFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Solution.Properties.criteria);
+		if (eefElementEditorReadOnlyState && criteria.getTable().isEnabled()) {
+			criteria.setEnabled(false);
+			criteria.setToolTipText(EurMessages.Solution_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !criteria.getTable().isEnabled()) {
+			criteria.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -1162,7 +1260,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	public boolean isContainedInCriteriaTable(EObject element) {
 		return ((ReferencesTableSettings)criteria.getInput()).contains(element);
 	}
-
 
 
 

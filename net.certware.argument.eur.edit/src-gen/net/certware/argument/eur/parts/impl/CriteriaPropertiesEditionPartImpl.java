@@ -61,9 +61,9 @@ public class CriteriaPropertiesEditionPartImpl extends CompositePropertiesEditio
 	protected Text identifier;
 	protected Text description;
 	protected Text content;
-protected ReferencesTable isTagged;
-protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
-protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
+	protected ReferencesTable isTagged;
+	protected List<ViewerFilter> isTaggedBusinessFilters = new ArrayList<ViewerFilter>();
+	protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	protected ReferencesTable context;
 	protected List<ViewerFilter> contextBusinessFilters = new ArrayList<ViewerFilter>();
 	protected List<ViewerFilter> contextFilters = new ArrayList<ViewerFilter>();
@@ -164,8 +164,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 	
 	protected Composite createIdentifierText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.CriteriaPropertiesEditionPart_IdentifierLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Criteria.Properties.identifier, EurViewsRepository.SWT_KIND));
-		identifier = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Criteria.Properties.identifier, EurMessages.CriteriaPropertiesEditionPart_IdentifierLabel);
+		identifier = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData identifierData = new GridData(GridData.FILL_HORIZONTAL);
 		identifier.setLayoutData(identifierData);
 		identifier.addFocusListener(new FocusAdapter() {
@@ -205,13 +205,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(identifier, EurViewsRepository.Criteria.Properties.identifier);
 		EditingUtils.setEEFtype(identifier, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Criteria.Properties.identifier, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createIdentifierText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createDescriptionText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.CriteriaPropertiesEditionPart_DescriptionLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Criteria.Properties.description, EurViewsRepository.SWT_KIND));
-		description = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Criteria.Properties.description, EurMessages.CriteriaPropertiesEditionPart_DescriptionLabel);
+		description = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData descriptionData = new GridData(GridData.FILL_HORIZONTAL);
 		description.setLayoutData(descriptionData);
 		description.addFocusListener(new FocusAdapter() {
@@ -251,13 +254,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(description, EurViewsRepository.Criteria.Properties.description);
 		EditingUtils.setEEFtype(description, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Criteria.Properties.description, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createDescriptionText
+
+		// End of user code
 		return parent;
 	}
 
 	
 	protected Composite createContentText(Composite parent) {
-		SWTUtils.createPartLabel(parent, EurMessages.CriteriaPropertiesEditionPart_ContentLabel, propertiesEditionComponent.isRequired(EurViewsRepository.Criteria.Properties.content, EurViewsRepository.SWT_KIND));
-		content = new Text(parent, SWT.BORDER);
+		createDescription(parent, EurViewsRepository.Criteria.Properties.content, EurMessages.CriteriaPropertiesEditionPart_ContentLabel);
+		content = SWTUtils.createScrollableText(parent, SWT.BORDER);
 		GridData contentData = new GridData(GridData.FILL_HORIZONTAL);
 		content.setLayoutData(contentData);
 		content.addFocusListener(new FocusAdapter() {
@@ -297,6 +303,9 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		EditingUtils.setID(content, EurViewsRepository.Criteria.Properties.content);
 		EditingUtils.setEEFtype(content, "eef::Text"); //$NON-NLS-1$
 		SWTUtils.createHelpButton(parent, propertiesEditionComponent.getHelpContent(EurViewsRepository.Criteria.Properties.content, EurViewsRepository.SWT_KIND), null); //$NON-NLS-1$
+		// Start of user code for createContentText
+
+		// End of user code
 		return parent;
 	}
 
@@ -305,7 +314,7 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createIsTaggedAdvancedTableComposition(Composite parent) {
-		this.isTagged = new ReferencesTable(EurMessages.CriteriaPropertiesEditionPart_IsTaggedLabel, new ReferencesTableListener() {
+		this.isTagged = new ReferencesTable(getDescription(EurViewsRepository.Criteria.Properties.isTagged, EurMessages.CriteriaPropertiesEditionPart_IsTaggedLabel), new ReferencesTableListener() {
 			public void handleAdd() { 
 				propertiesEditionComponent.firePropertiesChanged(new PropertiesEditionEvent(CriteriaPropertiesEditionPartImpl.this, EurViewsRepository.Criteria.Properties.isTagged, PropertiesEditionEvent.COMMIT, PropertiesEditionEvent.ADD, null, null));
 				isTagged.refresh();
@@ -345,6 +354,9 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		this.isTagged.setUpperBound(-1);
 		isTagged.setID(EurViewsRepository.Criteria.Properties.isTagged);
 		isTagged.setEEFType("eef::AdvancedTableComposition"); //$NON-NLS-1$
+		// Start of user code for createIsTaggedAdvancedTableComposition
+
+		// End of user code
 		return parent;
 	}
 
@@ -352,7 +364,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createContextAdvancedReferencesTable(Composite parent) {
-		this.context = new ReferencesTable(EurMessages.CriteriaPropertiesEditionPart_ContextLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Criteria.Properties.context, EurMessages.CriteriaPropertiesEditionPart_ContextLabel);		 
+		this.context = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addContext(); }
 			public void handleEdit(EObject element) { editContext(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveContext(element, oldIndex, newIndex); }
@@ -418,13 +431,13 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected void editContext(EObject element) {
-		EObjectPropertiesEditionContext context = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
+		EObjectPropertiesEditionContext rcontext = new EObjectPropertiesEditionContext(propertiesEditionComponent.getEditingContext(), propertiesEditionComponent, element, adapterFactory);
 		PropertiesEditingProvider provider = (PropertiesEditingProvider)adapterFactory.adapt(element, PropertiesEditingProvider.class);
 		if (provider != null) {
-			PropertiesEditingPolicy policy = provider.getPolicy(context);
+			PropertiesEditingPolicy policy = provider.getPolicy(rcontext);
 			if (policy != null) {
 				policy.execute();
-				//context.refresh();
+				context.refresh();
 			}
 		}
 	}
@@ -433,7 +446,8 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	 * 
 	 */
 	protected Composite createAssumptionAdvancedReferencesTable(Composite parent) {
-		this.assumption = new ReferencesTable(EurMessages.CriteriaPropertiesEditionPart_AssumptionLabel, new ReferencesTableListener() {
+		String label = getDescription(EurViewsRepository.Criteria.Properties.assumption, EurMessages.CriteriaPropertiesEditionPart_AssumptionLabel);		 
+		this.assumption = new ReferencesTable(label, new ReferencesTableListener() {
 			public void handleAdd() { addAssumption(); }
 			public void handleEdit(EObject element) { editAssumption(element); }
 			public void handleMove(EObject element, int oldIndex, int newIndex) { moveAssumption(element, oldIndex, newIndex); }
@@ -511,7 +525,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	}
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -546,8 +559,15 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			identifier.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Criteria.Properties.identifier);
+		if (eefElementEditorReadOnlyState && identifier.isEnabled()) {
+			identifier.setEnabled(false);
+			identifier.setToolTipText(EurMessages.Criteria_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !identifier.isEnabled()) {
+			identifier.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -571,8 +591,15 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			description.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Criteria.Properties.description);
+		if (eefElementEditorReadOnlyState && description.isEnabled()) {
+			description.setEnabled(false);
+			description.setToolTipText(EurMessages.Criteria_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !description.isEnabled()) {
+			description.setEnabled(true);
+		}	
+		
 	}
-
 
 	/**
 	 * {@inheritDoc}
@@ -596,8 +623,15 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		} else {
 			content.setText(""); //$NON-NLS-1$
 		}
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Criteria.Properties.content);
+		if (eefElementEditorReadOnlyState && content.isEnabled()) {
+			content.setEnabled(false);
+			content.setToolTipText(EurMessages.Criteria_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !content.isEnabled()) {
+			content.setEnabled(true);
+		}	
+		
 	}
-
 
 
 
@@ -612,6 +646,14 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		isTagged.setContentProvider(contentProvider);
 		isTagged.setInput(settings);
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Criteria.Properties.isTagged);
+		if (eefElementEditorReadOnlyState && isTagged.isEnabled()) {
+			isTagged.setEnabled(false);
+			isTagged.setToolTipText(EurMessages.Criteria_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !isTagged.isEnabled()) {
+			isTagged.setEnabled(true);
+		}	
+		
 	}
 
 	/**
@@ -659,7 +701,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -671,6 +712,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		context.setContentProvider(contentProvider);
 		context.setInput(settings);
+		contextBusinessFilters.clear();
+		contextFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Criteria.Properties.context);
+		if (eefElementEditorReadOnlyState && context.getTable().isEnabled()) {
+			context.setEnabled(false);
+			context.setToolTipText(EurMessages.Criteria_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !context.getTable().isEnabled()) {
+			context.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -715,7 +766,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 
 
 
-
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -727,6 +777,16 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 		ReferencesTableContentProvider contentProvider = new ReferencesTableContentProvider();
 		assumption.setContentProvider(contentProvider);
 		assumption.setInput(settings);
+		assumptionBusinessFilters.clear();
+		assumptionFilters.clear();
+		boolean eefElementEditorReadOnlyState = isReadOnly(EurViewsRepository.Criteria.Properties.assumption);
+		if (eefElementEditorReadOnlyState && assumption.getTable().isEnabled()) {
+			assumption.setEnabled(false);
+			assumption.setToolTipText(EurMessages.Criteria_ReadOnly);
+		} else if (!eefElementEditorReadOnlyState && !assumption.getTable().isEnabled()) {
+			assumption.setEnabled(true);
+		}
+		
 	}
 
 	/**
@@ -768,7 +828,6 @@ protected List<ViewerFilter> isTaggedFilters = new ArrayList<ViewerFilter>();
 	public boolean isContainedInAssumptionTable(EObject element) {
 		return ((ReferencesTableSettings)assumption.getInput()).contains(element);
 	}
-
 
 
 

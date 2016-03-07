@@ -21,21 +21,21 @@ public interface ICertWareConstants {
 	/** file extension for the GSN model */
 	public static final String GSN_EXTENSION = "gsn"; //$NON-NLS-1$
 	/** file extension for the GSN diagram models */
-	//public static final String GSZ_EXTENSION = "gsz"; //$NON-NLS-1$
+	public static final String GSZ_EXTENSION = "gsz"; //$NON-NLS-1$
 	/** file extension for the GSN diagrams */
-	//public static final String GSZ_DIAGRAM_EXTENSION = "gsz_diagram"; //$NON-NLS-1$
+	public static final String GSZ_DIAGRAM_EXTENSION = "gsz_diagram"; //$NON-NLS-1$
 	/** file extension for the CAE model */
 	public static final String CAE_EXTENSION = "cae"; //$NON-NLS-1$
 	/** file extension for the CAE diagram models */
-	//public static final String CAZ_EXTENSION = "caz"; //$NON-NLS-1$
+	public static final String CAZ_EXTENSION = "caz"; //$NON-NLS-1$
 	/** file extension for the CAE diagrams */
-	//public static final String CAZ_DIAGRAM_EXTENSION = "caz_diagram"; //$NON-NLS-1$
+	public static final String CAZ_DIAGRAM_EXTENSION = "caz_diagram"; //$NON-NLS-1$
 	/** file extension for the EUROCONTROL model */
-	//public static final String EUR_EXTENSION = "eur"; //$NON-NLS-1$
+	public static final String EUR_EXTENSION = "eur"; //$NON-NLS-1$
 	/** file extension for the EUROCONTROL diagram models */
-	//public static final String EUZ_EXTENSION = "euz"; //$NON-NLS-1$
+	public static final String EUZ_EXTENSION = "euz"; //$NON-NLS-1$
 	/** file extension for the EUROCONTROL diagrams */
-	//public static final String EUZ_DIAGRAM_EXTENSION = "euz_diagram"; //$NON-NLS-1$
+	public static final String EUZ_DIAGRAM_EXTENSION = "euz_diagram"; //$NON-NLS-1$
 	/** file extension for the verification checklist model */
 	public static final String VCL_EXTENSION = "vcl"; //$NON-NLS-1$
 	/** file extension for the SACM models */
@@ -79,17 +79,18 @@ public interface ICertWareConstants {
 	/** file extension for Hugin evidence files */
 	public static final String HEV_EXTENSION = "hev"; //$NON-NLS-1$
 	/** file extension for OMG SAEM files */
-	// public static final String SAEM_EXTENSION = "evidence"; //$NON-NLS-1$
+	public static final String SAEM_EXTENSION = "evidence"; //$NON-NLS-1$
 
 	/** a list of all application file extensions */
 	/* the resource label contributor uses this to identify CertWare resources */
 	public static final List<String> FILE_EXTENSIONS = 
 		Collections.unmodifiableList(Arrays.asList(
-		//		AML_EXTENSION,ARM_EXTENSION,
-		//		GSN_EXTENSION,GSZ_EXTENSION,GSZ_DIAGRAM_EXTENSION,
-		//		CAE_EXTENSION,CAZ_EXTENSION,CAZ_DIAGRAM_EXTENSION,
-		//		EUR_EXTENSION,EUZ_EXTENSION,EUZ_DIAGRAM_EXTENSION,
-		//		SAEM_EXTENSION, 
+		//		AML_EXTENSION,
+				ARM_EXTENSION,
+				GSN_EXTENSION,GSZ_EXTENSION,GSZ_DIAGRAM_EXTENSION,
+				CAE_EXTENSION,CAZ_EXTENSION,CAZ_DIAGRAM_EXTENSION,
+				EUR_EXTENSION,EUZ_EXTENSION,EUZ_DIAGRAM_EXTENSION,
+				SAEM_EXTENSION, 
 				SACM_EXTENSION, SACM_ARG_EXTENSION, SACM_EVIDENCE_EXTENSION, 
 				SACM_DSL_EXTENSION, SACM_DIAGRAM_EXTENSION,
 				VCL_EXTENSION, SFP_EXTENSION, SMM_EXTENSION, MPX_EXTENSION, MSPDI_EXTENSION,

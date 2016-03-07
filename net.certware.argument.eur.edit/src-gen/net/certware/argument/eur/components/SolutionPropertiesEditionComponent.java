@@ -26,7 +26,9 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.eef.runtime.api.notify.EStructuralFeatureNotificationFilter;
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
+import org.eclipse.emf.eef.runtime.api.notify.NotificationFilter;
 import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
 import org.eclipse.emf.eef.runtime.context.impl.EObjectPropertiesEditionContext;
 import org.eclipse.emf.eef.runtime.context.impl.EReferencePropertiesEditionContext;
@@ -64,27 +66,27 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 	/**
 	 * Settings for target ReferencesTable
 	 */
-	private	ReferencesTableSettings targetSettings;
+	private ReferencesTableSettings targetSettings;
 	
 	/**
 	 * Settings for source ReferencesTable
 	 */
-	private	ReferencesTableSettings sourceSettings;
+	private ReferencesTableSettings sourceSettings;
 	
 	/**
 	 * Settings for context ReferencesTable
 	 */
-	private	ReferencesTableSettings contextSettings;
+	private ReferencesTableSettings contextSettings;
 	
 	/**
 	 * Settings for evidence EObjectFlatComboViewer
 	 */
-	private	EObjectFlatComboSettings evidenceSettings;
+	private EObjectFlatComboSettings evidenceSettings;
 	
 	/**
 	 * Settings for criteria ReferencesTable
 	 */
-	private	ReferencesTableSettings criteriaSettings;
+	private ReferencesTableSettings criteriaSettings;
 	
 	
 	/**
@@ -109,17 +111,18 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 		setInitializing(true);
 		if (editingPart != null && key == partKey) {
 			editingPart.setContext(elt, allResource);
+			
 			final Solution solution = (Solution)elt;
 			final SolutionPropertiesEditionPart basePart = (SolutionPropertiesEditionPart)editingPart;
 			// init values
-			if (solution.getIdentifier() != null && isAccessible(EurViewsRepository.Solution.Properties.identifier))
-				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), solution.getIdentifier()));
+			if (isAccessible(EurViewsRepository.Solution.Properties.identifier))
+				basePart.setIdentifier(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, solution.getIdentifier()));
 			
-			if (solution.getDescription() != null && isAccessible(EurViewsRepository.Solution.Properties.description))
-				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), solution.getDescription()));
+			if (isAccessible(EurViewsRepository.Solution.Properties.description))
+				basePart.setDescription(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, solution.getDescription()));
 			
-			if (solution.getContent() != null && isAccessible(EurViewsRepository.Solution.Properties.content))
-				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.eINSTANCE.getString(), solution.getContent()));
+			if (isAccessible(EurViewsRepository.Solution.Properties.content))
+				basePart.setContent(EEFConverterUtil.convertToString(ArmPackage.Literals.STRING, solution.getContent()));
 			
 			if (isAccessible(EurViewsRepository.Solution.Properties.isTagged)) {
 				isTaggedSettings = new ReferencesTableSettings(solution, ArmPackage.eINSTANCE.getModelElement_IsTagged());
@@ -152,8 +155,8 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 			
 			
 			
-			basePart.addFilterToIsTagged(new ViewerFilter() {
-			
+			if (isAccessible(EurViewsRepository.Solution.Properties.isTagged)) {
+				basePart.addFilterToIsTagged(new ViewerFilter() {
 					/**
 					 * {@inheritDoc}
 					 * 
@@ -163,103 +166,52 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 						return (element instanceof String && element.equals("")) || (element instanceof TaggedValue); //$NON-NLS-1$ 
 					}
 			
-			});
-			// Start of user code for additional businessfilters for isTagged
+				});
+				// Start of user code for additional businessfilters for isTagged
 			
 			// End of user code
-			
-			basePart.addFilterToTarget(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInTargetTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToTarget(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
-			// Start of user code for additional businessfilters for target
+			}
+			if (isAccessible(EurViewsRepository.Solution.Properties.target)) {
+				basePart.addFilterToTarget(new EObjectFilter(ArmPackage.Literals.MODEL_ELEMENT));
+				// Start of user code for additional businessfilters for target
 			
 			// End of user code
-			
-			basePart.addFilterToSource(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInSourceTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToSource(new EObjectFilter(ArmPackage.eINSTANCE.getModelElement()));
-			// Start of user code for additional businessfilters for source
+			}
+			if (isAccessible(EurViewsRepository.Solution.Properties.source)) {
+				basePart.addFilterToSource(new EObjectFilter(ArmPackage.Literals.MODEL_ELEMENT));
+				// Start of user code for additional businessfilters for source
 			
 			// End of user code
-			
-			basePart.addFilterToContext(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInContextTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToContext(new EObjectFilter(EurPackage.eINSTANCE.getContext()));
-			// Start of user code for additional businessfilters for context
+			}
+			if (isAccessible(EurViewsRepository.Solution.Properties.context)) {
+				basePart.addFilterToContext(new EObjectFilter(EurPackage.Literals.CONTEXT));
+				// Start of user code for additional businessfilters for context
 			
 			// End of user code
-			
-			basePart.addFilterToEvidence(new ViewerFilter() {
-			
-			/**
-			 * {@inheritDoc}
-			 * 
-			 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-			 */
-			public boolean select(Viewer viewer, Object parentElement, Object element) {
-				return (element instanceof InformationElement);
-				}
-			
-			});
-			// Start of user code for additional businessfilters for evidence
-			
-			// End of user code
-			
-			basePart.addFilterToCriteria(new ViewerFilter() {
-			
-				/**
-				 * {@inheritDoc}
-				 * 
-				 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-				 */
-				public boolean select(Viewer viewer, Object parentElement, Object element) {
-					if (element instanceof EObject)
-						return (!basePart.isContainedInCriteriaTable((EObject)element));
-					return element instanceof Resource;
-				}
-			
-			});
-			basePart.addFilterToCriteria(new EObjectFilter(EurPackage.eINSTANCE.getCriteria()));
-			// Start of user code for additional businessfilters for criteria
+			}
+			if (isAccessible(EurViewsRepository.Solution.Properties.evidence)) {
+				basePart.addFilterToEvidence(new ViewerFilter() {
+				
+					/**
+					 * {@inheritDoc}
+					 * 
+					 * @see org.eclipse.jface.viewers.ViewerFilter#select(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
+					 */
+					public boolean select(Viewer viewer, Object parentElement, Object element) {
+						return (element instanceof InformationElement);
+					}
+					
+				});
+				// Start of user code for additional businessfilters for evidence
 			
 			// End of user code
+			}
+			if (isAccessible(EurViewsRepository.Solution.Properties.criteria)) {
+				basePart.addFilterToCriteria(new EObjectFilter(EurPackage.Literals.CRITERIA));
+				// Start of user code for additional businessfilters for criteria
 			
+			// End of user code
+			}
 			// init values for referenced views
 			
 			// init filters for referenced views
@@ -322,13 +274,13 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 	public void updateSemanticModel(final IPropertiesEditionEvent event) {
 		Solution solution = (Solution)semanticObject;
 		if (EurViewsRepository.Solution.Properties.identifier == event.getAffectedEditor()) {
-			solution.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			solution.setIdentifier((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (EurViewsRepository.Solution.Properties.description == event.getAffectedEditor()) {
-			solution.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			solution.setDescription((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (EurViewsRepository.Solution.Properties.content == event.getAffectedEditor()) {
-			solution.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getString(), (String)event.getNewValue()));
+			solution.setContent((java.lang.String)EEFConverterUtil.createFromString(ArmPackage.Literals.STRING, (String)event.getNewValue()));
 		}
 		if (EurViewsRepository.Solution.Properties.isTagged == event.getAffectedEditor()) {
 			if (event.getKind() == PropertiesEditionEvent.ADD) {
@@ -422,25 +374,26 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#updatePart(org.eclipse.emf.common.notify.Notification)
 	 */
 	public void updatePart(Notification msg) {
-		if (editingPart.isVisible()) {	
+		super.updatePart(msg);
+		if (editingPart.isVisible()) {
 			SolutionPropertiesEditionPart basePart = (SolutionPropertiesEditionPart)editingPart;
-			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && basePart != null && isAccessible(EurViewsRepository.Solution.Properties.identifier)) {
+			if (ArmPackage.eINSTANCE.getModelElement_Identifier().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EurViewsRepository.Solution.Properties.identifier)) {
 				if (msg.getNewValue() != null) {
-					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setIdentifier(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setIdentifier("");
 				}
 			}
-			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && basePart != null && isAccessible(EurViewsRepository.Solution.Properties.description)) {
+			if (ArmPackage.eINSTANCE.getModelElement_Description().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EurViewsRepository.Solution.Properties.description)) {
 				if (msg.getNewValue() != null) {
-					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setDescription(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setDescription("");
 				}
 			}
-			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && basePart != null && isAccessible(EurViewsRepository.Solution.Properties.content)) {
+			if (ArmPackage.eINSTANCE.getModelElement_Content().equals(msg.getFeature()) && msg.getNotifier().equals(semanticObject) && basePart != null && isAccessible(EurViewsRepository.Solution.Properties.content)) {
 				if (msg.getNewValue() != null) {
-					basePart.setContent(EcoreUtil.convertToString(ArmPackage.eINSTANCE.getString(), msg.getNewValue()));
+					basePart.setContent(EcoreUtil.convertToString(ArmPackage.Literals.STRING, msg.getNewValue()));
 				} else {
 					basePart.setContent("");
 				}
@@ -459,6 +412,26 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 				basePart.updateCriteria();
 			
 		}
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.emf.eef.runtime.impl.components.StandardPropertiesEditionComponent#getNotificationFilters()
+	 */
+	@Override
+	protected NotificationFilter[] getNotificationFilters() {
+		NotificationFilter filter = new EStructuralFeatureNotificationFilter(
+			ArmPackage.eINSTANCE.getModelElement_Identifier(),
+			ArmPackage.eINSTANCE.getModelElement_Description(),
+			ArmPackage.eINSTANCE.getModelElement_Content(),
+			ArmPackage.eINSTANCE.getModelElement_IsTagged(),
+			ArmPackage.eINSTANCE.getArgumentLink_Target(),
+			ArmPackage.eINSTANCE.getArgumentLink_Source(),
+			EurPackage.eINSTANCE.getSolution_Context(),
+			EurPackage.eINSTANCE.getSolution_Evidence(),
+			EurPackage.eINSTANCE.getSolution_Criteria()		);
+		return new NotificationFilter[] {filter,};
 	}
 
 
@@ -485,21 +458,21 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 				if (EurViewsRepository.Solution.Properties.identifier == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Identifier().getEAttributeType(), newValue);
 				}
 				if (EurViewsRepository.Solution.Properties.description == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Description().getEAttributeType(), newValue);
 				}
 				if (EurViewsRepository.Solution.Properties.content == event.getAffectedEditor()) {
 					Object newValue = event.getNewValue();
 					if (newValue instanceof String) {
-						newValue = EcoreUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
+						newValue = EEFConverterUtil.createFromString(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), (String)newValue);
 					}
 					ret = Diagnostician.INSTANCE.validate(ArmPackage.eINSTANCE.getModelElement_Content().getEAttributeType(), newValue);
 				}
@@ -511,5 +484,10 @@ public class SolutionPropertiesEditionComponent extends SinglePartPropertiesEdit
 		}
 		return ret;
 	}
+
+
+	
+
+	
 
 }
