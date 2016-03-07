@@ -8,14 +8,11 @@
 
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated StateAnalysis -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="stateAnalysis.presentation.StateAnalysisModelWizardID"
             name="%_UI_StateAnalysisModelWizard_label"
             class="stateAnalysis.presentation.StateAnalysisModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/StateAnalysisModelFile.gif">
          <description>%_UI_StateAnalysisModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -32,6 +29,15 @@
             class="stateAnalysis.presentation.StateAnalysisEditor"
             contributorClass="stateAnalysis.presentation.StateAnalysisActionBarContributor">
       </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="stateAnalysis.presentation.StateAnalysisModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
    </extension>
 
 </plugin>

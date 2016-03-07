@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <pattern
+            applicability="This specification helps the author to write an assurance or safety case argument using the L language and its editor ."
+            author="Evgenii Balai"
+            consequences="A completed L-language argument file might be sent to the built-in L-language solvers for analysis and feedback to the author regarding the consistency and completeness of his case."
+            idp="net.certware.example.l-lang"
+            implementation="The provided document is a PDF file"
+            intent="The specification is a detailed description of the L grammar along with some examples of simple and complex arguments written in the L language."
+            name="L Argumentation Language Specification"
+            version="02/01/2016">
+         <resource
+               description="L Language Specification"
+               structure="resources/Lspec.pdf">
+         </resource>
+      </pattern>
+   </extension>
+</fragment>

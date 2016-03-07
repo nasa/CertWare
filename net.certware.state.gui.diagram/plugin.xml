@@ -47,7 +47,7 @@
   	  <wizard
   	     name="%newWizardName"
   	     icon="icons/obj16/StateAnalysisDiagramFile.gif"
-  	     category="org.eclipse.ui.Examples"
+  	     category="net.certware.core.ui.newwizard.category"
   	     class="stateAnalysis.diagram.part.StateAnalysisCreationWizard"
   	     id="stateAnalysis.diagram.part.StateAnalysisCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
