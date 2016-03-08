@@ -3,19 +3,32 @@
 <fragment>
    <extension
          point="net.certware.example">
-      <pattern
+      <document
             applicability="This specification helps the author to write an assurance or safety case argument using the L language and its editor ."
             author="Evgenii Balai"
             consequences="A completed L-language argument file might be sent to the built-in L-language solvers for analysis and feedback to the author regarding the consistency and completeness of his case."
-            idp="net.certware.example.l-lang"
-            implementation="The provided document is a PDF file"
+            idd="net.certware.example.llang.document1"
+            implementation="The provided PDF document is for reference while writing arguments"
             intent="The specification is a detailed description of the L grammar along with some examples of simple and complex arguments written in the L language."
             name="L Argumentation Language Specification"
-            version="02/01/2016">
+            version="1.0">
          <resource
                description="L Language Specification"
                structure="resources/Lspec.pdf">
          </resource>
-      </pattern>
+      </document>
+      <document
+            applicability="Safety case example for air traffic management"
+            author="EUROCONTROL source, TTU reproduction"
+            idd="net.certware.example.llang.document2"
+            intent="Reproduces Chapter 5 of the RVSM safety case"
+            motivation="Illustrates the L language approach for writing an existing example"
+            name="RVSM Chapter 2 Argument Example"
+            version="1.0">
+         <resource
+               description="RVSM Chapter 5 L Document"
+               structure="resources/rvsm-5.l">
+         </resource>
+      </document> 
    </extension>
 </fragment>
