@@ -3,8 +3,6 @@
  */
 package net.certware.sacm.dsl.serializer;
 
-import net.certware.sacm.dsl.serializer.AbstractSacmDslSyntacticSequencer;
-
 @SuppressWarnings("all")
-public class SacmDslSyntacticSequencer extends AbstractSacmDslSyntacticSequencer {
+public class SacmDslSyntacticSequencer /* implements AbstractSacmDslSyntacticSequencer  */{
 }

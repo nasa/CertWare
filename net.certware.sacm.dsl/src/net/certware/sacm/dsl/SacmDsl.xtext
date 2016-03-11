@@ -24,69 +24,69 @@ AssuranceCase returns SACM::AssuranceCase:
 ArgumentElement returns Argumentation::ArgumentElement:
 	CitationElement | InformationElement | ArgumentReasoning | Claim | AssertedInference | AssertedEvidence | AssertedContext | AssertedChallenge | AssertedCounterEvidence;
 
-EvidenceEvaluation returns EvidenceEvaluation:
+EvidenceEvaluation returns Evidence::EvidenceEvaluation:
 	IsA | IsCharacterizedBy | IsScopedBy | Supports | Conflicts | Refutes | Negates | Resolves | Weakens | Amplifies | Challenges | ProvidesContext | MeansThat;
 
-EvidenceItem returns EvidenceItem:
+EvidenceItem returns Evidence::EvidenceItem:
 	Document | Assertion | Object | CompositeObject | UnknownObject | ReferencedClaim | EvidenceGroup | Exhibit_Impl | Record | ObjectifiedAssertion;
 
-ProjectProperty returns ProjectProperty:
+ProjectProperty returns Evidence::ProjectProperty:
 	HasRoleIn | DependsOn | Satisfies | RequiresContainer | ContainerConsistency | ContainerCompleteness | CompliesTo | ExtendedProjectProperty;
 
-ProjectElement returns ProjectElement:
+ProjectElement returns Evidence::ProjectElement:
 	Tool | Method | Person | Organization | EvidenceRequest | ProjectObjective | Activity | Service;
 
 
 
-TimingProperty returns TimingProperty:
+TimingProperty returns Evidence::TimingProperty:
 	EndTime | StartTime | AtTime;
 
-CustodyProperty returns CustodyProperty:
+CustodyProperty returns Evidence::CustodyProperty:
 	CareOf | AtLocation | UsingProcess;
 
-Provenance returns Provenance:
+Provenance returns Evidence::Provenance:
 	ApprovedBy | CreatedBy | OwnedBy | PerformedBy;
 
-EvidenceEvent returns EvidenceEvent:
+EvidenceEvent returns Evidence::EvidenceEvent:
 	IsGeneratedAt | IsAcquiredAt | IsTransferredTo | IsRevokedAt | IsCreatedAt | IsModifiedBy;
 
-ExhibitProperty returns ExhibitProperty:
+ExhibitProperty returns Evidence::ExhibitProperty:
 	Consistency | Completeness | IsBasedOn | Originality | Reliability | IsPartOf | HasElectronicSource | IsExpressedInLanguage | HasSecurityClassification | IsReleaseableTo | HasVersion | HasMedia | ExtendedDocumentProperty;
 
 
 
-FormalObject returns FormalObject:
+FormalObject returns Evidence::FormalObject:
 	Object | CompositeObject | UnknownObject | ObjectifiedAssertion;
 
 
-EvidenceElement returns EvidenceElement:
+EvidenceElement returns Evidence::EvidenceElement:
 	Consistency | Completeness | Document | Confidence | ApprovedBy | CreatedBy | Tool | Method | IsBasedOn | IsA | IsCharacterizedBy | Person | Organization | EndTime | Assertion | Object | CompositeObject | StartTime | Relevance | Significance | Accuracy | HasRoleIn | IsScopedBy | AtTime | Originality | Reporting | Reliability | Supports | IsGeneratedAt | Support | Conflicts | Refutes | Negates | UnknownObject | Resolves | EvidenceRequest | ProjectObjective | Activity | DependsOn | Satisfies | ReferencedClaim | Weakens | Amplifies | Challenges | Strength | IsAcquiredAt | IsTransferredTo | OwnedBy | IsPartOf | IsRevokedAt | ProvidesContext | MeansThat | CareOf | AtLocation | IsCreatedAt | RequiresContainer | Service | HasElectronicSource | IsExpressedInLanguage | UsingProcess | HasSecurityClassification | IsReleaseableTo | EvidenceGroup | HasVersion | HasMedia | Exhibit_Impl | ExtendedEvidenceAttribute | ExtendedDocumentProperty | Record | ObjectifiedAssertion | IsModifiedBy | PerformedBy | ContainerConsistency | ContainerCompleteness | CompliesTo | ExtendedProjectProperty;
 
-FormalAssertion returns FormalAssertion:
+FormalAssertion returns Evidence::FormalAssertion:
 	Assertion | ReferencedClaim;
 
 
 
 
-CollectionMethod returns CollectionMethod:
+CollectionMethod returns Evidence::CollectionMethod:
 	Tool | Method | Service;
 
-Stakeholder returns Stakeholder:
+Stakeholder returns Evidence::Stakeholder:
 	Person | Organization;
 
-Exhibit returns Exhibit:
+Exhibit returns Evidence::Exhibit:
 	Exhibit_Impl | Document;
 
-EvidenceAttribute returns EvidenceAttribute:
+EvidenceAttribute returns Evidence::EvidenceAttribute:
 	Confidence | Relevance | Significance | Accuracy | Reporting | Support | Strength | ExtendedEvidenceAttribute;
 
-FormalElement returns FormalElement:
+FormalElement returns Evidence::FormalElement:
 	Assertion | Object | CompositeObject | UnknownObject | ReferencedClaim | ObjectifiedAssertion;
 
-EvidenceRelation returns EvidenceRelation:
+EvidenceRelation returns Evidence::EvidenceRelation:
 	Supports | Challenges;
 
-EvidenceObservation returns EvidenceObservation:
+EvidenceObservation returns Evidence::EvidenceObservation:
 	Conflicts | Weakens | Amplifies;
 
 TaggedValue returns SACM::TaggedValue:
@@ -126,7 +126,7 @@ Argumentation0 returns Argumentation::Argumentation:
 		('argumentElement' '{' argumentElement+=ArgumentElement ( "," argumentElement+=ArgumentElement)* '}' )?
 	'}';
 
-EvidenceContainer returns EvidenceContainer:
+EvidenceContainer returns Evidence::EvidenceContainer:
 	'EvidenceContainer'
 	'{'
 		'id' id=String0
@@ -161,7 +161,7 @@ InformationElement returns Argumentation::InformationElement:
 		'description' description=String0
 		'content' content=String0
 		'url' url=String0
-		('evidence' '(' evidence+=[EvidenceItem|EString] ( "," evidence+=[EvidenceItem|EString])* ')' )?
+		('evidence' '(' evidence+=[Evidence::EvidenceItem|EString] ( "," evidence+=[Evidence::EvidenceItem|EString])* ')' )?
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 	'}';
@@ -251,7 +251,7 @@ AssertedCounterEvidence returns Argumentation::AssertedCounterEvidence:
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 	'}';
 
-Document returns Document:
+Document returns Evidence::Document:
 	'Document'
 	'{'
 		'id' id=String0
@@ -268,7 +268,7 @@ Document returns Document:
 		('property' '{' property+=ExhibitProperty ( "," property+=ExhibitProperty)* '}' )?
 	'}';
 
-Assertion returns Assertion:
+Assertion returns Evidence::Assertion:
 	'Assertion'
 	'{'
 		'id' id=String0
@@ -284,7 +284,7 @@ Assertion returns Assertion:
 		('role' '{' role+=RoleBinding ( "," role+=RoleBinding)* '}' )?
 	'}';
 
-Object returns Object:
+Object returns Evidence::Object:
 	'Object'
 	'{'
 		'id' id=String0
@@ -299,7 +299,7 @@ Object returns Object:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-CompositeObject returns CompositeObject:
+CompositeObject returns Evidence::CompositeObject:
 	'CompositeObject'
 	'{'
 		'id' id=String0
@@ -313,7 +313,7 @@ CompositeObject returns CompositeObject:
 		('element' '{' element+=FormalObject ( "," element+=FormalObject)* '}' )?
 	'}';
 
-UnknownObject returns UnknownObject:
+UnknownObject returns Evidence::UnknownObject:
 	'UnknownObject'
 	'{'
 		'id' id=String0
@@ -326,7 +326,7 @@ UnknownObject returns UnknownObject:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ReferencedClaim returns ReferencedClaim:
+ReferencedClaim returns Evidence::ReferencedClaim:
 	'ReferencedClaim'
 	'{'
 		'id' id=String0
@@ -340,12 +340,12 @@ ReferencedClaim returns ReferencedClaim:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-EvidenceGroup returns EvidenceGroup:
+EvidenceGroup returns Evidence::EvidenceGroup:
 	'EvidenceGroup'
 	'{'
 		'id' id=String0
 		'name' name=String0
-		('element' '(' element+=[EvidenceElement|EString] ( "," element+=[EvidenceElement|EString])* ')' )?
+		('element' '(' element+=[Evidence::EvidenceElement|EString] ( "," element+=[Evidence::EvidenceElement|EString])* ')' )?
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -354,7 +354,7 @@ EvidenceGroup returns EvidenceGroup:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Exhibit_Impl returns Exhibit:
+Exhibit_Impl returns Evidence::Exhibit:
 	'Exhibit'
 	'{'
 		'id' id=String0
@@ -369,7 +369,7 @@ Exhibit_Impl returns Exhibit:
 		('property' '{' property+=ExhibitProperty ( "," property+=ExhibitProperty)* '}' )?
 	'}';
 
-Record returns Record:
+Record returns Evidence::Record:
 	'Record'
 	'{'
 		'id' id=String0
@@ -383,12 +383,12 @@ Record returns Record:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ObjectifiedAssertion returns ObjectifiedAssertion:
+ObjectifiedAssertion returns Evidence::ObjectifiedAssertion:
 	'ObjectifiedAssertion'
 	'{'
 		'id' id=String0
 		'name' name=String0
-		'assertion' assertion=[FormalAssertion|EString]
+		'assertion' assertion=[Evidence::FormalAssertion|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -397,7 +397,7 @@ ObjectifiedAssertion returns ObjectifiedAssertion:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-EndTime returns EndTime:
+EndTime returns Evidence::EndTime:
 	'EndTime'
 	'{'
 		'id' id=String0
@@ -410,7 +410,7 @@ EndTime returns EndTime:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-StartTime returns StartTime:
+StartTime returns Evidence::StartTime:
 	'StartTime'
 	'{'
 		'id' id=String0
@@ -423,7 +423,7 @@ StartTime returns StartTime:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-AtTime returns AtTime:
+AtTime returns Evidence::AtTime:
 	'AtTime'
 	'{'
 		'id' id=String0
@@ -442,11 +442,11 @@ Datetime returns SACM::Datetime:
 		'datetime' datetime=String0
 	'}';
 
-CareOf returns CareOf:
+CareOf returns Evidence::CareOf:
 	'CareOf'
 	'{'
 		'id' id=String0
-		'custodian' custodian=[Person|EString]
+		'custodian' custodian=[Evidence::Person|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -455,11 +455,11 @@ CareOf returns CareOf:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-AtLocation returns AtLocation:
+AtLocation returns Evidence::AtLocation:
 	'AtLocation'
 	'{'
 		'id' id=String0
-		'location' location=[Organization|EString]
+		'location' location=[Evidence::Organization|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -468,11 +468,11 @@ AtLocation returns AtLocation:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-UsingProcess returns UsingProcess:
+UsingProcess returns Evidence::UsingProcess:
 	'UsingProcess'
 	'{'
 		'id' id=String0
-		'method' method=[CollectionMethod|EString]
+		'method' method=[Evidence::CollectionMethod|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -481,7 +481,7 @@ UsingProcess returns UsingProcess:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Person returns Person:
+Person returns Evidence::Person:
 	'Person'
 	'{'
 		'id' id=String0
@@ -496,12 +496,12 @@ Person returns Person:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-HasRoleIn returns HasRoleIn:
+HasRoleIn returns Evidence::HasRoleIn:
 	'HasRoleIn'
 	'{'
 		'id' id=String0
 		'role' role=String0
-		'organization' organization=[Organization|EString]
+		'organization' organization=[Evidence::Organization|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -510,11 +510,11 @@ HasRoleIn returns HasRoleIn:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-DependsOn returns DependsOn:
+DependsOn returns Evidence::DependsOn:
 	'DependsOn'
 	'{'
 		'id' id=String0
-		'element' element=[ProjectElement|EString]
+		'element' element=[Evidence::ProjectElement|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -523,11 +523,11 @@ DependsOn returns DependsOn:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Satisfies returns Satisfies:
+Satisfies returns Evidence::Satisfies:
 	'Satisfies'
 	'{'
 		'id' id=String0
-		'element' element=[ProjectElement|EString]
+		'element' element=[Evidence::ProjectElement|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -536,11 +536,11 @@ Satisfies returns Satisfies:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-RequiresContainer returns RequiresContainer:
+RequiresContainer returns Evidence::RequiresContainer:
 	'RequiresContainer'
 	'{'
 		'id' id=String0
-		'container' container=[EvidenceContainer|EString]
+		'container' container=[Evidence::EvidenceContainer|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -549,7 +549,7 @@ RequiresContainer returns RequiresContainer:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ContainerConsistency returns ContainerConsistency:
+ContainerConsistency returns Evidence::ContainerConsistency:
 	'ContainerConsistency'
 	'{'
 		'id' id=String0
@@ -562,7 +562,7 @@ ContainerConsistency returns ContainerConsistency:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ContainerCompleteness returns ContainerCompleteness:
+ContainerCompleteness returns Evidence::ContainerCompleteness:
 	'ContainerCompleteness'
 	'{'
 		'id' id=String0
@@ -575,7 +575,7 @@ ContainerCompleteness returns ContainerCompleteness:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-CompliesTo returns CompliesTo:
+CompliesTo returns Evidence::CompliesTo:
 	'CompliesTo'
 	'{'
 		'id' id=String0
@@ -588,7 +588,7 @@ CompliesTo returns CompliesTo:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ExtendedProjectProperty returns ExtendedProjectProperty:
+ExtendedProjectProperty returns Evidence::ExtendedProjectProperty:
 	'ExtendedProjectProperty'
 	'{'
 		'id' id=String0
@@ -600,7 +600,7 @@ ExtendedProjectProperty returns ExtendedProjectProperty:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Organization returns Organization:
+Organization returns Evidence::Organization:
 	'Organization'
 	'{'
 		'id' id=String0
@@ -616,7 +616,7 @@ Organization returns Organization:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-Tool returns Tool:
+Tool returns Evidence::Tool:
 	'Tool'
 	'{'
 		'id' id=String0
@@ -632,7 +632,7 @@ Tool returns Tool:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-Method returns Method:
+Method returns Evidence::Method:
 	'Method'
 	'{'
 		'id' id=String0
@@ -647,13 +647,13 @@ Method returns Method:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-EvidenceRequest returns EvidenceRequest:
+EvidenceRequest returns Evidence::EvidenceRequest:
 	'EvidenceRequest'
 	'{'
 		'id' id=String0
 		'name' name=String0
 		'content' content=String0
-		('item' '(' item+=[EvidenceItem|EString] ( "," item+=[EvidenceItem|EString])* ')' )?
+		('item' '(' item+=[Evidence::EvidenceItem|EString] ( "," item+=[Evidence::EvidenceItem|EString])* ')' )?
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -664,7 +664,7 @@ EvidenceRequest returns EvidenceRequest:
 	'}';
 
 
-ProjectObjective returns ProjectObjective:
+ProjectObjective returns Evidence::ProjectObjective:
 	'ProjectObjective'
 	'{'
 		'id' id=String0
@@ -679,7 +679,7 @@ ProjectObjective returns ProjectObjective:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-Activity returns Activity:
+Activity returns Evidence::Activity:
 	'Activity'
 	'{'
 		'id' id=String0
@@ -694,7 +694,7 @@ Activity returns Activity:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-Service returns Service:
+Service returns Evidence::Service:
 	'Service'
 	'{'
 		'id' id=String0
@@ -709,20 +709,20 @@ Service returns Service:
 		('property' '{' property+=ProjectProperty ( "," property+=ProjectProperty)* '}' )?
 	'}';
 
-ConsistencyLevel returns ConsistencyLevel:
+ConsistencyLevel returns Evidence::ConsistencyLevel:
 	'ConsistencyLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-CompletenessLevel returns CompletenessLevel:
+CompletenessLevel returns Evidence::CompletenessLevel:
 	'CompletenessLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-StandardOfProof returns StandardOfProof:
+StandardOfProof returns Evidence::StandardOfProof:
 	'StandardOfProof' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-ApprovedBy returns ApprovedBy:
+ApprovedBy returns Evidence::ApprovedBy:
 	'ApprovedBy'
 	'{'
 		'id' id=String0
-		'supervisor' supervisor=[Stakeholder|EString]
+		'supervisor' supervisor=[Evidence::Stakeholder|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -731,11 +731,11 @@ ApprovedBy returns ApprovedBy:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-CreatedBy returns CreatedBy:
+CreatedBy returns Evidence::CreatedBy:
 	'CreatedBy'
 	'{'
 		'id' id=String0
-		'source' source=[Stakeholder|EString]
+		'source' source=[Evidence::Stakeholder|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -744,11 +744,11 @@ CreatedBy returns CreatedBy:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-OwnedBy returns OwnedBy:
+OwnedBy returns Evidence::OwnedBy:
 	'OwnedBy'
 	'{'
 		'id' id=String0
-		'owner' owner=[Stakeholder|EString]
+		'owner' owner=[Evidence::Stakeholder|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -757,11 +757,11 @@ OwnedBy returns OwnedBy:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-PerformedBy returns PerformedBy:
+PerformedBy returns Evidence::PerformedBy:
 	'PerformedBy'
 	'{'
 		'id' id=String0
-		'executor' executor=[Stakeholder|EString]
+		'executor' executor=[Evidence::Stakeholder|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -770,7 +770,7 @@ PerformedBy returns PerformedBy:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsGeneratedAt returns IsGeneratedAt:
+IsGeneratedAt returns Evidence::IsGeneratedAt:
 	'IsGeneratedAt'
 	'{'
 		'id' id=String0
@@ -782,7 +782,7 @@ IsGeneratedAt returns IsGeneratedAt:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsAcquiredAt returns IsAcquiredAt:
+IsAcquiredAt returns Evidence::IsAcquiredAt:
 	'IsAcquiredAt'
 	'{'
 		'id' id=String0
@@ -794,7 +794,7 @@ IsAcquiredAt returns IsAcquiredAt:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsTransferredTo returns IsTransferredTo:
+IsTransferredTo returns Evidence::IsTransferredTo:
 	'IsTransferredTo'
 	'{'
 		'id' id=String0
@@ -806,7 +806,7 @@ IsTransferredTo returns IsTransferredTo:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsRevokedAt returns IsRevokedAt:
+IsRevokedAt returns Evidence::IsRevokedAt:
 	'IsRevokedAt'
 	'{'
 		'id' id=String0
@@ -818,7 +818,7 @@ IsRevokedAt returns IsRevokedAt:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsCreatedAt returns IsCreatedAt:
+IsCreatedAt returns Evidence::IsCreatedAt:
 	'IsCreatedAt'
 	'{'
 		'id' id=String0
@@ -830,7 +830,7 @@ IsCreatedAt returns IsCreatedAt:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsModifiedBy returns IsModifiedBy:
+IsModifiedBy returns Evidence::IsModifiedBy:
 	'IsModifiedBy'
 	'{'
 		'id' id=String0
@@ -842,7 +842,7 @@ IsModifiedBy returns IsModifiedBy:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Consistency returns Consistency:
+Consistency returns Evidence::Consistency:
 	'Consistency'
 	'{'
 		'id' id=String0
@@ -855,7 +855,7 @@ Consistency returns Consistency:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Completeness returns Completeness:
+Completeness returns Evidence::Completeness:
 	'Completeness'
 	'{'
 		'id' id=String0
@@ -868,11 +868,11 @@ Completeness returns Completeness:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsBasedOn returns IsBasedOn:
+IsBasedOn returns Evidence::IsBasedOn:
 	'IsBasedOn'
 	'{'
 		'id' id=String0
-		'source' source=[EvidenceItem|EString]
+		'source' source=[Evidence::EvidenceItem|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -881,7 +881,7 @@ IsBasedOn returns IsBasedOn:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Originality returns Originality:
+Originality returns Evidence::Originality:
 	'Originality'
 	'{'
 		'id' id=String0
@@ -894,7 +894,7 @@ Originality returns Originality:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Reliability returns Reliability:
+Reliability returns Evidence::Reliability:
 	'Reliability'
 	'{'
 		'id' id=String0
@@ -907,11 +907,11 @@ Reliability returns Reliability:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsPartOf returns IsPartOf:
+IsPartOf returns Evidence::IsPartOf:
 	'IsPartOf'
 	'{'
 		'id' id=String0
-		'whole' whole=[Exhibit|EString]
+		'whole' whole=[Evidence::Exhibit|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -920,7 +920,7 @@ IsPartOf returns IsPartOf:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-HasElectronicSource returns HasElectronicSource:
+HasElectronicSource returns Evidence::HasElectronicSource:
 	'HasElectronicSource'
 	'{'
 		'id' id=String0
@@ -935,7 +935,7 @@ HasElectronicSource returns HasElectronicSource:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsExpressedInLanguage returns IsExpressedInLanguage:
+IsExpressedInLanguage returns Evidence::IsExpressedInLanguage:
 	'IsExpressedInLanguage'
 	'{'
 		'id' id=String0
@@ -949,7 +949,7 @@ IsExpressedInLanguage returns IsExpressedInLanguage:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-HasSecurityClassification returns HasSecurityClassification:
+HasSecurityClassification returns Evidence::HasSecurityClassification:
 	'HasSecurityClassification'
 	'{'
 		'id' id=String0
@@ -962,7 +962,7 @@ HasSecurityClassification returns HasSecurityClassification:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsReleaseableTo returns IsReleaseableTo:
+IsReleaseableTo returns Evidence::IsReleaseableTo:
 	'IsReleaseableTo'
 	'{'
 		'id' id=String0
@@ -975,7 +975,7 @@ IsReleaseableTo returns IsReleaseableTo:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-HasVersion returns HasVersion:
+HasVersion returns Evidence::HasVersion:
 	'HasVersion'
 	'{'
 		'id' id=String0
@@ -988,7 +988,7 @@ HasVersion returns HasVersion:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-HasMedia returns HasMedia:
+HasMedia returns Evidence::HasMedia:
 	'HasMedia'
 	'{'
 		'id' id=String0
@@ -1001,7 +1001,7 @@ HasMedia returns HasMedia:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ExtendedDocumentProperty returns ExtendedDocumentProperty:
+ExtendedDocumentProperty returns Evidence::ExtendedDocumentProperty:
 	'ExtendedDocumentProperty'
 	'{'
 		'id' id=String0
@@ -1013,10 +1013,10 @@ ExtendedDocumentProperty returns ExtendedDocumentProperty:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-OriginalityLevel returns OriginalityLevel:
+OriginalityLevel returns Evidence::OriginalityLevel:
 	'OriginalityLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-ReliabilityLevel returns ReliabilityLevel:
+ReliabilityLevel returns Evidence::ReliabilityLevel:
 	'ReliabilityLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
 // Integer : INT;
@@ -1035,11 +1035,11 @@ Boolean returns ecore::EBoolean:
 	('true'|'false')
 ;
 
-RoleBinding returns RoleBinding:
+RoleBinding returns Evidence::RoleBinding:
 	'RoleBinding'
 	'{'
 		'role' role=String0
-		('subject' subject=[FormalObject|EString])?
+		('subject' subject=[Evidence::FormalObject|EString])?
 	'}';
 
 //EString returns ecore::EString:
@@ -1052,7 +1052,7 @@ EObject returns ecore::EObject:
 	'EObject'
 	;
 
-Confidence returns Confidence:
+Confidence returns Evidence::Confidence:
 	'Confidence'
 	'{'
 		'id' id=String0
@@ -1065,12 +1065,12 @@ Confidence returns Confidence:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsA returns IsA:
+IsA returns Evidence::IsA:
 	'IsA'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceElement|EString]
-		'definition' definition=[FormalElement|EString]
+		'subject' subject=[Evidence::EvidenceElement|EString]
+		'definition' definition=[Evidence::FormalElement|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1080,12 +1080,12 @@ IsA returns IsA:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-IsCharacterizedBy returns IsCharacterizedBy:
+IsCharacterizedBy returns Evidence::IsCharacterizedBy:
 	'IsCharacterizedBy'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceElement|EString]
-		'assertion' assertion=[FormalAssertion|EString]
+		'subject' subject=[Evidence::EvidenceElement|EString]
+		'assertion' assertion=[Evidence::FormalAssertion|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1095,7 +1095,7 @@ IsCharacterizedBy returns IsCharacterizedBy:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Relevance returns Relevance:
+Relevance returns Evidence::Relevance:
 	'Relevance'
 	'{'
 		'id' id=String0
@@ -1108,7 +1108,7 @@ Relevance returns Relevance:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Significance returns Significance:
+Significance returns Evidence::Significance:
 	'Significance'
 	'{'
 		'id' id=String0
@@ -1121,7 +1121,7 @@ Significance returns Significance:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Accuracy returns Accuracy:
+Accuracy returns Evidence::Accuracy:
 	'Accuracy'
 	'{'
 		'id' id=String0
@@ -1134,12 +1134,12 @@ Accuracy returns Accuracy:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-IsScopedBy returns IsScopedBy:
+IsScopedBy returns Evidence::IsScopedBy:
 	'IsScopedBy'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceElement|EString]
-		'scope' scope=[FormalElement|EString]
+		'subject' subject=[Evidence::EvidenceElement|EString]
+		'scope' scope=[Evidence::FormalElement|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1149,7 +1149,7 @@ IsScopedBy returns IsScopedBy:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Reporting returns Reporting:
+Reporting returns Evidence::Reporting:
 	'Reporting'
 	'{'
 		'id' id=String0
@@ -1162,12 +1162,12 @@ Reporting returns Reporting:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Supports returns Supports:
+Supports returns Evidence::Supports:
 	'Supports'
 	'{'
 		'id' id=String0
-		'assertion' assertion=[FormalAssertion|EString]
-		'subject' subject=[EvidenceItem|EString]
+		'assertion' assertion=[Evidence::FormalAssertion|EString]
+		'subject' subject=[Evidence::EvidenceItem|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1177,7 +1177,7 @@ Supports returns Supports:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Support returns Support:
+Support returns Evidence::Support:
 	'Support'
 	'{'
 		'id' id=String0
@@ -1190,12 +1190,12 @@ Support returns Support:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-Conflicts returns Conflicts:
+Conflicts returns Evidence::Conflicts:
 	'Conflicts'
 	'{'
 		'id' id=String0
-		'assertion' assertion=[FormalAssertion|EString]
-		'subject' subject=[FormalAssertion|EString]
+		'assertion' assertion=[Evidence::FormalAssertion|EString]
+		'subject' subject=[Evidence::FormalAssertion|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1205,11 +1205,11 @@ Conflicts returns Conflicts:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Refutes returns Refutes:
+Refutes returns Evidence::Refutes:
 	'Refutes'
 	'{'
 		'id' id=String0
-		'element' element=[FormalAssertion|EString]
+		'element' element=[Evidence::FormalAssertion|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1220,11 +1220,11 @@ Refutes returns Refutes:
 		'subject' subject=EvidenceElement
 	'}';
 
-Negates returns Negates:
+Negates returns Evidence::Negates:
 	'Negates'
 	'{'
 		'id' id=String0
-		'element' element=[EvidenceRelation|EString]
+		'element' element=[Evidence::EvidenceRelation|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1235,11 +1235,11 @@ Negates returns Negates:
 		'subject' subject=EvidenceElement
 	'}';
 
-Resolves returns Resolves:
+Resolves returns Evidence::Resolves:
 	'Resolves'
 	'{'
 		'id' id=String0
-		'element' element=[EvidenceObservation|EString]
+		'element' element=[Evidence::EvidenceObservation|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1250,12 +1250,12 @@ Resolves returns Resolves:
 		'subject' subject=EvidenceElement
 	'}';
 
-Weakens returns Weakens:
+Weakens returns Evidence::Weakens:
 	'Weakens'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceRelation|EString]
-		'relation' relation=[EvidenceRelation|EString]
+		'subject' subject=[Evidence::EvidenceRelation|EString]
+		'relation' relation=[Evidence::EvidenceRelation|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1265,12 +1265,12 @@ Weakens returns Weakens:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Amplifies returns Amplifies:
+Amplifies returns Evidence::Amplifies:
 	'Amplifies'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceRelation|EString]
-		'relation' relation=[EvidenceRelation|EString]
+		'subject' subject=[Evidence::EvidenceRelation|EString]
+		'relation' relation=[Evidence::EvidenceRelation|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1280,12 +1280,12 @@ Amplifies returns Amplifies:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Challenges returns Challenges:
+Challenges returns Evidence::Challenges:
 	'Challenges'
 	'{'
 		'id' id=String0
-		'assertion' assertion=[FormalAssertion|EString]
-		'subject' subject=[EvidenceItem|EString]
+		'assertion' assertion=[Evidence::FormalAssertion|EString]
+		'subject' subject=[Evidence::EvidenceItem|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1295,7 +1295,7 @@ Challenges returns Challenges:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-Strength returns Strength:
+Strength returns Evidence::Strength:
 	'Strength'
 	'{'
 		'id' id=String0
@@ -1308,12 +1308,12 @@ Strength returns Strength:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ProvidesContext returns ProvidesContext:
+ProvidesContext returns Evidence::ProvidesContext:
 	'ProvidesContext'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceElement|EString]
-		'context' context=[EvidenceElement|EString]
+		'subject' subject=[Evidence::EvidenceElement|EString]
+		'context' context=[Evidence::EvidenceElement|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1323,12 +1323,12 @@ ProvidesContext returns ProvidesContext:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-MeansThat returns MeansThat:
+MeansThat returns Evidence::MeansThat:
 	'MeansThat'
 	'{'
 		'id' id=String0
-		'subject' subject=[EvidenceElement|EString]
-		'meaning' meaning=[FormalAssertion|EString]
+		'subject' subject=[Evidence::EvidenceElement|EString]
+		'meaning' meaning=[Evidence::FormalAssertion|EString]
 		('taggedValue' '{' taggedValue+=TaggedValue ( "," taggedValue+=TaggedValue)* '}' )?
 		('annotation' '{' annotation+=Annotation ( "," annotation+=Annotation)* '}' )?
 		('timing' '{' timing+=TimingProperty ( "," timing+=TimingProperty)* '}' )?
@@ -1338,7 +1338,7 @@ MeansThat returns MeansThat:
 		('attribute' '{' attribute+=EvidenceAttribute ( "," attribute+=EvidenceAttribute)* '}' )?
 	'}';
 
-ExtendedEvidenceAttribute returns ExtendedEvidenceAttribute:
+ExtendedEvidenceAttribute returns Evidence::ExtendedEvidenceAttribute:
 	'ExtendedEvidenceAttribute'
 	'{'
 		'id' id=String0
@@ -1350,17 +1350,17 @@ ExtendedEvidenceAttribute returns ExtendedEvidenceAttribute:
 		('event' '{' event+=EvidenceEvent ( "," event+=EvidenceEvent)* '}' )?
 	'}';
 
-ConfidenceLevel returns ConfidenceLevel:
+ConfidenceLevel returns Evidence::ConfidenceLevel:
 	'ConfidenceLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-Level returns Level:
+Level returns Evidence::Level:
 	'Level' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-AccuracyLevel returns AccuracyLevel:
+AccuracyLevel returns Evidence::AccuracyLevel:
 	'AccuracyLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-ReportingLevel returns ReportingLevel:
+ReportingLevel returns Evidence::ReportingLevel:
 	'ReportingLevel' /* TODO: implement this rule and an appropriate IValueConverter */;
 
-SupportLevel returns SupportLevel:
+SupportLevel returns Evidence::SupportLevel:
 	'SupportLevel' /* TODO: implement this rule and an appropriate IValueConverter */;

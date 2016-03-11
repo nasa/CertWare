@@ -5,6 +5,7 @@ Bundle-SymbolicName: net.certware.argument.language.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: net.certware.argument.language.tests
 Bundle-Vendor: Kestrel Technology LLC
+Export-Package: net.certware.argument.language
 Require-Bundle: net.certware.argument.language,
  net.certware.argument.language.ui,
  org.eclipse.core.runtime,
@@ -22,4 +23,3 @@ Import-Package: org.apache.log4j,
  org.junit.runners;version="4.5.0",
  org.junit.runners.model;version="4.5.0"
 Bundle-ActivationPolicy: lazy
-Export-Package: net.certware.argument.language

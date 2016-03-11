@@ -35,30 +35,27 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String[] _data = issue.getData();
     String _get = _data[0];
     String _plus = (("Remove intent named" + " ") + _get);
-    final ISemanticModification _function = new ISemanticModification() {
-      @Override
-      public void apply(final EObject element, final IModificationContext context) throws Exception {
-        Refinement container = ((Refinement) element);
-        String[] _data = issue.getData();
-        String _get = _data[0];
-        String itemName = ((String) _get);
-        EList<Intent> list = container.getIntents();
-        Iterator<Intent> iter = list.iterator();
-        Intent lastItem = ((Intent) null);
-        while (iter.hasNext()) {
-          {
-            Intent item = iter.next();
-            String _name = item.getName();
-            boolean _equals = _name.equals(itemName);
-            if (_equals) {
-              lastItem = item;
-            }
+    final ISemanticModification _function = (EObject element, IModificationContext context) -> {
+      Refinement container = ((Refinement) element);
+      String[] _data_1 = issue.getData();
+      String _get_1 = _data_1[0];
+      String itemName = ((String) _get_1);
+      EList<Intent> list = container.getIntents();
+      Iterator<Intent> iter = list.iterator();
+      Intent lastItem = ((Intent) null);
+      while (iter.hasNext()) {
+        {
+          Intent item = iter.next();
+          String _name = item.getName();
+          boolean _equals = _name.equals(itemName);
+          if (_equals) {
+            lastItem = item;
           }
         }
-        boolean _notEquals = (!Objects.equal(lastItem, null));
-        if (_notEquals) {
-          list.remove(lastItem);
-        }
+      }
+      boolean _notEquals = (!Objects.equal(lastItem, null));
+      if (_notEquals) {
+        list.remove(lastItem);
       }
     };
     acceptor.accept(issue, 
@@ -74,31 +71,28 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String[] _data = issue.getData();
     String _get = _data[0];
     String _plus = (("Remove decomposition named" + " ") + _get);
-    final ISemanticModification _function = new ISemanticModification() {
-      @Override
-      public void apply(final EObject element, final IModificationContext context) throws Exception {
-        Intent container = ((Intent) element);
-        String[] _data = issue.getData();
-        String _get = _data[0];
-        String itemName = ((String) _get);
-        EList<Decomposition> list = container.getDecompositions();
-        Iterator<Decomposition> iter = list.iterator();
-        Decomposition lastItem = ((Decomposition) null);
-        while (iter.hasNext()) {
-          {
-            Decomposition _next = iter.next();
-            Decomposition item = ((Decomposition) _next);
-            String _name = item.getName();
-            boolean _equals = _name.equals(itemName);
-            if (_equals) {
-              lastItem = item;
-            }
+    final ISemanticModification _function = (EObject element, IModificationContext context) -> {
+      Intent container = ((Intent) element);
+      String[] _data_1 = issue.getData();
+      String _get_1 = _data_1[0];
+      String itemName = ((String) _get_1);
+      EList<Decomposition> list = container.getDecompositions();
+      Iterator<Decomposition> iter = list.iterator();
+      Decomposition lastItem = ((Decomposition) null);
+      while (iter.hasNext()) {
+        {
+          Decomposition _next = iter.next();
+          Decomposition item = ((Decomposition) _next);
+          String _name = item.getName();
+          boolean _equals = _name.equals(itemName);
+          if (_equals) {
+            lastItem = item;
           }
         }
-        boolean _notEquals = (!Objects.equal(lastItem, null));
-        if (_notEquals) {
-          list.remove(lastItem);
-        }
+      }
+      boolean _notEquals = (!Objects.equal(lastItem, null));
+      if (_notEquals) {
+        list.remove(lastItem);
       }
     };
     acceptor.accept(issue, 
@@ -114,30 +108,27 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String[] _data = issue.getData();
     String _get = _data[0];
     String _plus = (("Remove list item named" + " ") + _get);
-    final ISemanticModification _function = new ISemanticModification() {
-      @Override
-      public void apply(final EObject element, final IModificationContext context) throws Exception {
-        ListItem outerList = ((ListItem) element);
-        String[] _data = issue.getData();
-        String _get = _data[0];
-        String itemName = ((String) _get);
-        EList<ListItem> list = outerList.getItemReferences();
-        Iterator<ListItem> iter = list.iterator();
-        ListItem lastItem = ((ListItem) null);
-        while (iter.hasNext()) {
-          {
-            ListItem item = iter.next();
-            String _name = item.getName();
-            boolean _equals = _name.equals(itemName);
-            if (_equals) {
-              lastItem = item;
-            }
+    final ISemanticModification _function = (EObject element, IModificationContext context) -> {
+      ListItem outerList = ((ListItem) element);
+      String[] _data_1 = issue.getData();
+      String _get_1 = _data_1[0];
+      String itemName = ((String) _get_1);
+      EList<ListItem> list = outerList.getItemReferences();
+      Iterator<ListItem> iter = list.iterator();
+      ListItem lastItem = ((ListItem) null);
+      while (iter.hasNext()) {
+        {
+          ListItem item = iter.next();
+          String _name = item.getName();
+          boolean _equals = _name.equals(itemName);
+          if (_equals) {
+            lastItem = item;
           }
         }
-        boolean _notEquals = (!Objects.equal(lastItem, null));
-        if (_notEquals) {
-          list.remove(lastItem);
-        }
+      }
+      boolean _notEquals = (!Objects.equal(lastItem, null));
+      if (_notEquals) {
+        list.remove(lastItem);
       }
     };
     acceptor.accept(issue, 
@@ -150,30 +141,27 @@ public class IntentSpecificationQuickfixProvider extends DefaultQuickfixProvider
     String[] _data = issue.getData();
     String _get = _data[0];
     String _plus = (("Remove model item named" + " ") + _get);
-    final ISemanticModification _function = new ISemanticModification() {
-      @Override
-      public void apply(final EObject element, final IModificationContext context) throws Exception {
-        ListItem outerList = ((ListItem) element);
-        String[] _data = issue.getData();
-        String _get = _data[0];
-        String itemName = ((String) _get);
-        EList<ModelItem> list = outerList.getModelReferences();
-        Iterator<ModelItem> iter = list.iterator();
-        ModelItem lastItem = ((ModelItem) null);
-        while (iter.hasNext()) {
-          {
-            ModelItem item = iter.next();
-            String _name = item.getName();
-            boolean _equals = _name.equals(itemName);
-            if (_equals) {
-              lastItem = item;
-            }
+    final ISemanticModification _function = (EObject element, IModificationContext context) -> {
+      ListItem outerList = ((ListItem) element);
+      String[] _data_1 = issue.getData();
+      String _get_1 = _data_1[0];
+      String itemName = ((String) _get_1);
+      EList<ModelItem> list = outerList.getModelReferences();
+      Iterator<ModelItem> iter = list.iterator();
+      ModelItem lastItem = ((ModelItem) null);
+      while (iter.hasNext()) {
+        {
+          ModelItem item = iter.next();
+          String _name = item.getName();
+          boolean _equals = _name.equals(itemName);
+          if (_equals) {
+            lastItem = item;
           }
         }
-        boolean _notEquals = (!Objects.equal(lastItem, null));
-        if (_notEquals) {
-          list.remove(lastItem);
-        }
+      }
+      boolean _notEquals = (!Objects.equal(lastItem, null));
+      if (_notEquals) {
+        list.remove(lastItem);
       }
     };
     acceptor.accept(issue, 

@@ -27,6 +27,7 @@ public class SacmDslFormatter extends AbstractDeclarativeFormatter {
   @Extension
   private SacmDslGrammarAccess _sacmDslGrammarAccess;
   
+  @Override
   protected void configureFormatting(final FormattingConfig c) {
     List<Pair<Keyword, Keyword>> _findKeywordPairs = this._sacmDslGrammarAccess.findKeywordPairs("{", "}");
     for (final Pair<Keyword, Keyword> pair : _findKeywordPairs) {
