@@ -29,6 +29,32 @@
                description="RVSM Chapter 5 L Document"
                structure="resources/rvsm-5.l">
          </resource>
+      </document>
+      <document
+            applicability="A graph defined by  a collection of edges"
+            author="Evgenii Balai"
+            idd="net.certware.example.llang.document3"
+            intent="Checking K-connectedness of a graph"
+            motivation="Illustrates the main constructs of L"
+            name="Graph K-connectedness Example"
+            version="1.0">
+         <resource
+               description="K-connectedness Checker L Document"
+               structure="resources/graph_con.l">
+         </resource>
+      </document>
+      <document
+            applicability="A list of student records"
+            author="Vu Phan"
+            idd="net.certware.example.llang.document4"
+            intent="Rank students according to their records"
+            motivation="Illustrates the main constructs of L"
+            name="Student Ranking Example"
+            version="1.0">
+         <resource
+               description="Student Ranking L Document"
+               structure="resources/ranking.l">
+         </resource>
       </document> 
    </extension>
 </fragment>
