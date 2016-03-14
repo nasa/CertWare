@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Certware" uid="product" id="net.certware.product.product" application="org.eclipse.ui.ide.workbench" version="2.0.3.qualifier" useFeatures="false" includeLaunchers="true">
+<product name="Certware" uid="product" id="net.certware.product.product" application="org.eclipse.ui.ide.workbench" version="2.0.4.qualifier" useFeatures="false" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/net.certware.product/icons/obj256/certware-250.png"/>
