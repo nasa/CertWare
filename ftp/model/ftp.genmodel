@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ftp/src" modelPluginID="ftp" modelName="Ftp" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ftp.ecore</foreignModel>
+  <genPackages prefix="Ftp" disposableProviderFactory="true" ecorePackage="ftp.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ftp.ecore#//SignalValues">
+      <genEnumLiterals ecoreEnumLiteral="ftp.ecore#//SignalValues/off"/>
+      <genEnumLiterals ecoreEnumLiteral="ftp.ecore#//SignalValues/on"/>
+      <genEnumLiterals ecoreEnumLiteral="ftp.ecore#//SignalValues/any"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ftp.ecore#//VisualValues">
+      <genEnumLiterals ecoreEnumLiteral="ftp.ecore#//VisualValues/light"/>
+      <genEnumLiterals ecoreEnumLiteral="ftp.ecore#//VisualValues/dark"/>
+      <genEnumLiterals ecoreEnumLiteral="ftp.ecore#//VisualValues/any"/>
+    </genEnums>
+    <genClasses ecoreClass="ftp.ecore#//FaultTree">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//FaultTree/ftnodes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//FaultTree/root"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//FTNode"/>
+    <genClasses ecoreClass="ftp.ecore#//OrGate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//OrGate/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//AndGate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//AndGate/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Fault">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Fault/description"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Observation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//Observation/component"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//Observation/portValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Observation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Observation/faultLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//Observation/faulttree"/>
+      <genOperations ecoreOperation="ftp.ecore#//Observation/buildFaultTree"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Component/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Component/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Port/type"/>
+      <genOperations ecoreOperation="ftp.ecore#//Port/newPortValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Connection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//Connection/fromPort"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//Connection/toPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//DigintalConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//AnalogConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//SignalConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//ElectricalConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//HydraulicConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//MechanicalConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//PrimitiveComponent"/>
+    <genClasses ecoreClass="ftp.ecore#//ComposedComponent">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//ComposedComponent/composition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//ComposedComponent/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//CompositionElement"/>
+    <genClasses ecoreClass="ftp.ecore#//PortValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//PortValue/port"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//PortValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Resistor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//Resistor/resistance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//Resistor/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//Resistor/outPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Capacitor"/>
+    <genClasses ecoreClass="ftp.ecore#//AnalogBattery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogBattery/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogBattery/outPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//AnalogBattery/voltage"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//AnalogSwitch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogSwitch/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogSwitch/setPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogSwitch/outPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//AnalogLamp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogLamp/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogLamp/outPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//AnalogLamp/lightPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//DigitalBattery">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalBattery/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalBattery/outPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//DigitalSwitch">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalSwitch/inPort"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalSwitch/setPort"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalSwitch/outPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//DigitalLamp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalLamp/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalLamp/outPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DigitalLamp/lightPort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//Not"/>
+    <genClasses ecoreClass="ftp.ecore#//Xor"/>
+    <genClasses ecoreClass="ftp.ecore#//And"/>
+    <genClasses ecoreClass="ftp.ecore#//NTransistor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//NTransistor/gate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//NTransistor/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//NTransistor/drain"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//PTransistor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//PTransistor/gate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//PTransistor/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//PTransistor/drain"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//DFlipFlop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DFlipFlop/inPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DFlipFlop/clockPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DFlipFlop/outPort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//DFlipFlop/statePort"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//SignalPort"/>
+    <genClasses ecoreClass="ftp.ecore#//ElectricalPort"/>
+    <genClasses ecoreClass="ftp.ecore#//HydraulicPort"/>
+    <genClasses ecoreClass="ftp.ecore#//VisualPort"/>
+    <genClasses ecoreClass="ftp.ecore#//VisualConnection"/>
+    <genClasses ecoreClass="ftp.ecore#//FaultTreeContext">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//FaultTreeContext/composition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//FaultTreeContext/observations"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//RootEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//RootEvent/observation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ftp.ecore#//RootEvent/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//MechanicalPort"/>
+    <genClasses ecoreClass="ftp.ecore#//TypedPortValue"/>
+    <genClasses ecoreClass="ftp.ecore#//SignalValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//SignalValue/signal"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//ElectricalValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//ElectricalValue/current"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//ElectricalValue/voltage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//ElectricalValue/anyCurrent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//ElectricalValue/anyVoltage"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//HydraulicValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//HydraulicValue/flow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//HydraulicValue/pressure"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//HydraulicValue/anyFlow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//HydraulicValue/anyPressure"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//VisualValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//VisualValue/bulb"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//FloatValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//FloatValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ftp.ecore#//SignalConstant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ftp.ecore#//SignalConstant/outPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ftp.ecore#//SignalConstant/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

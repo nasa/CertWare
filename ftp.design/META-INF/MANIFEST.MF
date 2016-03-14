@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ftp.design
+Bundle-SymbolicName: ftp.design;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: ftp.design.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common.acceleo.mtl,
+ ftp;bundle-version="0.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

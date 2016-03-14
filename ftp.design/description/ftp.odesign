@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="ftp" version="10.0.0.201505222000">
+  <ownedViewpoints name="ftp" label="Fault Trees from Physics" modelFileExtension="ftp">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="composition" label="Composition Diagram" domainClass="ftp.FaultTreeContext" enablePopupBars="true">
+      <defaultLayer name="Default">
+        <edgeMappings name="sigConnection" label="Signal Connection" sourceMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalBattery']/@borderedNodeMappings[name='dBatIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalBattery']/@borderedNodeMappings[name='dBatOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']/@borderedNodeMappings[name='dLampIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']/@borderedNodeMappings[name='dLampOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']/@borderedNodeMappings[name='dSwitchIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']/@borderedNodeMappings[name='dSwitchOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']/@borderedNodeMappings[name='dSwitchSet'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='composedSigPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']/@borderedNodeMappings[name='aSwitchSet'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']/@borderedNodeMappings[name='ntransDrain'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']/@borderedNodeMappings[name='ntransGate'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']/@borderedNodeMappings[name='ntransSource'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']/@borderedNodeMappings[name='ptransDrain'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']/@borderedNodeMappings[name='ptransGate'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']/@borderedNodeMappings[name='ptransSource'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='sigConst']/@borderedNodeMappings[name='sigConOut']" targetMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalBattery']/@borderedNodeMappings[name='dBatIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalBattery']/@borderedNodeMappings[name='dBatOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']/@borderedNodeMappings[name='dLampIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']/@borderedNodeMappings[name='dLampOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']/@borderedNodeMappings[name='dSwitchIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']/@borderedNodeMappings[name='dSwitchOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']/@borderedNodeMappings[name='dSwitchSet'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='composedSigPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']/@borderedNodeMappings[name='aSwitchSet'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']/@borderedNodeMappings[name='ntransDrain'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']/@borderedNodeMappings[name='ntransGate'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']/@borderedNodeMappings[name='ntransSource'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']/@borderedNodeMappings[name='ptransDrain'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']/@borderedNodeMappings[name='ptransGate'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']/@borderedNodeMappings[name='ptransSource'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='sigConst']/@borderedNodeMappings[name='sigConOut']" targetFinderExpression="feature:toPort" sourceFinderExpression="feature:fromPort" domainClass="ftp.SignalConnection" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="obsConnection" label="Visual Connection" sourceMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compObsPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']/@borderedNodeMappings[name='dLampLight'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']/@borderedNodeMappings[name='aLampLight']" targetMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compObsPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']/@borderedNodeMappings[name='dLampLight'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']/@borderedNodeMappings[name='aLampLight']" targetFinderExpression="feature:toPort" sourceFinderExpression="feature:fromPort" domainClass="ftp.VisualConnection" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="elecConnection" label="Electrical Connection" sourceMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compElecPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogBattery']/@borderedNodeMappings[name='aBatIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogBattery']/@borderedNodeMappings[name='aBatOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']/@borderedNodeMappings[name='aSwitchIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']/@borderedNodeMappings[name='aSwitchOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']/@borderedNodeMappings[name='aLampIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']/@borderedNodeMappings[name='aLampOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='resistor']/@borderedNodeMappings[name='resistorIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='resistor']/@borderedNodeMappings[name='resistorOut']" targetMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compElecPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogBattery']/@borderedNodeMappings[name='aBatIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogBattery']/@borderedNodeMappings[name='aBatOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']/@borderedNodeMappings[name='aSwitchIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']/@borderedNodeMappings[name='aSwitchOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']/@borderedNodeMappings[name='aLampIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']/@borderedNodeMappings[name='aLampOut'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='resistor']/@borderedNodeMappings[name='resistorIn'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='resistor']/@borderedNodeMappings[name='resistorOut']" targetFinderExpression="feature:toPort" sourceFinderExpression="feature:fromPort" domainClass="ftp.ElectricalConnection" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="hydrConnection" label="Hydraulic Connection" sourceMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compHyroPort']" targetMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compHyroPort']" targetFinderExpression="feature:toPort" sourceFinderExpression="feature:fromPort" domainClass="ftp.HydraulicConnection" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="topComponent" label="Top-Level Component" semanticCandidatesExpression="feature:composition" domainClass="ftp.ComposedComponent">
+          <borderedNodeMappings name="composedSigPort" label="Composed Signal Port" semanticCandidatesExpression="feature:ports" domainClass="ftp.SignalPort">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="4" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="compObsPort" label="Composed Visual Port" semanticCandidatesExpression="feature:ports" domainClass="ftp.VisualPort">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="4" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="compElecPort" label="Composed Electrical Port" semanticCandidatesExpression="feature:ports" domainClass="ftp.ElectricalPort">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="4" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="compHyroPort" label="Composed Hydraulic Port" semanticCandidatesExpression="feature:ports" domainClass="ftp.HydraulicPort">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="4" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </borderedNodeMappings>
+          <subNodeMappings name="digitalSwitch" label="Digital Switch" semanticCandidatesExpression="feature:composition" domainClass="ftp.DigitalSwitch">
+            <borderedNodeMappings name="dSwitchIn" label="Digital Switch In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="dSwitchSet" label="Digital Switch Set" semanticCandidatesExpression="feature:setPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="dSwitchOut" label="Digital Switch Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/Illuminated-tactile-switch.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="digitalBattery" label="Digital Battery" semanticCandidatesExpression="feature:composition" domainClass="ftp.DigitalBattery">
+            <borderedNodeMappings name="dBatIn" label="Digital Battery In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="dBatOut" label="Digital Battery Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/020-electric-battery-icon-VectorCopy-big.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="digitalLamp" label="Digital Lamp" semanticCandidatesExpression="feature:composition" domainClass="ftp.DigitalLamp">
+            <borderedNodeMappings name="dLampIn" label="Digital Lamp In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="dLampOut" label="Digital Lamp Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="dLampLight" label="Digital Lamp Light" semanticCandidatesExpression="feature:lightPort" domainClass="ftp.VisualPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="4" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="Digital Lamp" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/lightbulb.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="analogBattery" label="Analog Battery" semanticCandidatesExpression="feature:composition" domainClass="ftp.AnalogBattery">
+            <borderedNodeMappings name="aBatIn" label="Analog Battery In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="aBatOut" label="Analog Battery Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:type" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/ftp.design/icons/battery-gif.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="analogSwitch" label="Analog Switch" semanticCandidatesExpression="feature:composition" domainClass="ftp.AnalogSwitch">
+            <borderedNodeMappings name="aSwitchIn" label="Analog Switch In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="aSwitchSet" label="Analog Switch Set" semanticCandidatesExpression="feature:setPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="aSwitchOut" label="Analog Switch Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:type" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/ftp.design/icons/Push-to-make_switch_electronic_symbol.svg.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="analogLamp" label="Analog Lamp" semanticCandidatesExpression="feature:composition" domainClass="ftp.AnalogLamp">
+            <borderedNodeMappings name="aLampIn" label="Analog Lamp In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="aLampOut" label="Analog Lamp Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="aLampLight" label="Analog Lamp Light" semanticCandidatesExpression="feature:lightPort" domainClass="ftp.VisualPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="3" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="Analog Lamp" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/lightbulb.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="resistor" label="Resistor" semanticCandidatesExpression="feature:composition" domainClass="ftp.Resistor">
+            <borderedNodeMappings name="resistorIn" label="Resistor In" semanticCandidatesExpression="feature:inPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="resistorOut" label="Resistor Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.ElectricalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="Resistor" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/resistor.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ntrans" label="N-Type Transistor" semanticCandidatesExpression="feature:composition" domainClass="ftp.NTransistor">
+            <borderedNodeMappings name="ntransGate" label="N Transistor Gate" semanticCandidatesExpression="feature:gate" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ntransSource" label="N Transistor Source" semanticCandidatesExpression="feature:source" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="3" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ntransDrain" label="N Transistor Drain" semanticCandidatesExpression="feature:drain" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="3" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:type" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/ftp.design/icons/150px-JFET_N-Channel_Labelled.svg.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ptrans" label="P-Type Transistor" semanticCandidatesExpression="feature:composition" domainClass="ftp.PTransistor">
+            <borderedNodeMappings name="ptransGate" label="P Transistor Gate" semanticCandidatesExpression="feature:gate" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ptransSource" label="P Transistor Source" semanticCandidatesExpression="feature:source" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="3" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="ptransDrain" label="P Transistor Drain" semanticCandidatesExpression="feature:drain" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="3" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="feature:type" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/ftp.design/icons/150px-JFET_P-Channel_Labelled.svg.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="sigConst" label="Signal Constant" semanticCandidatesExpression="feature:composition" domainClass="ftp.SignalConstant">
+            <borderedNodeMappings name="sigConOut" label="Signal Constant Out" semanticCandidatesExpression="feature:outPort" domainClass="ftp.SignalPort">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="feature:type" labelPosition="node" resizeKind="NSEW" width="2" height="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="Constant" labelPosition="node" resizeKind="NSEW" width="4" height="2">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            </style>
+          </subNodeMappings>
+          <subContainerMappings name="composedComponent" label="Composed Component" semanticCandidatesExpression="feature:composition" domainClass="ftp.ComposedComponent" reusedBorderedNodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='composedSigPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compObsPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compElecPort'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compHyroPort']" reusedNodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalBattery'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogBattery'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='resistor'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='sigConst']" reusedContainerMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']">
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="feature:type">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" labelSize="12" labelExpression="feature:type">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="obs" label="Observation" detailDescriptions="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@toolSections.4/@ownedTools[name='newFT']" semanticCandidatesExpression="feature:observations" domainClass="ftp.Observation" childrenPresentation="HorizontalStack">
+          <subContainerMappings name="pvCont" label="Port Value" semanticCandidatesExpression="feature:portValues" domainClass="ftp.PortValue" childrenPresentation="List">
+            <subNodeMappings name="tpv" label="Typed Port Value" semanticCandidatesExpression="feature:value" domainClass="ftp.TypedPortValue">
+              <style xsi:type="style:NoteDescription" labelExpression="aql:'value:'" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelFormat>italic</labelFormat>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" labelExpression="aql:self.port.type">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false" labelExpression="aql:'Observation '+self.name">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="portTools" label="ports">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newSigPort" label="Signal" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='composedSigPort']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.SignalPort" referenceName="ports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newObsPort" label="Visual" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compObsPort']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.VisualPort" referenceName="ports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newElecPort" label="Electrical" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compElecPort']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.ElectricalPort" referenceName="ports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newHydrPort" label="Hydraulic" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@borderedNodeMappings[name='compHyroPort']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.HydraulicPort" referenceName="ports"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="compTools" label="components">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newDSwitch" label="Digital Switch" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalSwitch']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.DigitalSwitch" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newDBattery" label="Digital Battery" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalBattery']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.DigitalBattery" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newDLamp" label="Digital Lamp" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='digitalLamp']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.DigitalLamp" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newCustom" label="Custom" containerMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subContainerMappings[name='composedComponent'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.ComposedComponent" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newABattery" label="Analog Battery" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogBattery']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.AnalogBattery" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newASwitch" label="Analog Switch" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogSwitch']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.AnalogSwitch" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newALamp" label="Analog Lamp" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='analogLamp']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.AnalogLamp" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newResistor" label="Resistor" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='resistor']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.Resistor" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newNTrans" label="N-Type Transistor" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ntrans']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.NTransistor" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newPTrans" label="P-Type Transistor" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='ptrans']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.PTransistor" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="newSigCon" label="Signal Constant" nodeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='topComponent']/@subNodeMappings[name='sigConst']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.SignalConstant" referenceName="composition"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="edgeTools" label="connections">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="newSigConn" label="Signal" edgeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@edgeMappings[name='sigConnection']">
+            <sourceVariable name="source">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </sourceVariable>
+            <targetVariable name="target">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </targetVariable>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:sourceGrandparent.equals(targetGrandparent) or sourceGrandparent.equals(targetParent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceGrandparent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.SignalConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:sourceParent.equals(targetGrandparent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceParent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.SignalConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="newVisConn" label="Visual" edgeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@edgeMappings[name='obsConnection']">
+            <sourceVariable name="source">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </sourceVariable>
+            <targetVariable name="target">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </targetVariable>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:sourceGrandparent.equals(targetGrandparent) or sourceGrandparent.equals(targetParent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceGrandparent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.VisualConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:sourceParent.equals(targetGrandparent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceParent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.VisualConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="newElecConn" label="Electrical" edgeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@edgeMappings[name='elecConnection']">
+            <sourceVariable name="source">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </sourceVariable>
+            <targetVariable name="target">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </targetVariable>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:sourceGrandparent.equals(targetGrandparent) or sourceGrandparent.equals(targetParent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceGrandparent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.ElectricalConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:sourceParent.equals(targetGrandparent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceParent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.ElectricalConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="newHydrConn" label="Hydraulic" edgeMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@edgeMappings[name='hydrConnection']">
+            <sourceVariable name="source">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </sourceVariable>
+            <targetVariable name="target">
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetParent" computationExpression="aql:self.eContainer()"/>
+              <subVariables xsi:type="tool_1:AcceleoVariable" name="targetGrandparent" computationExpression="aql:self.eContainer().eContainer()"/>
+            </targetVariable>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="aql:sourceGrandparent.equals(targetGrandparent) or sourceGrandparent.equals(targetParent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceGrandparent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.HydraulicConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+                <cases conditionExpression="aql:sourceParent.equals(targetGrandparent)">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:sourceParent">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.HydraulicConnection" referenceName="composition">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="fromPort" valueExpression="var:source"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="toPort" valueExpression="var:target"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="obsTools" label="observations">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="newObs" label="Observation" containerMappings="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='composition']/@defaultLayer/@containerMappings[name='obs']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.Observation" referenceName="observations" variableName="observation">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:observation">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="component" valueExpression="aql:self.eContainer().composition"/>
+                    <subModelOperations xsi:type="tool_1:For" expression="aql:self.component.ports">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:observation">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ftp.PortValue" referenceName="portValues" variableName="portvalue">
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:portvalue">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="port" valueExpression="var:i"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="value" valueExpression="aql:i.newPortValue()"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections>
+          <ownedTools xsi:type="tool:DiagramCreationDescription" name="newFT" label="New Fault Tree" browseExpression="aql:self.faulttree" diagramDescription="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="faulttree" valueExpression="aql:self.buildFaultTree()"/>
+            </initialOperation>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="faultTree" label="Fault Tree Diagram" domainClass="ftp.FaultTree">
+      <layout xsi:type="description_1:OrderedTreeLayout" childrenExpression="feature:inputs" nodeMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='AndNode'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='OrNode'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='RootNode']"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="OrNode" label="Or Gate" semanticCandidatesExpression="feature:ftnodes" domainClass="ftp.OrGate">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="OR" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/or.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="AndNode" label="And Gate" semanticCandidatesExpression="feature:ftnodes" domainClass="ftp.AndGate">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="AND" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/ftp.design/icons/and.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="FaultNode" label="Fault" semanticCandidatesExpression="feature:ftnodes" domainClass="ftp.Fault">
+          <style xsi:type="style:EllipseNodeDescription" showIcon="false" labelExpression="feature:description" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RootNode" label="Root Event" semanticCandidatesExpression="feature:ftnodes" domainClass="ftp.RootEvent">
+          <style xsi:type="style:SquareDescription" labelExpression="feature:observation" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="inputEdge" label="Input Edge" sourceMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='AndNode'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='OrNode'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='RootNode']" targetMapping="//@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='AndNode'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='FaultNode'] //@ownedViewpoints[name='ftp']/@ownedRepresentations[name='faultTree']/@defaultLayer/@nodeMappings[name='OrNode']" targetFinderExpression="feature:inputs">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>
