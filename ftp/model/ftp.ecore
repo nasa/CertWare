@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ftp" nsURI="http://www.example.org/ftp" nsPrefix="ftp">
+  <eClassifiers xsi:type="ecore:EClass" name="FaultTree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ftnodes" lowerBound="1"
+        upperBound="-1" eType="#//FTNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" lowerBound="1" eType="#//FTNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FTNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrGate" eSuperTypes="#//FTNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="2"
+        upperBound="-1" eType="#//FTNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndGate" eSuperTypes="#//FTNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="2"
+        upperBound="-1" eType="#//FTNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fault" eSuperTypes="#//FTNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Observation">
+    <eOperations name="buildFaultTree" lowerBound="1" eType="#//FaultTree"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" lowerBound="1"
+        eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portValues" upperBound="-1"
+        eType="#//PortValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="faultLimit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="faulttree" eType="#//FaultTree"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//CompositionElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eOperations name="newPortValue" lowerBound="1" eType="#//TypedPortValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection" eSuperTypes="#//CompositionElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fromPort" lowerBound="1"
+        eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toPort" lowerBound="1"
+        eType="#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DigintalConnection" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalogConnection" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalConnection" eSuperTypes="#//DigintalConnection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalConnection" eSuperTypes="#//AnalogConnection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HydraulicConnection" eSuperTypes="#//AnalogConnection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MechanicalConnection" eSuperTypes="#//AnalogConnection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveComponent" eSuperTypes="#//Component"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComposedComponent" eSuperTypes="#//Component">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composition" upperBound="-1"
+        eType="#//CompositionElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//Port" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositionElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PortValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="port" lowerBound="1" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//TypedPortValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resistor" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resistance" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="6.0"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Capacitor" eSuperTypes="#//PrimitiveComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalogBattery" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="12.0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalogSwitch" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnalogLamp" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//ElectricalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lightPort" lowerBound="1"
+        eType="#//VisualPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalBattery" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalSwitch" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="setPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DigitalLamp" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lightPort" lowerBound="1"
+        eType="#//VisualPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//PrimitiveComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Xor" eSuperTypes="#//PrimitiveComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//PrimitiveComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NTransistor" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" lowerBound="1" eType="#//SignalPort"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drain" lowerBound="1" eType="#//SignalPort"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTransistor" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gate" lowerBound="1" eType="#//SignalPort"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drain" lowerBound="1" eType="#//SignalPort"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DFlipFlop" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clockPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statePort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HydraulicPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualConnection" eSuperTypes="#//Connection"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FaultTreeContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composition" lowerBound="1"
+        eType="#//ComposedComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="observations" upperBound="-1"
+        eType="#//Observation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootEvent" eSuperTypes="#//FTNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="observation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
+        upperBound="-1" eType="#//FTNode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MechanicalPort" eSuperTypes="#//Port"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedPortValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalValue" eSuperTypes="#//TypedPortValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="signal" lowerBound="1"
+        eType="#//SignalValues"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElectricalValue" eSuperTypes="#//TypedPortValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="current" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="voltage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyCurrent" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyVoltage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HydraulicValue" eSuperTypes="#//TypedPortValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flow" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pressure" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyFlow" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyPressure" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SignalValues">
+    <eLiterals name="off"/>
+    <eLiterals name="on" value="1"/>
+    <eLiterals name="any" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VisualValues">
+    <eLiterals name="light"/>
+    <eLiterals name="dark" value="1"/>
+    <eLiterals name="any" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisualValue" eSuperTypes="#//TypedPortValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bulb" lowerBound="1" eType="#//VisualValues"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatValue" eSuperTypes="#//TypedPortValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalConstant" eSuperTypes="#//PrimitiveComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPort" lowerBound="1"
+        eType="#//SignalPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="#//SignalValues"/>
+  </eClassifiers>
+</ecore:EPackage>
