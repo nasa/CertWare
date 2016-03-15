@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import net.certware.argument.eur.parts.ArgumentPropertiesEditionPart;
-import net.certware.argument.eur.parts.EurViewsRepository;
-import net.certware.argument.eur.providers.EurMessages;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
@@ -48,6 +44,10 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Text;
+
+import net.certware.argument.eur.parts.ArgumentPropertiesEditionPart;
+import net.certware.argument.eur.parts.EurViewsRepository;
+import net.certware.argument.eur.providers.EurMessages;
 
 
 

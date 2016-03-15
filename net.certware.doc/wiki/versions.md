@@ -6,7 +6,7 @@
 
 _Update_:
 * Added OMG Structured Assurance Case Metamodel support, tree editor only without graphical editor. In general this model is rather too flat for graphical representation as is.  
-* Added a fault tree generator producing accurate models from physical system descriptions.  
+* Added Fault Trees from Physics models, a fault tree generator producing accurate models from physical system descriptions.  
 * Added a new language ```L``` for writing assurance and safety case arguments using semi-structured text while using an automated solver to check for consistency and completeness.  
 * Added intent specification models based on Leveson's concepts.  
 * Added a state analysis model based on the JPL state analysis model from the Mission Data System work.  

@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Argument EUROCONTROL Model
 Bundle-SymbolicName: net.certware.argument.eur;singleton:=true
-Bundle-Version: 1.2.1.qualifier
+Bundle-Version: 1.2.4.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

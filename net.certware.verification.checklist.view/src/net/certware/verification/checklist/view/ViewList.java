@@ -964,6 +964,7 @@ public class ViewList extends ViewPart implements ICertWareConstants, ICertWareV
 	 * @return context provider 
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(Class)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class key) {
 

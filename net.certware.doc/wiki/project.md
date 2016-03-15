@@ -32,6 +32,7 @@ ___
 * **CAZ** (deprecated) A diagram for claim-argument-evidence notation derived from CAE and ARM metamodels.
 * **EUR** A EUROCONTROL notation metamodel derived from the ARM metamodel and reflecting the slight differences of this notation from GSN.  
 * **EUZ** A diagram for EUROCONTROL notation derived from EUR and ARM metamodels.
+* **FTP** Model support for fault trees from physics. 
 * **GSN** A goal structuring notation metamodel derived from the ARM metamodel.
 * **GSZ** A diagram for goal structuring notation derived from GSN and ARM metamodels.
 * **HAZ** A simple hazard analysis metamodel.

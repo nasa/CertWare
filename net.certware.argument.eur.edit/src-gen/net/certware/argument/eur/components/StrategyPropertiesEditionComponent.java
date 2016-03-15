@@ -3,27 +3,12 @@
  */
 package net.certware.argument.eur.components;
 
-// Start of user code for imports
-import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.arm.TaggedValue;
-import net.certware.argument.eur.Argument;
-import net.certware.argument.eur.Assumption;
-import net.certware.argument.eur.Context;
-import net.certware.argument.eur.Criteria;
-import net.certware.argument.eur.EurPackage;
-import net.certware.argument.eur.Justification;
-import net.certware.argument.eur.Solution;
-import net.certware.argument.eur.Strategy;
-import net.certware.argument.eur.parts.EurViewsRepository;
-import net.certware.argument.eur.parts.StrategyPropertiesEditionPart;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -43,6 +28,20 @@ import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+
+// Start of user code for imports
+import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.TaggedValue;
+import net.certware.argument.eur.Argument;
+import net.certware.argument.eur.Assumption;
+import net.certware.argument.eur.Context;
+import net.certware.argument.eur.Criteria;
+import net.certware.argument.eur.EurPackage;
+import net.certware.argument.eur.Justification;
+import net.certware.argument.eur.Solution;
+import net.certware.argument.eur.Strategy;
+import net.certware.argument.eur.parts.EurViewsRepository;
+import net.certware.argument.eur.parts.StrategyPropertiesEditionPart;
 	
 
 // End of user code

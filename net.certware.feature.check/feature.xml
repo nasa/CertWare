@@ -96,21 +96,21 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <import plugin="org.eclipse.emf.eef.runtime"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.ui.ide"/>
-      <import plugin="net.certware.core.ui" version="1.2.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.eef.runtime.extended" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="net.certware.core.ui"/>
+      <import plugin="org.eclipse.emf.eef.runtime.extended"/>
       <import plugin="org.eclipse.ui.navigator"/>
-      <import plugin="net.certware.core" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="net.certware.core"/>
       <import plugin="org.eclipse.core.jobs"/>
       <import plugin="org.eclipse.emf.common"/>
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.osgi"/>
       <import plugin="org.eclipse.swt"/>
       <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="net.certware.verification.checklist.edit"/>
       <import plugin="org.eclipse.core.expressions"/>
       <import plugin="org.eclipse.equinox.preferences"/>
       <import plugin="org.eclipse.help"/>
       <import plugin="net.certware.example"/>
-      <import plugin="net.certware.verification.checklist.edit" version="1.2.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

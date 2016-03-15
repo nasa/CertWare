@@ -2,8 +2,9 @@
 <feature
       id="net.certware.feature.eur"
       label="CertWare EUROCONTROL Notation Support"
-      version="1.2.3.qualifier"
+      version="1.2.4.qualifier"
       provider-name="Kestrel Technology LLC"
+      plugin="net.certware.branding"
       license-feature="net.certware.feature"
       license-feature-version="2.0.0.qualifier">
 
@@ -94,8 +95,8 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.help"/>
       <import plugin="org.eclipse.ui.navigator"/>
       <import plugin="org.eclipse.core.jobs"/>
@@ -124,82 +125,97 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing"/>
       <import plugin="org.eclipse.gmf.runtime.diagram.ui.printing.render"/>
       <import plugin="org.eclipse.epsilon.evl.emf.validation"/>
+      <import plugin="net.certware.argument.arm"/>
+      <import plugin="org.junit"/>
+      <import plugin="net.certware.argument.eur"/>
+      <import plugin="net.certware.argument.arm.edit"/>
+      <import plugin="org.eclipse.emf.eef.runtime"/>
+      <import plugin="org.eclipse.emf.eef.runtime.extended"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import plugin="net.certware.argument.eur.edit"/>
+      <import plugin="net.certware.core.ui"/>
+      <import plugin="net.certware.core"/>
+      <import plugin="net.certware.example"/>
+      <import plugin="net.certware.argument.euz"/>
+      <import plugin="net.certware.argument.euz.edit"/>
+      <import plugin="net.certware.argument.diagram.figures"/>
+      <import plugin="net.certware.core.ui" version="1.1.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
          id="net.certware.argument.eur"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.eur.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.eur.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.eur.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="1.2.4.qualifier"/>
 
    <plugin
          id="net.certware.argument.eur.navigator"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.example.eur"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          fragment="true"/>
 
    <plugin
          id="net.certware.argument.euz"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.euz.diagram"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.euz.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.euz.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.euz.validator"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.2.4.qualifier"
          unpack="false"/>
 
 </feature>

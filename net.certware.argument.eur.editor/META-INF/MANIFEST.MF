@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: net.certware.argument.eur.editor;singleton:=true
-Bundle-Version: 1.2.1.qualifier
+Bundle-Version: 1.2.4.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: net.certware.argument.eur.presentation.EurEditorPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -16,9 +16,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.edit.ui;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport,
  net.certware.argument.arm.edit;visibility:=reexport,
- net.certware.core.ui;bundle-version="1.1.0"
+ net.certware.core.ui
 Bundle-ActivationPolicy: lazy
 Import-Package: net.certware.argument.eur.presentation,
  net.certware.core.ui.help,
+ org.eclipse.emf.eef.runtime.ui,
  org.eclipse.emf.eef.runtime.ui.editor,
  org.eclipse.help

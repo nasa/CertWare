@@ -17,4 +17,4 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.core;bundle-version="1.2.0",
  net.certware.core.ui;bundle-version="1.2.1",
  net.certware.verification.checklist.edit;bundle-version="1.2.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

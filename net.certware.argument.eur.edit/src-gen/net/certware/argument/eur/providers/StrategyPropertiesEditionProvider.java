@@ -5,24 +5,17 @@ package net.certware.argument.eur.providers;
 
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
+import org.eclipse.jface.viewers.IFilter;
+
 import net.certware.argument.eur.EurPackage;
 import net.certware.argument.eur.Strategy;
-
 import net.certware.argument.eur.components.StrategyPropertiesEditionComponent;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
-import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
-import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
-
-import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-
-import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
-
-import org.eclipse.jface.viewers.IFilter;
 
 /**
  * 

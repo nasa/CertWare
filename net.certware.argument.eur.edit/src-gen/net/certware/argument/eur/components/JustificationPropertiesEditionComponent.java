@@ -3,13 +3,6 @@
  */
 package net.certware.argument.eur.components;
 
-// Start of user code for imports
-import net.certware.argument.arm.ArmPackage;
-import net.certware.argument.arm.TaggedValue;
-import net.certware.argument.eur.Justification;
-import net.certware.argument.eur.parts.EurViewsRepository;
-import net.certware.argument.eur.parts.JustificationPropertiesEditionPart;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
@@ -34,6 +27,13 @@ import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
 import org.eclipse.emf.eef.runtime.ui.widgets.referencestable.ReferencesTableSettings;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
+
+// Start of user code for imports
+import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.TaggedValue;
+import net.certware.argument.eur.Justification;
+import net.certware.argument.eur.parts.EurViewsRepository;
+import net.certware.argument.eur.parts.JustificationPropertiesEditionPart;
 	
 
 // End of user code

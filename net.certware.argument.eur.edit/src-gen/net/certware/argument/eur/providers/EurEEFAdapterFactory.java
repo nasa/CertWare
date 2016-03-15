@@ -3,9 +3,9 @@
  */
 package net.certware.argument.eur.providers;
 
-import net.certware.argument.eur.util.EurAdapterFactory;
-
 import org.eclipse.emf.common.notify.Adapter;
+
+import net.certware.argument.eur.util.EurAdapterFactory;
 
 /**
  * 
