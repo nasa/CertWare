@@ -153,7 +153,6 @@ public class ComponentImpl extends CompositionElementImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

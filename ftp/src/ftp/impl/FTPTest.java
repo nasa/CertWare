@@ -21,6 +21,7 @@ import ftp.VisualValues;
 
 public class FTPTest {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		// Build circuit4761A components in Java

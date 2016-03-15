@@ -8,14 +8,11 @@
 
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated ftp -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
       <wizard
             id="ftp.presentation.FtpModelWizardID"
             name="%_UI_FtpModelWizard_label"
             class="ftp.presentation.FtpModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            category="net.certware.core.ui.newwizard.category"
             icon="icons/full/obj16/FtpModelFile.gif">
          <description>%_UI_FtpModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
@@ -32,6 +29,15 @@
             class="ftp.presentation.FtpEditor"
             contributorClass="ftp.presentation.FtpActionBarContributor">
       </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="ftp.presentation.FtpModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
    </extension>
 
 </plugin>

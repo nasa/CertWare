@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: ftp.design
+Bundle-Name: CertWare Fault Trees from Physics Diagrams
 Bundle-SymbolicName: ftp.design;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Activator: ftp.design.Activator
@@ -11,4 +11,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.sirius.common.acceleo.mtl,
  ftp;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Kestrel Technology LLC

@@ -2,7 +2,15 @@
  */
 package ftp.impl;
 
-import ftp.FloatValue;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import ftp.FtpPackage;
 import ftp.Port;
 import ftp.SignalConstant;
@@ -10,17 +18,6 @@ import ftp.SignalPort;
 import ftp.SignalValue;
 import ftp.SignalValues;
 import ftp.TypedPortValue;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
