@@ -6,7 +6,7 @@
       provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare editor model and diagram support for the FTP method.
@@ -26,6 +26,10 @@ reserved.
       <update label="CertWare" url="http://updatesite.certware.net"/>
       <discovery label="Eclipse Sirius" url="http://download.eclipse.org/sirius/updates/releases/3.1.4"/>
    </url>
+
+   <includes
+         id="net.certware.feature"
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.core.runtime"/>

@@ -7,7 +7,7 @@
       plugin="net.certware.branding"
       os="linux,win32"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare support for L argumentation language editor and solvers.
@@ -26,6 +26,10 @@ reserved.
    <url>
       <update label="CertWare" url="http://updatesite.certware.net"/>
    </url>
+
+   <includes
+         id="net.certware.feature"
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.xtext"/>

@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?>
-
-<target name="Restored Target" sequenceNumber="27">
+<?pde version="3.8"?><target name="Restored Target" sequenceNumber="28">
 <locations>
-<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.egit.feature.group" version="1.1.0.201109151100-r"/>
-<unit id="org.eclipse.acceleo.sdk.feature.group" version="3.1.1.v20110914-0246"/>
-<unit id="org.eclipse.emf.eef.indigo.feature.group" version="1.0.1.v20110912-0930"/>
-<unit id="org.eclipse.gef.sdk.feature.group" version="3.7.1.v20110830-1143-7G7W2A5WNgEQNgNXBJgcPLWZeMNI"/>
-<unit id="org.eclipse.gmf.runtime.sdk.feature.group" version="1.5.0.v20110607-1200-67N09E9QnChoWswz-3wf_rz0kQ8Y"/>
-<repository location="http://download.eclipse.org/releases/indigo"/>
-</location>
 <location path="${eclipse_home}" type="Profile"/>
 </locations>
 <environment>

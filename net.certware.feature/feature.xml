@@ -221,53 +221,53 @@ The library is aggregated into the net.certware.libs.inference.jar plugin:
          id="net.certware.branding"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="2.0.0.qualifier"/>
 
    <plugin
          id="net.certware.example"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.export"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="2.0.0.qualifier"/>
 
    <plugin
          id="net.certware.libs.doc"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="2.0.0.qualifier"/>
 
    <plugin
          id="net.certware.intro"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.core"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.core.ui"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin

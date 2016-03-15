@@ -6,7 +6,7 @@
       provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare argument support for Goal Structuring Notation (GSN) structured text and diagram models.
@@ -82,6 +82,10 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
 
    <url>
       <update label="CertWare" url="http://updatesite.certware.net"/>
+      <discovery label="Eclipse Graphiti" url="http://download.eclipse.org/graphiti/updates/0.12.1"/>
+      <discovery label="Eclipse Epsilon" url="http://download.eclipse.org/epsilon/updates"/>
+      <discovery label="Eclipse GMF" url="http://download.eclipse.org/modeling/gmp/updates/releases/"/>
+      <discovery label="Eclipse EEF" url="http://download.eclipse.org/modeling/emft/eef/updates/releases"/>
    </url>
 
    <includes

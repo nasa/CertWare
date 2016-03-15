@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Example Patterns for ARM
 Bundle-SymbolicName: net.certware.example.arm;singleton:=true
-Bundle-Version: 1.2.1.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-ClassPath: net.certware.example.arm
 Bundle-Vendor: Kestrel Technology LLC
 Fragment-Host: net.certware.example

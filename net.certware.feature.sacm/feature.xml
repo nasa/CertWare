@@ -6,14 +6,15 @@
       provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare support for the OMG SACM model.
    </description>
 
    <copyright>
-      Copyright (c) 2013-14 United States Government as represented by
+      Copyright (c) 2013-16 United States Government as represented
+by
 the National Aeronautics and Space Administration.  All rights
 reserved.
    </copyright>
@@ -24,6 +25,10 @@ reserved.
 
    <url>
       <update label="CertWare" url="http://updatesite.certware.net"/>
+      <discovery label="Eclipse Graphiti" url="http://download.eclipse.org/graphiti/updates/0.12.1"/>
+      <discovery label="Eclipse Epsilon" url="http://download.eclipse.org/epsilon/updates"/>
+      <discovery label="Eclipse GMF" url="http://download.eclipse.org/modeling/gmp/updates/releases/"/>
+      <discovery label="Eclipse EEF" url="http://download.eclipse.org/modeling/emft/eef/updates/releases"/>
    </url>
 
    <includes
@@ -55,6 +60,15 @@ reserved.
       <import plugin="org.eclipse.jface"/>
       <import plugin="org.eclipse.ui.workbench"/>
       <import plugin="org.eclipse.ui.cheatsheets"/>
+      <import plugin="org.eclipse.core.runtime" version="3.9.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.8.101" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.105.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.9.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.9.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.workspace" version="1.5.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.graphiti"/>
+      <import plugin="org.eclipse.graphiti.ui"/>
    </requires>
 
    <plugin
@@ -118,5 +132,12 @@ reserved.
          install-size="0"
          version="0.0.0"
          fragment="true"/>
+
+   <plugin
+         id="net.certware.sacm.graphiti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
 </feature>

@@ -6,7 +6,7 @@
       provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare modeling support for state analysis (SA) 

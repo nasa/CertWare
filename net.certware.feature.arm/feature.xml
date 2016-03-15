@@ -2,11 +2,11 @@
 <feature
       id="net.certware.feature.arm"
       label="CertWare ARM Notation Support"
-      version="1.2.3.qualifier"
+      version="2.0.0.qualifier"
       provider-name="Kestrel Technology LLC"
       plugin="net.certware.branding"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare plugins supporting the OMG&apos;s argumentation metamodel
@@ -118,48 +118,48 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
          id="net.certware.argument.arm"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.arm.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.arm.editor"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.argument.arm.help"
          download-size="0"
          install-size="0"
-         version="0.0.0"/>
+         version="2.0.0.qualifier"/>
 
    <plugin
          id="net.certware.argument.arm.navigator"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="net.certware.example.arm"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          fragment="true"/>
 
    <plugin
          id="net.certware.export.arm"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.0.0.qualifier"
          unpack="false"/>
 
 </feature>

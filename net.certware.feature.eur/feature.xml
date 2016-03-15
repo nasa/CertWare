@@ -5,7 +5,7 @@
       version="1.2.3.qualifier"
       provider-name="Kestrel Technology LLC"
       license-feature="net.certware.feature"
-      license-feature-version="1.2.3.qualifier">
+      license-feature-version="2.0.0.qualifier">
 
    <description url="http://nasa.github.com/CertWare">
       CertWare argument support for EUROCONTROL-style structured text and diagram models.
@@ -86,8 +86,7 @@ BE INCURRED FROM USE OF THIS SOFTWARE.
 
    <includes
          id="net.certware.feature.arm"
-         version="0.0.0"
-         search-location="both"/>
+         version="0.0.0"/>
 
    <requires>
       <import plugin="org.eclipse.core.runtime"/>
