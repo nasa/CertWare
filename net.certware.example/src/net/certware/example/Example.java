@@ -39,6 +39,8 @@ public class Example implements IExampleContribution {
 	List<String> relatedDocuments = new ArrayList<String>();
 	/** related resources to load when applying the pattern or document */
 	List<ExampleResource> relatedResources = new ArrayList<ExampleResource>();
+	/** related sites to load when applying the pattern or document */
+	List<ExampleSite> relatedSites = new ArrayList<ExampleSite>();
 
 	/**
 	 * Constructor assigned none of the fields.
@@ -94,6 +96,16 @@ public class Example implements IExampleContribution {
 														  pc.getAttribute(EXAMPLE_ATTR_STRUCTURE)));
 			}
 		}
+		
+		// associated sites
+		patternChildren = ce.getChildren(EXAMPLE_ELEMENT_WEBSITE);
+		if ( patternChildren != null ) {
+			for ( IConfigurationElement pc : patternChildren ) {
+				relatedSites.add( new ExampleSite(pc.getAttribute(EXAMPLE_ATTR_DESCRIPTION),
+						  							  pc.getAttribute(EXAMPLE_ATTR_URL)));
+			}
+		}
+		
 	}
 
 	/**
@@ -202,6 +214,14 @@ public class Example implements IExampleContribution {
 	 */
 	public List<ExampleResource> getRelatedResources() {
 		return relatedResources;
+	}
+
+	/**
+	 * Returns the related sites list.
+	 * @return related sites list
+	 */
+	public List<ExampleSite> getRelatedSites() {
+		return relatedSites;
 	}
 	
 	/**

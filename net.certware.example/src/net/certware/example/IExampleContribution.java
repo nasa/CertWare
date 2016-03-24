@@ -15,6 +15,7 @@ public interface IExampleContribution {
 	/** extension point element key for check lists */
 	final String EXAMPLE_ELEMENT_CHECKLIST = "checklist"; //$NON-NLS-1$
 
+
 	/** extension point attribute key for applicability */
 	final String EXAMPLE_ATTR_APPLICABILITY = "applicability"; //$NON-NLS-1$
 	/** extension point attribute key for author */
@@ -55,6 +56,13 @@ public interface IExampleContribution {
 	final String EXAMPLE_ATTR_DESCRIPTION = "description"; //$NON-NLS-1$
 	/** extension point attribute key for resource structure */
 	final String EXAMPLE_ATTR_STRUCTURE = "structure"; //$NON-NLS-1$
+	
+	/** extension point element key for sites */
+	final String EXAMPLE_ELEMENT_WEBSITE = "website"; //$NON-NLS-1$
+	// /** extension point attribute key for resource description */
+	// final String EXAMPLE_ATTR_DESCRIPTION = "description";
+	/** extension point attribute key for site address */
+	final String EXAMPLE_ATTR_URL = "url"; //$NON-NLS-1$
 
 	/** category name substitution for patterns */
 	final String PATTERN_CATEGORY = "Pattern"; //$NON-NLS-1$

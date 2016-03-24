@@ -5,6 +5,7 @@ import net.certware.example.Example;
 import net.certware.example.ExampleCategory;
 import net.certware.example.ExampleContributions;
 import net.certware.example.ExampleResource;
+import net.certware.example.ExampleSite;
 
 import org.eclipse.core.runtime.Path;
 import org.eclipse.jface.dialogs.IDialogSettings;
@@ -44,6 +45,8 @@ public abstract class ExamplePage implements IDetailsPage
 	static final String RELATED_PATTERNS_SECTION_STATE = "related_patterns_section_state";
 	/** resources section key */
 	static final String RESOURCES_SECTION_STATE = "resources_section_state";
+	/** sites section key */
+	static final String SITES_SECTION_STATE = "sites_section_state";
 
 	/** the form toolkit created by dialog host */
 	FormToolkit toolkit = null;
@@ -53,6 +56,8 @@ public abstract class ExamplePage implements IDetailsPage
 	Font boldFont = null;
 	/** normal font for values */
 	Font normalFont = null;
+	/** terminal font for sites */
+	Font terminalFont = null;
 	/** example name */
 	Label nameValue = null;
 	/** example author */
@@ -73,12 +78,16 @@ public abstract class ExamplePage implements IDetailsPage
 	Composite detailsClient = null;
 	/** resources client */
 	Composite resourcesClient = null;
+	/** sites client */
+	Composite sitesClient = null;
 	/** related documents client */
 	Composite relatedDocumentsClient = null;
 	/** related patterns client */
 	Composite relatedPatternsClient = null;
 	/** resources section */
 	Section resourcesSection = null;
+	/** web sites section */
+	Section sitesSection = null;
 	/** related documents section */
 	Section relatedDocumentsSection = null;
 	/** related patterns section */
@@ -204,6 +213,17 @@ public abstract class ExamplePage implements IDetailsPage
 		dcl.numColumns = 2;
 		resourcesClient.setLayout( dcl );
 		resourcesSection.setClient(resourcesClient);
+		
+		// web sites section
+		sitesSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE);
+		sitesSection.setText("Contributed Sites");
+		sitesSection.setDescription("Sites for reference in external browser");
+		sitesSection.setLayoutData(new TableWrapData(TableWrapData.FILL, TableWrapData.TOP));
+		sitesClient = toolkit.createComposite(sitesSection);
+		dcl = new TableWrapLayout();
+		dcl.numColumns = 2;
+		sitesClient.setLayout( dcl );
+		sitesSection.setClient(sitesClient);
 
 		// related documents section
 		relatedDocumentsSection = toolkit.createSection(parent, Section.DESCRIPTION | Section.TITLE_BAR | Section.TWISTIE);
@@ -243,6 +263,14 @@ public abstract class ExamplePage implements IDetailsPage
 		resourcesSection.addExpansionListener(new IExpansionListener(){
 			public void expansionStateChanged(ExpansionEvent e) {
 				section.put(RESOURCES_SECTION_STATE, e.getState() );
+			}
+			public void expansionStateChanging(ExpansionEvent e) {
+			}});
+
+		sitesSection.setExpanded(section.getBoolean(SITES_SECTION_STATE));
+		sitesSection.addExpansionListener(new IExpansionListener(){
+			public void expansionStateChanged(ExpansionEvent e) {
+				section.put(SITES_SECTION_STATE, e.getState() );
 			}
 			public void expansionStateChanging(ExpansionEvent e) {
 			}});
@@ -300,6 +328,7 @@ public abstract class ExamplePage implements IDetailsPage
 		IDialogSettings settings = Activator.getDefault().getDialogSettings();
 		IDialogSettings section = settings.getSection(EXAMPLE_PAGE_SETTINGS);
 		section.put(RESOURCES_SECTION_STATE, resourcesSection.isExpanded());
+		section.put(SITES_SECTION_STATE, sitesSection.isExpanded());
 		section.put(RELATED_DOCUMENTS_SECTION_STATE, relatedDocumentsSection.isExpanded());
 		section.put(RELATED_PATTERNS_SECTION_STATE, relatedPatternsSection.isExpanded());
 	}
@@ -316,6 +345,7 @@ public abstract class ExamplePage implements IDetailsPage
 		boldFont = new Font(form.getForm().getDisplay(),d.getFontData());
 		d = d.setStyle(SWT.NORMAL);
 		normalFont = new Font(form.getForm().getDisplay(),d.getFontData());
+		terminalFont = JFaceResources.getFont(JFaceResources.TEXT_FONT);
 	}
 
 	/**
@@ -357,6 +387,7 @@ public abstract class ExamplePage implements IDetailsPage
 
 		// clear previous data
 		clearClient(resourcesClient);
+		clearClient(sitesClient);
 		clearClient(relatedDocumentsClient);
 		clearClient(relatedPatternsClient);
 
@@ -384,6 +415,17 @@ public abstract class ExamplePage implements IDetailsPage
 			toolkit.createLabel(resourcesClient, er.getDescription() );
 		}
 		
+		// display web sites
+		if ( example.getRelatedSites().size() > 0) {
+			toolkit.createLabel(sitesClient, "Web Site").setFont(boldFont);
+			toolkit.createLabel(sitesClient, "Description").setFont(boldFont);
+		}
+		for ( ExampleSite es : example.getRelatedSites() ) {
+			String location = es.getLocation();
+			toolkit.createLabel(sitesClient, location ).setFont(terminalFont);
+			toolkit.createLabel(sitesClient, es.getDescription() );
+		}
+		
 		// display related documents
 		if ( example.getRelatedDocuments().size() > 0 ) {
 			toolkit.createLabel(relatedDocumentsClient, "Document").setFont(boldFont);
@@ -403,6 +445,7 @@ public abstract class ExamplePage implements IDetailsPage
 		// layout clients
 		detailsClient.getParent().layout(true, true);
 		resourcesSection.getParent().layout(true,true);
+		sitesSection.getParent().layout(true,true);
 		relatedDocumentsSection.getParent().layout(true,true);
 		relatedPatternsSection.getParent().layout(true,true);
 

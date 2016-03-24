@@ -3,6 +3,7 @@ package net.certware.example.wizards;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.Enumeration;
@@ -13,6 +14,7 @@ import net.certware.example.Activator;
 import net.certware.example.Example;
 import net.certware.example.ExampleContributions;
 import net.certware.example.ExampleResource;
+import net.certware.example.ExampleSite;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -33,6 +35,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
@@ -161,11 +165,36 @@ public class ExampleWizard extends Wizard implements INewWizard {
 	 * @throw CoreException for resource problems
 	 */
 	private void doFinish(Example example, IContainer target, IProgressMonitor monitor) throws CoreException, IOException {
+		Activator examplePlugin = Activator.getDefault();
 
+		// open sites
+		monitor.beginTask(MessageFormat.format("Opening sites from example {0}",example.getName()),
+							example.getRelatedSites().size() );
+		for ( ExampleSite exampleSite : example.getRelatedSites() ) {
+			monitor.subTask(exampleSite.getDescription());
+			String location = exampleSite.getLocation();
+			if ( location != null ) {
+				if ( location.length() > 0 ) {
+					String message = MessageFormat.format("Opening contributed site {0}", location);
+					CertWareLog.logInfo(message);
+					try {
+						PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(new URL(location));
+					} catch( MalformedURLException e) {
+						CertWareLog.logError("Example could not open browser for URL:" + ' ' + location, e);
+					} catch( PartInitException e) {
+						CertWareLog.logError("Example could not launch browser from workbench",e);
+					}
+				}
+			}
+			
+			monitor.worked(1);
+		} // example sites
+
+		// done with sites
+		// copy resources
 		monitor.beginTask(MessageFormat.format("Copying resources from example {0}", 
 				example.getName()),
 				example.getRelatedResources().size() );
-		Activator examplePlugin = Activator.getDefault();
 
 		// for each resource found in the contributing example's resource list
 		for ( ExampleResource exampleResource : example.getRelatedResources() ) {

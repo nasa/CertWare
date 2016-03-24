@@ -21,14 +21,19 @@
             applicability="Safety case example for air traffic management"
             author="EUROCONTROL source, TTU reproduction"
             idd="net.certware.example.llang.document2"
+            implementation="L language argument model"
             intent="Reproduces Chapter 5 of the RVSM safety case"
             motivation="Illustrates the L language approach for writing an existing example"
-            name="RVSM Chapter 2 Argument Example"
-            version="1.0">
+            name="RVSM Chapter 5 Argument Example"
+            version="1.1">
          <resource
                description="RVSM Chapter 5 L Document"
                structure="resources/rvsm-5.l">
          </resource>
+         <website
+               description="EUROCONTROL Safety and Human Control Library"
+               url="http://www.eurocontrol.int/articles/safety-and-human-performance-library">
+         </website>
       </document>
       <document
             applicability="A graph defined by  a collection of edges"
