@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ftp:FaultTreeContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftp="http://www.example.org/ftp">
+  <composition name="top" type="circuit_4761A">
+    <composition xsi:type="ftp:DigitalBattery" type="d_battery">
+      <inPort name="battery in" type="In"/>
+      <outPort name="battery out" type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:DigitalSwitch" name="1" type="d_switch">
+      <inPort name="switch1 in" type="In"/>
+      <setPort name="switch1 set" type="Set"/>
+      <outPort name="switch1 out" type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:DigitalSwitch" name="2" type="d_switch">
+      <inPort name="switch2 in" type="In"/>
+      <setPort name="switch2 set" type="Set"/>
+      <outPort name="switch2 out" type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:DigitalLamp" type="d_lamp">
+      <inPort name="lamp in" type="In"/>
+      <outPort name="lamp out" type="Out"/>
+      <lightPort name="lamp light" type="Lightness"/>
+    </composition>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.0/@outPort" toPort="//@composition/@composition.1/@inPort"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.0/@outPort" toPort="//@composition/@composition.2/@inPort"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.1/@outPort" toPort="//@composition/@composition.3/@inPort"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@outPort" toPort="//@composition/@composition.3/@inPort"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@ports.0" toPort="//@composition/@composition.1/@setPort"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@ports.1" toPort="//@composition/@composition.2/@setPort"/>
+    <composition xsi:type="ftp:VisualConnection" fromPort="//@composition/@composition.3/@lightPort" toPort="//@composition/@ports.2"/>
+    <ports xsi:type="ftp:SignalPort" name="top switch1" type="Switch1"/>
+    <ports xsi:type="ftp:SignalPort" name="top switch2" type="Switch2"/>
+    <ports xsi:type="ftp:VisualPort" name="top bulb" type="Bulb"/>
+  </composition>
+</ftp:FaultTreeContext>

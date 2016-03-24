@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ftp:FaultTreeContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftp="http://www.example.org/ftp">
+  <composition name="dreg" type="D-Type Register">
+    <composition xsi:type="ftp:NTransistor" name="1" type="ntrans">
+      <gate type="Gate"/>
+      <source type="Source"/>
+      <drain type="Drain"/>
+    </composition>
+    <composition xsi:type="ftp:NTransistor" name="2" type="ntrans">
+      <gate type="Gate"/>
+      <source type="Source"/>
+      <drain type="Drain"/>
+    </composition>
+    <composition xsi:type="ftp:ComposedComponent" name="" type="Inverter">
+      <composition xsi:type="ftp:NTransistor" type="ntrans">
+        <gate type="Gate"/>
+        <source type="Source"/>
+        <drain type="Drain"/>
+      </composition>
+      <composition xsi:type="ftp:PTransistor" type="ptrans">
+        <gate type="Gate"/>
+        <source type="Source"/>
+        <drain type="Drain"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@ports.0" toPort="//@composition/@composition.2/@composition.0/@gate"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@ports.0" toPort="//@composition/@composition.2/@composition.1/@gate"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@ports.1" toPort="//@composition/@composition.2/@composition.1/@source"/>
+      <composition xsi:type="ftp:SignalConstant" type="signalConstant">
+        <outPort type="Out"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConstant" type="signalConstant" value="on">
+        <outPort type="Out"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@composition.5/@outPort" toPort="//@composition/@composition.2/@composition.0/@drain"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@composition.6/@outPort" toPort="//@composition/@composition.2/@composition.1/@drain"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@composition.0/@source" toPort="//@composition/@composition.2/@ports.1"/>
+      <ports xsi:type="ftp:SignalPort" type="In"/>
+      <ports xsi:type="ftp:SignalPort" name="" type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:ComposedComponent" name="" type="Inverter">
+      <composition xsi:type="ftp:NTransistor" type="ntrans">
+        <gate type="Gate"/>
+        <source type="Source"/>
+        <drain type="Drain"/>
+      </composition>
+      <composition xsi:type="ftp:PTransistor" type="ptrans">
+        <gate type="Gate"/>
+        <source type="Source"/>
+        <drain type="Drain"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@ports.0" toPort="//@composition/@composition.3/@composition.0/@gate"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@ports.1" toPort="//@composition/@composition.3/@composition.0/@source"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@ports.0" toPort="//@composition/@composition.3/@composition.1/@gate"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@ports.1" toPort="//@composition/@composition.3/@composition.1/@source"/>
+      <composition xsi:type="ftp:SignalConstant" type="signalConstant">
+        <outPort type="Out"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@composition.6/@outPort" toPort="//@composition/@composition.3/@composition.0/@drain"/>
+      <composition xsi:type="ftp:SignalConstant" type="signalConstant" value="on">
+        <outPort type="Out"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@composition.8/@outPort" toPort="//@composition/@composition.3/@composition.1/@drain"/>
+      <ports xsi:type="ftp:SignalPort" type="In"/>
+      <ports xsi:type="ftp:SignalPort" name="" type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:ComposedComponent" type="Inverter">
+      <composition xsi:type="ftp:NTransistor" type="ntrans">
+        <gate type="Gate"/>
+        <source type="Source"/>
+        <drain type="Drain"/>
+      </composition>
+      <composition xsi:type="ftp:PTransistor" type="ptrans">
+        <gate type="Gate"/>
+        <source type="Source"/>
+        <drain type="Drain"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.4/@composition.1/@source" toPort="//@composition/@composition.4/@ports.1"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.4/@composition.0/@source" toPort="//@composition/@composition.4/@ports.1"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.4/@composition.0/@gate" toPort="//@composition/@composition.4/@ports.0"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.4/@composition.1/@gate" toPort="//@composition/@composition.4/@ports.0"/>
+      <composition xsi:type="ftp:SignalConstant" type="signalConstant">
+        <outPort type="Out"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConstant" type="signalConstant" value="on">
+        <outPort type="Out"/>
+      </composition>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.4/@composition.6/@outPort" toPort="//@composition/@composition.4/@composition.0/@drain"/>
+      <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.4/@composition.7/@outPort" toPort="//@composition/@composition.4/@composition.1/@drain"/>
+      <ports xsi:type="ftp:SignalPort" name="" type="In"/>
+      <ports xsi:type="ftp:SignalPort" type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@ports.2" toPort="//@composition/@composition.0/@gate"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@ports.0" toPort="//@composition/@composition.0/@source"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.3/@ports.1" toPort="//@composition/@composition.2/@ports.0"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.2/@ports.1" toPort="//@composition/@ports.1"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.1/@gate" toPort="//@composition/@composition.4/@ports.1"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.1/@source" toPort="//@composition/@composition.2/@ports.1"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.1/@drain" toPort="//@composition/@composition.0/@drain"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@ports.2" toPort="//@composition/@composition.4/@ports.0"/>
+    <composition xsi:type="ftp:SignalConnection" fromPort="//@composition/@composition.0/@drain" toPort="//@composition/@composition.3/@ports.0"/>
+    <ports xsi:type="ftp:SignalPort" name="" type="A"/>
+    <ports xsi:type="ftp:SignalPort" type="B"/>
+    <ports xsi:type="ftp:SignalPort" name="" type="Load"/>
+  </composition>
+</ftp:FaultTreeContext>

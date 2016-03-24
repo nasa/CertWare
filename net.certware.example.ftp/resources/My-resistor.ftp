@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ftp:FaultTreeContext xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftp="http://www.example.org/ftp">
+  <composition name="top" type="5 Resistors">
+    <composition xsi:type="ftp:AnalogBattery" type="a_battery" voltage="10.0">
+      <inPort type="In"/>
+      <outPort type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:Resistor" name="1" type="resistor" resistance="5.0">
+      <inPort type="In"/>
+      <outPort type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:Resistor" name="2" type="resistor" resistance="10.0">
+      <inPort type="In"/>
+      <outPort type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:Resistor" name="5" type="resistor" resistance="50.0">
+      <inPort type="In"/>
+      <outPort type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:Resistor" name="3" type="resistor" resistance="15.0">
+      <inPort type="In"/>
+      <outPort type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:Resistor" name="4" type="resistor" resistance="10.0">
+      <inPort type="In"/>
+      <outPort type="Out"/>
+    </composition>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.0/@inPort" toPort="//@composition/@composition.1/@inPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.1/@inPort" toPort="//@composition/@composition.2/@outPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.2/@inPort" toPort="//@composition/@composition.3/@inPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.1/@outPort" toPort="//@composition/@composition.3/@outPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.3/@outPort" toPort="//@composition/@composition.4/@outPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.3/@inPort" toPort="//@composition/@composition.5/@outPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.5/@inPort" toPort="//@composition/@composition.4/@inPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.4/@inPort" toPort="//@composition/@composition.0/@outPort"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.3/@outPort" toPort="//@composition/@ports.0"/>
+    <composition xsi:type="ftp:ElectricalConnection" fromPort="//@composition/@composition.3/@inPort" toPort="//@composition/@ports.1"/>
+    <ports xsi:type="ftp:ElectricalPort" name="" type="T 51"/>
+    <ports xsi:type="ftp:ElectricalPort" type="T 52"/>
+  </composition>
+  <observations component="//@composition">
+    <portValues port="//@composition/@ports.0">
+      <value xsi:type="ftp:ElectricalValue" current="-0.04255319" voltage="5.212766"/>
+    </portValues>
+    <portValues port="//@composition/@ports.1">
+      <value xsi:type="ftp:ElectricalValue" current="0.04255319" voltage="7.3404255"/>
+    </portValues>
+    <faulttree root="//@observations.0/@faulttree/@ftnodes.0">
+      <ftnodes xsi:type="ftp:RootEvent" observation="5 Resistors: T 51 = electrical(5.212766,-0.04255319), T 52 = electrical(7.3404255,0.04255319)" inputs="//@observations.0/@faulttree/@ftnodes.515"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.2 //@observations.0/@faulttree/@ftnodes.3 //@observations.0/@faulttree/@ftnodes.4"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-34.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.6 //@observations.0/@faulttree/@ftnodes.7 //@observations.0/@faulttree/@ftnodes.8"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.10 //@observations.0/@faulttree/@ftnodes.11 //@observations.0/@faulttree/@ftnodes.12"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.14 //@observations.0/@faulttree/@ftnodes.15 //@observations.0/@faulttree/@ftnodes.16"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.18 //@observations.0/@faulttree/@ftnodes.19 //@observations.0/@faulttree/@ftnodes.20"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-34.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.22 //@observations.0/@faulttree/@ftnodes.23 //@observations.0/@faulttree/@ftnodes.24"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-64.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.26 //@observations.0/@faulttree/@ftnodes.27 //@observations.0/@faulttree/@ftnodes.28"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(64.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.30 //@observations.0/@faulttree/@ftnodes.31 //@observations.0/@faulttree/@ftnodes.32"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.34 //@observations.0/@faulttree/@ftnodes.35 //@observations.0/@faulttree/@ftnodes.36"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.38 //@observations.0/@faulttree/@ftnodes.39 //@observations.0/@faulttree/@ftnodes.40"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.42 //@observations.0/@faulttree/@ftnodes.43 //@observations.0/@faulttree/@ftnodes.44"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.46 //@observations.0/@faulttree/@ftnodes.47 //@observations.0/@faulttree/@ftnodes.48"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.50 //@observations.0/@faulttree/@ftnodes.51 //@observations.0/@faulttree/@ftnodes.52"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.54 //@observations.0/@faulttree/@ftnodes.55 //@observations.0/@faulttree/@ftnodes.56"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.58 //@observations.0/@faulttree/@ftnodes.59 //@observations.0/@faulttree/@ftnodes.60"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(60.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.62 //@observations.0/@faulttree/@ftnodes.63 //@observations.0/@faulttree/@ftnodes.64"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-64.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.66 //@observations.0/@faulttree/@ftnodes.67 //@observations.0/@faulttree/@ftnodes.68"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(64.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.70 //@observations.0/@faulttree/@ftnodes.71 //@observations.0/@faulttree/@ftnodes.72"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.74 //@observations.0/@faulttree/@ftnodes.75 //@observations.0/@faulttree/@ftnodes.76"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-34.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.78 //@observations.0/@faulttree/@ftnodes.79 //@observations.0/@faulttree/@ftnodes.80"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.82 //@observations.0/@faulttree/@ftnodes.83 //@observations.0/@faulttree/@ftnodes.84"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.86 //@observations.0/@faulttree/@ftnodes.87 //@observations.0/@faulttree/@ftnodes.88"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.90 //@observations.0/@faulttree/@ftnodes.91 //@observations.0/@faulttree/@ftnodes.92"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-34.99999999999997))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.94 //@observations.0/@faulttree/@ftnodes.95 //@observations.0/@faulttree/@ftnodes.96"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.5 //@observations.0/@faulttree/@ftnodes.9 //@observations.0/@faulttree/@ftnodes.13 //@observations.0/@faulttree/@ftnodes.17 //@observations.0/@faulttree/@ftnodes.21 //@observations.0/@faulttree/@ftnodes.25 //@observations.0/@faulttree/@ftnodes.29 //@observations.0/@faulttree/@ftnodes.33 //@observations.0/@faulttree/@ftnodes.37 //@observations.0/@faulttree/@ftnodes.41 //@observations.0/@faulttree/@ftnodes.45 //@observations.0/@faulttree/@ftnodes.49 //@observations.0/@faulttree/@ftnodes.53 //@observations.0/@faulttree/@ftnodes.57 //@observations.0/@faulttree/@ftnodes.61 //@observations.0/@faulttree/@ftnodes.65 //@observations.0/@faulttree/@ftnodes.69 //@observations.0/@faulttree/@ftnodes.73 //@observations.0/@faulttree/@ftnodes.77 //@observations.0/@faulttree/@ftnodes.81 //@observations.0/@faulttree/@ftnodes.85 //@observations.0/@faulttree/@ftnodes.89 //@observations.0/@faulttree/@ftnodes.93 //@observations.0/@faulttree/@ftnodes.97"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.1 //@observations.0/@faulttree/@ftnodes.98"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.99999999999994))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.101 //@observations.0/@faulttree/@ftnodes.102 //@observations.0/@faulttree/@ftnodes.103"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.105 //@observations.0/@faulttree/@ftnodes.106 //@observations.0/@faulttree/@ftnodes.107"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.109 //@observations.0/@faulttree/@ftnodes.110 //@observations.0/@faulttree/@ftnodes.111"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.113 //@observations.0/@faulttree/@ftnodes.114 //@observations.0/@faulttree/@ftnodes.115"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.117 //@observations.0/@faulttree/@ftnodes.118 //@observations.0/@faulttree/@ftnodes.119"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.121 //@observations.0/@faulttree/@ftnodes.122 //@observations.0/@faulttree/@ftnodes.123"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.125 //@observations.0/@faulttree/@ftnodes.126 //@observations.0/@faulttree/@ftnodes.127"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.129 //@observations.0/@faulttree/@ftnodes.130 //@observations.0/@faulttree/@ftnodes.131"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.133 //@observations.0/@faulttree/@ftnodes.134 //@observations.0/@faulttree/@ftnodes.135"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.137 //@observations.0/@faulttree/@ftnodes.138 //@observations.0/@faulttree/@ftnodes.139"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.141 //@observations.0/@faulttree/@ftnodes.142 //@observations.0/@faulttree/@ftnodes.143"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(39.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.145 //@observations.0/@faulttree/@ftnodes.146 //@observations.0/@faulttree/@ftnodes.147"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.149 //@observations.0/@faulttree/@ftnodes.150 //@observations.0/@faulttree/@ftnodes.151"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.153 //@observations.0/@faulttree/@ftnodes.154 //@observations.0/@faulttree/@ftnodes.155"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.157 //@observations.0/@faulttree/@ftnodes.158 //@observations.0/@faulttree/@ftnodes.159"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.99999999999994))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.161 //@observations.0/@faulttree/@ftnodes.162 //@observations.0/@faulttree/@ftnodes.163"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.104 //@observations.0/@faulttree/@ftnodes.108 //@observations.0/@faulttree/@ftnodes.112 //@observations.0/@faulttree/@ftnodes.116 //@observations.0/@faulttree/@ftnodes.120 //@observations.0/@faulttree/@ftnodes.124 //@observations.0/@faulttree/@ftnodes.128 //@observations.0/@faulttree/@ftnodes.132 //@observations.0/@faulttree/@ftnodes.136 //@observations.0/@faulttree/@ftnodes.140 //@observations.0/@faulttree/@ftnodes.144 //@observations.0/@faulttree/@ftnodes.148 //@observations.0/@faulttree/@ftnodes.152 //@observations.0/@faulttree/@ftnodes.156 //@observations.0/@faulttree/@ftnodes.160 //@observations.0/@faulttree/@ftnodes.164"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.100 //@observations.0/@faulttree/@ftnodes.165"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(285.0000082250004))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-570.0000164500007))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.168 //@observations.0/@faulttree/@ftnodes.169 //@observations.0/@faulttree/@ftnodes.170 //@observations.0/@faulttree/@ftnodes.171"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-570.0000164500007))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.173 //@observations.0/@faulttree/@ftnodes.174 //@observations.0/@faulttree/@ftnodes.175 //@observations.0/@faulttree/@ftnodes.176"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(570.0000164500007))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.178 //@observations.0/@faulttree/@ftnodes.179 //@observations.0/@faulttree/@ftnodes.180 //@observations.0/@faulttree/@ftnodes.181"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(570.0000164500007))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.183 //@observations.0/@faulttree/@ftnodes.184 //@observations.0/@faulttree/@ftnodes.185 //@observations.0/@faulttree/@ftnodes.186"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.188 //@observations.0/@faulttree/@ftnodes.189 //@observations.0/@faulttree/@ftnodes.190"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.192 //@observations.0/@faulttree/@ftnodes.193 //@observations.0/@faulttree/@ftnodes.194"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.196 //@observations.0/@faulttree/@ftnodes.197 //@observations.0/@faulttree/@ftnodes.198"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.200 //@observations.0/@faulttree/@ftnodes.201 //@observations.0/@faulttree/@ftnodes.202"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(235.00000822500036))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(50.00000000000006))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(0.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.204 //@observations.0/@faulttree/@ftnodes.205 //@observations.0/@faulttree/@ftnodes.206"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(235.00000822500036))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-50.00000000000006))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(0.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.208 //@observations.0/@faulttree/@ftnodes.209 //@observations.0/@faulttree/@ftnodes.210"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-235.00000822500036))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(50.00000000000006))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(0.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.212 //@observations.0/@faulttree/@ftnodes.213 //@observations.0/@faulttree/@ftnodes.214"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-235.00000822500036))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-50.00000000000006))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(0.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.216 //@observations.0/@faulttree/@ftnodes.217 //@observations.0/@faulttree/@ftnodes.218"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.220 //@observations.0/@faulttree/@ftnodes.221 //@observations.0/@faulttree/@ftnodes.222"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.224 //@observations.0/@faulttree/@ftnodes.225 //@observations.0/@faulttree/@ftnodes.226"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.228 //@observations.0/@faulttree/@ftnodes.229 //@observations.0/@faulttree/@ftnodes.230"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-335.00000822500044))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(520.0000164500007))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-570.0000164500008))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.232 //@observations.0/@faulttree/@ftnodes.233 //@observations.0/@faulttree/@ftnodes.234"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.172 //@observations.0/@faulttree/@ftnodes.177 //@observations.0/@faulttree/@ftnodes.182 //@observations.0/@faulttree/@ftnodes.187 //@observations.0/@faulttree/@ftnodes.191 //@observations.0/@faulttree/@ftnodes.195 //@observations.0/@faulttree/@ftnodes.199 //@observations.0/@faulttree/@ftnodes.203 //@observations.0/@faulttree/@ftnodes.207 //@observations.0/@faulttree/@ftnodes.211 //@observations.0/@faulttree/@ftnodes.215 //@observations.0/@faulttree/@ftnodes.219 //@observations.0/@faulttree/@ftnodes.223 //@observations.0/@faulttree/@ftnodes.227 //@observations.0/@faulttree/@ftnodes.231 //@observations.0/@faulttree/@ftnodes.235"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.167 //@observations.0/@faulttree/@ftnodes.236"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.239 //@observations.0/@faulttree/@ftnodes.240"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.242 //@observations.0/@faulttree/@ftnodes.243"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.245 //@observations.0/@faulttree/@ftnodes.246 //@observations.0/@faulttree/@ftnodes.247"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.249 //@observations.0/@faulttree/@ftnodes.250 //@observations.0/@faulttree/@ftnodes.251"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.253 //@observations.0/@faulttree/@ftnodes.254 //@observations.0/@faulttree/@ftnodes.255"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.257 //@observations.0/@faulttree/@ftnodes.258 //@observations.0/@faulttree/@ftnodes.259"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.261 //@observations.0/@faulttree/@ftnodes.262"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.264 //@observations.0/@faulttree/@ftnodes.265"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.241 //@observations.0/@faulttree/@ftnodes.244 //@observations.0/@faulttree/@ftnodes.248 //@observations.0/@faulttree/@ftnodes.252 //@observations.0/@faulttree/@ftnodes.256 //@observations.0/@faulttree/@ftnodes.260 //@observations.0/@faulttree/@ftnodes.263 //@observations.0/@faulttree/@ftnodes.266"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.238 //@observations.0/@faulttree/@ftnodes.267"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-170.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-65.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.271 //@observations.0/@faulttree/@ftnodes.272"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.274 //@observations.0/@faulttree/@ftnodes.275"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-65.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.279 //@observations.0/@faulttree/@ftnodes.280 //@observations.0/@faulttree/@ftnodes.281"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-65.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.283 //@observations.0/@faulttree/@ftnodes.284"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.286 //@observations.0/@faulttree/@ftnodes.287"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-65.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.289 //@observations.0/@faulttree/@ftnodes.290 //@observations.0/@faulttree/@ftnodes.291"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.293 //@observations.0/@faulttree/@ftnodes.294 //@observations.0/@faulttree/@ftnodes.295"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-65.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.297 //@observations.0/@faulttree/@ftnodes.298"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.300 //@observations.0/@faulttree/@ftnodes.301"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.273 //@observations.0/@faulttree/@ftnodes.276 //@observations.0/@faulttree/@ftnodes.277 //@observations.0/@faulttree/@ftnodes.278 //@observations.0/@faulttree/@ftnodes.282 //@observations.0/@faulttree/@ftnodes.285 //@observations.0/@faulttree/@ftnodes.288 //@observations.0/@faulttree/@ftnodes.292 //@observations.0/@faulttree/@ftnodes.296 //@observations.0/@faulttree/@ftnodes.299 //@observations.0/@faulttree/@ftnodes.302"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.269 //@observations.0/@faulttree/@ftnodes.270 //@observations.0/@faulttree/@ftnodes.303"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.306 //@observations.0/@faulttree/@ftnodes.307"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.309 //@observations.0/@faulttree/@ftnodes.310 //@observations.0/@faulttree/@ftnodes.311"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.313 //@observations.0/@faulttree/@ftnodes.314 //@observations.0/@faulttree/@ftnodes.315"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.317 //@observations.0/@faulttree/@ftnodes.318 //@observations.0/@faulttree/@ftnodes.319"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(39.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-49.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.321 //@observations.0/@faulttree/@ftnodes.322 //@observations.0/@faulttree/@ftnodes.323"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.325 //@observations.0/@faulttree/@ftnodes.326"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.308 //@observations.0/@faulttree/@ftnodes.312 //@observations.0/@faulttree/@ftnodes.316 //@observations.0/@faulttree/@ftnodes.320 //@observations.0/@faulttree/@ftnodes.324 //@observations.0/@faulttree/@ftnodes.327"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.305 //@observations.0/@faulttree/@ftnodes.328"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-55.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000001))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.331 //@observations.0/@faulttree/@ftnodes.332 //@observations.0/@faulttree/@ftnodes.333"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-290.0000082250003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.335 //@observations.0/@faulttree/@ftnodes.336"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.338 //@observations.0/@faulttree/@ftnodes.339"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.341 //@observations.0/@faulttree/@ftnodes.342"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.0000082250003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.344 //@observations.0/@faulttree/@ftnodes.345"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.347 //@observations.0/@faulttree/@ftnodes.348"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.334 //@observations.0/@faulttree/@ftnodes.337 //@observations.0/@faulttree/@ftnodes.340 //@observations.0/@faulttree/@ftnodes.343 //@observations.0/@faulttree/@ftnodes.346 //@observations.0/@faulttree/@ftnodes.349"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.330 //@observations.0/@faulttree/@ftnodes.350"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(55.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000001))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.353 //@observations.0/@faulttree/@ftnodes.354 //@observations.0/@faulttree/@ftnodes.355"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-290.0000082250003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.357 //@observations.0/@faulttree/@ftnodes.358"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.360 //@observations.0/@faulttree/@ftnodes.361"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.363 //@observations.0/@faulttree/@ftnodes.364"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.0000082250003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.366 //@observations.0/@faulttree/@ftnodes.367"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.369 //@observations.0/@faulttree/@ftnodes.370"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.356 //@observations.0/@faulttree/@ftnodes.359 //@observations.0/@faulttree/@ftnodes.362 //@observations.0/@faulttree/@ftnodes.365 //@observations.0/@faulttree/@ftnodes.368 //@observations.0/@faulttree/@ftnodes.371"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.352 //@observations.0/@faulttree/@ftnodes.372"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 3 failed(resistance(-50.00000000000003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.00000000000003))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.376 //@observations.0/@faulttree/@ftnodes.377"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-65.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.0))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.378 //@observations.0/@faulttree/@ftnodes.379 //@observations.0/@faulttree/@ftnodes.380"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.374 //@observations.0/@faulttree/@ftnodes.375 //@observations.0/@faulttree/@ftnodes.381"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-295.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-245.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.387 //@observations.0/@faulttree/@ftnodes.388"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.390 //@observations.0/@faulttree/@ftnodes.391"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.393 //@observations.0/@faulttree/@ftnodes.394"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.396 //@observations.0/@faulttree/@ftnodes.397"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.385 //@observations.0/@faulttree/@ftnodes.386 //@observations.0/@faulttree/@ftnodes.389 //@observations.0/@faulttree/@ftnodes.392 //@observations.0/@faulttree/@ftnodes.395 //@observations.0/@faulttree/@ftnodes.398"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.383 //@observations.0/@faulttree/@ftnodes.384 //@observations.0/@faulttree/@ftnodes.399"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-225.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.405 //@observations.0/@faulttree/@ftnodes.406"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.408 //@observations.0/@faulttree/@ftnodes.409"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.411 //@observations.0/@faulttree/@ftnodes.412"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.414 //@observations.0/@faulttree/@ftnodes.415"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.403 //@observations.0/@faulttree/@ftnodes.404 //@observations.0/@faulttree/@ftnodes.407 //@observations.0/@faulttree/@ftnodes.410 //@observations.0/@faulttree/@ftnodes.413 //@observations.0/@faulttree/@ftnodes.416"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.401 //@observations.0/@faulttree/@ftnodes.402 //@observations.0/@faulttree/@ftnodes.417"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.423 //@observations.0/@faulttree/@ftnodes.424"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.426 //@observations.0/@faulttree/@ftnodes.427"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.429 //@observations.0/@faulttree/@ftnodes.430"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.432 //@observations.0/@faulttree/@ftnodes.433"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.421 //@observations.0/@faulttree/@ftnodes.422 //@observations.0/@faulttree/@ftnodes.425 //@observations.0/@faulttree/@ftnodes.428 //@observations.0/@faulttree/@ftnodes.431 //@observations.0/@faulttree/@ftnodes.434"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.419 //@observations.0/@faulttree/@ftnodes.420 //@observations.0/@faulttree/@ftnodes.435"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.441 //@observations.0/@faulttree/@ftnodes.442"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.444 //@observations.0/@faulttree/@ftnodes.445"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.447 //@observations.0/@faulttree/@ftnodes.448"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.450 //@observations.0/@faulttree/@ftnodes.451"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.439 //@observations.0/@faulttree/@ftnodes.440 //@observations.0/@faulttree/@ftnodes.443 //@observations.0/@faulttree/@ftnodes.446 //@observations.0/@faulttree/@ftnodes.449 //@observations.0/@faulttree/@ftnodes.452"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.437 //@observations.0/@faulttree/@ftnodes.438 //@observations.0/@faulttree/@ftnodes.453"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-245.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.457 //@observations.0/@faulttree/@ftnodes.458"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.455 //@observations.0/@faulttree/@ftnodes.456 //@observations.0/@faulttree/@ftnodes.459"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(245.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.463 //@observations.0/@faulttree/@ftnodes.464"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.461 //@observations.0/@faulttree/@ftnodes.462 //@observations.0/@faulttree/@ftnodes.465"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.469 //@observations.0/@faulttree/@ftnodes.470"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.467 //@observations.0/@faulttree/@ftnodes.468 //@observations.0/@faulttree/@ftnodes.471"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.475 //@observations.0/@faulttree/@ftnodes.476"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.473 //@observations.0/@faulttree/@ftnodes.474 //@observations.0/@faulttree/@ftnodes.477"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.481 //@observations.0/@faulttree/@ftnodes.482"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.479 //@observations.0/@faulttree/@ftnodes.480 //@observations.0/@faulttree/@ftnodes.483"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.487 //@observations.0/@faulttree/@ftnodes.488"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.485 //@observations.0/@faulttree/@ftnodes.486 //@observations.0/@faulttree/@ftnodes.489"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(-45.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(-230.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(230.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.495 //@observations.0/@faulttree/@ftnodes.496"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(230.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.498 //@observations.0/@faulttree/@ftnodes.499"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(45.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.501 //@observations.0/@faulttree/@ftnodes.502"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(45.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.504 //@observations.0/@faulttree/@ftnodes.505"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.493 //@observations.0/@faulttree/@ftnodes.494 //@observations.0/@faulttree/@ftnodes.497 //@observations.0/@faulttree/@ftnodes.500 //@observations.0/@faulttree/@ftnodes.503 //@observations.0/@faulttree/@ftnodes.506"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.491 //@observations.0/@faulttree/@ftnodes.492 //@observations.0/@faulttree/@ftnodes.507"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(45.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(230.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(-280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.511 //@observations.0/@faulttree/@ftnodes.512"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.0/@faulttree/@ftnodes.509 //@observations.0/@faulttree/@ftnodes.510 //@observations.0/@faulttree/@ftnodes.513"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.0/@faulttree/@ftnodes.99 //@observations.0/@faulttree/@ftnodes.166 //@observations.0/@faulttree/@ftnodes.237 //@observations.0/@faulttree/@ftnodes.268 //@observations.0/@faulttree/@ftnodes.304 //@observations.0/@faulttree/@ftnodes.329 //@observations.0/@faulttree/@ftnodes.351 //@observations.0/@faulttree/@ftnodes.373 //@observations.0/@faulttree/@ftnodes.382 //@observations.0/@faulttree/@ftnodes.400 //@observations.0/@faulttree/@ftnodes.418 //@observations.0/@faulttree/@ftnodes.436 //@observations.0/@faulttree/@ftnodes.454 //@observations.0/@faulttree/@ftnodes.460 //@observations.0/@faulttree/@ftnodes.466 //@observations.0/@faulttree/@ftnodes.472 //@observations.0/@faulttree/@ftnodes.478 //@observations.0/@faulttree/@ftnodes.484 //@observations.0/@faulttree/@ftnodes.490 //@observations.0/@faulttree/@ftnodes.508 //@observations.0/@faulttree/@ftnodes.514"/>
+    </faulttree>
+  </observations>
+  <observations component="//@composition" faultLimit="2">
+    <portValues port="//@composition/@ports.0">
+      <value xsi:type="ftp:ElectricalValue" current="-0.04255319" voltage="5.212766"/>
+    </portValues>
+    <portValues port="//@composition/@ports.1">
+      <value xsi:type="ftp:ElectricalValue" current="0.04255319" voltage="7.3404255"/>
+    </portValues>
+    <faulttree root="//@observations.1/@faulttree/@ftnodes.0">
+      <ftnodes xsi:type="ftp:RootEvent" observation="5 Resistors: T 51 = electrical(5.212766,-0.04255319), T 52 = electrical(7.3404255,0.04255319) THERE ARE NO SOLUTIONS WITH FEWER THAN 3 FAULTS"/>
+    </faulttree>
+  </observations>
+  <observations component="//@composition" faultLimit="3">
+    <portValues port="//@composition/@ports.0">
+      <value xsi:type="ftp:ElectricalValue" current="-0.04255319" voltage="5.212766"/>
+    </portValues>
+    <portValues port="//@composition/@ports.1">
+      <value xsi:type="ftp:ElectricalValue" current="0.04255319" voltage="7.3404255"/>
+    </portValues>
+    <faulttree root="//@observations.2/@faulttree/@ftnodes.0">
+      <ftnodes xsi:type="ftp:RootEvent" observation="5 Resistors: T 51 = electrical(5.212766,-0.04255319), T 52 = electrical(7.3404255,0.04255319)" inputs="//@observations.2/@faulttree/@ftnodes.37"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(195.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(245.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(245.0000082250003))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.2/@faulttree/@ftnodes.3 //@observations.2/@faulttree/@ftnodes.4"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.1 //@observations.2/@faulttree/@ftnodes.2 //@observations.2/@faulttree/@ftnodes.5"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(55.0))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(240.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(290.00000822500033))"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.2/@faulttree/@ftnodes.9 //@observations.2/@faulttree/@ftnodes.10"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.7 //@observations.2/@faulttree/@ftnodes.8 //@observations.2/@faulttree/@ftnodes.11"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(175.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(225.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.13 //@observations.2/@faulttree/@ftnodes.14 //@observations.2/@faulttree/@ftnodes.15"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(220.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(170.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(65.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.17 //@observations.2/@faulttree/@ftnodes.18 //@observations.2/@faulttree/@ftnodes.19"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(250.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(200.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(35.00000000000001))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.21 //@observations.2/@faulttree/@ftnodes.22 //@observations.2/@faulttree/@ftnodes.23"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(275.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(225.00000822500027))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(40.0))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.25 //@observations.2/@faulttree/@ftnodes.26 //@observations.2/@faulttree/@ftnodes.27"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 1 failed(resistance(295.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(245.00000822500033))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(59.999999999999986))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.29 //@observations.2/@faulttree/@ftnodes.30 //@observations.2/@faulttree/@ftnodes.31"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 2 failed(resistance(45.000000000000014))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 4 failed(resistance(230.0000082250003))"/>
+      <ftnodes xsi:type="ftp:Fault" description="resistor 5 failed(resistance(280.00000822500033))"/>
+      <ftnodes xsi:type="ftp:AndGate" inputs="//@observations.2/@faulttree/@ftnodes.33 //@observations.2/@faulttree/@ftnodes.34 //@observations.2/@faulttree/@ftnodes.35"/>
+      <ftnodes xsi:type="ftp:OrGate" inputs="//@observations.2/@faulttree/@ftnodes.6 //@observations.2/@faulttree/@ftnodes.12 //@observations.2/@faulttree/@ftnodes.16 //@observations.2/@faulttree/@ftnodes.20 //@observations.2/@faulttree/@ftnodes.24 //@observations.2/@faulttree/@ftnodes.28 //@observations.2/@faulttree/@ftnodes.32 //@observations.2/@faulttree/@ftnodes.36"/>
+    </faulttree>
+  </observations>
+</ftp:FaultTreeContext>
