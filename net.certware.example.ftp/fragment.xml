@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<fragment>
+   <extension
+         point="net.certware.example">
+      <document
+            applicability="Provides a tutorial for the first-time user of the FTP feature in the CertWare workbench"
+            author="Eric Bush"
+            consequences="A completed L-language argument file might be sent to the built-in L-language solvers for analysis and feedback to the author regarding the consistency and completeness of his case."
+            idd="net.certware.example.ftp.gettingstarted"
+            implementation="The provided PDF document is for reference while writing arguments"
+            intent="Introduces the analyst to the FTP feature&apos;s use of diagram perspective and viewpoints"
+            motivation="Provide a quick working example for familiarization"
+            name="Getting Started with Fault Trees From Physics"
+            version="1.0">
+         <resource
+               description="Getting Started Document"
+               structure="resources/GettingStarted.pdf">
+         </resource>
+      </document>
+      <pattern
+            applicability="Introductory FTP modeling"
+            author="Eric Bush"
+            idp="net.certware.example.ftp.analog"
+            implementation="FTP model file"
+            intent="Analog circuit example"
+            motivation="Introduce FTP modeling for analog structure"
+            name="FTP analog model example"
+            version="1.0">
+         <resource
+               description="Analog model file"
+               structure="resources/My-analog.ftp">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ftp.digital">
+         </related_pattern>
+         <related_document
+               document_id="net.certware.example.ftp.gettingstarted">
+         </related_document>
+      </pattern>
+      <pattern
+            applicability="Introductory FTP modeling"
+            author="Eric Bush"
+            idp="net.certware.example.ftp.dregister"
+            implementation="FTP model file"
+            intent="D-type register circuit example"
+            motivation="Introduce FTP modeling for digital derivce structure"
+            name="FTP D-register model example"
+            version="1.0">
+         <resource
+               description="D-type register model file"
+               structure="resources/My-dreg.ftp">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ftp.digital">
+         </related_pattern>
+         <related_document
+               document_id="net.certware.example.ftp.gettingstarted">
+         </related_document>
+      </pattern>
+      <pattern
+             applicability="Introductory FTP modeling"
+             author="Eric Bush"
+             idp="net.certware.example.ftp.resistor"
+             implementation="FTP model file"
+             intent="Resistor circuit example"
+             motivation="Introduce FTP modeling for resistor structure"
+             name="FTP resistor model example"
+             version="1.0">
+          <resource
+                description="Resistor model file"
+                structure="resources/My-resistor.ftp">
+          </resource>
+          <related_pattern
+                pattern_id="net.certware.example.ftp.digital">
+          </related_pattern>
+          <related_pattern
+                pattern_id="net.certware.example.ftp.dregister">
+          </related_pattern>
+          <related_document
+                document_id="net.certware.example.ftp.gettingstarted">
+          </related_document>
+       </pattern> 
+       <pattern
+            applicability="Introductory FTP modeling"
+            author="Eric Bush"
+            idp="net.certware.example.ftp.digital"
+            implementation="FTP model file"
+            intent="Digital circuit example"
+            motivation="Introduce FTP modeling for digital structure"
+            name="FTP digital model example"
+            version="1.0">
+         <resource
+               description="Digital model file"
+               structure="resources/My-digital.ftp">
+         </resource>
+         <related_pattern
+               pattern_id="net.certware.example.ftp.analog">
+         </related_pattern>
+         <related_pattern
+               pattern_id="net.certware.example.ftp.dregister">
+         </related_pattern>
+         <related_document
+               document_id="net.certware.example.ftp.gettingstarted">
+         </related_document>
+      </pattern>
+   </extension>
+</fragment>

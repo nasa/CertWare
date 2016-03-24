@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CertWare FTP Feature Examples
+Bundle-SymbolicName: net.certware.example.ftp;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: net.certware.example.llang
+Bundle-Vendor: Kestrel Technology LLC
+Fragment-Host: net.certware.example
+Require-Bundle: org.eclipse.ui.cheatsheets
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
