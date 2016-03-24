@@ -35,4 +35,4 @@ Export-Package: net.certware.argument.sfp,
  net.certware.argument.sfp.serializer,
  net.certware.argument.sfp.generator
 Eclipse-RegisterBuddy: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -155,7 +155,8 @@ public class DumpHandler extends AbstractHandler {
 					// commit.reset();
 				}
 				
-				walk.dispose();
+				//walk.dispose();
+				walk.close();
 				
 				
 				/**
@@ -254,6 +255,8 @@ public class DumpHandler extends AbstractHandler {
 
 				} // diff entry
 				*/
+				
+				treeWalk.close();
 				
 			}
 			

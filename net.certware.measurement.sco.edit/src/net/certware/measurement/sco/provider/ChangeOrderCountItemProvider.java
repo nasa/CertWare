@@ -8,9 +8,6 @@ package net.certware.measurement.sco.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.measurement.sco.ChangeOrderCount;
-import net.certware.measurement.sco.ScoPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -27,6 +24,9 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import net.certware.measurement.sco.ChangeOrderCount;
+import net.certware.measurement.sco.ScoPackage;
 
 /**
  * This is the item provider adapter for a {@link net.certware.measurement.sco.ChangeOrderCount} object.

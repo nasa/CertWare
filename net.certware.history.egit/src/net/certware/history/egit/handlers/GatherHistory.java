@@ -93,7 +93,8 @@ public class GatherHistory implements ICertWareConstants {
 			commitHistory.getCommitRecord().add(artifactCommit);
 		}
 
-		revWalk.dispose();
+		// revWalk.dispose();
+		revWalk.close();
 
 		// use the Git provider to find the file history, then converge into the model
 		GitProvider provider = (GitProvider)RepositoryProvider.getProvider(selectedProject);

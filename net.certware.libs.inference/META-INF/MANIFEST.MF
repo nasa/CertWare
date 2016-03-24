@@ -46,4 +46,4 @@ Export-Package: edu.ucla.belief,
  il2.inf.structure.minfill2,
  il2.model,
  il2.util
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

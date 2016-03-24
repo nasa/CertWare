@@ -3,9 +3,9 @@
  */
 package net.certware.measurement.sco.providers;
 
-import net.certware.measurement.sco.util.ScoAdapterFactory;
-
 import org.eclipse.emf.common.notify.Adapter;
+
+import net.certware.measurement.sco.util.ScoAdapterFactory;
 
 /**
  * 

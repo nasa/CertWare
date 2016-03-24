@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.ModelItemImpl#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.ModelItemImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.ModelItemImpl#getDesc <em>Desc</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

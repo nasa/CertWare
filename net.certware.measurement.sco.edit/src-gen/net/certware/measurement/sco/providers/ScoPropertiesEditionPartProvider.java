@@ -3,8 +3,11 @@
  */
 package net.certware.measurement.sco.providers;
 
-import net.certware.measurement.sco.parts.ScoViewsRepository;
+import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
+import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
+import net.certware.measurement.sco.parts.ScoViewsRepository;
 import net.certware.measurement.sco.parts.forms.ArtifactCommitPropertiesEditionPartForm;
 import net.certware.measurement.sco.parts.forms.ArtifactIdentifierPropertiesEditionPartForm;
 import net.certware.measurement.sco.parts.forms.CommitHistoryPropertiesEditionPartForm;
@@ -13,7 +16,6 @@ import net.certware.measurement.sco.parts.forms.ImprovementChangeOrdersPropertie
 import net.certware.measurement.sco.parts.forms.NewFeatureChangeOrdersPropertiesEditionPartForm;
 import net.certware.measurement.sco.parts.forms.NormalDefectChangeOrdersPropertiesEditionPartForm;
 import net.certware.measurement.sco.parts.forms.TotalChangeOrdersPropertiesEditionPartForm;
-
 import net.certware.measurement.sco.parts.impl.ArtifactCommitPropertiesEditionPartImpl;
 import net.certware.measurement.sco.parts.impl.ArtifactIdentifierPropertiesEditionPartImpl;
 import net.certware.measurement.sco.parts.impl.CommitHistoryPropertiesEditionPartImpl;
@@ -22,12 +24,6 @@ import net.certware.measurement.sco.parts.impl.ImprovementChangeOrdersProperties
 import net.certware.measurement.sco.parts.impl.NewFeatureChangeOrdersPropertiesEditionPartImpl;
 import net.certware.measurement.sco.parts.impl.NormalDefectChangeOrdersPropertiesEditionPartImpl;
 import net.certware.measurement.sco.parts.impl.TotalChangeOrdersPropertiesEditionPartImpl;
-
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
-import org.eclipse.emf.eef.runtime.api.parts.IPropertiesEditionPart;
-
-import org.eclipse.emf.eef.runtime.api.providers.IPropertiesEditionPartProvider;
 
 /**
  * 

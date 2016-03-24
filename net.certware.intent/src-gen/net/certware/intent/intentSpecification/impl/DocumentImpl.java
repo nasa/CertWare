@@ -26,10 +26,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DocumentImpl#getEntries <em>Entries</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

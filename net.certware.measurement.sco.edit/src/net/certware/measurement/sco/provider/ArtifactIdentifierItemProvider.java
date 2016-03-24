@@ -8,10 +8,6 @@ package net.certware.measurement.sco.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.measurement.sco.ArtifactIdentifier;
-import net.certware.measurement.sco.ScoFactory;
-import net.certware.measurement.sco.ScoPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -31,6 +27,10 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.PlatformUI;
+
+import net.certware.measurement.sco.ArtifactIdentifier;
+import net.certware.measurement.sco.ScoFactory;
+import net.certware.measurement.sco.ScoPackage;
 
 /**
  * This is the item provider adapter for a {@link net.certware.measurement.sco.ArtifactIdentifier} object.

@@ -19,10 +19,11 @@ Require-Bundle: net.certware.intent;visibility:=reexport,
  org.eclipse.xpand,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
+ org.eclipse.compare,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.intent.ui,
  net.certware.intent.ui.contentassist,
  net.certware.intent.ui.contentassist.antlr,

@@ -187,7 +187,8 @@ public class DumpHistory implements ICertWareConstants {
 		}
 
 
-		revWalk.dispose();
+		// revWalk.dispose();
+		revWalk.close();
 
 		// use the Git provider to find the file history
 		GitProvider provider = (GitProvider)RepositoryProvider.getProvider(selectedProject);

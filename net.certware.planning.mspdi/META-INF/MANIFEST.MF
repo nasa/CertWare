@@ -6,7 +6,7 @@ Bundle-Version: 1.2.1.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.planning.mspdi,
  net.certware.planning.mspdi.impl,
  net.certware.planning.mspdi.util

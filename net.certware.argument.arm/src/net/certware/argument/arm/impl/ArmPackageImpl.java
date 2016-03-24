@@ -4,6 +4,13 @@
  */
 package net.certware.argument.arm.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import net.certware.argument.arm.Annotation;
 import net.certware.argument.arm.Argument;
 import net.certware.argument.arm.ArgumentElement;
@@ -24,14 +31,6 @@ import net.certware.argument.arm.InformationElement;
 import net.certware.argument.arm.ModelElement;
 import net.certware.argument.arm.ReasoningElement;
 import net.certware.argument.arm.TaggedValue;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

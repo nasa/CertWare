@@ -29,7 +29,7 @@ Import-Package: net.certware.core.ui,
  org.eclipse.ui.forms,
  org.eclipse.ui.forms.events,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.argument.sfp.ui.contentassist.antlr,
  net.certware.argument.sfp.ui.quickfix,
  net.certware.argument.sfp.ui.contentassist,

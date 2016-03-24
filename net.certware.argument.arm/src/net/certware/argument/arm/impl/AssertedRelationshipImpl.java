@@ -4,10 +4,10 @@
  */
 package net.certware.argument.arm.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.AssertedRelationship;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

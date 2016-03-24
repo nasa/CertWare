@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.ModelItem#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.ModelItem#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.ModelItem#getDesc <em>Desc</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getModelItem()
  * @model

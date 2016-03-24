@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: net.certware.sacm.provider.SACMEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.sacm.SACM.Argumentation.provider,
  net.certware.sacm.SACM.Evidence.provider,
  net.certware.sacm.SACM.provider,

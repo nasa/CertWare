@@ -16,6 +16,7 @@ public class CazDiagramActionBarContributor extends DiagramActionBarContributor 
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings("rawtypes")
 	protected Class getEditorClass() {
 		return CazDiagramEditor.class;
 	}

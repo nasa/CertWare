@@ -5,11 +5,17 @@ package net.certware.intent.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
+import net.certware.intent.ui.wizard.IntentSpecificationProjectCreator;
+
 /**
  * Use this class to register components to be used within the IDE.
  */
 public class IntentSpecificationUiModule extends net.certware.intent.ui.AbstractIntentSpecificationUiModule {
 	public IntentSpecificationUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
+		return IntentSpecificationProjectCreator.class;
 	}
 }

@@ -4,10 +4,10 @@
  */
 package net.certware.argument.arm.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import net.certware.argument.arm.Annotation;
 import net.certware.argument.arm.ArmPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

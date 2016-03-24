@@ -4,14 +4,13 @@
  */
 package net.certware.intent.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Manual modifications go to {net.certware.intent.ui.IntentSpecificationUiModule}
  */
 @SuppressWarnings("all")
-public abstract class AbstractIntentSpecificationUiModule extends DefaultUiModule {
+public abstract class AbstractIntentSpecificationUiModule extends org.eclipse.xtext.common.types.ui.DefaultCommonTypesUiModule {
 	
 	public AbstractIntentSpecificationUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
@@ -38,6 +37,11 @@ public abstract class AbstractIntentSpecificationUiModule extends DefaultUiModul
 		binder.bind(org.eclipse.xtext.parser.antlr.ITokenDefProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.ui.LexerUIBindings.HIGHLIGHTING)).to(org.eclipse.xtext.parser.antlr.AntlrTokenDefProvider.class);
 	}
 
+	// contributed by org.eclipse.xtext.ui.generator.projectWizard.SimpleProjectWizardFragment
+	public Class<? extends org.eclipse.xtext.ui.wizard.IProjectCreator> bindIProjectCreator() {
+		return net.certware.intent.ui.wizard.IntentSpecificationProjectCreator.class;
+	}
+
 	// contributed by org.eclipse.xtext.generator.exporting.QualifiedNamesFragment
 	public Class<? extends org.eclipse.xtext.ui.refactoring.IDependentElementsCalculator> bindIDependentElementsCalculator() {
 		return org.eclipse.xtext.ui.refactoring.impl.DefaultDependentElementsCalculator.class;
@@ -51,6 +55,11 @@ public abstract class AbstractIntentSpecificationUiModule extends DefaultUiModul
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.IXtextEditorCallback> bindIXtextEditorCallback() {
 		return org.eclipse.xtext.builder.nature.NatureAddingEditorCallback.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
+	public Class<? extends org.eclipse.xtext.generator.IContextualOutputConfigurationProvider> bindIContextualOutputConfigurationProvider() {
+		return org.eclipse.xtext.builder.EclipseOutputConfigurationProvider.class;
 	}
 
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
@@ -154,58 +163,8 @@ public abstract class AbstractIntentSpecificationUiModule extends DefaultUiModul
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public java.lang.ClassLoader bindClassLoaderToInstance() {
-		return getClass().getClassLoader();
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.access.IJvmTypeProvider.Factory> bindIJvmTypeProvider$Factory() {
-		return org.eclipse.xtext.common.types.access.jdt.JdtTypeProviderFactory.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.xtext.AbstractTypeScopeProvider> bindAbstractTypeScopeProvider() {
-		return org.eclipse.xtext.common.types.xtext.ui.JdtBasedSimpleTypeScopeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider> bindITypesProposalProvider() {
-		return org.eclipse.xtext.common.types.xtext.ui.JdtTypesProposalProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.access.jdt.IJavaProjectProvider> bindIJavaProjectProvider() {
-		return org.eclipse.xtext.common.types.xtext.ui.XtextResourceSetBasedProjectProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper> bindIHyperlinkHelper() {
-		return org.eclipse.xtext.common.types.xtext.ui.TypeAwareHyperlinkHelper.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher> bindPrefixMatcher() {
 		return org.eclipse.xtext.ui.editor.contentassist.FQNPrefixMatcher.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.AbstractJavaBasedContentProposalProvider.ReferenceProposalCreator> bindAbstractJavaBasedContentProposalProvider$ReferenceProposalCreator() {
-		return org.eclipse.xtext.common.types.xtext.ui.TypeAwareReferenceProposalCreator.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.IValidationJobScheduler> bindIValidationJobScheduler() {
-		return org.eclipse.xtext.common.types.xtext.ui.JdtValidationJobScheduler.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.resource.JavaProjectResourceSetInitializer> bindJavaProjectResourceSetInitializer() {
-		return org.eclipse.xtext.common.types.access.jdt.JvmTypesAwareResourceSetInitializer.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.ui.query.IJavaSearchParticipation> bindIJavaSearchParticipation() {
-		return org.eclipse.xtext.common.types.ui.query.IJavaSearchParticipation.Yes.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment

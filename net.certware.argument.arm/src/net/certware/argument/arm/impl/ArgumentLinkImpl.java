@@ -6,15 +6,13 @@ package net.certware.argument.arm.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import net.certware.argument.arm.ArgumentLink;
 import net.certware.argument.arm.ArmPackage;
 import net.certware.argument.arm.ModelElement;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->

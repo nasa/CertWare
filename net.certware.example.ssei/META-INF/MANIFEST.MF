@@ -7,4 +7,4 @@ Bundle-ClassPath: net.certware.example.ssei
 Bundle-Vendor: Kestrel Technology LLC
 Fragment-Host: net.certware.example
 Require-Bundle: org.eclipse.ui.cheatsheets
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

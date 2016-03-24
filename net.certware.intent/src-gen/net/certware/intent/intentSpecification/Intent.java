@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.Intent#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Intent#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Intent#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Intent#getDecompositions <em>Decompositions</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getIntent()
  * @model

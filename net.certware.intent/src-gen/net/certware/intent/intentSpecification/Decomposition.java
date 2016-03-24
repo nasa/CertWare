@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.Decomposition#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Decomposition#getName <em>Name</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.intent.intentSpecification.Decomposition#getModels <em>Models</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Decomposition#getItems <em>Items</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getDecomposition()
  * @model

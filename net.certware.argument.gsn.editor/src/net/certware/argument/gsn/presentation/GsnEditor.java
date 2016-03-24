@@ -1015,7 +1015,7 @@ IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGot
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Object getAdapter(Class key) {
 		if (key.equals(IContentOutlinePage.class)) {

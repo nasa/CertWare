@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/net.certware.sacm"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

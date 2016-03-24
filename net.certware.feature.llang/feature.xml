@@ -41,10 +41,6 @@ reserved.
       <import plugin="org.eclipse.xtext.common.types"/>
       <import plugin="org.eclipse.equinox.common" version="3.7.0" match="greaterOrEqual"/>
       <import plugin="org.apache.log4j"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.xtext.junit4"/>
-      <import plugin="org.hamcrest.core"/>
-      <import plugin="org.junit"/>
       <import plugin="org.eclipse.xtext.ui"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
@@ -57,7 +53,8 @@ reserved.
       <import plugin="org.eclipse.ui.console" version="3.6.100" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources"/>
       <import plugin="org.eclipse.xtend"/>
-      <import plugin="net.certware.argument.language.ui" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
+      <import plugin="net.certware.example"/>
    </requires>
 
    <plugin
@@ -66,12 +63,6 @@ reserved.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.analysis.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
 
    <plugin
          id="net.certware.argument.analysis.ui"
@@ -86,12 +77,6 @@ reserved.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="net.certware.argument.language.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
 
    <plugin
          id="net.certware.argument.language.ui"
@@ -111,6 +96,13 @@ reserved.
    <plugin
          id="net.certware.argument.language.ui.solver.windows"
          os="win32"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="net.certware.example.llang"
          download-size="0"
          install-size="0"
          version="0.0.0"

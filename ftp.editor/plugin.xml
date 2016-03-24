@@ -9,11 +9,12 @@
    <extension point="org.eclipse.ui.newWizards">
       <!-- @generated ftp -->
       <wizard
-            id="ftp.presentation.FtpModelWizardID"
-            name="%_UI_FtpModelWizard_label"
-            class="ftp.presentation.FtpModelWizard"
             category="net.certware.core.ui.newwizard.category"
-            icon="icons/full/obj16/FtpModelFile.gif">
+            class="ftp.presentation.FtpModelWizard"
+            finalPerspective="org.eclipse.sirius.ui.tools.perspective.design"
+            icon="icons/full/obj16/ftp.gif"
+            id="ftp.presentation.FtpModelWizardID"
+            name="%_UI_FtpModelWizard_label">
          <description>%_UI_FtpModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -24,7 +25,7 @@
       <editor
             id="ftp.presentation.FtpEditorID"
             name="%_UI_FtpEditor_label"
-            icon="icons/full/obj16/FtpModelFile.gif"
+            icon="icons/full/obj16/ftp.gif"
             extensions="ftp"
             class="ftp.presentation.FtpEditor"
             contributorClass="ftp.presentation.FtpActionBarContributor">
@@ -34,6 +35,12 @@
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
             targetID="net.certware.perspective">
+         <newWizardShortcut
+               id="ftp.presentation.FtpModelWizardID">
+         </newWizardShortcut>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.eclipse.sirius.ui.tools.perspective.design">
          <newWizardShortcut
                id="ftp.presentation.FtpModelWizardID">
          </newWizardShortcut>

@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.IntentImpl#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.IntentImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.IntentImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.IntentImpl#getDecompositions <em>Decompositions</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

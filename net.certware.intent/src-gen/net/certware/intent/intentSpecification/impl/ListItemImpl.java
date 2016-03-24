@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.ListItemImpl#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.ListItemImpl#getName <em>Name</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link net.certware.intent.intentSpecification.impl.ListItemImpl#getItemReferences <em>Item References</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.ListItemImpl#getModelReferences <em>Model References</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

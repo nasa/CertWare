@@ -159,7 +159,7 @@ public class ResourceDelegates {
 			return fFile.findMaxProblemSeverity(type, includeSubtypes, depth);
 		}
 
-		@SuppressWarnings("rawtypes")
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		public Object getAdapter(Class adapter) {
 			return fFile.getAdapter(adapter);
 		}
@@ -591,7 +591,7 @@ public class ResourceDelegates {
 			return ResourceDelegates.createResource(fFolder.findMember(name), fProvider);
 		}
 
-		@SuppressWarnings("rawtypes")
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		public Object getAdapter(Class adapter) {
 			return fFolder.getAdapter(adapter);
 		}
@@ -1030,7 +1030,7 @@ public class ResourceDelegates {
 			return ResourceDelegates.createResource(fProject.findMember(name), fProvider);
 		}
 
-		@SuppressWarnings("rawtypes")
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		public Object getAdapter(Class adapter) {
 			return fProject.getAdapter(adapter);
 		}

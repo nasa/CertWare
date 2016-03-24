@@ -51,6 +51,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * @generated
  */
+@SuppressWarnings("deprecation")
 public class DataProductNameEditPart extends CompartmentEditPart implements
 		ITextAwareEditPart {
 
@@ -556,6 +557,7 @@ public class DataProductNameEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
+	@SuppressWarnings({ "rawtypes" })
 	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {

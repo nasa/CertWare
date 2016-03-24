@@ -4,16 +4,28 @@
  */
 package net.certware.argument.arm.impl;
 
-import net.certware.argument.arm.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import net.certware.argument.arm.Annotation;
+import net.certware.argument.arm.Argument;
+import net.certware.argument.arm.ArgumentReasoning;
+import net.certware.argument.arm.ArmFactory;
+import net.certware.argument.arm.ArmPackage;
+import net.certware.argument.arm.AssertedChallenge;
+import net.certware.argument.arm.AssertedContext;
+import net.certware.argument.arm.AssertedCounterEvidence;
+import net.certware.argument.arm.AssertedEvidence;
+import net.certware.argument.arm.AssertedInference;
+import net.certware.argument.arm.CitationElement;
+import net.certware.argument.arm.Claim;
+import net.certware.argument.arm.EvidenceAssertion;
+import net.certware.argument.arm.InformationElement;
+import net.certware.argument.arm.TaggedValue;
 
 /**
  * <!-- begin-user-doc -->

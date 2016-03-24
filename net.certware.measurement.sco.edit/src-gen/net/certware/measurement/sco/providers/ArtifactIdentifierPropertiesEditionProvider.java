@@ -5,24 +5,17 @@ package net.certware.measurement.sco.providers;
 
 import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
+import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
+import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
+import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
+import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
+import org.eclipse.jface.viewers.IFilter;
+
 import net.certware.measurement.sco.ArtifactIdentifier;
 import net.certware.measurement.sco.ScoPackage;
-
 import net.certware.measurement.sco.components.ArtifactIdentifierPropertiesEditionComponent;
-
-import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
-import org.eclipse.emf.eef.runtime.context.PropertiesEditingContext;
-
-import org.eclipse.emf.eef.runtime.impl.utils.EEFUtils;
-
-import org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider;
-
-import org.eclipse.emf.eef.runtime.providers.impl.PropertiesEditingProviderImpl;
-
-import org.eclipse.jface.viewers.IFilter;
 
 /**
  * 

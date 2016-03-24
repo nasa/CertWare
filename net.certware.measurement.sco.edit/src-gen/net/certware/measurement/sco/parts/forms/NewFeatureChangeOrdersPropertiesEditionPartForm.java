@@ -3,63 +3,44 @@
  */
 package net.certware.measurement.sco.parts.forms;
 
-// Start of user code for imports
-import net.certware.measurement.sco.parts.NewFeatureChangeOrdersPropertiesEditionPart;
-import net.certware.measurement.sco.parts.ScoViewsRepository;
-
-import net.certware.measurement.sco.providers.ScoMessages;
-
 import org.eclipse.emf.common.util.Enumerator;
-
-import org.eclipse.emf.ecore.util.EcoreAdapterFactory;
-
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-
 import org.eclipse.emf.eef.runtime.EEFRuntimePlugin;
-
 import org.eclipse.emf.eef.runtime.api.component.IPropertiesEditionComponent;
-
 import org.eclipse.emf.eef.runtime.api.notify.IPropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.api.parts.IFormPropertiesEditionPart;
-
 import org.eclipse.emf.eef.runtime.impl.notify.PropertiesEditionEvent;
-
 import org.eclipse.emf.eef.runtime.part.impl.SectionPropertiesEditingPart;
-
 import org.eclipse.emf.eef.runtime.ui.parts.PartComposer;
-
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.BindingCompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionSequence;
 import org.eclipse.emf.eef.runtime.ui.parts.sequence.CompositionStep;
-
 import org.eclipse.emf.eef.runtime.ui.utils.EditingUtils;
-
 import org.eclipse.emf.eef.runtime.ui.widgets.EMFComboViewer;
 import org.eclipse.emf.eef.runtime.ui.widgets.FormUtils;
-
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
-
 import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
-
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.views.properties.tabbed.ISection;
+
+// Start of user code for imports
+import net.certware.measurement.sco.parts.NewFeatureChangeOrdersPropertiesEditionPart;
+import net.certware.measurement.sco.parts.ScoViewsRepository;
+import net.certware.measurement.sco.providers.ScoMessages;
 
 // End of user code
 

@@ -15,6 +15,7 @@ import org.eclipse.xtext.util.PolymorphicDispatcher;
 /*
  * Template CodetemplatesGeneratorFragment.xpt
  */
+@SuppressWarnings("restriction")
 public class PartialAnalysisDSLContentAssistParser extends AnalysisDSLParser implements IPartialContentAssistParser {
 
 	private AbstractRule rule;

@@ -43,6 +43,8 @@ reserved.
       <import plugin="org.eclipse.emf.ecore.xmi"/>
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.ui.cheatsheets"/>
+      <import plugin="net.certware.example"/>
    </requires>
 
    <plugin
@@ -71,5 +73,12 @@ reserved.
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="net.certware.example.ftp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
 
 </feature>

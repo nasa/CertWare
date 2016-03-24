@@ -4,18 +4,6 @@
 <plugin>
 
     <extension
-            point="org.eclipse.ui.editors">
-        <editor
-              class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-              default="true"
-              extensions="intent"
-              icon="icons/obj16/intent.gif"
-              id="net.certware.intent.IntentSpecification"
-              name="Intent Specification Editor">
-        </editor>
-    </extension>
-    <extension
         point="org.eclipse.ui.handlers">
         <handler
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
@@ -35,13 +23,21 @@
             </reference>
          </activeWhen>
       	</handler>
-      	<!-- copy qualified name -->
         <handler
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
 				<reference definitionId="net.certware.intent.IntentSpecification.Editor.opened" />
             </activeWhen>
+        </handler>
+        <handler
+              class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+              commandId="org.eclipse.xtext.ui.editor.FindReferences">
+           <activeWhen>
+              <reference
+                    definitionId="net.certware.intent.IntentSpecification.Editor.opened">
+              </reference>
+           </activeWhen>
         </handler>
         <handler
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
@@ -55,52 +51,33 @@
 				</and>
             </activeWhen>
         </handler>
-    </extension>
-    <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="net.certware.intent.IntentSpecification.Editor.opened">
-            <and>
-                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
-                <with variable="activeEditor">
-                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="net.certware.intent.IntentSpecification" 
-                        forcePluginActivation="true"/>
-                </with>        
-            </and>
-        </definition>
-        <definition id="net.certware.intent.IntentSpecification.XtextEditor.opened">
-            <and>
-                <reference definitionId="isXtextEditorActive"/>
-                <with variable="activeEditor">
-                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="net.certware.intent.IntentSpecification" 
-                        forcePluginActivation="true"/>
-                </with>        
-            </and>
-        </definition>
-    </extension>
-    <extension
-            point="org.eclipse.ui.preferencePages">
-        <page
-              category="certware"
-              class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-              id="net.certware.intent.IntentSpecification"
-              name="Intent Specification">
-            <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
-        </page>
-        <page
-            category="net.certware.intent.IntentSpecification"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="net.certware.intent.IntentSpecification.coloring"
-            name="Syntax Coloring">
-            <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
-        </page>
-        <page
-            category="net.certware.intent.IntentSpecification"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="net.certware.intent.IntentSpecification.templates"
-            name="Templates">
-            <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
-        </page>
+        <handler 
+			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.intent.IntentSpecification.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<handler 
+			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="net.certware.intent.IntentSpecification.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+		<handler
+			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
+				<activeWhen>
+					<reference definitionId="net.certware.intent.IntentSpecification.Editor.opened" />
+				</activeWhen>
+		</handler>
+		
+        
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
@@ -115,41 +92,27 @@
 			</enabledWhen>
 	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
-    </extension>
-    <extension
-        point="org.eclipse.ui.keywords">
-        <keyword
-            id="net.certware.intent.ui.keyword_IntentSpecification"
-            label="Intent Specification"/>
-    </extension>
-    <extension
-         point="org.eclipse.ui.commands">
-      <command
-            description="Trigger expensive validation"
-            id="net.certware.intent.IntentSpecification.validate"
-            name="Validate">
-      </command>
-      <!-- copy qualified name -->
-      <command
-            id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
-            categoryId="org.eclipse.ui.category.edit"
-            description="Copy the qualified name for the selected element"
-            name="Copy Qualified Name">
-      </command>
-      <command
-            id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
-            categoryId="org.eclipse.ui.category.edit"
-            description="Copy the qualified name for the selected element"
-            name="Copy Qualified Name">
-      </command>
+        <page
+              category="net.certware.intent.IntentSpecification"
+              class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+              icon="icons/obj16/intent.gif"
+              id="net.certware.intent.IntentSpecification.compiler.propertyPage"
+              name="Compiler">
+            <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="net.certware.intent.IntentSpecification.validate"
-                 style="push"
-                 tooltip="Trigger expensive validation">
+                   commandId="net.certware.intent.IntentSpecification.validate"
+                   icon="icons/obj16/intent.gif"
+                   style="push"
+                   tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="net.certware.intent.IntentSpecification.Editor.opened">
@@ -157,10 +120,12 @@
             </visibleWhen>
          </command>  
          </menuContribution>
-         <!-- copy qualified name -->
          <menuContribution locationURI="popup:#TextEditorContext?after=copy">
-         	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
-         		style="push" tooltip="Copy Qualified Name">
+         	<command
+                commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+                icon="icons/obj16/intent.gif"
+                style="push"
+                tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
                 	<reference definitionId="net.certware.intent.IntentSpecification.Editor.opened" />
             	</visibleWhen>
@@ -190,9 +155,7 @@
 				</visibleWhen>
 			</command>
          </menuContribution>
-    </extension>
-    <extension point="org.eclipse.ui.menus">
-		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+         		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command
          commandId="org.eclipse.xtext.ui.editor.FindReferences"
          icon="icons/obj16/intent.gif">
@@ -202,65 +165,77 @@
             	</visibleWhen>
 			</command>
 		</menuContribution>
-	</extension>
-	<extension point="org.eclipse.ui.handlers">
-	    <handler
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
-            commandId="org.eclipse.xtext.ui.editor.FindReferences">
-            <activeWhen>
-                <reference
-                    definitionId="net.certware.intent.IntentSpecification.Editor.opened">
-                </reference>
-            </activeWhen>
-        </handler>
-    </extension>   
-
-<!-- adding resource factories -->
-
-	<extension
-		point="org.eclipse.emf.ecore.extension_parser">
-		<parser
-			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="intent">
-		</parser>
-	</extension>
-	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
-        <resourceServiceProvider
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="intent">
-        </resourceServiceProvider>
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command
+         commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+         icon="icons/obj16/intent.gif"
+         style="push"
+         tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="net.certware.intent.IntentSpecification.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>  
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command
+               commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               icon="icons/obj16/intent.gif"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="net.certware.intent.IntentSpecification.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>		
+         <!-- copy qualified name -->
+		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
+			<command
+         commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
+         icon="icons/obj16/intent.gif"
+         id="net.certware.intent.IntentSpecification.OpenGeneratedCode"
+         style="push">
+					<visibleWhen checkEnabled="false">
+						<reference definitionId="net.certware.intent.IntentSpecification.Editor.opened" />
+					</visibleWhen>
+			</command>
+		</menuContribution>		
     </extension>
 
 
-	<!-- marker definitions for net.certware.intent.IntentSpecification -->
-	<extension
-	        id="intentspecification.check.fast"
-	        name="Intent Specification Problem"
-	        point="org.eclipse.core.resources.markers">
-	    <super type="org.eclipse.xtext.ui.check.fast"/>
-	    <persistent value="true"/>
-	</extension>
-	<extension
-	        id="intentspecification.check.normal"
-	        name="Intent Specification Problem"
-	        point="org.eclipse.core.resources.markers">
-	    <super type="org.eclipse.xtext.ui.check.normal"/>
-	    <persistent value="true"/>
-	</extension>
-	<extension
-	        id="intentspecification.check.expensive"
-	        name="Intent Specification Problem"
-	        point="org.eclipse.core.resources.markers">
-	    <super type="org.eclipse.xtext.ui.check.expensive"/>
-	    <persistent value="true"/>
-	</extension>
+<!-- adding resource factories -->
 
-   <extension
-         point="org.eclipse.xtext.builder.participant">
-      <participant
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
-      </participant>
-   </extension>
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="net.certware.intent.IntentSpecification.compare.contentViewers"
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="intent">
+    </viewer>
+  </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="net.certware.intent.IntentSpecification.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.intent.IntentSpecification" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+        <definition id="net.certware.intent.IntentSpecification.XtextEditor.opened">
+            <and>
+                <reference definitionId="isXtextEditorActive"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="net.certware.intent.IntentSpecification" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
@@ -271,55 +246,175 @@
             <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
         </page>
     </extension>
+
+
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="net.certware.intent.IntentSpecification"
+	        class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="net.certware.intent.IntentSpecification.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="net.certware.intent.IntentSpecification.compare.contentMergeViewers"
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="intent" label="Intent Specification Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="net.certware.intent.IntentSpecification.editors.documentProviders"
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="intent">
+    </provider>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="net.certware.perspective">
+     </perspectiveExtension>
+  </extension>
+
+     <extension
+            point="org.eclipse.ui.editors">
+        <editor
+              class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="intent"
+              icon="icons/obj16/intent.gif"
+              id="net.certware.intent.IntentSpecification"
+              name="Intent Specification Editor">
+        </editor>
+    </extension>
     <extension
-            point="org.eclipse.ui.propertyPages">
+            point="org.eclipse.ui.preferencePages">
+        <page
+              category="certware"
+              class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="net.certware.intent.IntentSpecification"
+              name="Intent Specification">
+            <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
+        </page>
         <page
             category="net.certware.intent.IntentSpecification"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="net.certware.intent.IntentSpecification.compiler.propertyPage"
-            name="Compiler">
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="net.certware.intent.IntentSpecification.coloring"
+            name="Syntax Coloring">
             <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
-            <enabledWhen>
-	            <adapt type="org.eclipse.core.resources.IProject"/>
-			</enabledWhen>
-	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+        <page
+            category="net.certware.intent.IntentSpecification"
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="net.certware.intent.IntentSpecification.templates"
+            name="Templates">
+            <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
         </page>
     </extension>
-
-	<!-- Quick Outline -->
-	<extension
-		point="org.eclipse.ui.handlers">
-		<handler 
-			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
-			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
-			<activeWhen>
-				<reference
-					definitionId="net.certware.intent.IntentSpecification.Editor.opened">
-				</reference>
-			</activeWhen>
-		</handler>
-	</extension>
-	<extension
-		point="org.eclipse.ui.commands">
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="net.certware.intent.ui.keyword_IntentSpecification"
+            label="Intent Specification"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="net.certware.intent.IntentSpecification.validate"
+            name="Validate">
+      </command>
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
+      <command
+            id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
+            categoryId="org.eclipse.ui.category.edit"
+            description="Copy the qualified name for the selected element"
+            name="Copy Qualified Name">
+      </command>
 		<command
-			description="Open the quick outline."
+			description="Open the quick outline"
 			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 			name="Quick Outline">
 		</command>
+      
+    </extension>
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="intent">
+		</parser>
 	</extension>
-	<extension point="org.eclipse.ui.menus">
-		<menuContribution
-			locationURI="popup:#TextEditorContext?after=group.open">
-			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-				style="push"
-				tooltip="Open Quick Outline">
-				<visibleWhen checkEnabled="false">
-					<reference definitionId="net.certware.intent.IntentSpecification.Editor.opened"/>
-				</visibleWhen>
-			</command>
-		</menuContribution>
-	</extension>
+
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="intent">
+        </resourceServiceProvider>
+    </extension>
+
+
+	<!-- marker definitions for net.certware.intent.IntentSpecification -->
     <!-- quickfix marker resolution generator for net.certware.intent.IntentSpecification -->
+
+   	<!-- Rename Refactoring -->
+
+<!-- adding resource factories -->
+
+
+	<!-- marker definitions for net.certware.intent.IntentSpecification -->
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="intent"
+            >
+      </participant>
+   </extension>
+	<extension
+	        id="intentspecification.check.fast"
+	        name="IntentSpecification Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.fast"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="intentspecification.check.normal"
+	        name="IntentSpecification Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.normal"/>
+	    <persistent value="true"/>
+	</extension>
+	<extension
+	        id="intentspecification.check.expensive"
+	        name="IntentSpecification Problem"
+	        point="org.eclipse.core.resources.markers">
+	    <super type="org.eclipse.xtext.ui.check.expensive"/>
+	    <persistent value="true"/>
+	</extension>
+
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.xtext.projectwiz"
+            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
+            finalPerspective="net.certware.perspective"
+            icon="icons/obj16/intent.gif"
+            id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
+            name="Intent Specification Project"
+            project="true">
+      </wizard>
+   </extension>
+
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
@@ -347,82 +442,11 @@
             </attribute>
         </markerResolutionGenerator>
     </extension>
-
-   <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            category="net.certware.core.ui.newwizard.category"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            finalPerspective="net.certware.perspective"
-            icon="icons/obj16/intent.gif"
-            id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            name="Intent Specification Project"
-            project="true">
-      </wizard>
-   </extension>
    	<!-- Rename Refactoring -->
-	<extension point="org.eclipse.ui.handlers">
-		<handler 
-			class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
-			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
-			<activeWhen>
-				<reference
-					definitionId="net.certware.intent.IntentSpecification.Editor.opened">
-				</reference>
-			</activeWhen>
-		</handler>
-	</extension>
-    <extension point="org.eclipse.ui.menus">
-         <menuContribution
-            locationURI="popup:#TextEditorContext?after=group.edit">
-         <command
-               commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
-               icon="icons/obj16/intent.gif"
-               style="push">
-            <visibleWhen checkEnabled="false">
-               <reference
-                     definitionId="net.certware.intent.IntentSpecification.Editor.opened">
-               </reference>
-            </visibleWhen>
-         </command>
-      </menuContribution>
-   </extension>
-   <extension point="org.eclipse.ui.preferencePages">
-	    <page
-	        category="net.certware.intent.IntentSpecification"
-	        class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="net.certware.intent.IntentSpecification.refactoring"
-	        name="Refactoring">
-	        <keywordReference id="net.certware.intent.ui.keyword_IntentSpecification"/>
-	    </page>
-	</extension>
-
-  <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="net.certware.intent.IntentSpecification.compare.contentViewers"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="intent">
-    </viewer>
+  <extension point="org.eclipse.team.core.fileTypes">
+    <fileTypes
+            extension="intent"
+            type="text">
+    </fileTypes>
   </extension>
-  <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="net.certware.intent.IntentSpecification.compare.contentMergeViewers"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="intent" label="Intent Specification Compare">
-     </viewer>
-  </extension>
-  <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="net.certware.intent.IntentSpecification.editors.documentProviders"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="intent">
-    </provider>
-  </extension>
-  <extension
-        point="org.eclipse.ui.perspectiveExtensions">
-     <perspectiveExtension
-           targetID="net.certware.perspective">
-        <newWizardShortcut
-              id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard">
-        </newWizardShortcut>
-     </perspectiveExtension>
-  </extension>
-
 </plugin>

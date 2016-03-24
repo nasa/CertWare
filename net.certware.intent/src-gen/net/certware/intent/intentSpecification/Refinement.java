@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.Refinement#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Refinement#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.Refinement#getIntents <em>Intents</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.intentSpecification.IntentSpecificationPackage#getRefinement()
  * @model

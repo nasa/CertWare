@@ -8,12 +8,12 @@ package net.certware.measurement.sco.provider;
 import java.util.Collection;
 import java.util.List;
 
-import net.certware.measurement.sco.ChangeOrderType;
-import net.certware.measurement.sco.CriticalDefectChangeOrders;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+
+import net.certware.measurement.sco.ChangeOrderType;
+import net.certware.measurement.sco.CriticalDefectChangeOrders;
 
 /**
  * This is the item provider adapter for a {@link net.certware.measurement.sco.CriticalDefectChangeOrders} object.

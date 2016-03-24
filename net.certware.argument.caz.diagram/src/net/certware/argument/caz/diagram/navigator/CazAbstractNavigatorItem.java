@@ -8,6 +8,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 /**
  * @generated
  */
+@SuppressWarnings("rawtypes")
 public abstract class CazAbstractNavigatorItem extends PlatformObject {
 
 	/**
@@ -23,6 +24,7 @@ public abstract class CazAbstractNavigatorItem extends PlatformObject {
 		Platform.getAdapterManager().registerAdapters(
 				new IAdapterFactory() {
 
+					@SuppressWarnings("unchecked")
 					public Object getAdapter(Object adaptableObject,
 							Class adapterType) {
 						if (adaptableObject instanceof net.certware.argument.caz.diagram.navigator.CazAbstractNavigatorItem
@@ -32,6 +34,7 @@ public abstract class CazAbstractNavigatorItem extends PlatformObject {
 						return null;
 					}
 
+					@SuppressWarnings("unchecked")
 					public Class[] getAdapterList() {
 						return supportedTypes;
 					}

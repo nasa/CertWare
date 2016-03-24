@@ -13,4 +13,4 @@ Require-Bundle: net.certware.planning.cpn;visibility:=reexport,
  org.eclipse.emf.mwe.utils;visibility:=reexport,
  org.eclipse.xtend.typesystem.emf;visibility:=reexport
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -24,7 +24,7 @@ Require-Bundle: net.certware.evidence.hugin;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.ui.editor.outline.actions,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: net.certware.evidence.hugin.ui.contentassist.antlr,
  net.certware.evidence.hugin.ui.quickfix,
  net.certware.evidence.hugin.ui.contentassist

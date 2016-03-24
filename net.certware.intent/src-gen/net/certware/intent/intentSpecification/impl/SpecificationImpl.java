@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.SpecificationImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.SpecificationImpl#getRefinements <em>Refinements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

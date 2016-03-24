@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getName <em>Name</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getModels <em>Models</em>}</li>
  *   <li>{@link net.certware.intent.intentSpecification.impl.DecompositionImpl#getItems <em>Items</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
