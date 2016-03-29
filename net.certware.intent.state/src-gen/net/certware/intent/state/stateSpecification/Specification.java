@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.Specification#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Specification#getDevices <em>Devices</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Specification#getComponents <em>Components</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getSpecification()
  * @model

@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getDeviceCommands <em>Device Commands</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeviceImpl#getDeviceMeasurements <em>Device Measurements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ValueRangeImpl#getLower <em>Lower</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ValueRangeImpl#getUpper <em>Upper</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ValueRangeImpl#getRangeType <em>Range Type</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ValueRangeImpl#getRangeUnits <em>Range Units</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareAdapter#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareAdapter#getDescription <em>Description</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.state.stateAnalysis.HardwareAdapter#getDeviceCommands <em>Device Commands</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareAdapter#getDeviceMeasurements <em>Device Measurements</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareAdapter()
  * @model

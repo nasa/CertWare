@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.Controller#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.Controller#getDescription <em>Description</em>}</li>
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.state.stateAnalysis.Controller#getStateConstraint <em>State Constraint</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.Controller#getHardwareCommand <em>Hardware Command</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getController()
  * @model

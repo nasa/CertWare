@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.Input#getRange <em>Range</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Input#getValueList <em>Value List</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.intent.state.stateSpecification.Input#getComments <em>Comments</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Input#getStructure <em>Structure</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getInput()
  * @model

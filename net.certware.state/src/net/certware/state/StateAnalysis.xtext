@@ -83,7 +83,7 @@ Controller:
 	name=ID
 	description=STRING
 	'delegates' '{' delegates += [Controller]* '}'
-	'constraings' '{' stateConstraint += StateConstraint+ '}'
+	'constraints' '{' stateConstraint += StateConstraint+ '}'
 	'commands' '{' hardwareCommand += HardwareCommand+ '}'
 ;
 
@@ -138,13 +138,13 @@ DeviceCommand:
 DeviceMeasurement:
 	'DeviceMeasurement'
 	name=ID
-	description=ID
+	description=STRING
 ;
 
 HardwareAdapter:
 	'HardwareAdapter'
 	name=ID
-	description=ID
+	description=STRING
 	'hardwareCommands' '{' hardwareCommands += HardwareCommand* '}'
 	'hardwareMeasurements' '{' hardwareMeasurements += HardwareMeasurement* '}'
 	'deviceCommands' '{' deviceCommands += DeviceCommand* '}'

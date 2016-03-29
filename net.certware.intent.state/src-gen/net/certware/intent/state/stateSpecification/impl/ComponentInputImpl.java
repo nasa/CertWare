@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentInputImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentInputImpl#getIo <em>Io</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentInputImpl#getSource <em>Source</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

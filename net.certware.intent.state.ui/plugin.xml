@@ -346,12 +346,13 @@
          point="org.eclipse.ui.newWizards">
       <wizard
             category="net.certware.core.ui.newwizard.category"
-            class="net.certware.intent.state.ui.StateSpecificationExecutableExtensionFactory:net.certware.intent.state.ui.wizard.StateSpecificationNewProjectWizard"
+            class="net.certware.intent.state.ui.wizard.NewIntentStateFileWizard"
             finalPerspective="net.certware.perspective"
+            hasPages="true"
             icon="icons/obj16/specification.gif"
-            id="net.certware.intent.state.ui.wizard.StateSpecificationNewProjectWizard"
-            name="State Specification Project"
-            project="true">
+            id="net.certware.intent.state.ui.wizard.file"
+            name="Intent Specification State Model"
+            project="false">
       </wizard>
    </extension>
    	<!-- Rename Refactoring -->
@@ -412,7 +413,7 @@
      <perspectiveExtension
            targetID="net.certware.perspective">
         <newWizardShortcut
-              id="net.certware.intent.state.ui.wizard.StateSpecificationNewProjectWizard">
+              id="net.certware.intent.state.ui.wizard.file">
         </newWizardShortcut>
      </perspectiveExtension>
   </extension>

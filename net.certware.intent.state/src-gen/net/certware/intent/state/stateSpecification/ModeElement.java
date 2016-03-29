@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.ModeElement#isInferred <em>Inferred</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ModeElement#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ModeElement#getModes <em>Modes</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getModeElement()
  * @model

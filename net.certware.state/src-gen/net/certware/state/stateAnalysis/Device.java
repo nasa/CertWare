@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.Device#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.Device#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.Device#getDeviceCommands <em>Device Commands</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.Device#getDeviceMeasurements <em>Device Measurements</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getDevice()
  * @model

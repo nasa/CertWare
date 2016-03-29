@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.DataProduct#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.DataProduct#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.DataProduct#getContent <em>Content</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getDataProduct()
  * @model

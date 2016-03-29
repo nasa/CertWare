@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getDescription <em>Description</em>}</li>
@@ -37,7 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getStateConstraint <em>State Constraint</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.ControllerImpl#getHardwareCommand <em>Hardware Command</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

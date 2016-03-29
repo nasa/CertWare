@@ -24,13 +24,13 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.TriggerImpl#getMode <em>Mode</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.TriggerImpl#getList <em>List</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.TriggerImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.TriggerImpl#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

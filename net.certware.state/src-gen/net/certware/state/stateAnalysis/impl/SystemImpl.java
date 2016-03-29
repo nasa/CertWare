@@ -27,12 +27,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.SystemImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.SystemImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.SystemImpl#getSubsystems <em>Subsystems</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

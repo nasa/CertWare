@@ -93,10 +93,10 @@ Workflow {
     		}
     
             // provides a new project wizard
-    		fragment = projectWizard.SimpleProjectWizardFragment {
-			    generatorProjectName = "${projectName}.generator"
-			    fileExtension = fileExtensions
-			} 
+    		//fragment = projectWizard.SimpleProjectWizardFragment auto-inject {
+			//    generatorProjectName = "${projectName}.generator"
+			//    fileExtension = fileExtensions
+			//} 
 			
     		// old scoping and exporting API
     		// fragment = scoping.ImportURIScopingFragment auto-inject {}

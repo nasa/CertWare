@@ -248,17 +248,6 @@
 	</extension>
 
    <extension
-         point="org.eclipse.ui.newWizards">
-      <wizard
-            category="org.eclipse.xtext.projectwiz"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            name="IntentSpecification Project"
-            project="true">
-      </wizard>
-   </extension>
-
-   <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
             class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"

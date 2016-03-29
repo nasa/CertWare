@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare Intention State Model Plugin
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.3.qualifier
 Bundle-SymbolicName: net.certware.intent.state.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.intent.state;visibility:=reexport,
@@ -19,7 +19,9 @@ Require-Bundle: net.certware.intent.state;visibility:=reexport,
  org.eclipse.xpand,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
+ org.eclipse.compare,
+ org.eclipse.xtext.xbase.lib,
+ net.certware.core.ui
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

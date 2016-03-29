@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.StateVariableImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.StateVariableImpl#getState <em>State</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

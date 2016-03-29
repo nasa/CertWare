@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentImpl#getModes <em>Modes</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ComponentImpl#getOutputs <em>Outputs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

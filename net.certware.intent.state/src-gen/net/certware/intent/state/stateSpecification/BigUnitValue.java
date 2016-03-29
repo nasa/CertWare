@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.BigUnitValue#getValue <em>Value</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.BigUnitValue#getUnits <em>Units</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getBigUnitValue()
  * @model

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.Component#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Component#getModes <em>Modes</em>}</li>
@@ -20,7 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.intent.state.stateSpecification.Component#getInputs <em>Inputs</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Component#getOutputs <em>Outputs</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getComponent()
  * @model

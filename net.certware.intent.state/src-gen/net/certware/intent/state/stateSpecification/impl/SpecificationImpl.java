@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.SpecificationImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.SpecificationImpl#getDevices <em>Devices</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.SpecificationImpl#getComponents <em>Components</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

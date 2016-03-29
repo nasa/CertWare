@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: net.certware.state.ui
+Bundle-Name: CertWare State Analysis DSL UI
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-SymbolicName: net.certware.state.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.state;visibility:=reexport,
@@ -15,7 +15,9 @@ Require-Bundle: net.certware.state;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
+ org.eclipse.compare,
+ net.certware.core.ui,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

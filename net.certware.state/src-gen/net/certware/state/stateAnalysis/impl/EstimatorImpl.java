@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.EstimatorImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.EstimatorImpl#getDescription <em>Description</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.state.stateAnalysis.impl.EstimatorImpl#getStateUpdates <em>State Updates</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.EstimatorImpl#getHardwareMeasurement <em>Hardware Measurement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

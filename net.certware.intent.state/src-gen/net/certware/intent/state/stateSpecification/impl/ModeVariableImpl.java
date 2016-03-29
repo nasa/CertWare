@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ModeVariableImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ModeVariableImpl#getModes <em>Modes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

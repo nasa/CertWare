@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareAdapterImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareAdapterImpl#getDescription <em>Description</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareAdapterImpl#getDeviceCommands <em>Device Commands</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.HardwareAdapterImpl#getDeviceMeasurements <em>Device Measurements</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

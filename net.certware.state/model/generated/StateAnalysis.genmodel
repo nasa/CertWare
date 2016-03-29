@@ -3,8 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/net.certware.state/src-gen" editDirectory="/net.certware.state.edit/src"
     editorDirectory="/net.certware.state.editor/src" modelPluginID="net.certware.state"
     forceOverwrite="true" modelName="StateAnalysis" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="net.certware.state.edit"
-    editorPluginID="net.certware.state.editor" runtimeVersion="2.10">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="net.certware.state.edit"
+    editorPluginID="net.certware.state.editor" runtimeVersion="2.11">
   <genPackages prefix="StateAnalysis" basePackage="net.certware.state" disposableProviderFactory="true"
       fileExtensions="sa" ecorePackage="StateAnalysis.ecore#/">
     <genClasses ecoreClass="StateAnalysis.ecore#//System">

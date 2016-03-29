@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.DeploymentSet#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.DeploymentSet#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.DeploymentSet#getDeployments <em>Deployments</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getDeploymentSet()
  * @model

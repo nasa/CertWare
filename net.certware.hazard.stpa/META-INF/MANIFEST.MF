@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare DSL for STPA
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.2.qualifier
 Bundle-SymbolicName: net.certware.hazard.stpa; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
@@ -33,3 +33,4 @@ Export-Package: net.certware.hazard.stpa,
  net.certware.hazard.stpa.scoping,
  net.certware.hazard.stpa.generator,
  net.certware.hazard.stpa.formatting
+Bundle-ClassPath: .

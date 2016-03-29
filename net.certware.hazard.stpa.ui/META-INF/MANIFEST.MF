@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CertWare STPA Model UI
 Bundle-Vendor: Kestrel Technology LLC
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.2.qualifier
 Bundle-SymbolicName: net.certware.hazard.stpa.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: net.certware.hazard.stpa;visibility:=reexport,

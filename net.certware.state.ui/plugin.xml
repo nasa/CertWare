@@ -392,5 +392,27 @@
             extensions="sa">
     </provider>
   </extension>
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <wizard
+           category="net.certware.core.ui.newwizard.category"
+           class="net.certware.state.ui.wizard.NewStateAnalysisFileWizard"
+           finalPerspective="net.certware.perspective"
+           hasPages="true"
+           icon="icons/full/obj16/StateAnalysisModelFile.gif"
+           id="net.certware.state.ui.wizard.file"
+           name="State Analysis DSL Model"
+           project="false">
+     </wizard>
+  </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="net.certware.perspective">
+        <newWizardShortcut
+              id="net.certware.state.ui.wizard.file">
+        </newWizardShortcut>
+     </perspectiveExtension>
+  </extension>
 
 </plugin>

@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.DeviceInput#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.DeviceInput#getIo <em>Io</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.DeviceInput#getSource <em>Source</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getDeviceInput()
  * @model

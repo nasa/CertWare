@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.StateVariableImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.StateVariableImpl#getDescription <em>Description</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link net.certware.state.stateAnalysis.impl.StateVariableImpl#getStateUpdates <em>State Updates</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.StateVariableImpl#getInfluencedBy <em>Influenced By</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

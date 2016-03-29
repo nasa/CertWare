@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.BigUnitValueImpl#getValue <em>Value</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.BigUnitValueImpl#getUnits <em>Units</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

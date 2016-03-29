@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.ComponentInput#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ComponentInput#getIo <em>Io</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ComponentInput#getSource <em>Source</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getComponentInput()
  * @model

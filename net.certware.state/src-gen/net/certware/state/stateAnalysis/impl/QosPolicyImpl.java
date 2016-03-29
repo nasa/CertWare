@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.QosPolicyImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.QosPolicyImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.QosPolicyImpl#getPolicy <em>Policy</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

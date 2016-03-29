@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getRange <em>Range</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getValueList <em>Value List</em>}</li>
@@ -39,7 +40,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getComments <em>Comments</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.InputImpl#getStructure <em>Structure</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

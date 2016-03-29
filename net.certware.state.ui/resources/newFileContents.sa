@@ -1,0 +1,67 @@
+// Example state analysis DSL model
+
+
+System
+demo "Demonstration model"
+subsystems
+{
+
+	// each subsystem is composed of one or more deployment sets
+	Subsystem SSxLHS "Left side" 
+	sets {}
+	
+	
+	Subsystem SSxRHS "Right side"
+	sets { 
+		// each deployment set is composed of one or more deployment
+		DeploymentSet Controllers "Right side controllers deployment set"
+		deployments {
+			Deployment InboardSurface "Right side inboard surface deployment"
+			components {
+				Component Actuator "Actuator"
+				variables {
+					StateVariable hingePosition
+					"Actuator hinge position"
+					type TIMELINE
+					in { }
+					out { }
+					updates {}
+					influenced {}
+				}
+				controllers {
+					Controller CPC1
+					"Hinge position controller 1"
+					delegates {}
+					constraints { 
+						Constraint rightHingePositionConstraint "right hinge position constraint"
+					}
+					commands { 
+						HardwareCommand rightActuatorUp "right actuator up command"
+						HardwareCommand rightActuatorDown "right actuator down command"
+					}
+				}
+				estimators {
+					Estimator EPC1 "Hinge position estimator"
+					distills {}
+					constraints {}
+					updates { 
+						StateUpdate rightHingeUpdate "right actuator hinge update"
+					}
+					measurement { 
+						HardwareMeasurement rightHingeDeflection "right actuator hinge deflection"
+					}
+				}
+				adapters {
+					HardwareAdapter InterfacePin1 "Hinge Pin 1"
+					hardwareCommands {} 
+					hardwareMeasurements {} 
+					deviceCommands {} 
+					deviceMeasurements {} 
+				}
+			}
+			catalogs {}
+		}
+	}
+	
+}
+

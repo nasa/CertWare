@@ -1,0 +1,74 @@
+// specification includes a set of devices and one component
+specification SPEC
+
+// device list
+[
+devices
+	device CockpitFIL "Cockpit Fault Indicator Lamp" 
+	outputs 
+	output FILInhibit value value-list { "On" "Off" } rate 0 units "manual" target AltitudeSwitch 
+	output FILReset value value-list {"T" "F"} rate 0 units "manual" target AltitudeSwitch
+	
+	device AAlt "Analog Altimeter"
+	outputs
+    output AASignal value value-list {"Below" "Above" } target AltitudeSwitch
+    output AAStatus value value-list {"Invalid" "Valid" } target AltitudeSwitch
+    
+    device DA1 "Digital Altimeter 1"
+    outputs
+    output DA1AltSignal value range {-50 ... 2500} type "INT" units "Kft" target AltitudeSwitch
+    output DA1StatusSignal value value-list {"Fail" "NCD" "Test" "Norm"} target AltitudeSwitch
+    
+    device DA2 "Digital Altimeter 2"
+    outputs
+    output DA2AltSignal value range {-50 ... 2500} type "INT" units "Kft" target AltitudeSwitch
+    output DA2StatusSignal value value-list {"Fail" "NCD" "Test" "Norm"} target AltitudeSwitch
+    
+    device WT "Watchdog Timer"
+    inputs input WDStrobe source AltitudeSwitch
+    
+    device DOI "Device of Interest"
+    inputs input DOIPowerOn source AltitudeSwitch
+    outputs output DOIStatus value value-list {"On" "Off"} target AltitudeSwitch
+]
+
+// one component, an altitude switch
+component AltitudeSwitch
+
+modes
+supervisory 
+mode "" {"Cockpit Controls"} 
+;
+
+operating 
+mode "" { initial "Startup" "Operational" "Fault Detected" }
+mode "" { initial "Not Inhibited" "Inhibited" }
+;
+
+states inferred
+state "Analog Alt" { "Valid" "Invalid" initial "Unknown" }
+state "Digital Alt1" { "Valid" "Invalid" initial "Unknown" }
+state "Digital Alt2" { "Valid" "Invalid" initial "Unknown" }
+state "Aircraft Altitude" { "Below Threshold" "At-or-Above Threshold" initial "Unknown" "Cannot be Determined" }
+state "DOI-Status" { "On" "Off" initial "Unknown" "Fault detected" }
+;
+
+inputs
+input AAAig source AAlt
+input AAStatus source AAlt
+input DA1Sig source DA1
+input DA1Status source DA1
+input DA2Sig source DA2
+input DA2Status source DA2
+input DOIStatus source DOI
+input FILInhibit source CockpitFIL
+input FILReset source CockpitFIL
+
+outputs
+output DOIPowerOn value value-list {"High"} target DOI
+output WDStrobe value value-list {"High"} target WT
+
+
+
+ 
+ 

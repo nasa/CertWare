@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.Trigger#getMode <em>Mode</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Trigger#getList <em>List</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Trigger#getVariable <em>Variable</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.Trigger#getValue <em>Value</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getTrigger()
  * @model

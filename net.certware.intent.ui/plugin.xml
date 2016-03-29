@@ -404,15 +404,6 @@
 
    <extension
          point="org.eclipse.ui.newWizards">
-      <wizard
-            category="org.eclipse.xtext.projectwiz"
-            class="net.certware.intent.ui.IntentSpecificationExecutableExtensionFactory:net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            finalPerspective="net.certware.perspective"
-            icon="icons/obj16/intent.gif"
-            id="net.certware.intent.ui.wizard.IntentSpecificationNewProjectWizard"
-            name="Intent Specification Project"
-            project="true">
-      </wizard>
    </extension>
 
     <extension

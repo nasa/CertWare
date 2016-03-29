@@ -15,7 +15,6 @@ import org.eclipse.xtext.util.PolymorphicDispatcher;
 /*
  * Template CodetemplatesGeneratorFragment.xpt
  */
-@SuppressWarnings("restriction")
 public class PartialIntentSpecificationContentAssistParser extends IntentSpecificationParser implements IPartialContentAssistParser {
 
 	private AbstractRule rule;

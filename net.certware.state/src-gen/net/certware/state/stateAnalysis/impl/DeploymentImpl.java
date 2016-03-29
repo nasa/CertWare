@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeploymentImpl#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeploymentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeploymentImpl#getComponents <em>Components</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.impl.DeploymentImpl#getCatalogs <em>Catalogs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

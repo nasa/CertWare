@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.ValueRange#getLower <em>Lower</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ValueRange#getUpper <em>Upper</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ValueRange#getRangeType <em>Range Type</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.ValueRange#getRangeUnits <em>Range Units</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.intent.state.stateSpecification.StateSpecificationPackage#getValueRange()
  * @model

@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ModeElementImpl#isInferred <em>Inferred</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ModeElementImpl#getType <em>Type</em>}</li>
  *   <li>{@link net.certware.intent.state.stateSpecification.impl.ModeElementImpl#getModes <em>Modes</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

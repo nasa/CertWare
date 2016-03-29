@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareCommand#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.HardwareCommand#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getHardwareCommand()
  * @model

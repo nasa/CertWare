@@ -12,72 +12,72 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalStateSpecificationLexer extends Lexer {
-    public static final int T__68=68;
-    public static final int RULE_ID=4;
-    public static final int T__66=66;
-    public static final int T__67=67;
-    public static final int T__29=29;
-    public static final int T__64=64;
-    public static final int T__28=28;
-    public static final int T__65=65;
-    public static final int T__27=27;
-    public static final int T__62=62;
-    public static final int T__26=26;
-    public static final int T__63=63;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int T__61=61;
-    public static final int EOF=-1;
-    public static final int T__60=60;
-    public static final int T__55=55;
-    public static final int T__56=56;
+    public static final int T__50=50;
     public static final int T__19=19;
+    public static final int T__15=15;
+    public static final int T__59=59;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__11=11;
+    public static final int T__55=55;
+    public static final int T__12=12;
+    public static final int T__56=56;
+    public static final int T__13=13;
     public static final int T__57=57;
+    public static final int T__14=14;
     public static final int T__58=58;
     public static final int T__51=51;
-    public static final int T__16=16;
     public static final int T__52=52;
-    public static final int T__15=15;
     public static final int T__53=53;
-    public static final int T__18=18;
     public static final int T__54=54;
-    public static final int T__17=17;
-    public static final int T__12=12;
-    public static final int T__11=11;
-    public static final int T__14=14;
-    public static final int T__13=13;
-    public static final int T__59=59;
+    public static final int T__60=60;
+    public static final int T__61=61;
+    public static final int RULE_ID=4;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=5;
-    public static final int T__50=50;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__48=48;
-    public static final int T__49=49;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__23=23;
+    public static final int T__67=67;
+    public static final int T__24=24;
+    public static final int T__68=68;
+    public static final int T__25=25;
+    public static final int T__62=62;
+    public static final int T__63=63;
+    public static final int T__20=20;
+    public static final int T__64=64;
+    public static final int T__21=21;
+    public static final int T__65=65;
     public static final int RULE_STRING=6;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -90,15 +90,15 @@ public class InternalStateSpecificationLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g"; }
+    public String getGrammarFileName() { return "InternalStateSpecification.g"; }
 
     // $ANTLR start "T__11"
     public final void mT__11() throws RecognitionException {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:11:7: ( 'specification' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:11:9: 'specification'
+            // InternalStateSpecification.g:11:7: ( 'specification' )
+            // InternalStateSpecification.g:11:9: 'specification'
             {
             match("specification"); 
 
@@ -118,8 +118,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:12:7: ( '[' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:12:9: '['
+            // InternalStateSpecification.g:12:7: ( '[' )
+            // InternalStateSpecification.g:12:9: '['
             {
             match('['); 
 
@@ -138,8 +138,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:13:7: ( 'devices' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:13:9: 'devices'
+            // InternalStateSpecification.g:13:7: ( 'devices' )
+            // InternalStateSpecification.g:13:9: 'devices'
             {
             match("devices"); 
 
@@ -159,8 +159,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:14:7: ( ']' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:14:9: ']'
+            // InternalStateSpecification.g:14:7: ( ']' )
+            // InternalStateSpecification.g:14:9: ']'
             {
             match(']'); 
 
@@ -179,8 +179,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:15:7: ( '-' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:15:9: '-'
+            // InternalStateSpecification.g:15:7: ( '-' )
+            // InternalStateSpecification.g:15:9: '-'
             {
             match('-'); 
 
@@ -199,8 +199,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:16:7: ( '.' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:16:9: '.'
+            // InternalStateSpecification.g:16:7: ( '.' )
+            // InternalStateSpecification.g:16:9: '.'
             {
             match('.'); 
 
@@ -219,8 +219,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:17:7: ( 'supervisory' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:17:9: 'supervisory'
+            // InternalStateSpecification.g:17:7: ( 'supervisory' )
+            // InternalStateSpecification.g:17:9: 'supervisory'
             {
             match("supervisory"); 
 
@@ -240,8 +240,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:18:7: ( 'operating' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:18:9: 'operating'
+            // InternalStateSpecification.g:18:7: ( 'operating' )
+            // InternalStateSpecification.g:18:9: 'operating'
             {
             match("operating"); 
 
@@ -261,8 +261,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:19:7: ( 'other' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:19:9: 'other'
+            // InternalStateSpecification.g:19:7: ( 'other' )
+            // InternalStateSpecification.g:19:9: 'other'
             {
             match("other"); 
 
@@ -282,8 +282,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:20:7: ( 'component' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:20:9: 'component'
+            // InternalStateSpecification.g:20:7: ( 'component' )
+            // InternalStateSpecification.g:20:9: 'component'
             {
             match("component"); 
 
@@ -303,8 +303,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:21:7: ( 'modes' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:21:9: 'modes'
+            // InternalStateSpecification.g:21:7: ( 'modes' )
+            // InternalStateSpecification.g:21:9: 'modes'
             {
             match("modes"); 
 
@@ -324,8 +324,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:22:7: ( 'states' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:22:9: 'states'
+            // InternalStateSpecification.g:22:7: ( 'states' )
+            // InternalStateSpecification.g:22:9: 'states'
             {
             match("states"); 
 
@@ -345,8 +345,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:23:7: ( 'inputs' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:23:9: 'inputs'
+            // InternalStateSpecification.g:23:7: ( 'inputs' )
+            // InternalStateSpecification.g:23:9: 'inputs'
             {
             match("inputs"); 
 
@@ -366,8 +366,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:24:7: ( 'outputs' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:24:9: 'outputs'
+            // InternalStateSpecification.g:24:7: ( 'outputs' )
+            // InternalStateSpecification.g:24:9: 'outputs'
             {
             match("outputs"); 
 
@@ -387,8 +387,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:25:7: ( 'inferred' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:25:9: 'inferred'
+            // InternalStateSpecification.g:25:7: ( 'inferred' )
+            // InternalStateSpecification.g:25:9: 'inferred'
             {
             match("inferred"); 
 
@@ -408,8 +408,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:26:7: ( ';' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:26:9: ';'
+            // InternalStateSpecification.g:26:7: ( ';' )
+            // InternalStateSpecification.g:26:9: ';'
             {
             match(';'); 
 
@@ -428,8 +428,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:27:7: ( 'state' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:27:9: 'state'
+            // InternalStateSpecification.g:27:7: ( 'state' )
+            // InternalStateSpecification.g:27:9: 'state'
             {
             match("state"); 
 
@@ -449,8 +449,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:28:7: ( '{' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:28:9: '{'
+            // InternalStateSpecification.g:28:7: ( '{' )
+            // InternalStateSpecification.g:28:9: '{'
             {
             match('{'); 
 
@@ -469,8 +469,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:29:7: ( '}' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:29:9: '}'
+            // InternalStateSpecification.g:29:7: ( '}' )
+            // InternalStateSpecification.g:29:9: '}'
             {
             match('}'); 
 
@@ -489,8 +489,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:30:7: ( 'initial' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:30:9: 'initial'
+            // InternalStateSpecification.g:30:7: ( 'initial' )
+            // InternalStateSpecification.g:30:9: 'initial'
             {
             match("initial"); 
 
@@ -510,8 +510,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:31:7: ( 'mode' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:31:9: 'mode'
+            // InternalStateSpecification.g:31:7: ( 'mode' )
+            // InternalStateSpecification.g:31:9: 'mode'
             {
             match("mode"); 
 
@@ -531,8 +531,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:32:7: ( 'device' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:32:9: 'device'
+            // InternalStateSpecification.g:32:7: ( 'device' )
+            // InternalStateSpecification.g:32:9: 'device'
             {
             match("device"); 
 
@@ -552,8 +552,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:33:7: ( 'input' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:33:9: 'input'
+            // InternalStateSpecification.g:33:7: ( 'input' )
+            // InternalStateSpecification.g:33:9: 'input'
             {
             match("input"); 
 
@@ -573,8 +573,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:34:7: ( 'value' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:34:9: 'value'
+            // InternalStateSpecification.g:34:7: ( 'value' )
+            // InternalStateSpecification.g:34:9: 'value'
             {
             match("value"); 
 
@@ -594,8 +594,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:35:7: ( 'source' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:35:9: 'source'
+            // InternalStateSpecification.g:35:7: ( 'source' )
+            // InternalStateSpecification.g:35:9: 'source'
             {
             match("source"); 
 
@@ -615,8 +615,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:36:7: ( 'output' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:36:9: 'output'
+            // InternalStateSpecification.g:36:7: ( 'output' )
+            // InternalStateSpecification.g:36:9: 'output'
             {
             match("output"); 
 
@@ -636,8 +636,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:37:7: ( 'target' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:37:9: 'target'
+            // InternalStateSpecification.g:37:7: ( 'target' )
+            // InternalStateSpecification.g:37:9: 'target'
             {
             match("target"); 
 
@@ -657,8 +657,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:38:7: ( 'units' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:38:9: 'units'
+            // InternalStateSpecification.g:38:7: ( 'units' )
+            // InternalStateSpecification.g:38:9: 'units'
             {
             match("units"); 
 
@@ -678,8 +678,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:39:7: ( 'T' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:39:9: 'T'
+            // InternalStateSpecification.g:39:7: ( 'T' )
+            // InternalStateSpecification.g:39:9: 'T'
             {
             match('T'); 
 
@@ -698,8 +698,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:40:7: ( 'F' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:40:9: 'F'
+            // InternalStateSpecification.g:40:7: ( 'F' )
+            // InternalStateSpecification.g:40:9: 'F'
             {
             match('F'); 
 
@@ -718,8 +718,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:41:7: ( '?' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:41:9: '?'
+            // InternalStateSpecification.g:41:7: ( '?' )
+            // InternalStateSpecification.g:41:9: '?'
             {
             match('?'); 
 
@@ -738,8 +738,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:42:7: ( 'table' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:42:9: 'table'
+            // InternalStateSpecification.g:42:7: ( 'table' )
+            // InternalStateSpecification.g:42:9: 'table'
             {
             match("table"); 
 
@@ -759,8 +759,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:43:7: ( '...' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:43:9: '...'
+            // InternalStateSpecification.g:43:7: ( '...' )
+            // InternalStateSpecification.g:43:9: '...'
             {
             match("..."); 
 
@@ -780,8 +780,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:44:7: ( 'type' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:44:9: 'type'
+            // InternalStateSpecification.g:44:7: ( 'type' )
+            // InternalStateSpecification.g:44:9: 'type'
             {
             match("type"); 
 
@@ -801,8 +801,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:45:7: ( 'range' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:45:9: 'range'
+            // InternalStateSpecification.g:45:7: ( 'range' )
+            // InternalStateSpecification.g:45:9: 'range'
             {
             match("range"); 
 
@@ -822,8 +822,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:46:7: ( 'value-list' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:46:9: 'value-list'
+            // InternalStateSpecification.g:46:7: ( 'value-list' )
+            // InternalStateSpecification.g:46:9: 'value-list'
             {
             match("value-list"); 
 
@@ -843,8 +843,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:47:7: ( 'rate' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:47:9: 'rate'
+            // InternalStateSpecification.g:47:7: ( 'rate' )
+            // InternalStateSpecification.g:47:9: 'rate'
             {
             match("rate"); 
 
@@ -864,8 +864,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:48:7: ( 'initiation-delay' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:48:9: 'initiation-delay'
+            // InternalStateSpecification.g:48:7: ( 'initiation-delay' )
+            // InternalStateSpecification.g:48:9: 'initiation-delay'
             {
             match("initiation-delay"); 
 
@@ -885,8 +885,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:49:7: ( 'completion-deadline' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:49:9: 'completion-deadline'
+            // InternalStateSpecification.g:49:7: ( 'completion-deadline' )
+            // InternalStateSpecification.g:49:9: 'completion-deadline'
             {
             match("completion-deadline"); 
 
@@ -906,8 +906,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:50:7: ( 'completion-exception' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:50:9: 'completion-exception'
+            // InternalStateSpecification.g:50:7: ( 'completion-exception' )
+            // InternalStateSpecification.g:50:9: 'completion-exception'
             {
             match("completion-exception"); 
 
@@ -927,8 +927,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:51:7: ( 'variables' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:51:9: 'variables'
+            // InternalStateSpecification.g:51:7: ( 'variables' )
+            // InternalStateSpecification.g:51:9: 'variables'
             {
             match("variables"); 
 
@@ -948,8 +948,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:52:7: ( 'relationship' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:52:9: 'relationship'
+            // InternalStateSpecification.g:52:7: ( 'relationship' )
+            // InternalStateSpecification.g:52:9: 'relationship'
             {
             match("relationship"); 
 
@@ -969,8 +969,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:53:7: ( 'min-response-time' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:53:9: 'min-response-time'
+            // InternalStateSpecification.g:53:7: ( 'min-response-time' )
+            // InternalStateSpecification.g:53:9: 'min-response-time'
             {
             match("min-response-time"); 
 
@@ -990,8 +990,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:54:7: ( 'max-response-time' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:54:9: 'max-response-time'
+            // InternalStateSpecification.g:54:7: ( 'max-response-time' )
+            // InternalStateSpecification.g:54:9: 'max-response-time'
             {
             match("max-response-time"); 
 
@@ -1011,8 +1011,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:55:7: ( 'feedback-exception' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:55:9: 'feedback-exception'
+            // InternalStateSpecification.g:55:7: ( 'feedback-exception' )
+            // InternalStateSpecification.g:55:9: 'feedback-exception'
             {
             match("feedback-exception"); 
 
@@ -1032,8 +1032,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:56:7: ( 'reversed-by' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:56:9: 'reversed-by'
+            // InternalStateSpecification.g:56:7: ( 'reversed-by' )
+            // InternalStateSpecification.g:56:9: 'reversed-by'
             {
             match("reversed-by"); 
 
@@ -1053,8 +1053,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:57:7: ( 'references' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:57:9: 'references'
+            // InternalStateSpecification.g:57:7: ( 'references' )
+            // InternalStateSpecification.g:57:9: 'references'
             {
             match("references"); 
 
@@ -1074,8 +1074,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:58:7: ( 'comments' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:58:9: 'comments'
+            // InternalStateSpecification.g:58:7: ( 'comments' )
+            // InternalStateSpecification.g:58:9: 'comments'
             {
             match("comments"); 
 
@@ -1095,8 +1095,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:59:7: ( 'contents' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:59:9: 'contents'
+            // InternalStateSpecification.g:59:7: ( 'contents' )
+            // InternalStateSpecification.g:59:9: 'contents'
             {
             match("contents"); 
 
@@ -1116,8 +1116,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:60:7: ( 'triggering' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:60:9: 'triggering'
+            // InternalStateSpecification.g:60:7: ( 'triggering' )
+            // InternalStateSpecification.g:60:9: 'triggering'
             {
             match("triggering"); 
 
@@ -1137,8 +1137,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:61:7: ( 'value-exception' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:61:9: 'value-exception'
+            // InternalStateSpecification.g:61:7: ( 'value-exception' )
+            // InternalStateSpecification.g:61:9: 'value-exception'
             {
             match("value-exception"); 
 
@@ -1158,8 +1158,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:62:7: ( 'granularity' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:62:9: 'granularity'
+            // InternalStateSpecification.g:62:7: ( 'granularity' )
+            // InternalStateSpecification.g:62:9: 'granularity'
             {
             match("granularity"); 
 
@@ -1179,8 +1179,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:63:7: ( 'arrival-rate-avg' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:63:9: 'arrival-rate-avg'
+            // InternalStateSpecification.g:63:7: ( 'arrival-rate-avg' )
+            // InternalStateSpecification.g:63:9: 'arrival-rate-avg'
             {
             match("arrival-rate-avg"); 
 
@@ -1200,8 +1200,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:64:7: ( 'arrival-rate-minimum' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:64:9: 'arrival-rate-minimum'
+            // InternalStateSpecification.g:64:7: ( 'arrival-rate-minimum' )
+            // InternalStateSpecification.g:64:9: 'arrival-rate-minimum'
             {
             match("arrival-rate-minimum"); 
 
@@ -1221,8 +1221,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:65:7: ( 'arrival-rate-maximum' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:65:9: 'arrival-rate-maximum'
+            // InternalStateSpecification.g:65:7: ( 'arrival-rate-maximum' )
+            // InternalStateSpecification.g:65:9: 'arrival-rate-maximum'
             {
             match("arrival-rate-maximum"); 
 
@@ -1242,8 +1242,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:66:7: ( 'obsolescence' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:66:9: 'obsolescence'
+            // InternalStateSpecification.g:66:7: ( 'obsolescence' )
+            // InternalStateSpecification.g:66:9: 'obsolescence'
             {
             match("obsolescence"); 
 
@@ -1263,8 +1263,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:67:7: ( 'appears-in' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:67:9: 'appears-in'
+            // InternalStateSpecification.g:67:7: ( 'appears-in' )
+            // InternalStateSpecification.g:67:9: 'appears-in'
             {
             match("appears-in"); 
 
@@ -1284,8 +1284,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:68:7: ( 'description' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:68:9: 'description'
+            // InternalStateSpecification.g:68:7: ( 'description' )
+            // InternalStateSpecification.g:68:9: 'description'
             {
             match("description"); 
 
@@ -1305,10 +1305,10 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2400:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2400:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalStateSpecification.g:2400:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalStateSpecification.g:2400:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2400:11: ( '^' )?
+            // InternalStateSpecification.g:2400:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1317,7 +1317,7 @@ public class InternalStateSpecificationLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2400:11: '^'
+                    // InternalStateSpecification.g:2400:11: '^'
                     {
                     match('^'); 
 
@@ -1335,7 +1335,7 @@ public class InternalStateSpecificationLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2400:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalStateSpecification.g:2400:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1348,7 +1348,7 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:
+            	    // InternalStateSpecification.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -1384,10 +1384,10 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2402:10: ( ( '0' .. '9' )+ )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2402:12: ( '0' .. '9' )+
+            // InternalStateSpecification.g:2402:10: ( ( '0' .. '9' )+ )
+            // InternalStateSpecification.g:2402:12: ( '0' .. '9' )+
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2402:12: ( '0' .. '9' )+
+            // InternalStateSpecification.g:2402:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1401,7 +1401,7 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2402:13: '0' .. '9'
+            	    // InternalStateSpecification.g:2402:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1433,10 +1433,10 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalStateSpecification.g:2404:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalStateSpecification.g:2404:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalStateSpecification.g:2404:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1454,10 +1454,10 @@ public class InternalStateSpecificationLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalStateSpecification.g:2404:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalStateSpecification.g:2404:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1473,23 +1473,15 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalStateSpecification.g:2404:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalStateSpecification.g:2404:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1514,10 +1506,10 @@ public class InternalStateSpecificationLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalStateSpecification.g:2404:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalStateSpecification.g:2404:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1533,23 +1525,15 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // InternalStateSpecification.g:2404:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2404:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalStateSpecification.g:2404:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1592,12 +1576,12 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2406:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2406:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalStateSpecification.g:2406:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalStateSpecification.g:2406:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2406:24: ( options {greedy=false; } : . )*
+            // InternalStateSpecification.g:2406:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1622,7 +1606,7 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2406:52: .
+            	    // InternalStateSpecification.g:2406:52: .
             	    {
             	    matchAny(); 
 
@@ -1652,12 +1636,12 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalStateSpecification.g:2408:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalStateSpecification.g:2408:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalStateSpecification.g:2408:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1670,7 +1654,7 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalStateSpecification.g:2408:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1690,7 +1674,7 @@ public class InternalStateSpecificationLexer extends Lexer {
                 }
             } while (true);
 
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:40: ( ( '\\r' )? '\\n' )?
+            // InternalStateSpecification.g:2408:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1699,9 +1683,9 @@ public class InternalStateSpecificationLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:41: ( '\\r' )? '\\n'
+                    // InternalStateSpecification.g:2408:41: ( '\\r' )? '\\n'
                     {
-                    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:41: ( '\\r' )?
+                    // InternalStateSpecification.g:2408:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1710,7 +1694,7 @@ public class InternalStateSpecificationLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2408:41: '\\r'
+                            // InternalStateSpecification.g:2408:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1742,10 +1726,10 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2410:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2410:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalStateSpecification.g:2410:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalStateSpecification.g:2410:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2410:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalStateSpecification.g:2410:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1759,7 +1743,7 @@ public class InternalStateSpecificationLexer extends Lexer {
 
                 switch (alt11) {
             	case 1 :
-            	    // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:
+            	    // InternalStateSpecification.g:
             	    {
             	    if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -1799,8 +1783,8 @@ public class InternalStateSpecificationLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2412:16: ( . )
-            // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:2412:18: .
+            // InternalStateSpecification.g:2412:16: ( . )
+            // InternalStateSpecification.g:2412:18: .
             {
             matchAny(); 
 
@@ -1815,460 +1799,460 @@ public class InternalStateSpecificationLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        // InternalStateSpecification.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
         int alt12=65;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:10: T__11
+                // InternalStateSpecification.g:1:10: T__11
                 {
                 mT__11(); 
 
                 }
                 break;
             case 2 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:16: T__12
+                // InternalStateSpecification.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
             case 3 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:22: T__13
+                // InternalStateSpecification.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
             case 4 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:28: T__14
+                // InternalStateSpecification.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
             case 5 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:34: T__15
+                // InternalStateSpecification.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
             case 6 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:40: T__16
+                // InternalStateSpecification.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
             case 7 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:46: T__17
+                // InternalStateSpecification.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
             case 8 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:52: T__18
+                // InternalStateSpecification.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
             case 9 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:58: T__19
+                // InternalStateSpecification.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
             case 10 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:64: T__20
+                // InternalStateSpecification.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
             case 11 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:70: T__21
+                // InternalStateSpecification.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 12 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:76: T__22
+                // InternalStateSpecification.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 13 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:82: T__23
+                // InternalStateSpecification.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 14 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:88: T__24
+                // InternalStateSpecification.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 15 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:94: T__25
+                // InternalStateSpecification.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 16 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:100: T__26
+                // InternalStateSpecification.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 17 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:106: T__27
+                // InternalStateSpecification.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 18 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:112: T__28
+                // InternalStateSpecification.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 19 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:118: T__29
+                // InternalStateSpecification.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 20 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:124: T__30
+                // InternalStateSpecification.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 21 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:130: T__31
+                // InternalStateSpecification.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 22 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:136: T__32
+                // InternalStateSpecification.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
             case 23 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:142: T__33
+                // InternalStateSpecification.g:1:142: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
             case 24 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:148: T__34
+                // InternalStateSpecification.g:1:148: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
             case 25 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:154: T__35
+                // InternalStateSpecification.g:1:154: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
             case 26 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:160: T__36
+                // InternalStateSpecification.g:1:160: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
             case 27 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:166: T__37
+                // InternalStateSpecification.g:1:166: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
             case 28 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:172: T__38
+                // InternalStateSpecification.g:1:172: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
             case 29 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:178: T__39
+                // InternalStateSpecification.g:1:178: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
             case 30 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:184: T__40
+                // InternalStateSpecification.g:1:184: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
             case 31 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:190: T__41
+                // InternalStateSpecification.g:1:190: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
             case 32 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:196: T__42
+                // InternalStateSpecification.g:1:196: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
             case 33 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:202: T__43
+                // InternalStateSpecification.g:1:202: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
             case 34 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:208: T__44
+                // InternalStateSpecification.g:1:208: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
             case 35 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:214: T__45
+                // InternalStateSpecification.g:1:214: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
             case 36 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:220: T__46
+                // InternalStateSpecification.g:1:220: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
             case 37 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:226: T__47
+                // InternalStateSpecification.g:1:226: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
             case 38 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:232: T__48
+                // InternalStateSpecification.g:1:232: T__48
                 {
                 mT__48(); 
 
                 }
                 break;
             case 39 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:238: T__49
+                // InternalStateSpecification.g:1:238: T__49
                 {
                 mT__49(); 
 
                 }
                 break;
             case 40 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:244: T__50
+                // InternalStateSpecification.g:1:244: T__50
                 {
                 mT__50(); 
 
                 }
                 break;
             case 41 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:250: T__51
+                // InternalStateSpecification.g:1:250: T__51
                 {
                 mT__51(); 
 
                 }
                 break;
             case 42 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:256: T__52
+                // InternalStateSpecification.g:1:256: T__52
                 {
                 mT__52(); 
 
                 }
                 break;
             case 43 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:262: T__53
+                // InternalStateSpecification.g:1:262: T__53
                 {
                 mT__53(); 
 
                 }
                 break;
             case 44 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:268: T__54
+                // InternalStateSpecification.g:1:268: T__54
                 {
                 mT__54(); 
 
                 }
                 break;
             case 45 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:274: T__55
+                // InternalStateSpecification.g:1:274: T__55
                 {
                 mT__55(); 
 
                 }
                 break;
             case 46 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:280: T__56
+                // InternalStateSpecification.g:1:280: T__56
                 {
                 mT__56(); 
 
                 }
                 break;
             case 47 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:286: T__57
+                // InternalStateSpecification.g:1:286: T__57
                 {
                 mT__57(); 
 
                 }
                 break;
             case 48 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:292: T__58
+                // InternalStateSpecification.g:1:292: T__58
                 {
                 mT__58(); 
 
                 }
                 break;
             case 49 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:298: T__59
+                // InternalStateSpecification.g:1:298: T__59
                 {
                 mT__59(); 
 
                 }
                 break;
             case 50 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:304: T__60
+                // InternalStateSpecification.g:1:304: T__60
                 {
                 mT__60(); 
 
                 }
                 break;
             case 51 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:310: T__61
+                // InternalStateSpecification.g:1:310: T__61
                 {
                 mT__61(); 
 
                 }
                 break;
             case 52 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:316: T__62
+                // InternalStateSpecification.g:1:316: T__62
                 {
                 mT__62(); 
 
                 }
                 break;
             case 53 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:322: T__63
+                // InternalStateSpecification.g:1:322: T__63
                 {
                 mT__63(); 
 
                 }
                 break;
             case 54 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:328: T__64
+                // InternalStateSpecification.g:1:328: T__64
                 {
                 mT__64(); 
 
                 }
                 break;
             case 55 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:334: T__65
+                // InternalStateSpecification.g:1:334: T__65
                 {
                 mT__65(); 
 
                 }
                 break;
             case 56 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:340: T__66
+                // InternalStateSpecification.g:1:340: T__66
                 {
                 mT__66(); 
 
                 }
                 break;
             case 57 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:346: T__67
+                // InternalStateSpecification.g:1:346: T__67
                 {
                 mT__67(); 
 
                 }
                 break;
             case 58 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:352: T__68
+                // InternalStateSpecification.g:1:352: T__68
                 {
                 mT__68(); 
 
                 }
                 break;
             case 59 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:358: RULE_ID
+                // InternalStateSpecification.g:1:358: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
             case 60 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:366: RULE_INT
+                // InternalStateSpecification.g:1:366: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
             case 61 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:375: RULE_STRING
+                // InternalStateSpecification.g:1:375: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
             case 62 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:387: RULE_ML_COMMENT
+                // InternalStateSpecification.g:1:387: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
             case 63 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:403: RULE_SL_COMMENT
+                // InternalStateSpecification.g:1:403: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
             case 64 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:419: RULE_WS
+                // InternalStateSpecification.g:1:419: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
             case 65 :
-                // ../net.certware.intent.state/src-gen/net/certware/intent/state/parser/antlr/internal/InternalStateSpecification.g:1:427: RULE_ANY_OTHER
+                // InternalStateSpecification.g:1:427: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2282,100 +2266,19 @@ public class InternalStateSpecificationLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\44\1\uffff\1\44\2\uffff\1\52\4\44\3\uffff\3\44\1\74\1"+
-        "\75\1\uffff\4\44\1\37\2\uffff\3\37\2\uffff\4\44\2\uffff\1\44\4\uffff"+
-        "\11\44\3\uffff\5\44\3\uffff\6\44\5\uffff\57\44\1\u009e\2\uffff\7"+
-        "\44\1\u00a6\3\44\1\u00aa\11\44\1\u00b5\4\44\1\u00ba\6\44\1\u00c1"+
-        "\1\uffff\1\u00c3\2\44\1\u00c7\2\44\1\u00ca\1\uffff\1\44\1\u00cc"+
-        "\1\u00cd\1\uffff\11\44\1\u00d7\1\uffff\1\u00d8\1\u00da\2\44\1\uffff"+
-        "\1\u00de\5\44\1\uffff\1\u00e4\1\uffff\2\44\2\uffff\1\44\1\u00eb"+
-        "\1\uffff\1\44\2\uffff\11\44\2\uffff\1\u00f6\1\uffff\2\44\1\u00f9"+
-        "\1\uffff\5\44\1\uffff\1\44\1\u0100\1\44\2\uffff\1\44\1\uffff\12"+
-        "\44\1\uffff\2\44\1\uffff\3\44\1\u0112\1\u0113\1\u0114\1\uffff\10"+
-        "\44\2\uffff\3\44\1\u0121\1\44\1\u0123\1\44\3\uffff\1\44\1\u0126"+
-        "\2\44\1\uffff\1\44\1\uffff\1\44\1\uffff\3\44\1\uffff\1\44\1\uffff"+
-        "\2\44\1\uffff\1\u0132\1\44\1\u0134\1\44\1\uffff\1\44\1\u0138\1\u0139"+
-        "\1\44\3\uffff\1\44\1\uffff\1\u013e\1\uffff\1\44\2\uffff\1\u0141"+
-        "\2\uffff\1\u0142\2\uffff\1\u0144\10\uffff";
+        "\1\uffff\1\44\1\uffff\1\44\2\uffff\1\52\4\44\3\uffff\3\44\1\74\1\75\1\uffff\4\44\1\37\2\uffff\3\37\2\uffff\4\44\2\uffff\1\44\4\uffff\11\44\3\uffff\5\44\3\uffff\6\44\5\uffff\57\44\1\u009e\2\uffff\7\44\1\u00a6\3\44\1\u00aa\11\44\1\u00b5\4\44\1\u00ba\6\44\1\u00c1\1\uffff\1\u00c3\2\44\1\u00c7\2\44\1\u00ca\1\uffff\1\44\1\u00cc\1\u00cd\1\uffff\11\44\1\u00d7\1\uffff\1\u00d8\1\u00da\2\44\1\uffff\1\u00de\5\44\1\uffff\1\u00e4\1\uffff\2\44\2\uffff\1\44\1\u00eb\1\uffff\1\44\2\uffff\11\44\2\uffff\1\u00f6\1\uffff\2\44\1\u00f9\1\uffff\5\44\1\uffff\1\44\1\u0100\1\44\2\uffff\1\44\1\uffff\12\44\1\uffff\2\44\1\uffff\3\44\1\u0112\1\u0113\1\u0114\1\uffff\10\44\2\uffff\3\44\1\u0121\1\44\1\u0123\1\44\3\uffff\1\44\1\u0126\2\44\1\uffff\1\44\1\uffff\1\44\1\uffff\3\44\1\uffff\1\44\1\uffff\2\44\1\uffff\1\u0132\1\44\1\u0134\1\44\1\uffff\1\44\1\u0138\1\u0139\1\44\3\uffff\1\44\1\uffff\1\u013e\1\uffff\1\44\2\uffff\1\u0141\2\uffff\1\u0142\2\uffff\1\u0144\10\uffff";
     static final String DFA12_eofS =
         "\u0149\uffff";
     static final String DFA12_minS =
-        "\1\0\1\157\1\uffff\1\145\2\uffff\1\56\1\142\1\157\1\141\1\156\3"+
-        "\uffff\2\141\1\156\2\60\1\uffff\1\141\1\145\1\162\1\160\1\101\2"+
-        "\uffff\2\0\1\52\2\uffff\1\145\1\160\1\141\1\165\2\uffff\1\163\4"+
-        "\uffff\1\145\1\150\1\164\1\163\1\155\1\144\1\156\1\170\1\146\3\uffff"+
-        "\1\154\1\142\1\160\2\151\3\uffff\1\156\1\146\1\145\1\141\1\162\1"+
-        "\160\5\uffff\1\143\1\145\1\164\1\162\1\151\1\143\1\162\1\145\1\160"+
-        "\1\157\1\155\1\164\1\145\2\55\1\165\1\145\1\164\1\165\1\151\1\147"+
-        "\1\154\1\145\1\147\1\164\1\147\1\145\1\141\2\145\1\144\1\156\1\151"+
-        "\1\145\1\151\1\162\1\145\2\143\1\162\1\141\1\162\1\165\2\154\2\145"+
-        "\1\60\2\uffff\1\164\1\162\1\151\1\145\1\141\2\145\1\60\1\147\1\163"+
-        "\1\145\1\60\1\164\2\162\1\142\1\165\1\166\1\141\1\146\1\166\1\60"+
-        "\2\145\1\151\1\164\1\60\1\164\1\145\1\156\1\145\2\156\1\60\1\uffff"+
-        "\1\60\1\162\1\141\1\55\1\142\1\164\1\60\1\uffff\1\145\2\60\1\uffff"+
-        "\1\151\1\163\1\145\1\141\1\154\1\141\1\162\2\151\1\60\1\uffff\2"+
-        "\60\1\160\1\151\1\uffff\1\60\1\163\1\145\3\164\1\uffff\1\60\1\uffff"+
-        "\1\145\1\154\1\145\1\uffff\1\154\1\60\1\uffff\1\162\2\uffff\1\157"+
-        "\1\145\1\156\1\143\1\141\1\154\1\163\1\143\1\163\2\uffff\1\60\1"+
-        "\uffff\1\164\1\156\1\60\1\uffff\1\143\1\156\1\151\2\163\1\uffff"+
-        "\1\144\1\60\1\151\2\uffff\1\145\1\uffff\1\151\1\156\1\144\1\143"+
-        "\1\153\1\162\2\55\1\141\1\157\1\uffff\1\151\1\147\1\uffff\1\145"+
-        "\1\164\1\157\3\60\1\uffff\1\157\1\163\1\156\1\163\1\55\1\145\1\55"+
-        "\1\151\1\162\1\uffff\1\164\1\162\1\157\1\60\1\156\1\60\1\156\3\uffff"+
-        "\1\156\1\60\1\147\1\150\1\uffff\1\163\1\uffff\1\164\1\141\1\151"+
-        "\1\171\1\156\1\uffff\1\143\1\uffff\2\55\1\uffff\1\60\1\151\1\60"+
-        "\1\171\1\164\1\157\2\60\1\145\1\144\2\uffff\1\160\1\uffff\1\60\1"+
-        "\145\1\156\2\uffff\1\60\2\uffff\1\60\1\uffff\1\55\1\60\2\uffff\1"+
-        "\141\2\uffff\1\141\2\uffff";
+        "\1\0\1\157\1\uffff\1\145\2\uffff\1\56\1\142\1\157\1\141\1\156\3\uffff\2\141\1\156\2\60\1\uffff\1\141\1\145\1\162\1\160\1\101\2\uffff\2\0\1\52\2\uffff\1\145\1\160\1\141\1\165\2\uffff\1\163\4\uffff\1\145\1\150\1\164\1\163\1\155\1\144\1\156\1\170\1\146\3\uffff\1\154\1\142\1\160\2\151\3\uffff\1\156\1\146\1\145\1\141\1\162\1\160\5\uffff\1\143\1\145\1\164\1\162\1\151\1\143\1\162\1\145\1\160\1\157\1\155\1\164\1\145\2\55\1\165\1\145\1\164\1\165\1\151\1\147\1\154\1\145\1\147\1\164\1\147\1\145\1\141\2\145\1\144\1\156\1\151\1\145\1\151\1\162\1\145\2\143\1\162\1\141\1\162\1\165\2\154\2\145\1\60\2\uffff\1\164\1\162\1\151\1\145\1\141\2\145\1\60\1\147\1\163\1\145\1\60\1\164\2\162\1\142\1\165\1\166\1\141\1\146\1\166\1\60\2\145\1\151\1\164\1\60\1\164\1\145\1\156\1\145\2\156\1\60\1\uffff\1\60\1\162\1\141\1\55\1\142\1\164\1\60\1\uffff\1\145\2\60\1\uffff\1\151\1\163\1\145\1\141\1\154\1\141\1\162\2\151\1\60\1\uffff\2\60\1\160\1\151\1\uffff\1\60\1\163\1\145\3\164\1\uffff\1\60\1\uffff\1\145\1\154\1\145\1\uffff\1\154\1\60\1\uffff\1\162\2\uffff\1\157\1\145\1\156\1\143\1\141\1\154\1\163\1\143\1\163\2\uffff\1\60\1\uffff\1\164\1\156\1\60\1\uffff\1\143\1\156\1\151\2\163\1\uffff\1\144\1\60\1\151\2\uffff\1\145\1\uffff\1\151\1\156\1\144\1\143\1\153\1\162\2\55\1\141\1\157\1\uffff\1\151\1\147\1\uffff\1\145\1\164\1\157\3\60\1\uffff\1\157\1\163\1\156\1\163\1\55\1\145\1\55\1\151\1\162\1\uffff\1\164\1\162\1\157\1\60\1\156\1\60\1\156\3\uffff\1\156\1\60\1\147\1\150\1\uffff\1\163\1\uffff\1\164\1\141\1\151\1\171\1\156\1\uffff\1\143\1\uffff\2\55\1\uffff\1\60\1\151\1\60\1\171\1\164\1\157\2\60\1\145\1\144\2\uffff\1\160\1\uffff\1\60\1\145\1\156\2\uffff\1\60\2\uffff\1\60\1\uffff\1\55\1\60\2\uffff\1\141\2\uffff\1\141\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\165\1\uffff\1\145\2\uffff\1\56\1\165\2\157\1\156\3\uffff"+
-        "\1\141\1\171\1\156\2\172\1\uffff\2\145\2\162\1\172\2\uffff\2\uffff"+
-        "\1\57\2\uffff\1\145\1\160\1\141\1\165\2\uffff\1\166\4\uffff\1\145"+
-        "\1\150\1\164\1\163\1\156\1\144\1\156\1\170\1\160\3\uffff\2\162\1"+
-        "\160\2\151\3\uffff\1\164\1\166\1\145\1\141\1\162\1\160\5\uffff\1"+
-        "\143\1\145\1\164\1\162\1\151\1\143\1\162\1\145\1\160\1\157\1\160"+
-        "\1\164\1\145\2\55\1\165\1\145\1\164\1\165\1\151\1\147\1\154\1\145"+
-        "\1\147\1\164\1\147\1\145\1\141\2\145\1\144\1\156\1\151\1\145\1\151"+
-        "\1\162\1\145\2\143\1\162\1\141\1\162\1\165\1\154\1\157\2\145\1\172"+
-        "\2\uffff\1\164\1\162\1\151\1\145\1\141\2\145\1\172\1\147\1\163\1"+
-        "\145\1\172\1\164\2\162\1\142\1\165\1\166\1\141\1\146\1\166\1\172"+
-        "\2\145\1\151\1\164\1\172\1\164\1\145\1\156\1\145\2\156\1\172\1\uffff"+
-        "\1\172\1\162\1\141\1\172\1\142\1\164\1\172\1\uffff\1\145\2\172\1"+
-        "\uffff\1\151\1\163\1\145\1\141\1\154\1\141\1\162\2\151\1\172\1\uffff"+
-        "\2\172\1\160\1\151\1\uffff\1\172\1\163\1\145\3\164\1\uffff\1\172"+
-        "\1\uffff\1\145\1\164\1\154\1\uffff\1\154\1\172\1\uffff\1\162\2\uffff"+
-        "\1\157\1\145\1\156\1\143\1\141\1\154\1\163\1\143\1\163\2\uffff\1"+
-        "\172\1\uffff\1\164\1\156\1\172\1\uffff\1\143\1\156\1\151\2\163\1"+
-        "\uffff\1\144\1\172\1\151\2\uffff\1\145\1\uffff\1\151\1\156\1\144"+
-        "\1\143\1\153\1\162\2\55\1\141\1\157\1\uffff\1\151\1\147\1\uffff"+
-        "\1\145\1\164\1\157\3\172\1\uffff\1\157\1\163\1\156\1\163\1\55\1"+
-        "\145\1\55\1\151\1\162\1\uffff\1\164\1\162\1\157\1\172\1\156\1\172"+
-        "\1\156\3\uffff\1\156\1\172\1\147\1\150\1\uffff\1\163\1\uffff\1\164"+
-        "\1\141\1\151\1\171\1\156\1\uffff\1\143\1\uffff\2\55\1\uffff\1\172"+
-        "\1\151\1\172\1\171\1\164\1\157\2\172\2\145\2\uffff\1\160\1\uffff"+
-        "\1\172\1\145\1\156\2\uffff\1\172\2\uffff\1\172\1\uffff\1\55\1\172"+
-        "\2\uffff\1\155\2\uffff\1\151\2\uffff";
+        "\1\uffff\1\165\1\uffff\1\145\2\uffff\1\56\1\165\2\157\1\156\3\uffff\1\141\1\171\1\156\2\172\1\uffff\2\145\2\162\1\172\2\uffff\2\uffff\1\57\2\uffff\1\145\1\160\1\141\1\165\2\uffff\1\166\4\uffff\1\145\1\150\1\164\1\163\1\156\1\144\1\156\1\170\1\160\3\uffff\2\162\1\160\2\151\3\uffff\1\164\1\166\1\145\1\141\1\162\1\160\5\uffff\1\143\1\145\1\164\1\162\1\151\1\143\1\162\1\145\1\160\1\157\1\160\1\164\1\145\2\55\1\165\1\145\1\164\1\165\1\151\1\147\1\154\1\145\1\147\1\164\1\147\1\145\1\141\2\145\1\144\1\156\1\151\1\145\1\151\1\162\1\145\2\143\1\162\1\141\1\162\1\165\1\154\1\157\2\145\1\172\2\uffff\1\164\1\162\1\151\1\145\1\141\2\145\1\172\1\147\1\163\1\145\1\172\1\164\2\162\1\142\1\165\1\166\1\141\1\146\1\166\1\172\2\145\1\151\1\164\1\172\1\164\1\145\1\156\1\145\2\156\1\172\1\uffff\1\172\1\162\1\141\1\172\1\142\1\164\1\172\1\uffff\1\145\2\172\1\uffff\1\151\1\163\1\145\1\141\1\154\1\141\1\162\2\151\1\172\1\uffff\2\172\1\160\1\151\1\uffff\1\172\1\163\1\145\3\164\1\uffff\1\172\1\uffff\1\145\1\164\1\154\1\uffff\1\154\1\172\1\uffff\1\162\2\uffff\1\157\1\145\1\156\1\143\1\141\1\154\1\163\1\143\1\163\2\uffff\1\172\1\uffff\1\164\1\156\1\172\1\uffff\1\143\1\156\1\151\2\163\1\uffff\1\144\1\172\1\151\2\uffff\1\145\1\uffff\1\151\1\156\1\144\1\143\1\153\1\162\2\55\1\141\1\157\1\uffff\1\151\1\147\1\uffff\1\145\1\164\1\157\3\172\1\uffff\1\157\1\163\1\156\1\163\1\55\1\145\1\55\1\151\1\162\1\uffff\1\164\1\162\1\157\1\172\1\156\1\172\1\156\3\uffff\1\156\1\172\1\147\1\150\1\uffff\1\163\1\uffff\1\164\1\141\1\151\1\171\1\156\1\uffff\1\143\1\uffff\2\55\1\uffff\1\172\1\151\1\172\1\171\1\164\1\157\2\172\2\145\2\uffff\1\160\1\uffff\1\172\1\145\1\156\2\uffff\1\172\2\uffff\1\172\1\uffff\1\55\1\172\2\uffff\1\155\2\uffff\1\151\2\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\uffff\1\4\1\5\5\uffff\1\20\1\22\1\23\5\uffff\1\37"+
-        "\5\uffff\1\73\1\74\3\uffff\1\100\1\101\4\uffff\1\73\1\2\1\uffff"+
-        "\1\4\1\5\1\41\1\6\11\uffff\1\20\1\22\1\23\5\uffff\1\35\1\36\1\37"+
-        "\6\uffff\1\74\1\75\1\76\1\77\1\100\60\uffff\1\53\1\54\42\uffff\1"+
-        "\25\7\uffff\1\42\3\uffff\1\45\12\uffff\1\21\4\uffff\1\11\6\uffff"+
-        "\1\13\1\uffff\1\27\3\uffff\1\30\2\uffff\1\40\1\uffff\1\34\1\43\11"+
-        "\uffff\1\14\1\31\1\uffff\1\26\3\uffff\1\32\5\uffff\1\15\3\uffff"+
-        "\1\44\1\63\1\uffff\1\33\12\uffff\1\3\2\uffff\1\16\6\uffff\1\24\11"+
-        "\uffff\1\71\7\uffff\1\60\1\61\1\17\4\uffff\1\56\1\uffff\1\55\5\uffff"+
-        "\1\10\1\uffff\1\12\2\uffff\1\51\12\uffff\1\46\1\62\1\uffff\1\57"+
-        "\3\uffff\1\7\1\72\1\uffff\1\47\1\50\1\uffff\1\64\2\uffff\1\70\1"+
-        "\52\1\uffff\1\1\1\65\1\uffff\1\66\1\67";
+        "\2\uffff\1\2\1\uffff\1\4\1\5\5\uffff\1\20\1\22\1\23\5\uffff\1\37\5\uffff\1\73\1\74\3\uffff\1\100\1\101\4\uffff\1\73\1\2\1\uffff\1\4\1\5\1\41\1\6\11\uffff\1\20\1\22\1\23\5\uffff\1\35\1\36\1\37\6\uffff\1\74\1\75\1\76\1\77\1\100\60\uffff\1\53\1\54\42\uffff\1\25\7\uffff\1\42\3\uffff\1\45\12\uffff\1\21\4\uffff\1\11\6\uffff\1\13\1\uffff\1\27\3\uffff\1\30\2\uffff\1\40\1\uffff\1\34\1\43\11\uffff\1\14\1\31\1\uffff\1\26\3\uffff\1\32\5\uffff\1\15\3\uffff\1\44\1\63\1\uffff\1\33\12\uffff\1\3\2\uffff\1\16\6\uffff\1\24\11\uffff\1\71\7\uffff\1\60\1\61\1\17\4\uffff\1\56\1\uffff\1\55\5\uffff\1\10\1\uffff\1\12\2\uffff\1\51\12\uffff\1\46\1\62\1\uffff\1\57\3\uffff\1\7\1\72\1\uffff\1\47\1\50\1\uffff\1\64\2\uffff\1\70\1\52\1\uffff\1\1\1\65\1\uffff\1\66\1\67";
     static final String DFA12_specialS =
         "\1\2\32\uffff\1\0\1\1\u012c\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\37\2\36\2\37\1\36\22\37\1\36\1\37\1\33\4\37\1\34\5\37\1"+
-            "\5\1\6\1\35\12\32\1\37\1\13\3\37\1\23\1\37\5\31\1\22\15\31\1"+
-            "\21\6\31\1\2\1\37\1\4\1\30\1\31\1\37\1\27\1\31\1\10\1\3\1\31"+
-            "\1\25\1\26\1\31\1\12\3\31\1\11\1\31\1\7\2\31\1\24\1\1\1\17\1"+
-            "\20\1\16\4\31\1\14\1\37\1\15\uff82\37",
+            "\11\37\2\36\2\37\1\36\22\37\1\36\1\37\1\33\4\37\1\34\5\37\1\5\1\6\1\35\12\32\1\37\1\13\3\37\1\23\1\37\5\31\1\22\15\31\1\21\6\31\1\2\1\37\1\4\1\30\1\31\1\37\1\27\1\31\1\10\1\3\1\31\1\25\1\26\1\31\1\12\3\31\1\11\1\31\1\7\2\31\1\24\1\1\1\17\1\20\1\16\4\31\1\14\1\37\1\15\uff82\37",
             "\1\43\1\40\3\uffff\1\42\1\41",
             "",
             "\1\46",
@@ -2537,8 +2440,7 @@ public class InternalStateSpecificationLexer extends Lexer {
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\22\44\1\u00c2\7\44",
             "\1\u00c4",
             "\1\u00c5",
-            "\1\u00c6\2\uffff\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32"+
-            "\44",
+            "\1\u00c6\2\uffff\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",
             "\1\u00c8",
             "\1\u00c9",
             "\12\44\7\uffff\32\44\4\uffff\1\44\1\uffff\32\44",

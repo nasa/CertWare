@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link net.certware.state.stateAnalysis.StateVariable#getName <em>Name</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.StateVariable#getDescription <em>Description</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link net.certware.state.stateAnalysis.StateVariable#getStateUpdates <em>State Updates</em>}</li>
  *   <li>{@link net.certware.state.stateAnalysis.StateVariable#getInfluencedBy <em>Influenced By</em>}</li>
  * </ul>
- * </p>
  *
  * @see net.certware.state.stateAnalysis.StateAnalysisPackage#getStateVariable()
  * @model
