@@ -22,7 +22,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class Activator extends AbstractUIPlugin implements BundleActivator {
 
 	public static String PLUGIN_ID = "net.certware.measurement.sco.navigator"; //$NON-NLS-1$
-	
+	public static final String ICONS_OBJ16 = "icons/obj16/";
 	public static final String NODE_ARTIFACTS = "artifacts.image"; //$NON-NLS-1$
 	public static final String NODE_BASELINE = "baseline.image"; //$NON-NLS-1$
 	public static final String NODE_CURRENT = "current.image"; //$NON-NLS-1$
@@ -69,14 +69,14 @@ public class Activator extends AbstractUIPlugin implements BundleActivator {
 	@Override
     protected void initializeImageRegistry(ImageRegistry registry) {
         Bundle bundle = Platform.getBundle(PLUGIN_ID);
-        initializeImage(registry,bundle,"icons/obj16/artifacts.gif",NODE_ARTIFACTS);
-        initializeImage(registry,bundle,"icons/obj16/baselined_lines.gif",NODE_BASELINE);
-        initializeImage(registry,bundle,"icons/obj16/current_lines.gif",NODE_CURRENT);
-        initializeImage(registry,bundle,"icons/obj16/critical_changes.gif",NODE_CRITICAL);
-        initializeImage(registry,bundle,"icons/obj16/normal_changes.gif",NODE_NORMAL);
-        initializeImage(registry,bundle,"icons/obj16/improvement_changes.gif",NODE_IMPROVEMENT);
-        initializeImage(registry,bundle,"icons/obj16/new_changes.gif",NODE_NEW_FEATURE);
-        initializeImage(registry,bundle,"icons/obj16/total_changes.gif",NODE_TOTAL);
+        initializeImage(registry,bundle,ICONS_OBJ16+"artifacts.gif",NODE_ARTIFACTS);
+        initializeImage(registry,bundle,ICONS_OBJ16+"baselined_lines.gif",NODE_BASELINE);
+        initializeImage(registry,bundle,ICONS_OBJ16+"current_lines.gif",NODE_CURRENT);
+        initializeImage(registry,bundle,ICONS_OBJ16+"critical_changes.gif",NODE_CRITICAL);
+        initializeImage(registry,bundle,ICONS_OBJ16+"normal_changes.gif",NODE_NORMAL);
+        initializeImage(registry,bundle,ICONS_OBJ16+"improvement_changes.gif",NODE_IMPROVEMENT);
+        initializeImage(registry,bundle,ICONS_OBJ16+"new_changes.gif",NODE_NEW_FEATURE);
+        initializeImage(registry,bundle,ICONS_OBJ16+"total_changes.gif",NODE_TOTAL);
      }
 
 }
